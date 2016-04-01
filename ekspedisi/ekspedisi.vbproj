@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C01766A-C9FD-4908-B4E7-5FA9A86650E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ekspedisi</RootNamespace>
+    <AssemblyName>ekspedisi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <StartupObject>ekspedisi.Program</StartupObject>
+    <FileAlignment>512</FileAlignment>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>WindowsForms</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ekspedisi.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v14.2" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v14.2" />
+    <Reference Include="DevExpress.ExpressApp.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.2.Core" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.2" />
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.2" />
+    <Reference Include="DevExpress.Sparkline.v14.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.2" />
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add Master\add_akun.Designer.vb">
+      <DependentUpon>add_akun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_akun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_bank.Designer.vb">
+      <DependentUpon>add_bank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_bank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_barang.Designer.vb">
+      <DependentUpon>add_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_customer.Designer.vb">
+      <DependentUpon>add_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_jabatan.Designer.vb">
+      <DependentUpon>add_jabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_jabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_karyawan.Designer.vb">
+      <DependentUpon>add_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_kategori_supplier.Designer.vb">
+      <DependentUpon>add_kategori_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_kategori_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_kontak_principle.Designer.vb">
+      <DependentUpon>add_kontak_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_kontak_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_kota.Designer.vb">
+      <DependentUpon>add_kota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_kota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_principle.Designer.vb">
+      <DependentUpon>add_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_rekening.Designer.vb">
+      <DependentUpon>add_rekening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_rekening.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_rute.Designer.vb">
+      <DependentUpon>add_rute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_rute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_supplier.Designer.vb">
+      <DependentUpon>add_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_truck.Designer.vb">
+      <DependentUpon>add_truck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_truck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_user.Designer.vb">
+      <DependentUpon>add_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\COA.Designer.vb">
+      <DependentUpon>COA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\COA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_tutup_karyawan.Designer.vb">
+      <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_tutup_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_tutup_principle.Designer.vb">
+      <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_tutup_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\kas_keluar.Designer.vb">
+      <DependentUpon>kas_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\kas_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\kas_masuk.Designer.vb">
+      <DependentUpon>kas_masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\kas_masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\tutup_karyawan.Designer.vb">
+      <DependentUpon>tutup_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\tutup_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\tutup_principle.Designer.vb">
+      <DependentUpon>tutup_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\tutup_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="Piutang Perusahaan\pelunasan_piutang.Designer.vb">
+      <DependentUpon>pelunasan_piutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\pelunasan_piutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\perubahan_harga.Designer.vb">
+      <DependentUpon>perubahan_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\perubahan_harga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penggajian Supir\daftar_hutang_karyawan.Designer.vb">
+      <DependentUpon>daftar_hutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\daftar_hutang_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penggajian Supir\pelunasan_hutang_supir.Designer.vb">
+      <DependentUpon>pelunasan_hutang_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\pelunasan_hutang_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\buka_piutang_karyawan.Designer.vb">
+      <DependentUpon>buka_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\buka_piutang_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\bukti_piutang.Designer.vb">
+      <DependentUpon>bukti_piutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\bukti_piutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_piutang_karyawan.Designer.vb">
+      <DependentUpon>daftar_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_piutang_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\karyawan_piutang.Designer.vb">
+      <DependentUpon>karyawan_piutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\karyawan_piutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.Designer.vb">
+      <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\booking_do.Designer.vb">
+      <DependentUpon>booking_do.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\booking_do.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\booking_truk.Designer.vb">
+      <DependentUpon>booking_truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\booking_truk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_akun.Designer.vb">
+      <DependentUpon>edit_akun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_akun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\Edit_bank.Designer.vb">
+      <DependentUpon>Edit_bank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\Edit_bank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\Edit_barang.Designer.vb">
+      <DependentUpon>Edit_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\Edit_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_customer.Designer.vb">
+      <DependentUpon>edit_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_jabatan.Designer.vb">
+      <DependentUpon>edit_jabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_jabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_karyawan.Designer.vb">
+      <DependentUpon>edit_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_kategori_supplier.Designer.vb">
+      <DependentUpon>edit_kategori_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_kategori_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_kontak.Designer.vb">
+      <DependentUpon>edit_kontak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_kontak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_kota.Designer.vb">
+      <DependentUpon>edit_kota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_kota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_principle.Designer.vb">
+      <DependentUpon>edit_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_rekening.Designer.vb">
+      <DependentUpon>edit_rekening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_rekening.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_rute.Designer.vb">
+      <DependentUpon>edit_rute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_rute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_supplier.Designer.vb">
+      <DependentUpon>edit_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\Edit_truck.Designer.vb">
+      <DependentUpon>Edit_truck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\Edit_truck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Master\edit_user.Designer.vb">
+      <DependentUpon>edit_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_karyawan.Designer.vb">
+      <DependentUpon>edit_list_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_kontak_principle.Designer.vb">
+      <DependentUpon>edit_kontak_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_kontak_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_jabatan.Designer.vb">
+      <DependentUpon>edit_list_jabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_jabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_kategori_supplier.Designer.vb">
+      <DependentUpon>edit_list_kategori_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_kategori_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_kota.Designer.vb">
+      <DependentUpon>edit_list_kota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_kota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_principle.Designer.vb">
+      <DependentUpon>edit_list_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_rekening.Designer.vb">
+      <DependentUpon>edit_list_rekening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_rekening.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_rute.Designer.vb">
+      <DependentUpon>edit_list_rute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_rute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_supplier.Designer.vb">
+      <DependentUpon>edit_list_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_truck.Designer.vb">
+      <DependentUpon>edit_list_truck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_truck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_user.Designer.vb">
+      <DependentUpon>edit_list_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_bank.Designer.vb">
+      <DependentUpon>list_edit_bank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_bank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_barang.Designer.vb">
+      <DependentUpon>list_edit_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_customer.Designer.vb">
+      <DependentUpon>list_edit_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.Designer.vb">
+      <DependentUpon>main_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\Master Bank.Designer.vb">
+      <DependentUpon>Master Bank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\Master Bank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\Master Rekening.Designer.vb">
+      <DependentUpon>Master Rekening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\Master Rekening.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_akun.Designer.vb">
+      <DependentUpon>master_akun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_akun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_barang.Designer.vb">
+      <DependentUpon>master_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_customer.Designer.vb">
+      <DependentUpon>master_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_jabatan.Designer.vb">
+      <DependentUpon>master_jabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_jabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_karyawan.Designer.vb">
+      <DependentUpon>master_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_kategori_supplier.Designer.vb">
+      <DependentUpon>master_kategori_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_kategori_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_kontak_principle.Designer.vb">
+      <DependentUpon>master_kontak_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_kontak_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_kota.Designer.vb">
+      <DependentUpon>master_kota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_kota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_principle.Designer.vb">
+      <DependentUpon>master_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_rute.Designer.vb">
+      <DependentUpon>master_rute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_rute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_supplier.Designer.vb">
+      <DependentUpon>master_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_truck.Designer.vb">
+      <DependentUpon>master_truck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_truck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_user.Designer.vb">
+      <DependentUpon>master_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Transaksi\transaksi_DO.Designer.vb">
+      <DependentUpon>transaksi_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\transaksi_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\transaksi_kas.Designer.vb">
+      <DependentUpon>transaksi_kas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\transaksi_kas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Add Master\add_akun.resx">
+      <DependentUpon>add_akun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_bank.resx">
+      <DependentUpon>add_bank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_barang.resx">
+      <DependentUpon>add_barang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_customer.resx">
+      <DependentUpon>add_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_jabatan.resx">
+      <DependentUpon>add_jabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_karyawan.resx">
+      <DependentUpon>add_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_kategori_supplier.resx">
+      <DependentUpon>add_kategori_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_kontak_principle.resx">
+      <DependentUpon>add_kontak_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_kota.resx">
+      <DependentUpon>add_kota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_principle.resx">
+      <DependentUpon>add_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_rekening.resx">
+      <DependentUpon>add_rekening.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_rute.resx">
+      <DependentUpon>add_rute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_supplier.resx">
+      <DependentUpon>add_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_truck.resx">
+      <DependentUpon>add_truck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_user.resx">
+      <DependentUpon>add_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\COA.resx">
+      <DependentUpon>COA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_tutup_karyawan.resx">
+      <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_tutup_principle.resx">
+      <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
+      <DependentUpon>kas_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\kas_masuk.resx">
+      <DependentUpon>kas_masuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\tutup_karyawan.resx">
+      <DependentUpon>tutup_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
+      <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
+      <DependentUpon>pelunasan_piutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\perubahan_harga.resx">
+      <DependentUpon>perubahan_harga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\daftar_hutang_karyawan.resx">
+      <DependentUpon>daftar_hutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\pelunasan_hutang_supir.resx">
+      <DependentUpon>pelunasan_hutang_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\buka_piutang_karyawan.resx">
+      <DependentUpon>buka_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\bukti_piutang.resx">
+      <DependentUpon>bukti_piutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\daftar_piutang_karyawan.resx">
+      <DependentUpon>daftar_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\karyawan_piutang.resx">
+      <DependentUpon>karyawan_piutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang_karyawan.resx">
+      <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\booking_do.resx">
+      <DependentUpon>booking_do.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\booking_truk.resx">
+      <DependentUpon>booking_truk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_akun.resx">
+      <DependentUpon>edit_akun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\Edit_bank.resx">
+      <DependentUpon>Edit_bank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\Edit_barang.resx">
+      <DependentUpon>Edit_barang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_customer.resx">
+      <DependentUpon>edit_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_jabatan.resx">
+      <DependentUpon>edit_jabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_karyawan.resx">
+      <DependentUpon>edit_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_kategori_supplier.resx">
+      <DependentUpon>edit_kategori_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_kontak.resx">
+      <DependentUpon>edit_kontak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_kota.resx">
+      <DependentUpon>edit_kota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_principle.resx">
+      <DependentUpon>edit_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_rekening.resx">
+      <DependentUpon>edit_rekening.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_rute.resx">
+      <DependentUpon>edit_rute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_supplier.resx">
+      <DependentUpon>edit_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\Edit_truck.resx">
+      <DependentUpon>Edit_truck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_user.resx">
+      <DependentUpon>edit_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_karyawan.resx">
+      <DependentUpon>edit_list_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_kontak_principle.resx">
+      <DependentUpon>edit_kontak_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_jabatan.resx">
+      <DependentUpon>edit_list_jabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_kategori_supplier.resx">
+      <DependentUpon>edit_list_kategori_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_kota.resx">
+      <DependentUpon>edit_list_kota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_principle.resx">
+      <DependentUpon>edit_list_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_rekening.resx">
+      <DependentUpon>edit_list_rekening.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_rute.resx">
+      <DependentUpon>edit_list_rute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_supplier.resx">
+      <DependentUpon>edit_list_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_truck.resx">
+      <DependentUpon>edit_list_truck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_user.resx">
+      <DependentUpon>edit_list_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\list_edit_bank.resx">
+      <DependentUpon>list_edit_bank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\list_edit_barang.resx">
+      <DependentUpon>list_edit_barang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\list_edit_customer.resx">
+      <DependentUpon>list_edit_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu.resx">
+      <DependentUpon>main_menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\Master Bank.resx">
+      <DependentUpon>Master Bank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\Master Rekening.resx">
+      <DependentUpon>Master Rekening.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_akun.resx">
+      <DependentUpon>master_akun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_barang.resx">
+      <DependentUpon>master_barang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_customer.resx">
+      <DependentUpon>master_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_jabatan.resx">
+      <DependentUpon>master_jabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_karyawan.resx">
+      <DependentUpon>master_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_kategori_supplier.resx">
+      <DependentUpon>master_kategori_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_kontak_principle.resx">
+      <DependentUpon>master_kontak_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_kota.resx">
+      <DependentUpon>master_kota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_principle.resx">
+      <DependentUpon>master_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_rute.resx">
+      <DependentUpon>master_rute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_supplier.resx">
+      <DependentUpon>master_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_truck.resx">
+      <DependentUpon>master_truck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_user.resx">
+      <DependentUpon>master_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
+      <DependentUpon>transaksi_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\transaksi_kas.resx">
+      <DependentUpon>transaksi_kas.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

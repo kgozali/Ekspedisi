@@ -1,0 +1,307 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class transaksi_DO
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(transaksi_DO))
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.id = New System.Windows.Forms.TextBox()
+        Me.idbooking = New DevExpress.XtraEditors.ButtonEdit()
+        Me.nomerdo = New System.Windows.Forms.TextBox()
+        Me.tanggalterkirim = New System.Windows.Forms.DateTimePicker()
+        Me.tanggaljatuhtempo = New System.Windows.Forms.DateTimePicker()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.idbarang = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(93, 18)
+        Me.LabelControl1.TabIndex = 33
+        Me.LabelControl1.Text = "ID Transaksi :"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 36)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(81, 18)
+        Me.LabelControl2.TabIndex = 34
+        Me.LabelControl2.Text = "ID Booking :"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(13, 84)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(80, 18)
+        Me.LabelControl3.TabIndex = 35
+        Me.LabelControl3.Text = "Nomer DO :"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Location = New System.Drawing.Point(13, 108)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(119, 18)
+        Me.LabelControl4.TabIndex = 36
+        Me.LabelControl4.Text = "Tanggal Terkirim :"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(12, 132)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
+        Me.LabelControl6.TabIndex = 38
+        Me.LabelControl6.Text = "Tanggal Jatuh Tempo :"
+        '
+        'id
+        '
+        Me.id.Location = New System.Drawing.Point(111, 9)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(117, 21)
+        Me.id.TabIndex = 1
+        '
+        'idbooking
+        '
+        Me.idbooking.Location = New System.Drawing.Point(100, 34)
+        Me.idbooking.Name = "idbooking"
+        Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.idbooking.Size = New System.Drawing.Size(128, 20)
+        Me.idbooking.TabIndex = 2
+        '
+        'nomerdo
+        '
+        Me.nomerdo.Location = New System.Drawing.Point(99, 81)
+        Me.nomerdo.Name = "nomerdo"
+        Me.nomerdo.Size = New System.Drawing.Size(165, 21)
+        Me.nomerdo.TabIndex = 4
+        '
+        'tanggalterkirim
+        '
+        Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
+        Me.tanggalterkirim.Location = New System.Drawing.Point(139, 105)
+        Me.tanggalterkirim.Name = "tanggalterkirim"
+        Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
+        Me.tanggalterkirim.TabIndex = 5
+        '
+        'tanggaljatuhtempo
+        '
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(172, 129)
+        Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
+        Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
+        Me.tanggaljatuhtempo.TabIndex = 7
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(404, 530)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.TabIndex = 11
+        Me.SimpleButton1.Text = "Cancel"
+        '
+        'Submit
+        '
+        Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
+        Me.Submit.Location = New System.Drawing.Point(298, 530)
+        Me.Submit.Name = "Submit"
+        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.TabIndex = 10
+        Me.Submit.Text = "Submit"
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 156)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(492, 344)
+        Me.GroupControl3.TabIndex = 148
+        Me.GroupControl3.Text = "Data Transaksi"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(12, 60)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
+        Me.LabelControl7.TabIndex = 149
+        Me.LabelControl7.Text = "Nama Principle :"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(214, 506)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(86, 18)
+        Me.LabelControl5.TabIndex = 150
+        Me.LabelControl5.Text = "Total Bayar :"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(306, 503)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(198, 21)
+        Me.TextBox1.TabIndex = 151
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(122, 57)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(165, 21)
+        Me.TextBox2.TabIndex = 152
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
+        Me.GridControl1.Size = New System.Drawing.Size(482, 317)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.idbarang, Me.namabarang, Me.berat})
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
+        'idbarang
+        '
+        Me.idbarang.Caption = "ID Barang"
+        Me.idbarang.ColumnEdit = Me.RepositoryItemButtonEdit1
+        Me.idbarang.Name = "idbarang"
+        Me.idbarang.Visible = True
+        Me.idbarang.VisibleIndex = 0
+        '
+        'namabarang
+        '
+        Me.namabarang.Caption = "Nama Barang"
+        Me.namabarang.ColumnEdit = Me.RepositoryItemButtonEdit1
+        Me.namabarang.Name = "namabarang"
+        Me.namabarang.Visible = True
+        Me.namabarang.VisibleIndex = 1
+        '
+        'berat
+        '
+        Me.berat.Caption = "Berat (Kilogram)"
+        Me.berat.Name = "berat"
+        Me.berat.Visible = True
+        Me.berat.VisibleIndex = 2
+        '
+        'RepositoryItemButtonEdit1
+        '
+        Me.RepositoryItemButtonEdit1.AutoHeight = False
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
+        '
+        'RepositoryItemButtonEdit2
+        '
+        Me.RepositoryItemButtonEdit2.AutoHeight = False
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
+        '
+        'transaksi_DO
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(513, 564)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.LabelControl5)
+        Me.Controls.Add(Me.LabelControl7)
+        Me.Controls.Add(Me.GroupControl3)
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.Submit)
+        Me.Controls.Add(Me.tanggaljatuhtempo)
+        Me.Controls.Add(Me.tanggalterkirim)
+        Me.Controls.Add(Me.nomerdo)
+        Me.Controls.Add(Me.idbooking)
+        Me.Controls.Add(Me.id)
+        Me.Controls.Add(Me.LabelControl6)
+        Me.Controls.Add(Me.LabelControl4)
+        Me.Controls.Add(Me.LabelControl3)
+        Me.Controls.Add(Me.LabelControl2)
+        Me.Controls.Add(Me.LabelControl1)
+        Me.Name = "transaksi_DO"
+        Me.Text = "Delivery Order"
+        CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents id As System.Windows.Forms.TextBox
+    Friend WithEvents idbooking As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents nomerdo As System.Windows.Forms.TextBox
+    Friend WithEvents tanggalterkirim As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tanggaljatuhtempo As System.Windows.Forms.DateTimePicker
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents idbarang As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+End Class
