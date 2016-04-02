@@ -42,7 +42,6 @@ Partial Class add_rekening
         '
         'id
         '
-        Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(100, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
