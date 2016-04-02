@@ -21,14 +21,14 @@ Partial Class add_user
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_user))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.reenterpass = New System.Windows.Forms.MaskedTextBox()
+        Me.password = New System.Windows.Forms.MaskedTextBox()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.username = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.password = New System.Windows.Forms.MaskedTextBox()
-        Me.reenterpass = New System.Windows.Forms.MaskedTextBox()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +47,22 @@ Partial Class add_user
         Me.GroupControl1.Size = New System.Drawing.Size(338, 98)
         Me.GroupControl1.TabIndex = 148
         Me.GroupControl1.Text = "Data"
+        '
+        'reenterpass
+        '
+        Me.reenterpass.Location = New System.Drawing.Point(143, 72)
+        Me.reenterpass.Name = "reenterpass"
+        Me.reenterpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.reenterpass.Size = New System.Drawing.Size(174, 21)
+        Me.reenterpass.TabIndex = 52
+        '
+        'password
+        '
+        Me.password.Location = New System.Drawing.Point(82, 47)
+        Me.password.Name = "password"
+        Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.password.Size = New System.Drawing.Size(174, 21)
+        Me.password.TabIndex = 51
         '
         'LabelControl3
         '
@@ -77,7 +93,6 @@ Partial Class add_user
         '
         'username
         '
-        Me.username.Enabled = False
         Me.username.Location = New System.Drawing.Point(88, 23)
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(100, 20)
@@ -100,22 +115,6 @@ Partial Class add_user
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 166
         Me.cancel.Text = "Cancel"
-        '
-        'password
-        '
-        Me.password.Location = New System.Drawing.Point(82, 47)
-        Me.password.Mask = "*"
-        Me.password.Name = "password"
-        Me.password.Size = New System.Drawing.Size(174, 21)
-        Me.password.TabIndex = 51
-        '
-        'reenterpass
-        '
-        Me.reenterpass.Location = New System.Drawing.Point(143, 72)
-        Me.reenterpass.Mask = "*"
-        Me.reenterpass.Name = "reenterpass"
-        Me.reenterpass.Size = New System.Drawing.Size(174, 21)
-        Me.reenterpass.TabIndex = 52
         '
         'add_user
         '
