@@ -20,48 +20,48 @@ Partial Class add_rute
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_rute))
-        Me.provinsi = New DevExpress.XtraEditors.TextEdit()
-        Me.tel2 = New DevExpress.XtraEditors.TextEdit()
-        Me.tel1 = New DevExpress.XtraEditors.TextEdit()
+        Me.unit = New DevExpress.XtraEditors.TextEdit()
+        Me.hargaunit = New DevExpress.XtraEditors.TextEdit()
+        Me.kotatujuan = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.nama = New DevExpress.XtraEditors.TextEdit()
+        Me.kotaasal = New DevExpress.XtraEditors.TextEdit()
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kotatujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kotaasal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'provinsi
+        'unit
         '
-        Me.provinsi.Location = New System.Drawing.Point(46, 119)
-        Me.provinsi.Name = "provinsi"
-        Me.provinsi.Size = New System.Drawing.Size(143, 20)
-        Me.provinsi.TabIndex = 6
+        Me.unit.Location = New System.Drawing.Point(46, 119)
+        Me.unit.Name = "unit"
+        Me.unit.Size = New System.Drawing.Size(143, 20)
+        Me.unit.TabIndex = 6
         '
-        'tel2
+        'hargaunit
         '
-        Me.tel2.Location = New System.Drawing.Point(114, 95)
-        Me.tel2.Name = "tel2"
-        Me.tel2.Size = New System.Drawing.Size(165, 20)
-        Me.tel2.TabIndex = 5
+        Me.hargaunit.Location = New System.Drawing.Point(114, 95)
+        Me.hargaunit.Name = "hargaunit"
+        Me.hargaunit.Size = New System.Drawing.Size(165, 20)
+        Me.hargaunit.TabIndex = 5
         '
-        'tel1
+        'kotatujuan
         '
-        Me.tel1.Location = New System.Drawing.Point(102, 71)
-        Me.tel1.Name = "tel1"
-        Me.tel1.Size = New System.Drawing.Size(165, 20)
-        Me.tel1.TabIndex = 4
+        Me.kotatujuan.Location = New System.Drawing.Point(102, 71)
+        Me.kotatujuan.Name = "kotatujuan"
+        Me.kotatujuan.Size = New System.Drawing.Size(165, 20)
+        Me.kotatujuan.TabIndex = 4
         '
         'LabelControl8
         '
@@ -108,32 +108,32 @@ Partial Class add_rute
         Me.LabelControl2.TabIndex = 33
         Me.LabelControl2.Text = "Kota Asal :"
         '
-        'nama
+        'kotaasal
         '
-        Me.nama.Location = New System.Drawing.Point(82, 47)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(143, 20)
-        Me.nama.TabIndex = 2
+        Me.kotaasal.Location = New System.Drawing.Point(82, 47)
+        Me.kotaasal.Name = "kotaasal"
+        Me.kotaasal.Size = New System.Drawing.Size(143, 20)
+        Me.kotaasal.TabIndex = 2
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(87, 23)
+        Me.id.Location = New System.Drawing.Point(72, 24)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 1
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.provinsi)
-        Me.GroupControl1.Controls.Add(Me.tel2)
-        Me.GroupControl1.Controls.Add(Me.tel1)
+        Me.GroupControl1.Controls.Add(Me.unit)
+        Me.GroupControl1.Controls.Add(Me.hargaunit)
+        Me.GroupControl1.Controls.Add(Me.kotatujuan)
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.kotaasal)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
@@ -169,10 +169,10 @@ Partial Class add_rute
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_rute"
         Me.Text = "Tambah Rute"
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kotatujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kotaasal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -180,15 +180,15 @@ Partial Class add_rute
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents provinsi As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents tel2 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents tel1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents unit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents hargaunit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents kotatujuan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents nama As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents kotaasal As DevExpress.XtraEditors.TextEdit
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
