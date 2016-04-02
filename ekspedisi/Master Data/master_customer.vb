@@ -21,5 +21,7 @@ Public Class master_customer
         'untuk datasource masukkan ke gridcontrol 
         'untuk coding data dll nya kalian codingnya di gridview1
 
+        'testing
+
     End Sub
 End Class
