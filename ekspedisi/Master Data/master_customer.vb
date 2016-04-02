@@ -10,5 +10,16 @@ Public Class master_customer
             gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
         Next
 
+
+        'Kalo kalian mau ambil data dari row yang kalian pilih dalam gridview caranya dibawah
+        'Hapus ya kalo udh tau cuman contoh aja males taruk notepad
+        'GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "nama column header")
+
+        'Catatan====
+        'DI xtragrid agak beda sama datagridview. jadi di xtragrid, gridviewnya punya 2 komponen
+        'yaitu gridcontrol sama dalemnya ada anakannya (namanya gridview1 ada tulisannya)
+        'untuk datasource masukkan ke gridcontrol 
+        'untuk coding data dll nya kalian codingnya di gridview1
+
     End Sub
 End Class
