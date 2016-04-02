@@ -44,4 +44,23 @@ Public Module Module1
 
 
     End Function
+
+    Function DtTablemaster(ByVal x As String)
+        Try
+            connect.Open()
+            Dim command As New MySqlCommand(x, connect)
+            command.Connection = connect
+            Dim data As DataTable = New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+            data.Columns.Add("Check", GetType(Boolean))
+            adapter.Fill(data)
+            connect.Close()
+
+            Return data
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Function
 End Module
