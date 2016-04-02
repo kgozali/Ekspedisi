@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Module Module1
-    Public connect As New MySqlConnection("Server=localhost;Uid=root;database=ekspedisi")
+    Public connect As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("ekspedisi").ConnectionString)
 
     Function Scalar(ByVal x As String)
         Try
