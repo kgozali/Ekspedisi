@@ -43,11 +43,8 @@ Partial Class master_customer
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.dataview = New System.Windows.Forms.DataGridView()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.editgrid = New System.Windows.Forms.DataGridView()
-        Me.cek = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
@@ -55,17 +52,19 @@ Partial Class master_customer
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.gridcustomer = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridcustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarButtonItem9
@@ -255,16 +254,6 @@ Partial Class master_customer
         Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
         '
-        'dataview
-        '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(5, 24)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(672, 311)
-        Me.dataview.TabIndex = 6
-        '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
@@ -276,30 +265,12 @@ Partial Class master_customer
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.editgrid)
-        Me.GroupControl3.Controls.Add(Me.dataview)
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 183)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Customer"
-        '
-        'editgrid
-        '
-        Me.editgrid.AllowUserToAddRows = False
-        Me.editgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.editgrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cek})
-        Me.editgrid.Location = New System.Drawing.Point(5, 24)
-        Me.editgrid.Name = "editgrid"
-        Me.editgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.editgrid.Size = New System.Drawing.Size(672, 311)
-        Me.editgrid.TabIndex = 4
-        Me.editgrid.Visible = False
-        '
-        'cek
-        '
-        Me.cek.HeaderText = "Checklist"
-        Me.cek.Name = "cek"
         '
         'GroupControl2
         '
@@ -372,6 +343,21 @@ Partial Class master_customer
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl1.MainView = Me.gridcustomer
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(682, 325)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridcustomer})
+        '
+        'gridcustomer
+        '
+        Me.gridcustomer.GridControl = Me.GridControl1
+        Me.gridcustomer.Name = "gridcustomer"
+        '
         'master_customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -389,16 +375,16 @@ Partial Class master_customer
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridcustomer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -426,11 +412,8 @@ Partial Class master_customer
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents editgrid As System.Windows.Forms.DataGridView
-    Friend WithEvents cek As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
@@ -438,4 +421,6 @@ Partial Class master_customer
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridcustomer As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
