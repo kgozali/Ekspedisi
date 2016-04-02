@@ -23,5 +23,7 @@ Public Class master_customer
 
         'testing
 
+        'asdasdasdasdasdasdasdas
+
     End Sub
 End Class
