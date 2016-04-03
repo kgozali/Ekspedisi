@@ -117,8 +117,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
-        Me.BackstageViewControl1.SelectedTabIndex = 0
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
+        Me.BackstageViewControl1.SelectedTabIndex = 2
         Me.BackstageViewControl1.Size = New System.Drawing.Size(822, 508)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -654,7 +654,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = True
+        Me.BackstageViewTabItem1.Selected = False
         '
         'BackstageViewTabItem5
         '
@@ -670,7 +670,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = False
+        Me.BackstageViewTabItem8.Selected = True
         '
         'BackstageViewTabItem7
         '

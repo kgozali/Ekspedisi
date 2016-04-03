@@ -52,4 +52,8 @@
     Private Sub SimpleButton12_Click(sender As Object, e As EventArgs) Handles SimpleButton12.Click
         master_user.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton20_Click(sender As Object, e As EventArgs) Handles SimpleButton20.Click
+        booking_truk.ShowDialog()
+    End Sub
 End Class

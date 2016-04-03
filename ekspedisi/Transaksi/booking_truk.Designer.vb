@@ -48,6 +48,8 @@ Partial Class booking_truk
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TimeEdit1 = New DevExpress.XtraEditors.TimeEdit()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -195,6 +197,7 @@ Partial Class booking_truk
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"(Pilih)"})
         Me.ComboBox1.Location = New System.Drawing.Point(215, 119)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
@@ -240,7 +243,7 @@ Partial Class booking_truk
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(551, 70)
+        Me.TextBox5.Location = New System.Drawing.Point(594, 72)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(146, 21)
         Me.TextBox5.TabIndex = 22
@@ -298,11 +301,33 @@ Partial Class booking_truk
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
         Me.TimeEdit1.TabIndex = 14
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label14.Location = New System.Drawing.Point(272, 97)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(35, 18)
+        Me.Label14.TabIndex = 144
+        Me.Label14.Text = "Jam"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label15.Location = New System.Drawing.Point(553, 73)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(35, 18)
+        Me.Label15.TabIndex = 145
+        Me.Label15.Text = "Rp. "
+        '
         'booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(894, 346)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.TimeEdit1)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.SimpleButton1)
@@ -366,4 +391,6 @@ Partial Class booking_truk
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents TimeEdit1 As DevExpress.XtraEditors.TimeEdit
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

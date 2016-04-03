@@ -7,8 +7,9 @@ Public Module Module1
             connect.Open()
             Dim command As New MySqlCommand(x, connect)
             Dim a As String = command.ExecuteScalar()
-            Return a
             connect.Close()
+            Return a
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -16,14 +17,13 @@ Public Module Module1
 
     Function DtTable(ByVal x As String)
         Try
-            connect.Open()
             Dim command As New MySqlCommand(x, connect)
             command.Connection = connect
             Dim data As DataTable = New DataTable
             Dim adapter As New MySqlDataAdapter(command)
             adapter.Fill(data)
-            connect.Close()
             Return data
+            data.Clear()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -42,7 +42,7 @@ Public Module Module1
 
     Function DtTablemaster(ByVal x As String)
         Try
-            connect.Open()
+
             Dim command As New MySqlCommand(x, connect)
             command.Connection = connect
             Dim data As DataTable = New DataTable
@@ -52,7 +52,7 @@ Public Module Module1
             'Ini nambahnya di samping kiri, kalo mau disamping kanan code buat nambahnya di taruk setelah adapter fill
             data.Columns.Add("Check", GetType(Boolean))
             adapter.Fill(data)
-            connect.Close()
+
             Return data
 
         Catch ex As Exception
