@@ -30,8 +30,6 @@ Partial Class master_akun
         Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.editgrid = New System.Windows.Forms.DataGridView()
-        Me.cek = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.dataview = New System.Windows.Forms.DataGridView()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
@@ -53,17 +51,20 @@ Partial Class master_akun
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl2
@@ -148,30 +149,13 @@ Partial Class master_akun
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.editgrid)
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Controls.Add(Me.dataview)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 183)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Data Kota"
-        '
-        'editgrid
-        '
-        Me.editgrid.AllowUserToAddRows = False
-        Me.editgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.editgrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cek})
-        Me.editgrid.Location = New System.Drawing.Point(3, 24)
-        Me.editgrid.Name = "editgrid"
-        Me.editgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.editgrid.Size = New System.Drawing.Size(414, 311)
-        Me.editgrid.TabIndex = 4
-        Me.editgrid.Visible = False
-        '
-        'cek
-        '
-        Me.cek.HeaderText = "Checklist"
-        Me.cek.Name = "cek"
         '
         'dataview
         '
@@ -346,6 +330,21 @@ Partial Class master_akun
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(0, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(417, 311)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
         'master_akun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,19 +358,21 @@ Partial Class master_akun
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_akun"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Data Akun"
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -386,8 +387,6 @@ Partial Class master_akun
     Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents editgrid As System.Windows.Forms.DataGridView
-    Friend WithEvents cek As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
@@ -409,4 +408,6 @@ Partial Class master_akun
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

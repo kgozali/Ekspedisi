@@ -52,19 +52,15 @@ Partial Class main_menu
         Me.SimpleButton38 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton39 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BackstageViewClientControl8 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
-        Me.BackstageViewClientControl8 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.SimpleButton24 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton26 = New DevExpress.XtraEditors.SimpleButton()
@@ -74,6 +70,10 @@ Partial Class main_menu
         Me.SimpleButton30 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton32 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewTabItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem5 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem8 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
@@ -93,10 +93,10 @@ Partial Class main_menu
         Me.BackstageViewClientControl1.SuspendLayout()
         Me.BackstageViewClientControl5.SuspendLayout()
         Me.XtraScrollableControl1.SuspendLayout()
-        Me.BackstageViewClientControl7.SuspendLayout()
-        Me.BackstageViewClientControl10.SuspendLayout()
         Me.BackstageViewClientControl8.SuspendLayout()
+        Me.BackstageViewClientControl7.SuspendLayout()
         Me.BackstageViewClientControl6.SuspendLayout()
+        Me.BackstageViewClientControl10.SuspendLayout()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
@@ -117,8 +117,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem10
-        Me.BackstageViewControl1.SelectedTabIndex = 5
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
+        Me.BackstageViewControl1.SelectedTabIndex = 0
         Me.BackstageViewControl1.Size = New System.Drawing.Size(822, 508)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -432,6 +432,45 @@ Partial Class main_menu
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Laporan"
         '
+        'BackstageViewClientControl8
+        '
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton19)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton20)
+        Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
+        Me.BackstageViewClientControl8.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl8.Name = "BackstageViewClientControl8"
+        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl8.TabIndex = 7
+        '
+        'SimpleButton19
+        '
+        Me.SimpleButton19.Image = CType(resources.GetObject("SimpleButton19.Image"), System.Drawing.Image)
+        Me.SimpleButton19.Location = New System.Drawing.Point(237, 67)
+        Me.SimpleButton19.Name = "SimpleButton19"
+        Me.SimpleButton19.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton19.TabIndex = 21
+        Me.SimpleButton19.Text = "Delivery Order"
+        '
+        'SimpleButton20
+        '
+        Me.SimpleButton20.Image = CType(resources.GetObject("SimpleButton20.Image"), System.Drawing.Image)
+        Me.SimpleButton20.Location = New System.Drawing.Point(53, 67)
+        Me.SimpleButton20.Name = "SimpleButton20"
+        Me.SimpleButton20.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton20.TabIndex = 20
+        Me.SimpleButton20.Text = "Booking Truk"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(180, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(273, 33)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Transaksi Perusahaan"
+        '
         'BackstageViewClientControl7
         '
         Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton17)
@@ -480,84 +519,6 @@ Partial Class main_menu
         Me.Label4.Size = New System.Drawing.Size(250, 33)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Piutang Perusahaan"
-        '
-        'BackstageViewClientControl10
-        '
-        Me.BackstageViewClientControl10.Controls.Add(Me.Label7)
-        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton21)
-        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
-        Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
-        Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
-        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(627, 508)
-        Me.BackstageViewClientControl10.TabIndex = 8
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.White
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(223, 9)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(172, 33)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "User Settings"
-        '
-        'SimpleButton21
-        '
-        Me.SimpleButton21.Image = CType(resources.GetObject("SimpleButton21.Image"), System.Drawing.Image)
-        Me.SimpleButton21.Location = New System.Drawing.Point(239, 71)
-        Me.SimpleButton21.Name = "SimpleButton21"
-        Me.SimpleButton21.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton21.TabIndex = 5
-        Me.SimpleButton21.Text = "Log Out"
-        '
-        'SimpleButton22
-        '
-        Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
-        Me.SimpleButton22.Location = New System.Drawing.Point(55, 71)
-        Me.SimpleButton22.Name = "SimpleButton22"
-        Me.SimpleButton22.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton22.TabIndex = 4
-        Me.SimpleButton22.Text = "Change Password"
-        '
-        'BackstageViewClientControl8
-        '
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton19)
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton20)
-        Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
-        Me.BackstageViewClientControl8.Location = New System.Drawing.Point(195, 0)
-        Me.BackstageViewClientControl8.Name = "BackstageViewClientControl8"
-        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(627, 508)
-        Me.BackstageViewClientControl8.TabIndex = 7
-        '
-        'SimpleButton19
-        '
-        Me.SimpleButton19.Image = CType(resources.GetObject("SimpleButton19.Image"), System.Drawing.Image)
-        Me.SimpleButton19.Location = New System.Drawing.Point(237, 67)
-        Me.SimpleButton19.Name = "SimpleButton19"
-        Me.SimpleButton19.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton19.TabIndex = 21
-        Me.SimpleButton19.Text = "Delivery Order"
-        '
-        'SimpleButton20
-        '
-        Me.SimpleButton20.Image = CType(resources.GetObject("SimpleButton20.Image"), System.Drawing.Image)
-        Me.SimpleButton20.Location = New System.Drawing.Point(53, 67)
-        Me.SimpleButton20.Name = "SimpleButton20"
-        Me.SimpleButton20.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton20.TabIndex = 20
-        Me.SimpleButton20.Text = "Booking Truk"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.White
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(180, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(273, 33)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Transaksi Perusahaan"
         '
         'BackstageViewClientControl6
         '
@@ -648,13 +609,52 @@ Partial Class main_menu
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Keuangan"
         '
+        'BackstageViewClientControl10
+        '
+        Me.BackstageViewClientControl10.Controls.Add(Me.Label7)
+        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton21)
+        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
+        Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
+        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl10.TabIndex = 8
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(223, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(172, 33)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "User Settings"
+        '
+        'SimpleButton21
+        '
+        Me.SimpleButton21.Image = CType(resources.GetObject("SimpleButton21.Image"), System.Drawing.Image)
+        Me.SimpleButton21.Location = New System.Drawing.Point(239, 71)
+        Me.SimpleButton21.Name = "SimpleButton21"
+        Me.SimpleButton21.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton21.TabIndex = 5
+        Me.SimpleButton21.Text = "Log Out"
+        '
+        'SimpleButton22
+        '
+        Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
+        Me.SimpleButton22.Location = New System.Drawing.Point(55, 71)
+        Me.SimpleButton22.Name = "SimpleButton22"
+        Me.SimpleButton22.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton22.TabIndex = 4
+        Me.SimpleButton22.Text = "Change Password"
+        '
         'BackstageViewTabItem1
         '
         Me.BackstageViewTabItem1.Caption = "Master Data"
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = False
+        Me.BackstageViewTabItem1.Selected = True
         '
         'BackstageViewTabItem5
         '
@@ -694,7 +694,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
         Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
-        Me.BackstageViewTabItem10.Selected = True
+        Me.BackstageViewTabItem10.Selected = False
         '
         'BackstageViewClientControl3
         '
@@ -758,6 +758,7 @@ Partial Class main_menu
         Me.ClientSize = New System.Drawing.Size(822, 508)
         Me.Controls.Add(Me.BackstageViewControl1)
         Me.Name = "main_menu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackstageViewControl1.ResumeLayout(False)
@@ -766,14 +767,14 @@ Partial Class main_menu
         Me.BackstageViewClientControl5.ResumeLayout(False)
         Me.BackstageViewClientControl5.PerformLayout()
         Me.XtraScrollableControl1.ResumeLayout(False)
-        Me.BackstageViewClientControl7.ResumeLayout(False)
-        Me.BackstageViewClientControl7.PerformLayout()
-        Me.BackstageViewClientControl10.ResumeLayout(False)
-        Me.BackstageViewClientControl10.PerformLayout()
         Me.BackstageViewClientControl8.ResumeLayout(False)
         Me.BackstageViewClientControl8.PerformLayout()
+        Me.BackstageViewClientControl7.ResumeLayout(False)
+        Me.BackstageViewClientControl7.PerformLayout()
         Me.BackstageViewClientControl6.ResumeLayout(False)
         Me.BackstageViewClientControl6.PerformLayout()
+        Me.BackstageViewClientControl10.ResumeLayout(False)
+        Me.BackstageViewClientControl10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -32,8 +32,6 @@ Partial Class master_kontak_principle
         Me.dataview = New System.Windows.Forms.DataGridView()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.editgrid = New System.Windows.Forms.DataGridView()
-        Me.cek = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
@@ -55,17 +53,20 @@ Partial Class master_kontak_principle
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarButtonItem2
@@ -164,30 +165,13 @@ Partial Class master_kontak_principle
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.editgrid)
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Controls.Add(Me.dataview)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 180)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Data Kontak Principle"
-        '
-        'editgrid
-        '
-        Me.editgrid.AllowUserToAddRows = False
-        Me.editgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.editgrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cek})
-        Me.editgrid.Location = New System.Drawing.Point(5, 24)
-        Me.editgrid.Name = "editgrid"
-        Me.editgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.editgrid.Size = New System.Drawing.Size(672, 311)
-        Me.editgrid.TabIndex = 4
-        Me.editgrid.Visible = False
-        '
-        'cek
-        '
-        Me.cek.HeaderText = "Checklist"
-        Me.cek.Name = "cek"
         '
         'GroupControl2
         '
@@ -372,6 +356,21 @@ Partial Class master_kontak_principle
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(672, 311)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
         'master_kontak_principle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -385,12 +384,12 @@ Partial Class master_kontak_principle
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_kontak_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Kontak Principle"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.editgrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
@@ -399,6 +398,8 @@ Partial Class master_kontak_principle
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -415,8 +416,6 @@ Partial Class master_kontak_principle
     Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents editgrid As System.Windows.Forms.DataGridView
-    Friend WithEvents cek As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
@@ -438,4 +437,6 @@ Partial Class master_kontak_principle
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
