@@ -125,7 +125,7 @@ Partial Class booking_truk
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label8.Location = New System.Drawing.Point(382, 22)
+        Me.Label8.Location = New System.Drawing.Point(427, 22)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(118, 18)
         Me.Label8.TabIndex = 7
@@ -135,7 +135,7 @@ Partial Class booking_truk
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label9.Location = New System.Drawing.Point(382, 47)
+        Me.Label9.Location = New System.Drawing.Point(427, 47)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(119, 18)
         Me.Label9.TabIndex = 8
@@ -145,7 +145,7 @@ Partial Class booking_truk
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label10.Location = New System.Drawing.Point(382, 72)
+        Me.Label10.Location = New System.Drawing.Point(427, 72)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(72, 18)
         Me.Label10.TabIndex = 9
@@ -155,7 +155,7 @@ Partial Class booking_truk
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label11.Location = New System.Drawing.Point(382, 209)
+        Me.Label11.Location = New System.Drawing.Point(427, 209)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 18)
         Me.Label11.TabIndex = 10
@@ -165,7 +165,7 @@ Partial Class booking_truk
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label12.Location = New System.Drawing.Point(382, 97)
+        Me.Label12.Location = New System.Drawing.Point(427, 97)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(114, 18)
         Me.Label12.TabIndex = 11
@@ -226,28 +226,28 @@ Partial Class booking_truk
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(506, 19)
+        Me.TextBox3.Location = New System.Drawing.Point(551, 19)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 21)
         Me.TextBox3.TabIndex = 20
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(507, 44)
+        Me.TextBox4.Location = New System.Drawing.Point(552, 44)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(176, 21)
         Me.TextBox4.TabIndex = 21
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(460, 69)
+        Me.TextBox5.Location = New System.Drawing.Point(551, 70)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(146, 21)
         Me.TextBox5.TabIndex = 22
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(481, 210)
+        Me.RichTextBox1.Location = New System.Drawing.Point(552, 209)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(331, 96)
         Me.RichTextBox1.TabIndex = 24
@@ -255,7 +255,7 @@ Partial Class booking_truk
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(502, 97)
+        Me.RichTextBox2.Location = New System.Drawing.Point(551, 98)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(331, 96)
         Me.RichTextBox2.TabIndex = 23
@@ -264,7 +264,7 @@ Partial Class booking_truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(733, 312)
+        Me.SimpleButton1.Location = New System.Drawing.Point(782, 312)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 142
@@ -273,7 +273,7 @@ Partial Class booking_truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(627, 312)
+        Me.Submit.Location = New System.Drawing.Point(676, 312)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 141
@@ -302,7 +302,7 @@ Partial Class booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(842, 346)
+        Me.ClientSize = New System.Drawing.Size(894, 346)
         Me.Controls.Add(Me.TimeEdit1)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.SimpleButton1)
