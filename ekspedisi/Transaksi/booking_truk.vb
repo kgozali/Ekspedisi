@@ -20,8 +20,8 @@ Public Class booking_truk
 
             cbtruk = DtTable("select id_truk `Kode Truk`,no_pol `Nomor Polisi` from mtruk")
             ComboBox3.DataSource = cbtruk
-            ComboBox3.DisplayMember = "Kode Truk"
-            ComboBox3.ValueMember = "Nomor Polisi"
+            ComboBox3.DisplayMember = "Nomor Polisi"
+            ComboBox3.ValueMember = "Kode Truk"
 
             asd = "select id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute` from mrute"
             cbrute = DtTable(asd)
@@ -82,5 +82,37 @@ Public Class booking_truk
         RichTextBox1.Text = ""
         RichTextBox2.Text = ""
         DateTimePicker1.ResetText()
+    End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Dim idbooking As String = ""
+        Dim tgl As String = ""
+        Dim jam As New DateTime
+        Dim tgljam As String = ""
+        Dim durasi As String = ""
+        Dim principle, rute, supir, truk, kontak, tel, al, keterangan, dp As String
+
+        idbooking = TextBox1.Text
+        tgl = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
+        jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
+        tgljam = tgl & " " & jam
+        durasi = TextBox2.Text
+        principle = ComboBox1.SelectedValue.ToString
+        supir = ComboBox2.SelectedValue.ToString
+        rute = ComboBox4.SelectedValue.ToString
+        truk = ComboBox3.SelectedValue.ToString
+        kontak = TextBox3.Text
+        tel = TextBox4.Text
+        dp = TextBox5.Text
+        al = RichTextBox1.Text
+        keterangan = RichTextBox2.Text
+
+        Try
+            InsertInto("insert into booking_truk values('" + idbooking + "','" + tgljam + "','" + durasi + "','" + principle + "','" + supir + "','" + truk + "','" + keterangan + "','" + rute + "','" + al + "','" + kontak + "','" + tel + "','" + dp + "',1)")
+            MsgBox("Sukses")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 End Class
