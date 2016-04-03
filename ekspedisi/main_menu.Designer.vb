@@ -1,427 +1,655 @@
-﻿Partial Public Class main_menu
-    ''' <summary>
-    ''' Required designer variable.
-    ''' </summary>
-    Private components As System.ComponentModel.IContainer = Nothing
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class main_menu
+    Inherits DevExpress.XtraEditors.XtraForm
 
-    ''' <summary>
-    ''' Clean up any resources being used.
-    ''' </summary>
-    ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        If disposing AndAlso (components IsNot Nothing) Then
+        If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
         End If
         MyBase.Dispose(disposing)
     End Sub
 
-#Region "Windows Form Designer generated code"
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
 
-    ''' <summary>
-    ''' Required method for Designer support - do not modify
-    ''' the contents of this method with the code editor.
-    ''' </summary>
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main_menu))
-        Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.menumasterdata = New DevExpress.XtraBars.BarButtonItem()
-        Me.PopupMenu1 = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.makun = New DevExpress.XtraBars.BarButtonItem()
-        Me.mbank = New DevExpress.XtraBars.BarButtonItem()
-        Me.mbarang = New DevExpress.XtraBars.BarButtonItem()
-        Me.mcustomer = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.mkaryawan = New DevExpress.XtraBars.BarButtonItem()
-        Me.mkategorisupplier = New DevExpress.XtraBars.BarButtonItem()
-        Me.mkontakprinciple = New DevExpress.XtraBars.BarButtonItem()
-        Me.mkota = New DevExpress.XtraBars.BarButtonItem()
-        Me.mperubahanharaga = New DevExpress.XtraBars.BarButtonItem()
-        Me.mprinciple = New DevExpress.XtraBars.BarButtonItem()
-        Me.mrekening = New DevExpress.XtraBars.BarButtonItem()
-        Me.mrute = New DevExpress.XtraBars.BarButtonItem()
-        Me.msupplier = New DevExpress.XtraBars.BarButtonItem()
-        Me.mtruck = New DevExpress.XtraBars.BarButtonItem()
-        Me.muser = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarCheckItem1 = New DevExpress.XtraBars.BarCheckItem()
-        Me.menutransaksi = New DevExpress.XtraBars.BarButtonItem()
-        Me.PopupMenu2 = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
-        Me.menulaporan = New DevExpress.XtraBars.BarButtonItem()
-        Me.PopupMenu3 = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.masuklogin = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.menuhistoryharga = New DevExpress.XtraBars.BarButtonItem()
-        CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BackstageViewControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewControl()
+        Me.BackstageViewClientControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.masterakun = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton9 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton11 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton12 = New DevExpress.XtraEditors.SimpleButton()
+        Me.BackstageViewClientControl2 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem2 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.SimpleButton10 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BackstageViewClientControl5 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem5 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem6 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem7 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl3 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem3 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl4 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem4 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl8 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem8 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.BackstageViewItemSeparator1 = New DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator()
+        Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem10 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl9 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem9 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl11 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BackstageViewClientControl12 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.BackstageViewTabItem12 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton16 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
+        CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BackstageViewControl1.SuspendLayout()
+        Me.BackstageViewClientControl1.SuspendLayout()
+        Me.BackstageViewClientControl2.SuspendLayout()
+        Me.BackstageViewClientControl5.SuspendLayout()
+        Me.BackstageViewClientControl6.SuspendLayout()
+        Me.BackstageViewClientControl7.SuspendLayout()
+        Me.BackstageViewClientControl8.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ribbonControl1
-        '
-        Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.menumasterdata, Me.mkaryawan, Me.mbank, Me.mbarang, Me.BarCheckItem1, Me.mcustomer, Me.BarButtonItem1, Me.mkategorisupplier, Me.mkontakprinciple, Me.mkota, Me.mperubahanharaga, Me.mprinciple, Me.mrekening, Me.mrute, Me.msupplier, Me.mtruck, Me.muser, Me.makun, Me.menutransaksi, Me.menulaporan, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6})
-        Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.MaxItemId = 27
-        Me.ribbonControl1.Name = "ribbonControl1"
-        Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
-        Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
-        Me.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ribbonControl1.ShowCategoryInCaption = False
-        Me.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ribbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl1.ShowQatLocationSelector = False
-        Me.ribbonControl1.ShowToolbarCustomizeItem = False
-        Me.ribbonControl1.Size = New System.Drawing.Size(758, 123)
-        Me.ribbonControl1.Toolbar.ShowCustomizeItem = False
-        '
-        'menumasterdata
-        '
-        Me.menumasterdata.ActAsDropDown = True
-        Me.menumasterdata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.menumasterdata.Caption = "Master Data"
-        Me.menumasterdata.DropDownControl = Me.PopupMenu1
-        Me.menumasterdata.Glyph = CType(resources.GetObject("menumasterdata.Glyph"), System.Drawing.Image)
-        Me.menumasterdata.Id = 1
-        Me.menumasterdata.LargeGlyph = CType(resources.GetObject("menumasterdata.LargeGlyph"), System.Drawing.Image)
-        Me.menumasterdata.Name = "menumasterdata"
-        '
-        'PopupMenu1
-        '
-        Me.PopupMenu1.ItemLinks.Add(Me.makun)
-        Me.PopupMenu1.ItemLinks.Add(Me.mbank)
-        Me.PopupMenu1.ItemLinks.Add(Me.mbarang)
-        Me.PopupMenu1.ItemLinks.Add(Me.mcustomer)
-        Me.PopupMenu1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.PopupMenu1.ItemLinks.Add(Me.mkaryawan)
-        Me.PopupMenu1.ItemLinks.Add(Me.mkategorisupplier)
-        Me.PopupMenu1.ItemLinks.Add(Me.mkontakprinciple)
-        Me.PopupMenu1.ItemLinks.Add(Me.mkota)
-        Me.PopupMenu1.ItemLinks.Add(Me.mperubahanharaga)
-        Me.PopupMenu1.ItemLinks.Add(Me.mprinciple)
-        Me.PopupMenu1.ItemLinks.Add(Me.mrekening)
-        Me.PopupMenu1.ItemLinks.Add(Me.mrute)
-        Me.PopupMenu1.ItemLinks.Add(Me.msupplier)
-        Me.PopupMenu1.ItemLinks.Add(Me.mtruck)
-        Me.PopupMenu1.ItemLinks.Add(Me.muser)
-        Me.PopupMenu1.Name = "PopupMenu1"
-        Me.PopupMenu1.Ribbon = Me.ribbonControl1
-        '
-        'makun
-        '
-        Me.makun.Caption = "Master Akun"
-        Me.makun.Id = 18
-        Me.makun.Name = "makun"
-        '
-        'mbank
-        '
-        Me.mbank.Caption = "Master Bank"
-        Me.mbank.Id = 3
-        Me.mbank.Name = "mbank"
-        '
-        'mbarang
-        '
-        Me.mbarang.Caption = "Master Barang"
-        Me.mbarang.Id = 4
-        Me.mbarang.Name = "mbarang"
-        '
-        'mcustomer
-        '
-        Me.mcustomer.Caption = "Master Customer"
-        Me.mcustomer.Id = 6
-        Me.mcustomer.Name = "mcustomer"
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "Master Jabatan"
-        Me.BarButtonItem1.Id = 7
-        Me.BarButtonItem1.Name = "BarButtonItem1"
-        '
-        'mkaryawan
-        '
-        Me.mkaryawan.Caption = "Master Karyawan"
-        Me.mkaryawan.Id = 2
-        Me.mkaryawan.Name = "mkaryawan"
-        '
-        'mkategorisupplier
-        '
-        Me.mkategorisupplier.Caption = "Master Katerogri Supplier"
-        Me.mkategorisupplier.Id = 8
-        Me.mkategorisupplier.Name = "mkategorisupplier"
-        '
-        'mkontakprinciple
-        '
-        Me.mkontakprinciple.Caption = "Master Kontak Principle"
-        Me.mkontakprinciple.Id = 9
-        Me.mkontakprinciple.Name = "mkontakprinciple"
-        '
-        'mkota
-        '
-        Me.mkota.Caption = "Master Kota"
-        Me.mkota.Id = 10
-        Me.mkota.Name = "mkota"
-        '
-        'mperubahanharaga
-        '
-        Me.mperubahanharaga.Caption = "History Perubahan Harga"
-        Me.mperubahanharaga.Id = 11
-        Me.mperubahanharaga.Name = "mperubahanharaga"
-        '
-        'mprinciple
-        '
-        Me.mprinciple.Caption = "Master Principle"
-        Me.mprinciple.Id = 12
-        Me.mprinciple.Name = "mprinciple"
-        '
-        'mrekening
-        '
-        Me.mrekening.Caption = "Master Rekening"
-        Me.mrekening.Id = 13
-        Me.mrekening.Name = "mrekening"
-        '
-        'mrute
-        '
-        Me.mrute.Caption = "Master Rute"
-        Me.mrute.Id = 14
-        Me.mrute.Name = "mrute"
-        '
-        'msupplier
-        '
-        Me.msupplier.Caption = "Master Supplier"
-        Me.msupplier.Id = 15
-        Me.msupplier.Name = "msupplier"
-        '
-        'mtruck
-        '
-        Me.mtruck.Caption = "Master Truck"
-        Me.mtruck.Id = 16
-        Me.mtruck.Name = "mtruck"
-        '
-        'muser
-        '
-        Me.muser.Caption = "Master User"
-        Me.muser.Id = 17
-        Me.muser.Name = "muser"
-        '
-        'BarCheckItem1
-        '
-        Me.BarCheckItem1.Id = 5
-        Me.BarCheckItem1.Name = "BarCheckItem1"
-        '
-        'menutransaksi
-        '
-        Me.menutransaksi.ActAsDropDown = True
-        Me.menutransaksi.Caption = "Transaksi"
-        Me.menutransaksi.DropDownControl = Me.PopupMenu2
-        Me.menutransaksi.Glyph = CType(resources.GetObject("menutransaksi.Glyph"), System.Drawing.Image)
-        Me.menutransaksi.Id = 20
-        Me.menutransaksi.LargeGlyph = CType(resources.GetObject("menutransaksi.LargeGlyph"), System.Drawing.Image)
-        Me.menutransaksi.Name = "menutransaksi"
-        '
-        'PopupMenu2
-        '
-        Me.PopupMenu2.ItemLinks.Add(Me.BarButtonItem2)
-        Me.PopupMenu2.ItemLinks.Add(Me.BarButtonItem3)
-        Me.PopupMenu2.ItemLinks.Add(Me.BarButtonItem4)
-        Me.PopupMenu2.ItemLinks.Add(Me.BarButtonItem5)
-        Me.PopupMenu2.ItemLinks.Add(Me.BarButtonItem6)
-        Me.PopupMenu2.Name = "PopupMenu2"
-        Me.PopupMenu2.Ribbon = Me.ribbonControl1
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "Service Truck"
-        Me.BarButtonItem2.Id = 22
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'BarButtonItem3
-        '
-        Me.BarButtonItem3.Caption = "Booking Truck"
-        Me.BarButtonItem3.Id = 23
-        Me.BarButtonItem3.Name = "BarButtonItem3"
-        '
-        'BarButtonItem4
-        '
-        Me.BarButtonItem4.Caption = "Delivery Order"
-        Me.BarButtonItem4.Id = 24
-        Me.BarButtonItem4.Name = "BarButtonItem4"
-        '
-        'BarButtonItem5
-        '
-        Me.BarButtonItem5.Caption = "Transaksi Kas"
-        Me.BarButtonItem5.Id = 25
-        Me.BarButtonItem5.Name = "BarButtonItem5"
-        '
-        'BarButtonItem6
-        '
-        Me.BarButtonItem6.Caption = "Transaksi Bank"
-        Me.BarButtonItem6.Id = 26
-        Me.BarButtonItem6.Name = "BarButtonItem6"
-        '
-        'menulaporan
-        '
-        Me.menulaporan.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.menulaporan.Caption = "Laporan"
-        Me.menulaporan.DropDownControl = Me.PopupMenu3
-        Me.menulaporan.Glyph = CType(resources.GetObject("menulaporan.Glyph"), System.Drawing.Image)
-        Me.menulaporan.Id = 21
-        Me.menulaporan.LargeGlyph = CType(resources.GetObject("menulaporan.LargeGlyph"), System.Drawing.Image)
-        Me.menulaporan.Name = "menulaporan"
-        '
-        'PopupMenu3
-        '
-        Me.PopupMenu3.Name = "PopupMenu3"
-        Me.PopupMenu3.Ribbon = Me.ribbonControl1
-        '
-        'ribbonPage1
-        '
-        Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1})
-        Me.ribbonPage1.Name = "ribbonPage1"
-        Me.ribbonPage1.Text = "ribbonPage1"
-        '
-        'ribbonPageGroup1
-        '
-        Me.ribbonPageGroup1.ItemLinks.Add(Me.menumasterdata, False, "", "", True)
-        Me.ribbonPageGroup1.ItemLinks.Add(Me.menutransaksi)
-        Me.ribbonPageGroup1.ItemLinks.Add(Me.menulaporan)
-        Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
-        Me.ribbonPageGroup1.ShowCaptionButton = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.TextEdit1)
-        Me.Panel1.Controls.Add(Me.masuklogin)
-        Me.Panel1.Controls.Add(Me.LabelControl2)
-        Me.Panel1.Controls.Add(Me.LabelControl1)
-        Me.Panel1.Location = New System.Drawing.Point(200, 198)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(329, 163)
-        Me.Panel1.TabIndex = 12
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(121, 76)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TextBox1.Size = New System.Drawing.Size(173, 21)
-        Me.TextBox1.TabIndex = 2
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.Location = New System.Drawing.Point(121, 33)
-        Me.TextEdit1.MenuManager = Me.ribbonControl1
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(173, 20)
-        Me.TextEdit1.TabIndex = 1
-        '
-        'masuklogin
-        '
-        Me.masuklogin.Location = New System.Drawing.Point(147, 129)
-        Me.masuklogin.Name = "masuklogin"
-        Me.masuklogin.Size = New System.Drawing.Size(75, 23)
-        Me.masuklogin.TabIndex = 3
-        Me.masuklogin.Text = "Login"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(38, 82)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(59, 15)
-        Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "Password :"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(38, 36)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(62, 15)
-        Me.LabelControl1.TabIndex = 5
-        Me.LabelControl1.Text = "Username :"
-        '
-        'menuhistoryharga
-        '
-        Me.menuhistoryharga.Caption = "History Perubahan Harga"
-        Me.menuhistoryharga.Glyph = CType(resources.GetObject("menuhistoryharga.Glyph"), System.Drawing.Image)
-        Me.menuhistoryharga.Id = 19
-        Me.menuhistoryharga.LargeGlyph = CType(resources.GetObject("menuhistoryharga.LargeGlyph"), System.Drawing.Image)
-        Me.menuhistoryharga.Name = "menuhistoryharga"
+        'BackstageViewControl1
+        '
+        Me.BackstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl1)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl2)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl5)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl6)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl7)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl8)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl10)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl12)
+        Me.BackstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem1)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem2)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem6)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem7)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem8)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewItemSeparator1)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem12)
+        Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
+        Me.BackstageViewControl1.Name = "BackstageViewControl1"
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
+        Me.BackstageViewControl1.SelectedTabIndex = 5
+        Me.BackstageViewControl1.Size = New System.Drawing.Size(822, 508)
+        Me.BackstageViewControl1.TabIndex = 0
+        Me.BackstageViewControl1.Text = "BackstageViewControl1"
+        '
+        'BackstageViewClientControl1
+        '
+        Me.BackstageViewClientControl1.Appearance.BackColor = System.Drawing.Color.White
+        Me.BackstageViewClientControl1.Appearance.Options.UseBackColor = True
+        Me.BackstageViewClientControl1.Controls.Add(Me.Label1)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton12)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton11)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton10)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton9)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton8)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton7)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton6)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton5)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton4)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton3)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton2)
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton1)
+        Me.BackstageViewClientControl1.Controls.Add(Me.masterakun)
+        Me.BackstageViewClientControl1.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl1.Name = "BackstageViewClientControl1"
+        Me.BackstageViewClientControl1.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl1.TabIndex = 0
+        '
+        'BackstageViewTabItem1
+        '
+        Me.BackstageViewTabItem1.Caption = "Master Data"
+        Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
+        Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
+        Me.BackstageViewTabItem1.Selected = False
+        '
+        'masterakun
+        '
+        Me.masterakun.Image = CType(resources.GetObject("masterakun.Image"), System.Drawing.Image)
+        Me.masterakun.Location = New System.Drawing.Point(52, 90)
+        Me.masterakun.Name = "masterakun"
+        Me.masterakun.Size = New System.Drawing.Size(136, 54)
+        Me.masterakun.TabIndex = 1
+        Me.masterakun.Text = "Master Akun"
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(52, 319)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton1.TabIndex = 2
+        Me.SimpleButton1.Text = "Master Barang"
+        '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
+        Me.SimpleButton2.Location = New System.Drawing.Point(236, 90)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton2.TabIndex = 3
+        Me.SimpleButton2.Text = "Master Customer"
+        '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(420, 90)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton3.TabIndex = 4
+        Me.SimpleButton3.Text = "Master Jabatan"
+        '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"), System.Drawing.Image)
+        Me.SimpleButton4.Location = New System.Drawing.Point(52, 167)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton4.TabIndex = 5
+        Me.SimpleButton4.Text = "Master Karyawan"
+        '
+        'SimpleButton5
+        '
+        Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
+        Me.SimpleButton5.Location = New System.Drawing.Point(236, 167)
+        Me.SimpleButton5.Name = "SimpleButton5"
+        Me.SimpleButton5.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton5.TabIndex = 6
+        Me.SimpleButton5.Text = "Kategori Supplier"
+        '
+        'SimpleButton6
+        '
+        Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
+        Me.SimpleButton6.Location = New System.Drawing.Point(420, 167)
+        Me.SimpleButton6.Name = "SimpleButton6"
+        Me.SimpleButton6.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton6.TabIndex = 7
+        Me.SimpleButton6.Text = "Kontak Suplier"
+        '
+        'SimpleButton7
+        '
+        Me.SimpleButton7.Image = CType(resources.GetObject("SimpleButton7.Image"), System.Drawing.Image)
+        Me.SimpleButton7.Location = New System.Drawing.Point(236, 319)
+        Me.SimpleButton7.Name = "SimpleButton7"
+        Me.SimpleButton7.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton7.TabIndex = 8
+        Me.SimpleButton7.Text = "Master Kota"
+        '
+        'SimpleButton8
+        '
+        Me.SimpleButton8.Image = CType(resources.GetObject("SimpleButton8.Image"), System.Drawing.Image)
+        Me.SimpleButton8.Location = New System.Drawing.Point(52, 243)
+        Me.SimpleButton8.Name = "SimpleButton8"
+        Me.SimpleButton8.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton8.TabIndex = 9
+        Me.SimpleButton8.Text = "Perubahan Harga"
+        '
+        'SimpleButton9
+        '
+        Me.SimpleButton9.Image = CType(resources.GetObject("SimpleButton9.Image"), System.Drawing.Image)
+        Me.SimpleButton9.Location = New System.Drawing.Point(236, 243)
+        Me.SimpleButton9.Name = "SimpleButton9"
+        Me.SimpleButton9.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton9.TabIndex = 10
+        Me.SimpleButton9.Text = "Master Rute"
+        '
+        'SimpleButton11
+        '
+        Me.SimpleButton11.Image = CType(resources.GetObject("SimpleButton11.Image"), System.Drawing.Image)
+        Me.SimpleButton11.Location = New System.Drawing.Point(420, 243)
+        Me.SimpleButton11.Name = "SimpleButton11"
+        Me.SimpleButton11.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton11.TabIndex = 12
+        Me.SimpleButton11.Text = "Master Truk"
+        '
+        'SimpleButton12
+        '
+        Me.SimpleButton12.Image = CType(resources.GetObject("SimpleButton12.Image"), System.Drawing.Image)
+        Me.SimpleButton12.Location = New System.Drawing.Point(52, 397)
+        Me.SimpleButton12.Name = "SimpleButton12"
+        Me.SimpleButton12.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton12.TabIndex = 13
+        Me.SimpleButton12.Text = "Master User"
+        '
+        'BackstageViewClientControl2
+        '
+        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton17)
+        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton18)
+        Me.BackstageViewClientControl2.Controls.Add(Me.Label2)
+        Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
+        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl2.TabIndex = 1
+        '
+        'BackstageViewTabItem2
+        '
+        Me.BackstageViewTabItem2.Caption = "Piutang Karyawan"
+        Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl2
+        Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
+        Me.BackstageViewTabItem2.Selected = False
+        '
+        'SimpleButton10
+        '
+        Me.SimpleButton10.Image = CType(resources.GetObject("SimpleButton10.Image"), System.Drawing.Image)
+        Me.SimpleButton10.Location = New System.Drawing.Point(420, 319)
+        Me.SimpleButton10.Name = "SimpleButton10"
+        Me.SimpleButton10.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton10.TabIndex = 11
+        Me.SimpleButton10.Text = "Master Supplier"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(230, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(158, 33)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Master Data"
+        '
+        'BackstageViewClientControl5
+        '
+        Me.BackstageViewClientControl5.Controls.Add(Me.Label3)
+        Me.BackstageViewClientControl5.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl5.Name = "BackstageViewClientControl5"
+        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl5.TabIndex = 4
+        '
+        'BackstageViewTabItem5
+        '
+        Me.BackstageViewTabItem5.Caption = "Laporan"
+        Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
+        Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
+        Me.BackstageViewTabItem5.Selected = False
+        '
+        'BackstageViewClientControl6
+        '
+        Me.BackstageViewClientControl6.Controls.Add(Me.Label5)
+        Me.BackstageViewClientControl6.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl6.Name = "BackstageViewClientControl6"
+        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl6.TabIndex = 5
+        '
+        'BackstageViewTabItem6
+        '
+        Me.BackstageViewTabItem6.Caption = "Keuangan"
+        Me.BackstageViewTabItem6.ContentControl = Me.BackstageViewClientControl6
+        Me.BackstageViewTabItem6.Glyph = CType(resources.GetObject("BackstageViewTabItem6.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem6.Name = "BackstageViewTabItem6"
+        Me.BackstageViewTabItem6.Selected = False
+        '
+        'BackstageViewClientControl7
+        '
+        Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
+        Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
+        Me.BackstageViewClientControl7.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl7.TabIndex = 6
+        '
+        'BackstageViewTabItem7
+        '
+        Me.BackstageViewTabItem7.Caption = "Piutang Perusahaan"
+        Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
+        Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
+        Me.BackstageViewTabItem7.Selected = False
+        '
+        'BackstageViewClientControl3
+        '
+        Me.BackstageViewClientControl3.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl3.Name = "BackstageViewClientControl3"
+        Me.BackstageViewClientControl3.Size = New System.Drawing.Size(627, 471)
+        Me.BackstageViewClientControl3.TabIndex = 2
+        '
+        'BackstageViewTabItem3
+        '
+        Me.BackstageViewTabItem3.Caption = "BackstageViewTabItem3"
+        Me.BackstageViewTabItem3.ContentControl = Me.BackstageViewClientControl3
+        Me.BackstageViewTabItem3.Name = "BackstageViewTabItem3"
+        Me.BackstageViewTabItem3.Selected = False
+        '
+        'BackstageViewClientControl4
+        '
+        Me.BackstageViewClientControl4.Location = New System.Drawing.Point(188, 0)
+        Me.BackstageViewClientControl4.Name = "BackstageViewClientControl4"
+        Me.BackstageViewClientControl4.Size = New System.Drawing.Size(634, 464)
+        Me.BackstageViewClientControl4.TabIndex = 3
+        '
+        'BackstageViewTabItem4
+        '
+        Me.BackstageViewTabItem4.Caption = "BackstageViewTabItem4"
+        Me.BackstageViewTabItem4.ContentControl = Me.BackstageViewClientControl4
+        Me.BackstageViewTabItem4.Name = "BackstageViewTabItem4"
+        Me.BackstageViewTabItem4.Selected = False
+        '
+        'BackstageViewClientControl8
+        '
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton13)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton14)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton15)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton16)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton19)
+        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton20)
+        Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
+        Me.BackstageViewClientControl8.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl8.Name = "BackstageViewClientControl8"
+        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl8.TabIndex = 7
+        '
+        'BackstageViewTabItem8
+        '
+        Me.BackstageViewTabItem8.Caption = "Transaksi Ekspedisi"
+        Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
+        Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
+        Me.BackstageViewTabItem8.Selected = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(191, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(228, 33)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Piutang Karyawan"
+        '
+        'SimpleButton17
+        '
+        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
+        Me.SimpleButton17.Location = New System.Drawing.Point(240, 70)
+        Me.SimpleButton17.Name = "SimpleButton17"
+        Me.SimpleButton17.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton17.TabIndex = 17
+        Me.SimpleButton17.Text = "Pelunasan Piutang"
+        '
+        'SimpleButton18
+        '
+        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
+        Me.SimpleButton18.Location = New System.Drawing.Point(56, 70)
+        Me.SimpleButton18.Name = "SimpleButton18"
+        Me.SimpleButton18.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton18.TabIndex = 16
+        Me.SimpleButton18.Text = "Buka Piutang"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(250, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(111, 33)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "Laporan"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(234, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(133, 33)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "Keuangan"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(180, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(250, 33)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Piutang Perusahaan"
+        '
+        'BackstageViewItemSeparator1
+        '
+        Me.BackstageViewItemSeparator1.Name = "BackstageViewItemSeparator1"
+        '
+        'BackstageViewClientControl10
+        '
+        Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
+        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(627, 523)
+        Me.BackstageViewClientControl10.TabIndex = 9
+        '
+        'BackstageViewTabItem10
+        '
+        Me.BackstageViewTabItem10.Caption = "Change Password"
+        Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
+        Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
+        Me.BackstageViewTabItem10.Selected = False
+        '
+        'BackstageViewClientControl9
+        '
+        Me.BackstageViewClientControl9.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl9.Name = "BackstageViewClientControl9"
+        Me.BackstageViewClientControl9.Size = New System.Drawing.Size(627, 523)
+        Me.BackstageViewClientControl9.TabIndex = 8
+        '
+        'BackstageViewTabItem9
+        '
+        Me.BackstageViewTabItem9.Caption = "BackstageViewTabItem9"
+        Me.BackstageViewTabItem9.ContentControl = Me.BackstageViewClientControl9
+        Me.BackstageViewTabItem9.Name = "BackstageViewTabItem9"
+        Me.BackstageViewTabItem9.Selected = False
+        '
+        'BackstageViewClientControl11
+        '
+        Me.BackstageViewClientControl11.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl11.Name = "BackstageViewClientControl11"
+        Me.BackstageViewClientControl11.Size = New System.Drawing.Size(627, 523)
+        Me.BackstageViewClientControl11.TabIndex = 10
+        '
+        'BackstageViewTabItem11
+        '
+        Me.BackstageViewTabItem11.ContentControl = Me.BackstageViewClientControl11
+        Me.BackstageViewTabItem11.Name = "BackstageViewTabItem11"
+        Me.BackstageViewTabItem11.Selected = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(180, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(273, 33)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Transaksi Perusahaan"
+        '
+        'BackstageViewClientControl12
+        '
+        Me.BackstageViewClientControl12.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
+        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl12.TabIndex = 10
+        '
+        'BackstageViewTabItem12
+        '
+        Me.BackstageViewTabItem12.Caption = "Log out"
+        Me.BackstageViewTabItem12.ContentControl = Me.BackstageViewClientControl12
+        Me.BackstageViewTabItem12.Glyph = CType(resources.GetObject("BackstageViewTabItem12.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem12.Name = "BackstageViewTabItem12"
+        Me.BackstageViewTabItem12.Selected = False
+        '
+        'SimpleButton13
+        '
+        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
+        Me.SimpleButton13.Location = New System.Drawing.Point(421, 144)
+        Me.SimpleButton13.Name = "SimpleButton13"
+        Me.SimpleButton13.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton13.TabIndex = 25
+        Me.SimpleButton13.Text = "Kontak Suplier"
+        '
+        'SimpleButton14
+        '
+        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
+        Me.SimpleButton14.Location = New System.Drawing.Point(237, 144)
+        Me.SimpleButton14.Name = "SimpleButton14"
+        Me.SimpleButton14.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton14.TabIndex = 24
+        Me.SimpleButton14.Text = "Kategori Supplier"
+        '
+        'SimpleButton15
+        '
+        Me.SimpleButton15.Image = CType(resources.GetObject("SimpleButton15.Image"), System.Drawing.Image)
+        Me.SimpleButton15.Location = New System.Drawing.Point(53, 144)
+        Me.SimpleButton15.Name = "SimpleButton15"
+        Me.SimpleButton15.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton15.TabIndex = 23
+        Me.SimpleButton15.Text = "Master Karyawan"
+        '
+        'SimpleButton16
+        '
+        Me.SimpleButton16.Image = CType(resources.GetObject("SimpleButton16.Image"), System.Drawing.Image)
+        Me.SimpleButton16.Location = New System.Drawing.Point(421, 67)
+        Me.SimpleButton16.Name = "SimpleButton16"
+        Me.SimpleButton16.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton16.TabIndex = 22
+        Me.SimpleButton16.Text = "Master Jabatan"
+        '
+        'SimpleButton19
+        '
+        Me.SimpleButton19.Image = Global.ekspedisi.My.Resources.Resources.emailtemplate_32x32
+        Me.SimpleButton19.Location = New System.Drawing.Point(237, 67)
+        Me.SimpleButton19.Name = "SimpleButton19"
+        Me.SimpleButton19.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton19.TabIndex = 21
+        Me.SimpleButton19.Text = "Delivery Order"
+        '
+        'SimpleButton20
+        '
+        Me.SimpleButton20.Image = Global.ekspedisi.My.Resources.Resources.gaugestylehalfcircular_32x32
+        Me.SimpleButton20.Location = New System.Drawing.Point(53, 67)
+        Me.SimpleButton20.Name = "SimpleButton20"
+        Me.SimpleButton20.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton20.TabIndex = 20
+        Me.SimpleButton20.Text = "Booking Truk"
         '
         'main_menu
         '
-        Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ClientSize = New System.Drawing.Size(758, 435)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.ribbonControl1)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(822, 508)
+        Me.Controls.Add(Me.BackstageViewControl1)
         Me.Name = "main_menu"
-        Me.Ribbon = Me.ribbonControl1
         Me.Text = "Main Menu"
-        CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BackstageViewControl1.ResumeLayout(False)
+        Me.BackstageViewClientControl1.ResumeLayout(False)
+        Me.BackstageViewClientControl1.PerformLayout()
+        Me.BackstageViewClientControl2.ResumeLayout(False)
+        Me.BackstageViewClientControl2.PerformLayout()
+        Me.BackstageViewClientControl5.ResumeLayout(False)
+        Me.BackstageViewClientControl5.PerformLayout()
+        Me.BackstageViewClientControl6.ResumeLayout(False)
+        Me.BackstageViewClientControl6.PerformLayout()
+        Me.BackstageViewClientControl7.ResumeLayout(False)
+        Me.BackstageViewClientControl7.PerformLayout()
+        Me.BackstageViewClientControl8.ResumeLayout(False)
+        Me.BackstageViewClientControl8.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-#End Region
-
-    Private ribbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
-    Private ribbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Private ribbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents menumasterdata As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mkaryawan As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mbank As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mbarang As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarCheckItem1 As DevExpress.XtraBars.BarCheckItem
-    Friend WithEvents mcustomer As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mkategorisupplier As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mkontakprinciple As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mkota As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mperubahanharaga As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mprinciple As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mrekening As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mrute As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents msupplier As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents mtruck As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents muser As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents PopupMenu1 As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents makun As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents menutransaksi As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents PopupMenu2 As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents menulaporan As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents PopupMenu3 As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents masuklogin As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents menuhistoryharga As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BackstageViewControl1 As DevExpress.XtraBars.Ribbon.BackstageViewControl
+    Friend WithEvents BackstageViewClientControl1 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents masterakun As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BackstageViewTabItem1 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents SimpleButton9 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents SimpleButton12 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton11 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton10 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BackstageViewClientControl2 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem2 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl5 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewClientControl6 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewClientControl7 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem5 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewTabItem6 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewTabItem7 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl3 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem3 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents BackstageViewClientControl8 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton19 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton20 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents BackstageViewClientControl10 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewClientControl12 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem8 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewItemSeparator1 As DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator
+    Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewTabItem12 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl4 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem4 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl9 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem9 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl11 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents BackstageViewTabItem11 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
 End Class
