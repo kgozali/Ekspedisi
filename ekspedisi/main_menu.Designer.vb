@@ -36,10 +36,6 @@ Partial Class main_menu
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.masterakun = New DevExpress.XtraEditors.SimpleButton()
-        Me.BackstageViewClientControl2 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl5 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
@@ -47,24 +43,19 @@ Partial Class main_menu
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl8 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton16 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.BackstageViewClientControl12 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewTabItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
-        Me.BackstageViewTabItem2 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem5 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem6 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem7 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem8 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
-        Me.BackstageViewItemSeparator1 = New DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator()
         Me.BackstageViewTabItem10 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
-        Me.BackstageViewTabItem12 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewClientControl3 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.BackstageViewTabItem3 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewClientControl4 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
@@ -73,41 +64,46 @@ Partial Class main_menu
         Me.BackstageViewTabItem9 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewClientControl11 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton24 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton26 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton27 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton28 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton29 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton30 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton32 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
-        Me.BackstageViewClientControl2.SuspendLayout()
         Me.BackstageViewClientControl5.SuspendLayout()
         Me.BackstageViewClientControl6.SuspendLayout()
         Me.BackstageViewClientControl7.SuspendLayout()
         Me.BackstageViewClientControl8.SuspendLayout()
+        Me.BackstageViewClientControl10.SuspendLayout()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
         '
         Me.BackstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl1)
-        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl2)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl5)
-        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl6)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl7)
-        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl8)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl10)
-        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl12)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl8)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl6)
         Me.BackstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem1)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem2)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem6)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem7)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem8)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewItemSeparator1)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem7)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem6)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem12)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
-        Me.BackstageViewControl1.SelectedTabIndex = 5
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
+        Me.BackstageViewControl1.SelectedTabIndex = 1
         Me.BackstageViewControl1.Size = New System.Drawing.Size(822, 508)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -262,45 +258,6 @@ Partial Class main_menu
         Me.masterakun.TabIndex = 1
         Me.masterakun.Text = "Master Akun"
         '
-        'BackstageViewClientControl2
-        '
-        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton17)
-        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton18)
-        Me.BackstageViewClientControl2.Controls.Add(Me.Label2)
-        Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
-        Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
-        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(627, 508)
-        Me.BackstageViewClientControl2.TabIndex = 1
-        '
-        'SimpleButton17
-        '
-        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
-        Me.SimpleButton17.Location = New System.Drawing.Point(240, 70)
-        Me.SimpleButton17.Name = "SimpleButton17"
-        Me.SimpleButton17.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton17.TabIndex = 17
-        Me.SimpleButton17.Text = "Pelunasan Piutang"
-        '
-        'SimpleButton18
-        '
-        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
-        Me.SimpleButton18.Location = New System.Drawing.Point(56, 70)
-        Me.SimpleButton18.Name = "SimpleButton18"
-        Me.SimpleButton18.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton18.TabIndex = 16
-        Me.SimpleButton18.Text = "Buka Piutang"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(191, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(228, 33)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Piutang Karyawan"
-        '
         'BackstageViewClientControl5
         '
         Me.BackstageViewClientControl5.Controls.Add(Me.Label3)
@@ -322,6 +279,13 @@ Partial Class main_menu
         '
         'BackstageViewClientControl6
         '
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton24)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton26)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton27)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton28)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton29)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton30)
+        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton32)
         Me.BackstageViewClientControl6.Controls.Add(Me.Label5)
         Me.BackstageViewClientControl6.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl6.Name = "BackstageViewClientControl6"
@@ -341,6 +305,9 @@ Partial Class main_menu
         '
         'BackstageViewClientControl7
         '
+        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton17)
+        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton18)
+        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton13)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
         Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
@@ -360,10 +327,6 @@ Partial Class main_menu
         '
         'BackstageViewClientControl8
         '
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton13)
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton14)
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton15)
-        Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton16)
         Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton19)
         Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton20)
         Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
@@ -372,44 +335,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl8.Size = New System.Drawing.Size(627, 508)
         Me.BackstageViewClientControl8.TabIndex = 7
         '
-        'SimpleButton13
-        '
-        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
-        Me.SimpleButton13.Location = New System.Drawing.Point(421, 144)
-        Me.SimpleButton13.Name = "SimpleButton13"
-        Me.SimpleButton13.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton13.TabIndex = 25
-        Me.SimpleButton13.Text = "Kontak Suplier"
-        '
-        'SimpleButton14
-        '
-        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(237, 144)
-        Me.SimpleButton14.Name = "SimpleButton14"
-        Me.SimpleButton14.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton14.TabIndex = 24
-        Me.SimpleButton14.Text = "Kategori Supplier"
-        '
-        'SimpleButton15
-        '
-        Me.SimpleButton15.Image = CType(resources.GetObject("SimpleButton15.Image"), System.Drawing.Image)
-        Me.SimpleButton15.Location = New System.Drawing.Point(53, 144)
-        Me.SimpleButton15.Name = "SimpleButton15"
-        Me.SimpleButton15.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton15.TabIndex = 23
-        Me.SimpleButton15.Text = "Master Karyawan"
-        '
-        'SimpleButton16
-        '
-        Me.SimpleButton16.Image = CType(resources.GetObject("SimpleButton16.Image"), System.Drawing.Image)
-        Me.SimpleButton16.Location = New System.Drawing.Point(421, 67)
-        Me.SimpleButton16.Name = "SimpleButton16"
-        Me.SimpleButton16.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton16.TabIndex = 22
-        Me.SimpleButton16.Text = "Master Jabatan"
-        '
         'SimpleButton19
         '
+        Me.SimpleButton19.Image = CType(resources.GetObject("SimpleButton19.Image"), System.Drawing.Image)
         Me.SimpleButton19.Location = New System.Drawing.Point(237, 67)
         Me.SimpleButton19.Name = "SimpleButton19"
         Me.SimpleButton19.Size = New System.Drawing.Size(136, 54)
@@ -418,6 +346,7 @@ Partial Class main_menu
         '
         'SimpleButton20
         '
+        Me.SimpleButton20.Image = CType(resources.GetObject("SimpleButton20.Image"), System.Drawing.Image)
         Me.SimpleButton20.Location = New System.Drawing.Point(53, 67)
         Me.SimpleButton20.Name = "SimpleButton20"
         Me.SimpleButton20.Size = New System.Drawing.Size(136, 54)
@@ -437,17 +366,42 @@ Partial Class main_menu
         '
         'BackstageViewClientControl10
         '
+        Me.BackstageViewClientControl10.Controls.Add(Me.Label7)
+        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton21)
+        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
         Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
         Me.BackstageViewClientControl10.Size = New System.Drawing.Size(627, 508)
-        Me.BackstageViewClientControl10.TabIndex = 9
+        Me.BackstageViewClientControl10.TabIndex = 8
         '
-        'BackstageViewClientControl12
+        'Label7
         '
-        Me.BackstageViewClientControl12.Location = New System.Drawing.Point(195, 0)
-        Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
-        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(627, 508)
-        Me.BackstageViewClientControl12.TabIndex = 10
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(223, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(172, 33)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "User Settings"
+        '
+        'SimpleButton21
+        '
+        Me.SimpleButton21.Image = CType(resources.GetObject("SimpleButton21.Image"), System.Drawing.Image)
+        Me.SimpleButton21.Location = New System.Drawing.Point(239, 71)
+        Me.SimpleButton21.Name = "SimpleButton21"
+        Me.SimpleButton21.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton21.TabIndex = 5
+        Me.SimpleButton21.Text = "Log Out"
+        '
+        'SimpleButton22
+        '
+        Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
+        Me.SimpleButton22.Location = New System.Drawing.Point(55, 71)
+        Me.SimpleButton22.Name = "SimpleButton22"
+        Me.SimpleButton22.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton22.TabIndex = 4
+        Me.SimpleButton22.Text = "Change Password"
         '
         'BackstageViewTabItem1
         '
@@ -457,21 +411,13 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
         Me.BackstageViewTabItem1.Selected = False
         '
-        'BackstageViewTabItem2
-        '
-        Me.BackstageViewTabItem2.Caption = "Piutang Karyawan"
-        Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl2
-        Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
-        Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
-        Me.BackstageViewTabItem2.Selected = False
-        '
         'BackstageViewTabItem5
         '
         Me.BackstageViewTabItem5.Caption = "Laporan"
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = False
+        Me.BackstageViewTabItem5.Selected = True
         '
         'BackstageViewTabItem6
         '
@@ -495,27 +441,15 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = True
-        '
-        'BackstageViewItemSeparator1
-        '
-        Me.BackstageViewItemSeparator1.Name = "BackstageViewItemSeparator1"
+        Me.BackstageViewTabItem8.Selected = False
         '
         'BackstageViewTabItem10
         '
-        Me.BackstageViewTabItem10.Caption = "Change Password"
+        Me.BackstageViewTabItem10.Caption = "User Settings"
         Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
         Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
         Me.BackstageViewTabItem10.Selected = False
-        '
-        'BackstageViewTabItem12
-        '
-        Me.BackstageViewTabItem12.Caption = "Log out"
-        Me.BackstageViewTabItem12.ContentControl = Me.BackstageViewClientControl12
-        Me.BackstageViewTabItem12.Glyph = CType(resources.GetObject("BackstageViewTabItem12.Glyph"), System.Drawing.Image)
-        Me.BackstageViewTabItem12.Name = "BackstageViewTabItem12"
-        Me.BackstageViewTabItem12.Selected = False
         '
         'BackstageViewClientControl3
         '
@@ -572,6 +506,96 @@ Partial Class main_menu
         Me.BackstageViewTabItem11.Name = "BackstageViewTabItem11"
         Me.BackstageViewTabItem11.Selected = False
         '
+        'SimpleButton13
+        '
+        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
+        Me.SimpleButton13.Location = New System.Drawing.Point(78, 65)
+        Me.SimpleButton13.Name = "SimpleButton13"
+        Me.SimpleButton13.Size = New System.Drawing.Size(196, 54)
+        Me.SimpleButton13.TabIndex = 23
+        Me.SimpleButton13.Text = "Pelunasan Piutang Principle"
+        '
+        'SimpleButton17
+        '
+        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
+        Me.SimpleButton17.Location = New System.Drawing.Point(331, 65)
+        Me.SimpleButton17.Name = "SimpleButton17"
+        Me.SimpleButton17.Size = New System.Drawing.Size(196, 54)
+        Me.SimpleButton17.TabIndex = 25
+        Me.SimpleButton17.Text = "Pelunasan Piutang Karyawaan"
+        '
+        'SimpleButton18
+        '
+        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
+        Me.SimpleButton18.Location = New System.Drawing.Point(78, 136)
+        Me.SimpleButton18.Name = "SimpleButton18"
+        Me.SimpleButton18.Size = New System.Drawing.Size(196, 54)
+        Me.SimpleButton18.TabIndex = 24
+        Me.SimpleButton18.Text = "Buka Piutang Karyawan"
+        '
+        'SimpleButton24
+        '
+        Me.SimpleButton24.Image = CType(resources.GetObject("SimpleButton24.Image"), System.Drawing.Image)
+        Me.SimpleButton24.Location = New System.Drawing.Point(51, 230)
+        Me.SimpleButton24.Name = "SimpleButton24"
+        Me.SimpleButton24.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton24.TabIndex = 26
+        Me.SimpleButton24.Text = "Buka Periode"
+        '
+        'SimpleButton26
+        '
+        Me.SimpleButton26.Image = CType(resources.GetObject("SimpleButton26.Image"), System.Drawing.Image)
+        Me.SimpleButton26.Location = New System.Drawing.Point(419, 154)
+        Me.SimpleButton26.Name = "SimpleButton26"
+        Me.SimpleButton26.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton26.TabIndex = 24
+        Me.SimpleButton26.Text = "Tutup Periode"
+        '
+        'SimpleButton27
+        '
+        Me.SimpleButton27.Image = CType(resources.GetObject("SimpleButton27.Image"), System.Drawing.Image)
+        Me.SimpleButton27.Location = New System.Drawing.Point(235, 154)
+        Me.SimpleButton27.Name = "SimpleButton27"
+        Me.SimpleButton27.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton27.TabIndex = 23
+        Me.SimpleButton27.Text = "Kas Keluar"
+        '
+        'SimpleButton28
+        '
+        Me.SimpleButton28.Image = CType(resources.GetObject("SimpleButton28.Image"), System.Drawing.Image)
+        Me.SimpleButton28.Location = New System.Drawing.Point(51, 154)
+        Me.SimpleButton28.Name = "SimpleButton28"
+        Me.SimpleButton28.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton28.TabIndex = 22
+        Me.SimpleButton28.Text = "Kas Masuk"
+        '
+        'SimpleButton29
+        '
+        Me.SimpleButton29.Image = CType(resources.GetObject("SimpleButton29.Image"), System.Drawing.Image)
+        Me.SimpleButton29.Location = New System.Drawing.Point(419, 77)
+        Me.SimpleButton29.Name = "SimpleButton29"
+        Me.SimpleButton29.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton29.TabIndex = 21
+        Me.SimpleButton29.Text = "Tutup Principle"
+        '
+        'SimpleButton30
+        '
+        Me.SimpleButton30.Image = CType(resources.GetObject("SimpleButton30.Image"), System.Drawing.Image)
+        Me.SimpleButton30.Location = New System.Drawing.Point(235, 77)
+        Me.SimpleButton30.Name = "SimpleButton30"
+        Me.SimpleButton30.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton30.TabIndex = 20
+        Me.SimpleButton30.Text = "Tutup Karyawan"
+        '
+        'SimpleButton32
+        '
+        Me.SimpleButton32.Image = CType(resources.GetObject("SimpleButton32.Image"), System.Drawing.Image)
+        Me.SimpleButton32.Location = New System.Drawing.Point(51, 77)
+        Me.SimpleButton32.Name = "SimpleButton32"
+        Me.SimpleButton32.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton32.TabIndex = 18
+        Me.SimpleButton32.Text = "COA"
+        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,8 +608,6 @@ Partial Class main_menu
         Me.BackstageViewControl1.ResumeLayout(False)
         Me.BackstageViewClientControl1.ResumeLayout(False)
         Me.BackstageViewClientControl1.PerformLayout()
-        Me.BackstageViewClientControl2.ResumeLayout(False)
-        Me.BackstageViewClientControl2.PerformLayout()
         Me.BackstageViewClientControl5.ResumeLayout(False)
         Me.BackstageViewClientControl5.PerformLayout()
         Me.BackstageViewClientControl6.ResumeLayout(False)
@@ -594,6 +616,8 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.PerformLayout()
         Me.BackstageViewClientControl8.ResumeLayout(False)
         Me.BackstageViewClientControl8.PerformLayout()
+        Me.BackstageViewClientControl10.ResumeLayout(False)
+        Me.BackstageViewClientControl10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -614,8 +638,6 @@ Partial Class main_menu
     Friend WithEvents SimpleButton12 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton11 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton10 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents BackstageViewClientControl2 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
-    Friend WithEvents BackstageViewTabItem2 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl5 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewClientControl6 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewClientControl7 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
@@ -624,30 +646,33 @@ Partial Class main_menu
     Friend WithEvents BackstageViewTabItem7 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl3 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewTabItem3 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
-    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents BackstageViewClientControl8 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
-    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton19 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton20 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents BackstageViewClientControl10 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
-    Friend WithEvents BackstageViewClientControl12 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewTabItem8 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
-    Friend WithEvents BackstageViewItemSeparator1 As DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator
-    Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
-    Friend WithEvents BackstageViewTabItem12 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl4 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewTabItem4 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl9 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewTabItem9 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl11 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
     Friend WithEvents BackstageViewTabItem11 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents BackstageViewClientControl10 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents SimpleButton21 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton22 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton26 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton27 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton28 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton29 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton30 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton32 As DevExpress.XtraEditors.SimpleButton
 End Class
