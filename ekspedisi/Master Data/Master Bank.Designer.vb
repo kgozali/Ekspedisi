@@ -385,6 +385,7 @@ Partial Class Master_Bank
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Name = "Master_Bank"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Bank"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
