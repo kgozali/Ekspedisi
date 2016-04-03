@@ -20,17 +20,60 @@ Partial Class list_edit_barang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(list_edit_barang))
-        Me.hasiledit = New System.Windows.Forms.DataGridView()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.hasiledit = New System.Windows.Forms.DataGridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.hasiledit)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(629, 302)
+        Me.GroupControl1.TabIndex = 116
+        Me.GroupControl1.Text = "Daftar Edit Barang"
+        '
+        'cancel
+        '
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(541, 320)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 117
+        Me.cancel.Text = "Cancel"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Keterangan"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 300
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Nama Principle"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Nama Barang"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID Barang"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
         'hasiledit
         '
@@ -43,49 +86,6 @@ Partial Class list_edit_barang
         Me.hasiledit.Size = New System.Drawing.Size(618, 273)
         Me.hasiledit.TabIndex = 48
         '
-        'cancel
-        '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(541, 320)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 117
-        Me.cancel.Text = "Cancel"
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.hasiledit)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(629, 302)
-        Me.GroupControl1.TabIndex = 116
-        Me.GroupControl1.Text = "Daftar Edit Barang"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID Barang"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nama Barang"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Nama Principle"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Keterangan"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 300
-        '
         'list_edit_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -95,17 +95,17 @@ Partial Class list_edit_barang
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "list_edit_barang"
         Me.Text = "List Edit Barang"
-        CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
+        CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents hasiledit As System.Windows.Forms.DataGridView
-    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents hasiledit As System.Windows.Forms.DataGridView
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -61,6 +61,7 @@
     <Reference Include="DevExpress.XtraEditors.v14.2" />
     <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -191,6 +192,18 @@
     <Compile Include="Akuntansi\COA.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\daftar_kas_keluar.Designer.vb">
+      <DependentUpon>daftar_kas_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_masuk.Designer.vb">
+      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\daftar_tutup_karyawan.Designer.vb">
       <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
     </Compile>
@@ -201,6 +214,30 @@
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\daftar_tutup_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\edit_kas.Designer.vb">
+      <DependentUpon>edit_kas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\edit_kas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\edit_kas_keluar.Designer.vb">
+      <DependentUpon>edit_kas_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\edit_kas_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\edit_list_kas_keluar.Designer.vb">
+      <DependentUpon>edit_list_kas_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\edit_list_kas_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\edit_list_kas_masuk.Designer.vb">
+      <DependentUpon>edit_list_kas_masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\edit_list_kas_masuk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\kas_keluar.Designer.vb">
@@ -225,6 +262,18 @@
       <DependentUpon>tutup_principle.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\tutup_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.Designer.vb">
+      <DependentUpon>main_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main_menu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -468,12 +517,6 @@
     <Compile Include="List Edit Master\list_edit_customer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_menu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="main_menu.Designer.vb">
-      <DependentUpon>main_menu.vb</DependentUpon>
-    </Compile>
     <Compile Include="Master Data\Master Bank.Designer.vb">
       <DependentUpon>Master Bank.vb</DependentUpon>
     </Compile>
@@ -575,12 +618,6 @@
     <Compile Include="Transaksi\transaksi_DO.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaksi\transaksi_kas.Designer.vb">
-      <DependentUpon>transaksi_kas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Transaksi\transaksi_kas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
       <DependentUpon>add_akun.vb</DependentUpon>
     </EmbeddedResource>
@@ -629,11 +666,29 @@
     <EmbeddedResource Include="Akuntansi\COA.resx">
       <DependentUpon>COA.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_kas_keluar.resx">
+      <DependentUpon>daftar_kas_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_kas_masuk.resx">
+      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_karyawan.resx">
       <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_principle.resx">
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\edit_kas.resx">
+      <DependentUpon>edit_kas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\edit_kas_keluar.resx">
+      <DependentUpon>edit_kas_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\edit_list_kas_keluar.resx">
+      <DependentUpon>edit_list_kas_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\edit_list_kas_masuk.resx">
+      <DependentUpon>edit_list_kas_masuk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
       <DependentUpon>kas_keluar.vb</DependentUpon>
@@ -646,6 +701,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu.resx">
+      <DependentUpon>main_menu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
@@ -767,9 +828,6 @@
     <EmbeddedResource Include="List Edit Master\list_edit_customer.resx">
       <DependentUpon>list_edit_customer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main_menu.resx">
-      <DependentUpon>main_menu.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Master Data\Master Bank.resx">
       <DependentUpon>Master Bank.vb</DependentUpon>
     </EmbeddedResource>
@@ -825,12 +883,10 @@
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Transaksi\transaksi_kas.resx">
-      <DependentUpon>transaksi_kas.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
