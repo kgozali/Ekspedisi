@@ -758,6 +758,7 @@ Partial Class main_menu
         Me.ClientSize = New System.Drawing.Size(822, 508)
         Me.Controls.Add(Me.BackstageViewControl1)
         Me.Name = "main_menu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackstageViewControl1.ResumeLayout(False)

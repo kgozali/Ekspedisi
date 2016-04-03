@@ -369,6 +369,7 @@ Partial Class master_customer
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.hapus)
         Me.Name = "master_customer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Customer"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()

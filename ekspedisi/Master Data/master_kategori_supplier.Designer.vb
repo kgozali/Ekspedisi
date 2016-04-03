@@ -385,6 +385,7 @@ Partial Class master_kategori_supplier
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.hapus)
         Me.Name = "master_kategori_supplier"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Kategori Supplier"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()

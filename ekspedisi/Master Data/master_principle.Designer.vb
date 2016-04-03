@@ -385,6 +385,7 @@ Partial Class master_principle
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Principle"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()

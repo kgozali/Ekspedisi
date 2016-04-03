@@ -385,6 +385,7 @@ Partial Class master_kontak_principle
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_kontak_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Kontak Principle"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()

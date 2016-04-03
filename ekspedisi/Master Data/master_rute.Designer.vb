@@ -385,6 +385,7 @@ Partial Class master_rute
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_rute"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Rute"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

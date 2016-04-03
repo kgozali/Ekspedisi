@@ -385,6 +385,7 @@ Partial Class master_supplier
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_supplier"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Supplier"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

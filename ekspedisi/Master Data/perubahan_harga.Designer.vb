@@ -20,9 +20,9 @@ Partial Class perubahan_harga
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -39,20 +39,6 @@ Partial Class perubahan_harga
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Periode Perubahan Harga"
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 24)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 0
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(234, 24)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 1
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -61,6 +47,20 @@ Partial Class perubahan_harga
         Me.Label1.Size = New System.Drawing.Size(17, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "to"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(234, 24)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker2.TabIndex = 1
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 24)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.TabIndex = 0
         '
         'ReportViewer1
         '
@@ -77,6 +77,7 @@ Partial Class perubahan_harga
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "perubahan_harga"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Perubahan Harga"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

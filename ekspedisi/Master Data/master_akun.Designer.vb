@@ -359,6 +359,7 @@ Partial Class master_akun
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_akun"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Data Akun"
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)

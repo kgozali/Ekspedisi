@@ -385,6 +385,7 @@ Partial Class master_barang
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_barang"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Barang"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.editgrid, System.ComponentModel.ISupportInitialize).EndInit()

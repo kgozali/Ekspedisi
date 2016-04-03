@@ -385,6 +385,7 @@ Partial Class master_kota
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_kota"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Kota"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
