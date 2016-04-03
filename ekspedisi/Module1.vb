@@ -23,9 +23,7 @@ Public Module Module1
             Dim adapter As New MySqlDataAdapter(command)
             adapter.Fill(data)
             connect.Close()
-
             Return data
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -39,10 +37,7 @@ Public Module Module1
             command.ExecuteNonQuery()
             connect.Close()
         Catch ex As Exception
-
         End Try
-
-
     End Function
 
     Function DtTablemaster(ByVal x As String)
