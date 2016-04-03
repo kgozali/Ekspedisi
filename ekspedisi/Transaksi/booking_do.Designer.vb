@@ -27,7 +27,6 @@ Partial Class booking_do
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.dataview = New System.Windows.Forms.DataGridView()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -52,15 +51,18 @@ Partial Class booking_do
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
+        Me.controlbooking = New DevExpress.XtraGrid.GridControl()
+        Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -124,22 +126,12 @@ Partial Class booking_do
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.dataview)
+        Me.GroupControl3.Controls.Add(Me.controlbooking)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 115)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(984, 559)
         Me.GroupControl3.TabIndex = 47
         Me.GroupControl3.Text = "Data Booking"
-        '
-        'dataview
-        '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(5, 24)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(672, 311)
-        Me.dataview.TabIndex = 6
         '
         'msiswa
         '
@@ -280,7 +272,7 @@ Partial Class booking_do
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(594, 465)
+        Me.SimpleButton1.Location = New System.Drawing.Point(896, 690)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 147
@@ -289,7 +281,7 @@ Partial Class booking_do
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(488, 465)
+        Me.Submit.Location = New System.Drawing.Point(790, 690)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 146
@@ -327,17 +319,33 @@ Partial Class booking_do
         Me.aktif.Text = "Booking Aktif"
         Me.aktif.UseVisualStyleBackColor = True
         '
+        'controlbooking
+        '
+        Me.controlbooking.Location = New System.Drawing.Point(2, 24)
+        Me.controlbooking.MainView = Me.gridbooking
+        Me.controlbooking.Name = "controlbooking"
+        Me.controlbooking.Size = New System.Drawing.Size(982, 535)
+        Me.controlbooking.TabIndex = 0
+        Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
+        '
+        'gridbooking
+        '
+        Me.gridbooking.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
+        Me.gridbooking.GridControl = Me.controlbooking
+        Me.gridbooking.Name = "gridbooking"
+        '
         'booking_do
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(702, 501)
+        Me.ClientSize = New System.Drawing.Size(1008, 729)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Name = "booking_do"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pilih Booking Truk"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -345,11 +353,12 @@ Partial Class booking_do
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -358,7 +367,6 @@ Partial Class booking_do
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
@@ -385,4 +393,6 @@ Partial Class booking_do
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
+    Friend WithEvents controlbooking As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridbooking As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
