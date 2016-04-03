@@ -21,48 +21,48 @@ Partial Class add_user
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_user))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.reenterpass = New System.Windows.Forms.MaskedTextBox()
+        Me.password = New System.Windows.Forms.MaskedTextBox()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.id = New DevExpress.XtraEditors.TextEdit()
+        Me.username = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.TextBox2)
-        Me.GroupControl1.Controls.Add(Me.TextBox1)
+        Me.GroupControl1.Controls.Add(Me.reenterpass)
+        Me.GroupControl1.Controls.Add(Me.password)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.username)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(338, 98)
         Me.GroupControl1.TabIndex = 148
         Me.GroupControl1.Text = "Data"
         '
-        'TextBox2
+        'reenterpass
         '
-        Me.TextBox2.Location = New System.Drawing.Point(143, 70)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TextBox2.Size = New System.Drawing.Size(174, 21)
-        Me.TextBox2.TabIndex = 50
+        Me.reenterpass.Location = New System.Drawing.Point(143, 72)
+        Me.reenterpass.Name = "reenterpass"
+        Me.reenterpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.reenterpass.Size = New System.Drawing.Size(174, 21)
+        Me.reenterpass.TabIndex = 52
         '
-        'TextBox1
+        'password
         '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 46)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TextBox1.Size = New System.Drawing.Size(174, 21)
-        Me.TextBox1.TabIndex = 49
+        Me.password.Location = New System.Drawing.Point(82, 47)
+        Me.password.Name = "password"
+        Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.password.Size = New System.Drawing.Size(174, 21)
+        Me.password.TabIndex = 51
         '
         'LabelControl3
         '
@@ -76,7 +76,7 @@ Partial Class add_user
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(5, 24)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(77, 18)
         Me.LabelControl1.TabIndex = 32
@@ -85,19 +85,18 @@ Partial Class add_user
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(5, 48)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(71, 18)
         Me.LabelControl2.TabIndex = 33
         Me.LabelControl2.Text = "Password :"
         '
-        'id
+        'username
         '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(88, 23)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
-        Me.id.TabIndex = 45
+        Me.username.Location = New System.Drawing.Point(88, 23)
+        Me.username.Name = "username"
+        Me.username.Size = New System.Drawing.Size(100, 20)
+        Me.username.TabIndex = 45
         '
         'simpan
         '
@@ -130,17 +129,17 @@ Partial Class add_user
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents id As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents username As DevExpress.XtraEditors.TextEdit
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents reenterpass As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents password As System.Windows.Forms.MaskedTextBox
 End Class
