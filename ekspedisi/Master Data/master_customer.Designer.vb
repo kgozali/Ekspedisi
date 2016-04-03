@@ -321,7 +321,7 @@ Partial Class master_customer
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(267, 676)
+        Me.editing.Location = New System.Drawing.Point(12, 665)
         Me.editing.Name = "editing"
         Me.editing.Size = New System.Drawing.Size(198, 26)
         Me.editing.TabIndex = 38
@@ -350,7 +350,7 @@ Partial Class master_customer
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(37, 676)
+        Me.hapus.Location = New System.Drawing.Point(12, 665)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 40
@@ -360,7 +360,7 @@ Partial Class master_customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 729)
+        Me.ClientSize = New System.Drawing.Size(1008, 709)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl2)
