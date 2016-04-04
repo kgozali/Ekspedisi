@@ -27,6 +27,8 @@ Partial Class booking_do
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.controlbooking = New DevExpress.XtraGrid.GridControl()
+        Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -51,18 +53,16 @@ Partial Class booking_do
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
-        Me.controlbooking = New DevExpress.XtraGrid.GridControl()
-        Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -132,6 +132,21 @@ Partial Class booking_do
         Me.GroupControl3.Size = New System.Drawing.Size(984, 559)
         Me.GroupControl3.TabIndex = 47
         Me.GroupControl3.Text = "Data Booking"
+        '
+        'controlbooking
+        '
+        Me.controlbooking.Location = New System.Drawing.Point(2, 24)
+        Me.controlbooking.MainView = Me.gridbooking
+        Me.controlbooking.Name = "controlbooking"
+        Me.controlbooking.Size = New System.Drawing.Size(982, 535)
+        Me.controlbooking.TabIndex = 0
+        Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
+        '
+        'gridbooking
+        '
+        Me.gridbooking.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
+        Me.gridbooking.GridControl = Me.controlbooking
+        Me.gridbooking.Name = "gridbooking"
         '
         'msiswa
         '
@@ -319,21 +334,6 @@ Partial Class booking_do
         Me.aktif.Text = "Booking Aktif"
         Me.aktif.UseVisualStyleBackColor = True
         '
-        'controlbooking
-        '
-        Me.controlbooking.Location = New System.Drawing.Point(2, 24)
-        Me.controlbooking.MainView = Me.gridbooking
-        Me.controlbooking.Name = "controlbooking"
-        Me.controlbooking.Size = New System.Drawing.Size(982, 535)
-        Me.controlbooking.TabIndex = 0
-        Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
-        '
-        'gridbooking
-        '
-        Me.gridbooking.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
-        Me.gridbooking.GridControl = Me.controlbooking
-        Me.gridbooking.Name = "gridbooking"
-        '
         'booking_do
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -353,12 +353,12 @@ Partial Class booking_do
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
