@@ -90,6 +90,7 @@ Public Class booking_do
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         view()
         transaksi_DO.idbooking.Text = kodebooking
+        Me.Visible = False
         transaksi_DO.ShowDialog()
 
     End Sub

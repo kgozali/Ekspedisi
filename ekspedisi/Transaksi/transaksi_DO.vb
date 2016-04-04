@@ -11,6 +11,12 @@ Public Class transaksi_DO
     End Sub
 
     Private Sub idbooking_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idbooking.ButtonClick
-        booking_do.ShowDialog()
+        Try
+            Me.Visible = False
+            booking_do.Show()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 End Class
