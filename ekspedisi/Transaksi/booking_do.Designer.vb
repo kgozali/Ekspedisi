@@ -50,6 +50,7 @@ Partial Class booking_do
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.details = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,11 +298,20 @@ Partial Class booking_do
         Me.Submit.TabIndex = 146
         Me.Submit.Text = "Submit"
         '
+        'details
+        '
+        Me.details.Location = New System.Drawing.Point(17, 639)
+        Me.details.Name = "details"
+        Me.details.Size = New System.Drawing.Size(75, 23)
+        Me.details.TabIndex = 148
+        Me.details.Text = "Details"
+        '
         'booking_do
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1009, 691)
+        Me.Controls.Add(Me.details)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
@@ -351,4 +361,5 @@ Partial Class booking_do
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents controlbooking As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridbooking As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents details As DevExpress.XtraEditors.SimpleButton
 End Class

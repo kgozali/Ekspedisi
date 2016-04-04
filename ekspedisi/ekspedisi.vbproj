@@ -570,6 +570,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Transaksi\Detail_booking_do.Designer.vb">
+      <DependentUpon>Detail_booking_do.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\Detail_booking_do.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\transaksi_DO.Designer.vb">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </Compile>
@@ -821,6 +827,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transaksi\Detail_booking_do.resx">
+      <DependentUpon>Detail_booking_do.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </EmbeddedResource>

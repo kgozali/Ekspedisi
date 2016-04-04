@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class booking_do
-
+    Public kodebooking As String = ""
     Private Sub booking_do_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim data As New DataTable
         data = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute")
@@ -25,6 +25,14 @@ Public Class booking_do
     Private Sub principle_CheckedChanged(sender As Object, e As EventArgs) Handles principle.CheckedChanged
         cari.Text = ""
         tgl.ResetText()
+        selection()
+    End Sub
+
+    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
+        selection()
+    End Sub
+
+    Private Sub tgl_ValueChanged(sender As Object, e As EventArgs) Handles tgl.ValueChanged
         selection()
     End Sub
 
@@ -59,11 +67,23 @@ Public Class booking_do
 
     End Sub
 
-    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        selection()
+    Sub view()
+        Try
+            kodebooking = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Kode Booking")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
-    Private Sub tgl_ValueChanged(sender As Object, e As EventArgs) Handles tgl.ValueChanged
-        selection()
+    Private Sub details_Click(sender As Object, e As EventArgs) Handles details.Click
+        view()
+
+    End Sub
+
+    Private Sub booking_do_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        cari.Text = ""
+        tgl.ResetText()
+        booking_do_Load(sender, e)
     End Sub
 End Class
