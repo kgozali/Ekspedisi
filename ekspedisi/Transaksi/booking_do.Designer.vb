@@ -129,7 +129,7 @@ Partial Class booking_do
         Me.GroupControl3.Controls.Add(Me.controlbooking)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 115)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(984, 559)
+        Me.GroupControl3.Size = New System.Drawing.Size(985, 519)
         Me.GroupControl3.TabIndex = 47
         Me.GroupControl3.Text = "Data Booking"
         '
@@ -138,7 +138,7 @@ Partial Class booking_do
         Me.controlbooking.Location = New System.Drawing.Point(2, 24)
         Me.controlbooking.MainView = Me.gridbooking
         Me.controlbooking.Name = "controlbooking"
-        Me.controlbooking.Size = New System.Drawing.Size(982, 535)
+        Me.controlbooking.Size = New System.Drawing.Size(982, 494)
         Me.controlbooking.TabIndex = 0
         Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
         '
@@ -287,7 +287,7 @@ Partial Class booking_do
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(896, 690)
+        Me.SimpleButton1.Location = New System.Drawing.Point(897, 652)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 147
@@ -296,7 +296,7 @@ Partial Class booking_do
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(790, 690)
+        Me.Submit.Location = New System.Drawing.Point(791, 652)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 146
@@ -338,7 +338,7 @@ Partial Class booking_do
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 729)
+        Me.ClientSize = New System.Drawing.Size(1009, 691)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
