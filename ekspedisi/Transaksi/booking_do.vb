@@ -86,4 +86,10 @@ Public Class booking_do
         tgl.ResetText()
         booking_do_Load(sender, e)
     End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        view()
+        transaksi_DO.idbooking.Text = kodebooking
+        transaksi_DO.ShowDialog()
+    End Sub
 End Class

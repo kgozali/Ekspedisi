@@ -44,6 +44,7 @@ Partial Class transaksi_DO
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -245,11 +246,21 @@ Partial Class transaksi_DO
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
         Me.TextBox2.TabIndex = 152
         '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
+        Me.SimpleButton2.Location = New System.Drawing.Point(32, 506)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton2.TabIndex = 153
+        Me.SimpleButton2.Text = "Add Item"
+        '
         'transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(513, 564)
+        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LabelControl5)
@@ -304,4 +315,5 @@ Partial Class transaksi_DO
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class
