@@ -91,5 +91,6 @@ Public Class booking_do
         view()
         transaksi_DO.idbooking.Text = kodebooking
         transaksi_DO.ShowDialog()
+
     End Sub
 End Class

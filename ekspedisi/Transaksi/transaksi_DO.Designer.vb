@@ -279,6 +279,7 @@ Partial Class transaksi_DO
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "transaksi_DO"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Delivery Order"
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
