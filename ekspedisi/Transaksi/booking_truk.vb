@@ -46,6 +46,7 @@ Public Class booking_truk
         tel = Scalar("select tel1 from mkontakprinciple where id_principle='" + ComboBox1.SelectedValue.ToString + "'")
         TextBox4.Text = tel
 
+
         kontak = Scalar("select nama_kontak from mkontakprinciple where id_principle='" + ComboBox1.SelectedValue.ToString + "'")
         TextBox3.Text = kontak
 
@@ -57,7 +58,7 @@ Public Class booking_truk
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
-                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel)
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     booking_truk_Load(sender, e)
                     reset()
