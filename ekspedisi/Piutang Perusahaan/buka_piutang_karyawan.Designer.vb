@@ -160,7 +160,7 @@ Partial Class buka_piutang_karyawan
         Me.akunkas.FormattingEnabled = True
         Me.akunkas.Location = New System.Drawing.Point(175, 121)
         Me.akunkas.Name = "akunkas"
-        Me.akunkas.Size = New System.Drawing.Size(278, 21)
+        Me.akunkas.Size = New System.Drawing.Size(200, 21)
         Me.akunkas.TabIndex = 158
         '
         'GroupControl1
