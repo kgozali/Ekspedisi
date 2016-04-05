@@ -88,6 +88,17 @@ Partial Class main_menu
         Me.BackstageViewTabItem9 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewClientControl11 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.BackstageViewClientControl2 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.backuprestore = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.backup = New DevExpress.XtraEditors.SimpleButton()
+        Me.restore = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton40 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton41 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -97,6 +108,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.SuspendLayout()
         Me.BackstageViewClientControl6.SuspendLayout()
         Me.BackstageViewClientControl10.SuspendLayout()
+        Me.BackstageViewClientControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
@@ -108,6 +120,7 @@ Partial Class main_menu
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl7)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl6)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl10)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl2)
         Me.BackstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem1)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
@@ -115,10 +128,11 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem7)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem6)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
+        Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
-        Me.BackstageViewControl1.SelectedTabIndex = 2
+        Me.BackstageViewControl1.SelectedTab = Me.backuprestore
+        Me.BackstageViewControl1.SelectedTabIndex = 6
         Me.BackstageViewControl1.Size = New System.Drawing.Size(822, 508)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -670,7 +684,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = True
+        Me.BackstageViewTabItem8.Selected = False
         '
         'BackstageViewTabItem7
         '
@@ -751,6 +765,106 @@ Partial Class main_menu
         Me.BackstageViewTabItem11.Name = "BackstageViewTabItem11"
         Me.BackstageViewTabItem11.Selected = False
         '
+        'BackstageViewClientControl2
+        '
+        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton41)
+        Me.BackstageViewClientControl2.Controls.Add(Me.SimpleButton40)
+        Me.BackstageViewClientControl2.Controls.Add(Me.restore)
+        Me.BackstageViewClientControl2.Controls.Add(Me.backup)
+        Me.BackstageViewClientControl2.Controls.Add(Me.TextBox2)
+        Me.BackstageViewClientControl2.Controls.Add(Me.Label9)
+        Me.BackstageViewClientControl2.Controls.Add(Me.Label8)
+        Me.BackstageViewClientControl2.Controls.Add(Me.TextBox1)
+        Me.BackstageViewClientControl2.Controls.Add(Me.Label2)
+        Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
+        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl2.TabIndex = 9
+        '
+        'backuprestore
+        '
+        Me.backuprestore.Caption = "Backup & Restore"
+        Me.backuprestore.ContentControl = Me.BackstageViewClientControl2
+        Me.backuprestore.Glyph = CType(resources.GetObject("backuprestore.Glyph"), System.Drawing.Image)
+        Me.backuprestore.Name = "backuprestore"
+        Me.backuprestore.Selected = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(246, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Label2"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(47, 99)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(357, 21)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(44, 72)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(41, 13)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "Backup"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(49, 187)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Retore"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(47, 216)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(357, 21)
+        Me.TextBox2.TabIndex = 4
+        '
+        'backup
+        '
+        Me.backup.Image = CType(resources.GetObject("backup.Image"), System.Drawing.Image)
+        Me.backup.Location = New System.Drawing.Point(326, 137)
+        Me.backup.Name = "backup"
+        Me.backup.Size = New System.Drawing.Size(78, 23)
+        Me.backup.TabIndex = 5
+        Me.backup.Text = "Backup"
+        '
+        'restore
+        '
+        Me.restore.Image = CType(resources.GetObject("restore.Image"), System.Drawing.Image)
+        Me.restore.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.restore.Location = New System.Drawing.Point(329, 256)
+        Me.restore.Name = "restore"
+        Me.restore.Size = New System.Drawing.Size(75, 23)
+        Me.restore.TabIndex = 6
+        Me.restore.Text = "Restore"
+        '
+        'SimpleButton40
+        '
+        Me.SimpleButton40.Image = CType(resources.GetObject("SimpleButton40.Image"), System.Drawing.Image)
+        Me.SimpleButton40.Location = New System.Drawing.Point(410, 99)
+        Me.SimpleButton40.Name = "SimpleButton40"
+        Me.SimpleButton40.Size = New System.Drawing.Size(26, 23)
+        Me.SimpleButton40.TabIndex = 7
+        '
+        'SimpleButton41
+        '
+        Me.SimpleButton41.Image = CType(resources.GetObject("SimpleButton41.Image"), System.Drawing.Image)
+        Me.SimpleButton41.Location = New System.Drawing.Point(410, 216)
+        Me.SimpleButton41.Name = "SimpleButton41"
+        Me.SimpleButton41.Size = New System.Drawing.Size(26, 23)
+        Me.SimpleButton41.TabIndex = 8
+        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -775,6 +889,8 @@ Partial Class main_menu
         Me.BackstageViewClientControl6.PerformLayout()
         Me.BackstageViewClientControl10.ResumeLayout(False)
         Me.BackstageViewClientControl10.PerformLayout()
+        Me.BackstageViewClientControl2.ResumeLayout(False)
+        Me.BackstageViewClientControl2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -846,4 +962,15 @@ Partial Class main_menu
     Friend WithEvents SimpleButton37 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton38 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton39 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BackstageViewClientControl2 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents backuprestore As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents SimpleButton41 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton40 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents restore As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents backup As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
