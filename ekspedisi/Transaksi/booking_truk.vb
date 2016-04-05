@@ -37,7 +37,7 @@ Public Class booking_truk
 
     End Sub
 
- 
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim tel As String = ""
         Dim kontak As String = ""
@@ -53,7 +53,7 @@ Public Class booking_truk
 
     End Sub
 
-   
+
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
@@ -75,8 +75,8 @@ Public Class booking_truk
 
 
 
-        
-        
+
+
 
 
     End Sub

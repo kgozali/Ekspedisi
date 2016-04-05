@@ -40,7 +40,7 @@ Partial Class add_barang
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(193, 227)
+        Me.simpan.Location = New System.Drawing.Point(366, 322)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 120
@@ -49,7 +49,7 @@ Partial Class add_barang
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(299, 227)
+        Me.cancel.Location = New System.Drawing.Point(472, 322)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 119
@@ -67,22 +67,22 @@ Partial Class add_barang
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(387, 209)
+        Me.GroupControl1.Size = New System.Drawing.Size(560, 304)
         Me.GroupControl1.TabIndex = 142
         Me.GroupControl1.Text = "Data"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(96, 98)
+        Me.RichTextBox1.Location = New System.Drawing.Point(111, 97)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(276, 96)
+        Me.RichTextBox1.Size = New System.Drawing.Size(267, 92)
         Me.RichTextBox1.TabIndex = 50
         Me.RichTextBox1.Text = ""
         '
         'principle
         '
         Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(71, 70)
+        Me.principle.Location = New System.Drawing.Point(111, 70)
         Me.principle.Name = "principle"
         Me.principle.Size = New System.Drawing.Size(121, 21)
         Me.principle.TabIndex = 49
@@ -133,7 +133,7 @@ Partial Class add_barang
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(88, 23)
+        Me.id.Location = New System.Drawing.Point(111, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 45
@@ -142,7 +142,7 @@ Partial Class add_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(408, 262)
+        Me.ClientSize = New System.Drawing.Size(584, 361)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
