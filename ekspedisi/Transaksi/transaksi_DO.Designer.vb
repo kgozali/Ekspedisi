@@ -41,6 +41,8 @@ Partial Class transaksi_DO
         Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,7 +178,6 @@ Partial Class transaksi_DO
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.idbarang, Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsView.ShowFooter = True
         '
         'idbarang
         '
@@ -203,10 +204,7 @@ Partial Class transaksi_DO
         'berat
         '
         Me.berat.Caption = "Berat (Kilogram)"
-        Me.berat.FieldName = "berat"
         Me.berat.Name = "berat"
-        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL = {0:N2}")})
-        Me.berat.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.berat.Visible = True
         Me.berat.VisibleIndex = 2
         '
@@ -224,6 +222,22 @@ Partial Class transaksi_DO
         Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
         Me.LabelControl7.TabIndex = 149
         Me.LabelControl7.Text = "Nama Principle :"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(609, 627)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(86, 18)
+        Me.LabelControl5.TabIndex = 150
+        Me.LabelControl5.Text = "Total Bayar :"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(701, 624)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(300, 21)
+        Me.TextBox1.TabIndex = 151
         '
         'TextBox2
         '
@@ -248,6 +262,8 @@ Partial Class transaksi_DO
         Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.SimpleButton1)
@@ -297,6 +313,8 @@ Partial Class transaksi_DO
     Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class
