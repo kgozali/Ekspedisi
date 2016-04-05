@@ -283,6 +283,18 @@
     <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\add_item.Designer.vb">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\barang_DO.Designer.vb">
+      <DependentUpon>barang_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\barang_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\booking_do.Designer.vb">
       <DependentUpon>booking_do.vb</DependentUpon>
     </Compile>
@@ -474,12 +486,6 @@
     </Compile>
     <Compile Include="main_menu.Designer.vb">
       <DependentUpon>main_menu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Master Data\Master Bank.Designer.vb">
-      <DependentUpon>Master Bank.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Master Data\Master Bank.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master Data\Master Rekening.Designer.vb">
       <DependentUpon>Master Rekening.vb</DependentUpon>
@@ -675,6 +681,12 @@
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang_karyawan.resx">
       <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\add_item.resx">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\barang_DO.resx">
+      <DependentUpon>barang_DO.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\booking_do.resx">
       <DependentUpon>booking_do.vb</DependentUpon>
     </EmbeddedResource>
@@ -770,9 +782,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main_menu.resx">
       <DependentUpon>main_menu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master Data\Master Bank.resx">
-      <DependentUpon>Master Bank.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data\Master Rekening.resx">
       <DependentUpon>Master Rekening.vb</DependentUpon>

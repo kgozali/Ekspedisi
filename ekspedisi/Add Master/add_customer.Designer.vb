@@ -70,43 +70,43 @@ Partial Class add_customer
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(351, 299)
+        Me.GroupControl1.Size = New System.Drawing.Size(560, 304)
         Me.GroupControl1.TabIndex = 143
         Me.GroupControl1.Text = "Data"
         '
         'kota
         '
-        Me.kota.Location = New System.Drawing.Point(51, 166)
+        Me.kota.Location = New System.Drawing.Point(128, 167)
         Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(143, 20)
+        Me.kota.Size = New System.Drawing.Size(336, 20)
         Me.kota.TabIndex = 65
         '
         'provinsi
         '
-        Me.provinsi.Location = New System.Drawing.Point(69, 142)
+        Me.provinsi.Location = New System.Drawing.Point(128, 143)
         Me.provinsi.Name = "provinsi"
-        Me.provinsi.Size = New System.Drawing.Size(143, 20)
+        Me.provinsi.Size = New System.Drawing.Size(336, 20)
         Me.provinsi.TabIndex = 64
         '
         'tel2
         '
-        Me.tel2.Location = New System.Drawing.Point(86, 118)
+        Me.tel2.Location = New System.Drawing.Point(128, 119)
         Me.tel2.Name = "tel2"
-        Me.tel2.Size = New System.Drawing.Size(143, 20)
+        Me.tel2.Size = New System.Drawing.Size(336, 20)
         Me.tel2.TabIndex = 63
         '
         'tel1
         '
-        Me.tel1.Location = New System.Drawing.Point(86, 94)
+        Me.tel1.Location = New System.Drawing.Point(128, 95)
         Me.tel1.Name = "tel1"
-        Me.tel1.Size = New System.Drawing.Size(143, 20)
+        Me.tel1.Size = New System.Drawing.Size(336, 20)
         Me.tel1.TabIndex = 62
         '
         'email
         '
-        Me.email.Location = New System.Drawing.Point(54, 70)
+        Me.email.Location = New System.Drawing.Point(128, 71)
         Me.email.Name = "email"
-        Me.email.Size = New System.Drawing.Size(143, 20)
+        Me.email.Size = New System.Drawing.Size(336, 20)
         Me.email.TabIndex = 61
         '
         'LabelControl9
@@ -156,9 +156,9 @@ Partial Class add_customer
         '
         'alamat
         '
-        Me.alamat.Location = New System.Drawing.Point(66, 194)
+        Me.alamat.Location = New System.Drawing.Point(128, 193)
         Me.alamat.Name = "alamat"
-        Me.alamat.Size = New System.Drawing.Size(276, 96)
+        Me.alamat.Size = New System.Drawing.Size(427, 96)
         Me.alamat.TabIndex = 65
         Me.alamat.Text = ""
         '
@@ -193,21 +193,21 @@ Partial Class add_customer
         '
         Me.nama.Location = New System.Drawing.Point(128, 46)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(143, 20)
+        Me.nama.Size = New System.Drawing.Size(336, 20)
         Me.nama.TabIndex = 46
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(100, 22)
+        Me.id.Location = New System.Drawing.Point(129, 23)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(202, 20)
         Me.id.TabIndex = 45
         '
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(157, 317)
+        Me.simpan.Location = New System.Drawing.Point(366, 322)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 145
@@ -216,7 +216,7 @@ Partial Class add_customer
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(263, 317)
+        Me.cancel.Location = New System.Drawing.Point(472, 322)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 144
@@ -226,7 +226,7 @@ Partial Class add_customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(372, 354)
+        Me.ClientSize = New System.Drawing.Size(584, 361)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)

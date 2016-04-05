@@ -37,7 +37,7 @@ Public Class booking_truk
 
     End Sub
 
- 
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim tel As String = ""
         Dim kontak As String = ""
@@ -54,7 +54,7 @@ Public Class booking_truk
 
     End Sub
 
-   
+
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
@@ -76,8 +76,8 @@ Public Class booking_truk
 
 
 
-        
-        
+
+
 
 
     End Sub
@@ -97,7 +97,7 @@ Public Class booking_truk
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
 
         If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or RichTextBox2.Text = "" Then
-            MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim idbooking As String = ""
             Dim tgl As String = ""

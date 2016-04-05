@@ -73,7 +73,7 @@ Partial Class add_jabatan
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(93, 22)
+        Me.id.Location = New System.Drawing.Point(116, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 45

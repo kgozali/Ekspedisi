@@ -57,7 +57,7 @@ Partial Class transaksi_DO
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
+        Me.LabelControl1.Location = New System.Drawing.Point(635, 12)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(93, 18)
         Me.LabelControl1.TabIndex = 33
@@ -66,7 +66,7 @@ Partial Class transaksi_DO
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 36)
+        Me.LabelControl2.Location = New System.Drawing.Point(635, 36)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(81, 18)
         Me.LabelControl2.TabIndex = 34
@@ -75,7 +75,7 @@ Partial Class transaksi_DO
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(13, 84)
+        Me.LabelControl3.Location = New System.Drawing.Point(13, 36)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(80, 18)
         Me.LabelControl3.TabIndex = 35
@@ -84,7 +84,7 @@ Partial Class transaksi_DO
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(13, 108)
+        Me.LabelControl4.Location = New System.Drawing.Point(635, 60)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(119, 18)
         Me.LabelControl4.TabIndex = 36
@@ -93,7 +93,7 @@ Partial Class transaksi_DO
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(12, 132)
+        Me.LabelControl6.Location = New System.Drawing.Point(635, 84)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
         Me.LabelControl6.TabIndex = 38
@@ -101,22 +101,22 @@ Partial Class transaksi_DO
         '
         'id
         '
-        Me.id.Location = New System.Drawing.Point(111, 9)
+        Me.id.Location = New System.Drawing.Point(795, 9)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(117, 21)
         Me.id.TabIndex = 1
         '
         'idbooking
         '
-        Me.idbooking.Location = New System.Drawing.Point(100, 34)
+        Me.idbooking.Location = New System.Drawing.Point(795, 34)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.idbooking.Size = New System.Drawing.Size(128, 20)
+        Me.idbooking.Size = New System.Drawing.Size(165, 20)
         Me.idbooking.TabIndex = 2
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(99, 81)
+        Me.nomerdo.Location = New System.Drawing.Point(122, 33)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(165, 21)
         Me.nomerdo.TabIndex = 4
@@ -124,14 +124,14 @@ Partial Class transaksi_DO
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
-        Me.tanggalterkirim.Location = New System.Drawing.Point(139, 105)
+        Me.tanggalterkirim.Location = New System.Drawing.Point(794, 57)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
         Me.tanggalterkirim.TabIndex = 5
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(172, 129)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(795, 81)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
         Me.tanggaljatuhtempo.TabIndex = 7
@@ -139,7 +139,7 @@ Partial Class transaksi_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(404, 530)
+        Me.SimpleButton1.Location = New System.Drawing.Point(901, 651)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 11
@@ -148,7 +148,7 @@ Partial Class transaksi_DO
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(298, 530)
+        Me.Submit.Location = New System.Drawing.Point(795, 651)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 10
@@ -157,9 +157,9 @@ Partial Class transaksi_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 156)
+        Me.GroupControl3.Location = New System.Drawing.Point(13, 108)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(492, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(989, 510)
         Me.GroupControl3.TabIndex = 148
         Me.GroupControl3.Text = "Data Transaksi"
         '
@@ -169,7 +169,7 @@ Partial Class transaksi_DO
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(482, 317)
+        Me.GridControl1.Size = New System.Drawing.Size(979, 483)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -217,7 +217,7 @@ Partial Class transaksi_DO
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(12, 60)
+        Me.LabelControl7.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
         Me.LabelControl7.TabIndex = 149
@@ -226,7 +226,7 @@ Partial Class transaksi_DO
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(214, 506)
+        Me.LabelControl5.Location = New System.Drawing.Point(609, 627)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(86, 18)
         Me.LabelControl5.TabIndex = 150
@@ -234,14 +234,14 @@ Partial Class transaksi_DO
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(306, 503)
+        Me.TextBox1.Location = New System.Drawing.Point(701, 624)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(198, 21)
+        Me.TextBox1.Size = New System.Drawing.Size(300, 21)
         Me.TextBox1.TabIndex = 151
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(122, 57)
+        Me.TextBox2.Location = New System.Drawing.Point(122, 9)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
         Me.TextBox2.TabIndex = 152
@@ -249,7 +249,7 @@ Partial Class transaksi_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(32, 506)
+        Me.SimpleButton2.Location = New System.Drawing.Point(16, 75)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 153
@@ -259,7 +259,7 @@ Partial Class transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(513, 564)
+        Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
@@ -279,6 +279,7 @@ Partial Class transaksi_DO
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "transaksi_DO"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Delivery Order"
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
