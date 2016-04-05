@@ -21,6 +21,8 @@ Partial Class add_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_karyawan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.email = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
@@ -33,11 +35,9 @@ Partial Class add_karyawan
         Me.aktif = New System.Windows.Forms.RadioButton()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.kota = New DevExpress.XtraEditors.TextEdit()
-        Me.provinsi = New DevExpress.XtraEditors.TextEdit()
         Me.tel2 = New DevExpress.XtraEditors.TextEdit()
         Me.tel1 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.alamat = New System.Windows.Forms.RichTextBox()
@@ -50,8 +50,8 @@ Partial Class add_karyawan
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +60,8 @@ Partial Class add_karyawan
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.email)
+        Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.LabelControl13)
         Me.GroupControl1.Controls.Add(Me.RichTextBox1)
@@ -72,11 +74,9 @@ Partial Class add_karyawan
         Me.GroupControl1.Controls.Add(Me.aktif)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.kota)
-        Me.GroupControl1.Controls.Add(Me.provinsi)
         Me.GroupControl1.Controls.Add(Me.tel2)
         Me.GroupControl1.Controls.Add(Me.tel1)
         Me.GroupControl1.Controls.Add(Me.LabelControl9)
-        Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.alamat)
@@ -90,6 +90,22 @@ Partial Class add_karyawan
         Me.GroupControl1.Size = New System.Drawing.Size(721, 266)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
+        '
+        'email
+        '
+        Me.email.Location = New System.Drawing.Point(129, 166)
+        Me.email.Name = "email"
+        Me.email.Size = New System.Drawing.Size(143, 20)
+        Me.email.TabIndex = 76
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(5, 168)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(43, 18)
+        Me.LabelControl5.TabIndex = 77
+        Me.LabelControl5.Text = "Email :"
         '
         'ComboBox1
         '
@@ -127,7 +143,7 @@ Partial Class add_karyawan
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(129, 238)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(129, 240)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker2.TabIndex = 12
@@ -135,7 +151,7 @@ Partial Class add_karyawan
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(5, 241)
+        Me.LabelControl11.Location = New System.Drawing.Point(5, 243)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(102, 18)
         Me.LabelControl11.TabIndex = 71
@@ -160,7 +176,7 @@ Partial Class add_karyawan
         'pasif
         '
         Me.pasif.AutoSize = True
-        Me.pasif.Location = New System.Drawing.Point(182, 170)
+        Me.pasif.Location = New System.Drawing.Point(182, 143)
         Me.pasif.Name = "pasif"
         Me.pasif.Size = New System.Drawing.Size(75, 17)
         Me.pasif.TabIndex = 9
@@ -171,7 +187,7 @@ Partial Class add_karyawan
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(129, 170)
+        Me.aktif.Location = New System.Drawing.Point(129, 143)
         Me.aktif.Name = "aktif"
         Me.aktif.Size = New System.Drawing.Size(47, 17)
         Me.aktif.TabIndex = 8
@@ -182,7 +198,7 @@ Partial Class add_karyawan
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 169)
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 146)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl3.TabIndex = 66
@@ -190,17 +206,10 @@ Partial Class add_karyawan
         '
         'kota
         '
-        Me.kota.Location = New System.Drawing.Point(129, 143)
+        Me.kota.Location = New System.Drawing.Point(129, 120)
         Me.kota.Name = "kota"
         Me.kota.Size = New System.Drawing.Size(143, 20)
         Me.kota.TabIndex = 7
-        '
-        'provinsi
-        '
-        Me.provinsi.Location = New System.Drawing.Point(129, 119)
-        Me.provinsi.Name = "provinsi"
-        Me.provinsi.Size = New System.Drawing.Size(143, 20)
-        Me.provinsi.TabIndex = 6
         '
         'tel2
         '
@@ -219,20 +228,11 @@ Partial Class add_karyawan
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(5, 145)
+        Me.LabelControl9.Location = New System.Drawing.Point(5, 122)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(40, 18)
         Me.LabelControl9.TabIndex = 55
         Me.LabelControl9.Text = "Kota :"
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 121)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(58, 18)
-        Me.LabelControl8.TabIndex = 54
-        Me.LabelControl8.Text = "Provinsi :"
         '
         'LabelControl7
         '
@@ -333,8 +333,8 @@ Partial Class add_karyawan
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -355,11 +355,9 @@ Partial Class add_karyawan
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kota As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents provinsi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tel2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tel1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents alamat As System.Windows.Forms.RichTextBox
@@ -370,4 +368,6 @@ Partial Class add_karyawan
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents email As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
 End Class

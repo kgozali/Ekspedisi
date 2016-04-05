@@ -36,11 +36,8 @@ Partial Class master_jabatan
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.dataview = New System.Windows.Forms.DataGridView()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -53,20 +50,23 @@ Partial Class master_jabatan
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cancel
@@ -213,56 +213,20 @@ Partial Class master_jabatan
         Me.GroupControl3.TabIndex = 34
         Me.GroupControl3.Text = "Data Jabatan"
         '
-        'msiswa
+        'GridControl1
         '
-        Me.msiswa.ActAsDropDown = True
-        Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.msiswa.Caption = "Master Data"
-        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"), System.Drawing.Image)
-        Me.msiswa.Id = 1
-        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
-        Me.msiswa.Name = "msiswa"
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(414, 315)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'GroupControl1
+        'GridView1
         '
-        Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(11, 100)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
-        Me.GroupControl1.TabIndex = 30
-        Me.GroupControl1.Text = "Cari Berdasarkan"
-        '
-        'nama
-        '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(94, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Jabatan"
-        Me.nama.UseVisualStyleBackColor = True
-        '
-        'id
-        '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(78, 17)
-        Me.id.TabIndex = 1
-        Me.id.Text = "ID Jabatan"
-        Me.id.UseVisualStyleBackColor = True
-        '
-        'cari
-        '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
-        Me.cari.MenuManager = Me.RibbonControl1
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
-        Me.cari.TabIndex = 0
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
         '
         'RibbonControl1
         '
@@ -356,20 +320,56 @@ Partial Class master_jabatan
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'GridControl1
+        'msiswa
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.MenuManager = Me.RibbonControl1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(414, 315)
-        Me.GridControl1.TabIndex = 7
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.msiswa.ActAsDropDown = True
+        Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
+        Me.msiswa.Caption = "Master Data"
+        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"), System.Drawing.Image)
+        Me.msiswa.Id = 1
+        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
+        Me.msiswa.Name = "msiswa"
         '
-        'GridView1
+        'GroupControl1
         '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
+        Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.cari)
+        Me.GroupControl1.Location = New System.Drawing.Point(11, 100)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
+        Me.GroupControl1.TabIndex = 30
+        Me.GroupControl1.Text = "Cari Berdasarkan"
+        '
+        'nama
+        '
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(94, 17)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = True
+        Me.nama.Text = "Nama Jabatan"
+        Me.nama.UseVisualStyleBackColor = True
+        '
+        'id
+        '
+        Me.id.AutoSize = True
+        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(78, 17)
+        Me.id.TabIndex = 1
+        Me.id.Text = "ID Jabatan"
+        Me.id.UseVisualStyleBackColor = True
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.MenuManager = Me.RibbonControl1
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.TabIndex = 0
         '
         'master_jabatan
         '
@@ -393,13 +393,13 @@ Partial Class master_jabatan
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

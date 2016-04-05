@@ -23,7 +23,7 @@ Partial Class add_barang
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.notes = New System.Windows.Forms.RichTextBox()
         Me.principle = New System.Windows.Forms.ComboBox()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -57,7 +57,7 @@ Partial Class add_barang
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.RichTextBox1)
+        Me.GroupControl1.Controls.Add(Me.notes)
         Me.GroupControl1.Controls.Add(Me.principle)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
@@ -71,13 +71,13 @@ Partial Class add_barang
         Me.GroupControl1.TabIndex = 142
         Me.GroupControl1.Text = "Data"
         '
-        'RichTextBox1
+        'notes
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(111, 97)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(267, 92)
-        Me.RichTextBox1.TabIndex = 50
-        Me.RichTextBox1.Text = ""
+        Me.notes.Location = New System.Drawing.Point(111, 97)
+        Me.notes.Name = "notes"
+        Me.notes.Size = New System.Drawing.Size(267, 92)
+        Me.notes.TabIndex = 50
+        Me.notes.Text = ""
         '
         'principle
         '
@@ -159,7 +159,7 @@ Partial Class add_barang
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents notes As System.Windows.Forms.RichTextBox
     Friend WithEvents principle As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
