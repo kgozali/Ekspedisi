@@ -1,20 +1,55 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_supplier
-    Dim inputsupplier As String = ""
+    Dim cek As Boolean
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
-        inputsupplier = "insert into msupplier "
-        InsertInto(inputsupplier)
+        Try
+            'insert ke dalam database
+            InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.Text & "')) ")
+            'konfirmasi melakukan booking ulang
+            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            If msg = DialogResult.Yes Then
+                add_supplier_Load(sender, e)
+                Reset()
+            Else
+                cek = False
+                Me.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
+    Private Sub add_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        nama.Text = ""
+        alamat.Text = ""
+        email.Text = ""
+        tel1.Text = ""
+        tel2.Text = ""
+        provinsi.Text = ""
+        kota.Text = ""
+    End Sub
+
+    Private Sub nama_TextChanged(sender As Object, e As EventArgs) Handles nama.TextChanged
+        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
+        If nama.Text = "" Then
+            cek = False
+        Else
+            cek = True
+        End If
+    End Sub
+
+    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
-    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel2.KeyPress
+    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
+
 End Class
