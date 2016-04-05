@@ -21,39 +21,31 @@ Partial Class karyawan_piutang
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(karyawan_piutang))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.dataview = New System.Windows.Forms.DataGridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.dataview)
+        Me.GroupControl3.Controls.Add(Me.datakaryawan)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 94)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
         Me.GroupControl3.TabIndex = 43
         Me.GroupControl3.Text = "Data Karayawan"
-        '
-        'dataview
-        '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(5, 24)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(672, 311)
-        Me.dataview.TabIndex = 6
         '
         'GroupControl1
         '
@@ -113,6 +105,20 @@ Partial Class karyawan_piutang
         Me.Submit.TabIndex = 144
         Me.Submit.Text = "Submit"
         '
+        'datakaryawan
+        '
+        Me.datakaryawan.Location = New System.Drawing.Point(5, 24)
+        Me.datakaryawan.MainView = Me.GridView1
+        Me.datakaryawan.Name = "datakaryawan"
+        Me.datakaryawan.Size = New System.Drawing.Size(672, 315)
+        Me.datakaryawan.TabIndex = 0
+        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.datakaryawan
+        Me.GridView1.Name = "GridView1"
+        '
         'karyawan_piutang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -126,20 +132,22 @@ Partial Class karyawan_piutang
         Me.Text = "Daftar Karyawaan"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents datakaryawan As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
