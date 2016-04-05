@@ -46,6 +46,7 @@ Public Class booking_truk
         tel = Scalar("select tel1 from mkontakprinciple where id_principle='" + ComboBox1.SelectedValue.ToString + "'")
         TextBox4.Text = tel
 
+
         kontak = Scalar("select nama_kontak from mkontakprinciple where id_principle='" + ComboBox1.SelectedValue.ToString + "'")
         TextBox3.Text = kontak
 
@@ -57,7 +58,7 @@ Public Class booking_truk
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
-                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel)
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     booking_truk_Load(sender, e)
                     reset()
@@ -96,7 +97,7 @@ Public Class booking_truk
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
 
         If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or RichTextBox2.Text = "" Then
-            MsgBox("Mohon lengkapi data terlebih dahulu", MsgBoxStyle.OkOnly, "System Warning")
+            MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Dim idbooking As String = ""
             Dim tgl As String = ""
@@ -123,7 +124,7 @@ Public Class booking_truk
 
             Try
                 'insert ke dalam database
-                InsertInto("insert into booking_truk values('" + idbooking + "',now(),'" + tgljam + "','" + durasi + "','" + principle + "','" + supir + "','" + truk + "','" + keterangan + "','" + rute + "','" + al + "','" + kontak + "','" + tel + "','" + dp + "',1)")
+                InsertInto("insert into booking_truk values('" + idbooking + "',now(),'" + tgl + "','" + jam + "','" + durasi + "','" + principle + "','" + supir + "','" + truk + "','" + keterangan + "','" + rute + "','" + al + "','" + kontak + "','" + tel + "','" + dp + "',1)")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan booking kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

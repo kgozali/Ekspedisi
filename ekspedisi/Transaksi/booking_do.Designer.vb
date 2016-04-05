@@ -21,12 +21,14 @@ Partial Class booking_do
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(booking_do))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.principle = New System.Windows.Forms.RadioButton()
+        Me.tgl = New System.Windows.Forms.DateTimePicker()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.controlbooking = New DevExpress.XtraGrid.GridControl()
+        Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -48,27 +50,21 @@ Partial Class booking_do
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.nonaktif = New System.Windows.Forms.RadioButton()
-        Me.aktif = New System.Windows.Forms.RadioButton()
-        Me.controlbooking = New DevExpress.XtraGrid.GridControl()
-        Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.details = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
         CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.RadioButton1)
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupControl1.Controls.Add(Me.principle)
+        Me.GroupControl1.Controls.Add(Me.tgl)
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
@@ -78,24 +74,22 @@ Partial Class booking_do
         Me.GroupControl1.TabIndex = 43
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
-        'RadioButton1
+        'principle
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(5, 47)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(94, 17)
-        Me.RadioButton1.TabIndex = 4
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Nama Principle"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.principle.AutoSize = True
+        Me.principle.Location = New System.Drawing.Point(5, 47)
+        Me.principle.Name = "principle"
+        Me.principle.Size = New System.Drawing.Size(94, 17)
+        Me.principle.TabIndex = 4
+        Me.principle.Text = "Nama Principle"
+        Me.principle.UseVisualStyleBackColor = True
         '
-        'DateTimePicker1
+        'tgl
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 70)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.tgl.Location = New System.Drawing.Point(5, 70)
+        Me.tgl.Name = "tgl"
+        Me.tgl.Size = New System.Drawing.Size(200, 21)
+        Me.tgl.TabIndex = 3
         '
         'nama
         '
@@ -110,11 +104,13 @@ Partial Class booking_do
         'id
         '
         Me.id.AutoSize = True
+        Me.id.Checked = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(76, 17)
+        Me.id.Size = New System.Drawing.Size(89, 17)
         Me.id.TabIndex = 1
-        Me.id.Text = "ID Booking"
+        Me.id.TabStop = True
+        Me.id.Text = "Kode Booking"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari
@@ -129,9 +125,24 @@ Partial Class booking_do
         Me.GroupControl3.Controls.Add(Me.controlbooking)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 115)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(984, 559)
+        Me.GroupControl3.Size = New System.Drawing.Size(985, 519)
         Me.GroupControl3.TabIndex = 47
         Me.GroupControl3.Text = "Data Booking"
+        '
+        'controlbooking
+        '
+        Me.controlbooking.Location = New System.Drawing.Point(2, 24)
+        Me.controlbooking.MainView = Me.gridbooking
+        Me.controlbooking.Name = "controlbooking"
+        Me.controlbooking.Size = New System.Drawing.Size(982, 494)
+        Me.controlbooking.TabIndex = 0
+        Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
+        '
+        'gridbooking
+        '
+        Me.gridbooking.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
+        Me.gridbooking.GridControl = Me.controlbooking
+        Me.gridbooking.Name = "gridbooking"
         '
         'msiswa
         '
@@ -272,7 +283,7 @@ Partial Class booking_do
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(896, 690)
+        Me.SimpleButton1.Location = New System.Drawing.Point(897, 652)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 147
@@ -281,65 +292,26 @@ Partial Class booking_do
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(790, 690)
+        Me.Submit.Location = New System.Drawing.Point(791, 652)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 146
         Me.Submit.Text = "Submit"
         '
-        'GroupControl2
+        'details
         '
-        Me.GroupControl2.Controls.Add(Me.nonaktif)
-        Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(281, 12)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(150, 76)
-        Me.GroupControl2.TabIndex = 148
-        Me.GroupControl2.Text = "Sortir"
-        '
-        'nonaktif
-        '
-        Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 47)
-        Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(110, 17)
-        Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Booking Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = True
-        '
-        'aktif
-        '
-        Me.aktif.AutoSize = True
-        Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 24)
-        Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(87, 17)
-        Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = True
-        Me.aktif.Text = "Booking Aktif"
-        Me.aktif.UseVisualStyleBackColor = True
-        '
-        'controlbooking
-        '
-        Me.controlbooking.Location = New System.Drawing.Point(2, 24)
-        Me.controlbooking.MainView = Me.gridbooking
-        Me.controlbooking.Name = "controlbooking"
-        Me.controlbooking.Size = New System.Drawing.Size(982, 535)
-        Me.controlbooking.TabIndex = 0
-        Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
-        '
-        'gridbooking
-        '
-        Me.gridbooking.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
-        Me.gridbooking.GridControl = Me.controlbooking
-        Me.gridbooking.Name = "gridbooking"
+        Me.details.Location = New System.Drawing.Point(17, 639)
+        Me.details.Name = "details"
+        Me.details.Size = New System.Drawing.Size(75, 23)
+        Me.details.TabIndex = 148
+        Me.details.Text = "Details"
         '
         'booking_do
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 729)
-        Me.Controls.Add(Me.GroupControl2)
+        Me.ClientSize = New System.Drawing.Size(1009, 691)
+        Me.Controls.Add(Me.details)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
@@ -353,12 +325,9 @@ Partial Class booking_do
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        Me.GroupControl2.PerformLayout()
         CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -386,13 +355,11 @@ Partial Class booking_do
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents principle As System.Windows.Forms.RadioButton
+    Friend WithEvents tgl As System.Windows.Forms.DateTimePicker
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
-    Friend WithEvents aktif As System.Windows.Forms.RadioButton
     Friend WithEvents controlbooking As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridbooking As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents details As DevExpress.XtraEditors.SimpleButton
 End Class

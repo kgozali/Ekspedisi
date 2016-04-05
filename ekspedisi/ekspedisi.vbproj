@@ -283,6 +283,12 @@
     <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\add_item.Designer.vb">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\booking_do.Designer.vb">
       <DependentUpon>booking_do.vb</DependentUpon>
     </Compile>
@@ -570,6 +576,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Transaksi\Detail_booking_do.Designer.vb">
+      <DependentUpon>Detail_booking_do.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\Detail_booking_do.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\transaksi_DO.Designer.vb">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </Compile>
@@ -668,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang_karyawan.resx">
       <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\add_item.resx">
+      <DependentUpon>add_item.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\booking_do.resx">
       <DependentUpon>booking_do.vb</DependentUpon>
@@ -821,6 +836,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transaksi\Detail_booking_do.resx">
+      <DependentUpon>Detail_booking_do.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </EmbeddedResource>
