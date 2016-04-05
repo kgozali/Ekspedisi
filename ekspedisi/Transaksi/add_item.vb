@@ -24,7 +24,7 @@ Public Class add_item
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        
+
     End Sub
 
 End Class
