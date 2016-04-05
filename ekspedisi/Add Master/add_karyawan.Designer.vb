@@ -94,7 +94,7 @@ Partial Class add_karyawan
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(72, 190)
+        Me.ComboBox1.Location = New System.Drawing.Point(129, 190)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 10
@@ -127,7 +127,7 @@ Partial Class add_karyawan
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(113, 238)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(129, 238)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker2.TabIndex = 12
@@ -143,7 +143,7 @@ Partial Class add_karyawan
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(120, 215)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(129, 214)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 11
@@ -160,7 +160,7 @@ Partial Class add_karyawan
         'pasif
         '
         Me.pasif.AutoSize = True
-        Me.pasif.Location = New System.Drawing.Point(115, 170)
+        Me.pasif.Location = New System.Drawing.Point(182, 170)
         Me.pasif.Name = "pasif"
         Me.pasif.Size = New System.Drawing.Size(75, 17)
         Me.pasif.TabIndex = 9
@@ -171,7 +171,7 @@ Partial Class add_karyawan
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(62, 170)
+        Me.aktif.Location = New System.Drawing.Point(129, 170)
         Me.aktif.Name = "aktif"
         Me.aktif.Size = New System.Drawing.Size(47, 17)
         Me.aktif.TabIndex = 8
@@ -190,28 +190,28 @@ Partial Class add_karyawan
         '
         'kota
         '
-        Me.kota.Location = New System.Drawing.Point(51, 142)
+        Me.kota.Location = New System.Drawing.Point(129, 143)
         Me.kota.Name = "kota"
         Me.kota.Size = New System.Drawing.Size(143, 20)
         Me.kota.TabIndex = 7
         '
         'provinsi
         '
-        Me.provinsi.Location = New System.Drawing.Point(69, 118)
+        Me.provinsi.Location = New System.Drawing.Point(129, 119)
         Me.provinsi.Name = "provinsi"
         Me.provinsi.Size = New System.Drawing.Size(143, 20)
         Me.provinsi.TabIndex = 6
         '
         'tel2
         '
-        Me.tel2.Location = New System.Drawing.Point(86, 94)
+        Me.tel2.Location = New System.Drawing.Point(129, 95)
         Me.tel2.Name = "tel2"
         Me.tel2.Size = New System.Drawing.Size(165, 20)
         Me.tel2.TabIndex = 5
         '
         'tel1
         '
-        Me.tel1.Location = New System.Drawing.Point(86, 70)
+        Me.tel1.Location = New System.Drawing.Point(129, 71)
         Me.tel1.Name = "tel1"
         Me.tel1.Size = New System.Drawing.Size(165, 20)
         Me.tel1.TabIndex = 4
@@ -254,7 +254,7 @@ Partial Class add_karyawan
         '
         'alamat
         '
-        Me.alamat.Location = New System.Drawing.Point(406, 25)
+        Me.alamat.Location = New System.Drawing.Point(436, 25)
         Me.alamat.Name = "alamat"
         Me.alamat.Size = New System.Drawing.Size(276, 96)
         Me.alamat.TabIndex = 13
@@ -289,7 +289,7 @@ Partial Class add_karyawan
         '
         'nama
         '
-        Me.nama.Location = New System.Drawing.Point(128, 46)
+        Me.nama.Location = New System.Drawing.Point(129, 47)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(143, 20)
         Me.nama.TabIndex = 2
@@ -297,7 +297,7 @@ Partial Class add_karyawan
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(101, 22)
+        Me.id.Location = New System.Drawing.Point(129, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 1
