@@ -44,21 +44,21 @@ Partial Class add_kontak_principle
         '
         'provinsi
         '
-        Me.provinsi.Location = New System.Drawing.Point(69, 118)
+        Me.provinsi.Location = New System.Drawing.Point(110, 119)
         Me.provinsi.Name = "provinsi"
         Me.provinsi.Size = New System.Drawing.Size(143, 20)
         Me.provinsi.TabIndex = 6
         '
         'tel2
         '
-        Me.tel2.Location = New System.Drawing.Point(86, 94)
+        Me.tel2.Location = New System.Drawing.Point(110, 95)
         Me.tel2.Name = "tel2"
         Me.tel2.Size = New System.Drawing.Size(165, 20)
         Me.tel2.TabIndex = 5
         '
         'tel1
         '
-        Me.tel1.Location = New System.Drawing.Point(86, 70)
+        Me.tel1.Location = New System.Drawing.Point(110, 71)
         Me.tel1.Name = "tel1"
         Me.tel1.Size = New System.Drawing.Size(165, 20)
         Me.tel1.TabIndex = 4
@@ -110,7 +110,7 @@ Partial Class add_kontak_principle
         '
         'nama
         '
-        Me.nama.Location = New System.Drawing.Point(128, 46)
+        Me.nama.Location = New System.Drawing.Point(110, 47)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(143, 20)
         Me.nama.TabIndex = 2
@@ -118,7 +118,7 @@ Partial Class add_kontak_principle
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(101, 22)
+        Me.id.Location = New System.Drawing.Point(110, 24)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 1
@@ -137,14 +137,14 @@ Partial Class add_kontak_principle
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(282, 149)
+        Me.GroupControl1.Size = New System.Drawing.Size(325, 149)
         Me.GroupControl1.TabIndex = 151
         Me.GroupControl1.Text = "Data"
         '
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(88, 167)
+        Me.simpan.Location = New System.Drawing.Point(131, 167)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 153
@@ -153,7 +153,7 @@ Partial Class add_kontak_principle
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(194, 167)
+        Me.cancel.Location = New System.Drawing.Point(237, 167)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 152
@@ -163,7 +163,7 @@ Partial Class add_kontak_principle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(305, 200)
+        Me.ClientSize = New System.Drawing.Size(349, 205)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
