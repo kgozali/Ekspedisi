@@ -22,18 +22,18 @@ Partial Class add_kota
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_kota))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.id = New DevExpress.XtraEditors.TextEdit()
+        Me.nama = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(265, 58)
@@ -49,13 +49,13 @@ Partial Class add_kota
         Me.LabelControl1.TabIndex = 32
         Me.LabelControl1.Text = "Nama Kota :"
         '
-        'id
+        'nama
         '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(95, 23)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(160, 20)
-        Me.id.TabIndex = 45
+        Me.nama.Enabled = False
+        Me.nama.Location = New System.Drawing.Point(95, 23)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(160, 20)
+        Me.nama.TabIndex = 45
         '
         'simpan
         '
@@ -88,13 +88,13 @@ Partial Class add_kota
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents id As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents nama As DevExpress.XtraEditors.TextEdit
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
 End Class
