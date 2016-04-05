@@ -22,21 +22,19 @@ Partial Class add_rute
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_rute))
         Me.unit = New DevExpress.XtraEditors.TextEdit()
         Me.hargaunit = New DevExpress.XtraEditors.TextEdit()
-        Me.kotatujuan = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.kotaasal = New DevExpress.XtraEditors.TextEdit()
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kotatujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kotaasal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -55,13 +53,6 @@ Partial Class add_rute
         Me.hargaunit.Name = "hargaunit"
         Me.hargaunit.Size = New System.Drawing.Size(165, 20)
         Me.hargaunit.TabIndex = 5
-        '
-        'kotatujuan
-        '
-        Me.kotatujuan.Location = New System.Drawing.Point(102, 71)
-        Me.kotatujuan.Name = "kotatujuan"
-        Me.kotatujuan.Size = New System.Drawing.Size(165, 20)
-        Me.kotatujuan.TabIndex = 4
         '
         'LabelControl8
         '
@@ -108,13 +99,6 @@ Partial Class add_rute
         Me.LabelControl2.TabIndex = 33
         Me.LabelControl2.Text = "Kota Asal :"
         '
-        'kotaasal
-        '
-        Me.kotaasal.Location = New System.Drawing.Point(82, 47)
-        Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(143, 20)
-        Me.kotaasal.TabIndex = 2
-        '
         'id
         '
         Me.id.Enabled = False
@@ -125,21 +109,29 @@ Partial Class add_rute
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.ComboBox2)
+        Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.unit)
         Me.GroupControl1.Controls.Add(Me.hargaunit)
-        Me.GroupControl1.Controls.Add(Me.kotatujuan)
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.kotaasal)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(304, 147)
         Me.GroupControl1.TabIndex = 152
         Me.GroupControl1.Text = "Data"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(82, 46)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 55
         '
         'simpan
         '
@@ -159,6 +151,14 @@ Partial Class add_rute
         Me.cancel.TabIndex = 160
         Me.cancel.Text = "Cancel"
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(114, 70)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 56
+        '
         'add_rute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -171,8 +171,6 @@ Partial Class add_rute
         Me.Text = "Tambah Rute"
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kotatujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kotaasal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -182,15 +180,15 @@ Partial Class add_rute
     End Sub
     Friend WithEvents unit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents hargaunit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents kotatujuan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kotaasal As DevExpress.XtraEditors.TextEdit
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
 End Class

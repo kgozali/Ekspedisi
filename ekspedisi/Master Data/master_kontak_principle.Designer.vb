@@ -32,14 +32,8 @@ Partial Class master_kontak_principle
         Me.dataview = New System.Windows.Forms.DataGridView()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.nonaktif = New System.Windows.Forms.RadioButton()
-        Me.aktif = New System.Windows.Forms.RadioButton()
-        Me.editing = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -52,21 +46,27 @@ Partial Class master_kontak_principle
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.nonaktif = New System.Windows.Forms.RadioButton()
+        Me.aktif = New System.Windows.Forms.RadioButton()
+        Me.editing = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarButtonItem2
@@ -173,87 +173,20 @@ Partial Class master_kontak_principle
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Data Kontak Principle"
         '
-        'GroupControl2
+        'GridControl1
         '
-        Me.GroupControl2.Controls.Add(Me.nonaktif)
-        Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(281, 98)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(150, 76)
-        Me.GroupControl2.TabIndex = 46
-        Me.GroupControl2.Text = "Sortir"
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(672, 311)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'nonaktif
+        'GridView1
         '
-        Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 47)
-        Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(106, 17)
-        Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Kontak Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = True
-        '
-        'aktif
-        '
-        Me.aktif.AutoSize = True
-        Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 24)
-        Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(83, 17)
-        Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = True
-        Me.aktif.Text = "Kontak Aktif"
-        Me.aktif.UseVisualStyleBackColor = True
-        '
-        'editing
-        '
-        Me.editing.Location = New System.Drawing.Point(12, 530)
-        Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
-        Me.editing.TabIndex = 45
-        Me.editing.Text = "Edit"
-        Me.editing.Visible = False
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 98)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
-        Me.GroupControl1.TabIndex = 44
-        Me.GroupControl1.Text = "Cari Berdasarkan"
-        '
-        'nama
-        '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(83, 24)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(88, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Kontak"
-        Me.nama.UseVisualStyleBackColor = True
-        '
-        'id
-        '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(72, 17)
-        Me.id.TabIndex = 1
-        Me.id.Text = "ID Kontak"
-        Me.id.UseVisualStyleBackColor = True
-        '
-        'cari
-        '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
-        Me.cari.MenuManager = Me.RibbonControl1
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
-        Me.cari.TabIndex = 0
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
         '
         'RibbonControl1
         '
@@ -347,6 +280,88 @@ Partial Class master_kontak_principle
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.nonaktif)
+        Me.GroupControl2.Controls.Add(Me.aktif)
+        Me.GroupControl2.Location = New System.Drawing.Point(281, 98)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(150, 76)
+        Me.GroupControl2.TabIndex = 46
+        Me.GroupControl2.Text = "Sortir"
+        '
+        'nonaktif
+        '
+        Me.nonaktif.AutoSize = True
+        Me.nonaktif.Location = New System.Drawing.Point(5, 47)
+        Me.nonaktif.Name = "nonaktif"
+        Me.nonaktif.Size = New System.Drawing.Size(106, 17)
+        Me.nonaktif.TabIndex = 9
+        Me.nonaktif.Text = "Kontak Non-Aktif"
+        Me.nonaktif.UseVisualStyleBackColor = True
+        '
+        'aktif
+        '
+        Me.aktif.AutoSize = True
+        Me.aktif.Checked = True
+        Me.aktif.Location = New System.Drawing.Point(5, 24)
+        Me.aktif.Name = "aktif"
+        Me.aktif.Size = New System.Drawing.Size(83, 17)
+        Me.aktif.TabIndex = 8
+        Me.aktif.TabStop = True
+        Me.aktif.Text = "Kontak Aktif"
+        Me.aktif.UseVisualStyleBackColor = True
+        '
+        'editing
+        '
+        Me.editing.Location = New System.Drawing.Point(12, 530)
+        Me.editing.Name = "editing"
+        Me.editing.Size = New System.Drawing.Size(198, 26)
+        Me.editing.TabIndex = 45
+        Me.editing.Text = "Edit"
+        Me.editing.Visible = False
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.cari)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 98)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
+        Me.GroupControl1.TabIndex = 44
+        Me.GroupControl1.Text = "Cari Berdasarkan"
+        '
+        'nama
+        '
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(83, 24)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(88, 17)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = True
+        Me.nama.Text = "Nama Kontak"
+        Me.nama.UseVisualStyleBackColor = True
+        '
+        'id
+        '
+        Me.id.AutoSize = True
+        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(72, 17)
+        Me.id.TabIndex = 1
+        Me.id.Text = "ID Kontak"
+        Me.id.UseVisualStyleBackColor = True
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.MenuManager = Me.RibbonControl1
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.TabIndex = 0
+        '
         'hapus
         '
         Me.hapus.Location = New System.Drawing.Point(12, 530)
@@ -355,21 +370,6 @@ Partial Class master_kontak_principle
         Me.hapus.TabIndex = 47
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
-        '
-        'GridControl1
-        '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.MenuManager = Me.RibbonControl1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(672, 311)
-        Me.GridControl1.TabIndex = 7
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
         '
         'master_kontak_principle
         '
@@ -390,6 +390,9 @@ Partial Class master_kontak_principle
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
@@ -397,9 +400,6 @@ Partial Class master_kontak_principle
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

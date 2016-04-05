@@ -60,4 +60,8 @@
     Private Sub SimpleButton19_Click(sender As Object, e As EventArgs) Handles SimpleButton19.Click
         booking_do.ShowDialog()
     End Sub
+
+    Private Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
