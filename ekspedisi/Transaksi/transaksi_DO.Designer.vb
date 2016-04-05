@@ -116,7 +116,7 @@ Partial Class transaksi_DO
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(172, 33)
+        Me.nomerdo.Location = New System.Drawing.Point(122, 33)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(165, 21)
         Me.nomerdo.TabIndex = 4
@@ -241,7 +241,7 @@ Partial Class transaksi_DO
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(172, 9)
+        Me.TextBox2.Location = New System.Drawing.Point(122, 9)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
         Me.TextBox2.TabIndex = 152
