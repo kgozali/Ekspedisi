@@ -2,13 +2,23 @@
 Public Class booking_do
     Public kodebooking As String = ""
     Private Sub booking_do_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim data As New DataTable
+        gridbooking.OptionsView.ShowFooter = True
         data = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute")
         controlbooking.DataSource = data
 
         For i = 0 To data.Columns.Count - 1
             gridbooking.Columns(i).OptionsColumn.AllowEdit = False
+            If gridbooking.Columns(i).FieldName.ToString = "Keterangan" Then
+                gridbooking.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                gridbooking.Columns(i).SummaryItem.FieldName = "Keterangan"
+                gridbooking.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+            End If
         Next
+
+
+
     End Sub
 
     Private Sub id_CheckedChanged(sender As Object, e As EventArgs) Handles id.CheckedChanged

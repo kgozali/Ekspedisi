@@ -178,6 +178,7 @@ Partial Class transaksi_DO
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.idbarang, Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ShowFooter = True
         '
         'idbarang
         '
@@ -204,7 +205,10 @@ Partial Class transaksi_DO
         'berat
         '
         Me.berat.Caption = "Berat (Kilogram)"
+        Me.berat.FieldName = "berat"
         Me.berat.Name = "berat"
+        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL = {0:N2}")})
+        Me.berat.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.berat.Visible = True
         Me.berat.VisibleIndex = 2
         '

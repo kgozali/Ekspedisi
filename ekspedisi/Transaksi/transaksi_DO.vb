@@ -1,4 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid
+Imports DevExpress.XtraGrid.Views
+
 Public Class transaksi_DO
     Public kodeprinciple As String = ""
     Public namaprinciple As String = ""
@@ -10,7 +13,7 @@ Public Class transaksi_DO
     End Sub
 
     Private Sub transaksi_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+ 
     End Sub
 
     Private Sub idbooking_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idbooking.ButtonClick
@@ -26,5 +29,13 @@ Public Class transaksi_DO
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         add_item.ShowDialog()
         kodeprinciple = Scalar("select id_principle from booking_truk where id_booking='" + idbooking.Text + "'")
+    End Sub
+
+    Private Sub GroupControl3_Paint(sender As Object, e As PaintEventArgs) Handles GroupControl3.Paint
+
+    End Sub
+
+    Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+
     End Sub
 End Class
