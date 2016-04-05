@@ -26,7 +26,7 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New System.Windows.Forms.TextBox()
-        Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
+        Me.pilihkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.nominal = New System.Windows.Forms.TextBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -37,7 +37,7 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,13 +97,13 @@ Partial Class buka_piutang_karyawan
         Me.id.Size = New System.Drawing.Size(162, 21)
         Me.id.TabIndex = 1
         '
-        'ButtonEdit1
+        'pilihkaryawan
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(165, 50)
-        Me.ButtonEdit1.Name = "ButtonEdit1"
-        Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.ButtonEdit1.Size = New System.Drawing.Size(191, 20)
-        Me.ButtonEdit1.TabIndex = 2
+        Me.pilihkaryawan.Location = New System.Drawing.Point(165, 50)
+        Me.pilihkaryawan.Name = "pilihkaryawan"
+        Me.pilihkaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.pilihkaryawan.Size = New System.Drawing.Size(191, 20)
+        Me.pilihkaryawan.TabIndex = 2
         '
         'DateTimePicker1
         '
@@ -174,7 +174,7 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.Controls.Add(Me.nominal)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupControl1.Controls.Add(Me.ButtonEdit1)
+        Me.GroupControl1.Controls.Add(Me.pilihkaryawan)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 9)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(450, 177)
@@ -209,7 +209,7 @@ Partial Class buka_piutang_karyawan
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "buka_piutang_karyawan"
         Me.Text = "Piutang Karayawan"
-        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -225,7 +225,7 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents id As System.Windows.Forms.TextBox
-    Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents pilihkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents nominal As System.Windows.Forms.TextBox
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
