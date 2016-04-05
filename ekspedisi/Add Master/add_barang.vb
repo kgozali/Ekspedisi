@@ -5,24 +5,46 @@ Public Class add_barang
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
-
-    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
+    Private Sub add_barang_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
-            'insert ke dalam database
-            InsertInto("insert into mbarang values ('" & id.Text & "','" & nama.Text & "','" & principle.Text & "','" & notes.Text & "')) ")
-            'konfirmasi melakukan booking ulang
-            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
-            If msg = DialogResult.Yes Then
+            If cek = True Then
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    add_barang_Load(sender, e)
+                    Reset()
+                Else
+                    e.Cancel = True
+                End If
+            Else
                 add_barang_Load(sender, e)
                 Reset()
-            Else
-                cek = False
-                Me.Close()
             End If
-
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
+    End Sub
+    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
+        If nama.Text = "" Or principle.Text = "" Or notes.Text = "" Then
+            MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Try
+                'insert ke dalam database
+                InsertInto("insert into mbarang values ('" & id.Text & "','" & nama.Text & "','" & principle.SelectedValue.ToString & "','" & notes.Text & "') ")
+                'konfirmasi melakukan booking ulang
+                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                If msg = DialogResult.Yes Then
+                    add_barang_Load(sender, e)
+                    Reset()
+                Else
+                    cek = False
+                    Me.Close()
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+        
     End Sub
 
     Private Sub add_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -30,7 +52,10 @@ Public Class add_barang
         principle.DataSource = cbprinciple
         principle.DisplayMember = "Nama Principle"
         principle.ValueMember = "Kode Principle"
-
+        'sourcecode
+        id.Text = "00000002"
+        nama.Text = ""
+        notes.Text = ""
     End Sub
 
     Private Sub notes_TextChanged(sender As Object, e As EventArgs) Handles notes.TextChanged

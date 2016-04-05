@@ -44,4 +44,6 @@ Public Class add_truck
         Cmbbxsupp.DisplayMember = "Nama Principle"
         Cmbbxsupp.ValueMember = "Kode Principle"
     End Sub
+
+
 End Class

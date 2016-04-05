@@ -51,7 +51,6 @@ Partial Class add_kota
         '
         'nama
         '
-        Me.nama.Enabled = False
         Me.nama.Location = New System.Drawing.Point(95, 23)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(160, 20)

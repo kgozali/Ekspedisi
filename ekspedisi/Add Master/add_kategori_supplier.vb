@@ -5,26 +5,52 @@ Public Class add_kategori_supplier
         Me.Close()
     End Sub
 
-    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
+    Private Sub add_kategori_supplier_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
-            'insert ke dalam database
-            InsertInto("insert into mkategori_jabatan values ('" & id.Text & "','" & nama.Text & "')) ")
-            'konfirmasi melakukan booking ulang
-            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
-            If msg = DialogResult.Yes Then
+            If cek = True Then
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    add_kategori_supplier_Load(sender, e)
+                    Reset()
+                Else
+                    e.Cancel = True
+                End If
+            Else
                 add_kategori_supplier_Load(sender, e)
                 Reset()
-            Else
-                cek = False
-                Me.Close()
             End If
-
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
 
+    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
+        If nama.Text = "" Then
+            MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Try
+                'insert ke dalam database
+                InsertInto("insert into mkategori_supplier values ('" & id.Text & "','" & nama.Text & "') ")
+                'konfirmasi melakukan booking ulang
+                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                If msg = DialogResult.Yes Then
+                    add_kategori_supplier_Load(sender, e)
+                    Reset()
+                Else
+                    cek = False
+                    Me.Close()
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+
+        
+    End Sub
+
     Private Sub add_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        id.Text = "000001"
         nama.Text = ""
     End Sub
 

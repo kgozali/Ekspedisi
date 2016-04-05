@@ -26,4 +26,8 @@ Public Class master_customer
         'asdasdasdasdasdasdasdas
 
     End Sub
+
+    Private Sub addsiswabaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addsiswabaru.ItemClick
+        add_customer.ShowDialog()
+    End Sub
 End Class
