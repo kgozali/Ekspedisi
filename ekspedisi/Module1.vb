@@ -68,7 +68,7 @@ Public Module Module1
             Dim Command As MySqlCommand = New MySqlCommand("insert into audit_log values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')", connect)
             Command.ExecuteNonQuery()
             connect.Close()
-
+            Return True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
