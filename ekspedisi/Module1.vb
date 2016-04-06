@@ -62,10 +62,10 @@ Public Module Module1
 
     End Function
 
-    Function auditlog(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String)
+    Function auditlog(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String, ByVal f As String)
         Try
             connect.Open()
-            Dim Command As MySqlCommand = New MySqlCommand("insert into audit_log values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')", connect)
+            Dim Command As MySqlCommand = New MySqlCommand("insert into audit_log values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "')", connect)
             Command.ExecuteNonQuery()
             connect.Close()
             Return True
