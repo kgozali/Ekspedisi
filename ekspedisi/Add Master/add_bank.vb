@@ -51,7 +51,15 @@ Public Class add_bank
 
     Private Sub add_bank_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nama.Text = ""
-        id.Text = "0000001"
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MN" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mbank where substring(ID_BANK,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
     End Sub
 
     Private Sub nama_TextChanged(sender As Object, e As EventArgs) Handles nama.TextChanged

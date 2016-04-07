@@ -54,7 +54,15 @@ Public Class add_customer
 
     Private Sub add_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        id.Text = "000001"
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MC" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mcustomer where substring(ID_customer,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
         nama.Text = ""
         alamat.Text = ""
         email.Text = ""

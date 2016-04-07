@@ -75,7 +75,7 @@ Partial Class add_kategori_supplier
         Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(149, 22)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(116, 20)
         Me.id.TabIndex = 45
         '
         'simpan
