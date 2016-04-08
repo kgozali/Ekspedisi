@@ -46,7 +46,14 @@ Public Class add_jabatan
     Private Sub add_jabatan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nama.Text = ""
 
-        id.Text = "000001"
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MJ" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mjabatan where substring(ID_jabatan,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
     End Sub
 
     Private Sub nama_TextChanged(sender As Object, e As EventArgs) Handles nama.TextChanged

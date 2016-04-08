@@ -50,7 +50,15 @@ Public Class add_principle
     End Sub
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        id.Text = "0000002"
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MP" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mprinciple where substring(ID_principle,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
         nama.Text = ""
         alamat.Text = ""
         email.Text = ""

@@ -61,7 +61,15 @@ Public Class add_rute
     End Sub
 
     Private Sub add_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        id.Text = "0000001"
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MR" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mrute where substring(ID_rute,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
         cbasal = DtTable("select kota from mkota")
         ComboBox1.DataSource = cbasal
         ComboBox1.DisplayMember = "Kota"

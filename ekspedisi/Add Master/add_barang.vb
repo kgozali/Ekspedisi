@@ -53,7 +53,16 @@ Public Class add_barang
         principle.DisplayMember = "Nama Principle"
         principle.ValueMember = "Kode Principle"
         'sourcecode
-        id.Text = "00000002"
+
+        Dim tanggal As New DataTable
+        Dim tgl As String = "MB" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
         nama.Text = ""
         notes.Text = ""
     End Sub
@@ -76,4 +85,6 @@ Public Class add_barang
             cek = True
         End If
     End Sub
+
+
 End Class

@@ -104,7 +104,7 @@ Partial Class add_rute
         Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(72, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(131, 20)
         Me.id.TabIndex = 1
         '
         'GroupControl1

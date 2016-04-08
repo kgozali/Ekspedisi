@@ -133,9 +133,9 @@ Partial Class add_barang
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(111, 23)
+        Me.id.Location = New System.Drawing.Point(111, 22)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(143, 20)
         Me.id.TabIndex = 45
         '
         'add_barang

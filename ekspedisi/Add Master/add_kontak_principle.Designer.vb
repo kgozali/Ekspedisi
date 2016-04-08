@@ -120,7 +120,7 @@ Partial Class add_kontak_principle
         Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(110, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(111, 20)
         Me.id.TabIndex = 1
         '
         'GroupControl1
