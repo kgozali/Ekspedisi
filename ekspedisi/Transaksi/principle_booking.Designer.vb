@@ -123,7 +123,7 @@ Partial Class principle_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 582)
+        Me.ClientSize = New System.Drawing.Size(785, 557)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
