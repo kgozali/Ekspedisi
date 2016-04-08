@@ -582,10 +582,28 @@
     <Compile Include="Transaksi\Detail_booking_do.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\principle_booking.Designer.vb">
+      <DependentUpon>principle_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\principle_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\rute_booking.Designer.vb">
+      <DependentUpon>rute_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\rute_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\transaksi_DO.Designer.vb">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </Compile>
     <Compile Include="Transaksi\transaksi_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\truk_booking.Designer.vb">
+      <DependentUpon>truk_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
@@ -839,8 +857,17 @@
     <EmbeddedResource Include="Transaksi\Detail_booking_do.resx">
       <DependentUpon>Detail_booking_do.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\principle_booking.resx">
+      <DependentUpon>principle_booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\rute_booking.resx">
+      <DependentUpon>rute_booking.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\truk_booking.resx">
+      <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
