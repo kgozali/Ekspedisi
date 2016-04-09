@@ -32,7 +32,7 @@ Public Class add_supplier
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.SelectedValue.ToString & "') ")
+                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.SelectedValue.ToString & "','0') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

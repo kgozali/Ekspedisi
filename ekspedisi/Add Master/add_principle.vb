@@ -30,7 +30,7 @@ Public Class add_principle
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "') ")
+                InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','0') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

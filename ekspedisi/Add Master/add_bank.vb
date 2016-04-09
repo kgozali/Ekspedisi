@@ -29,7 +29,7 @@ Public Class add_bank
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mbank values ('" & id.Text & "','" & nama.Text & "') ")
+                InsertInto("insert into mbank values ('" & id.Text & "','" & nama.Text & "','0') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

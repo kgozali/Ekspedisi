@@ -33,7 +33,7 @@ Public Class add_karyawan
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mkaryawan values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "','" & DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") & "','" & chckbx & "','" & RichTextBox1.Text & "') ")
+                InsertInto("insert into mkaryawan values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "','" & DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") & "','" & chckbx & "','" & RichTextBox1.Text & "','0') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

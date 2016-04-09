@@ -44,6 +44,7 @@ Public Module Module1
         End Try
     End Function
 
+
     Function DtTablemaster(ByVal x As String)
         'select khusus master data yang perlu checkbox 
         Try

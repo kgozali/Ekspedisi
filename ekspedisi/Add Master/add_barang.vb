@@ -29,7 +29,7 @@ Public Class add_barang
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mbarang values ('" & id.Text & "','" & nama.Text & "','" & principle.SelectedValue.ToString & "','" & notes.Text & "') ")
+                InsertInto("insert into mbarang values ('" & id.Text & "','" & nama.Text & "','" & principle.SelectedValue.ToString & "','" & notes.Text & "','0') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

@@ -29,7 +29,7 @@ Public Class add_user
         Else
             Try
                 If password.Text = reenterpass.Text Then
-                    inputuser = "insert into muser values ('" & username.Text & "',md5('" & password.Text & "')) "
+                    inputuser = "insert into muser values ('" & username.Text & "',md5('" & password.Text & "','0')) "
                     InsertInto(inputuser)
                     Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                     If msg = DialogResult.Yes Then

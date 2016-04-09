@@ -6,7 +6,7 @@ Public Class add_rekening
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
-        inputrekening = "insert into mrekening values ('" & id.Text & "', '" & nama.Text & "')"
+        inputrekening = "insert into mrekening values ('" & id.Text & "', '" & nama.Text & "','0')"
         InsertInto(inputrekening)
         MsgBox("Data Telah Terinput!")
         add_rekening_Load(sender, e)

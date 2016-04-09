@@ -35,7 +35,7 @@ Partial Class master_karyawan
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
-        Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.addkary = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.deldata = New DevExpress.XtraBars.BarButtonItem()
         Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
@@ -170,7 +170,7 @@ Partial Class master_karyawan
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addkary, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -191,13 +191,13 @@ Partial Class master_karyawan
         Me.BarButtonItem8.Id = 21
         Me.BarButtonItem8.Name = "BarButtonItem8"
         '
-        'addsiswabaru
+        'addkary
         '
-        Me.addsiswabaru.Caption = "Tambah Data"
-        Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
-        Me.addsiswabaru.Id = 23
-        Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
-        Me.addsiswabaru.Name = "addsiswabaru"
+        Me.addkary.Caption = "Tambah Data"
+        Me.addkary.Glyph = CType(resources.GetObject("addkary.Glyph"), System.Drawing.Image)
+        Me.addkary.Id = 23
+        Me.addkary.LargeGlyph = CType(resources.GetObject("addkary.LargeGlyph"), System.Drawing.Image)
+        Me.addkary.Name = "addkary"
         '
         'edit
         '
@@ -234,7 +234,7 @@ Partial Class master_karyawan
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addkary)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
@@ -419,7 +419,7 @@ Partial Class master_karyawan
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents addkary As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem

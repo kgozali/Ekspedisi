@@ -35,7 +35,7 @@ Public Class add_rute
             If cc.Rows.Count = 0 Then
                 Try
                     'insert ke dalam database
-                    InsertInto("insert into mrute values ('" & id.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & ComboBox2.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "') ")
+                    InsertInto("insert into mrute values ('" & id.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & ComboBox2.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','0') ")
                     'konfirmasi melakukan booking ulang
                     Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                     If msg = DialogResult.Yes Then

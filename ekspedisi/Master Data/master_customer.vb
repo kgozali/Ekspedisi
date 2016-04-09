@@ -6,6 +6,7 @@ Public Class master_customer
         GridControl1.DataSource = dataset1
 
         'Ini untuk matikan column lain selain checkbox, mulai dari index 1 soalnya checkbox index 0
+
         For i = 1 To dataset1.Columns.Count - 1
             gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
         Next
