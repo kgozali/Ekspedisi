@@ -103,6 +103,8 @@ Partial Class add_item
         '
         Me.gridbarang.GridControl = Me.GridControl1
         Me.gridbarang.Name = "gridbarang"
+        Me.gridbarang.OptionsSelection.MultiSelect = True
+        Me.gridbarang.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'SimpleButton1
         '

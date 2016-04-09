@@ -32,7 +32,6 @@ Public Class add_item
     End Sub
 
     Sub checkadd()
-        DataSet.Columns.Add("Tambah", GetType(Boolean))
         GridControl1.DataSource = dataset
         For i = 0 To gridbarang.Columns.Count - 1
             If i = 2 Then
@@ -42,5 +41,34 @@ Public Class add_item
             End If
 
         Next
+    End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Try
+            For i = 0 To gridbarang.DataRowCount - 1
+
+                If gridbarang.IsRowSelected(i) Then
+                    Dim ar(2) As String
+                    ar(0) = gridbarang.GetRowCellValue(i, "Kode Barang")
+                    ar(1) = gridbarang.GetRowCellValue(i, "Nama Barang")
+                    ar(2) = "0"
+
+                    transaksi_DO.GridView1.AddNewRow()
+                    transaksi_DO.GridView1.SetRowCellValue(gridbarang.FocusedRowHandle, "ID Barang", ar(0))
+                    transaksi_DO.GridView1.SetRowCellValue(gridbarang.FocusedRowHandle, "Nama Barang", ar(1))
+                    transaksi_DO.GridView1.SetRowCellValue(gridbarang.FocusedRowHandle, "Berat (Kilogram)", ar(2))
+                Else
+                    MsgBox("asdadasda")
+                End If
+
+
+
+
+            Next
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        
     End Sub
 End Class
