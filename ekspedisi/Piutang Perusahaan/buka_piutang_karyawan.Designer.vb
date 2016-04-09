@@ -35,10 +35,10 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.akunkas = New System.Windows.Forms.ComboBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.keterangan = New System.Windows.Forms.RichTextBox()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -94,8 +94,10 @@ Partial Class buka_piutang_karyawan
         '
         'id
         '
+        Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(175, 25)
         Me.id.Name = "id"
+        Me.id.ReadOnly = True
         Me.id.Size = New System.Drawing.Size(162, 21)
         Me.id.TabIndex = 1
         '
@@ -165,7 +167,7 @@ Partial Class buka_piutang_karyawan
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.RichTextBox1)
+        Me.GroupControl1.Controls.Add(Me.keterangan)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.akunkas)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
@@ -185,6 +187,23 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.TabIndex = 159
         Me.GroupControl1.Text = "Data Piutang"
         '
+        'keterangan
+        '
+        Me.keterangan.Location = New System.Drawing.Point(175, 174)
+        Me.keterangan.Name = "keterangan"
+        Me.keterangan.Size = New System.Drawing.Size(270, 96)
+        Me.keterangan.TabIndex = 160
+        Me.keterangan.Text = ""
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(5, 174)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
+        Me.LabelControl7.TabIndex = 159
+        Me.LabelControl7.Text = "Keterangan"
+        '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureBox1)
@@ -201,23 +220,6 @@ Partial Class buka_piutang_karyawan
         Me.PictureBox1.Size = New System.Drawing.Size(190, 246)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 174)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
-        Me.LabelControl7.TabIndex = 159
-        Me.LabelControl7.Text = "Keterangan"
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(175, 174)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(270, 96)
-        Me.RichTextBox1.TabIndex = 160
-        Me.RichTextBox1.Text = ""
         '
         'buka_piutang_karyawan
         '
@@ -257,6 +259,6 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
 End Class

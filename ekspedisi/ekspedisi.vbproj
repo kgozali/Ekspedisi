@@ -228,6 +228,12 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIR\KIR Truk.Designer.vb">
+      <DependentUpon>KIR Truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\KIR Truk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="Piutang Perusahaan\pelunasan_piutang.Designer.vb">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
@@ -582,10 +588,40 @@
     <Compile Include="Transaksi\Detail_booking_do.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\edit_DO.Designer.vb">
+      <DependentUpon>edit_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\edit_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\master_DO.Designer.vb">
+      <DependentUpon>master_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\master_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\principle_booking.Designer.vb">
+      <DependentUpon>principle_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\principle_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\rute_booking.Designer.vb">
+      <DependentUpon>rute_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\rute_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\transaksi_DO.Designer.vb">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
     </Compile>
     <Compile Include="Transaksi\transaksi_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\truk_booking.Designer.vb">
+      <DependentUpon>truk_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
@@ -653,6 +689,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\KIR Truk.resx">
+      <DependentUpon>KIR Truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
@@ -839,8 +878,23 @@
     <EmbeddedResource Include="Transaksi\Detail_booking_do.resx">
       <DependentUpon>Detail_booking_do.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\edit_DO.resx">
+      <DependentUpon>edit_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\master_DO.resx">
+      <DependentUpon>master_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\principle_booking.resx">
+      <DependentUpon>principle_booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\rute_booking.resx">
+      <DependentUpon>rute_booking.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\transaksi_DO.resx">
       <DependentUpon>transaksi_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\truk_booking.resx">
+      <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">

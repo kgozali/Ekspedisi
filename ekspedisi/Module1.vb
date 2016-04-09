@@ -6,8 +6,13 @@ Public Module Module1
         'untuk select single data
         Try
             connect.Open()
+            Dim a As String
             Dim command As New MySqlCommand(x, connect)
-            Dim a As String = command.ExecuteScalar()
+            If IsDBNull(command.ExecuteScalar()) = True Then
+                a = ""
+            Else
+                a = command.ExecuteScalar()
+            End If
             connect.Close()
             Return a
 
@@ -80,5 +85,28 @@ Public Module Module1
         End Try
 
 
+    End Function
+
+    Function autogenerate(ByVal prefix As String, ByVal cekmax As String)
+        Try
+            Dim currentTime As System.DateTime = System.DateTime.Now
+            Dim urutan As String
+            Dim kode As String
+            Dim fix As String = ""
+
+            If urutan = "" Then
+                kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
+            ElseIf urutan.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or urutan.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
+                urutan = Scalar(cekmax).Substring(Scalar(cekmax).Length - 5)
+                For i = 1 To 5 - urutan.Length
+                    fix = fix & "0"
+                Next i
+            End If
+
+            Return kode
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        
     End Function
 End Module

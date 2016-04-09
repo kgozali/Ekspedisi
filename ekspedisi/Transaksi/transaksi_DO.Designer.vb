@@ -137,7 +137,7 @@ Partial Class transaksi_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(901, 651)
+        Me.SimpleButton1.Location = New System.Drawing.Point(902, 624)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 11
@@ -146,7 +146,7 @@ Partial Class transaksi_DO
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(795, 651)
+        Me.Submit.Location = New System.Drawing.Point(796, 624)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 10
@@ -245,7 +245,7 @@ Partial Class transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1008, 659)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LabelControl7)
