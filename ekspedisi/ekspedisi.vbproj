@@ -588,6 +588,18 @@
     <Compile Include="Transaksi\Detail_booking_do.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\edit_DO.Designer.vb">
+      <DependentUpon>edit_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\edit_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\master_DO.Designer.vb">
+      <DependentUpon>master_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\master_DO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\principle_booking.Designer.vb">
       <DependentUpon>principle_booking.vb</DependentUpon>
     </Compile>
@@ -865,6 +877,12 @@
     </Compile>
     <EmbeddedResource Include="Transaksi\Detail_booking_do.resx">
       <DependentUpon>Detail_booking_do.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\edit_DO.resx">
+      <DependentUpon>edit_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\master_DO.resx">
+      <DependentUpon>master_DO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\principle_booking.resx">
       <DependentUpon>principle_booking.vb</DependentUpon>

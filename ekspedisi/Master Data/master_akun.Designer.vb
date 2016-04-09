@@ -30,11 +30,8 @@ Partial Class master_akun
         Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.dataview = New System.Windows.Forms.DataGridView()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -47,24 +44,25 @@ Partial Class master_akun
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
+        Me.dataview = New System.Windows.Forms.DataGridView()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl2
@@ -157,48 +155,20 @@ Partial Class master_akun
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Data Kota"
         '
-        'dataview
+        'GridControl1
         '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(3, 24)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(414, 311)
-        Me.dataview.TabIndex = 6
+        Me.GridControl1.Location = New System.Drawing.Point(0, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(417, 311)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'RepositoryItemCheckEdit1
+        'GridView1
         '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Caption = "Check"
-        Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        '
-        'cancel
-        '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(339, 533)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 49
-        Me.cancel.Text = "Cancel"
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 101)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 52)
-        Me.GroupControl1.TabIndex = 44
-        Me.GroupControl1.Text = "Cari"
-        '
-        'cari
-        '
-        Me.cari.Location = New System.Drawing.Point(5, 24)
-        Me.cari.MenuManager = Me.RibbonControl1
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
-        Me.cari.TabIndex = 0
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
         '
         'RibbonControl1
         '
@@ -212,13 +182,12 @@ Partial Class master_akun
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(463, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(468, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -292,6 +261,42 @@ Partial Class master_akun
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
+        'dataview
+        '
+        Me.dataview.AllowUserToAddRows = False
+        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataview.Location = New System.Drawing.Point(3, 24)
+        Me.dataview.Name = "dataview"
+        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataview.Size = New System.Drawing.Size(414, 311)
+        Me.dataview.TabIndex = 6
+        '
+        'cancel
+        '
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(339, 533)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 49
+        Me.cancel.Text = "Cancel"
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.cari)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 101)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 52)
+        Me.GroupControl1.TabIndex = 44
+        Me.GroupControl1.Text = "Cari"
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(5, 24)
+        Me.cari.MenuManager = Me.RibbonControl1
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.TabIndex = 0
+        '
         'BarButtonItem2
         '
         Me.BarButtonItem2.ActAsDropDown = True
@@ -330,26 +335,11 @@ Partial Class master_akun
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
-        'GridControl1
-        '
-        Me.GridControl1.Location = New System.Drawing.Point(0, 24)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.MenuManager = Me.RibbonControl1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(417, 311)
-        Me.GridControl1.TabIndex = 7
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        '
         'master_akun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(448, 563)
+        Me.ClientSize = New System.Drawing.Size(445, 567)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
@@ -365,14 +355,13 @@ Partial Class master_akun
         Me.GroupControl2.PerformLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -388,7 +377,6 @@ Partial Class master_akun
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents dataview As System.Windows.Forms.DataGridView
-    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
