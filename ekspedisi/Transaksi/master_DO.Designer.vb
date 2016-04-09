@@ -74,7 +74,7 @@ Partial Class master_DO
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 203)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(565, 319)
+        Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Daftar DO"
         '
@@ -83,7 +83,7 @@ Partial Class master_DO
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(555, 286)
+        Me.GridControl1.Size = New System.Drawing.Size(724, 415)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -155,7 +155,7 @@ Partial Class master_DO
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(583, 203)
+        Me.GroupControl2.Location = New System.Drawing.Point(752, 203)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(244, 319)
         Me.GroupControl2.TabIndex = 49
@@ -172,7 +172,7 @@ Partial Class master_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(727, 528)
+        Me.SimpleButton1.Location = New System.Drawing.Point(891, 652)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 50
@@ -184,7 +184,7 @@ Partial Class master_DO
         Me.GroupControl4.Controls.Add(Me.aktif)
         Me.GroupControl4.Location = New System.Drawing.Point(281, 99)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(150, 76)
+        Me.GroupControl4.Size = New System.Drawing.Size(150, 98)
         Me.GroupControl4.TabIndex = 155
         Me.GroupControl4.Text = "Sortir"
         '
@@ -227,7 +227,7 @@ Partial Class master_DO
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(858, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1030, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -351,7 +351,7 @@ Partial Class master_DO
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(12, 528)
+        Me.hapus.Location = New System.Drawing.Point(12, 653)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 159
@@ -362,7 +362,7 @@ Partial Class master_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 563)
+        Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl4)
