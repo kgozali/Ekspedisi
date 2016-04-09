@@ -80,4 +80,8 @@ Public Module Module1
 
 
     End Function
+
+    Function autogenerate(ByVal prefix As String)
+
+    End Function
 End Module

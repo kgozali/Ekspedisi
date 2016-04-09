@@ -228,6 +228,12 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIR\KIR Truk.Designer.vb">
+      <DependentUpon>KIR Truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\KIR Truk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="Piutang Perusahaan\pelunasan_piutang.Designer.vb">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
@@ -671,6 +677,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\KIR Truk.resx">
+      <DependentUpon>KIR Truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>

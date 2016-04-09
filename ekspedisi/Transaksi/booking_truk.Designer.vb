@@ -32,6 +32,10 @@ Partial Class booking_truk
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.eta = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.cp = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.nomertelp = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.alamat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
         Me.ButtonEdit2 = New DevExpress.XtraEditors.ButtonEdit()
         Me.ButtonEdit4 = New DevExpress.XtraEditors.ButtonEdit()
@@ -45,10 +49,6 @@ Partial Class booking_truk
         Me.jumlahdp = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.eta = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.cp = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.alamat = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.nomertelp = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,9 +69,9 @@ Partial Class booking_truk
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 18)
+        Me.Label1.Size = New System.Drawing.Size(106, 18)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "ID Booking :"
+        Me.Label1.Text = "Kode Booking :"
         '
         'Label2
         '
@@ -168,6 +168,34 @@ Partial Class booking_truk
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.eta, Me.cp, Me.nomertelp, Me.alamat})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        '
+        'eta
+        '
+        Me.eta.Caption = "ETA "
+        Me.eta.Name = "eta"
+        Me.eta.Visible = True
+        Me.eta.VisibleIndex = 0
+        '
+        'cp
+        '
+        Me.cp.Caption = "Contact Person"
+        Me.cp.Name = "cp"
+        Me.cp.Visible = True
+        Me.cp.VisibleIndex = 1
+        '
+        'nomertelp
+        '
+        Me.nomertelp.Caption = "Nomor Telepon"
+        Me.nomertelp.Name = "nomertelp"
+        Me.nomertelp.Visible = True
+        Me.nomertelp.VisibleIndex = 2
+        '
+        'alamat
+        '
+        Me.alamat.Caption = "Alamat"
+        Me.alamat.Name = "alamat"
+        Me.alamat.Visible = True
+        Me.alamat.VisibleIndex = 3
         '
         'ButtonEdit1
         '
@@ -273,34 +301,6 @@ Partial Class booking_truk
         Me.LabelControl10.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl10.TabIndex = 55
         Me.LabelControl10.Text = "Catatan :"
-        '
-        'eta
-        '
-        Me.eta.Caption = "ETA "
-        Me.eta.Name = "eta"
-        Me.eta.Visible = True
-        Me.eta.VisibleIndex = 0
-        '
-        'cp
-        '
-        Me.cp.Caption = "Contact Person"
-        Me.cp.Name = "cp"
-        Me.cp.Visible = True
-        Me.cp.VisibleIndex = 1
-        '
-        'alamat
-        '
-        Me.alamat.Caption = "Alamat"
-        Me.alamat.Name = "alamat"
-        Me.alamat.Visible = True
-        Me.alamat.VisibleIndex = 3
-        '
-        'nomertelp
-        '
-        Me.nomertelp.Caption = "Nomor Telepon"
-        Me.nomertelp.Name = "nomertelp"
-        Me.nomertelp.Visible = True
-        Me.nomertelp.VisibleIndex = 2
         '
         'booking_truk
         '
