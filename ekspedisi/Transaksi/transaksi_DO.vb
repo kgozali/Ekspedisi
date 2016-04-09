@@ -21,6 +21,9 @@ Public Class transaksi_DO
             hitung = "0" + hitung
         End While
         id.Text = tgl + hitung
+
+        tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
+
     End Sub
 
     Private Sub idbooking_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idbooking.ButtonClick
@@ -65,5 +68,9 @@ Public Class transaksi_DO
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
        
+    End Sub
+
+    Private Sub tanggalterkirim_ValueChanged(sender As Object, e As EventArgs) Handles tanggalterkirim.ValueChanged
+        tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
     End Sub
 End Class

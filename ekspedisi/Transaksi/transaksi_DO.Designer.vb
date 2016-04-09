@@ -104,7 +104,6 @@ Partial Class transaksi_DO
         '
         'idbooking
         '
-        Me.idbooking.Enabled = False
         Me.idbooking.Location = New System.Drawing.Point(175, 36)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
