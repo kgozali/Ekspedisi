@@ -54,18 +54,18 @@ Partial Class transaksi_DO
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(15, 14)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(93, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(110, 18)
         Me.LabelControl1.TabIndex = 33
-        Me.LabelControl1.Text = "ID Transaksi :"
+        Me.LabelControl1.Text = "Kode Transaksi :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Location = New System.Drawing.Point(15, 38)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(81, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(98, 18)
         Me.LabelControl2.TabIndex = 34
-        Me.LabelControl2.Text = "ID Booking :"
+        Me.LabelControl2.Text = "Kode Booking :"
         '
         'LabelControl3
         '
@@ -96,6 +96,7 @@ Partial Class transaksi_DO
         '
         'id
         '
+        Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(175, 11)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(117, 21)
@@ -103,6 +104,7 @@ Partial Class transaksi_DO
         '
         'idbooking
         '
+        Me.idbooking.Enabled = False
         Me.idbooking.Location = New System.Drawing.Point(175, 36)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -197,6 +199,7 @@ Partial Class transaksi_DO
         '
         'TextBox2
         '
+        Me.TextBox2.Enabled = False
         Me.TextBox2.Location = New System.Drawing.Point(831, 11)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)

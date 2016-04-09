@@ -44,6 +44,7 @@ Public Module Module1
             Dim command As New MySqlCommand(x, connect)
             command.ExecuteNonQuery()
             connect.Close()
+            Return True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
