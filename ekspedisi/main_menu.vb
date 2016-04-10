@@ -1,4 +1,5 @@
-﻿Public Class main_menu 
+﻿Imports MySql.Data.MySqlClient
+Public Class main_menu
 
 
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
@@ -81,10 +82,67 @@
     End Sub
 
     Private Sub opd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles opd.FileOk
-        TextBox2.Text = opd.FileName.ToString()
+        restorepath.Text = opd.FileName.ToString()
     End Sub
 
     Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
+        If restorepath.Text = "" Then
+            MessageBox.Show("File Location tidak Ditemukan", "File Path Error")
+        Else
+            Try
+
+                Dim command As MySqlCommand = New MySqlCommand
+                command.Connection = connect
+                connect.Open()
+                Dim mb As MySqlBackup = New MySqlBackup(command)
+                mb.ImportFromFile(restorepath.Text.ToString())
+                connect.Close()
+                MsgBox("Restore Sukses!")
+                restorepath.Text = ""
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
+        If backuppath.Text = "" Then
+            MessageBox.Show("File Location tidak Ditemukan", "File Path Error")
+        Else
+            Try
+                Dim command As MySqlCommand = New MySqlCommand
+                command.Connection = connect
+                connect.Open()
+                Dim mb As MySqlBackup = New MySqlBackup(command)
+                mb.ExportToFile(backuppath.Text.ToString())
+                connect.Close()
+                MsgBox("BackUp Sukses!")
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub SimpleButton40_Click(sender As Object, e As EventArgs) Handles SimpleButton40.Click
+        Dim asd As String = System.DateTime.Now.ToString("dd-MM-yyyy HHmmss")
+        sfd.InitialDirectory = "C:\users\public"
+        sfd.FileName = "SSKM-" & asd & ".sql"
+        sfd.DefaultExt = "sql"
+        sfd.Filter = "SQL Files | *.sql"
+        sfd.ShowDialog()
+    End Sub
+
+    Private Sub sfd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles sfd.FileOk
+        backuppath.Text = sfd.FileName.ToString
+    End Sub
+
+    Private Sub backuppath_TextChanged(sender As Object, e As EventArgs) Handles backuppath.TextChanged
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
 
     End Sub
 End Class
