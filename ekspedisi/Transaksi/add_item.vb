@@ -3,21 +3,26 @@ Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraEditors.Repository
 Public Class add_item
     Dim dataset As New DataTable
-    Dim barangset As DataTable = New DataTable
+    Public barangset As DataTable = New DataTable
 
     Private Sub add_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sortir()
-        GroupControl2.Text = "List Barang " & transaksi_DO.namaprinciple
+        Try
+            sortir()
+            GroupControl2.Text = "List Barang " & transaksi_DO.namaprinciple
 
 
-        For i = 0 To transaksi_DO.GridView1.DataRowCount - 1
-            For j = 0 To gridbarang.DataRowCount - 1
-                If transaksi_DO.GridView1.GetRowCellValue(i, "Kode Barang") = gridbarang.GetRowCellValue(j, "Kode Barang") Then
-                    gridbarang.SelectRow(j)
-                End If
+            For i = 0 To transaksi_DO.GridView1.DataRowCount - 1
+                For j = 0 To gridbarang.DataRowCount - 1
+                    If transaksi_DO.GridView1.GetRowCellValue(i, "Kode Barang") = gridbarang.GetRowCellValue(j, "Kode Barang") Then
+                        gridbarang.SelectRow(j)
+                    End If
+                Next
             Next
-        Next
-        barangset.Rows.Clear()
+            barangset.Rows.Clear()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+       
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
@@ -44,15 +49,20 @@ Public Class add_item
     End Sub
 
     Sub checkadd()
-        GridControl1.DataSource = dataset
-        For i = 0 To gridbarang.Columns.Count - 1
-            If i = 2 Then
-                gridbarang.Columns(i).OptionsColumn.AllowEdit = True
-            Else
-                gridbarang.Columns(i).OptionsColumn.AllowEdit = False
-            End If
+        Try
+            GridControl1.DataSource = dataset
+            For i = 0 To gridbarang.Columns.Count - 1
+                If i = 2 Then
+                    gridbarang.Columns(i).OptionsColumn.AllowEdit = True
+                Else
+                    gridbarang.Columns(i).OptionsColumn.AllowEdit = False
+                End If
 
-        Next
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+      
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
@@ -77,8 +87,13 @@ Public Class add_item
                 End If
             Next
             transaksi_DO.GridControl1.DataSource = barangset
-            For i = 0 To transaksi_DO.GridView1.Columns.Count - 2
-                transaksi_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            For i = 0 To transaksi_DO.GridView1.Columns.Count - 1
+                If i < 2 Then
+                    transaksi_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = False
+                Else
+                    transaksi_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = True
+                End If
+
             Next
             Me.Close()
 

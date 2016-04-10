@@ -194,24 +194,29 @@ Public Class booking_truk
 
     
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
-            cek = True
-        Else
-            cek = False
-
-        End If
-        If cek = True Then
-            Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If msg = DialogResult.OK Then
-                reset()
-
+        Try
+            If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
+                cek = True
             Else
-                e.Cancel = True
+                cek = False
+
             End If
-        Else
-            reset()
-        End If
+            If cek = True Then
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    reset()
+
+                Else
+                    e.Cancel = True
+                End If
+            Else
+                reset()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
        
+
 
 
     End Sub
@@ -228,38 +233,43 @@ Public Class booking_truk
     End Sub
 
     Sub grid()
-        'buat kolom-kolom di gridview
-        Dim tabelkontak As New DataTable
-        If tabelkontak.Columns.Count < 1 Then
-            tabelkontak.Columns.Add("ETA (Jam)")
-            tabelkontak.Columns.Add("Contact Person")
-            tabelkontak.Columns.Add("Nomor Telepon")
-            tabelkontak.Columns.Add("Alamat")
-        Else
+        Try
+            'buat kolom-kolom di gridview
+            Dim tabelkontak As New DataTable
+            If tabelkontak.Columns.Count < 1 Then
+                tabelkontak.Columns.Add("ETA (Jam)")
+                tabelkontak.Columns.Add("Contact Person")
+                tabelkontak.Columns.Add("Nomor Telepon")
+                tabelkontak.Columns.Add("Alamat")
+            Else
 
-        End If
+            End If
 
-        Dim ar(3) As String
-        For i = 0 To 3
-            ar(i) = ""
-        Next
-        tabelkontak.Rows.Add(ar(0), ar(1), ar(2), ar(3))
-        GridControl1.DataSource = tabelkontak
+            Dim ar(3) As String
+            For i = 0 To 3
+                ar(i) = ""
+            Next
+            tabelkontak.Rows.Add(ar(0), ar(1), ar(2), ar(3))
+            GridControl1.DataSource = tabelkontak
 
-        If tabelsupir.Columns.Count < 1 Then
-            tabelsupir.Columns.Add("Kode Supir")
-            tabelsupir.Columns.Add("Nama Supir")
-            tabelsupir.Columns.Add("Jumlah DP (Rp)")
-        End If
+            If tabelsupir.Columns.Count < 1 Then
+                tabelsupir.Columns.Add("Kode Supir")
+                tabelsupir.Columns.Add("Nama Supir")
+                tabelsupir.Columns.Add("Jumlah DP (Rp)")
+            End If
 
-        Dim arr(2) As String
-        For i = 0 To 2
-            arr(i) = ""
-        Next
-        tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
-        GridControl2.DataSource = tabelsupir
-        For i = 0 To GridView2.Columns.Count - 2
-            GridView2.Columns(i).OptionsColumn.AllowEdit = False
-        Next
+            Dim arr(2) As String
+            For i = 0 To 2
+                arr(i) = ""
+            Next
+            tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
+            GridControl2.DataSource = tabelsupir
+            For i = 0 To GridView2.Columns.Count - 2
+                GridView2.Columns(i).OptionsColumn.AllowEdit = False
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+      
     End Sub
 End Class

@@ -82,15 +82,21 @@ Public Class main_menu
     End Sub
 
     Private Sub opd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles opd.FileOk
-        restorepath.Text = opd.FileName.ToString()
-        Dim info = My.Computer.FileSystem.GetFileInfo(restorepath.Text)
-        Label20.Text = info.Name
-        Label13.Text = info.Extension
-        Label14.Text = info.LastWriteTime.ToString("dd-MM-yyyy HH:mm:ss")
-        Label15.Text = info.CreationTime.ToString("dd-MM-yyyy HH:mm:ss")
+        Try
+            restorepath.Text = opd.FileName.ToString()
+            Dim info = My.Computer.FileSystem.GetFileInfo(restorepath.Text)
+            Label20.Text = info.Name
+            Label13.Text = info.Extension
+            Label14.Text = info.LastWriteTime.ToString("dd-MM-yyyy HH:mm:ss")
+            Label15.Text = info.CreationTime.ToString("dd-MM-yyyy HH:mm:ss")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+      
     End Sub
 
     Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
+
         If restorepath.Text = "" Then
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
@@ -109,9 +115,12 @@ Public Class main_menu
 
             End Try
         End If
+      
+
     End Sub
 
     Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
+      
         If backuppath.Text = "" Then
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
