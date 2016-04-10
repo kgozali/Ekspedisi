@@ -184,7 +184,7 @@ Partial Class master_DO
         Me.GroupControl4.Controls.Add(Me.aktif)
         Me.GroupControl4.Location = New System.Drawing.Point(281, 99)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(150, 98)
+        Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
         Me.GroupControl4.TabIndex = 155
         Me.GroupControl4.Text = "Sortir"
         '

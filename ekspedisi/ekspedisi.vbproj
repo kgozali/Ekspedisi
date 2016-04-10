@@ -235,6 +235,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
+    <Compile Include="Piutang Perusahaan\daftar_karyawan_pelunasan.Designer.vb">
+      <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_karyawan_pelunasan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\pelunansan_piutang_karyawan.Designer.vb">
+      <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\pelunansan_piutang_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\pelunasan_piutang.Designer.vb">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
     </Compile>
@@ -281,12 +293,6 @@
       <DependentUpon>karyawan_piutang.vb</DependentUpon>
     </Compile>
     <Compile Include="Piutang Perusahaan\karyawan_piutang.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.Designer.vb">
-      <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Piutang Perusahaan\pelunasan_piutang_karyawan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaksi\add_item.Designer.vb">
@@ -624,6 +630,12 @@
     <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="zoom_scan.Designer.vb">
+      <DependentUpon>zoom_scan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="zoom_scan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
       <DependentUpon>add_akun.vb</DependentUpon>
     </EmbeddedResource>
@@ -693,6 +705,12 @@
     <EmbeddedResource Include="KIR\KIR Truk.resx">
       <DependentUpon>KIR Truk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
+      <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
+      <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
     </EmbeddedResource>
@@ -716,9 +734,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\karyawan_piutang.resx">
       <DependentUpon>karyawan_piutang.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang_karyawan.resx">
-      <DependentUpon>pelunasan_piutang_karyawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\add_item.resx">
       <DependentUpon>add_item.vb</DependentUpon>
@@ -895,6 +910,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\truk_booking.resx">
       <DependentUpon>truk_booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zoom_scan.resx">
+      <DependentUpon>zoom_scan.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">

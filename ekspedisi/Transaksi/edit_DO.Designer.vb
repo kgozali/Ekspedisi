@@ -43,6 +43,8 @@ Partial Class edit_DO
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +52,9 @@ Partial Class edit_DO
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SimpleButton2
@@ -121,7 +126,7 @@ Partial Class edit_DO
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(979, 483)
+        Me.GridControl1.Size = New System.Drawing.Size(693, 472)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -137,7 +142,7 @@ Partial Class edit_DO
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(10, 110)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(989, 510)
+        Me.GroupControl3.Size = New System.Drawing.Size(703, 499)
         Me.GroupControl3.TabIndex = 166
         Me.GroupControl3.Text = "Data Transaksi"
         '
@@ -241,11 +246,29 @@ Partial Class edit_DO
         Me.LabelControl1.TabIndex = 161
         Me.LabelControl1.Text = "ID Transaksi :"
         '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.PictureBox1)
+        Me.GroupControl1.Location = New System.Drawing.Point(719, 110)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(280, 496)
+        Me.GroupControl1.TabIndex = 170
+        Me.GroupControl1.Text = "Scan DO"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(268, 467)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'edit_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 664)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.TextBox2)
@@ -271,6 +294,9 @@ Partial Class edit_DO
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -298,4 +324,6 @@ Partial Class edit_DO
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
