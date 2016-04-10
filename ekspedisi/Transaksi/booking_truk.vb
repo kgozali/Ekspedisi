@@ -1,5 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class booking_truk
+    Public truk As String = ""
+    Public principle As String = ""
+    Public rute As String = ""
     'Dim cbprinciple As New DataTable
     'Dim cek As Boolean = False
     'Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -74,12 +77,6 @@ Public Class booking_truk
 
     '    End Try
 
-
-
-
-
-
-
     'End Sub
 
     'Sub reset()
@@ -151,4 +148,62 @@ Public Class booking_truk
     '        cek = True
     '    End If
     'End Sub
+
+    Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim tanggal As New DataTable
+            Dim tgl As String = "BK" + Today.Date.ToString("yyyyMMdd")
+            tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,10) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            id.Text = tgl + hitung
+
+
+            Dim tabelkontak As New DataTable
+            tabelkontak.Columns.Add("ETA")
+            tabelkontak.Columns.Add("Contact Person")
+            tabelkontak.Columns.Add("Nomor Telepon")
+            tabelkontak.Columns.Add("Alamat")
+            Dim ar(3) As String
+            For i = 0 To 3
+                ar(i) = ""
+            Next
+            tabelkontak.Rows.Add(ar(0), ar(1), ar(2), ar(3))
+            GridControl1.DataSource = tabelkontak
+
+            Dim tabelsupir As New DataTable
+            tabelsupir.Columns.Add("Kode Supir")
+            tabelsupir.Columns.Add("Nama Supir")
+            tabelsupir.Columns.Add("Jumlah DP")
+            Dim arr(2) As String
+            For i = 0 To 2
+                arr(i) = ""
+            Next
+            tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
+            GridControl2.DataSource = tabelsupir
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+       
+
+
+
+
+
+    End Sub
+
+
+    Private Sub ButtonEdit4_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit4.ButtonClick
+        rute_booking.ShowDialog()
+    End Sub
+
+    Private Sub ButtonEdit1_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit1.ButtonClick
+        truk_booking.ShowDialog()
+    End Sub
+
+    Private Sub ButtonEdit2_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit2.ButtonClick
+        principle_booking.ShowDialog()
+    End Sub
 End Class

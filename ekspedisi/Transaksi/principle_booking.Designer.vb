@@ -41,12 +41,10 @@ Partial Class principle_booking
         'nama
         '
         Me.nama.AutoSize = True
-        Me.nama.Checked = True
         Me.nama.Location = New System.Drawing.Point(102, 24)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(88, 17)
         Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
         Me.nama.Text = "Nama Priciple"
         Me.nama.UseVisualStyleBackColor = True
         '
@@ -87,10 +85,12 @@ Partial Class principle_booking
         'id
         '
         Me.id.AutoSize = True
+        Me.id.Checked = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(91, 17)
         Me.id.TabIndex = 1
+        Me.id.TabStop = True
         Me.id.Text = "Kode Principle"
         Me.id.UseVisualStyleBackColor = True
         '
@@ -129,6 +129,7 @@ Partial Class principle_booking
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Name = "principle_booking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Principle"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
