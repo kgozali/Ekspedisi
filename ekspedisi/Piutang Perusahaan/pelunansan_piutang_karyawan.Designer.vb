@@ -40,7 +40,6 @@ Partial Class pelunansan_piutang_karyawan
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.idkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.namakaryawan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
@@ -53,7 +52,6 @@ Partial Class pelunansan_piutang_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
@@ -170,7 +168,7 @@ Partial Class pelunansan_piutang_karyawan
         'nomertelepon
         '
         Me.nomertelepon.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomertelepon.Location = New System.Drawing.Point(310, 121)
+        Me.nomertelepon.Location = New System.Drawing.Point(129, 120)
         Me.nomertelepon.Name = "nomertelepon"
         Me.nomertelepon.Size = New System.Drawing.Size(111, 18)
         Me.nomertelepon.TabIndex = 53
@@ -179,7 +177,7 @@ Partial Class pelunansan_piutang_karyawan
         'kotaasal
         '
         Me.kotaasal.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kotaasal.Location = New System.Drawing.Point(270, 97)
+        Me.kotaasal.Location = New System.Drawing.Point(129, 96)
         Me.kotaasal.Name = "kotaasal"
         Me.kotaasal.Size = New System.Drawing.Size(71, 18)
         Me.kotaasal.TabIndex = 52
@@ -188,7 +186,7 @@ Partial Class pelunansan_piutang_karyawan
         'jabatan
         '
         Me.jabatan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jabatan.Location = New System.Drawing.Point(260, 73)
+        Me.jabatan.Location = New System.Drawing.Point(129, 72)
         Me.jabatan.Name = "jabatan"
         Me.jabatan.Size = New System.Drawing.Size(61, 18)
         Me.jabatan.TabIndex = 51
@@ -197,7 +195,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(193, 121)
+        Me.LabelControl5.Location = New System.Drawing.Point(5, 120)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(111, 18)
         Me.LabelControl5.TabIndex = 50
@@ -206,7 +204,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(193, 97)
+        Me.LabelControl4.Location = New System.Drawing.Point(5, 96)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(71, 18)
         Me.LabelControl4.TabIndex = 49
@@ -215,23 +213,15 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(193, 73)
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 72)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl3.TabIndex = 48
         Me.LabelControl3.Text = "Jabatan :"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(5, 25)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(182, 268)
-        Me.PictureBox2.TabIndex = 47
-        Me.PictureBox2.TabStop = False
-        '
         'idkaryawan
         '
-        Me.idkaryawan.Location = New System.Drawing.Point(294, 23)
+        Me.idkaryawan.Location = New System.Drawing.Point(129, 21)
         Me.idkaryawan.Name = "idkaryawan"
         Me.idkaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.idkaryawan.Size = New System.Drawing.Size(191, 20)
@@ -240,7 +230,7 @@ Partial Class pelunansan_piutang_karyawan
         'namakaryawan
         '
         Me.namakaryawan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.namakaryawan.Location = New System.Drawing.Point(317, 49)
+        Me.namakaryawan.Location = New System.Drawing.Point(129, 48)
         Me.namakaryawan.Name = "namakaryawan"
         Me.namakaryawan.Size = New System.Drawing.Size(104, 18)
         Me.namakaryawan.TabIndex = 43
@@ -249,7 +239,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(193, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(5, 24)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(95, 18)
         Me.LabelControl1.TabIndex = 36
@@ -258,7 +248,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(193, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(5, 48)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(118, 18)
         Me.LabelControl2.TabIndex = 37
@@ -281,14 +271,13 @@ Partial Class pelunansan_piutang_karyawan
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Controls.Add(Me.PictureBox2)
         Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.namakaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Location = New System.Drawing.Point(279, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(495, 298)
+        Me.GroupControl1.Size = New System.Drawing.Size(328, 298)
         Me.GroupControl1.TabIndex = 149
         Me.GroupControl1.Text = "Data Karyawan"
         '
@@ -303,14 +292,13 @@ Partial Class pelunansan_piutang_karyawan
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "pelunansan_piutang_karyawan"
-        Me.Text = "pelunansan_piutang_karyawan"
+        Me.Text = "Pelunasan Piutang Karyawan"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
@@ -340,7 +328,6 @@ Partial Class pelunansan_piutang_karyawan
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents idkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents namakaryawan As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
