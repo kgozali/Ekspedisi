@@ -80,15 +80,14 @@ Partial Class main_menu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.buttonrestore = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton41 = New DevExpress.XtraEditors.SimpleButton()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.restorepath = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SimpleButton40 = New DevExpress.XtraEditors.SimpleButton()
         Me.backup = New DevExpress.XtraEditors.SimpleButton()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.backuppath = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.restore = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewTabItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem5 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem8 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
@@ -105,6 +104,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl11 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
+        Me.sfd = New System.Windows.Forms.SaveFileDialog()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -674,7 +674,6 @@ Partial Class main_menu
         'BackstageViewClientControl2
         '
         Me.BackstageViewClientControl2.Controls.Add(Me.TabControl1)
-        Me.BackstageViewClientControl2.Controls.Add(Me.restore)
         Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
         Me.BackstageViewClientControl2.Size = New System.Drawing.Size(813, 691)
@@ -687,7 +686,7 @@ Partial Class main_menu
         Me.TabControl1.Location = New System.Drawing.Point(25, 32)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(757, 461)
+        Me.TabControl1.Size = New System.Drawing.Size(495, 232)
         Me.TabControl1.TabIndex = 22
         '
         'TabPage2
@@ -695,12 +694,12 @@ Partial Class main_menu
         Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.buttonrestore)
         Me.TabPage2.Controls.Add(Me.SimpleButton41)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.restorepath)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(749, 435)
+        Me.TabPage2.Size = New System.Drawing.Size(487, 206)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Restore"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -710,7 +709,7 @@ Partial Class main_menu
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 38)
+        Me.Label2.Location = New System.Drawing.Point(16, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(106, 33)
         Me.Label2.TabIndex = 35
@@ -719,7 +718,7 @@ Partial Class main_menu
         'buttonrestore
         '
         Me.buttonrestore.Image = CType(resources.GetObject("buttonrestore.Image"), System.Drawing.Image)
-        Me.buttonrestore.Location = New System.Drawing.Point(457, 234)
+        Me.buttonrestore.Location = New System.Drawing.Point(295, 128)
         Me.buttonrestore.Name = "buttonrestore"
         Me.buttonrestore.Size = New System.Drawing.Size(78, 23)
         Me.buttonrestore.TabIndex = 34
@@ -728,38 +727,38 @@ Partial Class main_menu
         'SimpleButton41
         '
         Me.SimpleButton41.Image = CType(resources.GetObject("SimpleButton41.Image"), System.Drawing.Image)
-        Me.SimpleButton41.Location = New System.Drawing.Point(541, 177)
+        Me.SimpleButton41.Location = New System.Drawing.Point(379, 71)
         Me.SimpleButton41.Name = "SimpleButton41"
         Me.SimpleButton41.Size = New System.Drawing.Size(26, 23)
         Me.SimpleButton41.TabIndex = 33
         '
-        'TextBox2
+        'restorepath
         '
-        Me.TextBox2.Location = New System.Drawing.Point(178, 177)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(357, 21)
-        Me.TextBox2.TabIndex = 32
+        Me.restorepath.Location = New System.Drawing.Point(16, 71)
+        Me.restorepath.Name = "restorepath"
+        Me.restorepath.Size = New System.Drawing.Size(357, 21)
+        Me.restorepath.TabIndex = 32
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(180, 148)
+        Me.Label9.Location = New System.Drawing.Point(16, 56)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
         Me.Label9.TabIndex = 31
-        Me.Label9.Text = "Retore"
+        Me.Label9.Text = "Restore Path:"
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.SimpleButton40)
         Me.TabPage1.Controls.Add(Me.backup)
         Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.backuppath)
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(749, 435)
+        Me.TabPage1.Size = New System.Drawing.Size(487, 206)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Backup"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -767,7 +766,7 @@ Partial Class main_menu
         'SimpleButton40
         '
         Me.SimpleButton40.Image = CType(resources.GetObject("SimpleButton40.Image"), System.Drawing.Image)
-        Me.SimpleButton40.Location = New System.Drawing.Point(544, 161)
+        Me.SimpleButton40.Location = New System.Drawing.Point(379, 72)
         Me.SimpleButton40.Name = "SimpleButton40"
         Me.SimpleButton40.Size = New System.Drawing.Size(26, 23)
         Me.SimpleButton40.TabIndex = 28
@@ -775,7 +774,7 @@ Partial Class main_menu
         'backup
         '
         Me.backup.Image = CType(resources.GetObject("backup.Image"), System.Drawing.Image)
-        Me.backup.Location = New System.Drawing.Point(460, 199)
+        Me.backup.Location = New System.Drawing.Point(295, 110)
         Me.backup.Name = "backup"
         Me.backup.Size = New System.Drawing.Size(78, 23)
         Me.backup.TabIndex = 27
@@ -784,39 +783,29 @@ Partial Class main_menu
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(178, 134)
+        Me.Label8.Location = New System.Drawing.Point(16, 56)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(41, 13)
+        Me.Label8.Size = New System.Drawing.Size(70, 13)
         Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Backup"
+        Me.Label8.Text = "Backup Path:"
         '
-        'TextBox1
+        'backuppath
         '
-        Me.TextBox1.Location = New System.Drawing.Point(181, 161)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(357, 21)
-        Me.TextBox1.TabIndex = 23
+        Me.backuppath.Location = New System.Drawing.Point(16, 72)
+        Me.backuppath.Name = "backuppath"
+        Me.backuppath.Size = New System.Drawing.Size(357, 21)
+        Me.backuppath.TabIndex = 23
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(50, 38)
+        Me.Label10.Location = New System.Drawing.Point(10, 14)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(100, 33)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Backup"
-        '
-        'restore
-        '
-        Me.restore.Image = CType(resources.GetObject("restore.Image"), System.Drawing.Image)
-        Me.restore.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.restore.Location = New System.Drawing.Point(511, 389)
-        Me.restore.Name = "restore"
-        Me.restore.Size = New System.Drawing.Size(75, 23)
-        Me.restore.TabIndex = 6
-        Me.restore.Text = "Restore"
         '
         'BackstageViewTabItem1
         '
@@ -934,6 +923,9 @@ Partial Class main_menu
         Me.opd.FileName = "OpenFileDialog1"
         Me.opd.Title = "Restore"
         '
+        'sfd
+        '
+        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1040,16 +1032,16 @@ Partial Class main_menu
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents restore As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents buttonrestore As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton41 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents restorepath As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton40 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents backup As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents backuppath As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents opd As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents sfd As System.Windows.Forms.SaveFileDialog
 End Class

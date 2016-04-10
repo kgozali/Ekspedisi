@@ -8,11 +8,11 @@
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        pelunasan_piutang_karyawan.idkaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kode Karyawan")
-        pelunasan_piutang_karyawan.namakaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kode Karyawan")
-        pelunasan_piutang_karyawan.jabatan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Jabatan")
-        pelunasan_piutang_karyawan.kotaasal.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kota")
-        pelunasan_piutang_karyawan.nomertelepon.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Nomor Telepon 1")
+        pelunansan_piutang_karyawan.idkaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kode Karyawan")
+        pelunansan_piutang_karyawan.namakaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kode Karyawan")
+        pelunansan_piutang_karyawan.jabatan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Jabatan")
+        pelunansan_piutang_karyawan.kotaasal.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kota")
+        pelunansan_piutang_karyawan.nomertelepon.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Nomor Telepon 1")
         Me.Close()
     End Sub
 End Class
