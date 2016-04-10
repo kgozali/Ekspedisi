@@ -3,6 +3,8 @@
 
     Private Sub buka_piutang_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
+        Dim data As New DataTable
+        data = DtTable("select * from makun")
     End Sub
 
  
