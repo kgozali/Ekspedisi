@@ -13,6 +13,16 @@ Public Class transaksi_DO
     End Sub
 
     Private Sub transaksi_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim tanggal As New DataTable
+        Dim tgl As String = "TDO" + Today.Date.ToString("yyyyMMdd")
+        tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,10) = '" & tgl & "'")
+        Dim hitung As String = tanggal.Rows.Count() + 1
+        While hitung.LongCount < 5
+            hitung = "0" + hitung
+        End While
+        id.Text = tgl + hitung
+
+        tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
 
     End Sub
 
@@ -38,5 +48,29 @@ Public Class transaksi_DO
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
 
+    End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Try
+            Dim kem As String = ""
+            If nomerdo.Text = "" Then
+                MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                If GridView1.DataRowCount < 1 Then
+                    MessageBox.Show("Tidak ada barang yang dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+
+                End If
+
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Private Sub tanggalterkirim_ValueChanged(sender As Object, e As EventArgs) Handles tanggalterkirim.ValueChanged
+        tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
     End Sub
 End Class
