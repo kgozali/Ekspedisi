@@ -47,8 +47,6 @@ Partial Class supir_booking
         Me.gridbooking = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.controlbooking = New DevExpress.XtraGrid.GridControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.principle = New System.Windows.Forms.RadioButton()
-        Me.tgl = New System.Windows.Forms.DateTimePicker()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
@@ -66,16 +64,16 @@ Partial Class supir_booking
         '
         'details
         '
-        Me.details.Location = New System.Drawing.Point(21, 635)
+        Me.details.Location = New System.Drawing.Point(16, 632)
         Me.details.Name = "details"
-        Me.details.Size = New System.Drawing.Size(75, 23)
+        Me.details.Size = New System.Drawing.Size(100, 27)
         Me.details.TabIndex = 153
         Me.details.Text = "Details"
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(901, 648)
+        Me.SimpleButton1.Location = New System.Drawing.Point(904, 632)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 152
@@ -163,7 +161,7 @@ Partial Class supir_booking
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(795, 648)
+        Me.Submit.Location = New System.Drawing.Point(798, 632)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
@@ -235,28 +233,11 @@ Partial Class supir_booking
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.controlbooking)
-        Me.GroupControl3.Location = New System.Drawing.Point(16, 111)
+        Me.GroupControl3.Location = New System.Drawing.Point(16, 96)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(985, 519)
+        Me.GroupControl3.Size = New System.Drawing.Size(992, 528)
         Me.GroupControl3.TabIndex = 150
         Me.GroupControl3.Text = "Data Booking"
-        '
-        'principle
-        '
-        Me.principle.AutoSize = True
-        Me.principle.Location = New System.Drawing.Point(5, 47)
-        Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(94, 17)
-        Me.principle.TabIndex = 4
-        Me.principle.Text = "Nama Principle"
-        Me.principle.UseVisualStyleBackColor = True
-        '
-        'tgl
-        '
-        Me.tgl.Location = New System.Drawing.Point(5, 70)
-        Me.tgl.Name = "tgl"
-        Me.tgl.Size = New System.Drawing.Size(200, 21)
-        Me.tgl.TabIndex = 3
         '
         'nama
         '
@@ -282,7 +263,7 @@ Partial Class supir_booking
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 70)
+        Me.cari.Location = New System.Drawing.Point(8, 48)
         Me.cari.Name = "cari"
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
@@ -298,14 +279,12 @@ Partial Class supir_booking
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.principle)
-        Me.GroupControl1.Controls.Add(Me.tgl)
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(16, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 97)
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 80)
         Me.GroupControl1.TabIndex = 149
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
@@ -313,7 +292,7 @@ Partial Class supir_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1009, 683)
+        Me.ClientSize = New System.Drawing.Size(1009, 666)
         Me.Controls.Add(Me.details)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
@@ -357,8 +336,6 @@ Partial Class supir_booking
     Friend WithEvents gridbooking As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents controlbooking As DevExpress.XtraGrid.GridControl
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents principle As System.Windows.Forms.RadioButton
-    Friend WithEvents tgl As System.Windows.Forms.DateTimePicker
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
