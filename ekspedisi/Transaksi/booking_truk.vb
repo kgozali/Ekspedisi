@@ -2,7 +2,7 @@
 Public Class booking_truk
     Public truk As String = ""
     Public principle As String = ""
-    Public rute As String = ""
+    Public rutebook As String = ""
     'Dim cbprinciple As New DataTable
     'Dim cek As Boolean = False
     'Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -206,4 +206,6 @@ Public Class booking_truk
     Private Sub ButtonEdit2_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit2.ButtonClick
         principle_booking.ShowDialog()
     End Sub
+
+  
 End Class

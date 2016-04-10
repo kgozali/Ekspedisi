@@ -75,22 +75,22 @@ Partial Class truk_booking
         'nama
         '
         Me.nama.AutoSize = True
-        Me.nama.Checked = True
         Me.nama.Location = New System.Drawing.Point(87, 24)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(82, 17)
         Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
         Me.nama.Text = "Nomor Polisi"
         Me.nama.UseVisualStyleBackColor = True
         '
         'id
         '
         Me.id.AutoSize = True
+        Me.id.Checked = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(73, 17)
         Me.id.TabIndex = 1
+        Me.id.TabStop = True
         Me.id.Text = "Kode Truk"
         Me.id.UseVisualStyleBackColor = True
         '
