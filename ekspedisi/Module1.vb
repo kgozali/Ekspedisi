@@ -89,16 +89,20 @@ Public Module Module1
     Function autogenerate(ByVal prefix As String, ByVal cekmax As String)
         Try
             Dim currentTime As System.DateTime = System.DateTime.Now
-            Dim urutan As String
-            Dim kode As String
+            Dim urutan As Integer
+            Dim kode As String = Scalar(cekmax).ToString
             Dim fix As String = ""
-
-            If urutan = "" Then
+            If urutan = 0 Then
                 kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
-            ElseIf urutan.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or urutan.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
-                urutan = Scalar(cekmax).Substring(Scalar(cekmax).Length - 5)
-                For i = 1 To 5 - urutan.Length
-                    fix = fix & "0"
+                For i = 0 To 0
+                    Dim hello
+
+                Next i
+            ElseIf kode.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or kode.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
+                urutan = kode.Substring(Scalar(cekmax).Length - 5)
+                For i = 0 To 5
+
+
                 Next i
             End If
 
