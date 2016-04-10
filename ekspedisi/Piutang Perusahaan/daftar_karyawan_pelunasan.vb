@@ -14,8 +14,8 @@
             pelunansan_piutang_karyawan.jabatan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Jabatan")
             pelunansan_piutang_karyawan.kotaasal.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kota")
             pelunansan_piutang_karyawan.nomertelepon.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Nomor Telepon 1")
-            tabel = New DataTable
-            tabel = DtTable("")
+            tabel = DtTable("SELECT id_piutangkaryawan FROM piutang_karyawan p where id_karyawan='" & pelunansan_piutang_karyawan.idkaryawan.Text & "' and `status`='0'")
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

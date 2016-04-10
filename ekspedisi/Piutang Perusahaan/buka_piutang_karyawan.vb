@@ -17,6 +17,11 @@
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & Tanggaljatuhtempo.Value.ToString("yyyyMMdd") & "," & keterangan.Text & ",'0','0')")
+        id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
+        If InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`,`id_akun`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & Tanggaljatuhtempo.Value.ToString("yyyyMMdd") & ",'" & keterangan.Text & "','0','akunkas.sele',0)") = True Then
+            MessageBox.Show("Input Piutang Berhasil")
+        Else
+            MessageBox.Show("Input Piutang Gagal")
+        End If
     End Sub
 End Class
