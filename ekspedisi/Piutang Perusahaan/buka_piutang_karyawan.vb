@@ -13,4 +13,8 @@
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & Tanggaljatuhtempo.Value.ToString("yyyyMMdd") & "," & keterangan.Text & ",'0','0')")
+    End Sub
 End Class
