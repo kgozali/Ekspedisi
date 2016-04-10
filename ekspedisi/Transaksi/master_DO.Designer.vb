@@ -127,7 +127,7 @@ Partial Class master_DO
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(99, 24)
+        Me.nama.Location = New System.Drawing.Point(5, 23)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(74, 17)
         Me.nama.TabIndex = 2
@@ -138,7 +138,7 @@ Partial Class master_DO
         'id
         '
         Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Location = New System.Drawing.Point(85, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(88, 17)
         Me.id.TabIndex = 1
