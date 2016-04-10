@@ -12,4 +12,8 @@
     Private Sub idkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idkaryawan.ButtonClick
         daftar_karyawan_pelunasan.ShowDialog()
     End Sub
+
+    Private Sub pelunansan_piutang_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
