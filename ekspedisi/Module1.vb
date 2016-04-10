@@ -93,7 +93,7 @@ Public Module Module1
             Dim urutan As Integer
             Dim kode As String = Scalar(cekmax).ToString
             Dim fix As String = ""
-            If urutan = 0 Or kode.Substring(2, 6) <> currentTime.Date.ToString("yyMMdd") Or kode.Substring(3, 6) <> currentTime.Date.ToString("yyMMdd") Then
+            If urutan = 0 Then
                 kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
             ElseIf kode.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or kode.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
                 urutan = kode.Substring(Scalar(cekmax).Length - 5)
@@ -103,6 +103,8 @@ Public Module Module1
                 Next i
                 fix = fix & urutan.ToString
                 kode = prefix & currentTime.Date.ToString("yyMMdd") & fix
+            Else
+                kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
             End If
 
             Return kode
