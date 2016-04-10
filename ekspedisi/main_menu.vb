@@ -64,4 +64,27 @@
     Private Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+
+
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub SimpleButton41_Click(sender As Object, e As EventArgs) Handles SimpleButton41.Click
+        opd.FileName = ""
+        opd.DefaultExt = "sql"
+        opd.Filter = "SQL Files | *.sql"
+        opd.InitialDirectory = "C:\users\public"
+        opd.ShowDialog()
+    End Sub
+
+    Private Sub opd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles opd.FileOk
+        TextBox2.Text = opd.FileName.ToString()
+    End Sub
+
+    Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
+
+    End Sub
 End Class
