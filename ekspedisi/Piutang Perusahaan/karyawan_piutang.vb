@@ -12,6 +12,12 @@
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        buka_piutang_karyawan.pilihkaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Nama Karyawan")
+        buka_piutang_karyawan.idkaryawan.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Kode Karyawan")
+        Me.Close()
+    End Sub
 
+    Private Sub datakaryawan_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles datakaryawan.MouseDoubleClick
+        Submit_Click(sender, e)
     End Sub
 End Class
