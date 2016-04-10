@@ -1,8 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class booking_truk
-    Public truk As String = ""
-    Public principle As String = ""
+    Public trukbook As String = ""
+    Public principlebook As String = ""
     Public rutebook As String = ""
+    Public tabelsupir As New DataTable
+    Dim cek As Boolean = False
     'Dim cbprinciple As New DataTable
     'Dim cek As Boolean = False
     'Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -160,29 +162,7 @@ Public Class booking_truk
             End While
             id.Text = tgl + hitung
 
-
-            Dim tabelkontak As New DataTable
-            tabelkontak.Columns.Add("ETA")
-            tabelkontak.Columns.Add("Contact Person")
-            tabelkontak.Columns.Add("Nomor Telepon")
-            tabelkontak.Columns.Add("Alamat")
-            Dim ar(3) As String
-            For i = 0 To 3
-                ar(i) = ""
-            Next
-            tabelkontak.Rows.Add(ar(0), ar(1), ar(2), ar(3))
-            GridControl1.DataSource = tabelkontak
-
-            Dim tabelsupir As New DataTable
-            tabelsupir.Columns.Add("Kode Supir")
-            tabelsupir.Columns.Add("Nama Supir")
-            tabelsupir.Columns.Add("Jumlah DP")
-            Dim arr(2) As String
-            For i = 0 To 2
-                arr(i) = ""
-            Next
-            tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
-            GridControl2.DataSource = tabelsupir
+            grid()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -208,4 +188,78 @@ Public Class booking_truk
     End Sub
 
   
+    Private Sub GridControl2_DoubleClick(sender As Object, e As EventArgs) Handles GridControl2.DoubleClick
+        supir_booking.ShowDialog()
+    End Sub
+
+    
+    Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
+            cek = True
+        Else
+            cek = False
+
+        End If
+        If cek = True Then
+            Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+            If msg = DialogResult.OK Then
+                reset()
+
+            Else
+                e.Cancel = True
+            End If
+        Else
+            reset()
+        End If
+       
+
+
+    End Sub
+
+    Sub reset()
+        ButtonEdit1.Text = ""
+        ButtonEdit2.Text = ""
+        ButtonEdit4.Text = ""
+
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
+
+    Sub grid()
+        'buat kolom-kolom di gridview
+        Dim tabelkontak As New DataTable
+        If tabelkontak.Columns.Count < 1 Then
+            tabelkontak.Columns.Add("ETA (Jam)")
+            tabelkontak.Columns.Add("Contact Person")
+            tabelkontak.Columns.Add("Nomor Telepon")
+            tabelkontak.Columns.Add("Alamat")
+        Else
+
+        End If
+
+        Dim ar(3) As String
+        For i = 0 To 3
+            ar(i) = ""
+        Next
+        tabelkontak.Rows.Add(ar(0), ar(1), ar(2), ar(3))
+        GridControl1.DataSource = tabelkontak
+
+        If tabelsupir.Columns.Count < 1 Then
+            tabelsupir.Columns.Add("Kode Supir")
+            tabelsupir.Columns.Add("Nama Supir")
+            tabelsupir.Columns.Add("Jumlah DP (Rp)")
+        End If
+
+        Dim arr(2) As String
+        For i = 0 To 2
+            arr(i) = ""
+        Next
+        tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
+        GridControl2.DataSource = tabelsupir
+        For i = 0 To GridView2.Columns.Count - 2
+            GridView2.Columns(i).OptionsColumn.AllowEdit = False
+        Next
+    End Sub
 End Class
