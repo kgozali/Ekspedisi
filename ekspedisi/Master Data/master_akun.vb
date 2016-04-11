@@ -1,6 +1,7 @@
 ﻿Public Class master_akun
 
     Private Sub refreshgrid(ByVal keyid As String)
+        'cek
         Dim lcdata As DataTable
         If IsNothing(lcdata) = False Then lcdata.Rows.Clear()
         lcdata = DtTable("select * from vw_makun where keyid like '%" & keyid & "%'")
