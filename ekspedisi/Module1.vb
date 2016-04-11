@@ -16,6 +16,16 @@ Public Module Module1
         End Try
     End Function
 
+    'untuk cek inputan data  string ada tanda  petiknya apa tidak
+    Function CekTandaPetik(ByVal vData As String) As String
+        Dim retval As String
+
+        retval = Replace(vData, "'", "''")
+        retval = Replace(retval, "\", "\\")
+
+        Return retval
+    End Function
+
     Function DtTable(ByVal x As String)
         'untuk select datatable biasa
         Try
@@ -29,18 +39,32 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Function
 
     Function InsertInto(ByVal x As String)
         'insert semua pakek ini
+        Dim vartr As MySql.Data.MySqlClient.MySqlTransaction
         Try
             connect.Open()
-            Dim command As New MySqlCommand(x, connect)
+            vartr = connect.BeginTransaction()
+            Dim command As New MySqlCommand()
+            command.Connection = connect
+            command.CommandText = x
+            command.Transaction = vartr
             command.ExecuteNonQuery()
-            connect.Close()
+            vartr.Commit()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Try
+                vartr.Rollback()
+            Catch ex1 As MySqlException
+                MessageBox.Show(ex1.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Finally
+            If IsNothing(connect) = False Then
+                connect.Close()
+            End If
         End Try
     End Function
 
@@ -77,7 +101,5 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-
     End Function
 End Module
