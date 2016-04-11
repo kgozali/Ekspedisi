@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Module Module1
+
     Public connect As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("ekspedisi").ConnectionString)
 
     Function Scalar(ByVal x As String)
@@ -19,6 +20,15 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Function
+
+    Function CekTandaPetik(ByVal vData As String) As String
+        Dim retval As String
+
+        retval = Replace(vData, "'", "''")
+        retval = Replace(retval, "\", "\\")
+
+        Return retval
     End Function
 
     Function DtTable(ByVal x As String)
@@ -111,6 +121,6 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-        
+
     End Function
 End Module
