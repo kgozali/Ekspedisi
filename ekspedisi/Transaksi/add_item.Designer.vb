@@ -84,7 +84,7 @@ Partial Class add_item
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 113)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 100)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(760, 391)
         Me.GroupControl2.TabIndex = 1
@@ -103,11 +103,13 @@ Partial Class add_item
         '
         Me.gridbarang.GridControl = Me.GridControl1
         Me.gridbarang.Name = "gridbarang"
+        Me.gridbarang.OptionsSelection.MultiSelect = True
+        Me.gridbarang.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(672, 522)
+        Me.SimpleButton1.Location = New System.Drawing.Point(672, 497)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 149
@@ -116,7 +118,7 @@ Partial Class add_item
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(566, 522)
+        Me.Submit.Location = New System.Drawing.Point(566, 497)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 148
@@ -126,7 +128,7 @@ Partial Class add_item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(784, 530)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl2)

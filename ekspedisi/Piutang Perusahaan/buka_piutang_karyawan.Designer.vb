@@ -27,18 +27,19 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New System.Windows.Forms.TextBox()
         Me.pilihkaryawan = New DevExpress.XtraEditors.ButtonEdit()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.tanggalpiutang = New System.Windows.Forms.DateTimePicker()
         Me.nominal = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Tanggaljatuhtempo = New System.Windows.Forms.DateTimePicker()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.akunkas = New System.Windows.Forms.ComboBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.keterangan = New System.Windows.Forms.RichTextBox()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.idkaryawan = New System.Windows.Forms.Label()
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -94,8 +95,10 @@ Partial Class buka_piutang_karyawan
         '
         'id
         '
+        Me.id.Enabled = False
         Me.id.Location = New System.Drawing.Point(175, 25)
         Me.id.Name = "id"
+        Me.id.ReadOnly = True
         Me.id.Size = New System.Drawing.Size(162, 21)
         Me.id.TabIndex = 1
         '
@@ -107,12 +110,12 @@ Partial Class buka_piutang_karyawan
         Me.pilihkaryawan.Size = New System.Drawing.Size(191, 20)
         Me.pilihkaryawan.TabIndex = 2
         '
-        'DateTimePicker1
+        'tanggalpiutang
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(175, 73)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.tanggalpiutang.Location = New System.Drawing.Point(175, 73)
+        Me.tanggalpiutang.Name = "tanggalpiutang"
+        Me.tanggalpiutang.Size = New System.Drawing.Size(200, 21)
+        Me.tanggalpiutang.TabIndex = 3
         '
         'nominal
         '
@@ -121,12 +124,12 @@ Partial Class buka_piutang_karyawan
         Me.nominal.Size = New System.Drawing.Size(200, 21)
         Me.nominal.TabIndex = 5
         '
-        'DateTimePicker2
+        'Tanggaljatuhtempo
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(175, 97)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 4
+        Me.Tanggaljatuhtempo.Location = New System.Drawing.Point(175, 97)
+        Me.Tanggaljatuhtempo.Name = "Tanggaljatuhtempo"
+        Me.Tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
+        Me.Tanggaljatuhtempo.TabIndex = 4
         '
         'SimpleButton1
         '
@@ -165,7 +168,8 @@ Partial Class buka_piutang_karyawan
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.RichTextBox1)
+        Me.GroupControl1.Controls.Add(Me.idkaryawan)
+        Me.GroupControl1.Controls.Add(Me.keterangan)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.akunkas)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
@@ -173,17 +177,34 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker2)
+        Me.GroupControl1.Controls.Add(Me.Tanggaljatuhtempo)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.nominal)
         Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupControl1.Controls.Add(Me.tanggalpiutang)
         Me.GroupControl1.Controls.Add(Me.pilihkaryawan)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 9)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(450, 275)
         Me.GroupControl1.TabIndex = 159
         Me.GroupControl1.Text = "Data Piutang"
+        '
+        'keterangan
+        '
+        Me.keterangan.Location = New System.Drawing.Point(175, 174)
+        Me.keterangan.Name = "keterangan"
+        Me.keterangan.Size = New System.Drawing.Size(270, 96)
+        Me.keterangan.TabIndex = 160
+        Me.keterangan.Text = ""
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(5, 174)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
+        Me.LabelControl7.TabIndex = 159
+        Me.LabelControl7.Text = "Keterangan"
         '
         'GroupControl2
         '
@@ -202,22 +223,15 @@ Partial Class buka_piutang_karyawan
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'LabelControl7
+        'idkaryawan
         '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 174)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
-        Me.LabelControl7.TabIndex = 159
-        Me.LabelControl7.Text = "Keterangan"
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(175, 174)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(270, 96)
-        Me.RichTextBox1.TabIndex = 160
-        Me.RichTextBox1.Text = ""
+        Me.idkaryawan.AutoSize = True
+        Me.idkaryawan.Location = New System.Drawing.Point(2, 206)
+        Me.idkaryawan.Name = "idkaryawan"
+        Me.idkaryawan.Size = New System.Drawing.Size(38, 13)
+        Me.idkaryawan.TabIndex = 161
+        Me.idkaryawan.Text = "Label1"
+        Me.idkaryawan.Visible = False
         '
         'buka_piutang_karyawan
         '
@@ -247,9 +261,9 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents id As System.Windows.Forms.TextBox
     Friend WithEvents pilihkaryawan As DevExpress.XtraEditors.ButtonEdit
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tanggalpiutang As System.Windows.Forms.DateTimePicker
     Friend WithEvents nominal As System.Windows.Forms.TextBox
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Tanggaljatuhtempo As System.Windows.Forms.DateTimePicker
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
@@ -257,6 +271,7 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents idkaryawan As System.Windows.Forms.Label
 End Class

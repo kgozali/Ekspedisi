@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class karyawan_piutang
+Partial Class daftar_karyawan_pelunasan
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,42 +19,24 @@ Partial Class karyawan_piutang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(karyawan_piutang))
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_karyawan_pelunasan))
         Me.viewdatakaryawan = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        CType(Me.viewdatakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.viewdatakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.datakaryawan)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 94)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(760, 422)
-        Me.GroupControl3.TabIndex = 43
-        Me.GroupControl3.Text = "Data Karayawan"
-        '
-        'datakaryawan
-        '
-        Me.datakaryawan.Location = New System.Drawing.Point(5, 24)
-        Me.datakaryawan.MainView = Me.viewdatakaryawan
-        Me.datakaryawan.Name = "datakaryawan"
-        Me.datakaryawan.Size = New System.Drawing.Size(750, 393)
-        Me.datakaryawan.TabIndex = 0
-        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewdatakaryawan})
         '
         'viewdatakaryawan
         '
@@ -66,6 +48,24 @@ Partial Class karyawan_piutang
         Me.viewdatakaryawan.OptionsBehavior.Editable = False
         Me.viewdatakaryawan.OptionsSelection.EnableAppearanceFocusedCell = False
         '
+        'datakaryawan
+        '
+        Me.datakaryawan.Location = New System.Drawing.Point(5, 24)
+        Me.datakaryawan.MainView = Me.viewdatakaryawan
+        Me.datakaryawan.Name = "datakaryawan"
+        Me.datakaryawan.Size = New System.Drawing.Size(750, 393)
+        Me.datakaryawan.TabIndex = 0
+        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewdatakaryawan})
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.datakaryawan)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 94)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(760, 422)
+        Me.GroupControl3.TabIndex = 147
+        Me.GroupControl3.Text = "Data Karayawan"
+        '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.nama)
@@ -74,7 +74,7 @@ Partial Class karyawan_piutang
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
-        Me.GroupControl1.TabIndex = 42
+        Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'nama
@@ -112,7 +112,7 @@ Partial Class karyawan_piutang
         Me.SimpleButton1.Location = New System.Drawing.Point(672, 522)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 145
+        Me.SimpleButton1.TabIndex = 149
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -121,24 +121,24 @@ Partial Class karyawan_piutang
         Me.Submit.Location = New System.Drawing.Point(566, 522)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 144
+        Me.Submit.TabIndex = 148
         Me.Submit.Text = "Submit"
         '
-        'karyawan_piutang
+        'daftar_karyawan_pelunasan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
-        Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.Submit)
+        Me.ClientSize = New System.Drawing.Size(781, 559)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Name = "karyawan_piutang"
-        Me.Text = "Daftar Karyawaan"
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.Submit)
+        Me.Name = "daftar_karyawan_pelunasan"
+        Me.Text = "Daftar Karyawan"
+        CType(Me.viewdatakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.viewdatakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -146,6 +146,8 @@ Partial Class karyawan_piutang
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents viewdatakaryawan As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents datakaryawan As DevExpress.XtraGrid.GridControl
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As System.Windows.Forms.RadioButton
@@ -153,6 +155,4 @@ Partial Class karyawan_piutang
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents datakaryawan As DevExpress.XtraGrid.GridControl
-    Friend WithEvents viewdatakaryawan As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

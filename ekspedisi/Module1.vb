@@ -6,24 +6,19 @@ Public Module Module1
         'untuk select single data
         Try
             connect.Open()
+            Dim a As String
             Dim command As New MySqlCommand(x, connect)
-            Dim a As String = command.ExecuteScalar()
+            If IsDBNull(command.ExecuteScalar()) = True Then
+                a = ""
+            Else
+                a = command.ExecuteScalar()
+            End If
             connect.Close()
             Return a
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Function
-
-    'untuk cek inputan data  string ada tanda  petiknya apa tidak
-    Function CekTandaPetik(ByVal vData As String) As String
-        Dim retval As String
-
-        retval = Replace(vData, "'", "''")
-        retval = Replace(retval, "\", "\\")
-
-        Return retval
     End Function
 
     Function DtTable(ByVal x As String)
@@ -39,32 +34,19 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Function
 
     Function InsertInto(ByVal x As String)
         'insert semua pakek ini
-        Dim vartr As MySql.Data.MySqlClient.MySqlTransaction
         Try
             connect.Open()
-            vartr = connect.BeginTransaction()
-            Dim command As New MySqlCommand()
-            command.Connection = connect
-            command.CommandText = x
-            command.Transaction = vartr
+            Dim command As New MySqlCommand(x, connect)
             command.ExecuteNonQuery()
-            vartr.Commit()
+            connect.Close()
+            Return True
         Catch ex As Exception
-            Try
-                vartr.Rollback()
-            Catch ex1 As MySqlException
-                MessageBox.Show(ex1.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        Finally
-            If IsNothing(connect) = False Then
-                connect.Close()
-            End If
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
 
@@ -101,5 +83,34 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
+    End Function
+
+    Function autogenerate(ByVal prefix As String, ByVal cekmax As String)
+        Try
+            Dim currentTime As System.DateTime = System.DateTime.Now
+            Dim urutan As Integer
+            Dim kode As String = Scalar(cekmax).ToString
+            Dim fix As String = ""
+            If urutan = 0 Then
+                kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
+            ElseIf kode.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or kode.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
+                urutan = kode.Substring(Scalar(cekmax).Length - 5)
+                urutan = urutan + 1
+                For i = 0 To 4 - urutan.ToString.Substring(Scalar(cekmax).Length - 5).Length
+                    fix = fix & "0"
+                Next i
+                fix = fix & urutan.ToString
+                kode = prefix & currentTime.Date.ToString("yyMMdd") & fix
+            Else
+                kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
+            End If
+
+            Return kode
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        
     End Function
 End Module

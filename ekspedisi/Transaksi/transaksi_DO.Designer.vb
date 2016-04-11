@@ -35,10 +35,7 @@ Partial Class transaksi_DO
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.idbarang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
-        Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -55,25 +52,25 @@ Partial Class transaksi_DO
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(635, 12)
+        Me.LabelControl1.Location = New System.Drawing.Point(15, 14)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(93, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(110, 18)
         Me.LabelControl1.TabIndex = 33
-        Me.LabelControl1.Text = "ID Transaksi :"
+        Me.LabelControl1.Text = "Kode Transaksi :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(635, 36)
+        Me.LabelControl2.Location = New System.Drawing.Point(15, 38)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(81, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(98, 18)
         Me.LabelControl2.TabIndex = 34
-        Me.LabelControl2.Text = "ID Booking :"
+        Me.LabelControl2.Text = "Kode Booking :"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(13, 36)
+        Me.LabelControl3.Location = New System.Drawing.Point(722, 38)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(80, 18)
         Me.LabelControl3.TabIndex = 35
@@ -82,7 +79,7 @@ Partial Class transaksi_DO
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(635, 60)
+        Me.LabelControl4.Location = New System.Drawing.Point(15, 62)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(119, 18)
         Me.LabelControl4.TabIndex = 36
@@ -91,7 +88,7 @@ Partial Class transaksi_DO
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(635, 84)
+        Me.LabelControl6.Location = New System.Drawing.Point(15, 86)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
         Me.LabelControl6.TabIndex = 38
@@ -99,14 +96,15 @@ Partial Class transaksi_DO
         '
         'id
         '
-        Me.id.Location = New System.Drawing.Point(795, 9)
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(175, 11)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(117, 21)
         Me.id.TabIndex = 1
         '
         'idbooking
         '
-        Me.idbooking.Location = New System.Drawing.Point(795, 34)
+        Me.idbooking.Location = New System.Drawing.Point(175, 36)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.idbooking.Size = New System.Drawing.Size(165, 20)
@@ -114,7 +112,7 @@ Partial Class transaksi_DO
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(122, 33)
+        Me.nomerdo.Location = New System.Drawing.Point(831, 35)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(165, 21)
         Me.nomerdo.TabIndex = 4
@@ -122,14 +120,14 @@ Partial Class transaksi_DO
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
-        Me.tanggalterkirim.Location = New System.Drawing.Point(794, 57)
+        Me.tanggalterkirim.Location = New System.Drawing.Point(174, 59)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
         Me.tanggalterkirim.TabIndex = 5
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(795, 81)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 83)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
         Me.tanggaljatuhtempo.TabIndex = 7
@@ -137,7 +135,7 @@ Partial Class transaksi_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(901, 651)
+        Me.SimpleButton1.Location = New System.Drawing.Point(902, 624)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 11
@@ -146,7 +144,7 @@ Partial Class transaksi_DO
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(795, 651)
+        Me.Submit.Location = New System.Drawing.Point(796, 624)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 10
@@ -173,42 +171,15 @@ Partial Class transaksi_DO
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.idbarang, Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowFooter = True
-        '
-        'idbarang
-        '
-        Me.idbarang.Caption = "ID Barang"
-        Me.idbarang.ColumnEdit = Me.RepositoryItemButtonEdit1
-        Me.idbarang.Name = "idbarang"
-        Me.idbarang.Visible = True
-        Me.idbarang.VisibleIndex = 0
         '
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
         Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
-        '
-        'namabarang
-        '
-        Me.namabarang.Caption = "Nama Barang"
-        Me.namabarang.ColumnEdit = Me.RepositoryItemButtonEdit1
-        Me.namabarang.Name = "namabarang"
-        Me.namabarang.Visible = True
-        Me.namabarang.VisibleIndex = 1
-        '
-        'berat
-        '
-        Me.berat.Caption = "Berat (Kilogram)"
-        Me.berat.FieldName = "berat"
-        Me.berat.Name = "berat"
-        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL = {0:N2}")})
-        Me.berat.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
-        Me.berat.Visible = True
-        Me.berat.VisibleIndex = 2
         '
         'RepositoryItemButtonEdit2
         '
@@ -219,7 +190,7 @@ Partial Class transaksi_DO
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(12, 12)
+        Me.LabelControl7.Location = New System.Drawing.Point(721, 14)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
         Me.LabelControl7.TabIndex = 149
@@ -227,7 +198,8 @@ Partial Class transaksi_DO
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(122, 9)
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(831, 11)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
         Me.TextBox2.TabIndex = 152
@@ -235,7 +207,7 @@ Partial Class transaksi_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(16, 75)
+        Me.SimpleButton2.Location = New System.Drawing.Point(896, 75)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 153
@@ -245,7 +217,7 @@ Partial Class transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1008, 659)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LabelControl7)
@@ -292,10 +264,7 @@ Partial Class transaksi_DO
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents idbarang As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
-    Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
