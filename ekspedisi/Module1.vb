@@ -49,14 +49,28 @@ Public Module Module1
 
     Function InsertInto(ByVal x As String)
         'insert semua pakek ini
+        Dim vartr As MySql.Data.MySqlClient.MySqlTransaction
         Try
             connect.Open()
-            Dim command As New MySqlCommand(x, connect)
+            vartr = connect.BeginTransaction()
+            Dim command As New MySqlCommand()
+            command.Connection = connect
+            command.CommandText = x
+            command.Transaction = vartr
             command.ExecuteNonQuery()
-            connect.Close()
-            Return True
+            vartr.Commit()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Try
+                vartr.Rollback()
+            Catch ex1 As MySqlException
+                MessageBox.Show(ex1.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Finally
+            If IsNothing(connect) = False Then
+                connect.Close()
+            End If
         End Try
     End Function
 
