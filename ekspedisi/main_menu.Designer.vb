@@ -133,7 +133,7 @@ Partial Class main_menu
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
         Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
         Me.BackstageViewControl1.SelectedTabIndex = 0
-        Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
+        Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 678)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
         '
@@ -157,7 +157,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl1.Controls.Add(Me.masterakun)
         Me.BackstageViewClientControl1.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl1.Name = "BackstageViewClientControl1"
-        Me.BackstageViewClientControl1.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl1.Size = New System.Drawing.Size(813, 678)
         Me.BackstageViewClientControl1.TabIndex = 0
         '
         'Label1
@@ -293,7 +293,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl5.Controls.Add(Me.Label3)
         Me.BackstageViewClientControl5.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl5.Name = "BackstageViewClientControl5"
-        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl5.TabIndex = 4
         '
         'XtraScrollableControl1
@@ -453,7 +453,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
         Me.BackstageViewClientControl8.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl8.Name = "BackstageViewClientControl8"
-        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl8.TabIndex = 7
         '
         'SimpleButton19
@@ -493,7 +493,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
         Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
-        Me.BackstageViewClientControl7.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
         '
         'SimpleButton17
@@ -546,7 +546,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl6.Controls.Add(Me.Label5)
         Me.BackstageViewClientControl6.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl6.Name = "BackstageViewClientControl6"
-        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl6.TabIndex = 5
         '
         'SimpleButton24
@@ -630,7 +630,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
         Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
-        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl10.TabIndex = 8
         '
         'Label7
@@ -675,7 +675,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl2.Controls.Add(Me.Label2)
         Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
-        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(627, 508)
+        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl2.TabIndex = 9
         '
         'SimpleButton41
@@ -869,7 +869,7 @@ Partial Class main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1008, 678)
         Me.Controls.Add(Me.BackstageViewControl1)
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
