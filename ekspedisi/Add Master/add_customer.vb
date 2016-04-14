@@ -55,7 +55,7 @@ Public Class add_customer
     Private Sub add_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim tanggal As New DataTable
-        Dim tgl As String = "MC" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "MC"
         tanggal = DtTable("select * from mcustomer where substring(ID_customer,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
