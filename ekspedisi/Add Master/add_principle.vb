@@ -51,7 +51,7 @@ Public Class add_principle
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tanggal As New DataTable
-        Dim tgl As String = "MP" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "MP"
         tanggal = DtTable("select * from mprinciple where substring(ID_principle,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5

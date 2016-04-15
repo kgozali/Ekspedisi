@@ -43,9 +43,9 @@ Partial Class rute_booking
         Me.nama.AutoSize = True
         Me.nama.Location = New System.Drawing.Point(86, 24)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(77, 17)
+        Me.nama.Size = New System.Drawing.Size(78, 17)
         Me.nama.TabIndex = 2
-        Me.nama.Text = "Nama Kota"
+        Me.nama.Text = "Nama Rute"
         Me.nama.UseVisualStyleBackColor = True
         '
         'GroupControl3

@@ -55,7 +55,7 @@ Public Class add_supplier
     Private Sub add_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim tanggal As New DataTable
-        Dim tgl As String = "MS" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "MS"
         tanggal = DtTable("select * from msupplier where substring(ID_supplier,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5

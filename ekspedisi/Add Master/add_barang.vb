@@ -55,7 +55,7 @@ Public Class add_barang
         'sourcecode
 
         Dim tanggal As New DataTable
-        Dim tgl As String = "MB" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "MB"
         tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5

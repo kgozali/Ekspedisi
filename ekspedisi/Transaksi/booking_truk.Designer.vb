@@ -123,7 +123,7 @@ Partial Class booking_truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(699, 416)
+        Me.SimpleButton1.Location = New System.Drawing.Point(700, 480)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 142
@@ -132,7 +132,7 @@ Partial Class booking_truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(593, 416)
+        Me.Submit.Location = New System.Drawing.Point(594, 480)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 141
@@ -228,16 +228,16 @@ Partial Class booking_truk
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(83, 344)
+        Me.RichTextBox2.Location = New System.Drawing.Point(92, 361)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(375, 66)
+        Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
         Me.RichTextBox2.TabIndex = 56
         Me.RichTextBox2.Text = ""
         '
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(15, 344)
+        Me.LabelControl10.Location = New System.Drawing.Point(15, 361)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl10.TabIndex = 55
@@ -247,7 +247,7 @@ Partial Class booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 455)
+        Me.ClientSize = New System.Drawing.Size(815, 519)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.GroupControl2)

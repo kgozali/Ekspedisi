@@ -51,7 +51,7 @@ Public Class add_kategori_supplier
 
     Private Sub add_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tanggal As New DataTable
-        Dim tgl As String = "ME" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "ME"
         tanggal = DtTable("select * from mkategori_supplier where substring(id_kategori,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5

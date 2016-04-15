@@ -25,7 +25,7 @@ Partial Class transaksi_DO
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.id = New System.Windows.Forms.TextBox()
+        Me.kodetrans = New System.Windows.Forms.TextBox()
         Me.idbooking = New DevExpress.XtraEditors.ButtonEdit()
         Me.nomerdo = New System.Windows.Forms.TextBox()
         Me.tanggalterkirim = New System.Windows.Forms.DateTimePicker()
@@ -94,13 +94,13 @@ Partial Class transaksi_DO
         Me.LabelControl6.TabIndex = 38
         Me.LabelControl6.Text = "Tanggal Jatuh Tempo :"
         '
-        'id
+        'kodetrans
         '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(175, 11)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(117, 21)
-        Me.id.TabIndex = 1
+        Me.kodetrans.Enabled = False
+        Me.kodetrans.Location = New System.Drawing.Point(175, 11)
+        Me.kodetrans.Name = "kodetrans"
+        Me.kodetrans.Size = New System.Drawing.Size(117, 21)
+        Me.kodetrans.TabIndex = 1
         '
         'idbooking
         '
@@ -228,7 +228,7 @@ Partial Class transaksi_DO
         Me.Controls.Add(Me.tanggalterkirim)
         Me.Controls.Add(Me.nomerdo)
         Me.Controls.Add(Me.idbooking)
-        Me.Controls.Add(Me.id)
+        Me.Controls.Add(Me.kodetrans)
         Me.Controls.Add(Me.LabelControl6)
         Me.Controls.Add(Me.LabelControl4)
         Me.Controls.Add(Me.LabelControl3)
@@ -253,7 +253,7 @@ Partial Class transaksi_DO
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents id As System.Windows.Forms.TextBox
+    Friend WithEvents kodetrans As System.Windows.Forms.TextBox
     Friend WithEvents idbooking As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents nomerdo As System.Windows.Forms.TextBox
     Friend WithEvents tanggalterkirim As System.Windows.Forms.DateTimePicker

@@ -82,12 +82,23 @@ Public Class main_menu
     End Sub
 
     Private Sub opd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles opd.FileOk
-        restorepath.Text = opd.FileName.ToString()
+        Try
+            restorepath.Text = opd.FileName.ToString()
+            Dim info = My.Computer.FileSystem.GetFileInfo(restorepath.Text)
+            Label20.Text = info.Name
+            Label13.Text = info.Extension
+            Label14.Text = info.LastWriteTime.ToString("dd-MM-yyyy HH:mm:ss")
+            Label15.Text = info.CreationTime.ToString("dd-MM-yyyy HH:mm:ss")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+      
     End Sub
 
     Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
+
         If restorepath.Text = "" Then
-            MessageBox.Show("File Location tidak Ditemukan", "File Path Error")
+            MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
 
@@ -97,18 +108,21 @@ Public Class main_menu
                 Dim mb As MySqlBackup = New MySqlBackup(command)
                 mb.ImportFromFile(restorepath.Text.ToString())
                 connect.Close()
-                MsgBox("Restore Sukses!")
+                MessageBox.Show("Restore database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 restorepath.Text = ""
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             End Try
         End If
+      
+
     End Sub
 
     Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
+      
         If backuppath.Text = "" Then
-            MessageBox.Show("File Location tidak Ditemukan", "File Path Error")
+            MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
                 Dim command As MySqlCommand = New MySqlCommand
@@ -117,7 +131,7 @@ Public Class main_menu
                 Dim mb As MySqlBackup = New MySqlBackup(command)
                 mb.ExportToFile(backuppath.Text.ToString())
                 connect.Close()
-                MsgBox("BackUp Sukses!")
+                MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -136,13 +150,15 @@ Public Class main_menu
 
     Private Sub sfd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles sfd.FileOk
         backuppath.Text = sfd.FileName.ToString
+
     End Sub
 
     Private Sub backuppath_TextChanged(sender As Object, e As EventArgs) Handles backuppath.TextChanged
 
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+  
 
-    End Sub
+
+
 End Class

@@ -23,7 +23,6 @@ Partial Class supir_booking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(supir_booking))
-        Me.details = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
@@ -62,18 +61,10 @@ Partial Class supir_booking
         Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'details
-        '
-        Me.details.Location = New System.Drawing.Point(16, 632)
-        Me.details.Name = "details"
-        Me.details.Size = New System.Drawing.Size(100, 27)
-        Me.details.TabIndex = 153
-        Me.details.Text = "Details"
-        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(904, 632)
+        Me.SimpleButton1.Location = New System.Drawing.Point(672, 522)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 152
@@ -161,7 +152,7 @@ Partial Class supir_booking
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(798, 632)
+        Me.Submit.Location = New System.Drawing.Point(566, 522)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
@@ -226,7 +217,7 @@ Partial Class supir_booking
         Me.controlbooking.Location = New System.Drawing.Point(2, 24)
         Me.controlbooking.MainView = Me.gridbooking
         Me.controlbooking.Name = "controlbooking"
-        Me.controlbooking.Size = New System.Drawing.Size(982, 494)
+        Me.controlbooking.Size = New System.Drawing.Size(746, 384)
         Me.controlbooking.TabIndex = 0
         Me.controlbooking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridbooking})
         '
@@ -235,7 +226,7 @@ Partial Class supir_booking
         Me.GroupControl3.Controls.Add(Me.controlbooking)
         Me.GroupControl3.Location = New System.Drawing.Point(16, 96)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(992, 528)
+        Me.GroupControl3.Size = New System.Drawing.Size(756, 418)
         Me.GroupControl3.TabIndex = 150
         Me.GroupControl3.Text = "Data Booking"
         '
@@ -244,9 +235,9 @@ Partial Class supir_booking
         Me.nama.AutoSize = True
         Me.nama.Location = New System.Drawing.Point(96, 24)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(103, 17)
+        Me.nama.Size = New System.Drawing.Size(79, 17)
         Me.nama.TabIndex = 2
-        Me.nama.Text = "Tanggal Booking"
+        Me.nama.Text = "Nama Supir"
         Me.nama.UseVisualStyleBackColor = True
         '
         'id
@@ -255,17 +246,17 @@ Partial Class supir_booking
         Me.id.Checked = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(89, 17)
+        Me.id.Size = New System.Drawing.Size(76, 17)
         Me.id.TabIndex = 1
         Me.id.TabStop = True
-        Me.id.Text = "Kode Booking"
+        Me.id.Text = "Kode Supir"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari
         '
         Me.cari.Location = New System.Drawing.Point(8, 48)
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(240, 20)
         Me.cari.TabIndex = 0
         '
         'deldata
@@ -292,13 +283,13 @@ Partial Class supir_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1009, 666)
-        Me.Controls.Add(Me.details)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "supir_booking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Booking Supir"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()
@@ -312,7 +303,6 @@ Partial Class supir_booking
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents details As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
