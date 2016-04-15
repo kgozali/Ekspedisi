@@ -5,7 +5,7 @@ Public Class booking_do
         Try
             Dim data As New DataTable
             gridbooking.OptionsView.ShowFooter = True
-            data = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute")
+            data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s=1")
             controlbooking.DataSource = data
 
             For i = 0 To data.Columns.Count - 1
@@ -57,21 +57,21 @@ Public Class booking_do
                 tgl.Visible = False
                 cari.Visible = True
                 Dim dataset As New DataTable
-                dataset = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and id_booking LIKE '%" + cari.Text + "%'")
+                dataset = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and id_booking LIKE '%" + cari.Text + "%' and booking_truk.s=1")
                 controlbooking.DataSource = dataset
 
             ElseIf nama.Checked = True Then
                 tgl.Visible = True
                 cari.Visible = False
                 Dim dataset As New DataTable
-                dataset = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and tgl='" + tgl.Value.Date.ToString("yyyyMMdd") + "'")
+                dataset = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and tgl='" + tgl.Value.Date.ToString("yyyyMMdd") + "' and booking_truk.s=1")
                 controlbooking.DataSource = dataset
 
             ElseIf principle.Checked = True Then
                 tgl.Visible = False
                 cari.Visible = True
                 Dim dataset As New DataTable
-                dataset = DtTable("Select id_booking `Kode Booking`,tgl `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and nama_principle LIKE '%" + cari.Text + "%'")
+                dataset = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and nama_principle LIKE '%" + cari.Text + "%' and booking_truk.s=1")
                 controlbooking.DataSource = dataset
 
             End If

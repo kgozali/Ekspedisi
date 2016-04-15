@@ -59,13 +59,16 @@ Public Module Module1
             command.Transaction = vartr
             command.ExecuteNonQuery()
             vartr.Commit()
+
         Catch ex As Exception
             Try
                 vartr.Rollback()
             Catch ex1 As MySqlException
                 MessageBox.Show(ex1.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             Finally
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             End Try
         Finally
             If IsNothing(connect) = False Then

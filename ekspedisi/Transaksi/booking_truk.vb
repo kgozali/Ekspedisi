@@ -272,4 +272,8 @@ Public Class booking_truk
         End Try
       
     End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+
+    End Sub
 End Class
