@@ -32,7 +32,6 @@ Public Class transaksi_DO
     Private Sub transaksi_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             generate()
-
             tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -90,6 +89,8 @@ Public Class transaksi_DO
                         InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
                     Next
                     InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
+                    res()
+                    Me.Close()
 
                 End If
 
