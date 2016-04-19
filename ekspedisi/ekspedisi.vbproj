@@ -233,12 +233,6 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KIR\KIR Truk.Designer.vb">
-      <DependentUpon>KIR Truk.vb</DependentUpon>
-    </Compile>
-    <Compile Include="KIR\KIR Truk.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\buka_piutang_karyawan.vb">
       <SubType>Form</SubType>
@@ -704,9 +698,6 @@
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KIR\KIR Truk.resx">
-      <DependentUpon>KIR Truk.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
     </EmbeddedResource>
@@ -930,6 +921,9 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KIR\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
