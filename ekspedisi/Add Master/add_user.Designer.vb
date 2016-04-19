@@ -29,9 +29,16 @@ Partial Class add_user
         Me.username = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.levelakses = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.levelakses, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -58,7 +65,7 @@ Partial Class add_user
         '
         'password
         '
-        Me.password.Location = New System.Drawing.Point(82, 47)
+        Me.password.Location = New System.Drawing.Point(144, 48)
         Me.password.Name = "password"
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.password.Size = New System.Drawing.Size(174, 21)
@@ -76,7 +83,7 @@ Partial Class add_user
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 24)
+        Me.LabelControl1.Location = New System.Drawing.Point(64, 24)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(77, 18)
         Me.LabelControl1.TabIndex = 32
@@ -85,7 +92,7 @@ Partial Class add_user
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 48)
+        Me.LabelControl2.Location = New System.Drawing.Point(66, 48)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(71, 18)
         Me.LabelControl2.TabIndex = 33
@@ -93,7 +100,7 @@ Partial Class add_user
         '
         'username
         '
-        Me.username.Location = New System.Drawing.Point(88, 23)
+        Me.username.Location = New System.Drawing.Point(144, 24)
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(100, 20)
         Me.username.TabIndex = 45
@@ -101,7 +108,7 @@ Partial Class add_user
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(144, 116)
+        Me.simpan.Location = New System.Drawing.Point(454, 376)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 167
@@ -110,26 +117,54 @@ Partial Class add_user
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(250, 116)
+        Me.cancel.Location = New System.Drawing.Point(560, 376)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 166
         Me.cancel.Text = "Cancel"
         '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.levelakses)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 120)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(644, 248)
+        Me.GroupControl2.TabIndex = 168
+        Me.GroupControl2.Text = "Level Akses"
+        '
+        'levelakses
+        '
+        Me.levelakses.Location = New System.Drawing.Point(8, 24)
+        Me.levelakses.MainView = Me.GridView1
+        Me.levelakses.Name = "levelakses"
+        Me.levelakses.Size = New System.Drawing.Size(632, 216)
+        Me.levelakses.TabIndex = 0
+        Me.levelakses.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.levelakses
+        Me.GridView1.Name = "GridView1"
+        '
         'add_user
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(357, 153)
+        Me.ClientSize = New System.Drawing.Size(666, 412)
+        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_user"
-        Me.Text = "add_user"
+        Me.Text = "Tambah User"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.levelakses, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -142,4 +177,7 @@ Partial Class add_user
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents reenterpass As System.Windows.Forms.MaskedTextBox
     Friend WithEvents password As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents levelakses As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
