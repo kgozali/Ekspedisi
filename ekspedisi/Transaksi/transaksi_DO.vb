@@ -5,6 +5,7 @@ Imports DevExpress.XtraGrid.Views
 Public Class transaksi_DO
     Public kodeprinciple As String = ""
     Public namaprinciple As String = ""
+    Public idprinciple As String = ""
     Dim cek As Boolean = False
     Dim price As Integer = 0
     Dim total As Integer = 0
@@ -17,9 +18,14 @@ Public Class transaksi_DO
             TextBox2.Text = data
             namaprinciple = data
 
+            'select id principle
+            Dim data2 As String = ""
+            data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+            idprinciple = data2
+
             'select rute
             Dim rute As String = ""
-            rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+            rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
 
             'select price untuk rute
             price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
@@ -81,7 +87,6 @@ Public Class transaksi_DO
                     Dim sum As Integer = 0
                     sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
                     total = sum * price
-                    MsgBox(kodetrans.Text)
                     generate()
 
                     InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','','" + total.ToString + "',0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")

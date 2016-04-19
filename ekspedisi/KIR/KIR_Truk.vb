@@ -70,10 +70,10 @@ Public Class KIR_Truk
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             If TextEdit2.Text = "" Then
-                MessageBox.Show("Nomor KIR wajib terisi", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Nomor KIR wajib terisi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If TextEdit3.Text = "0" Then
-                    Dim msg As Integer = MessageBox.Show("Nominal", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
+                    Dim msg As Integer = MessageBox.Show("Nominal KIR tertulis Rp. 0, apakah anda ingin melanjutkan transaksi KIR? Tekan OK untuk konfirmasi", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                     If msg = DialogResult.OK Then
                         'insert database
                     Else
