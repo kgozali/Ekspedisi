@@ -156,7 +156,7 @@ Partial Class add_user
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_user"
-        Me.Text = "add_user"
+        Me.Text = "Tambah User"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
