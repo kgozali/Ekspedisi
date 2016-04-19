@@ -29,17 +29,17 @@ Partial Class buka_piutang_karyawan
         Me.pilihkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.tanggalpiutang = New System.Windows.Forms.DateTimePicker()
         Me.nominal = New System.Windows.Forms.TextBox()
-        Me.Tanggaljatuhtempo = New System.Windows.Forms.DateTimePicker()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.akunkas = New System.Windows.Forms.ComboBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.idkaryawan = New System.Windows.Forms.Label()
         Me.keterangan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.idkaryawan = New System.Windows.Forms.Label()
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -53,45 +53,45 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(5, 28)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(164, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(154, 18)
         Me.LabelControl1.TabIndex = 34
-        Me.LabelControl1.Text = "Kode Piutang Karyawan :"
+        Me.LabelControl1.Text = "Kode Piutang Karyawan"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 52)
+        Me.LabelControl2.Location = New System.Drawing.Point(51, 52)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(118, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(108, 18)
         Me.LabelControl2.TabIndex = 35
-        Me.LabelControl2.Text = "Nama Karyawan :"
+        Me.LabelControl2.Text = "Nama Karyawan"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 76)
+        Me.LabelControl3.Location = New System.Drawing.Point(55, 76)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(114, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(104, 18)
         Me.LabelControl3.TabIndex = 36
-        Me.LabelControl3.Text = "Tanggal Piutang :"
+        Me.LabelControl3.Text = "Tanggal Piutang"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 150)
+        Me.LabelControl4.Location = New System.Drawing.Point(58, 150)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(111, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(101, 18)
         Me.LabelControl4.TabIndex = 37
-        Me.LabelControl4.Text = "Jumlah Nominal :"
+        Me.LabelControl4.Text = "Jumlah Nominal"
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 100)
+        Me.LabelControl6.Location = New System.Drawing.Point(15, 100)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
+        Me.LabelControl6.Size = New System.Drawing.Size(144, 18)
         Me.LabelControl6.TabIndex = 39
-        Me.LabelControl6.Text = "Tanggal Jatuh Tempo :"
+        Me.LabelControl6.Text = "Tanggal Jatuh Tempo"
         '
         'id
         '
@@ -124,13 +124,6 @@ Partial Class buka_piutang_karyawan
         Me.nominal.Size = New System.Drawing.Size(200, 21)
         Me.nominal.TabIndex = 5
         '
-        'Tanggaljatuhtempo
-        '
-        Me.Tanggaljatuhtempo.Location = New System.Drawing.Point(175, 97)
-        Me.Tanggaljatuhtempo.Name = "Tanggaljatuhtempo"
-        Me.Tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
-        Me.Tanggaljatuhtempo.TabIndex = 4
-        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
@@ -152,11 +145,11 @@ Partial Class buka_piutang_karyawan
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(5, 124)
+        Me.LabelControl5.Location = New System.Drawing.Point(98, 124)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl5.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl5.TabIndex = 146
-        Me.LabelControl5.Text = "Akun Kas :"
+        Me.LabelControl5.Text = "Akun Kas"
         '
         'akunkas
         '
@@ -168,6 +161,7 @@ Partial Class buka_piutang_karyawan
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.keterangan)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
@@ -177,7 +171,6 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
-        Me.GroupControl1.Controls.Add(Me.Tanggaljatuhtempo)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.nominal)
         Me.GroupControl1.Controls.Add(Me.id)
@@ -188,6 +181,24 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.Size = New System.Drawing.Size(450, 275)
         Me.GroupControl1.TabIndex = 159
         Me.GroupControl1.Text = "Data Piutang"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(176, 96)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(72, 21)
+        Me.ComboBox1.TabIndex = 162
+        '
+        'idkaryawan
+        '
+        Me.idkaryawan.AutoSize = True
+        Me.idkaryawan.Location = New System.Drawing.Point(2, 206)
+        Me.idkaryawan.Name = "idkaryawan"
+        Me.idkaryawan.Size = New System.Drawing.Size(38, 13)
+        Me.idkaryawan.TabIndex = 161
+        Me.idkaryawan.Text = "Label1"
+        Me.idkaryawan.Visible = False
         '
         'keterangan
         '
@@ -200,7 +211,7 @@ Partial Class buka_piutang_karyawan
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 174)
+        Me.LabelControl7.Location = New System.Drawing.Point(84, 174)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl7.TabIndex = 159
@@ -223,16 +234,6 @@ Partial Class buka_piutang_karyawan
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'idkaryawan
-        '
-        Me.idkaryawan.AutoSize = True
-        Me.idkaryawan.Location = New System.Drawing.Point(2, 206)
-        Me.idkaryawan.Name = "idkaryawan"
-        Me.idkaryawan.Size = New System.Drawing.Size(38, 13)
-        Me.idkaryawan.TabIndex = 161
-        Me.idkaryawan.Text = "Label1"
-        Me.idkaryawan.Visible = False
-        '
         'buka_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -243,7 +244,7 @@ Partial Class buka_piutang_karyawan
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "buka_piutang_karyawan"
-        Me.Text = "Piutang Karayawan"
+        Me.Text = "Piutang Karyawan"
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -263,7 +264,6 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents pilihkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents tanggalpiutang As System.Windows.Forms.DateTimePicker
     Friend WithEvents nominal As System.Windows.Forms.TextBox
-    Friend WithEvents Tanggaljatuhtempo As System.Windows.Forms.DateTimePicker
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
@@ -274,4 +274,5 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents idkaryawan As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class
