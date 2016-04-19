@@ -7,7 +7,8 @@ Public Class master_DO
     End Sub
 
     Private Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        process()
+        nama.Checked = True
+        aktif.Checked = True
 
     End Sub
 
@@ -113,8 +114,7 @@ Public Class master_DO
     End Sub
 
     Private Sub master_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        cari.Text = ""
-        DateTimePicker1.ResetText()
+        res()
     End Sub
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
@@ -126,5 +126,13 @@ Public Class master_DO
         End Try
         
 
+    End Sub
+
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
+    Sub res()
+        DateTimePicker1.ResetText()
+        cari.Text = ""
     End Sub
 End Class
