@@ -19,6 +19,7 @@ Partial Class KIR_Truk
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(KIR_Truk))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
@@ -60,18 +61,20 @@ Partial Class KIR_Truk
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(271, 173)
+        Me.GroupControl3.Location = New System.Drawing.Point(271, 87)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(757, 302)
+        Me.GroupControl3.Size = New System.Drawing.Size(757, 388)
         Me.GroupControl3.TabIndex = 40
-        Me.GroupControl3.Text = "Data Kir Truk"
+        Me.GroupControl3.Text = "Data KIR "
         '
         'GridControl1
         '
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridControl1.Location = New System.Drawing.Point(8, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(747, 273)
+        Me.GridControl1.Size = New System.Drawing.Size(747, 359)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -133,51 +136,51 @@ Partial Class KIR_Truk
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(29, 9)
+        Me.Label1.Location = New System.Drawing.Point(24, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 18)
+        Me.Label1.Size = New System.Drawing.Size(70, 18)
         Me.Label1.TabIndex = 41
-        Me.Label1.Text = "Kode Kir:"
+        Me.Label1.Text = "Kode KIR"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(13, 36)
+        Me.Label2.Location = New System.Drawing.Point(12, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 18)
+        Me.Label2.Size = New System.Drawing.Size(81, 18)
         Me.Label2.TabIndex = 42
-        Me.Label2.Text = "Nomor Kir :"
+        Me.Label2.Text = "Nomor KIR"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(732, 8)
+        Me.Label3.Location = New System.Drawing.Point(734, 8)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(91, 18)
+        Me.Label3.Size = New System.Drawing.Size(89, 18)
         Me.Label3.TabIndex = 43
-        Me.Label3.Text = "Tanggal Kir :"
+        Me.Label3.Text = "Tanggal KIR"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(659, 35)
+        Me.Label4.Location = New System.Drawing.Point(661, 35)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(164, 18)
+        Me.Label4.Size = New System.Drawing.Size(162, 18)
         Me.Label4.TabIndex = 44
-        Me.Label4.Text = "Tanggal Kir Berikutnya :"
+        Me.Label4.Text = "Tanggal KIR Berikutnya"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label5.Location = New System.Drawing.Point(684, 483)
+        Me.Label5.Location = New System.Drawing.Point(710, 483)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(90, 18)
+        Me.Label5.Size = New System.Drawing.Size(59, 18)
         Me.Label5.TabIndex = 45
-        Me.Label5.Text = "Nominal Kir :"
+        Me.Label5.Text = "Nominal"
         '
         'TextEdit1
         '
@@ -196,7 +199,7 @@ Partial Class KIR_Truk
         '
         'TextEdit3
         '
-        Me.TextEdit3.EditValue = ""
+        Me.TextEdit3.EditValue = "0"
         Me.TextEdit3.Location = New System.Drawing.Point(775, 481)
         Me.TextEdit3.Name = "TextEdit3"
         Me.TextEdit3.Size = New System.Drawing.Size(253, 20)
@@ -219,7 +222,7 @@ Partial Class KIR_Truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(928, 507)
+        Me.SimpleButton1.Location = New System.Drawing.Point(928, 514)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 51
@@ -228,7 +231,7 @@ Partial Class KIR_Truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(822, 507)
+        Me.Submit.Location = New System.Drawing.Point(822, 514)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 50
@@ -255,7 +258,7 @@ Partial Class KIR_Truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1038, 541)
+        Me.ClientSize = New System.Drawing.Size(1038, 553)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
@@ -272,7 +275,8 @@ Partial Class KIR_Truk
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "KIR_Truk"
-        Me.Text = "Input Kir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "KIR"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
