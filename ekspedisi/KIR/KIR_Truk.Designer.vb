@@ -27,7 +27,6 @@ Partial Class KIR_Truk
         Me.tanggalkir = New System.Windows.Forms.DateTimePicker()
         Me.tanggalhabiskir = New System.Windows.Forms.RadioButton()
         Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -86,17 +85,16 @@ Partial Class KIR_Truk
         Me.GroupControl1.Controls.Add(Me.tanggalkir)
         Me.GroupControl1.Controls.Add(Me.tanggalhabiskir)
         Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 71)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 87)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(251, 96)
+        Me.GroupControl1.Size = New System.Drawing.Size(251, 80)
         Me.GroupControl1.TabIndex = 39
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'tanggalkir
         '
-        Me.tanggalkir.Location = New System.Drawing.Point(5, 65)
+        Me.tanggalkir.Location = New System.Drawing.Point(5, 47)
         Me.tanggalkir.Name = "tanggalkir"
         Me.tanggalkir.Size = New System.Drawing.Size(200, 21)
         Me.tanggalkir.TabIndex = 52
@@ -105,7 +103,7 @@ Partial Class KIR_Truk
         'tanggalhabiskir
         '
         Me.tanggalhabiskir.AutoSize = True
-        Me.tanggalhabiskir.Location = New System.Drawing.Point(5, 45)
+        Me.tanggalhabiskir.Location = New System.Drawing.Point(93, 24)
         Me.tanggalhabiskir.Name = "tanggalhabiskir"
         Me.tanggalhabiskir.Size = New System.Drawing.Size(78, 17)
         Me.tanggalhabiskir.TabIndex = 3
@@ -116,7 +114,7 @@ Partial Class KIR_Truk
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Location = New System.Drawing.Point(5, 24)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(82, 17)
         Me.nama.TabIndex = 2
@@ -124,28 +122,18 @@ Partial Class KIR_Truk
         Me.nama.Text = "Nomor Polisi"
         Me.nama.UseVisualStyleBackColor = True
         '
-        'id
-        '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(73, 17)
-        Me.id.TabIndex = 1
-        Me.id.Text = "Kode Truk"
-        Me.id.UseVisualStyleBackColor = True
-        '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 68)
+        Me.cari.Location = New System.Drawing.Point(5, 50)
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(241, 20)
+        Me.cari.Size = New System.Drawing.Size(237, 20)
         Me.cari.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(13, 11)
+        Me.Label1.Location = New System.Drawing.Point(29, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 18)
         Me.Label1.TabIndex = 41
@@ -165,7 +153,7 @@ Partial Class KIR_Truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(659, 9)
+        Me.Label3.Location = New System.Drawing.Point(732, 8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(91, 18)
         Me.Label3.TabIndex = 43
@@ -193,6 +181,7 @@ Partial Class KIR_Truk
         '
         'TextEdit1
         '
+        Me.TextEdit1.Enabled = False
         Me.TextEdit1.Location = New System.Drawing.Point(100, 9)
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Size = New System.Drawing.Size(174, 20)
@@ -307,7 +296,6 @@ Partial Class KIR_Truk
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As System.Windows.Forms.RadioButton
-    Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
