@@ -313,7 +313,6 @@ Partial Class master_DO
         '
         'edit
         '
-        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.edit.Caption = "Edit Data"
         Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
         Me.edit.Id = 27

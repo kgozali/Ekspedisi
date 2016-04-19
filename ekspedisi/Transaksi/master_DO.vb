@@ -116,4 +116,15 @@ Public Class master_DO
         cari.Text = ""
         DateTimePicker1.ResetText()
     End Sub
+
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        Try
+            edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+            edit_DO.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        
+
+    End Sub
 End Class
