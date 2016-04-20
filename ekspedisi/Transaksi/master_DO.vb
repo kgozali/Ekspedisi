@@ -31,7 +31,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
-                noedit()
+
 
             ElseIf kodebooking.Checked = True Then
 
@@ -43,7 +43,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
-                noedit()
+
             ElseIf tgl.Checked = True Then
                 cari.Visible = False
                 DateTimePicker1.Visible = True
@@ -53,7 +53,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
-                noedit()
+
             End If
 
         Catch ex As Exception
