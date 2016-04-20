@@ -21,21 +21,21 @@ Partial Class daftar_piutang_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_piutang_karyawan))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
-        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
@@ -46,6 +46,20 @@ Partial Class daftar_piutang_karyawan
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
         Me.GroupControl3.TabIndex = 147
         Me.GroupControl3.Text = "Data Karayawan"
+        '
+        'datakaryawan
+        '
+        Me.datakaryawan.Location = New System.Drawing.Point(8, 24)
+        Me.datakaryawan.MainView = Me.GridView1
+        Me.datakaryawan.Name = "datakaryawan"
+        Me.datakaryawan.Size = New System.Drawing.Size(664, 312)
+        Me.datakaryawan.TabIndex = 0
+        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.datakaryawan
+        Me.GridView1.Name = "GridView1"
         '
         'GroupControl1
         '
@@ -105,20 +119,6 @@ Partial Class daftar_piutang_karyawan
         Me.Submit.TabIndex = 148
         Me.Submit.Text = "Submit"
         '
-        'datakaryawan
-        '
-        Me.datakaryawan.Location = New System.Drawing.Point(8, 24)
-        Me.datakaryawan.MainView = Me.GridView1
-        Me.datakaryawan.Name = "datakaryawan"
-        Me.datakaryawan.Size = New System.Drawing.Size(664, 312)
-        Me.datakaryawan.TabIndex = 0
-        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.datakaryawan
-        Me.GridView1.Name = "GridView1"
-        '
         'daftar_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -132,12 +132,12 @@ Partial Class daftar_piutang_karyawan
         Me.Text = "Daftar Piutang Karyawan"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
