@@ -7,7 +7,10 @@
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-
+            For i = 0 To datapiutang.RowCount - 1
+                InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(0, "Kode Karyawan") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+            Next i
+            MessageBox.Show("Piutang berhasil di update")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
