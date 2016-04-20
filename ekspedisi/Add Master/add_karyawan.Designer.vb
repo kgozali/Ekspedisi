@@ -21,6 +21,8 @@ Partial Class add_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_karyawan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.ktp = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.email = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -48,17 +50,21 @@ Partial Class add_karyawan
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.ktp = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -95,6 +101,22 @@ Partial Class add_karyawan
         Me.GroupControl1.Size = New System.Drawing.Size(721, 300)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
+        '
+        'ktp
+        '
+        Me.ktp.Location = New System.Drawing.Point(128, 272)
+        Me.ktp.Name = "ktp"
+        Me.ktp.Size = New System.Drawing.Size(200, 20)
+        Me.ktp.TabIndex = 79
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(37, 272)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(76, 18)
+        Me.LabelControl8.TabIndex = 78
+        Me.LabelControl8.Text = "Nomor KTP"
         '
         'email
         '
@@ -310,7 +332,7 @@ Partial Class add_karyawan
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(526, 320)
+        Me.simpan.Location = New System.Drawing.Point(870, 320)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 149
@@ -319,33 +341,45 @@ Partial Class add_karyawan
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(632, 320)
+        Me.cancel.Location = New System.Drawing.Point(976, 320)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 148
         Me.cancel.Text = "Cancel"
         '
-        'LabelControl8
+        'GroupControl3
         '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(37, 272)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(76, 18)
-        Me.LabelControl8.TabIndex = 78
-        Me.LabelControl8.Text = "Nomor KTP"
+        Me.GroupControl3.Controls.Add(Me.SimpleButton1)
+        Me.GroupControl3.Controls.Add(Me.PictureBox1)
+        Me.GroupControl3.Location = New System.Drawing.Point(740, 12)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(340, 300)
+        Me.GroupControl3.TabIndex = 170
+        Me.GroupControl3.Text = "Foto KTP"
         '
-        'ktp
+        'SimpleButton1
         '
-        Me.ktp.Location = New System.Drawing.Point(128, 272)
-        Me.ktp.Name = "ktp"
-        Me.ktp.Size = New System.Drawing.Size(200, 20)
-        Me.ktp.TabIndex = 79
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(232, 264)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.TabIndex = 170
+        Me.SimpleButton1.Text = "Browse"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(320, 232)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'add_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(741, 353)
+        Me.ClientSize = New System.Drawing.Size(1084, 356)
+        Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
@@ -354,13 +388,16 @@ Partial Class add_karyawan
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -394,4 +431,7 @@ Partial Class add_karyawan
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents ktp As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
