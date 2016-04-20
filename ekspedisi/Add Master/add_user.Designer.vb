@@ -32,9 +32,6 @@ Partial Class add_user
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.levelakses = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,9 +39,6 @@ Partial Class add_user
         Me.GroupControl2.SuspendLayout()
         CType(Me.levelakses, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -55,7 +49,7 @@ Partial Class add_user
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.username)
-        Me.GroupControl1.Location = New System.Drawing.Point(328, 8)
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(328, 104)
         Me.GroupControl1.TabIndex = 148
@@ -114,7 +108,7 @@ Partial Class add_user
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(454, 472)
+        Me.simpan.Location = New System.Drawing.Point(454, 376)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 167
@@ -123,7 +117,7 @@ Partial Class add_user
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(560, 472)
+        Me.cancel.Location = New System.Drawing.Point(560, 376)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 166
@@ -132,7 +126,7 @@ Partial Class add_user
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.levelakses)
-        Me.GroupControl2.Location = New System.Drawing.Point(8, 216)
+        Me.GroupControl2.Location = New System.Drawing.Point(8, 120)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(648, 248)
         Me.GroupControl2.TabIndex = 168
@@ -152,40 +146,12 @@ Partial Class add_user
         Me.GridView1.GridControl = Me.levelakses
         Me.GridView1.Name = "GridView1"
         '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.SimpleButton1)
-        Me.GroupControl3.Controls.Add(Me.PictureBox1)
-        Me.GroupControl3.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(312, 200)
-        Me.GroupControl3.TabIndex = 169
-        Me.GroupControl3.Text = "Foto KTP"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(296, 136)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(208, 168)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 170
-        Me.SimpleButton1.Text = "Browse"
-        '
         'add_user
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(666, 505)
+        Me.ClientSize = New System.Drawing.Size(666, 410)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
@@ -199,9 +165,6 @@ Partial Class add_user
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.levelakses, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -217,7 +180,4 @@ Partial Class add_user
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents levelakses As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
