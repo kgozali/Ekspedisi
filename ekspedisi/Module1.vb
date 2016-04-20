@@ -59,7 +59,7 @@ Public Module Module1
             command.Transaction = vartr
             command.ExecuteNonQuery()
             vartr.Commit()
-
+            Return True
         Catch ex As Exception
             Try
                 vartr.Rollback()

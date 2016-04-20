@@ -233,6 +233,12 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form_perubahan_harga.Designer.vb">
+      <DependentUpon>form_perubahan_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form_perubahan_harga.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KIR\KIR_Truk.Designer.vb">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
     </Compile>
@@ -638,6 +644,12 @@
     <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User Setting\change_password.Designer.vb">
+      <DependentUpon>change_password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Setting\change_password.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
       <DependentUpon>add_akun.vb</DependentUpon>
     </EmbeddedResource>
@@ -703,6 +715,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_perubahan_harga.resx">
+      <DependentUpon>form_perubahan_harga.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
@@ -913,6 +928,9 @@
     <EmbeddedResource Include="Transaksi\truk_booking.resx">
       <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Setting\change_password.resx">
+      <DependentUpon>change_password.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -931,6 +949,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

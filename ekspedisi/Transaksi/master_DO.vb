@@ -7,7 +7,8 @@ Public Class master_DO
     End Sub
 
     Private Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        process()
+        nama.Checked = True
+        aktif.Checked = True
 
     End Sub
 
@@ -24,7 +25,7 @@ Public Class master_DO
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 Dim datatable As New DataTable
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `Nomor DO`,concat(day(tgl_jam),'-',monthname(tgl_jam),'-',year(tgl_jam)) `Tanggal`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo`,concat('Rp. ',total_bayar,'.00') `Total` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
@@ -35,7 +36,7 @@ Public Class master_DO
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 Dim datatable As New DataTable
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `Nomor DO`,concat(day(tgl_jam),'-',monthname(tgl_jam),'-',year(tgl_jam)) `Tanggal`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo`,concat('Rp. ',total_bayar,'.00') `Total` from trans_do where id_booking LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_booking LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
@@ -45,7 +46,7 @@ Public Class master_DO
                 cari.Visible = False
                 DateTimePicker1.Visible = True
                 Dim datatable As New DataTable
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `Nomor DO`,concat(day(tgl_jam),'-',monthname(tgl_jam),'-',year(tgl_jam)) `Tanggal`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo`,concat('Rp. ',total_bayar,'.00') `Total` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' order by jatuh_tempo asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
@@ -113,7 +114,25 @@ Public Class master_DO
     End Sub
 
     Private Sub master_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        cari.Text = ""
+        res()
+    End Sub
+
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        Try
+            edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+            edit_DO.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        
+
+    End Sub
+
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
+    Sub res()
         DateTimePicker1.ResetText()
+        cari.Text = ""
     End Sub
 End Class

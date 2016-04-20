@@ -176,7 +176,12 @@ Public Class booking_truk
 
 
     Private Sub ButtonEdit4_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit4.ButtonClick
-        rute_booking.ShowDialog()
+        If principlebook = "" Then
+            MessageBox.Show("Pilih principle terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            rute_booking.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub ButtonEdit1_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit1.ButtonClick
@@ -189,7 +194,12 @@ Public Class booking_truk
 
   
     Private Sub GridControl2_DoubleClick(sender As Object, e As EventArgs) Handles GridControl2.DoubleClick
-        supir_booking.ShowDialog()
+        If rutebook = "" Then
+            MessageBox.Show("Pilih rute terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            supir_booking.ShowDialog()
+        End If
+
     End Sub
 
     
@@ -225,7 +235,9 @@ Public Class booking_truk
         ButtonEdit1.Text = ""
         ButtonEdit2.Text = ""
         ButtonEdit4.Text = ""
-
+        principlebook = ""
+        trukbook = ""
+        rutebook = ""
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -274,6 +286,14 @@ Public Class booking_truk
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+
+    End Sub
+
+    Private Sub ButtonEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit1.EditValueChanged
+
+    End Sub
+
+    Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
 
     End Sub
 End Class

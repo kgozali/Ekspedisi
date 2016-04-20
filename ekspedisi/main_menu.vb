@@ -26,7 +26,7 @@ Public Class main_menu
         master_kontak_principle.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton8_Click(sender As Object, e As EventArgs) Handles SimpleButton8.Click
+    Private Sub SimpleButton8_Click(sender As Object, e As EventArgs)
         perubahan_harga.ShowDialog()
     End Sub
 
