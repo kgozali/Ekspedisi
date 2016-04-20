@@ -29,8 +29,6 @@ Partial Class add_karyawan
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.pasif = New System.Windows.Forms.RadioButton()
@@ -53,6 +51,8 @@ Partial Class add_karyawan
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.kreditlimit = New DevExpress.XtraEditors.TextEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,10 +65,12 @@ Partial Class add_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.kreditlimit)
         Me.GroupControl1.Controls.Add(Me.ktp)
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.email)
@@ -77,7 +79,6 @@ Partial Class add_karyawan
         Me.GroupControl1.Controls.Add(Me.LabelControl13)
         Me.GroupControl1.Controls.Add(Me.RichTextBox1)
         Me.GroupControl1.Controls.Add(Me.LabelControl12)
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker2)
         Me.GroupControl1.Controls.Add(Me.LabelControl11)
         Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
         Me.GroupControl1.Controls.Add(Me.LabelControl10)
@@ -104,7 +105,7 @@ Partial Class add_karyawan
         '
         'ktp
         '
-        Me.ktp.Location = New System.Drawing.Point(128, 272)
+        Me.ktp.Location = New System.Drawing.Point(128, 264)
         Me.ktp.Name = "ktp"
         Me.ktp.Size = New System.Drawing.Size(200, 20)
         Me.ktp.TabIndex = 79
@@ -112,7 +113,7 @@ Partial Class add_karyawan
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(37, 272)
+        Me.LabelControl8.Location = New System.Drawing.Point(37, 266)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(76, 18)
         Me.LabelControl8.TabIndex = 78
@@ -168,22 +169,6 @@ Partial Class add_karyawan
         Me.LabelControl12.TabIndex = 73
         Me.LabelControl12.Text = "Keterangan"
         '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(129, 240)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 12
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(21, 243)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(97, 18)
-        Me.LabelControl11.TabIndex = 71
-        Me.LabelControl11.Text = "Tanggal Keluar"
-        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(129, 214)
@@ -203,7 +188,7 @@ Partial Class add_karyawan
         'pasif
         '
         Me.pasif.AutoSize = True
-        Me.pasif.Location = New System.Drawing.Point(182, 143)
+        Me.pasif.Location = New System.Drawing.Point(182, 147)
         Me.pasif.Name = "pasif"
         Me.pasif.Size = New System.Drawing.Size(75, 17)
         Me.pasif.TabIndex = 9
@@ -214,7 +199,7 @@ Partial Class add_karyawan
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(129, 143)
+        Me.aktif.Location = New System.Drawing.Point(129, 147)
         Me.aktif.Name = "aktif"
         Me.aktif.Size = New System.Drawing.Size(47, 17)
         Me.aktif.TabIndex = 8
@@ -374,6 +359,22 @@ Partial Class add_karyawan
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Location = New System.Drawing.Point(47, 240)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl11.TabIndex = 71
+        Me.LabelControl11.Text = "Kredit Limit"
+        '
+        'kreditlimit
+        '
+        Me.kreditlimit.Location = New System.Drawing.Point(128, 241)
+        Me.kreditlimit.Name = "kreditlimit"
+        Me.kreditlimit.Size = New System.Drawing.Size(143, 20)
+        Me.kreditlimit.TabIndex = 80
+        '
         'add_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -398,6 +399,7 @@ Partial Class add_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -406,8 +408,6 @@ Partial Class add_karyawan
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents pasif As System.Windows.Forms.RadioButton
@@ -434,4 +434,6 @@ Partial Class add_karyawan
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents kreditlimit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
 End Class
