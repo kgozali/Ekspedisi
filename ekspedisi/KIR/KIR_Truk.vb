@@ -85,18 +85,22 @@ Public Class KIR_Truk
                                 If TextEdit4.Text = "" Then
                                     Dim msg1 As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda ingin melanjutkan tanpa menambahkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                     If msg1 = DialogResult.OK Then
+                                        autogen()
                                         kodekir = TextEdit1.Text.ToString
-                                        Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "')")
+                                        Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + path.ToString + "')")
                                         If insert = True Then
-                                            MessageBox.Show("KIR berhasil dilakukan", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                            MessageBox.Show("KIR berhasil dilakukan", "System Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                            reset()
                                         End If
                                         KIR_Truk_Load(sender, e)
                                     End If
                                 Else
+                                    autogen()
                                     kodekir = TextEdit1.Text.ToString
-                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "')")
+                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + path.ToString + "')")
                                     If insert = True Then
-                                        MessageBox.Show("KIR berhasil dilakukan", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                        MessageBox.Show("KIR berhasil dilakukan", "System Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                        reset()
                                     End If
                                     KIR_Truk_Load(sender, e)
                                 End If
@@ -107,18 +111,22 @@ Public Class KIR_Truk
                             If TextEdit4.Text = "" Then
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda ingin melanjutkan tanpa menambahkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
+                                    autogen()
                                     kodekir = TextEdit1.Text.ToString
-                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "')")
+                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + path.ToString + "')")
                                     If insert = True Then
-                                        MessageBox.Show("KIR berhasil dilakukan", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                        MessageBox.Show("KIR berhasil dilakukan", "System Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                        reset()
                                     End If
                                     KIR_Truk_Load(sender, e)
                                 End If
                             Else
+                                autogen()
                                 kodekir = TextEdit1.Text.ToString
-                                Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "')")
+                                Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + path.ToString + "')")
                                 If insert = True Then
-                                    MessageBox.Show("KIR berhasil dilakukan", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    MessageBox.Show("KIR berhasil dilakukan", "System Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    reset()
                                 End If
                                 KIR_Truk_Load(sender, e)
                             End If
@@ -143,13 +151,17 @@ Public Class KIR_Truk
     End Sub
 
     Private Sub TextEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit3.EditValueChanged
+        Try
+            If TextEdit3.Text = "" Or Not IsNumeric(TextEdit3.Text) Then
 
-        If TextEdit3.Text = "" Or Not IsNumeric(TextEdit3.Text) Then
-
-        Else
-            nominal = TextEdit3.Text
-            TextEdit3.Text = FormatNumber(Double.Parse(TextEdit3.Text).ToString(), 2)
-        End If
+            Else
+                nominal = TextEdit3.Text
+                TextEdit3.Text = FormatNumber(Double.Parse(TextEdit3.Text).ToString(), 2)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+       
 
     End Sub
 
@@ -174,5 +186,15 @@ Public Class KIR_Truk
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next
+    End Sub
+
+    Sub reset()
+        autogen()
+        TextEdit2.Text = ""
+        DateTimePicker1.ResetText()
+        DateTimePicker2.ResetText()
+        TextEdit3.Text = "0.00"
+        PictureBox1.ResetText()
+        TextEdit4.Text = ""
     End Sub
 End Class
