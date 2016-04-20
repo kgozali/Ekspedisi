@@ -35,7 +35,7 @@ Partial Class bukti_piutang
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(546, 496)
         Me.GroupControl1.TabIndex = 0
-        Me.GroupControl1.Text = "Bukti Piutang"
+        Me.GroupControl1.Text = "Scan Image"
         '
         'PictureBox1
         '
@@ -62,7 +62,7 @@ Partial Class bukti_piutang
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "bukti_piutang"
-        Me.Text = "Foto Bukti Piutang"
+        Me.Text = "Scan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
