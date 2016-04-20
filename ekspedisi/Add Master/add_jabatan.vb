@@ -27,7 +27,7 @@ Public Class add_jabatan
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             'insert ke dalam database
-            InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "')")
+            InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "','1')")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
