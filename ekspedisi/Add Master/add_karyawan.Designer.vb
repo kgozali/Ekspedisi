@@ -21,6 +21,7 @@ Partial Class add_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_karyawan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.kreditlimit = New DevExpress.XtraEditors.TextEdit()
         Me.ktp = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.email = New DevExpress.XtraEditors.TextEdit()
@@ -29,6 +30,7 @@ Partial Class add_karyawan
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.pasif = New System.Windows.Forms.RadioButton()
@@ -51,10 +53,9 @@ Partial Class add_karyawan
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.kreditlimit = New DevExpress.XtraEditors.TextEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +66,6 @@ Partial Class add_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -102,6 +102,13 @@ Partial Class add_karyawan
         Me.GroupControl1.Size = New System.Drawing.Size(721, 300)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
+        '
+        'kreditlimit
+        '
+        Me.kreditlimit.Location = New System.Drawing.Point(128, 241)
+        Me.kreditlimit.Name = "kreditlimit"
+        Me.kreditlimit.Size = New System.Drawing.Size(143, 20)
+        Me.kreditlimit.TabIndex = 80
         '
         'ktp
         '
@@ -168,6 +175,15 @@ Partial Class add_karyawan
         Me.LabelControl12.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl12.TabIndex = 73
         Me.LabelControl12.Text = "Keterangan"
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Location = New System.Drawing.Point(47, 240)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl11.TabIndex = 71
+        Me.LabelControl11.Text = "Kredit Limit"
         '
         'DateTimePicker1
         '
@@ -359,22 +375,6 @@ Partial Class add_karyawan
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(47, 240)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(71, 18)
-        Me.LabelControl11.TabIndex = 71
-        Me.LabelControl11.Text = "Kredit Limit"
-        '
-        'kreditlimit
-        '
-        Me.kreditlimit.Location = New System.Drawing.Point(128, 241)
-        Me.kreditlimit.Name = "kreditlimit"
-        Me.kreditlimit.Size = New System.Drawing.Size(143, 20)
-        Me.kreditlimit.TabIndex = 80
-        '
         'add_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -389,6 +389,7 @@ Partial Class add_karyawan
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -399,7 +400,6 @@ Partial Class add_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kreditlimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
