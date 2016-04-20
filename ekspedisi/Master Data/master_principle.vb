@@ -34,7 +34,7 @@ Public Class master_principle
 
     Private Sub master_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GridControl2.Visible = False
-        data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where `s`='1'")
+        data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where `s`='1'")
         GridControl1.DataSource = data
         For i = 0 To data.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
@@ -52,16 +52,16 @@ Public Class master_principle
         If edit.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where `s`='1' and id_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where `s`='1' and id_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where `s`='0' and id_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where `s`='0' and id_principle like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where b.`s`='1' and nama_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where b.`s`='1' and nama_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where b.`s`='0' and nama_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where b.`s`='0' and nama_principle like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
@@ -79,16 +79,16 @@ Public Class master_principle
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where `s`='1' and id_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where `s`='1' and id_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where `s`='0' and id_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where `s`='0' and id_principle like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where b.`s`='1' and nama_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where b.`s`='1' and nama_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi Keterangan from mprinciple where b.`s`='0' and nama_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID principle`, nama_principle `Nama principle`, nama_principle `Nama Principle`,Alamat `Alamat`, Email, tel1`Telepon 1`, tel2 `Telepon 2`, Kota, Provinsi from mprinciple where b.`s`='0' and nama_principle like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
