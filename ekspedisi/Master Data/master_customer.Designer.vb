@@ -35,7 +35,7 @@ Partial Class master_customer
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
-        Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.addcustomerbaru = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.deldata = New DevExpress.XtraBars.BarButtonItem()
         Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
@@ -45,6 +45,8 @@ Partial Class master_customer
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.gridcustomer = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -59,6 +61,8 @@ Partial Class master_customer
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridcustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,7 +172,7 @@ Partial Class master_customer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addcustomerbaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(-1, 1)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -189,13 +193,13 @@ Partial Class master_customer
         Me.BarButtonItem8.Id = 21
         Me.BarButtonItem8.Name = "BarButtonItem8"
         '
-        'addsiswabaru
+        'addcustomerbaru
         '
-        Me.addsiswabaru.Caption = "Tambah Data"
-        Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
-        Me.addsiswabaru.Id = 23
-        Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
-        Me.addsiswabaru.Name = "addsiswabaru"
+        Me.addcustomerbaru.Caption = "Tambah Data"
+        Me.addcustomerbaru.Glyph = CType(resources.GetObject("addcustomerbaru.Glyph"), System.Drawing.Image)
+        Me.addcustomerbaru.Id = 23
+        Me.addcustomerbaru.LargeGlyph = CType(resources.GetObject("addcustomerbaru.LargeGlyph"), System.Drawing.Image)
+        Me.addcustomerbaru.Name = "addcustomerbaru"
         '
         'edit
         '
@@ -232,7 +236,7 @@ Partial Class master_customer
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addcustomerbaru)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
@@ -265,12 +269,30 @@ Partial Class master_customer
         '
         'GroupControl3
         '
+        Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 183)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(984, 476)
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Customer"
+        '
+        'GridControl2
+        '
+        Me.GridControl2.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl2.MainView = Me.GridView1
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(984, 457)
+        Me.GridControl2.TabIndex = 1
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl2
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsSelection.MultiSelect = True
+        Me.GridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'GridControl1
         '
@@ -376,6 +398,8 @@ Partial Class master_customer
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridcustomer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -403,7 +427,7 @@ Partial Class master_customer
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents addcustomerbaru As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
@@ -422,4 +446,6 @@ Partial Class master_customer
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridcustomer As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
