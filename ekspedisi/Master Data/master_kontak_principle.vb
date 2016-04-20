@@ -34,7 +34,7 @@ Public Class master_kontak_principle
 
     Private Sub master_kontak_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GridControl2.Visible = False
-        data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='1'")
+        data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1'")
         GridControl1.DataSource = data
         For i = 0 To data.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
@@ -52,16 +52,16 @@ Public Class master_kontak_principle
         If edit.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` , Email from mkontak_principle b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
@@ -79,16 +79,16 @@ Public Class master_kontak_principle
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontakprinciple b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontakprinciple b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` from mkontakprinciple b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
