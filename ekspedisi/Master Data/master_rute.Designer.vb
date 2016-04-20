@@ -36,10 +36,11 @@ Partial Class master_rute
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.addrutebaru = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.deldata = New DevExpress.XtraBars.BarButtonItem()
         Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
+        Me.ubahharga = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
@@ -50,12 +51,12 @@ Partial Class master_rute
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.dataview = New System.Windows.Forms.DataGridView()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.ubahharga = New DevExpress.XtraBars.BarButtonItem()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +68,8 @@ Partial Class master_rute
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -118,7 +120,7 @@ Partial Class master_rute
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu, Me.ubahharga})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addrutebaru, Me.edit, Me.deldata, Me.jumpmenu, Me.ubahharga})
         Me.RibbonControl1.Location = New System.Drawing.Point(1, -1)
         Me.RibbonControl1.MaxItemId = 33
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -203,13 +205,13 @@ Partial Class master_rute
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'addsiswabaru
+        'addrutebaru
         '
-        Me.addsiswabaru.Caption = "Tambah Data"
-        Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
-        Me.addsiswabaru.Id = 23
-        Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
-        Me.addsiswabaru.Name = "addsiswabaru"
+        Me.addrutebaru.Caption = "Tambah Data"
+        Me.addrutebaru.Glyph = CType(resources.GetObject("addrutebaru.Glyph"), System.Drawing.Image)
+        Me.addrutebaru.Id = 23
+        Me.addrutebaru.LargeGlyph = CType(resources.GetObject("addrutebaru.LargeGlyph"), System.Drawing.Image)
+        Me.addrutebaru.Name = "addrutebaru"
         '
         'edit
         '
@@ -237,6 +239,14 @@ Partial Class master_rute
         Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
         Me.jumpmenu.Name = "jumpmenu"
         '
+        'ubahharga
+        '
+        Me.ubahharga.Caption = "Perubahan Harga"
+        Me.ubahharga.Glyph = CType(resources.GetObject("ubahharga.Glyph"), System.Drawing.Image)
+        Me.ubahharga.Id = 32
+        Me.ubahharga.LargeGlyph = CType(resources.GetObject("ubahharga.LargeGlyph"), System.Drawing.Image)
+        Me.ubahharga.Name = "ubahharga"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
@@ -246,7 +256,7 @@ Partial Class master_rute
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addrutebaru)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.ubahharga)
@@ -302,8 +312,8 @@ Partial Class master_rute
         '
         'GroupControl3
         '
+        Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Controls.Add(Me.dataview)
         Me.GroupControl3.Location = New System.Drawing.Point(13, 183)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
@@ -312,7 +322,7 @@ Partial Class master_rute
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 25)
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
@@ -324,16 +334,6 @@ Partial Class master_rute
         '
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
-        '
-        'dataview
-        '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(5, 25)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(672, 311)
-        Me.dataview.TabIndex = 6
         '
         'editing
         '
@@ -373,13 +373,22 @@ Partial Class master_rute
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'ubahharga
+        'GridControl2
         '
-        Me.ubahharga.Caption = "Perubahan Harga"
-        Me.ubahharga.Glyph = CType(resources.GetObject("ubahharga.Glyph"), System.Drawing.Image)
-        Me.ubahharga.Id = 32
-        Me.ubahharga.LargeGlyph = CType(resources.GetObject("ubahharga.LargeGlyph"), System.Drawing.Image)
-        Me.ubahharga.Name = "ubahharga"
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(671, 311)
+        Me.GridControl2.TabIndex = 8
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'master_rute
         '
@@ -409,7 +418,8 @@ Partial Class master_rute
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -430,7 +440,7 @@ Partial Class master_rute
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents addrutebaru As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
@@ -442,7 +452,6 @@ Partial Class master_rute
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents dataview As System.Windows.Forms.DataGridView
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
@@ -450,4 +459,6 @@ Partial Class master_rute
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents ubahharga As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
