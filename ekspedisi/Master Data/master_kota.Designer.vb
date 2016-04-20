@@ -21,7 +21,6 @@ Partial Class master_kota
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_kota))
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.id = New System.Windows.Forms.RadioButton()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
@@ -48,14 +47,14 @@ Partial Class master_kota
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
-        Me.nama = New System.Windows.Forms.RadioButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.nama = New System.Windows.Forms.RadioButton()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,12 +62,12 @@ Partial Class master_kota
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'msiswa
@@ -80,16 +79,6 @@ Partial Class master_kota
         Me.msiswa.Id = 1
         Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
-        '
-        'id
-        '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(61, 17)
-        Me.id.TabIndex = 1
-        Me.id.Text = "ID Kota"
-        Me.id.UseVisualStyleBackColor = True
         '
         'editing
         '
@@ -305,18 +294,6 @@ Partial Class master_kota
         Me.aktif.Text = "Kota Aktif"
         Me.aktif.UseVisualStyleBackColor = True
         '
-        'nama
-        '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(72, 24)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(77, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Kota"
-        Me.nama.UseVisualStyleBackColor = True
-        '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl2)
@@ -326,6 +303,23 @@ Partial Class master_kota
         Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Kota"
+        '
+        'GridControl2
+        '
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(414, 311)
+        Me.GridControl2.TabIndex = 8
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'GridControl1
         '
@@ -345,7 +339,6 @@ Partial Class master_kota
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 103)
         Me.GroupControl1.Name = "GroupControl1"
@@ -363,22 +356,17 @@ Partial Class master_kota
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'GridControl2
+        'nama
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.MenuManager = Me.RibbonControl1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(414, 311)
-        Me.GridControl2.TabIndex = 8
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
-        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(5, 24)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(77, 17)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = True
+        Me.nama.Text = "Nama Kota"
+        Me.nama.UseVisualStyleBackColor = True
         '
         'master_kota
         '
@@ -403,19 +391,18 @@ Partial Class master_kota
         Me.GroupControl2.PerformLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
@@ -442,7 +429,6 @@ Partial Class master_kota
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
-    Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
@@ -450,4 +436,5 @@ Partial Class master_kota
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents nama As System.Windows.Forms.RadioButton
 End Class
