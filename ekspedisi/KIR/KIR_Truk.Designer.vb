@@ -25,7 +25,6 @@ Partial Class KIR_Truk
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,6 +44,7 @@ Partial Class KIR_Truk
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,7 +63,7 @@ Partial Class KIR_Truk
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 163)
+        Me.GroupControl3.Location = New System.Drawing.Point(8, 128)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(633, 469)
         Me.GroupControl3.TabIndex = 40
@@ -87,27 +87,18 @@ Partial Class KIR_Truk
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.Label6)
+        Me.GroupControl1.Controls.Add(Me.Label8)
         Me.GroupControl1.Controls.Add(Me.ComboBox1)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 87)
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 64)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(251, 70)
+        Me.GroupControl1.Size = New System.Drawing.Size(292, 57)
         Me.GroupControl1.TabIndex = 39
         Me.GroupControl1.Text = "Pilih Truk"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 36)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 13)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "No. Polisi"
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(67, 33)
+        Me.ComboBox1.Location = New System.Drawing.Point(112, 25)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(170, 21)
         Me.ComboBox1.TabIndex = 0
@@ -202,7 +193,7 @@ Partial Class KIR_Truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(896, 652)
+        Me.SimpleButton1.Location = New System.Drawing.Point(888, 608)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 51
@@ -211,7 +202,7 @@ Partial Class KIR_Truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(789, 652)
+        Me.Submit.Location = New System.Drawing.Point(781, 608)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 50
@@ -220,7 +211,7 @@ Partial Class KIR_Truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(651, 163)
+        Me.GroupControl2.Location = New System.Drawing.Point(648, 128)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(338, 429)
         Me.GroupControl2.TabIndex = 52
@@ -238,7 +229,7 @@ Partial Class KIR_Truk
         'TextEdit4
         '
         Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(684, 606)
+        Me.TextEdit4.Location = New System.Drawing.Point(681, 569)
         Me.TextEdit4.Name = "TextEdit4"
         Me.TextEdit4.Size = New System.Drawing.Size(257, 20)
         Me.TextEdit4.TabIndex = 53
@@ -246,7 +237,7 @@ Partial Class KIR_Truk
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(947, 597)
+        Me.SimpleButton2.Location = New System.Drawing.Point(944, 560)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(42, 37)
         Me.SimpleButton2.TabIndex = 54
@@ -254,7 +245,7 @@ Partial Class KIR_Truk
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(651, 609)
+        Me.Label7.Location = New System.Drawing.Point(648, 572)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(29, 13)
         Me.Label7.TabIndex = 55
@@ -263,11 +254,21 @@ Partial Class KIR_Truk
         'ofd
         '
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label8.Location = New System.Drawing.Point(8, 28)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(86, 18)
+        Me.Label8.TabIndex = 56
+        Me.Label8.Text = "Nomor Polisi"
+        '
         'KIR_Truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(998, 646)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)
@@ -325,10 +326,10 @@ Partial Class KIR_Truk
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class
