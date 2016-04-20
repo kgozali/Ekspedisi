@@ -43,7 +43,7 @@ Public Class add_truck
     '    Cmbbxsupp.DataSource = dpresiasi
     '    Cmbbxsupp.DisplayMember = "Nama Principle"
     '    Cmbbxsupp.ValueMember = "Kode Principle"
-    End Sub
+    'End Sub
 
 
 End Class
