@@ -26,7 +26,7 @@ Public Class supir_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        'query sesuai dengan radiobutton
+        'query sesuai dengan radiobutton 
        
     End Sub
 

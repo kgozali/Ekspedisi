@@ -5,6 +5,7 @@ Public Class booking_truk
     Public rutebook As String = ""
     Public tabelsupir As New DataTable
     Dim cek As Boolean = False
+    'tes
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim tanggal As New DataTable

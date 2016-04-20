@@ -25,7 +25,7 @@ Public Class truk_booking
 
     Sub edit()
         Try
-            'mematikan edit pada kolom
+            'mematikan edit pada kolom 
             GridControl1.DataSource = tabelid
             For i = 0 To GridView1.Columns.Count - 1
                 GridView1.Columns(i).OptionsColumn.AllowEdit = False

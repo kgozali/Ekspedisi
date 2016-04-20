@@ -8,7 +8,7 @@ Public Class KIR_Truk
     Dim kodekir As String = ""
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            'autogenerate kode kir
+            'autogenerate kode kir 
             autogen()
             'select truk
             dt = DtTable("select id_truk,no_pol from mtruk")

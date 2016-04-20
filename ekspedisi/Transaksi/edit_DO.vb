@@ -4,6 +4,7 @@ Public Class edit_DO
     Private Sub id_TextChanged(sender As Object, e As EventArgs) Handles id.TextChanged
         Dim datatable As New DataTable
         Dim dtbarang As New DataTable
+        'tes
         Try
             datatable = DtTable("select id_booking,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
             idbooking.Text = datatable.Rows(0).Item("id_booking").ToString
