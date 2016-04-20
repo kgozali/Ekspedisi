@@ -156,9 +156,7 @@ Public Class main_menu
     Private Sub backuppath_TextChanged(sender As Object, e As EventArgs) Handles backuppath.TextChanged
 
     End Sub
-
-  
-
-
-
+    Private Sub SimpleButton42_Click(sender As Object, e As EventArgs) Handles SimpleButton42.Click
+        KIR_Truk.ShowDialog()
+    End Sub
 End Class

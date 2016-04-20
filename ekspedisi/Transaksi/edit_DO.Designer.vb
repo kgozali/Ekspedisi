@@ -23,10 +23,7 @@ Partial Class edit_DO
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
-        Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
-        Me.idbarang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -60,20 +57,20 @@ Partial Class edit_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(13, 77)
+        Me.SimpleButton2.Location = New System.Drawing.Point(613, 76)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 169
-        Me.SimpleButton2.Text = "Add Item"
+        Me.SimpleButton2.Text = "Edit Item"
         '
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(9, 14)
+        Me.LabelControl7.Location = New System.Drawing.Point(724, 12)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
+        Me.LabelControl7.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl7.TabIndex = 167
-        Me.LabelControl7.Text = "Nama Principle :"
+        Me.LabelControl7.Text = "Nama Principle"
         '
         'RepositoryItemButtonEdit2
         '
@@ -81,41 +78,14 @@ Partial Class edit_DO
         Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         '
-        'berat
-        '
-        Me.berat.Caption = "Berat (Kilogram)"
-        Me.berat.FieldName = "berat"
-        Me.berat.Name = "berat"
-        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL = {0:N2}")})
-        Me.berat.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
-        Me.berat.Visible = True
-        Me.berat.VisibleIndex = 2
-        '
-        'namabarang
-        '
-        Me.namabarang.Caption = "Nama Barang"
-        Me.namabarang.ColumnEdit = Me.RepositoryItemButtonEdit1
-        Me.namabarang.Name = "namabarang"
-        Me.namabarang.Visible = True
-        Me.namabarang.VisibleIndex = 1
-        '
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
         Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         '
-        'idbarang
-        '
-        Me.idbarang.Caption = "ID Barang"
-        Me.idbarang.ColumnEdit = Me.RepositoryItemButtonEdit1
-        Me.idbarang.Name = "idbarang"
-        Me.idbarang.Visible = True
-        Me.idbarang.VisibleIndex = 0
-        '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.idbarang, Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowFooter = True
@@ -132,7 +102,8 @@ Partial Class edit_DO
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(119, 11)
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(834, 9)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
         Me.TextBox2.TabIndex = 168
@@ -166,7 +137,7 @@ Partial Class edit_DO
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(792, 83)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 77)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
         Me.tanggaljatuhtempo.TabIndex = 158
@@ -174,21 +145,22 @@ Partial Class edit_DO
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
-        Me.tanggalterkirim.Location = New System.Drawing.Point(791, 59)
+        Me.tanggalterkirim.Location = New System.Drawing.Point(175, 53)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
         Me.tanggalterkirim.TabIndex = 157
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(119, 35)
+        Me.nomerdo.Location = New System.Drawing.Point(834, 33)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(165, 21)
         Me.nomerdo.TabIndex = 156
         '
         'idbooking
         '
-        Me.idbooking.Location = New System.Drawing.Point(792, 36)
+        Me.idbooking.Enabled = False
+        Me.idbooking.Location = New System.Drawing.Point(175, 30)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.idbooking.Size = New System.Drawing.Size(165, 20)
@@ -196,7 +168,8 @@ Partial Class edit_DO
         '
         'id
         '
-        Me.id.Location = New System.Drawing.Point(792, 11)
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(175, 5)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(117, 21)
         Me.id.TabIndex = 154
@@ -204,47 +177,47 @@ Partial Class edit_DO
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(632, 86)
+        Me.LabelControl6.Location = New System.Drawing.Point(15, 80)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
+        Me.LabelControl6.Size = New System.Drawing.Size(144, 18)
         Me.LabelControl6.TabIndex = 165
-        Me.LabelControl6.Text = "Tanggal Jatuh Tempo :"
+        Me.LabelControl6.Text = "Tanggal Jatuh Tempo"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(632, 62)
+        Me.LabelControl4.Location = New System.Drawing.Point(50, 53)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(119, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(109, 18)
         Me.LabelControl4.TabIndex = 164
-        Me.LabelControl4.Text = "Tanggal Terkirim :"
+        Me.LabelControl4.Text = "Tanggal Terkirim"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(10, 38)
+        Me.LabelControl3.Location = New System.Drawing.Point(748, 36)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(80, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(70, 18)
         Me.LabelControl3.TabIndex = 163
-        Me.LabelControl3.Text = "Nomer DO :"
+        Me.LabelControl3.Text = "Nomer DO"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(632, 38)
+        Me.LabelControl2.Location = New System.Drawing.Point(71, 29)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(81, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl2.TabIndex = 162
-        Me.LabelControl2.Text = "ID Booking :"
+        Me.LabelControl2.Text = "Kode Booking"
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(632, 14)
+        Me.LabelControl1.Location = New System.Drawing.Point(59, 9)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(93, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(100, 18)
         Me.LabelControl1.TabIndex = 161
-        Me.LabelControl1.Text = "ID Transaksi :"
+        Me.LabelControl1.Text = "Kode Transaksi"
         '
         'GroupControl1
         '
@@ -286,7 +259,8 @@ Partial Class edit_DO
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "edit_DO"
-        Me.Text = "Edit DO"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Edit Delivery Order"
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -304,10 +278,7 @@ Partial Class edit_DO
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
-    Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
-    Friend WithEvents idbarang As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox

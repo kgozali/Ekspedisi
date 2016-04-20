@@ -52,47 +52,47 @@ Partial Class transaksi_DO
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(15, 14)
+        Me.LabelControl1.Location = New System.Drawing.Point(59, 14)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(110, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(100, 18)
         Me.LabelControl1.TabIndex = 33
-        Me.LabelControl1.Text = "Kode Transaksi :"
+        Me.LabelControl1.Text = "Kode Transaksi"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(15, 38)
+        Me.LabelControl2.Location = New System.Drawing.Point(71, 38)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(98, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl2.TabIndex = 34
-        Me.LabelControl2.Text = "Kode Booking :"
+        Me.LabelControl2.Text = "Kode Booking"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(722, 38)
+        Me.LabelControl3.Location = New System.Drawing.Point(745, 38)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(80, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(70, 18)
         Me.LabelControl3.TabIndex = 35
-        Me.LabelControl3.Text = "Nomer DO :"
+        Me.LabelControl3.Text = "Nomer DO"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(15, 62)
+        Me.LabelControl4.Location = New System.Drawing.Point(50, 62)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(119, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(109, 18)
         Me.LabelControl4.TabIndex = 36
-        Me.LabelControl4.Text = "Tanggal Terkirim :"
+        Me.LabelControl4.Text = "Tanggal Terkirim"
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl6.Location = New System.Drawing.Point(15, 86)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(154, 18)
+        Me.LabelControl6.Size = New System.Drawing.Size(149, 18)
         Me.LabelControl6.TabIndex = 38
-        Me.LabelControl6.Text = "Tanggal Jatuh Tempo :"
+        Me.LabelControl6.Text = "Tanggal Jatuh Tempo "
         '
         'kodetrans
         '
@@ -135,7 +135,7 @@ Partial Class transaksi_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(902, 624)
+        Me.SimpleButton1.Location = New System.Drawing.Point(901, 638)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 11
@@ -144,7 +144,7 @@ Partial Class transaksi_DO
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(796, 624)
+        Me.Submit.Location = New System.Drawing.Point(796, 638)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 10
@@ -153,7 +153,7 @@ Partial Class transaksi_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(13, 108)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 119)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(989, 510)
         Me.GroupControl3.TabIndex = 148
@@ -192,9 +192,9 @@ Partial Class transaksi_DO
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl7.Location = New System.Drawing.Point(721, 14)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(104, 18)
+        Me.LabelControl7.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl7.TabIndex = 149
-        Me.LabelControl7.Text = "Nama Principle :"
+        Me.LabelControl7.Text = "Nama Principle"
         '
         'TextBox2
         '
@@ -217,7 +217,7 @@ Partial Class transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 659)
+        Me.ClientSize = New System.Drawing.Size(1008, 677)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LabelControl7)
