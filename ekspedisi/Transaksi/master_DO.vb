@@ -9,6 +9,7 @@ Public Class master_DO
     Private Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nama.Checked = True
         aktif.Checked = True
+        process()
 
     End Sub
 
@@ -30,6 +31,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
+                noedit()
 
             ElseIf kodebooking.Checked = True Then
 
@@ -41,7 +43,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
-
+                noedit()
             ElseIf tgl.Checked = True Then
                 cari.Visible = False
                 DateTimePicker1.Visible = True
@@ -51,6 +53,7 @@ Public Class master_DO
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
+                noedit()
             End If
 
         Catch ex As Exception
@@ -93,13 +96,7 @@ Public Class master_DO
         process()
     End Sub
 
-    Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
-        For i = 0 To GridView1.Columns.Count - 1
-            GridView1.Columns(i).OptionsColumn.AllowEdit = False
-        Next
-    End Sub
 
-   
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
         Try
             PictureBox1.Image = Image.FromFile(Label1.Text)
@@ -135,5 +132,14 @@ Public Class master_DO
         DateTimePicker1.ResetText()
         cari.Text = ""
         'tes
+    End Sub
+    Sub noedit()
+        For i = 0 To GridView1.Columns.Count - 1
+            GridView1.Columns(i).OptionsColumn.AllowEdit = False
+        Next
+    End Sub
+
+    Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
+        noedit()
     End Sub
 End Class
