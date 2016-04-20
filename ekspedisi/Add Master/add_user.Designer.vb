@@ -49,9 +49,9 @@ Partial Class add_user
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.username)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(338, 98)
+        Me.GroupControl1.Size = New System.Drawing.Size(328, 104)
         Me.GroupControl1.TabIndex = 148
         Me.GroupControl1.Text = "Data"
         '
@@ -126,9 +126,9 @@ Partial Class add_user
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.levelakses)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 120)
+        Me.GroupControl2.Location = New System.Drawing.Point(8, 120)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(644, 248)
+        Me.GroupControl2.Size = New System.Drawing.Size(648, 248)
         Me.GroupControl2.TabIndex = 168
         Me.GroupControl2.Text = "Level Akses"
         '
@@ -150,11 +150,11 @@ Partial Class add_user
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(666, 412)
+        Me.ClientSize = New System.Drawing.Size(666, 410)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
-        Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_user"
         Me.Text = "Tambah User"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

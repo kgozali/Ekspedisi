@@ -55,6 +55,7 @@ Partial Class master_rute
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.ubahharga = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,9 +118,9 @@ Partial Class master_rute
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu, Me.ubahharga})
         Me.RibbonControl1.Location = New System.Drawing.Point(1, -1)
-        Me.RibbonControl1.MaxItemId = 32
+        Me.RibbonControl1.MaxItemId = 33
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
@@ -248,6 +249,7 @@ Partial Class master_rute
         Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.ubahharga)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         '
         'RepositoryItemCheckEdit1
@@ -371,6 +373,14 @@ Partial Class master_rute
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
+        'ubahharga
+        '
+        Me.ubahharga.Caption = "Perubahan Harga"
+        Me.ubahharga.Glyph = CType(resources.GetObject("ubahharga.Glyph"), System.Drawing.Image)
+        Me.ubahharga.Id = 32
+        Me.ubahharga.LargeGlyph = CType(resources.GetObject("ubahharga.LargeGlyph"), System.Drawing.Image)
+        Me.ubahharga.Name = "ubahharga"
+        '
         'master_rute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -439,4 +449,5 @@ Partial Class master_rute
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents ubahharga As DevExpress.XtraBars.BarButtonItem
 End Class

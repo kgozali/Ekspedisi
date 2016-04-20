@@ -67,7 +67,7 @@ Public Class add_barang
         notes.Text = ""
     End Sub
 
-    Private Sub notes_TextChanged(sender As Object, e As EventArgs) Handles notes.TextChanged
+    Private Sub notes_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If notes.Text = "" Then
             cek = False
@@ -77,7 +77,7 @@ Public Class add_barang
     End Sub
 
 
-    Private Sub nama_TextChanged(sender As Object, e As EventArgs) Handles nama.TextChanged
+    Private Sub nama_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If nama.Text = "" Then
             cek = False

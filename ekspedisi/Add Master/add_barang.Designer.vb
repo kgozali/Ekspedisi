@@ -22,25 +22,27 @@ Partial Class add_barang
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_barang))
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.notes = New System.Windows.Forms.RichTextBox()
         Me.principle = New System.Windows.Forms.ComboBox()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.nama = New DevExpress.XtraEditors.TextEdit()
-        Me.id = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.databarang = New DevExpress.XtraGrid.GridControl()
+        Me.listbarang = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.nama = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.keterangan = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.databarang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.listbarang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(366, 322)
+        Me.simpan.Location = New System.Drawing.Point(486, 432)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 120
@@ -49,100 +51,90 @@ Partial Class add_barang
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(472, 322)
+        Me.cancel.Location = New System.Drawing.Point(592, 432)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 119
         Me.cancel.Text = "Cancel"
         '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.notes)
-        Me.GroupControl1.Controls.Add(Me.principle)
-        Me.GroupControl1.Controls.Add(Me.LabelControl4)
-        Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(560, 304)
-        Me.GroupControl1.TabIndex = 142
-        Me.GroupControl1.Text = "Data"
-        '
-        'notes
-        '
-        Me.notes.Location = New System.Drawing.Point(111, 97)
-        Me.notes.Name = "notes"
-        Me.notes.Size = New System.Drawing.Size(267, 92)
-        Me.notes.TabIndex = 50
-        Me.notes.Text = ""
-        '
         'principle
         '
         Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(111, 70)
+        Me.principle.Location = New System.Drawing.Point(72, 24)
         Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(121, 21)
+        Me.principle.Size = New System.Drawing.Size(229, 21)
         Me.principle.TabIndex = 49
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 97)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(85, 18)
-        Me.LabelControl4.TabIndex = 48
-        Me.LabelControl4.Text = "Keterangan :"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 25)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
         Me.LabelControl3.TabIndex = 47
         Me.LabelControl3.Text = "Principle :"
         '
-        'LabelControl1
+        'GroupControl1
         '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(77, 18)
-        Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Barang :"
+        Me.GroupControl1.Controls.Add(Me.principle)
+        Me.GroupControl1.Controls.Add(Me.LabelControl3)
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(312, 56)
+        Me.GroupControl1.TabIndex = 121
+        Me.GroupControl1.Text = "Pilih Principle"
         '
-        'LabelControl2
+        'GroupControl2
         '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(100, 18)
-        Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Nama Barang :"
+        Me.GroupControl2.Controls.Add(Me.databarang)
+        Me.GroupControl2.Location = New System.Drawing.Point(8, 72)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(680, 352)
+        Me.GroupControl2.TabIndex = 122
+        Me.GroupControl2.Text = "Data Barang"
         '
-        'nama
+        'databarang
         '
-        Me.nama.Location = New System.Drawing.Point(111, 47)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(143, 20)
-        Me.nama.TabIndex = 46
+        Me.databarang.Location = New System.Drawing.Point(8, 24)
+        Me.databarang.MainView = Me.listbarang
+        Me.databarang.Name = "databarang"
+        Me.databarang.Size = New System.Drawing.Size(664, 320)
+        Me.databarang.TabIndex = 0
+        Me.databarang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.listbarang})
+        '
+        'listbarang
+        '
+        Me.listbarang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.id, Me.nama, Me.keterangan})
+        Me.listbarang.GridControl = Me.databarang
+        Me.listbarang.Name = "listbarang"
         '
         'id
         '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(111, 22)
+        Me.id.Caption = "Kode Barang"
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(143, 20)
-        Me.id.TabIndex = 45
+        Me.id.Visible = True
+        Me.id.VisibleIndex = 0
+        '
+        'nama
+        '
+        Me.nama.Caption = "Nama Barang"
+        Me.nama.Name = "nama"
+        Me.nama.Visible = True
+        Me.nama.VisibleIndex = 1
+        '
+        'keterangan
+        '
+        Me.keterangan.Caption = "Keterangan"
+        Me.keterangan.Name = "keterangan"
+        Me.keterangan.Visible = True
+        Me.keterangan.VisibleIndex = 2
         '
         'add_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 361)
+        Me.ClientSize = New System.Drawing.Size(696, 468)
+        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
@@ -151,20 +143,22 @@ Partial Class add_barang
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.databarang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.listbarang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents notes As System.Windows.Forms.RichTextBox
     Friend WithEvents principle As System.Windows.Forms.ComboBox
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents nama As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents id As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents databarang As DevExpress.XtraGrid.GridControl
+    Friend WithEvents listbarang As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents nama As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents keterangan As DevExpress.XtraGrid.Columns.GridColumn
 End Class

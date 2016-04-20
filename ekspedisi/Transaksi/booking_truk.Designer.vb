@@ -59,7 +59,7 @@ Partial Class booking_truk
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(32, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 18)
         Me.Label1.TabIndex = 0
@@ -89,7 +89,7 @@ Partial Class booking_truk
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(12, 58)
+        Me.Label6.Location = New System.Drawing.Point(88, 56)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 18)
         Me.Label6.TabIndex = 5
@@ -99,7 +99,7 @@ Partial Class booking_truk
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(560, 34)
+        Me.Label7.Location = New System.Drawing.Point(576, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 18)
         Me.Label7.TabIndex = 6
@@ -187,7 +187,7 @@ Partial Class booking_truk
         'TimeEdit1
         '
         Me.TimeEdit1.EditValue = New Date(2016, 4, 8, 0, 0, 0, 0)
-        Me.TimeEdit1.Location = New System.Drawing.Point(143, 83)
+        Me.TimeEdit1.Location = New System.Drawing.Point(143, 78)
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
@@ -197,7 +197,7 @@ Partial Class booking_truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(12, 85)
+        Me.Label3.Location = New System.Drawing.Point(56, 80)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(81, 18)
         Me.Label3.TabIndex = 153
