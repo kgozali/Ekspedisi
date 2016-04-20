@@ -54,7 +54,6 @@ Partial Class master_kota
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.nama = New System.Windows.Forms.RadioButton()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,7 +99,7 @@ Partial Class master_kota
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.Location = New System.Drawing.Point(5, 33)
         Me.cari.MenuManager = Me.RibbonControl1
         Me.cari.Name = "cari"
         Me.cari.Size = New System.Drawing.Size(253, 20)
@@ -338,13 +337,12 @@ Partial Class master_kota
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 103)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
         Me.GroupControl1.TabIndex = 37
-        Me.GroupControl1.Text = "Cari Berdasarkan"
+        Me.GroupControl1.Text = "Cari Kota "
         '
         'BarButtonItem2
         '
@@ -355,18 +353,6 @@ Partial Class master_kota
         Me.BarButtonItem2.Id = 1
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'nama
-        '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(5, 24)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(77, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Kota"
-        Me.nama.UseVisualStyleBackColor = True
         '
         'master_kota
         '
@@ -397,7 +383,6 @@ Partial Class master_kota
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -436,5 +421,4 @@ Partial Class master_kota
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents nama As System.Windows.Forms.RadioButton
 End Class

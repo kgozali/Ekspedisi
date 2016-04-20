@@ -168,4 +168,23 @@ Public Class master_kota
 
         End Try
     End Sub
+    Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
+        deldata.Enabled = True
+        edit.Enabled = True
+    End Sub
+
+    Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
+        deldata.Enabled = False
+        edit.Enabled = False
+    End Sub
+
+    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
+        If edit.Down = True Then
+            GroupControl2.Enabled = False
+        Else
+            GroupControl2.Enabled = True
+        End If
+
+    End Sub
+
 End Class
