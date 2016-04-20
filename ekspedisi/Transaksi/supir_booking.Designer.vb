@@ -228,7 +228,6 @@ Partial Class supir_booking
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(756, 418)
         Me.GroupControl3.TabIndex = 150
-        Me.GroupControl3.Text = "Data Booking"
         '
         'nama
         '

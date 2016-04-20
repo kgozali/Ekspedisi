@@ -144,7 +144,7 @@ Partial Class booking_truk
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(785, 98)
         Me.GroupControl1.TabIndex = 146
-        Me.GroupControl1.Text = "Data Booking"
+        Me.GroupControl1.Text = "Detil Booking"
         '
         'GridControl1
         '
@@ -210,7 +210,7 @@ Partial Class booking_truk
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(700, 110)
         Me.GroupControl2.TabIndex = 147
-        Me.GroupControl2.Text = "Pembayaran DP"
+        Me.GroupControl2.Text = "Detil Pembayaran"
         '
         'GridControl2
         '
