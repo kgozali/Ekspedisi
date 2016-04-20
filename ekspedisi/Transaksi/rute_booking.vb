@@ -12,7 +12,7 @@ Public Class rute_booking
         proc()
     End Sub
     Sub proc()
-        'query sesuai dengan radiobutton
+        'query sesuai dengan radiobutton 
         If id.Checked = True Then
             tabelid = DtTable("select id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,concat(price_per_unit,'/',unit) `Harga` from mrute where id_rute LIKE '%" + cari.Text + "%' and id_principle='" + booking_truk.principlebook + "'")
             edit()

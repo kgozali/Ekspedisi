@@ -134,5 +134,6 @@ Public Class master_DO
     Sub res()
         DateTimePicker1.ResetText()
         cari.Text = ""
+        'tes
     End Sub
 End Class

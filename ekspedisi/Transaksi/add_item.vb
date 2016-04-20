@@ -7,6 +7,7 @@ Public Class add_item
 
     Private Sub add_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            'tes
             sortir()
             GroupControl2.Text = "List Barang " & transaksi_DO.namaprinciple
 

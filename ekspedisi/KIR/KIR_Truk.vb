@@ -8,7 +8,7 @@ Public Class KIR_Truk
     Dim kodekir As String = ""
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            'autogenerate kode kir
+            'autogenerate kode kir 
             autogen()
             'select truk
             dt = DtTable("select id_truk,no_pol from mtruk")
@@ -135,14 +135,10 @@ Public Class KIR_Truk
                         End If
                     End If
                 End If
-                
-
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
-
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -153,16 +149,13 @@ Public Class KIR_Truk
     Private Sub TextEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit3.EditValueChanged
         Try
             If TextEdit3.Text = "" Or Not IsNumeric(TextEdit3.Text) Then
-
             Else
                 nominal = TextEdit3.Text
                 TextEdit3.Text = FormatNumber(Double.Parse(TextEdit3.Text).ToString(), 2)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-       
-
+        End Try    
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
