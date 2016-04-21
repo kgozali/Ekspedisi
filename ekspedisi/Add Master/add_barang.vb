@@ -87,4 +87,18 @@ Public Class add_barang
     'End Sub
 
 
+    Private Sub add_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
+        Dim i As Long
+        Dim dtbaris As DataRow
+        For i = 0 To DataSet1.Tables("Table1").Rows.Count - 1
+            dtbaris = DataSet1.Tables("Table1").Rows(i)
+            MsgBox(dtbaris("Keterangan"))
+        Next
+
+
+    End Sub
 End Class
