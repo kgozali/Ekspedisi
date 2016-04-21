@@ -2,6 +2,7 @@
 Public Class edit_list_rute
     Dim data As New DataTable
     Private Sub edit_list_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Try
             data.Columns.Add("Kode rute")
             data.Columns.Add("Kota Asal")
@@ -20,7 +21,7 @@ Public Class edit_list_rute
                     Dim e1 As String = master_rute.GridView1.GetRowCellValue(i, "Price Per Unit").ToString()
                     Dim f As String = master_rute.GridView1.GetRowCellValue(i, "Unit").ToString()
 
-                    data.Rows.Add(a, b, c, d, e1, f, g, h)
+                    data.Rows.Add(a, b, c, d, e1, f)
                 End If
             Next
             GridControl1.DataSource = data

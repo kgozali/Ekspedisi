@@ -46,4 +46,7 @@ Public Class add_truck
     'End Sub
 
 
+    Private Sub add_truck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
