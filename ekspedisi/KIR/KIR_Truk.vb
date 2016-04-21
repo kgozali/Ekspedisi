@@ -162,7 +162,7 @@ Public Class KIR_Truk
 
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         cekcang()
         GroupControl3.Text = "Data KIR "
     End Sub
@@ -196,7 +196,7 @@ Public Class KIR_Truk
 
     End Sub
 
-    Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
+    Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs)
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next

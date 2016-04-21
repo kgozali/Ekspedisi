@@ -602,6 +602,42 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Transaksi\edit_booking.Designer.vb">
+      <DependentUpon>edit_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\edit_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\list_principle_edit.Designer.vb">
+      <DependentUpon>list_principle_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\list_principle_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\list_rute_edit.Designer.vb">
+      <DependentUpon>list_rute_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\list_rute_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\list_truk_edit.Designer.vb">
+      <DependentUpon>list_truk_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\list_truk_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\master_booking.Designer.vb">
+      <DependentUpon>master_booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\master_booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIR\master_KIR.Designer.vb">
+      <DependentUpon>master_KIR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\master_KIR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\supir_booking.Designer.vb">
       <DependentUpon>supir_booking.vb</DependentUpon>
     </Compile>
@@ -644,10 +680,10 @@
     <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Setting\change_password.Designer.vb">
+    <Compile Include="User Settings\change_password.Designer.vb">
       <DependentUpon>change_password.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Setting\change_password.vb">
+    <Compile Include="User Settings\change_password.vb">
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
@@ -721,6 +757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\master_KIR.resx">
+      <DependentUpon>master_KIR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
@@ -907,6 +946,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transaksi\edit_booking.resx">
+      <DependentUpon>edit_booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\list_principle_edit.resx">
+      <DependentUpon>list_principle_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\list_rute_edit.resx">
+      <DependentUpon>list_rute_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\list_truk_edit.resx">
+      <DependentUpon>list_truk_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\master_booking.resx">
+      <DependentUpon>master_booking.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\supir_booking.resx">
       <DependentUpon>supir_booking.vb</DependentUpon>
     </EmbeddedResource>
@@ -928,7 +982,7 @@
     <EmbeddedResource Include="Transaksi\truk_booking.resx">
       <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Setting\change_password.resx">
+    <EmbeddedResource Include="User Settings\change_password.resx">
       <DependentUpon>change_password.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
