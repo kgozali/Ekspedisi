@@ -21,19 +21,10 @@ Partial Class daftar_kas_masuk
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_kas_masuk))
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.deldata = New DevExpress.XtraBars.BarButtonItem()
-        Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
-        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
-        Me.edit = New DevExpress.XtraBars.BarButtonItem()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.daftarkas = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -46,90 +37,33 @@ Partial Class daftar_kas_masuk
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.checklistkas = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.nama = New System.Windows.Forms.RadioButton()
-        Me.tanggal = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.addsiswabaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.edit = New DevExpress.XtraBars.BarButtonItem()
+        Me.deldata = New DevExpress.XtraBars.BarButtonItem()
+        Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colnobukti = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coltgl = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.daftarkas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.checklistkas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cancel
         '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
         Me.cancel.Location = New System.Drawing.Point(460, 533)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 35
         Me.cancel.Text = "Cancel"
-        '
-        'deldata
-        '
-        Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
-        Me.deldata.Caption = "Delete Data"
-        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
-        Me.deldata.Id = 30
-        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
-        Me.deldata.Name = "deldata"
-        '
-        'jumpmenu
-        '
-        Me.jumpmenu.Caption = "Main Menu"
-        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
-        Me.jumpmenu.Id = 31
-        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
-        Me.jumpmenu.Name = "jumpmenu"
-        '
-        'RibbonPage1
-        '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "RibbonPage1"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        '
-        'addsiswabaru
-        '
-        Me.addsiswabaru.Caption = "Tambah Data"
-        Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
-        Me.addsiswabaru.Id = 23
-        Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
-        Me.addsiswabaru.Name = "addsiswabaru"
-        '
-        'edit
-        '
-        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
-        Me.edit.Caption = "Edit Data"
-        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
-        Me.edit.Id = 27
-        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
-        Me.edit.Name = "edit"
-        '
-        'RepositoryItemCheckEdit1
-        '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Caption = "Check"
-        Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
         'editing
         '
@@ -154,55 +88,31 @@ Partial Class daftar_kas_masuk
         Me.BarButtonItem2.ActAsDropDown = True
         Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.BarButtonItem2.Caption = "Master Data"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
         Me.BarButtonItem2.Id = 1
-        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'GroupControl3
+        'msiswa
         '
-        Me.GroupControl3.Controls.Add(Me.daftarkas)
-        Me.GroupControl3.Controls.Add(Me.checklistkas)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 184)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(548, 344)
-        Me.GroupControl3.TabIndex = 34
-        Me.GroupControl3.Text = "Data Kas Masuk"
-        '
-        'daftarkas
-        '
-        Me.daftarkas.Location = New System.Drawing.Point(5, 24)
-        Me.daftarkas.MainView = Me.GridView1
-        Me.daftarkas.MenuManager = Me.RibbonControl1
-        Me.daftarkas.Name = "daftarkas"
-        Me.daftarkas.Size = New System.Drawing.Size(538, 315)
-        Me.daftarkas.TabIndex = 0
-        Me.daftarkas.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.daftarkas
-        Me.GridView1.Name = "GridView1"
+        Me.msiswa.ActAsDropDown = True
+        Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
+        Me.msiswa.Caption = "Master Data"
+        Me.msiswa.Id = 1
+        Me.msiswa.Name = "msiswa"
         '
         'RibbonControl1
         '
-        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu, Me.BarButtonItem1})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 32
+        Me.RibbonControl1.MaxItemId = 34
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(574, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(572, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -276,123 +186,147 @@ Partial Class daftar_kas_masuk
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'checklistkas
+        'addsiswabaru
         '
-        Me.checklistkas.Location = New System.Drawing.Point(5, 24)
-        Me.checklistkas.MainView = Me.GridView2
-        Me.checklistkas.MenuManager = Me.RibbonControl1
-        Me.checklistkas.Name = "checklistkas"
-        Me.checklistkas.Size = New System.Drawing.Size(538, 315)
-        Me.checklistkas.TabIndex = 1
-        Me.checklistkas.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        Me.addsiswabaru.Caption = "Tambah Data"
+        Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
+        Me.addsiswabaru.Id = 23
+        Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
+        Me.addsiswabaru.Name = "addsiswabaru"
         '
-        'GridView2
+        'edit
         '
-        Me.GridView2.GridControl = Me.checklistkas
-        Me.GridView2.Name = "GridView2"
+        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
+        Me.edit.Caption = "Edit Data"
+        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
+        Me.edit.Id = 27
+        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
+        Me.edit.Name = "edit"
         '
-        'msiswa
+        'deldata
         '
-        Me.msiswa.ActAsDropDown = True
-        Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.msiswa.Caption = "Master Data"
-        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"), System.Drawing.Image)
-        Me.msiswa.Id = 1
-        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
-        Me.msiswa.Name = "msiswa"
+        Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
+        Me.deldata.Caption = "Delete Data"
+        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
+        Me.deldata.Id = 30
+        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
+        Me.deldata.Name = "deldata"
         '
-        'GroupControl1
+        'jumpmenu
         '
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.tanggal)
-        Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 102)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
-        Me.GroupControl1.TabIndex = 30
-        Me.GroupControl1.Text = "Cari Berdasarkan"
+        Me.jumpmenu.Caption = "Main Menu"
+        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
+        Me.jumpmenu.Id = 31
+        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
+        Me.jumpmenu.Name = "jumpmenu"
         '
-        'DateTimePicker1
+        'BarButtonItem1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 50)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.BarButtonItem1.Caption = "Cetak"
+        Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem1.Id = 33
+        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem1.Name = "BarButtonItem1"
         '
-        'nama
+        'RibbonPage1
         '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(82, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nomer Bukti"
-        Me.nama.UseVisualStyleBackColor = True
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Name = "RibbonPage1"
+        Me.RibbonPage1.Text = "RibbonPage1"
         '
-        'tanggal
+        'RibbonPageGroup1
         '
-        Me.tanggal.AutoSize = True
-        Me.tanggal.Location = New System.Drawing.Point(5, 24)
-        Me.tanggal.Name = "tanggal"
-        Me.tanggal.Size = New System.Drawing.Size(63, 17)
-        Me.tanggal.TabIndex = 1
-        Me.tanggal.Text = "Tanggal"
-        Me.tanggal.UseVisualStyleBackColor = True
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         '
-        'cari
+        'GroupControl3
         '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
-        Me.cari.MenuManager = Me.RibbonControl1
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
-        Me.cari.TabIndex = 0
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(572, 471)
+        Me.GroupControl3.TabIndex = 38
+        Me.GroupControl3.Text = "Data Kas Masuk"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.DataMember = "dtgrid"
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(568, 448)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colnobukti, Me.coltgl, Me.colketerangan})
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        '
+        'colnobukti
+        '
+        Me.colnobukti.Caption = "No. Bukti"
+        Me.colnobukti.FieldName = "nobukti"
+        Me.colnobukti.Name = "colnobukti"
+        Me.colnobukti.Visible = True
+        Me.colnobukti.VisibleIndex = 0
+        Me.colnobukti.Width = 168
+        '
+        'coltgl
+        '
+        Me.coltgl.Caption = "Tanggal"
+        Me.coltgl.DisplayFormat.FormatString = "dd-MM-yyyy"
+        Me.coltgl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom
+        Me.coltgl.FieldName = "tgl"
+        Me.coltgl.Name = "coltgl"
+        Me.coltgl.Visible = True
+        Me.coltgl.VisibleIndex = 1
+        Me.coltgl.Width = 111
+        '
+        'colketerangan
+        '
+        Me.colketerangan.Caption = "Keterangan"
+        Me.colketerangan.FieldName = "keterangan"
+        Me.colketerangan.Name = "colketerangan"
+        Me.colketerangan.Visible = True
+        Me.colketerangan.VisibleIndex = 2
+        Me.colketerangan.Width = 273
         '
         'daftar_kas_masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(572, 567)
+        Me.Controls.Add(Me.GroupControl3)
+        Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.hapus)
-        Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "daftar_kas_masuk"
         Me.Text = "Daftar Kas Masuk"
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.daftarkas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.checklistkas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents daftarkas As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonGalleryBarItem1 As DevExpress.XtraBars.RibbonGalleryBarItem
     Friend WithEvents datasiswa As DevExpress.XtraBars.BarButtonItem
@@ -405,12 +339,17 @@ Partial Class daftar_kas_masuk
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents checklistkas As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents nama As System.Windows.Forms.RadioButton
-    Friend WithEvents tanggal As System.Windows.Forms.RadioButton
-    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents addsiswabaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents colnobukti As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coltgl As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

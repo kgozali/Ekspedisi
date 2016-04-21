@@ -29,12 +29,10 @@ Partial Class add_rute
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,8 +109,6 @@ Partial Class add_rute
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Controls.Add(Me.ComboBox3)
         Me.GroupControl1.Controls.Add(Me.ComboBox2)
         Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.unit)
@@ -125,17 +121,9 @@ Partial Class add_rute
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(304, 187)
+        Me.GroupControl1.Size = New System.Drawing.Size(304, 147)
         Me.GroupControl1.TabIndex = 152
         Me.GroupControl1.Text = "Data"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(114, 70)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 56
         '
         'ComboBox1
         '
@@ -148,7 +136,7 @@ Partial Class add_rute
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(110, 205)
+        Me.simpan.Location = New System.Drawing.Point(110, 165)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 161
@@ -157,34 +145,25 @@ Partial Class add_rute
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(216, 205)
+        Me.cancel.Location = New System.Drawing.Point(216, 165)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 160
         Me.cancel.Text = "Cancel"
         '
-        'ComboBox3
+        'ComboBox2
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(72, 145)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(143, 21)
-        Me.ComboBox3.TabIndex = 57
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 145)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
-        Me.LabelControl3.TabIndex = 58
-        Me.LabelControl3.Text = "Principle :"
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(114, 70)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 56
         '
         'add_rute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(323, 241)
+        Me.ClientSize = New System.Drawing.Size(323, 197)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
@@ -212,6 +191,4 @@ Partial Class add_rute
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
 End Class

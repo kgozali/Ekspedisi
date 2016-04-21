@@ -29,14 +29,15 @@ Partial Class add_kontak_principle
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.nama = New DevExpress.XtraEditors.TextEdit()
+        Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -114,9 +115,16 @@ Partial Class add_kontak_principle
         Me.nama.Size = New System.Drawing.Size(143, 20)
         Me.nama.TabIndex = 2
         '
+        'id
+        '
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(110, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(111, 20)
+        Me.id.TabIndex = 1
+        '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.provinsi)
         Me.GroupControl1.Controls.Add(Me.tel2)
         Me.GroupControl1.Controls.Add(Me.tel1)
@@ -126,6 +134,7 @@ Partial Class add_kontak_principle
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(325, 149)
@@ -150,14 +159,6 @@ Partial Class add_kontak_principle
         Me.cancel.TabIndex = 152
         Me.cancel.Text = "Cancel"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(110, 25)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(143, 21)
-        Me.ComboBox1.TabIndex = 55
-        '
         'add_kontak_principle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -172,6 +173,7 @@ Partial Class add_kontak_principle
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -187,8 +189,8 @@ Partial Class add_kontak_principle
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nama As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

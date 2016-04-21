@@ -5,6 +5,6 @@
     End Sub
 
     Private Sub barang_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'tes
+
     End Sub
 End Class

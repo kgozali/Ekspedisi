@@ -3,7 +3,6 @@ Public Class booking_do
     Public kodebooking As String = ""
     Private Sub booking_do_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            'tes
             Dim data As New DataTable
             gridbooking.OptionsView.ShowFooter = True
             data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s=1")

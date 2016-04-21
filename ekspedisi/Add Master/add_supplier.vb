@@ -31,17 +31,8 @@ Public Class add_supplier
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
-                Dim tanggal As New DataTable
-                Dim tgl As String = "MS"
-                tanggal = DtTable("select * from msupplier where substring(ID_supplier,1,10) = '" & tgl & "'")
-                Dim hitung As String = tanggal.Rows.Count() + 1
-                While hitung.LongCount < 5
-                    hitung = "0" + hitung
-                End While
-                id.Text = tgl + hitung
-
                 'insert ke dalam database
-                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.SelectedValue.ToString & "','1') ")
+                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.SelectedValue.ToString & "') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then

@@ -87,8 +87,4 @@ Public Class add_barang
     'End Sub
 
 
-    Private Sub add_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-    End Sub
 End Class

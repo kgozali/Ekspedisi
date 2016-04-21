@@ -159,8 +159,4 @@ Public Class add_karyawan
     'Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
     '    chckbx = 1
     'End Sub
-
-    Private Sub add_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

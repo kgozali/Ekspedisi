@@ -23,7 +23,7 @@ Public Class transaksi_DO
             data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
             idprinciple = data2
 
-            'select rute 
+            'select rute
             Dim rute As String = ""
             rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
 

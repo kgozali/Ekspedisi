@@ -3,7 +3,6 @@ Public Class add_rute
     Dim cek As Boolean
     Dim cbasal As New DataTable
     Dim ctujuan As New DataTable
-    Dim cprin As New DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
@@ -36,7 +35,7 @@ Public Class add_rute
             If cc.Rows.Count = 0 Then
                 Try
                     'insert ke dalam database
-                    InsertInto("insert into mrute values ('" & id.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & ComboBox2.SelectedValue.ToString & "','" & ComboBox3.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','1') ")
+                    InsertInto("insert into mrute values ('" & id.Text & "','" & ComboBox1.SelectedValue.ToString & "','" & ComboBox2.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "') ")
                     'konfirmasi melakukan booking ulang
                     Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                     If msg = DialogResult.Yes Then
@@ -81,11 +80,6 @@ Public Class add_rute
         ComboBox2.ValueMember = "Kota"
         unit.Text = ""
         hargaunit.Text = ""
-        ctujuan = DtTable("select id_principle, nama_principle from mprinciple")
-        ComboBox2.DataSource = cprin
-        ComboBox2.DisplayMember = "nama_principle"
-        ComboBox2.ValueMember = "id_principle"
-
 
     End Sub
 
@@ -111,7 +105,4 @@ Public Class add_rute
     End Sub
 
  
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
 End Class

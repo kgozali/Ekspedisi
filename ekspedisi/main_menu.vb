@@ -105,8 +105,8 @@ Public Class main_menu
                 Dim command As MySqlCommand = New MySqlCommand
                 command.Connection = connect
                 connect.Open()
-                Dim mb As MySqlBackup = New MySqlBackup(command)
-                mb.ImportFromFile(restorepath.Text.ToString())
+                'Dim mb As MySqlBackup = New MySqlBackup(command)
+                'mb.ImportFromFile(restorepath.Text.ToString())
                 connect.Close()
                 MessageBox.Show("Restore database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 restorepath.Text = ""
@@ -128,8 +128,8 @@ Public Class main_menu
                 Dim command As MySqlCommand = New MySqlCommand
                 command.Connection = connect
                 connect.Open()
-                Dim mb As MySqlBackup = New MySqlBackup(command)
-                mb.ExportToFile(backuppath.Text.ToString())
+                'Dim mb As MySqlBackup = New MySqlBackup(command)
+                'mb.ExportToFile(backuppath.Text.ToString())
                 connect.Close()
                 MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception

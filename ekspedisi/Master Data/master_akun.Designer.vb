@@ -44,7 +44,7 @@ Partial Class master_akun
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.dataview = New System.Windows.Forms.DataGridView()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colkode_akunv = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -54,15 +54,15 @@ Partial Class master_akun
         Me.coldetil = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.colkeyid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.dataview = New System.Windows.Forms.DataGridView()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
+        CType(Me.dataview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deldata
@@ -115,13 +115,9 @@ Partial Class master_akun
         '
         'RibbonControl1
         '
-        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
-        Me.RibbonControl1.Location = New System.Drawing.Point(0, -1)
+        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -131,7 +127,7 @@ Partial Class master_akun
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(463, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(448, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -259,24 +255,26 @@ Partial Class master_akun
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
-        'dataview
+        'GroupControl3
         '
-        Me.dataview.AllowUserToAddRows = False
-        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(3, 24)
-        Me.dataview.Name = "dataview"
-        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(414, 311)
-        Me.dataview.TabIndex = 6
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Controls.Add(Me.dataview)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(448, 467)
+        Me.GroupControl3.TabIndex = 51
+        Me.GroupControl3.Text = "Data Akun"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(0, 24)
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(417, 378)
+        Me.GridControl1.Size = New System.Drawing.Size(444, 444)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -335,7 +333,6 @@ Partial Class master_akun
         Me.coldetil.AppearanceHeader.Options.UseTextOptions = True
         Me.coldetil.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coldetil.Caption = "Detil"
-        Me.coldetil.ColumnEdit = Me.RepositoryItemCheckEdit2
         Me.coldetil.FieldName = "detil"
         Me.coldetil.Name = "coldetil"
         Me.coldetil.OptionsColumn.AllowEdit = False
@@ -346,21 +343,23 @@ Partial Class master_akun
         '
         Me.RepositoryItemCheckEdit2.AutoHeight = False
         Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
+        Me.RepositoryItemCheckEdit2.ValueChecked = 1.0!
+        Me.RepositoryItemCheckEdit2.ValueUnchecked = 0.0!
         '
         'colkeyid
         '
         Me.colkeyid.FieldName = "keyid"
         Me.colkeyid.Name = "colkeyid"
         '
-        'GroupControl3
+        'dataview
         '
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Controls.Add(Me.dataview)
-        Me.GroupControl3.Location = New System.Drawing.Point(9, 101)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(427, 407)
-        Me.GroupControl3.TabIndex = 48
-        Me.GroupControl3.Text = "Data Akun"
+        Me.dataview.AllowUserToAddRows = False
+        Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataview.Location = New System.Drawing.Point(3, 24)
+        Me.dataview.Name = "dataview"
+        Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataview.Size = New System.Drawing.Size(414, 311)
+        Me.dataview.TabIndex = 6
         '
         'master_akun
         '
@@ -377,12 +376,12 @@ Partial Class master_akun
         Me.Text = "Master Data Akun"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.dataview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -411,10 +410,9 @@ Partial Class master_akun
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents dataview As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents colkode_akunv As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnama_akun As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltipe_akun As DevExpress.XtraGrid.Columns.GridColumn
@@ -422,4 +420,5 @@ Partial Class master_akun
     Friend WithEvents coldetil As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents colkeyid As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents dataview As System.Windows.Forms.DataGridView
 End Class
