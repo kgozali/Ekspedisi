@@ -239,6 +239,12 @@
     <Compile Include="form_perubahan_harga.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIR\edit_kir_truk.Designer.vb">
+      <DependentUpon>edit_kir_truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\edit_kir_truk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KIR\KIR_Truk.Designer.vb">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
     </Compile>
@@ -754,6 +760,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\edit_kir_truk.resx">
+      <DependentUpon>edit_kir_truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
