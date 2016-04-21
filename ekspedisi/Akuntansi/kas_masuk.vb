@@ -200,13 +200,13 @@ Public Class kas_masuk
                 MessageBox.Show("Simpan Data Kas Masuk " + TextBox1.Text + " Sukses")
                 If _modelayar = 1 Then
                     ResetValues()
-                    If IsNothing(daftar_kas_masuk) = False Then
-                        daftar_kas_masuk.refreshgrid("")
-                    End If
-                Else
-                    Me.Close()
+                    'If IsNothing(daftar_kas_masuk) = False Then
+                    'daftar_kas_masuk.refreshgrid("")
                 End If
+            Else
+                Me.Close()
             End If
+            'End If
         End Try
     End Sub
 

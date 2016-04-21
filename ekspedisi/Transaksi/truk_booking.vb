@@ -20,7 +20,7 @@ Public Class truk_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
     End Sub
 
     Sub edit()
@@ -33,7 +33,7 @@ Public Class truk_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
     End Sub
 
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
@@ -57,7 +57,7 @@ Public Class truk_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
 
     End Sub
 
@@ -75,6 +75,6 @@ Public Class truk_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        
+
     End Sub
 End Class
