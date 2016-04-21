@@ -3,6 +3,10 @@ Public Module Module1
 
     Public connect As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("ekspedisi").ConnectionString)
 
+    Function tglserver() As DateTime
+        Return Scalar("select now() ")
+    End Function
+
     Function Scalar(ByVal x As String)
         'untuk select single data
         Try
@@ -29,6 +33,21 @@ Public Module Module1
         retval = Replace(retval, "\", "\\")
 
         Return retval
+    End Function
+
+    Public Function DtSetReturn(ByVal pSQL As String, ByVal pTableName As String) As DataSet
+        Dim pDataSet As DataSet = New DataSet
+        Dim xAdap As MySqlDataAdapter
+        Try
+            xAdap = New MySqlDataAdapter(pSQL, connect)
+            xAdap.Fill(pDataSet, pTableName)
+            xAdap.Dispose()
+            connect.Close()
+            Return pDataSet
+        Catch expr_BB As MySqlException
+            MessageBox.Show(expr_BB.Message.ToString)
+            Return Nothing
+        End Try
     End Function
 
     Function DtTable(ByVal x As String)
@@ -107,10 +126,20 @@ Public Module Module1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-
     End Function
 
+    Function autogenerate2(ByVal prefix As String, ByVal cekmax As String, ByVal tgltrans As Date)
+        Dim fmt As String
+        Dim tgl As String = Format(tgltrans, "yyMM")
+        Dim maxcount As String = Scalar(cekmax)
+        If Trim(maxcount) = "" Then
+            maxcount = 0
+        Else
+            maxcount = Microsoft.VisualBasic.Right(maxcount, 5)
+        End If
+        fmt = String.Format("{0:00000}", Val(maxcount) + 1)
+        Return prefix + tgl + fmt
+    End Function
     Function autogenerate(ByVal prefix As String, ByVal cekmax As String)
         Try
             Dim currentTime As System.DateTime = System.DateTime.Now

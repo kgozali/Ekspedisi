@@ -29,16 +29,33 @@ Partial Class kas_masuk
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.DataSet1 = New System.Data.DataSet()
+        Me.DataTable1 = New System.Data.DataTable()
+        Me.DataColumn1 = New System.Data.DataColumn()
+        Me.DataColumn2 = New System.Data.DataColumn()
+        Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.colnama_akun = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colnominal = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.coltruk = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.GridLookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -54,8 +71,8 @@ Partial Class kas_masuk
         '
         Me.RichTextBox1.Location = New System.Drawing.Point(133, 36)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(229, 77)
-        Me.RichTextBox1.TabIndex = 38
+        Me.RichTextBox1.Size = New System.Drawing.Size(229, 67)
+        Me.RichTextBox1.TabIndex = 1
         Me.RichTextBox1.Text = ""
         '
         'LabelControl2
@@ -82,7 +99,7 @@ Partial Class kas_masuk
         Me.TextBox1.Location = New System.Drawing.Point(506, 9)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(158, 21)
+        Me.TextBox1.Size = New System.Drawing.Size(200, 21)
         Me.TextBox1.TabIndex = 41
         '
         'DateTimePicker1
@@ -90,7 +107,7 @@ Partial Class kas_masuk
         Me.DateTimePicker1.Location = New System.Drawing.Point(506, 33)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 43
+        Me.DateTimePicker1.TabIndex = 2
         '
         'LabelControl4
         '
@@ -104,41 +121,136 @@ Partial Class kas_masuk
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.GridControl1)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 119)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 121)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(694, 220)
+        Me.GroupControl1.Size = New System.Drawing.Size(694, 245)
         Me.GroupControl1.TabIndex = 44
         Me.GroupControl1.Text = "Daftar Akun Masuk"
         '
         'GridControl1
         '
+        Me.GridControl1.DataMember = "datadetil"
+        Me.GridControl1.DataSource = Me.DataSet1
+        Me.GridControl1.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.GridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.GridControl1.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.GridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(684, 191)
-        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit2})
+        Me.GridControl1.Size = New System.Drawing.Size(684, 216)
+        Me.GridControl1.TabIndex = 3
+        Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "NewDataSet"
+        Me.DataSet1.Tables.AddRange(New System.Data.DataTable() {Me.DataTable1})
+        '
+        'DataTable1
+        '
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
+        Me.DataTable1.TableName = "datadetil"
+        '
+        'DataColumn1
+        '
+        Me.DataColumn1.Caption = "id_akun_detil"
+        Me.DataColumn1.ColumnName = "id_akun_detil"
+        '
+        'DataColumn2
+        '
+        Me.DataColumn2.Caption = "keterangan"
+        Me.DataColumn2.ColumnName = "keterangan"
+        '
+        'DataColumn3
+        '
+        Me.DataColumn3.Caption = "nominal"
+        Me.DataColumn3.ColumnName = "nominal"
+        '
+        'DataColumn4
+        '
+        Me.DataColumn4.Caption = "id_truk"
+        Me.DataColumn4.ColumnName = "id_truk"
         '
         'GridView1
         '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colnama_akun, Me.colketerangan, Me.colnominal, Me.coltruk})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsCustomization.AllowGroup = False
+        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
         '
-        'LabelControl5
+        'colnama_akun
         '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(317, 348)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(127, 18)
-        Me.LabelControl5.TabIndex = 45
-        Me.LabelControl5.Text = "Total Akun Masuk :"
+        Me.colnama_akun.Caption = "Nama Akun"
+        Me.colnama_akun.ColumnEdit = Me.RepositoryItemLookUpEdit1
+        Me.colnama_akun.FieldName = "id_akun_detil"
+        Me.colnama_akun.Name = "colnama_akun"
+        Me.colnama_akun.Visible = True
+        Me.colnama_akun.VisibleIndex = 0
+        Me.colnama_akun.Width = 233
         '
-        'TextBox2
+        'RepositoryItemLookUpEdit1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(450, 345)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox2.TabIndex = 46
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("descr", "Nama Akun"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("kode_akun", "kode_akun", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        '
+        'colketerangan
+        '
+        Me.colketerangan.Caption = "Keterangan"
+        Me.colketerangan.FieldName = "keterangan"
+        Me.colketerangan.Name = "colketerangan"
+        Me.colketerangan.Visible = True
+        Me.colketerangan.VisibleIndex = 1
+        Me.colketerangan.Width = 223
+        '
+        'colnominal
+        '
+        Me.colnominal.AppearanceCell.Options.UseTextOptions = True
+        Me.colnominal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colnominal.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnominal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colnominal.Caption = "Nominal"
+        Me.colnominal.ColumnEdit = Me.RepositoryItemTextEdit1
+        Me.colnominal.FieldName = "nominal"
+        Me.colnominal.Name = "colnominal"
+        Me.colnominal.OptionsFilter.AllowAutoFilter = False
+        Me.colnominal.OptionsFilter.AllowFilter = False
+        Me.colnominal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "nominal", "{0:N2}")})
+        Me.colnominal.Visible = True
+        Me.colnominal.VisibleIndex = 2
+        Me.colnominal.Width = 161
+        '
+        'RepositoryItemTextEdit1
+        '
+        Me.RepositoryItemTextEdit1.AutoHeight = False
+        Me.RepositoryItemTextEdit1.Mask.EditMask = "n"
+        Me.RepositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.RepositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = True
+        Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
+        '
+        'coltruk
+        '
+        Me.coltruk.Caption = "Truk"
+        Me.coltruk.ColumnEdit = Me.RepositoryItemLookUpEdit2
+        Me.coltruk.FieldName = "id_truk"
+        Me.coltruk.Name = "coltruk"
+        Me.coltruk.Visible = True
+        Me.coltruk.VisibleIndex = 3
+        Me.coltruk.Width = 79
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit2.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("no_pol", "No Pol"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_truk", "Name11", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
         '
         'SimpleButton1
         '
@@ -158,24 +270,26 @@ Partial Class kas_masuk
         Me.Submit.TabIndex = 146
         Me.Submit.Text = "Submit"
         '
-        'ComboBox1
+        'GridLookUpEdit1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(133, 9)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(181, 21)
-        Me.ComboBox1.TabIndex = 162
+        Me.GridLookUpEdit1.Location = New System.Drawing.Point(133, 10)
+        Me.GridLookUpEdit1.Name = "GridLookUpEdit1"
+        Me.GridLookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.GridLookUpEdit1.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("descr", "Nama"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("kode_akun", "Name4", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.GridLookUpEdit1.Properties.DropDownRows = 5
+        Me.GridLookUpEdit1.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete
+        Me.GridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.GridLookUpEdit1.Size = New System.Drawing.Size(229, 20)
+        Me.GridLookUpEdit1.TabIndex = 0
         '
         'kas_masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(714, 406)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.GridLookUpEdit1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.LabelControl4)
@@ -185,11 +299,18 @@ Partial Class kas_masuk
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "kas_masuk"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kas Masuk"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,9 +325,20 @@ Partial Class kas_masuk
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents GridLookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents DataSet1 As System.Data.DataSet
+    Friend WithEvents DataTable1 As System.Data.DataTable
+    Friend WithEvents DataColumn1 As System.Data.DataColumn
+    Friend WithEvents DataColumn2 As System.Data.DataColumn
+    Friend WithEvents DataColumn3 As System.Data.DataColumn
+    Friend WithEvents colnama_akun As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colnominal As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents DataColumn4 As System.Data.DataColumn
+    Friend WithEvents coltruk As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
