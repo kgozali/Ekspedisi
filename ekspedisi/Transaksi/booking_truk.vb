@@ -135,7 +135,11 @@ Public Class booking_truk
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Try
 
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub ButtonEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit1.EditValueChanged
