@@ -47,7 +47,7 @@ Public Class add_jabatan
         nama.Text = ""
 
         Dim tanggal As New DataTable
-        Dim tgl As String = "MJ" + Today.Date.ToString("yyyyMMdd")
+        Dim tgl As String = "MJ"
         tanggal = DtTable("select * from mjabatan where substring(ID_jabatan,1,10) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5

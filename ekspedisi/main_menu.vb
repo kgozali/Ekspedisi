@@ -26,7 +26,7 @@ Public Class main_menu
         master_kontak_principle.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton8_Click(sender As Object, e As EventArgs) Handles SimpleButton8.Click
+    Private Sub SimpleButton8_Click(sender As Object, e As EventArgs)
         perubahan_harga.ShowDialog()
     End Sub
 
@@ -156,8 +156,7 @@ Public Class main_menu
     Private Sub backuppath_TextChanged(sender As Object, e As EventArgs) Handles backuppath.TextChanged
 
     End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
+    Private Sub SimpleButton42_Click(sender As Object, e As EventArgs) Handles SimpleButton42.Click
+        KIR_Truk.ShowDialog()
     End Sub
 End Class

@@ -27,7 +27,7 @@ Partial Class master_DO
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.kodebooking = New System.Windows.Forms.RadioButton()
         Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
+        Me.tgl = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -54,6 +54,7 @@ Partial Class master_DO
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,7 +98,7 @@ Partial Class master_DO
         Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
         Me.GroupControl1.Controls.Add(Me.kodebooking)
         Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.tgl)
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 99)
         Me.GroupControl1.Name = "GroupControl1"
@@ -135,15 +136,15 @@ Partial Class master_DO
         Me.nama.Text = "Nomer DO"
         Me.nama.UseVisualStyleBackColor = True
         '
-        'id
+        'tgl
         '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(85, 23)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(88, 17)
-        Me.id.TabIndex = 1
-        Me.id.Text = "Tanggal Kirim"
-        Me.id.UseVisualStyleBackColor = True
+        Me.tgl.AutoSize = True
+        Me.tgl.Location = New System.Drawing.Point(85, 23)
+        Me.tgl.Name = "tgl"
+        Me.tgl.Size = New System.Drawing.Size(88, 17)
+        Me.tgl.TabIndex = 1
+        Me.tgl.Text = "Tanggal Kirim"
+        Me.tgl.UseVisualStyleBackColor = True
         '
         'cari
         '
@@ -166,6 +167,7 @@ Partial Class master_DO
         Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(234, 286)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -311,7 +313,6 @@ Partial Class master_DO
         '
         'edit
         '
-        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.edit.Caption = "Edit Data"
         Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
         Me.edit.Id = 27
@@ -358,11 +359,22 @@ Partial Class master_DO
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(757, 529)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 161
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
+        '
         'master_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl4)
@@ -398,7 +410,7 @@ Partial Class master_DO
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents kodebooking As System.Windows.Forms.RadioButton
     Friend WithEvents nama As System.Windows.Forms.RadioButton
-    Friend WithEvents id As System.Windows.Forms.RadioButton
+    Friend WithEvents tgl As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
@@ -426,4 +438,5 @@ Partial Class master_DO
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

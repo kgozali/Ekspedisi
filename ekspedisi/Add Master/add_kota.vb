@@ -27,7 +27,7 @@ Public Class add_kota
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             'insert ke dalam database
-            InsertInto("insert into mkota values ('" & nama.Text & "') ")
+            InsertInto("insert into mkota values ('" & idkota.Text & "') ")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
@@ -44,12 +44,12 @@ Public Class add_kota
     End Sub
 
     Private Sub add_kota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        nama.Text = ""
+        idkota.Text = ""
     End Sub
 
     Private Sub nama_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If nama.Text = "" Then
+        If idkota.Text = "" Then
             cek = False
         Else
             cek = True

@@ -59,11 +59,11 @@ Partial Class booking_truk
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(32, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(106, 18)
+        Me.Label1.Size = New System.Drawing.Size(96, 18)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Kode Booking :"
+        Me.Label1.Text = "Kode Booking"
         '
         'Label2
         '
@@ -71,51 +71,51 @@ Partial Class booking_truk
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
         Me.Label2.Location = New System.Drawing.Point(12, 34)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 18)
+        Me.Label2.Size = New System.Drawing.Size(115, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Tanggal Booking :"
+        Me.Label2.Text = "Tanggal Booking"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(560, 9)
+        Me.Label4.Location = New System.Drawing.Point(576, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 18)
+        Me.Label4.Size = New System.Drawing.Size(58, 18)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Principle :"
+        Me.Label4.Text = "Principle"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(12, 58)
+        Me.Label6.Location = New System.Drawing.Point(88, 56)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 18)
+        Me.Label6.Size = New System.Drawing.Size(43, 18)
         Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Truk :"
+        Me.Label6.Text = "Truk "
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(560, 34)
+        Me.Label7.Location = New System.Drawing.Point(592, 32)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(48, 18)
+        Me.Label7.Size = New System.Drawing.Size(43, 18)
         Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Rute :"
+        Me.Label7.Text = "Rute "
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(143, 6)
+        Me.id.Location = New System.Drawing.Point(136, 6)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(138, 21)
         Me.id.TabIndex = 12
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(143, 31)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(136, 31)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 13
@@ -162,7 +162,7 @@ Partial Class booking_truk
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(143, 56)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(136, 56)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
@@ -170,7 +170,7 @@ Partial Class booking_truk
         '
         'ButtonEdit2
         '
-        Me.ButtonEdit2.Location = New System.Drawing.Point(634, 7)
+        Me.ButtonEdit2.Location = New System.Drawing.Point(640, 7)
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit2.Size = New System.Drawing.Size(160, 20)
@@ -178,7 +178,7 @@ Partial Class booking_truk
         '
         'ButtonEdit4
         '
-        Me.ButtonEdit4.Location = New System.Drawing.Point(634, 32)
+        Me.ButtonEdit4.Location = New System.Drawing.Point(640, 32)
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit4.Size = New System.Drawing.Size(160, 20)
@@ -187,7 +187,7 @@ Partial Class booking_truk
         'TimeEdit1
         '
         Me.TimeEdit1.EditValue = New Date(2016, 4, 8, 0, 0, 0, 0)
-        Me.TimeEdit1.Location = New System.Drawing.Point(143, 83)
+        Me.TimeEdit1.Location = New System.Drawing.Point(136, 78)
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
@@ -197,11 +197,11 @@ Partial Class booking_truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(12, 85)
+        Me.Label3.Location = New System.Drawing.Point(56, 80)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 18)
+        Me.Label3.Size = New System.Drawing.Size(71, 18)
         Me.Label3.TabIndex = 153
-        Me.Label3.Text = "Jam Kirim :"
+        Me.Label3.Text = "Jam Kirim"
         '
         'GroupControl2
         '

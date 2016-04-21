@@ -5,35 +5,44 @@ Imports DevExpress.XtraGrid.Views
 Public Class transaksi_DO
     Public kodeprinciple As String = ""
     Public namaprinciple As String = ""
+    Public idprinciple As String = ""
     Dim cek As Boolean = False
+    Dim price As Integer = 0
+    Dim total As Integer = 0
+    Dim kode As String = ""
     Private Sub idbooking_EditValueChanged(sender As Object, e As EventArgs) Handles idbooking.EditValueChanged
         Try
+            'select nama principle
             Dim data As String = ""
             data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + idbooking.Text.ToString + "' and mprinciple.id_principle=booking_truk.id_principle")
             TextBox2.Text = data
             namaprinciple = data
+
+            'select id principle
+            Dim data2 As String = ""
+            data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+            idprinciple = data2
+
+            'select rute
+            Dim rute As String = ""
+            rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
+
+            'select price untuk rute
+            price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
     End Sub
 
     Private Sub transaksi_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim tanggal As New DataTable
-            Dim tgl As String = "TDO" + Today.Date.ToString("yyyyMMdd")
-            tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,10) = '" & tgl & "'")
-            Dim hitung As String = tanggal.Rows.Count() + 1
-            While hitung.LongCount < 5
-                hitung = "0" + hitung
-            End While
-            id.Text = tgl + hitung
-
+            generate()
             tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
 
     End Sub
 
@@ -54,7 +63,7 @@ Public Class transaksi_DO
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        
+
 
     End Sub
 
@@ -73,8 +82,20 @@ Public Class transaksi_DO
                 MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 If GridView1.DataRowCount < 1 Then
-                    MessageBox.Show("Tidak ada barang yang dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
+                    Dim sum As Integer = 0
+                    sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+                    total = sum * price
+                    generate()
+
+                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','','" + total.ToString + "',0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                    For i = 0 To GridView1.DataRowCount - 1
+                        InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+                    Next
+                    InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
+                    res()
+                    Me.Close()
 
                 End If
 
@@ -91,7 +112,6 @@ Public Class transaksi_DO
     End Sub
 
 
-
     Private Sub GridView1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridView1.DataSourceChanged
         Try
             For i = 0 To add_item.barangset.Columns.Count - 1
@@ -99,7 +119,7 @@ Public Class transaksi_DO
                 If GridView1.Columns(i).FieldName.ToString = "Berat (Kilogram)" Then
                     GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
                     GridView1.Columns(i).SummaryItem.FieldName = "Berat (Kilogram)"
-                    GridView1.Columns(i).SummaryItem.DisplayFormat = "Total = {0} Kilogram"
+                    GridView1.Columns(i).SummaryItem.DisplayFormat = "TOTAL {0} Kilogram"
                 End If
             Next
         Catch ex As Exception
@@ -137,5 +157,23 @@ Public Class transaksi_DO
         nomerdo.Text = ""
         add_item.barangset.Rows.Clear()
 
+    End Sub
+
+    Sub generate()
+        Try
+
+            Dim tanggal As New DataTable
+            Dim tgl As String = "TDO" + Today.Date.ToString("yyyyMMdd")
+            tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,11) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            kode = tgl + hitung
+            kodetrans.Text = kode
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+       
     End Sub
 End Class

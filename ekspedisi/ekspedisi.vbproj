@@ -44,15 +44,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v14.2" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v14.2" />
     <Reference Include="DevExpress.ExpressApp.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Persistent.Base.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v14.2.Core" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v14.2" />
     <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v14.2" />
     <Reference Include="DevExpress.Sparkline.v14.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.2" />
     <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -61,9 +66,9 @@
     <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.8.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MySqlBackup, Version=2.0.9.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlBackup.NET.2.0.9.4\lib\net45\MySqlBackup.dll</HintPath>
@@ -192,12 +197,6 @@
     <Compile Include="Akuntansi\COA.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\daftar_kas_masuk.Designer.vb">
-      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\daftar_kas_masuk.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Akuntansi\daftar_tutup_karyawan.Designer.vb">
       <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
     </Compile>
@@ -208,12 +207,6 @@
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\daftar_tutup_principle.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\frmcetaknota.Designer.vb">
-      <DependentUpon>frmcetaknota.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\frmcetaknota.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\kas_keluar.Designer.vb">
@@ -240,10 +233,16 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KIR\KIR Truk.Designer.vb">
-      <DependentUpon>KIR Truk.vb</DependentUpon>
+    <Compile Include="form_perubahan_harga.Designer.vb">
+      <DependentUpon>form_perubahan_harga.vb</DependentUpon>
     </Compile>
-    <Compile Include="KIR\KIR Truk.vb">
+    <Compile Include="form_perubahan_harga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIR\KIR_Truk.Designer.vb">
+      <DependentUpon>KIR_Truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\KIR_Truk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -645,11 +644,11 @@
     <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XtraReport1.Designer.vb">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
+    <Compile Include="User Setting\change_password.Designer.vb">
+      <DependentUpon>change_password.vb</DependentUpon>
     </Compile>
-    <Compile Include="XtraReport1.vb">
-      <SubType>Component</SubType>
+    <Compile Include="User Setting\change_password.vb">
+      <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
       <DependentUpon>add_akun.vb</DependentUpon>
@@ -699,17 +698,11 @@
     <EmbeddedResource Include="Akuntansi\COA.resx">
       <DependentUpon>COA.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\daftar_kas_masuk.resx">
-      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_karyawan.resx">
       <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_principle.resx">
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\frmcetaknota.resx">
-      <DependentUpon>frmcetaknota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
       <DependentUpon>kas_keluar.vb</DependentUpon>
@@ -723,8 +716,11 @@
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KIR\KIR Truk.resx">
-      <DependentUpon>KIR Truk.vb</DependentUpon>
+    <EmbeddedResource Include="form_perubahan_harga.resx">
+      <DependentUpon>form_perubahan_harga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\KIR_Truk.resx">
+      <DependentUpon>KIR_Truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
@@ -932,8 +928,8 @@
     <EmbeddedResource Include="Transaksi\truk_booking.resx">
       <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraReport1.resx">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
+    <EmbeddedResource Include="User Setting\change_password.resx">
+      <DependentUpon>change_password.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
@@ -953,6 +949,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
