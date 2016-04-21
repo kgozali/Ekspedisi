@@ -1,4 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System
+Imports System.Drawing
+Imports System.Drawing.Drawing2D
+Imports System.Drawing.Imaging
+Imports System.IO
+
 Public Class KIR_Truk
 
     Dim kode As String = ""
@@ -52,7 +58,7 @@ Public Class KIR_Truk
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
     End Sub
 
     Private Sub tanggalhabiskir_CheckedChanged(sender As Object, e As EventArgs)
@@ -66,8 +72,13 @@ Public Class KIR_Truk
     Private Sub tanggalkir_ValueChanged(sender As Object, e As EventArgs)
         cekcang()
     End Sub
-
+    'cara load image dari database
+    'Dim arrpic () As Byte =ctype(ambil data image dari database,byte())
+    'dim ms as new memorystream(arrpic)
+    'pictureedit1.image=image.fromstream(arrpic)
+    'ms.close
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Dim arrpic() As Byte
         Try
             If TextEdit2.Text = "" Then
                 MessageBox.Show("Nomor KIR wajib terisi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -108,7 +119,21 @@ Public Class KIR_Truk
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda ingin melanjutkan tanpa menambahkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     kodekir = TextEdit1.Text.ToString
-                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "')")
+                                    If PictureEdit1.Text <> "" Then
+                                        Dim newsize As New Bitmap(480, 480)
+                                        Dim ms As New MemoryStream
+                                        'PictureEdit1.Image.Save(ms, PictureEdit1.Image.RawFormat)
+                                        newsize.Save(ms, newsize.RawFormat)
+                                        arrpic = ms.GetBuffer
+                                        ms.Close()
+
+                                    End If
+                                    Dim insert As Boolean = InsertInto("insert into kir values('" + kodekir + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + ComboBox1.SelectedValue.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "',Null)")
+                                    Dim Command = New MySqlCommand("Update kir set imgfile=@imgfile where id_kir='" + kodekir + "'", connect)
+                                    connect.Open()
+                                    Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+                                    Command.ExecuteNonQuery()
+                                    connect.Close()
                                     If insert = True Then
                                         MessageBox.Show("KIR berhasil dilakukan", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     End If
@@ -127,13 +152,13 @@ Public Class KIR_Truk
                         End If
                     End If
                 End If
-                
+
 
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
 
     End Sub
 
@@ -154,11 +179,12 @@ Public Class KIR_Truk
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        ofd.FileName = ""
-        ofd.Filter = "JPG | *.jpg;*.jpeg|PNG | *.png"
-        ofd.DefaultExt = "PNG"
-        ofd.InitialDirectory = "C:\users\public"
-        ofd.ShowDialog()
+        'ofd.FileName = ""
+        'ofd.Filter = "JPG | *.jpg;*.jpeg|PNG | *.png"
+        'ofd.DefaultExt = "PNG"
+        'ofd.InitialDirectory = "C:\users\public"
+        'ofd.ShowDialog()
+        PictureEdit1.LoadImage()
     End Sub
 
     Private Sub ofd_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ofd.FileOk
@@ -167,7 +193,7 @@ Public Class KIR_Truk
     End Sub
 
     Private Sub TextEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit4.EditValueChanged
-        PictureBox1.ImageLocation = TextEdit4.Text
+
     End Sub
 
     Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
