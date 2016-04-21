@@ -34,10 +34,10 @@ Partial Class KIR_Truk
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ofd = New System.Windows.Forms.OpenFileDialog()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,9 +195,6 @@ Partial Class KIR_Truk
         Me.Label7.TabIndex = 55
         Me.Label7.Text = "Path"
         '
-        'ofd
-        '
-        '
         'KIR_Truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,8 +244,8 @@ Partial Class KIR_Truk
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
 End Class

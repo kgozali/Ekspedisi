@@ -39,14 +39,10 @@ Partial Class pelunasan_piutang
         Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sisa = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.namabank = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -116,7 +112,7 @@ Partial Class pelunasan_piutang
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(452, 36)
+        Me.LabelControl2.Location = New System.Drawing.Point(514, 36)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(62, 18)
         Me.LabelControl2.TabIndex = 37
@@ -132,7 +128,7 @@ Partial Class pelunasan_piutang
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 36)
+        Me.LabelControl3.Location = New System.Drawing.Point(77, 36)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(55, 18)
         Me.LabelControl3.TabIndex = 39
@@ -236,29 +232,16 @@ Partial Class pelunasan_piutang
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.LabelControl14)
         Me.GroupControl2.Controls.Add(Me.LabelControl12)
         Me.GroupControl2.Controls.Add(Me.LabelControl11)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
-        Me.GroupControl2.Controls.Add(Me.ComboBox1)
-        Me.GroupControl2.Controls.Add(Me.TextBox1)
-        Me.GroupControl2.Controls.Add(Me.LabelControl4)
         Me.GroupControl2.Controls.Add(Me.GridControl2)
         Me.GroupControl2.Location = New System.Drawing.Point(12, 295)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(705, 195)
         Me.GroupControl2.TabIndex = 42
         Me.GroupControl2.Text = "Pembayaran"
-        '
-        'LabelControl14
-        '
-        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl14.Location = New System.Drawing.Point(309, 30)
-        Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(71, 18)
-        Me.LabelControl14.TabIndex = 151
-        Me.LabelControl14.Text = "Akun Kas :"
         '
         'LabelControl12
         '
@@ -296,37 +279,13 @@ Partial Class pelunasan_piutang
         Me.LabelControl5.TabIndex = 46
         Me.LabelControl5.Text = "Total Nominal BG :"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(386, 27)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(188, 21)
-        Me.ComboBox1.TabIndex = 45
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(129, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(174, 21)
-        Me.TextBox1.TabIndex = 44
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 30)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(118, 18)
-        Me.LabelControl4.TabIndex = 43
-        Me.LabelControl4.Text = "Tunai / Transfer :"
-        '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 54)
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
         Me.GridControl2.MainView = Me.GridView1
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemDateEdit1})
-        Me.GridControl2.Size = New System.Drawing.Size(695, 110)
+        Me.GridControl2.Size = New System.Drawing.Size(695, 140)
         Me.GridControl2.TabIndex = 1
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -335,6 +294,7 @@ Partial Class pelunasan_piutang
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabank, Me.nomerbg, Me.nominalbank, Me.tanggalcair, Me.akun})
         Me.GridView1.GridControl = Me.GridControl2
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'namabank
@@ -388,29 +348,29 @@ Partial Class pelunasan_piutang
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(479, 501)
+        Me.LabelControl7.Location = New System.Drawing.Point(488, 501)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(151, 18)
+        Me.LabelControl7.Size = New System.Drawing.Size(141, 18)
         Me.LabelControl7.TabIndex = 48
-        Me.LabelControl7.Text = "Total Nominal Piutang :"
+        Me.LabelControl7.Text = "Total Nominal Piutang"
         '
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(479, 525)
+        Me.LabelControl8.Location = New System.Drawing.Point(531, 525)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(108, 18)
+        Me.LabelControl8.Size = New System.Drawing.Size(98, 18)
         Me.LabelControl8.TabIndex = 49
-        Me.LabelControl8.Text = "Total Terbayar :"
+        Me.LabelControl8.Text = "Total Terbayar"
         '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(479, 549)
+        Me.LabelControl9.Location = New System.Drawing.Point(497, 549)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(142, 18)
+        Me.LabelControl9.Size = New System.Drawing.Size(132, 18)
         Me.LabelControl9.TabIndex = 50
-        Me.LabelControl9.Text = "Total Nominal Bayar :"
+        Me.LabelControl9.Text = "Total Nominal Bayar"
         '
         'TextBox2
         '
@@ -435,7 +395,7 @@ Partial Class pelunasan_piutang
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(80, 501)
+        Me.RichTextBox2.Location = New System.Drawing.Point(72, 501)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 66)
         Me.RichTextBox2.TabIndex = 54
@@ -446,9 +406,9 @@ Partial Class pelunasan_piutang
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl10.Location = New System.Drawing.Point(12, 501)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(61, 18)
+        Me.LabelControl10.Size = New System.Drawing.Size(56, 18)
         Me.LabelControl10.TabIndex = 53
-        Me.LabelControl10.Text = "Catatan :"
+        Me.LabelControl10.Text = "Catatan "
         '
         'SimpleButton1
         '
@@ -606,9 +566,6 @@ Partial Class pelunasan_piutang
     Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents akun As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
@@ -627,7 +584,6 @@ Partial Class pelunasan_piutang
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents RepositoryItemDateEdit As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
-    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DataSet1 As System.Data.DataSet
     Friend WithEvents daftarpiutang As System.Data.DataTable
     Friend WithEvents DataColumn1 As System.Data.DataColumn

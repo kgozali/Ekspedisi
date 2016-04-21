@@ -58,7 +58,7 @@ Partial Class main_menu
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
+        Me.bukapiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
@@ -507,7 +507,7 @@ Partial Class main_menu
         'BackstageViewClientControl7
         '
         Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton18)
+        Me.BackstageViewClientControl7.Controls.Add(Me.bukapiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton13)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
         Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
@@ -524,14 +524,14 @@ Partial Class main_menu
         Me.pelunasanpiutangkaryawan.TabIndex = 25
         Me.pelunasanpiutangkaryawan.Text = "Pelunasan Piutang Karyawaan"
         '
-        'SimpleButton18
+        'bukapiutangkaryawan
         '
-        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
-        Me.SimpleButton18.Location = New System.Drawing.Point(563, 79)
-        Me.SimpleButton18.Name = "SimpleButton18"
-        Me.SimpleButton18.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton18.TabIndex = 24
-        Me.SimpleButton18.Text = "Buka Piutang Karyawan"
+        Me.bukapiutangkaryawan.Image = CType(resources.GetObject("bukapiutangkaryawan.Image"), System.Drawing.Image)
+        Me.bukapiutangkaryawan.Location = New System.Drawing.Point(563, 79)
+        Me.bukapiutangkaryawan.Name = "bukapiutangkaryawan"
+        Me.bukapiutangkaryawan.Size = New System.Drawing.Size(196, 54)
+        Me.bukapiutangkaryawan.TabIndex = 24
+        Me.bukapiutangkaryawan.Text = "Buka Piutang Karyawan"
         '
         'SimpleButton13
         '
@@ -1116,7 +1116,7 @@ Partial Class main_menu
     Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents pelunasanpiutangkaryawan As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents bukapiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton26 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton27 As DevExpress.XtraEditors.SimpleButton
