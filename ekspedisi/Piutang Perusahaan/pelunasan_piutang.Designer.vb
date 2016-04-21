@@ -40,6 +40,7 @@ Partial Class pelunasan_piutang
         Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sisa = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
@@ -68,7 +69,10 @@ Partial Class pelunasan_piutang
         Me.save = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.DataSet1 = New System.Data.DataSet()
+        Me.daftarpiutang = New System.Data.DataTable()
+        Me.DataColumn1 = New System.Data.DataColumn()
+        Me.DataColumn2 = New System.Data.DataColumn()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -84,6 +88,8 @@ Partial Class pelunasan_piutang
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -247,6 +253,15 @@ Partial Class pelunasan_piutang
         Me.GroupControl2.Size = New System.Drawing.Size(705, 195)
         Me.GroupControl2.TabIndex = 42
         Me.GroupControl2.Text = "Pembayaran"
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl14.Location = New System.Drawing.Point(309, 30)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl14.TabIndex = 151
+        Me.LabelControl14.Text = "Akun Kas :"
         '
         'LabelControl12
         '
@@ -473,14 +488,25 @@ Partial Class pelunasan_piutang
         Me.TextBox5.Size = New System.Drawing.Size(174, 21)
         Me.TextBox5.TabIndex = 151
         '
-        'LabelControl14
+        'DataSet1
         '
-        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl14.Location = New System.Drawing.Point(309, 30)
-        Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(71, 18)
-        Me.LabelControl14.TabIndex = 151
-        Me.LabelControl14.Text = "Akun Kas :"
+        Me.DataSet1.DataSetName = "NewDataSet"
+        Me.DataSet1.Tables.AddRange(New System.Data.DataTable() {Me.daftarpiutang})
+        '
+        'daftarpiutang
+        '
+        Me.daftarpiutang.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2})
+        Me.daftarpiutang.TableName = "daftarpiutang"
+        '
+        'DataColumn1
+        '
+        Me.DataColumn1.Caption = "Kode Piutang"
+        Me.DataColumn1.ColumnName = "id"
+        '
+        'DataColumn2
+        '
+        Me.DataColumn2.Caption = "Tanggal Piutang"
+        Me.DataColumn2.ColumnName = "tanggalpiutang"
         '
         'pelunasan_piutang
         '
@@ -525,6 +551,8 @@ Partial Class pelunasan_piutang
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -578,4 +606,8 @@ Partial Class pelunasan_piutang
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents RepositoryItemDateEdit As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DataSet1 As System.Data.DataSet
+    Friend WithEvents daftarpiutang As System.Data.DataTable
+    Friend WithEvents DataColumn1 As System.Data.DataColumn
+    Friend WithEvents DataColumn2 As System.Data.DataColumn
 End Class

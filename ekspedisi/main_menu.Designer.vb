@@ -57,7 +57,7 @@ Partial Class main_menu
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
+        Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -150,8 +150,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
-        Me.BackstageViewControl1.SelectedTabIndex = 0
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem7
+        Me.BackstageViewControl1.SelectedTabIndex = 3
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -506,7 +506,7 @@ Partial Class main_menu
         '
         'BackstageViewClientControl7
         '
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton17)
+        Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton18)
         Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton13)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
@@ -515,14 +515,14 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
         '
-        'SimpleButton17
+        'pelunasanpiutangkaryawan
         '
-        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
-        Me.SimpleButton17.Location = New System.Drawing.Point(306, 79)
-        Me.SimpleButton17.Name = "SimpleButton17"
-        Me.SimpleButton17.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton17.TabIndex = 25
-        Me.SimpleButton17.Text = "Pelunasan Piutang Karyawaan"
+        Me.pelunasanpiutangkaryawan.Image = CType(resources.GetObject("pelunasanpiutangkaryawan.Image"), System.Drawing.Image)
+        Me.pelunasanpiutangkaryawan.Location = New System.Drawing.Point(306, 79)
+        Me.pelunasanpiutangkaryawan.Name = "pelunasanpiutangkaryawan"
+        Me.pelunasanpiutangkaryawan.Size = New System.Drawing.Size(196, 54)
+        Me.pelunasanpiutangkaryawan.TabIndex = 25
+        Me.pelunasanpiutangkaryawan.Text = "Pelunasan Piutang Karyawaan"
         '
         'SimpleButton18
         '
@@ -924,7 +924,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = True
+        Me.BackstageViewTabItem1.Selected = False
         '
         'BackstageViewTabItem5
         '
@@ -948,7 +948,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
         Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
-        Me.BackstageViewTabItem7.Selected = False
+        Me.BackstageViewTabItem7.Selected = True
         '
         'BackstageViewTabItem6
         '
@@ -1115,7 +1115,7 @@ Partial Class main_menu
     Friend WithEvents SimpleButton22 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents pelunasanpiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton26 As DevExpress.XtraEditors.SimpleButton

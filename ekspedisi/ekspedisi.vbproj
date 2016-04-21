@@ -644,10 +644,10 @@
     <Compile Include="Transaksi\truk_booking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Setting\change_password.Designer.vb">
+    <Compile Include="User Settings\change_password.Designer.vb">
       <DependentUpon>change_password.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Setting\change_password.vb">
+    <Compile Include="User Settings\change_password.vb">
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
@@ -928,7 +928,7 @@
     <EmbeddedResource Include="Transaksi\truk_booking.resx">
       <DependentUpon>truk_booking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Setting\change_password.resx">
+    <EmbeddedResource Include="User Settings\change_password.resx">
       <DependentUpon>change_password.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
