@@ -161,6 +161,6 @@ Public Class main_menu
     End Sub
 
     Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs) Handles pelunasanpiutangkaryawan.Click
-        pelunansan_piutang_karyawan.ShowDialog()
+        daftar_karyawan_pelunasan.ShowDialog()
     End Sub
 End Class

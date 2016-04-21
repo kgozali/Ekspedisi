@@ -16,7 +16,7 @@
             Next i
             MessageBox.Show("Piutang berhasil di update")
             Dim tabel As New DataTable
-            tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d right join piutang_karyawan p on d.id_piutangkaryawan=p.id_piutangkaryawan and status='0' and p.id_karyawan='" & pelunansan_piutang_karyawan.namakaryawan.Text & "' group by p.id_piutangkaryawan;")
+            tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d right join piutang_karyawan p on d.id_piutangkaryawan=p.id_piutangkaryawan and status='0' and p.id_karyawan='" & "" & "' group by p.id_piutangkaryawan;")
             daftarutang.DataSource = tabel
         Catch ex As Exception
             MessageBox.Show(ex.Message)
