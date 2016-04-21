@@ -35,7 +35,6 @@ Partial Class pelunasan_piutang
         Me.RepositoryItemDateEdit = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.nominal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.terbayar = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.bayar = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sisa = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -73,6 +72,11 @@ Partial Class pelunasan_piutang
         Me.daftarpiutang = New System.Data.DataTable()
         Me.DataColumn1 = New System.Data.DataColumn()
         Me.DataColumn2 = New System.Data.DataColumn()
+        Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
+        Me.DataColumn5 = New System.Data.DataColumn()
+        Me.DataColumn6 = New System.Data.DataColumn()
+        Me.DataColumn7 = New System.Data.DataColumn()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -163,9 +167,10 @@ Partial Class pelunasan_piutang
         '
         'datapiutang
         '
-        Me.datapiutang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.piutang, Me.tanggal, Me.jatuhtempo, Me.nominal, Me.terbayar, Me.bayar, Me.nominalbayar, Me.sisa})
+        Me.datapiutang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.piutang, Me.tanggal, Me.jatuhtempo, Me.nominal, Me.terbayar, Me.sisa, Me.nominalbayar})
         Me.datapiutang.GridControl = Me.GridControl1
         Me.datapiutang.Name = "datapiutang"
+        Me.datapiutang.OptionsView.ShowGroupPanel = False
         '
         'piutang
         '
@@ -208,15 +213,7 @@ Partial Class pelunasan_piutang
         Me.terbayar.Caption = "Terbayar"
         Me.terbayar.Name = "terbayar"
         Me.terbayar.Visible = True
-        Me.terbayar.VisibleIndex = 7
-        '
-        'bayar
-        '
-        Me.bayar.Caption = "Bayar"
-        Me.bayar.ColumnEdit = Me.RepositoryItemCheckEdit1
-        Me.bayar.Name = "bayar"
-        Me.bayar.Visible = True
-        Me.bayar.VisibleIndex = 4
+        Me.terbayar.VisibleIndex = 6
         '
         'RepositoryItemCheckEdit1
         '
@@ -228,14 +225,14 @@ Partial Class pelunasan_piutang
         Me.nominalbayar.Caption = "Nominal Bayar"
         Me.nominalbayar.Name = "nominalbayar"
         Me.nominalbayar.Visible = True
-        Me.nominalbayar.VisibleIndex = 6
+        Me.nominalbayar.VisibleIndex = 5
         '
         'sisa
         '
         Me.sisa.Caption = "Sisa"
         Me.sisa.Name = "sisa"
         Me.sisa.Visible = True
-        Me.sisa.VisibleIndex = 5
+        Me.sisa.VisibleIndex = 4
         '
         'GroupControl2
         '
@@ -338,6 +335,7 @@ Partial Class pelunasan_piutang
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabank, Me.nomerbg, Me.nominalbank, Me.tanggalcair, Me.akun})
         Me.GridView1.GridControl = Me.GridControl2
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'namabank
         '
@@ -495,7 +493,7 @@ Partial Class pelunasan_piutang
         '
         'daftarpiutang
         '
-        Me.daftarpiutang.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2})
+        Me.daftarpiutang.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4, Me.DataColumn5, Me.DataColumn6, Me.DataColumn7})
         Me.daftarpiutang.TableName = "daftarpiutang"
         '
         'DataColumn1
@@ -507,6 +505,31 @@ Partial Class pelunasan_piutang
         '
         Me.DataColumn2.Caption = "Tanggal Piutang"
         Me.DataColumn2.ColumnName = "tanggalpiutang"
+        '
+        'DataColumn3
+        '
+        Me.DataColumn3.Caption = "Tanggal Jatuh Tempo"
+        Me.DataColumn3.ColumnName = "jatuhtempo"
+        '
+        'DataColumn4
+        '
+        Me.DataColumn4.Caption = "Nominal"
+        Me.DataColumn4.ColumnName = "nominal"
+        '
+        'DataColumn5
+        '
+        Me.DataColumn5.Caption = "Terbayar"
+        Me.DataColumn5.ColumnName = "terbayar"
+        '
+        'DataColumn6
+        '
+        Me.DataColumn6.Caption = "Sisa"
+        Me.DataColumn6.ColumnName = "sisa"
+        '
+        'DataColumn7
+        '
+        Me.DataColumn7.Caption = "Nominal Bayar"
+        Me.DataColumn7.ColumnName = "nominalbayar"
         '
         'pelunasan_piutang
         '
@@ -570,7 +593,6 @@ Partial Class pelunasan_piutang
     Friend WithEvents tanggal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents jatuhtempo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents nominal As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents bayar As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents nominalbayar As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents sisa As DevExpress.XtraGrid.Columns.GridColumn
@@ -610,4 +632,9 @@ Partial Class pelunasan_piutang
     Friend WithEvents daftarpiutang As System.Data.DataTable
     Friend WithEvents DataColumn1 As System.Data.DataColumn
     Friend WithEvents DataColumn2 As System.Data.DataColumn
+    Friend WithEvents DataColumn3 As System.Data.DataColumn
+    Friend WithEvents DataColumn4 As System.Data.DataColumn
+    Friend WithEvents DataColumn5 As System.Data.DataColumn
+    Friend WithEvents DataColumn6 As System.Data.DataColumn
+    Friend WithEvents DataColumn7 As System.Data.DataColumn
 End Class
