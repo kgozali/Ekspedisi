@@ -50,4 +50,8 @@
             keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
         End If
     End Sub
+
+    Private Sub pelunansan_piutang_karyawan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        daftar_karyawan_pelunasan.Show()
+    End Sub
 End Class
