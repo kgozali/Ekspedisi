@@ -36,18 +36,23 @@ Public Class master_barang
         GridControl2.Visible = False
         data = DtTable("SELECT id_barang `ID Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         GridControl1.DataSource = data
-        If data.Rows.Count > 0 Then
-            For i = 0 To data.Columns.Count - 1
-                GridView1.Columns(i).OptionsColumn.AllowEdit = False
-            Next
+        Try
+            If data.Rows.Count > 0 Then
+                For i = 0 To data.Columns.Count - 1
+                    GridView1.Columns(i).OptionsColumn.AllowEdit = False
+                Next
 
-            checks.Columns.Add("ID Barang")
-            unchecks.Columns.Add("ID Barang")
-            For i = 0 To GridView1.DataRowCount - 1
-                Dim temp As String = GridView1.GetRowCellValue(i, "ID Barang").ToString
-                unchecks.Rows.Add(temp)
-            Next
-        End If
+                checks.Columns.Add("ID Barang")
+                unchecks.Columns.Add("ID Barang")
+                For i = 0 To GridView1.DataRowCount - 1
+                    Dim temp As String = GridView1.GetRowCellValue(i, "ID Barang").ToString
+                    unchecks.Rows.Add(temp)
+                Next
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        
 
         
 
