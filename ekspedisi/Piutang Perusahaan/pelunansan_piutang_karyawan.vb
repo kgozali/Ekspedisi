@@ -11,20 +11,28 @@
             If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
                 MessageBox.Show("Karyawan belum dipilih")
 
-            Else
+            ElseIf datapiutang.RowCount > 0 Then
                 For i = 0 To datapiutang.RowCount - 1
                     If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
                         syaratlunas = True
-                    ElseIf datapiutang.GetRowCellValue(i, "Bayar") = "" Or datapiutang.GetRowCellValue(i, "Bayar") = 0 Then
+                    ElseIf IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = True Then
                         syaratnol = True
                     End If
-
-                    'InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                    If syaratlunas = True And syaratnol = False Then
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
+                        MessageBox.Show("Piutang berhasil di update")
+                    ElseIf syaratlunas = False And syaratnol = False Then
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        MessageBox.Show("Piutang berhasil di update")
+                    End If
                 Next i
-                MessageBox.Show("Piutang berhasil di update")
+
                 Dim tabel As New DataTable
-                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d right join piutang_karyawan p on d.id_piutangkaryawan=p.id_piutangkaryawan and status='0' and p.id_karyawan='" & "" & "' group by p.id_piutangkaryawan;")
+                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d, piutang_karyawan p where d.id_piutangkaryawan=p.id_piutangkaryawan and status='1' and p.id_karyawan='" & namakaryawan.Text & "' group by p.id_piutangkaryawan;")
                 daftarutang.DataSource = tabel
+            Else
+                MessageBox.Show("Karyawan tidak memiliki piutang")
             End If
 
 
