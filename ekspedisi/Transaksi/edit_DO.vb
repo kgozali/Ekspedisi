@@ -3,9 +3,28 @@ Public Class edit_DO
     Public kodeprinciple As String = ""
     Public namaprinciple As String = ""
     Dim res As String = ""
+    Dim sum As Integer = 0
+    Dim kodetrans As String = ""
+    Dim jumlahcek As Integer = 0
+    Dim boolcek As Boolean = False
+    Dim cek As Boolean = False
+    Dim datatable As New DataTable
+    Dim dtbarang As New DataTable
+    Dim audit As String = ""
     Private Sub id_TextChanged(sender As Object, e As EventArgs) Handles id.TextChanged
-        Dim datatable As New DataTable
-        Dim dtbarang As New DataTable
+        
+       
+
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        'button edit item di klik
+        kodeprinciple = res
+        namaprinciple = TextBox2.Text
+        edit_item.ShowDialog()
+    End Sub
+
+    Private Sub edit_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'select awal ambil data semua
             datatable = DtTable("select id_booking,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
@@ -13,6 +32,8 @@ Public Class edit_DO
             tanggalterkirim.Value = datatable.Rows(0).Item("tgl_terkirim").ToString
             tanggaljatuhtempo.Value = datatable.Rows(0).Item("jatuh_tempo").ToString
             nomerdo.Text = datatable.Rows(0).Item("no_do").ToString
+
+            kodetrans = id.Text.ToString
 
 
             res = Scalar("select id_principle from booking_truk,trans_do where trans_do.id_booking=booking_truk.id_booking and id_transaksi='" + id.Text.ToString + "'")
@@ -33,20 +54,8 @@ Public Class edit_DO
                 End If
             Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-    End Sub
-
-    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        'button edit item di klik
-        kodeprinciple = res
-        namaprinciple = TextBox2.Text
-        edit_item.ShowDialog()
-    End Sub
-
-    Private Sub edit_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
@@ -61,11 +70,109 @@ Public Class edit_DO
                 End If
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         'matikan edit gridview
         For i = 0 To GridView1.Columns.Count - 2
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next
     End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Try
+            jumlahcek = GridView1.DataRowCount - 1
+            If tanggalterkirim.Value >= tanggaljatuhtempo.Value Then
+                Dim msg As Integer = MessageBox.Show("Tanggal Terkirim lebih besar atau sama dengan Tanggal Jatuh Tempo, apakah anda ingin melanjutkan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+                If msg = DialogResult.Yes Then
+                    update()
+                End If
+            Else
+                update()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        
+    End Sub
+
+    Sub update()
+        'lihat apakah berat dari total barang adalah 0
+        sum = CInt(GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString)
+        If sum <> 0 Then
+            Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "'")
+            'delete
+            InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
+            'insert baru
+            For i = 0 To GridView1.DataRowCount - 1
+                boolcek = InsertInto("insert into dtrans_do values('" + kodetrans.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+
+            Next
+
+            If update = True And boolcek = True Then
+                MessageBox.Show("Update Transaksi " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                reset()
+                Me.Close()
+            Else
+                MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            Dim msg As Integer = MessageBox.Show("Total berat dari barang adalah 0 Kilogram, apakah anda ingin tetap melakukan perubahan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+            If msg = DialogResult.Yes Then
+                Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "'")
+                'delete
+                InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
+                'insert baru
+                For i = 0 To GridView1.DataRowCount - 1
+                    boolcek = InsertInto("insert into dtrans_do values('" + kodetrans.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+                Next
+                If update = True And boolcek = True Then
+                    MessageBox.Show("Update Transaksi " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    reset()
+                    Me.Close()
+                Else
+                    MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub edit_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Try
+            If nomerdo.Text <> "" Then
+                cek = True
+            Else
+                cek = False
+            End If
+            If cek = True Then
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    reset()
+
+                Else
+                    e.Cancel = True
+                End If
+            Else
+                reset()
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Sub reset()
+        idbooking.Text = ""
+        nomerdo.Text = ""
+        TextBox2.Text = ""
+        edit_item.barangset.Rows.Clear()
+        datatable.Rows.Clear()
+        dtbarang.Rows.Clear()
+        id.Text = ""
+    End Sub
+
+   
 End Class

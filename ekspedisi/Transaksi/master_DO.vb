@@ -9,7 +9,8 @@ Public Class master_DO
     Private Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nama.Checked = True
         aktif.Checked = True
-
+        process()
+        unallowedit()
     End Sub
 
     Sub process()
@@ -27,6 +28,7 @@ Public Class master_DO
                 Dim datatable As New DataTable
                 datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
+
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
@@ -38,6 +40,7 @@ Public Class master_DO
                 Dim datatable As New DataTable
                 datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_booking LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
+
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
@@ -48,11 +51,12 @@ Public Class master_DO
                 Dim datatable As New DataTable
                 datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
+
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
             End If
-
+            unallowedit()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -94,6 +98,10 @@ Public Class master_DO
     End Sub
 
     Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
+        unallowedit()
+    End Sub
+
+    Sub unallowedit()
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next
@@ -119,6 +127,7 @@ Public Class master_DO
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         Try
+            edit_DO.id.Text = ""
             edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
             edit_DO.ShowDialog()
         Catch ex As Exception
@@ -135,4 +144,6 @@ Public Class master_DO
         DateTimePicker1.ResetText()
         cari.Text = ""
     End Sub
+
+
 End Class
