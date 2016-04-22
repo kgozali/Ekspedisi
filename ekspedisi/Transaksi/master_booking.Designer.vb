@@ -247,7 +247,7 @@ Partial Class master_booking
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(8, 40)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(8, 46)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 4
@@ -275,7 +275,7 @@ Partial Class master_booking
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(8, 43)
+        Me.cari.Location = New System.Drawing.Point(8, 45)
         Me.cari.Name = "cari"
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0

@@ -130,7 +130,7 @@ Public Class transaksi_DO
 
     Private Sub transaksi_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
-            If idbooking.Text <> "" Or nomerdo.Text <> "" Or GridView1.DataRowCount > 0 Then
+            If nomerdo.Text <> "" Or GridView1.DataRowCount > 0 Then
                 cek = True
             Else
                 cek = False

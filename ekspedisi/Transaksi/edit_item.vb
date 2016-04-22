@@ -1,19 +1,16 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports DevExpress.XtraGrid.Columns
-Imports DevExpress.XtraEditors.Repository
-Public Class add_item
+Public Class edit_item
     Dim dataset As New DataTable
     Public barangset As DataTable = New DataTable
-
-    Private Sub add_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub edit_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             sortir()
-            GroupControl2.Text = "List Barang " & transaksi_DO.namaprinciple
+            GroupControl2.Text = "List Barang " & edit_DO.namaprinciple
 
 
-            For i = 0 To transaksi_DO.GridView1.DataRowCount - 1
+            For i = 0 To edit_DO.GridView1.DataRowCount - 1
                 For j = 0 To gridbarang.DataRowCount - 1
-                    If transaksi_DO.GridView1.GetRowCellValue(i, "Kode Barang") = gridbarang.GetRowCellValue(j, "Kode Barang") Then
+                    If edit_DO.GridView1.GetRowCellValue(i, "Kode Barang") = gridbarang.GetRowCellValue(j, "Kode Barang") Then
                         gridbarang.SelectRow(j)
                     End If
                 Next
@@ -22,27 +19,18 @@ Public Class add_item
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
     End Sub
-
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs)
-        sortir()
-    End Sub
-
     Sub sortir()
         Try
 
-            dataset = DtTable("Select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + transaksi_DO.kodeprinciple + "'")
+            dataset = DtTable("Select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + edit_DO.kodeprinciple + "'")
             checkadd()
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
-    End Sub
-
-    Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs)
-        sortir()
     End Sub
 
     Sub checkadd()
@@ -59,13 +47,13 @@ Public Class add_item
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             Dim cek As Boolean = False
-            If barangset.Columns.Count - 1 > 0 Then     
+            If barangset.Columns.Count - 1 > 0 Then
             Else
                 barangset.Columns.Add("Kode Barang")
                 barangset.Columns.Add("Nama Barang")
@@ -83,12 +71,12 @@ Public Class add_item
                     barangset.Rows.Add(ar(0), ar(1), ar(2))
                 End If
             Next
-            transaksi_DO.GridControl1.DataSource = barangset
-            For i = 0 To transaksi_DO.GridView1.Columns.Count - 1
+            edit_DO.GridControl1.DataSource = barangset
+            For i = 0 To edit_DO.GridView1.Columns.Count - 1
                 If i < 2 Then
-                    transaksi_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = False
+                    edit_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = False
                 Else
-                    transaksi_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = True
+                    edit_DO.GridView1.Columns(i).OptionsColumn.AllowEdit = True
                 End If
 
             Next
@@ -97,6 +85,9 @@ Public Class add_item
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
     End Sub
 End Class
