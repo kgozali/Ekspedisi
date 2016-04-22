@@ -151,7 +151,7 @@ Public Class booking_truk
                                     Else
 
                                     End If
-                                   
+
                                 Else
                                     insert()
                                 End If
@@ -218,12 +218,12 @@ Public Class booking_truk
                     GridControl1.DataSource = tabelkontak
                 End If
             End If
-           
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
     End Sub
 
     Private Sub GridControl2_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl2.DataSourceChanged
@@ -248,7 +248,7 @@ Public Class booking_truk
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
 
     End Sub
     Sub resetall()
