@@ -75,6 +75,7 @@ Public Class supir_booking
             tampung.Clear()
             tampung.Rows.Add(kode, nama, "0", tarif)
             booking_truk.GridControl2.DataSource = tampung
+            booking_truk.max = tarif
             supir_booking_Load(sender, e)
             Me.Close()
         Catch ex As Exception
