@@ -159,4 +159,16 @@ Public Class main_menu
     Private Sub SimpleButton42_Click(sender As Object, e As EventArgs) Handles SimpleButton42.Click
         KIR_Truk.ShowDialog()
     End Sub
+
+    Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs) Handles pelunasanpiutangkaryawan.Click
+        pelunansan_piutang_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub bukapiutangkaryawan_Click(sender As Object, e As EventArgs) Handles bukapiutangkaryawan.Click
+        buka_piutang_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
+        x.ShowDialog()
+    End Sub
 End Class

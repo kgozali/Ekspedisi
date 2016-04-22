@@ -2,15 +2,32 @@
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
-
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            For i = 0 To datapiutang.RowCount - 1
-                InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(0, "Kode Karyawan") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
-            Next i
-            MessageBox.Show("Piutang berhasil di update")
+            Dim syaratnol As Boolean = False
+            Dim syaratlunas As Boolean = False
+            If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
+                MessageBox.Show("Karyawan belum dipilih")
+
+            Else
+                For i = 0 To datapiutang.RowCount - 1
+                    If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
+                        syaratlunas = True
+                    ElseIf datapiutang.GetRowCellValue(i, "Bayar") = "" Or datapiutang.GetRowCellValue(i, "Bayar") = 0 Then
+                        syaratnol = True
+                    End If
+
+                    'InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                Next i
+                MessageBox.Show("Piutang berhasil di update")
+                Dim tabel As New DataTable
+                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d right join piutang_karyawan p on d.id_piutangkaryawan=p.id_piutangkaryawan and status='0' and p.id_karyawan='" & "" & "' group by p.id_piutangkaryawan;")
+                daftarutang.DataSource = tabel
+            End If
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
