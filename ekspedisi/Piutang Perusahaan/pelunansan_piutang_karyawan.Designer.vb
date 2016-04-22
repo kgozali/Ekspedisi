@@ -107,9 +107,9 @@ Partial Class pelunansan_piutang_karyawan
         Me.namakaryawan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.namakaryawan.Location = New System.Drawing.Point(128, 48)
         Me.namakaryawan.Name = "namakaryawan"
-        Me.namakaryawan.Size = New System.Drawing.Size(104, 18)
+        Me.namakaryawan.Size = New System.Drawing.Size(79, 18)
         Me.namakaryawan.TabIndex = 43
-        Me.namakaryawan.Text = "nama karyawan"
+        Me.namakaryawan.Text = "Belum Terisi"
         '
         'LabelControl1
         '
@@ -152,27 +152,27 @@ Partial Class pelunansan_piutang_karyawan
         Me.nomertelepon.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nomertelepon.Location = New System.Drawing.Point(704, 48)
         Me.nomertelepon.Name = "nomertelepon"
-        Me.nomertelepon.Size = New System.Drawing.Size(111, 18)
+        Me.nomertelepon.Size = New System.Drawing.Size(79, 18)
         Me.nomertelepon.TabIndex = 59
-        Me.nomertelepon.Text = "Nomor Telepon :"
+        Me.nomertelepon.Text = "Belum Terisi"
         '
         'kotaasal
         '
         Me.kotaasal.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kotaasal.Location = New System.Drawing.Point(704, 24)
         Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(71, 18)
+        Me.kotaasal.Size = New System.Drawing.Size(79, 18)
         Me.kotaasal.TabIndex = 58
-        Me.kotaasal.Text = "Kota Asal :"
+        Me.kotaasal.Text = "Belum Terisi"
         '
         'jabatan
         '
         Me.jabatan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jabatan.Location = New System.Drawing.Point(128, 72)
         Me.jabatan.Name = "jabatan"
-        Me.jabatan.Size = New System.Drawing.Size(61, 18)
+        Me.jabatan.Size = New System.Drawing.Size(79, 18)
         Me.jabatan.TabIndex = 57
-        Me.jabatan.Text = "Jabatan :"
+        Me.jabatan.Text = "Belum Terisi"
         '
         'LabelControl5
         '

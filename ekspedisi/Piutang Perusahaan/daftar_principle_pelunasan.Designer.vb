@@ -21,8 +21,8 @@ Partial Class daftar_principle_pelunasan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_principle_pelunasan))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.datakaryawan = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.dataprinciple = New DevExpress.XtraGrid.GridControl()
+        Me.listprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
@@ -31,8 +31,8 @@ Partial Class daftar_principle_pelunasan
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.listprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,26 +40,26 @@ Partial Class daftar_principle_pelunasan
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.datakaryawan)
+        Me.GroupControl3.Controls.Add(Me.dataprinciple)
         Me.GroupControl3.Location = New System.Drawing.Point(8, 90)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(776, 414)
         Me.GroupControl3.TabIndex = 151
-        Me.GroupControl3.Text = "Data Karayawan"
+        Me.GroupControl3.Text = "Data Principle"
         '
-        'datakaryawan
+        'dataprinciple
         '
-        Me.datakaryawan.Location = New System.Drawing.Point(8, 24)
-        Me.datakaryawan.MainView = Me.GridView1
-        Me.datakaryawan.Name = "datakaryawan"
-        Me.datakaryawan.Size = New System.Drawing.Size(760, 384)
-        Me.datakaryawan.TabIndex = 0
-        Me.datakaryawan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.dataprinciple.Location = New System.Drawing.Point(8, 24)
+        Me.dataprinciple.MainView = Me.listprinciple
+        Me.dataprinciple.Name = "dataprinciple"
+        Me.dataprinciple.Size = New System.Drawing.Size(760, 384)
+        Me.dataprinciple.TabIndex = 0
+        Me.dataprinciple.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.listprinciple})
         '
-        'GridView1
+        'listprinciple
         '
-        Me.GridView1.GridControl = Me.datakaryawan
-        Me.GridView1.Name = "GridView1"
+        Me.listprinciple.GridControl = Me.dataprinciple
+        Me.listprinciple.Name = "listprinciple"
         '
         'GroupControl1
         '
@@ -132,8 +132,8 @@ Partial Class daftar_principle_pelunasan
         Me.Text = "Daftar Principle"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.datakaryawan, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.listprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -142,8 +142,8 @@ Partial Class daftar_principle_pelunasan
 
     End Sub
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents datakaryawan As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents dataprinciple As DevExpress.XtraGrid.GridControl
+    Friend WithEvents listprinciple As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton

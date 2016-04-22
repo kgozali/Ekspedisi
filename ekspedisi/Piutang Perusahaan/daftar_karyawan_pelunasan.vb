@@ -39,8 +39,6 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
-
     End Sub
 
     Private Sub datakaryawan_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles datakaryawan.MouseDoubleClick

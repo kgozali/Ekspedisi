@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class pelunasan_piutang
+Partial Class x
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,7 +19,7 @@ Partial Class pelunasan_piutang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pelunasan_piutang))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(x))
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.principle = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
@@ -29,7 +29,7 @@ Partial Class pelunasan_piutang
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.datapiutang = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.piutang = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.tanggal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.jatuhtempo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemDateEdit = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
@@ -64,7 +64,7 @@ Partial Class pelunasan_piutang
         Me.save = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.DataSet1 = New System.Data.DataSet()
+        Me.pelunasan = New System.Data.DataSet()
         Me.daftarpiutang = New System.Data.DataTable()
         Me.DataColumn1 = New System.Data.DataColumn()
         Me.DataColumn2 = New System.Data.DataColumn()
@@ -88,7 +88,7 @@ Partial Class pelunasan_piutang
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pelunasan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -163,17 +163,17 @@ Partial Class pelunasan_piutang
         '
         'datapiutang
         '
-        Me.datapiutang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.piutang, Me.tanggal, Me.jatuhtempo, Me.nominal, Me.terbayar, Me.sisa, Me.nominalbayar})
+        Me.datapiutang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.id, Me.tanggal, Me.jatuhtempo, Me.nominal, Me.terbayar, Me.sisa, Me.nominalbayar})
         Me.datapiutang.GridControl = Me.GridControl1
         Me.datapiutang.Name = "datapiutang"
         Me.datapiutang.OptionsView.ShowGroupPanel = False
         '
-        'piutang
+        'id
         '
-        Me.piutang.Caption = "ID Piutang"
-        Me.piutang.Name = "piutang"
-        Me.piutang.Visible = True
-        Me.piutang.VisibleIndex = 0
+        Me.id.Caption = "Kode Piutang"
+        Me.id.Name = "id"
+        Me.id.Visible = True
+        Me.id.VisibleIndex = 0
         '
         'tanggal
         '
@@ -446,10 +446,10 @@ Partial Class pelunasan_piutang
         Me.TextBox5.Size = New System.Drawing.Size(174, 21)
         Me.TextBox5.TabIndex = 151
         '
-        'DataSet1
+        'pelunasan
         '
-        Me.DataSet1.DataSetName = "NewDataSet"
-        Me.DataSet1.Tables.AddRange(New System.Data.DataTable() {Me.daftarpiutang})
+        Me.pelunasan.DataSetName = "NewDataSet"
+        Me.pelunasan.Tables.AddRange(New System.Data.DataTable() {Me.daftarpiutang})
         '
         'daftarpiutang
         '
@@ -491,7 +491,7 @@ Partial Class pelunasan_piutang
         Me.DataColumn7.Caption = "Nominal Bayar"
         Me.DataColumn7.ColumnName = "nominalbayar"
         '
-        'pelunasan_piutang
+        'x
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -516,7 +516,7 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.principle)
         Me.Controls.Add(Me.LabelControl1)
-        Me.Name = "pelunasan_piutang"
+        Me.Name = "x"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Piutang"
         CType(Me.principle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -535,7 +535,7 @@ Partial Class pelunasan_piutang
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pelunasan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -550,7 +550,7 @@ Partial Class pelunasan_piutang
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents datapiutang As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents piutang As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents id As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents tanggal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents jatuhtempo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents nominal As DevExpress.XtraGrid.Columns.GridColumn
@@ -585,7 +585,7 @@ Partial Class pelunasan_piutang
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents RepositoryItemDateEdit As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
-    Friend WithEvents DataSet1 As System.Data.DataSet
+    Friend WithEvents pelunasan As System.Data.DataSet
     Friend WithEvents daftarpiutang As System.Data.DataTable
     Friend WithEvents DataColumn1 As System.Data.DataColumn
     Friend WithEvents DataColumn2 As System.Data.DataColumn
