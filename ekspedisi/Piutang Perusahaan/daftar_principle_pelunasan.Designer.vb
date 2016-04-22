@@ -21,21 +21,21 @@ Partial Class daftar_principle_pelunasan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_principle_pelunasan))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.dataprinciple = New DevExpress.XtraGrid.GridControl()
-        Me.listprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.dataprinciple = New DevExpress.XtraGrid.GridControl()
+        Me.allprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.listprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
@@ -46,20 +46,6 @@ Partial Class daftar_principle_pelunasan
         Me.GroupControl3.Size = New System.Drawing.Size(776, 414)
         Me.GroupControl3.TabIndex = 151
         Me.GroupControl3.Text = "Data Principle"
-        '
-        'dataprinciple
-        '
-        Me.dataprinciple.Location = New System.Drawing.Point(8, 24)
-        Me.dataprinciple.MainView = Me.listprinciple
-        Me.dataprinciple.Name = "dataprinciple"
-        Me.dataprinciple.Size = New System.Drawing.Size(760, 384)
-        Me.dataprinciple.TabIndex = 0
-        Me.dataprinciple.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.listprinciple})
-        '
-        'listprinciple
-        '
-        Me.listprinciple.GridControl = Me.dataprinciple
-        Me.listprinciple.Name = "listprinciple"
         '
         'GroupControl1
         '
@@ -101,23 +87,38 @@ Partial Class daftar_principle_pelunasan
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
-        'SimpleButton1
+        'cancel
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(684, 512)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 153
-        Me.SimpleButton1.Text = "Cancel"
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(684, 512)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 153
+        Me.cancel.Text = "Cancel"
         '
-        'Submit
+        'submit
         '
-        Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(576, 512)
-        Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 152
-        Me.Submit.Text = "Submit"
+        Me.submit.Image = CType(resources.GetObject("submit.Image"), System.Drawing.Image)
+        Me.submit.Location = New System.Drawing.Point(576, 512)
+        Me.submit.Name = "submit"
+        Me.submit.Size = New System.Drawing.Size(100, 27)
+        Me.submit.TabIndex = 152
+        Me.submit.Text = "Submit"
+        '
+        'dataprinciple
+        '
+        Me.dataprinciple.Location = New System.Drawing.Point(8, 24)
+        Me.dataprinciple.MainView = Me.allprinciple
+        Me.dataprinciple.Name = "dataprinciple"
+        Me.dataprinciple.Size = New System.Drawing.Size(760, 384)
+        Me.dataprinciple.TabIndex = 1
+        Me.dataprinciple.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.allprinciple})
+        '
+        'allprinciple
+        '
+        Me.allprinciple.GridControl = Me.dataprinciple
+        Me.allprinciple.Name = "allprinciple"
+        Me.allprinciple.OptionsBehavior.Editable = False
         '
         'daftar_principle_pelunasan
         '
@@ -126,28 +127,28 @@ Partial Class daftar_principle_pelunasan
         Me.ClientSize = New System.Drawing.Size(792, 547)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.Submit)
+        Me.Controls.Add(Me.cancel)
+        Me.Controls.Add(Me.submit)
         Me.Name = "daftar_principle_pelunasan"
         Me.Text = "Daftar Principle"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.listprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents dataprinciple As DevExpress.XtraGrid.GridControl
-    Friend WithEvents listprinciple As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents dataprinciple As DevExpress.XtraGrid.GridControl
+    Friend WithEvents allprinciple As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
