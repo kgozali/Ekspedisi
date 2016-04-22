@@ -32,13 +32,22 @@ Public Class principle_booking
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle")
         Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Nama Principle")
-        booking_truk.ButtonEdit2.Text = nama
         booking_truk.principlebook = kode
+        booking_truk.ButtonEdit2.Text = nama
         principle_booking_Load(sender, e)
         Me.Close()
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub GridControl1_DoubleClick(sender As Object, e As EventArgs) Handles GridControl1.DoubleClick
+        Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle")
+        Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Nama Principle")
+        booking_truk.principlebook = kode
+        booking_truk.ButtonEdit2.Text = nama
+        principle_booking_Load(sender, e)
         Me.Close()
     End Sub
 End Class

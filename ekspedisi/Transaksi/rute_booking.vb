@@ -51,4 +51,13 @@ Public Class rute_booking
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
+
+    Private Sub GridControl1_DoubleClick(sender As Object, e As EventArgs) Handles GridControl1.DoubleClick
+        Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute")
+        Dim rute As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Rute")
+        booking_truk.ButtonEdit4.Text = rute
+        booking_truk.rutebook = kode
+        rute_booking_Load(sender, e)
+        Me.Close()
+    End Sub
 End Class

@@ -228,7 +228,7 @@ Partial Class booking_truk
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(92, 361)
+        Me.RichTextBox2.Location = New System.Drawing.Point(91, 357)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
         Me.RichTextBox2.TabIndex = 56
@@ -237,11 +237,11 @@ Partial Class booking_truk
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(15, 361)
+        Me.LabelControl10.Location = New System.Drawing.Point(19, 356)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(61, 18)
+        Me.LabelControl10.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl10.TabIndex = 55
-        Me.LabelControl10.Text = "Catatan :"
+        Me.LabelControl10.Text = "Catatan"
         '
         'booking_truk
         '

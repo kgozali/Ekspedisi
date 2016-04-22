@@ -55,28 +55,15 @@ Public Class supir_booking
             If query.Rows.Count > 0 Then
                 Dim msg As Integer = MessageBox.Show("Supir yang dipilih telah terdaftar dalam salah satu booking pada tanggal yang telah dipilih, apakah anda ingin melanjutkan booking?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                 If msg = DialogResult.OK Then
-                    'task
+                    pilih(sender, e)
                 Else
-                    'task kalo enggak
+
                 End If
             Else
                 'task
             End If
 
-            Dim kode As String = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Kode Supir")
-            Dim nama As String = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Nama Supir")
-            Dim tarif As Integer = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Tariff Maksimum")
-            If tampung.Columns.Count < 1 Then
-                tampung.Columns.Add("Kode Supir")
-                tampung.Columns.Add("Nama Supir")
-                tampung.Columns.Add("Jumlah DP (Rp)")
-                tampung.Columns.Add("Total Bayar (Rp)")
-            End If
-            tampung.Clear()
-            tampung.Rows.Add(kode, nama, "0", tarif)
-            booking_truk.GridControl2.DataSource = tampung
-            supir_booking_Load(sender, e)
-            Me.Close()
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -84,6 +71,28 @@ Public Class supir_booking
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub controlbooking_DoubleClick(sender As Object, e As EventArgs) Handles controlbooking.DoubleClick
+        pilih(sender, e)
+    End Sub
+
+    Sub pilih(sender As Object, e As EventArgs)
+        Dim kode As String = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Kode Supir")
+        Dim nama As String = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Nama Supir")
+        Dim tarif As Integer = gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Tariff Maksimum")
+        If tampung.Columns.Count < 1 Then
+            tampung.Columns.Add("Kode Supir")
+            tampung.Columns.Add("Nama Supir")
+            tampung.Columns.Add("Jumlah DP (Rp)")
+            tampung.Columns.Add("Total Bayar (Rp)")
+        End If
+        tampung.Clear()
+        tampung.Rows.Add(kode, nama, "0", tarif)
+        booking_truk.GridControl2.DataSource = tampung
+        booking_truk.max = tarif
+        supir_booking_Load(sender, e)
         Me.Close()
     End Sub
 End Class
