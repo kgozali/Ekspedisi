@@ -167,4 +167,8 @@ Public Class main_menu
     Private Sub bukapiutangkaryawan_Click(sender As Object, e As EventArgs) Handles bukapiutangkaryawan.Click
         buka_piutang_karyawan.ShowDialog()
     End Sub
+
+    Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
+        pelunasan_piutang.ShowDialog()
+    End Sub
 End Class

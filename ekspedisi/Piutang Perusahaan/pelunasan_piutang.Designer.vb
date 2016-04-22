@@ -21,7 +21,7 @@ Partial Class pelunasan_piutang
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pelunasan_piutang))
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
+        Me.principle = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -35,9 +35,9 @@ Partial Class pelunasan_piutang
         Me.RepositoryItemDateEdit = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.nominal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.terbayar = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sisa = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -73,7 +73,7 @@ Partial Class pelunasan_piutang
         Me.DataColumn5 = New System.Data.DataColumn()
         Me.DataColumn6 = New System.Data.DataColumn()
         Me.DataColumn7 = New System.Data.DataColumn()
-        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.principle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,26 +97,26 @@ Partial Class pelunasan_piutang
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(120, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl1.TabIndex = 35
-        Me.LabelControl1.Text = "Nama Pelanggan :"
+        Me.LabelControl1.Text = "Nama Principle"
         '
-        'ButtonEdit1
+        'principle
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(138, 10)
-        Me.ButtonEdit1.Name = "ButtonEdit1"
-        Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.ButtonEdit1.Size = New System.Drawing.Size(212, 20)
-        Me.ButtonEdit1.TabIndex = 36
+        Me.principle.Location = New System.Drawing.Point(112, 10)
+        Me.principle.Name = "principle"
+        Me.principle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.principle.Size = New System.Drawing.Size(212, 20)
+        Me.principle.TabIndex = 36
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(514, 36)
+        Me.LabelControl2.Location = New System.Drawing.Point(520, 36)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(62, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(52, 18)
         Me.LabelControl2.TabIndex = 37
-        Me.LabelControl2.Text = "Tanggal :"
+        Me.LabelControl2.Text = "Tanggal"
         '
         'DateTimePicker1
         '
@@ -128,15 +128,15 @@ Partial Class pelunasan_piutang
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(77, 36)
+        Me.LabelControl3.Location = New System.Drawing.Point(61, 37)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(55, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(45, 18)
         Me.LabelControl3.TabIndex = 39
-        Me.LabelControl3.Text = "Alamat :"
+        Me.LabelControl3.Text = "Alamat"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(138, 37)
+        Me.RichTextBox1.Location = New System.Drawing.Point(112, 37)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(270, 60)
         Me.RichTextBox1.TabIndex = 40
@@ -211,10 +211,12 @@ Partial Class pelunasan_piutang
         Me.terbayar.Visible = True
         Me.terbayar.VisibleIndex = 6
         '
-        'RepositoryItemCheckEdit1
+        'sisa
         '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        Me.sisa.Caption = "Sisa"
+        Me.sisa.Name = "sisa"
+        Me.sisa.Visible = True
+        Me.sisa.VisibleIndex = 4
         '
         'nominalbayar
         '
@@ -223,12 +225,10 @@ Partial Class pelunasan_piutang
         Me.nominalbayar.Visible = True
         Me.nominalbayar.VisibleIndex = 5
         '
-        'sisa
+        'RepositoryItemCheckEdit1
         '
-        Me.sisa.Caption = "Sisa"
-        Me.sisa.Name = "sisa"
-        Me.sisa.Visible = True
-        Me.sisa.VisibleIndex = 4
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
         'GroupControl2
         '
@@ -431,11 +431,11 @@ Partial Class pelunasan_piutang
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(452, 12)
+        Me.LabelControl13.Location = New System.Drawing.Point(456, 12)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(124, 18)
+        Me.LabelControl13.Size = New System.Drawing.Size(114, 18)
         Me.LabelControl13.TabIndex = 150
-        Me.LabelControl13.Text = "Nomer Pelunasan :"
+        Me.LabelControl13.Text = "Nomer Pelunasan"
         '
         'TextBox5
         '
@@ -514,11 +514,12 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.LabelControl2)
-        Me.Controls.Add(Me.ButtonEdit1)
+        Me.Controls.Add(Me.principle)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "pelunasan_piutang"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Piutang"
-        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.principle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -541,7 +542,7 @@ Partial Class pelunasan_piutang
 
     End Sub
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents principle As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl

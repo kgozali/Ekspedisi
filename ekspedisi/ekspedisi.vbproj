@@ -261,6 +261,12 @@
     <Compile Include="Piutang Perusahaan\daftar_karyawan_pelunasan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_principle_pelunasan.Designer.vb">
+      <DependentUpon>daftar_principle_pelunasan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_principle_pelunasan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\pelunansan_piutang_karyawan.Designer.vb">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
     </Compile>
@@ -772,6 +778,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\daftar_principle_pelunasan.resx">
+      <DependentUpon>daftar_principle_pelunasan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>

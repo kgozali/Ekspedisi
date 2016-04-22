@@ -59,7 +59,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.bukapiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
+        Me.peluanasapiutangprinciple = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.SimpleButton24 = New DevExpress.XtraEditors.SimpleButton()
@@ -508,7 +508,7 @@ Partial Class main_menu
         '
         Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.bukapiutangkaryawan)
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton13)
+        Me.BackstageViewClientControl7.Controls.Add(Me.peluanasapiutangprinciple)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
         Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
@@ -533,14 +533,14 @@ Partial Class main_menu
         Me.bukapiutangkaryawan.TabIndex = 24
         Me.bukapiutangkaryawan.Text = "Buka Piutang Karyawan"
         '
-        'SimpleButton13
+        'peluanasapiutangprinciple
         '
-        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
-        Me.SimpleButton13.Location = New System.Drawing.Point(49, 79)
-        Me.SimpleButton13.Name = "SimpleButton13"
-        Me.SimpleButton13.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton13.TabIndex = 23
-        Me.SimpleButton13.Text = "Pelunasan Piutang Principle"
+        Me.peluanasapiutangprinciple.Image = CType(resources.GetObject("peluanasapiutangprinciple.Image"), System.Drawing.Image)
+        Me.peluanasapiutangprinciple.Location = New System.Drawing.Point(49, 79)
+        Me.peluanasapiutangprinciple.Name = "peluanasapiutangprinciple"
+        Me.peluanasapiutangprinciple.Size = New System.Drawing.Size(196, 54)
+        Me.peluanasapiutangprinciple.TabIndex = 23
+        Me.peluanasapiutangprinciple.Text = "Pelunasan Piutang Principle"
         '
         'Label4
         '
@@ -1114,7 +1114,7 @@ Partial Class main_menu
     Friend WithEvents SimpleButton21 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton22 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
-    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents peluanasapiutangprinciple As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents pelunasanpiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents bukapiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
