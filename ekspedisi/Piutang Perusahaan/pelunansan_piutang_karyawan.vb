@@ -2,23 +2,24 @@
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
-
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
+            Dim syaratnol As Boolean = False
+            Dim syaratlunas As Boolean = False
             If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
                 MessageBox.Show("Karyawan belum dipilih")
 
-            ElseIf True Then
-
             Else
                 For i = 0 To datapiutang.RowCount - 1
-                    If datapiutang.GetRowCellValue(i, "sisa") = 0 Then
-
+                    If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
+                        syaratlunas = True
+                    ElseIf datapiutang.GetRowCellValue(i, "Bayar") = "" Or datapiutang.GetRowCellValue(i, "Bayar") = 0 Then
+                        syaratnol = True
                     End If
 
-                    InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                    'InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                 Next i
                 MessageBox.Show("Piutang berhasil di update")
                 Dim tabel As New DataTable
@@ -26,7 +27,7 @@
                 daftarutang.DataSource = tabel
             End If
 
-           
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
