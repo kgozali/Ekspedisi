@@ -69,7 +69,7 @@ Public Class booking_truk
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -122,7 +122,7 @@ Public Class booking_truk
             GridControl2.DataSource = tabelsupir
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -144,15 +144,18 @@ Public Class booking_truk
                             If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
                                 MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             Else
-                                autogen()
-                                Dim jam As New DateTime
-                                jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
-                                Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "',now(),'" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',1,1)")
-                                If insert = True Then
-                                    MessageBox.Show("Sukses")
-                                    ceking = True
-                                    Me.Close()
+                                If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                    Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                    If msg = DialogResult.OK Then
+                                        insert()
+                                    Else
+
+                                    End If
+                                   
+                                Else
+                                    insert()
                                 End If
+
                             End If
 
                         End If
@@ -162,10 +165,26 @@ Public Class booking_truk
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Sub insert()
+        'insert ke database
+        Try
+            autogen()
+            Dim jam As New DateTime
+            jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
+            Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "',now(),'" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',1,1)")
+            If insert = True Then
+                MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ceking = True
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
+    End Sub
     Private Sub ButtonEdit2_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit2.EditValueChanged
         Try
             If ButtonEdit2.Text = "" Then

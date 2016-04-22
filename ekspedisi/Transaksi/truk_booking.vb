@@ -77,4 +77,8 @@ Public Class truk_booking
         End Try
 
     End Sub
+
+    Private Sub GridControl1_DoubleClick(sender As Object, e As EventArgs) Handles GridControl1.DoubleClick
+        check(sender, e)
+    End Sub
 End Class
