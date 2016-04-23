@@ -56,7 +56,7 @@ Public Class add_supplier
 
         Dim tanggal As New DataTable
         Dim tgl As String = "MS"
-        tanggal = DtTable("select * from msupplier where substring(ID_supplier,1,10) = '" & tgl & "'")
+        tanggal = DtTable("select * from msupplier where substring(ID_supplier,1,2) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
             hitung = "0" + hitung
@@ -129,14 +129,8 @@ Public Class add_supplier
         End If
     End Sub
 
-    Private Sub kota_TextChanged(sender As Object, e As EventArgs) Handles kota.TextChanged
-        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If kota.Text = "" Then
-            cek = False
-        Else
-            cek = True
-        End If
-    End Sub
+    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
+
 
     Private Sub alamat_TextChanged(sender As Object, e As EventArgs) Handles alamat.TextChanged
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
