@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class kas_masuk
+Public Class Bank_Masuk
+
     Dim _modelayar As Integer
     Dim _mkeyid As String
     Private savestatus As Boolean = False
@@ -16,9 +17,9 @@ Public Class kas_masuk
             Dim command As New MySqlCommand()
             command.Connection = connect
             command.Transaction = vartr
-            command.CommandText = "delete from trans_kas where id_transaksi_kas='" & mkeyid & "'"
+            command.CommandText = "delete from trans_bank where id_tbank='" & mkeyid & "'"
             command.ExecuteNonQuery()
-            command.CommandText = "delete from dtrans_kas where id_transaksi_kas='" & mkeyid & "'"
+            command.CommandText = "delete from dtrans_bank where id_tbank='" & mkeyid & "'"
             command.ExecuteNonQuery()
             vartr.Commit()
             connect.Close()
@@ -37,7 +38,7 @@ Public Class kas_masuk
             End If
             If savestatus Then
                 'connect.Close()
-                MessageBox.Show("Hapus transaksi kas  " + mkeyid + " berhasil")
+                MessageBox.Show("Hapus transaksi bank  " + mkeyid + " berhasil")
                 Me.Close()
             End If
         End Try
@@ -55,13 +56,13 @@ Public Class kas_masuk
         ResetValues()
         Select Case modelayar
             Case 1
-                Me.Text = "Input Kas Masuk"
+                Me.Text = "Input Bank Masuk"
             Case 2
                 loaddata(_mkeyid)
-                Me.Text = "Edit Kas Masuk"
+                Me.Text = "Edit Bank Masuk"
             Case 3
                 loaddata(_mkeyid)
-                Me.Text = "Hapus Kas Masuk"
+                Me.Text = "Hapus Bank Masuk"
         End Select
 
         Me.ShowDialog()
@@ -71,20 +72,20 @@ Public Class kas_masuk
     Private Sub loaddata(ByVal mkeyid As String)
         Dim lcdata As New DataTable
         Dim lcdtrow As DataRow
-        lcdata = DtTable("select * from trans_kas where id_transaksi_kas='" & mkeyid & "'")
+        lcdata = DtTable("select * from trans_bank where id_tbank='" & mkeyid & "'")
 
         If lcdata.Rows.Count > 0 Then
             lcdtrow = lcdata.Rows(0)
             isloaddata = True
-            TextBox1.Text = lcdtrow("id_transaksi_kas")
+            TextBox1.Text = lcdtrow("id_tbank")
             RichTextBox1.Text = lcdtrow("keterangan")
             DateTimePicker1.Value = lcdtrow("tgl")
-            GridLookUpEdit1.EditValue = lcdtrow("id_akun_kas")
+            GridLookUpEdit1.EditValue = lcdtrow("id_akun_bank")
             isloaddata = False
         End If
         lcdata.Clear()
         DataSet1.Clear()
-        DataSet1 = DtSetReturn("select * from dtrans_kas where id_transaksi_kas='" & mkeyid & "'", "datadetil")
+        DataSet1 = DtSetReturn("select * from dtrans_bank where id_tbank='" & mkeyid & "'", "datadetil")
         GridControl1.DataSource = DataSet1
         GridControl1.DataMember = "datadetil"
 
@@ -109,16 +110,16 @@ Public Class kas_masuk
         End If
 
         If Trim(GridLookUpEdit1.EditValue) = "" Then
-            MessageBox.Show("Akun Kas belum di input")
+            MessageBox.Show("Akun Bank belum di input")
             Return False
         End If
         'cek tgl dengan periode aktif belum ada
         Return True
     End Function
 
-    Private Sub kas_masuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Bank_Masuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        tbakunkas = DtTable("select kode_akun,concat(nama_akun,' - ',kode_akun) descr from makun where detil=1 and tipe_akun='Kas&Bank' order by kode_akun")
+        tbakunkas = DtTable("select kode_akun,concat(nama_akun,' - ',kode_akun) descr from makun where detil=1 and tipe_akun='Kas&Bank' and upper(mid(nama_akun,1,5))='BANK' order by kode_akun")
         GridLookUpEdit1.Properties.DataSource = tbakunkas
         GridLookUpEdit1.Properties.DisplayMember = "descr"
         GridLookUpEdit1.Properties.ValueMember = "kode_akun"
@@ -151,11 +152,11 @@ Public Class kas_masuk
                 vartr = connect.BeginTransaction()
                 command.Transaction = vartr
                 If _modelayar = 2 Then
-                    command.CommandText = "delete from trans_kas where id_transaksi_kas='" & _mkeyid & "'"
+                    command.CommandText = "delete from trans_bank where id_tbank='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
                     command.CommandText = "delete from jurnal where no_jurnal='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
-                    command.CommandText = "delete from dtrans_kas where id_transaksi_kas='" & _mkeyid & "'"
+                    command.CommandText = "delete from dtrans_bank where id_tbank='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
                     command.CommandText = "delete from djurnal where id_parent='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
@@ -163,12 +164,12 @@ Public Class kas_masuk
                 'insert jurnal
                 command.CommandText = "insert into jurnal (no_jurnal,tgl) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
                 command.ExecuteNonQuery()
-                command.CommandText = "insert into trans_kas (id_transaksi_kas,tgl,id_akun_kas,keterangan,cetakan_ke,tipe_dokumen) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & GridLookUpEdit1.EditValue & "','" & CekTandaPetik(RichTextBox1.Text) & "',0,'M')"
+                command.CommandText = "insert into trans_bank (id_tbank,tgl,id_akun_bank,keterangan,cetakan_ke,tipe_dokumen) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & GridLookUpEdit1.EditValue & "','" & CekTandaPetik(RichTextBox1.Text) & "',0,'M')"
                 command.ExecuteNonQuery()
                 'insert detil
                 For i = 0 To DataSet1.Tables.Item("datadetil").Rows.Count - 1
                     dtrow = DataSet1.Tables.Item("datadetil").Rows(i)
-                    command.CommandText = "insert into dtrans_kas (id_transaksi_kas,tgl,nominal,id_akun_detil,id_truk,keterangan,urutan) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'," & dtrow("nominal") & ",'" & dtrow("id_akun_detil") & "','" & dtrow("id_truk") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & i + 1 & ")"
+                    command.CommandText = "insert into dtrans_bank (id_tbank,tgl,nominal,id_akun_detil,id_truk,keterangan,urutan) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'," & dtrow("nominal") & ",'" & dtrow("id_akun_detil") & "','" & dtrow("id_truk") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & i + 1 & ")"
                     command.ExecuteNonQuery()
                     command.CommandText = "insert into djurnal (id_parent,id_akun,keterangan,nominal) VALUES ('" & TextBox1.Text & "','" & dtrow("id_akun_detil") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & -1 * dtrow("nominal") & ")"
                     command.ExecuteNonQuery()
@@ -191,16 +192,16 @@ Public Class kas_masuk
                 MessageBox.Show(ex2.Message)
             End Try
         Finally
-            If IsNothing(connect)=False Then
+            If IsNothing(connect) = False Then
                 connect.Close()
             End If
             If flagval And savestatus = True Then
 
-                MessageBox.Show("Simpan Data Kas Masuk " + TextBox1.Text + " Sukses")
+                MessageBox.Show("Simpan Data Bank Masuk " + TextBox1.Text + " Sukses")
                 If _modelayar = 1 Then
                     ResetValues()
-                    If IsNothing(daftar_kas_masuk) = False Then
-                        daftar_kas_masuk.refreshgrid("")
+                    If IsNothing(daftar_bank_masuk) = False Then
+                        daftar_bank_masuk.refreshgrid("")
                     End If
                 Else
                     Me.Close()
@@ -219,7 +220,7 @@ Public Class kas_masuk
 
     Private Function gennobuktina(ByVal tgl As Date) As String
         Dim retval As String = ""
-        retval = autogenerate2("KM", "select max(id_transaksi_kas) from trans_kas where tipe_dokumen='M' and month(tgl)=" & Format(tgl, "MM") & " and year(tgl)=" & Format(tgl, "yyyy"), tgl)
+        retval = autogenerate2("BM", "select max(id_tbank) from trans_bank where tipe_dokumen='M' and month(tgl)=" & Format(tgl, "MM") & " and year(tgl)=" & Format(tgl, "yyyy"), tgl)
         Return retval
     End Function
 
@@ -231,10 +232,10 @@ Public Class kas_masuk
         If isloaddata = False Then TextBox1.Text = gennobuktina(DateTimePicker1.Value)
     End Sub
 
-    Private Sub kas_masuk_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    Private Sub Bank_Masuk_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         If _modelayar = 3 Then
             Dim result As DialogResult = MessageBox.Show("Hapus Data ini ?", _
-                              "Transaksi Kas Masuk", _
+                              "Transaksi Bank Masuk", _
                               MessageBoxButtons.YesNo, _
                               MessageBoxIcon.Question)
             If result = Windows.Forms.DialogResult.Yes Then

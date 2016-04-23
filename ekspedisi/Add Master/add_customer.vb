@@ -2,6 +2,8 @@
 Public Class add_customer
     Dim cek As Boolean
     Dim data As New DataTable
+    Dim cbkota As New DataTable
+
     Private Sub add_customer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
@@ -14,6 +16,7 @@ Public Class add_customer
                     master_customer.GridControl1.DataSource = data
                     master_customer.edit.Down = False
                     master_customer.deldata.Down = False
+                    master_customer.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
@@ -44,7 +47,7 @@ Public Class add_customer
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','1') ")
+                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.SelectedText.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -71,6 +74,11 @@ Public Class add_customer
     End Sub
 
     Private Sub add_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+        kota.DataSource = cbkota
+        kota.ValueMember = "kota"
+        kota.DisplayMember = "kota"
+
 
         Dim tanggal As New DataTable
         Dim tgl As String = "MC"
@@ -134,7 +142,7 @@ Public Class add_customer
         End If
     End Sub
 
-    Private Sub kota_TextChanged(sender As Object, e As EventArgs) Handles kota.TextChanged
+    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If kota.Text = "" Then
             cek = False
@@ -151,4 +159,12 @@ Public Class add_customer
             cek = True
         End If
     End Sub
+
+
+    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
+        Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
+        Dim prov As String = Scalar(carip)
+        provinsi.Text = prov
+    End Sub
+
 End Class

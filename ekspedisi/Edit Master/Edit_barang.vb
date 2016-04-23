@@ -19,7 +19,7 @@ Public Class edit_barang
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        Select Case MsgBox("Apakah anda yakin menghapus data ini?", MsgBoxStyle.YesNo, "System Error")
+        Select Case MsgBox("Apakah anda yakin mengedit data ini?", MsgBoxStyle.YesNo, "System Error")
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mbarang set nama_barang='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',keterangan='" & RichTextBox1.Text & "' where id_barang='" & id.Text.ToString & "'"
                 InsertInto(ccccc)

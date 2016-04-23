@@ -1,7 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_kota
     Dim cek As Boolean
+    Dim data As New DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_kota.GridControl1.Visible = True
+        master_kota.GridControl2.Visible = False
+        data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
+        master_kota.GridControl1.DataSource = data
+        master_kota.edit.Down = False
+        master_kota.deldata.Down = False
         Me.Close()
     End Sub
 
@@ -12,6 +19,12 @@ Public Class add_kota
                 If msg = DialogResult.OK Then
                     add_kota_Load(sender, e)
                     Reset()
+                    master_kota.GridControl1.Visible = True
+                    master_kota.GridControl2.Visible = False
+                    data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
+                    master_kota.GridControl1.DataSource = data
+                    master_kota.edit.Down = False
+                    master_kota.deldata.Down = False
                 Else
                     e.Cancel = True
                 End If
@@ -27,7 +40,7 @@ Public Class add_kota
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             'insert ke dalam database
-            InsertInto("insert into mkota values ('" & idkota.Text & "') ")
+            InsertInto("insert into mkota values ('','" & kota.Text & "','" & provinsi.Text & "','1') ")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
@@ -35,21 +48,27 @@ Public Class add_kota
                 Reset()
             Else
                 cek = False
+                master_kota.GridControl1.Visible = True
+                master_kota.GridControl2.Visible = False
+                data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
+                master_kota.GridControl1.DataSource = data
+                master_kota.edit.Down = False
+                master_kota.deldata.Down = False
                 Me.Close()
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
     Private Sub add_kota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        idkota.Text = ""
+        kota.Text = ""
+        provinsi.Text = ""
     End Sub
 
     Private Sub nama_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If idkota.Text = "" Then
+        If kota.Text = "" Then
             cek = False
         Else
             cek = True

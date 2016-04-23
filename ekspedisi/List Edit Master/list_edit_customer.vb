@@ -1,10 +1,20 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class list_edit_customer
     Dim data As New DataTable
+    Private Sub list_edit_customer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        master_customer.GridControl1.Visible = True
+        master_customer.GridControl2.Visible = False
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        master_customer.GridControl1.DataSource = data
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        master_customer.GridControl2.DataSource = data
+        master_customer.edit.Down = False
+        master_customer.GroupControl2.Enabled = True
+    End Sub
     Private Sub list_edit_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Columns.Add("Kode customer")
-            data.Columns.Add("Nama customer")
+            data.Columns.Add("Kode Customer")
+            data.Columns.Add("Nama Customer")
             data.Columns.Add("Alamat")
             data.Columns.Add("Email")
             data.Columns.Add("Telepon 1")
@@ -15,8 +25,8 @@ Public Class list_edit_customer
 
             For i = 0 To master_customer.GridView1.RowCount - 1
                 If master_customer.GridView1.IsRowSelected(i) Then
-                    Dim a As String = master_customer.GridView1.GetRowCellValue(i, "ID customer").ToString()
-                    Dim b As String = master_customer.GridView1.GetRowCellValue(i, "Nama customer").ToString()
+                    Dim a As String = master_customer.GridView1.GetRowCellValue(i, "Kode Customer").ToString()
+                    Dim b As String = master_customer.GridView1.GetRowCellValue(i, "Nama Customer").ToString()
                     Dim c As String = master_customer.GridView1.GetRowCellValue(i, "Alamat").ToString()
                     Dim d As String = master_customer.GridView1.GetRowCellValue(i, "Email").ToString()
                     Dim e1 As String = master_customer.GridView1.GetRowCellValue(i, "Telepon 1").ToString()
@@ -32,12 +42,20 @@ Public Class list_edit_customer
             Next
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_customer.GridControl1.Visible = True
+        master_customer.GridControl2.Visible = False
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        master_customer.GridControl1.DataSource = data
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        master_customer.GridControl2.DataSource = data
+        master_customer.edit.Down = False
+        master_customer.GroupControl2.Enabled = True
         Me.Close()
     End Sub
 
