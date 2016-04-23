@@ -69,7 +69,8 @@ Public Class truk_booking
             Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk")
             Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "No.Polisi")
             booking_truk.ButtonEdit1.Text = nama
-            booking_truk.trukbook = kode
+            edit_booking.trukbook = kode
+            MsgBox(edit_booking.trukbook)
             truk_booking_Load(sender, e)
             Me.Close()
         Catch ex As Exception
@@ -95,5 +96,13 @@ Public Class truk_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub id_CheckedChanged(sender As Object, e As EventArgs) Handles id.CheckedChanged
+        proc()
+    End Sub
+
+    Private Sub nama_CheckedChanged(sender As Object, e As EventArgs) Handles nama.CheckedChanged
+        proc()
     End Sub
 End Class
