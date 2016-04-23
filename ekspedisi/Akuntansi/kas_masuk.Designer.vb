@@ -125,7 +125,7 @@ Partial Class kas_masuk
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(694, 245)
         Me.GroupControl1.TabIndex = 44
-        Me.GroupControl1.Text = "Daftar Akun Masuk"
+        Me.GroupControl1.Text = "Daftar Akun"
         '
         'GridControl1
         '
@@ -241,8 +241,6 @@ Partial Class kas_masuk
         Me.coltruk.ColumnEdit = Me.RepositoryItemLookUpEdit2
         Me.coltruk.FieldName = "id_truk"
         Me.coltruk.Name = "coltruk"
-        Me.coltruk.Visible = True
-        Me.coltruk.VisibleIndex = 3
         Me.coltruk.Width = 79
         '
         'RepositoryItemLookUpEdit2

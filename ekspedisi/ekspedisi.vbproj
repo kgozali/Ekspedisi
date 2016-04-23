@@ -66,9 +66,9 @@
     <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MySql.Data, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.8.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup, Version=2.0.9.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlBackup.NET.2.0.9.4\lib\net45\MySqlBackup.dll</HintPath>
@@ -191,10 +191,46 @@
     <Compile Include="Add Master\add_user.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\Bank_Keluar.Designer.vb">
+      <DependentUpon>Bank_Keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Bank_Keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Bank_Masuk.Designer.vb">
+      <DependentUpon>Bank_Masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Bank_Masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\COA.Designer.vb">
       <DependentUpon>COA.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\COA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_bank_keluar.Designer.vb">
+      <DependentUpon>daftar_bank_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_bank_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_bank_masuk.Designer.vb">
+      <DependentUpon>daftar_bank_masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_bank_masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_keluar.Designer.vb">
+      <DependentUpon>daftar_kas_keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_masuk.Designer.vb">
+      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\daftar_kas_masuk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\daftar_tutup_karyawan.Designer.vb">
@@ -207,6 +243,12 @@
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\daftar_tutup_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\frmcetaknota.Designer.vb">
+      <DependentUpon>frmcetaknota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\frmcetaknota.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\kas_keluar.Designer.vb">
@@ -695,14 +737,35 @@
     <EmbeddedResource Include="Add Master\add_user.resx">
       <DependentUpon>add_user.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Bank_Keluar.resx">
+      <DependentUpon>Bank_Keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Bank_Masuk.resx">
+      <DependentUpon>Bank_Masuk.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\COA.resx">
       <DependentUpon>COA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_bank_keluar.resx">
+      <DependentUpon>daftar_bank_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_bank_masuk.resx">
+      <DependentUpon>daftar_bank_masuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_kas_keluar.resx">
+      <DependentUpon>daftar_kas_keluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\daftar_kas_masuk.resx">
+      <DependentUpon>daftar_kas_masuk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_karyawan.resx">
       <DependentUpon>daftar_tutup_karyawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\daftar_tutup_principle.resx">
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\frmcetaknota.resx">
+      <DependentUpon>frmcetaknota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
       <DependentUpon>kas_keluar.vb</DependentUpon>
