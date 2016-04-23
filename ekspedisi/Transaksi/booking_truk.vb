@@ -47,6 +47,7 @@ Public Class booking_truk
 
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
+            master_booking.master_booking_Load(sender, e)
             If ceking = True Then
 
             Else
@@ -60,12 +61,13 @@ Public Class booking_truk
                     Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                     If msg = DialogResult.OK Then
                         reset()
-
+                        master_booking.master_booking_Load(sender, e)
                     Else
                         e.Cancel = True
                     End If
                 Else
                     reset()
+                    master_booking.master_booking_Load(sender, e)
                 End If
             End If
         Catch ex As Exception
@@ -83,6 +85,7 @@ Public Class booking_truk
         rutebook = ""
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
+        grid()
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -146,11 +149,8 @@ Public Class booking_truk
                             Else
                                 If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
                                     Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                    If msg = DialogResult.OK Then
-                                        insert()
-                                    Else
-
-                                    End If
+                                    autogen()
+                                    insert()
 
                                 Else
                                     insert()

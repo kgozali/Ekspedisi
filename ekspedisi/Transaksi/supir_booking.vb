@@ -60,7 +60,7 @@ Public Class supir_booking
 
                 End If
             Else
-                'task
+                pilih(sender, e)
             End If
 
 
@@ -75,7 +75,25 @@ Public Class supir_booking
     End Sub
 
     Private Sub controlbooking_DoubleClick(sender As Object, e As EventArgs) Handles controlbooking.DoubleClick
-        pilih(sender, e)
+        Try
+            Dim query As New DataTable
+            'cek supir apa ada bookingan pada hari itu
+            query = DtTable("select id_supir from booking_truk where id_supir='" + gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Kode Supir") + "' and tgl='" + booking_truk.DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "'")
+            If query.Rows.Count > 0 Then
+                Dim msg As Integer = MessageBox.Show("Supir yang dipilih telah terdaftar dalam salah satu booking pada tanggal yang telah dipilih, apakah anda ingin melanjutkan booking?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                If msg = DialogResult.OK Then
+                    pilih(sender, e)
+                Else
+
+                End If
+            Else
+                pilih(sender, e)
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Sub pilih(sender As Object, e As EventArgs)

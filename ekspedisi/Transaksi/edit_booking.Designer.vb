@@ -138,6 +138,7 @@ Partial Class edit_booking
         '
         'ButtonEdit2
         '
+        Me.ButtonEdit2.Enabled = False
         Me.ButtonEdit2.Location = New System.Drawing.Point(632, 9)
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -268,6 +269,7 @@ Partial Class edit_booking
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "edit_booking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Edit Booking"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).EndInit()
