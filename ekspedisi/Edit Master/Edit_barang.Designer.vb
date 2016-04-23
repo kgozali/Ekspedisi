@@ -27,10 +27,10 @@ Partial Class edit_barang
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.principle = New System.Windows.Forms.ComboBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.principle = New System.Windows.Forms.ComboBox()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,9 +42,9 @@ Partial Class edit_barang
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(77, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Barang :"
+        Me.LabelControl1.Text = "Kode Barang :"
         '
         'LabelControl2
         '
@@ -57,7 +57,7 @@ Partial Class edit_barang
         '
         'nama
         '
-        Me.nama.Location = New System.Drawing.Point(111, 47)
+        Me.nama.Location = New System.Drawing.Point(111, 50)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(143, 20)
         Me.nama.TabIndex = 46
@@ -65,15 +65,15 @@ Partial Class edit_barang
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(88, 23)
+        Me.id.Location = New System.Drawing.Point(111, 26)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.Size = New System.Drawing.Size(143, 20)
         Me.id.TabIndex = 45
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(302, 223)
+        Me.SimpleButton1.Location = New System.Drawing.Point(310, 251)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 143
@@ -82,7 +82,7 @@ Partial Class edit_barang
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(196, 223)
+        Me.Submit.Location = New System.Drawing.Point(204, 251)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 142
@@ -100,18 +100,25 @@ Partial Class edit_barang
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(387, 205)
+        Me.GroupControl1.Size = New System.Drawing.Size(398, 224)
         Me.GroupControl1.TabIndex = 141
         Me.GroupControl1.Text = "Data"
         '
-        'LabelControl3
+        'RichTextBox1
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 73)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
-        Me.LabelControl3.TabIndex = 47
-        Me.LabelControl3.Text = "Principle :"
+        Me.RichTextBox1.Location = New System.Drawing.Point(111, 101)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(276, 96)
+        Me.RichTextBox1.TabIndex = 50
+        Me.RichTextBox1.Text = ""
+        '
+        'principle
+        '
+        Me.principle.FormattingEnabled = True
+        Me.principle.Location = New System.Drawing.Point(111, 74)
+        Me.principle.Name = "principle"
+        Me.principle.Size = New System.Drawing.Size(143, 21)
+        Me.principle.TabIndex = 49
         '
         'LabelControl4
         '
@@ -122,27 +129,20 @@ Partial Class edit_barang
         Me.LabelControl4.TabIndex = 48
         Me.LabelControl4.Text = "Keterangan :"
         '
-        'principle
+        'LabelControl3
         '
-        Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(71, 70)
-        Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(121, 21)
-        Me.principle.TabIndex = 49
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(96, 98)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(276, 96)
-        Me.RichTextBox1.TabIndex = 50
-        Me.RichTextBox1.Text = ""
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
+        Me.LabelControl3.TabIndex = 47
+        Me.LabelControl3.Text = "Principle :"
         '
         'edit_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(409, 261)
+        Me.ClientSize = New System.Drawing.Size(424, 288)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
