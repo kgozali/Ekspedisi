@@ -2,15 +2,40 @@
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
-
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            For i = 0 To datapiutang.RowCount - 1
-                InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(0, "Kode Karyawan") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
-            Next i
-            MessageBox.Show("Piutang berhasil di update")
+            Dim syaratnol As Boolean = False
+            Dim syaratlunas As Boolean = False
+            If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
+                MessageBox.Show("Karyawan belum dipilih")
+
+            ElseIf datapiutang.RowCount > 0 Then
+                For i = 0 To datapiutang.RowCount - 1
+                    If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
+                        syaratlunas = True
+                    ElseIf IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = True Then
+                        syaratnol = True
+                    End If
+                    If syaratlunas = True And syaratnol = False Then
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
+                        MessageBox.Show("Piutang berhasil di update")
+                    ElseIf syaratlunas = False And syaratnol = False Then
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        MessageBox.Show("Piutang berhasil di update")
+                    End If
+                Next i
+
+                Dim tabel As New DataTable
+                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d, piutang_karyawan p where d.id_piutangkaryawan=p.id_piutangkaryawan and status='1' and p.id_karyawan='" & namakaryawan.Text & "' group by p.id_piutangkaryawan;")
+                daftarutang.DataSource = tabel
+            Else
+                MessageBox.Show("Karyawan tidak memiliki piutang")
+            End If
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -29,9 +54,19 @@
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
                 angka = angka - angka2 - e.Value
-                With datapiutang
-                    .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
-                End With
+                If angka < 0 Then
+                    With datapiutang
+                        MessageBox.Show("Uang Kembali = " & angka * -1)
+                        .SetRowCellValue(.FocusedRowHandle, "Sisa", 0)
+                    End With
+                Else
+                    With datapiutang
+                        .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
+                    End With
+                End If
+                
+            Else
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -41,6 +76,16 @@
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
         If datapiutang.FocusedColumn.AbsoluteIndex <> 7 Then
             keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
+            
+        End If
+    End Sub
+
+
+    Private Sub datapiutang_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datapiutang.CellValueChanging
+        If e.Column.FieldName <> "Bayar" Then
+            With datapiutang
+                .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+            End With
         End If
     End Sub
 End Class

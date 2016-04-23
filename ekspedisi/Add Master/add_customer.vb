@@ -1,6 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_customer
     Dim cek As Boolean
+    Dim data As New DataTable
+    Dim cbkota As New DataTable
 
     Private Sub add_customer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
@@ -8,6 +10,13 @@ Public Class add_customer
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_customer_Load(sender, e)
+                    master_customer.GridControl1.Visible = True
+                    master_customer.GridControl2.Visible = False
+                    data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+                    master_customer.GridControl1.DataSource = data
+                    master_customer.edit.Down = False
+                    master_customer.deldata.Down = False
+                    master_customer.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
@@ -22,17 +31,23 @@ Public Class add_customer
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_customer.GridControl1.Visible = True
+        master_customer.GridControl2.Visible = False
+        data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        master_customer.GridControl1.DataSource = data
+        master_customer.edit.Down = False
+        master_customer.deldata.Down = False
         Me.Close()
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
 
-        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or tel2.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
+        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "') ")
+                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.SelectedText.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -41,6 +56,12 @@ Public Class add_customer
                 Else
                     cek = False
                     Me.Close()
+                    master_customer.GridControl1.Visible = True
+                    master_customer.GridControl2.Visible = False
+                    data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+                    master_customer.GridControl1.DataSource = data
+                    master_customer.deldata.Down = False
+                    master_customer.deldata.Down = True
                 End If
 
             Catch ex As Exception
@@ -53,10 +74,15 @@ Public Class add_customer
     End Sub
 
     Private Sub add_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+        kota.DataSource = cbkota
+        kota.ValueMember = "kota"
+        kota.DisplayMember = "kota"
+
 
         Dim tanggal As New DataTable
         Dim tgl As String = "MC"
-        tanggal = DtTable("select * from mcustomer where substring(ID_customer,1,10) = '" & tgl & "'")
+        tanggal = DtTable("select * from mcustomer where substring(ID_customer,1,2) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
             hitung = "0" + hitung
@@ -106,14 +132,6 @@ Public Class add_customer
         End If
     End Sub
 
-    Private Sub tel2_TextChanged(sender As Object, e As EventArgs) Handles tel2.TextChanged
-        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If tel2.Text = "" Then
-            cek = False
-        Else
-            cek = True
-        End If
-    End Sub
 
     Private Sub provinsi_TextChanged(sender As Object, e As EventArgs) Handles provinsi.TextChanged
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
@@ -124,7 +142,7 @@ Public Class add_customer
         End If
     End Sub
 
-    Private Sub kota_TextChanged(sender As Object, e As EventArgs) Handles kota.TextChanged
+    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If kota.Text = "" Then
             cek = False
@@ -141,4 +159,12 @@ Public Class add_customer
             cek = True
         End If
     End Sub
+
+
+    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
+        Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
+        Dim prov As String = Scalar(carip)
+        provinsi.Text = prov
+    End Sub
+
 End Class

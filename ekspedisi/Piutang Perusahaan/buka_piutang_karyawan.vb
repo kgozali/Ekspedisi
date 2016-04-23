@@ -2,9 +2,21 @@
 
 
     Private Sub buka_piutang_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
-        Dim data As New DataTable
-        data = DtTable("select * from makun")
+        Try
+            id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
+            Dim data As New DataTable
+            data = DtTable("select * from makun where tipe_akun='Kas&Bank'")
+            akunkas.DataSource = data
+            akunkas.DisplayMember = "nama_akun"
+            akunkas.ValueMember = "kode_akun"
+            data = New DataTable
+            data = DtTable("select * from mhari_pelunasan where s='1'")
+            harilunas.DataSource = data
+            harilunas.DisplayMember = "jumlah_hari"
+            harilunas.ValueMember = "id_hari"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
  

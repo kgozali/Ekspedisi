@@ -33,49 +33,50 @@ Public Class master_customer
     End Sub
 
     Private Sub master_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GridControl2.Visible = False
-        data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
-        GridControl1.DataSource = data
-        For i = 0 To data.Columns.Count - 1
-            gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
-        Next
-
-        If data.Rows.Count > 0 Then
-            checks.Columns.Add("ID customer")
-            unchecks.Columns.Add("ID customer")
-            For i = 0 To gridcustomer.DataRowCount - 1
-                Dim temp As String = gridcustomer.GetRowCellValue(i, "ID customer").ToString
-                unchecks.Rows.Add(temp)
+        Try
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+            GridControl1.DataSource = data
+            For i = 0 To data.Columns.Count - 1
+                gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
             Next
-        End If
 
-
-
+            If data.Rows.Count > 0 Then
+                checks.Columns.Add("Kode Customer")
+                unchecks.Columns.Add("Kode Customer")
+                For i = 0 To gridcustomer.DataRowCount - 1
+                    Dim temp As String = gridcustomer.GetRowCellValue(i, "Kode Customer").ToString
+                    unchecks.Rows.Add(temp)
+                Next
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Then
+        If edit.Down = True Or deldata.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='1'and id_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='1'and id_customer like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0'and id_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0'and id_customer like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='1' and nama_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='1' and nama_customer like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0' and nama_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0' and nama_customer like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
-            'memberi cek ke ID yg udah didalam dttable checks
+            'memberi cek ke Kode yg udah didalam dttable checks
             If checks.Rows.Count > 0 Then
-                For i = 0 To gridview1.DataRowCount - 1
+                For i = 0 To GridView1.DataRowCount - 1
                     For j = 0 To checks.Rows.Count() - 1
-                        If gridview1.GetRowCellValue(i, "ID customer").ToString = checks.Rows(j).Item(0).ToString Then
-                            gridview1.SelectRow(i)
+                        If GridView1.GetRowCellValue(i, "Kode Customer").ToString = checks.Rows(j).Item(0).ToString Then
+                            GridView1.SelectRow(i)
                         End If
                     Next
                 Next
@@ -84,16 +85,16 @@ Public Class master_customer
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='1' and id_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='1' and id_customer like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='0' and id_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer  where `s`='0' and id_customer like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='1' and nama_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='1' and nama_customer like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_customer `ID customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0' and nama_customer like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='0' and nama_customer like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
@@ -130,7 +131,7 @@ Public Class master_customer
                     Case MsgBoxResult.Yes
                         For i = 0 To gridview1.RowCount - 1
                             If gridview1.IsRowSelected(i) = True Then
-                                InsertInto("update mcustomer set `s`=1 where id_customer='" & gridview1.GetRowCellValue(gridcustomer.FocusedRowHandle, "ID customer").ToString & "'")
+                                InsertInto("update mcustomer set `s`=0 where id_customer='" & GridView1.GetRowCellValue(i, "Kode Customer").ToString & "'")
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -166,7 +167,7 @@ Public Class master_customer
         Try
             If gridview1.IsRowSelected(gridview1.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
-                    If unchecks.Rows(i).Item(0).ToString = gridview1.GetRowCellValue(gridview1.FocusedRowHandle, "ID customer").ToString Then
+                    If unchecks.Rows(i).Item(0).ToString = gridview1.GetRowCellValue(gridview1.FocusedRowHandle, "Kode Customer").ToString Then
                         'MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
@@ -175,7 +176,7 @@ Public Class master_customer
                 Next
             Else
                 For i = 0 To checks.Rows.Count() - 1
-                    If checks.Rows(i).Item(0).ToString = gridview1.GetRowCellValue(gridview1.FocusedRowHandle, "ID customer").ToString Then
+                    If checks.Rows(i).Item(0).ToString = gridview1.GetRowCellValue(gridview1.FocusedRowHandle, "Kode Customer").ToString Then
                         'MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
@@ -209,4 +210,11 @@ Public Class master_customer
 
     End Sub
 
+    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
+        If deldata.Down = True Then
+            GroupControl2.Enabled = False
+        Else
+            GroupControl2.Enabled = True
+        End If
+    End Sub
 End Class

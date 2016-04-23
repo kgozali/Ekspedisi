@@ -76,7 +76,7 @@ Partial Class daftar_piutang_karyawan
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(98, 24)
+        Me.nama.Location = New System.Drawing.Point(104, 24)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(103, 17)
         Me.nama.TabIndex = 2
@@ -89,9 +89,9 @@ Partial Class daftar_piutang_karyawan
         Me.id.AutoSize = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(87, 17)
+        Me.id.Size = New System.Drawing.Size(100, 17)
         Me.id.TabIndex = 1
-        Me.id.Text = "ID Karyawan"
+        Me.id.Text = "Kode Karyawan"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari

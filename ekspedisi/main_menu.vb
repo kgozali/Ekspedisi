@@ -55,7 +55,7 @@ Public Class main_menu
     End Sub
 
     Private Sub SimpleButton20_Click(sender As Object, e As EventArgs) Handles SimpleButton20.Click
-        booking_truk.ShowDialog()
+        master_booking.ShowDialog()
     End Sub
 
     Private Sub SimpleButton19_Click(sender As Object, e As EventArgs) Handles SimpleButton19.Click
@@ -158,5 +158,17 @@ Public Class main_menu
     End Sub
     Private Sub SimpleButton42_Click(sender As Object, e As EventArgs) Handles SimpleButton42.Click
         KIR_Truk.ShowDialog()
+    End Sub
+
+    Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs) Handles pelunasanpiutangkaryawan.Click
+        pelunansan_piutang_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub bukapiutangkaryawan_Click(sender As Object, e As EventArgs) Handles bukapiutangkaryawan.Click
+        buka_piutang_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
+        pelunasan_piutang.ShowDialog()
     End Sub
 End Class

@@ -25,26 +25,23 @@ Public Class add_item
        
     End Sub
 
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs)
         sortir()
     End Sub
 
     Sub sortir()
         Try
-            If RadioButton1.Checked = True Then
-                dataset = DtTable("Select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + transaksi_DO.kodeprinciple + "' and id_barang LIKE '%" + TextEdit1.Text + "%'")
-                checkadd()
-            ElseIf RadioButton2.Checked = True Then
-                dataset = DtTable("Select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + transaksi_DO.kodeprinciple + "' and nama_barang LIKE '%" + TextEdit1.Text + "%'")
-                checkadd()
-            End If
+
+            dataset = DtTable("Select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + transaksi_DO.kodeprinciple + "'")
+            checkadd()
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
 
-    Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit1.EditValueChanged
+    Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs)
         sortir()
     End Sub
 
@@ -101,5 +98,9 @@ Public Class add_item
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
+    End Sub
+
+    Private Sub addbarang_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addbarang.ItemClick
+        add_barang.ShowDialog()
     End Sub
 End Class

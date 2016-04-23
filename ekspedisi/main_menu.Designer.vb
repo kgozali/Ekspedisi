@@ -57,9 +57,9 @@ Partial Class main_menu
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
+        Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
+        Me.bukapiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
+        Me.peluanasapiutangprinciple = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.SimpleButton24 = New DevExpress.XtraEditors.SimpleButton()
@@ -240,7 +240,7 @@ Partial Class main_menu
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton6.TabIndex = 7
-        Me.SimpleButton6.Text = "Kontak Suplier"
+        Me.SimpleButton6.Text = "Kontak Principle"
         '
         'SimpleButton5
         '
@@ -506,41 +506,41 @@ Partial Class main_menu
         '
         'BackstageViewClientControl7
         '
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton17)
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton18)
-        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton13)
+        Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
+        Me.BackstageViewClientControl7.Controls.Add(Me.bukapiutangkaryawan)
+        Me.BackstageViewClientControl7.Controls.Add(Me.peluanasapiutangprinciple)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
         Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
         Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
         '
-        'SimpleButton17
+        'pelunasanpiutangkaryawan
         '
-        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
-        Me.SimpleButton17.Location = New System.Drawing.Point(306, 79)
-        Me.SimpleButton17.Name = "SimpleButton17"
-        Me.SimpleButton17.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton17.TabIndex = 25
-        Me.SimpleButton17.Text = "Pelunasan Piutang Karyawaan"
+        Me.pelunasanpiutangkaryawan.Image = CType(resources.GetObject("pelunasanpiutangkaryawan.Image"), System.Drawing.Image)
+        Me.pelunasanpiutangkaryawan.Location = New System.Drawing.Point(306, 79)
+        Me.pelunasanpiutangkaryawan.Name = "pelunasanpiutangkaryawan"
+        Me.pelunasanpiutangkaryawan.Size = New System.Drawing.Size(196, 54)
+        Me.pelunasanpiutangkaryawan.TabIndex = 25
+        Me.pelunasanpiutangkaryawan.Text = "Pelunasan Piutang Karyawaan"
         '
-        'SimpleButton18
+        'bukapiutangkaryawan
         '
-        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
-        Me.SimpleButton18.Location = New System.Drawing.Point(563, 79)
-        Me.SimpleButton18.Name = "SimpleButton18"
-        Me.SimpleButton18.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton18.TabIndex = 24
-        Me.SimpleButton18.Text = "Buka Piutang Karyawan"
+        Me.bukapiutangkaryawan.Image = CType(resources.GetObject("bukapiutangkaryawan.Image"), System.Drawing.Image)
+        Me.bukapiutangkaryawan.Location = New System.Drawing.Point(563, 79)
+        Me.bukapiutangkaryawan.Name = "bukapiutangkaryawan"
+        Me.bukapiutangkaryawan.Size = New System.Drawing.Size(196, 54)
+        Me.bukapiutangkaryawan.TabIndex = 24
+        Me.bukapiutangkaryawan.Text = "Buka Piutang Karyawan"
         '
-        'SimpleButton13
+        'peluanasapiutangprinciple
         '
-        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
-        Me.SimpleButton13.Location = New System.Drawing.Point(49, 79)
-        Me.SimpleButton13.Name = "SimpleButton13"
-        Me.SimpleButton13.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton13.TabIndex = 23
-        Me.SimpleButton13.Text = "Pelunasan Piutang Principle"
+        Me.peluanasapiutangprinciple.Image = CType(resources.GetObject("peluanasapiutangprinciple.Image"), System.Drawing.Image)
+        Me.peluanasapiutangprinciple.Location = New System.Drawing.Point(49, 79)
+        Me.peluanasapiutangprinciple.Name = "peluanasapiutangprinciple"
+        Me.peluanasapiutangprinciple.Size = New System.Drawing.Size(196, 54)
+        Me.peluanasapiutangprinciple.TabIndex = 23
+        Me.peluanasapiutangprinciple.Text = "Pelunasan Piutang Principle"
         '
         'Label4
         '
@@ -1043,6 +1043,8 @@ Partial Class main_menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.BackstageViewControl1)
+        Me.LookAndFeel.SkinName = "DevExpress Dark Style"
+        Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
@@ -1114,9 +1116,9 @@ Partial Class main_menu
     Friend WithEvents SimpleButton21 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton22 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BackstageViewTabItem10 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
-    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents peluanasapiutangprinciple As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents pelunasanpiutangkaryawan As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents bukapiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton26 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton27 As DevExpress.XtraEditors.SimpleButton

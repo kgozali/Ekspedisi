@@ -33,43 +33,47 @@ Public Class master_kontak_principle
     End Sub
 
     Private Sub master_kontak_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GridControl2.Visible = False
-        data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1'")
-        GridControl1.DataSource = data
-        For i = 0 To data.Columns.Count - 1
-            GridView1.Columns(i).OptionsColumn.AllowEdit = False
-        Next
+        Try
+            GridControl2.Visible = False
+            data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
+            GridControl1.DataSource = data
+            For i = 0 To data.Columns.Count - 1
+                GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            Next
 
-        checks.Columns.Add("ID Principle")
-        unchecks.Columns.Add("ID Principle")
-        For i = 0 To GridView1.DataRowCount - 1
-            Dim temp As String = GridView1.GetRowCellValue(i, "ID kontak_principle").ToString
-            unchecks.Rows.Add(temp)
-        Next
+            checks.Columns.Add("Kode Kontak")
+            unchecks.Columns.Add("Kode Kontak")
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode kontak_principle").ToString
+                unchecks.Rows.Add(temp)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+       
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Then
+        If edit.Down = True Or deldata.Down Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and id_kontak like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='0' and id_kontak like '%" & cari.Text & "%'")
                 End If
-
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2` , Email from mkontak_principle b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and id_kontak like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='0' and id_kontak like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
-            'memberi cek ke ID yg udah didalam dttable checks
+            'memberi cek ke Kode yg udah didalam dttable checks
             If checks.Rows.Count > 0 Then
                 For i = 0 To GridView2.DataRowCount - 1
                     For j = 0 To checks.Rows.Count() - 1
-                        If GridView2.GetRowCellValue(i, "ID kontak_principle").ToString = checks.Rows(j).Item(0).ToString Then
+                        If GridView2.GetRowCellValue(i, "Kode Kontak").ToString = checks.Rows(j).Item(0).ToString Then
                             GridView2.SelectRow(i)
                         End If
                     Next
@@ -79,16 +83,15 @@ Public Class master_kontak_principle
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontak_principle b where b.`s`='1' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and id_kontak like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='0' and id_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='0' and id_kontak like '%" & cari.Text & "%'")
                 End If
-
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='1' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and id_kontak like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_principle `ID Kontak Principle`, b.nama_kontak `Nama Kontak`, tel1 `Telepon 1`, tel2 `Telepon 2`, Email from mkontakprinciple b where b.`s`='0' and nama_kontak_principle like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='0' and id_kontak like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
@@ -125,13 +128,14 @@ Public Class master_kontak_principle
                     Case MsgBoxResult.Yes
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
-                                InsertInto("update mkontak_principle set `s`=0 where id_kontak_principle='" & GridView2.GetRowCellValue(GridView1.FocusedRowHandle, "ID kontak_principle").ToString & "'")
+                                InsertInto("update mkontakprinciple set `s`=0 where id_kontak='" & GridView2.GetRowCellValue(i, "Kode Kontak").ToString & "'")
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
                         connect.Close()
                         GridControl2.Visible = False
                         GridControl1.Visible = True
+                        deldata.Down = False
                         master_kontak_principle_Load(sender, e)
                 End Select
             Else
@@ -161,7 +165,7 @@ Public Class master_kontak_principle
         Try
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
-                    If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "ID kontak_principle").ToString Then
+                    If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Kontak").ToString Then
                         MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
@@ -170,7 +174,7 @@ Public Class master_kontak_principle
                 Next
             Else
                 For i = 0 To checks.Rows.Count() - 1
-                    If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "ID kontak_principle").ToString Then
+                    If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Kontak").ToString Then
                         MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
@@ -203,4 +207,14 @@ Public Class master_kontak_principle
         End If
 
     End Sub
+
+    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
+        If deldata.Down = True Then
+            GroupControl2.Enabled = False
+        Else
+            GroupControl2.Enabled = True
+        End If
+
+    End Sub
+
 End Class
