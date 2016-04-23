@@ -55,7 +55,7 @@ Public Class main_menu
     End Sub
 
     Private Sub SimpleButton20_Click(sender As Object, e As EventArgs) Handles SimpleButton20.Click
-        booking_truk.ShowDialog()
+        master_booking.ShowDialog()
     End Sub
 
     Private Sub SimpleButton19_Click(sender As Object, e As EventArgs) Handles SimpleButton19.Click

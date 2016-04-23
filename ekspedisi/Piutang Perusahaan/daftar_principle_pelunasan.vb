@@ -43,12 +43,11 @@
     Private Sub submit_Click(sender As Object, e As EventArgs) Handles submit.Click
         Try
             tabel = New DataTable
-            tabel = DtTablebayar("Select trans_do.id_booking `Kode Booking`,no_do as `Nomer DO`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute,trans_do where trans_do.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s=1 and mprinciple.id_principle='" & allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Kode Principle") & "'")
+            tabel = DtTablebayar("Select t.id_booking `Kode Booking`,no_do as `Nomer DO`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg * price_per_unit) `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and t.s=1 and mprinciple.id_principle='" & allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Kode Principle") & "' group by t.id_transaksi")
             pelunasan_piutang.bayarpiutang.DataSource = tabel
             pelunasan_piutang.principle.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Nama Principle")
             pelunasan_piutang.idprinciple.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Kode Principle")
             pelunasan_piutang.alamat.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Alamat")
-
             Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

@@ -54,9 +54,19 @@
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
                 angka = angka - angka2 - e.Value
-                With datapiutang
-                    .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
-                End With
+                If angka < 0 Then
+                    With datapiutang
+                        MessageBox.Show("Uang Kembali = " & angka * -1)
+                        .SetRowCellValue(.FocusedRowHandle, "Sisa", 0)
+                    End With
+                Else
+                    With datapiutang
+                        .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
+                    End With
+                End If
+                
+            Else
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -66,6 +76,16 @@
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
         If datapiutang.FocusedColumn.AbsoluteIndex <> 7 Then
             keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
+            
+        End If
+    End Sub
+
+
+    Private Sub datapiutang_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datapiutang.CellValueChanging
+        If e.Column.FieldName <> "Bayar" Then
+            With datapiutang
+                .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+            End With
         End If
     End Sub
 End Class
