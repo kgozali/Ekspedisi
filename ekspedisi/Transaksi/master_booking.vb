@@ -24,7 +24,7 @@ Public Class master_booking
                 GridView1.OptionsView.ShowFooter = True
                 data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and id_booking LIKE '%" + cari.Text.ToString + "%' order by tgl asc, Jam asc")
                 GridControl1.DataSource = data
-
+                summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                
 
@@ -35,7 +35,7 @@ Public Class master_booking
                 GridView1.OptionsView.ShowFooter = True
                 data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and booking_truk.tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' order by Jam asc")
                 GridControl1.DataSource = data
-
+                summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                
             End If
@@ -43,6 +43,16 @@ Public Class master_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Sub summary()
+        For i = 0 To GridView1.Columns.Count - 1
+            If GridView1.Columns(i).FieldName.ToString = "Keterangan" Then
+                GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                GridView1.Columns(i).SummaryItem.FieldName = "Keterangan"
+                GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+            End If
+        Next
+        
     End Sub
 
     Sub unallowedit()
@@ -72,6 +82,10 @@ Public Class master_booking
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        process()
+    End Sub
+
+    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
         process()
     End Sub
 End Class
