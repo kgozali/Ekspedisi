@@ -65,7 +65,7 @@ Partial Class master_booking
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(8, 640)
+        Me.hapus.Location = New System.Drawing.Point(20, 652)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 168
@@ -191,7 +191,7 @@ Partial Class master_booking
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
-        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl1.Location = New System.Drawing.Point(-1, -1)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -200,7 +200,7 @@ Partial Class master_booking
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1010, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1267, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -213,9 +213,9 @@ Partial Class master_booking
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(8, 184)
+        Me.GroupControl3.Location = New System.Drawing.Point(20, 181)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
+        Me.GroupControl3.Size = New System.Drawing.Size(963, 452)
         Me.GroupControl3.TabIndex = 164
         Me.GroupControl3.Text = "Daftar Booking"
         '
@@ -224,7 +224,7 @@ Partial Class master_booking
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(724, 415)
+        Me.GridControl1.Size = New System.Drawing.Size(953, 423)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -239,7 +239,7 @@ Partial Class master_booking
         Me.GroupControl1.Controls.Add(Me.kodebooking)
         Me.GroupControl1.Controls.Add(Me.tgl)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 102)
+        Me.GroupControl1.Location = New System.Drawing.Point(20, 101)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(263, 74)
         Me.GroupControl1.TabIndex = 163
@@ -256,10 +256,12 @@ Partial Class master_booking
         'kodebooking
         '
         Me.kodebooking.AutoSize = True
+        Me.kodebooking.Checked = True
         Me.kodebooking.Location = New System.Drawing.Point(8, 24)
         Me.kodebooking.Name = "kodebooking"
         Me.kodebooking.Size = New System.Drawing.Size(89, 17)
         Me.kodebooking.TabIndex = 3
+        Me.kodebooking.TabStop = True
         Me.kodebooking.Text = "Kode Booking"
         Me.kodebooking.UseVisualStyleBackColor = True
         '
@@ -284,7 +286,7 @@ Partial Class master_booking
         '
         Me.GroupControl4.Controls.Add(Me.nonaktif)
         Me.GroupControl4.Controls.Add(Me.aktif)
-        Me.GroupControl4.Location = New System.Drawing.Point(281, 102)
+        Me.GroupControl4.Location = New System.Drawing.Point(289, 101)
         Me.GroupControl4.Name = "GroupControl4"
         Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
         Me.GroupControl4.TabIndex = 167
@@ -295,9 +297,9 @@ Partial Class master_booking
         Me.nonaktif.AutoSize = True
         Me.nonaktif.Location = New System.Drawing.Point(5, 46)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(110, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(97, 17)
         Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Booking Non-Aktif"
+        Me.nonaktif.Text = "Closed Booking"
         Me.nonaktif.UseVisualStyleBackColor = True
         '
         'aktif
@@ -306,16 +308,16 @@ Partial Class master_booking
         Me.aktif.Checked = True
         Me.aktif.Location = New System.Drawing.Point(5, 23)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(87, 17)
+        Me.aktif.Size = New System.Drawing.Size(91, 17)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
-        Me.aktif.Text = "Booking Aktif"
+        Me.aktif.Text = "Open Booking"
         Me.aktif.UseVisualStyleBackColor = True
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(642, 639)
+        Me.SimpleButton1.Location = New System.Drawing.Point(883, 652)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 166
@@ -325,7 +327,7 @@ Partial Class master_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(751, 678)
+        Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl3)
@@ -333,6 +335,7 @@ Partial Class master_booking
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "master_booking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Booking"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()

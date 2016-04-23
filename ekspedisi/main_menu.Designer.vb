@@ -1043,6 +1043,8 @@ Partial Class main_menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.BackstageViewControl1)
+        Me.LookAndFeel.SkinName = "DevExpress Dark Style"
+        Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
