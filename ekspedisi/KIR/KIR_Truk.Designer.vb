@@ -248,4 +248,6 @@ Partial Class KIR_Truk
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label7 As System.Windows.Forms.Label
+
+    
 End Class
