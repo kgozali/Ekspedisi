@@ -10,7 +10,7 @@ Public Class edit_booking
     Public max As Integer = 0
     Dim kode As String = ""
     Dim ceking As Boolean = False
-    Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub edit_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
             'select principle
@@ -36,17 +36,14 @@ Public Class edit_booking
         If principlebook = "" Then
             MessageBox.Show("Pilih principle terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            rute_booking.ShowDialog()
+            list_rute_edit.ShowDialog()
         End If
     End Sub
 
     Private Sub ButtonEdit1_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit1.ButtonClick
-        truk_booking.ShowDialog()
+        list_truk_edit.ShowDialog()
     End Sub
 
-    Private Sub ButtonEdit2_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit2.ButtonClick
-        principle_booking.ShowDialog()
-    End Sub
 
     Private Sub GridControl2_DoubleClick(sender As Object, e As EventArgs) Handles GridControl2.DoubleClick
         If rutebook = "" Then
@@ -105,8 +102,6 @@ Public Class edit_booking
 
     Sub grid()
         Try
-            
-
             'tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
             tabelsupir = DtTable("select booking_truk.id_supir `Kode Supir`,nama_supir `Nama Supir`,dp_awal_supir `Jumlah DP (Rp)`,harga_supir_total `Total Bayar (Rp)` from booking_truk,msupir where booking_truk.id_supir=msupir.id_supir and booking_truk.id_booking='" + kode.ToString + "'")
             GridControl2.DataSource = tabelsupir
@@ -125,34 +120,31 @@ Public Class edit_booking
                 If Not IsNumeric(gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)")) Then
                     MessageBox.Show("Harap mengisi data kontak dengan format yang sesuai", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    If GridControl2.DataSource Is tabelsupir Then
-                        MessageBox.Show("Harap pilih supir terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) > max Then
+                        MessageBox.Show("Nominal Total tidak diperbolehkan melebihi nominal maksimum yang telah ditentukan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
-                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) > max Then
-                            MessageBox.Show("Nominal Total tidak diperbolehkan melebihi nominal maksimum yang telah ditentukan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
+                            MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
-                            If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
-                                MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            Else
-                                If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
-                                    Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                    If msg = DialogResult.OK Then
-                                        insert()
-                                    Else
-
-                                    End If
-
-                                Else
+                            If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                If msg = DialogResult.OK Then
                                     insert()
+                                Else
+
                                 End If
 
+                            Else
+                                insert()
                             End If
 
                         End If
 
                     End If
+
+                    End If
                 End If
-            End If
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -164,9 +156,9 @@ Public Class edit_booking
 
             Dim jam As New DateTime
             jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
-            Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "',now(),'" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',1,1)")
+            Dim insert As Boolean = InsertInto("update booking_truk set tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "',id_principle='" + principlebook + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "',id_truk='" + trukbook + "',keteranga='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "' where id_booking='" + kode.ToString + "'")
             If insert = True Then
-                MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Perubahan terhadap booking berhasil dilakukan, Untuk melakukan perubahan kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
                 Me.Close()
             End If
@@ -185,7 +177,7 @@ Public Class edit_booking
                 grid()
                 tabelkontak.Rows.Clear()
                 Dim dt As New DataTable
-                dt = DtTable("select ETA `ETA`,contact_person `Contact Person`,no_telp `Nomor Telepon`,alamat_tujuan `Alamat` from booking_truk where id_booking='" + kode + "'")
+                dt = DtTable("select ETA `ETA (Jam)`,contact_person `Contact Person`,no_telp `Nomor Telepon`,alamat_tujuan `Alamat` from booking_truk where id_booking='" + kode + "'")
                 GridControl1.DataSource = dt
                 'If dt.Rows.Count < 1 Then
                 '    Dim alamat As String = ""
