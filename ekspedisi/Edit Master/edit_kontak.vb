@@ -21,7 +21,7 @@ Public Class edit_kontak
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        Select Case MsgBox("Apakah anda yakin menghapus data ini?", MsgBoxStyle.YesNo, "System Error")
+        Select Case MsgBox("Apakah anda yakin mengedit data ini?", MsgBoxStyle.YesNo, "System Error")
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mkontakprinciple set nama_kontak='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',tel1='" & tel1.Text & "',tel2='" & tel2.Text & "',email='" & email.Text & "' where id_kontak='" & id.Text.ToString & "'"
                 InsertInto(ccccc)

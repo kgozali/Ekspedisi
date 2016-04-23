@@ -207,4 +207,14 @@ Public Class master_kontak_principle
         End If
 
     End Sub
+
+    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
+        If deldata.Down = True Then
+            GroupControl2.Enabled = False
+        Else
+            GroupControl2.Enabled = True
+        End If
+
+    End Sub
+
 End Class
