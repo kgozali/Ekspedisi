@@ -1,14 +1,17 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class daftar_kas_keluar
-    Inherits DevExpress.XtraEditors.XtraForm
+Partial Class daftar_bank_masuk
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        If disposing AndAlso components IsNot Nothing Then
-            components.Dispose()
-        End If
-        MyBase.Dispose(disposing)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
     End Sub
 
     'Required by the Windows Form Designer
@@ -19,12 +22,7 @@ Partial Class daftar_kas_keluar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_kas_keluar))
-        Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.editing = New DevExpress.XtraEditors.SimpleButton()
-        Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_bank_masuk))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -57,48 +55,6 @@ Partial Class daftar_kas_keluar
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'msiswa
-        '
-        Me.msiswa.ActAsDropDown = True
-        Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.msiswa.Caption = "Master Data"
-        Me.msiswa.Id = 1
-        Me.msiswa.Name = "msiswa"
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.ActAsDropDown = True
-        Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.BarButtonItem2.Caption = "Master Data"
-        Me.BarButtonItem2.Id = 1
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'editing
-        '
-        Me.editing.Location = New System.Drawing.Point(12, 533)
-        Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
-        Me.editing.TabIndex = 38
-        Me.editing.Text = "Edit"
-        Me.editing.Visible = False
-        '
-        'hapus
-        '
-        Me.hapus.Location = New System.Drawing.Point(12, 533)
-        Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
-        Me.hapus.TabIndex = 39
-        Me.hapus.Text = "Delete"
-        Me.hapus.Visible = False
-        '
-        'cancel
-        '
-        Me.cancel.Location = New System.Drawing.Point(460, 532)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 41
-        Me.cancel.Text = "Cancel"
-        '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
@@ -112,7 +68,7 @@ Partial Class daftar_kas_keluar
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(569, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(572, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -249,9 +205,9 @@ Partial Class daftar_kas_keluar
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(569, 477)
-        Me.GroupControl3.TabIndex = 44
-        Me.GroupControl3.Text = "Data Kas Keluar"
+        Me.GroupControl3.Size = New System.Drawing.Size(572, 471)
+        Me.GroupControl3.TabIndex = 39
+        Me.GroupControl3.Text = "Data Bank Masuk"
         '
         'GridControl1
         '
@@ -261,7 +217,7 @@ Partial Class daftar_kas_keluar
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(565, 454)
+        Me.GridControl1.Size = New System.Drawing.Size(568, 448)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -301,18 +257,15 @@ Partial Class daftar_kas_keluar
         Me.colketerangan.VisibleIndex = 2
         Me.colketerangan.Width = 273
         '
-        'daftar_kas_keluar
+        'daftar_bank_masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(569, 573)
+        Me.ClientSize = New System.Drawing.Size(572, 567)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Controls.Add(Me.editing)
-        Me.Controls.Add(Me.hapus)
-        Me.Controls.Add(Me.cancel)
-        Me.Name = "daftar_kas_keluar"
-        Me.Text = "Daftar Kas Keluar"
+        Me.Name = "daftar_bank_masuk"
+        Me.Text = "Bank Masuk"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
@@ -322,11 +275,6 @@ Partial Class daftar_kas_keluar
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonGalleryBarItem1 As DevExpress.XtraBars.RibbonGalleryBarItem
     Friend WithEvents datasiswa As DevExpress.XtraBars.BarButtonItem

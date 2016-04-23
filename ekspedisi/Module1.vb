@@ -141,6 +141,29 @@ Public Module Module1
 
     End Function
 
+    Function DtTablebayarcek(ByVal x As String)
+        'select khusus master data yang perlu checkbox 
+        Try
+
+            Dim command As New MySqlCommand(x, connect)
+            command.Connection = connect
+            Dim data As DataTable = New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+
+            'Tambah checkbox column dalam Datatable
+            'Ini nambahnya di samping kiri, kalo mau disamping kanan code buat nambahnya di taruk setelah adapter fill
+
+            adapter.Fill(data)
+            data.Columns.Add("Bayar", GetType(Boolean))
+            data.Columns("Bayar").DefaultValue = False
+            Return data
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Function
+
     Function auditlog(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String, ByVal f As String)
         'untuk insert auditlog, tinggal panggil trus lempar
         Try
@@ -166,6 +189,7 @@ Public Module Module1
         fmt = String.Format("{0:00000}", Val(maxcount) + 1)
         Return prefix + tgl + fmt
     End Function
+
     Function autogenerate(ByVal prefix As String, ByVal cekmax As String)
         Try
             Dim currentTime As System.DateTime = System.DateTime.Now
@@ -193,7 +217,20 @@ Public Module Module1
 
     End Function
 
-    Function KolomBayar(ByVal x As String)
+    Function comboboxgrid(ByVal x As String)
+        Try
 
+            Dim command As New MySqlCommand(x, connect)
+            command.Connection = connect
+            Dim data As DataTable = New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(data)
+            data.Columns.Add("Akun", GetType(ComboBox))
+            data.Columns("Akun").DefaultValue = False
+            Return data
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Function
 End Module
