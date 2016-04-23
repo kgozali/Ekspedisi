@@ -171,4 +171,8 @@ Public Class main_menu
     Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
         pelunasan_piutang.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton28_Click(sender As Object, e As EventArgs) Handles SimpleButton28.Click
+        kas_masuk.ShowDialog()
+    End Sub
 End Class

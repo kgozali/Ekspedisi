@@ -32,26 +32,24 @@ Partial Class pelunasan_piutang
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemDateEdit = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.labeltotalbayar = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.nominalbg = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.inputbayar = New DevExpress.XtraGrid.GridControl()
+        Me.pembayaran = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.namabank = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.nomerbg = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.nominalbank = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.tanggalcair = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.akun = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.totalpiutang = New System.Windows.Forms.TextBox()
-        Me.totalterbayar = New System.Windows.Forms.TextBox()
         Me.totaldibayar = New System.Windows.Forms.TextBox()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.catatan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.save = New DevExpress.XtraEditors.SimpleButton()
@@ -66,6 +64,11 @@ Partial Class pelunasan_piutang
         Me.DataColumn5 = New System.Data.DataColumn()
         Me.DataColumn6 = New System.Data.DataColumn()
         Me.DataColumn7 = New System.Data.DataColumn()
+        Me.bayaran = New System.Data.DataTable()
+        Me.DataColumn8 = New System.Data.DataColumn()
+        Me.DataColumn9 = New System.Data.DataColumn()
+        Me.DataColumn10 = New System.Data.DataColumn()
+        Me.DataColumn11 = New System.Data.DataColumn()
         Me.idprinciple = New System.Windows.Forms.Label()
         CType(Me.principle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,13 +80,14 @@ Partial Class pelunasan_piutang
         CType(Me.RepositoryItemDateEdit.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.inputbayar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pelunasan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bayaran, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -175,25 +179,25 @@ Partial Class pelunasan_piutang
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.LabelControl12)
+        Me.GroupControl2.Controls.Add(Me.labeltotalbayar)
         Me.GroupControl2.Controls.Add(Me.LabelControl11)
-        Me.GroupControl2.Controls.Add(Me.LabelControl6)
+        Me.GroupControl2.Controls.Add(Me.nominalbg)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
-        Me.GroupControl2.Controls.Add(Me.GridControl2)
+        Me.GroupControl2.Controls.Add(Me.inputbayar)
         Me.GroupControl2.Location = New System.Drawing.Point(12, 295)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(705, 195)
         Me.GroupControl2.TabIndex = 42
         Me.GroupControl2.Text = "Pembayaran"
         '
-        'LabelControl12
+        'labeltotalbayar
         '
-        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(523, 170)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(8, 18)
-        Me.LabelControl12.TabIndex = 150
-        Me.LabelControl12.Text = "0"
+        Me.labeltotalbayar.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labeltotalbayar.Location = New System.Drawing.Point(523, 170)
+        Me.labeltotalbayar.Name = "labeltotalbayar"
+        Me.labeltotalbayar.Size = New System.Drawing.Size(8, 18)
+        Me.labeltotalbayar.TabIndex = 150
+        Me.labeltotalbayar.Text = "0"
         '
         'LabelControl11
         '
@@ -204,14 +208,14 @@ Partial Class pelunasan_piutang
         Me.LabelControl11.TabIndex = 48
         Me.LabelControl11.Text = "Total Bayar :"
         '
-        'LabelControl6
+        'nominalbg
         '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(134, 170)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(8, 18)
-        Me.LabelControl6.TabIndex = 47
-        Me.LabelControl6.Text = "0"
+        Me.nominalbg.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nominalbg.Location = New System.Drawing.Point(134, 170)
+        Me.nominalbg.Name = "nominalbg"
+        Me.nominalbg.Size = New System.Drawing.Size(8, 18)
+        Me.nominalbg.TabIndex = 47
+        Me.nominalbg.Text = "0"
         '
         'LabelControl5
         '
@@ -222,23 +226,25 @@ Partial Class pelunasan_piutang
         Me.LabelControl5.TabIndex = 46
         Me.LabelControl5.Text = "Total Nominal BG :"
         '
-        'GridControl2
+        'inputbayar
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl2.MainView = Me.GridView1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemDateEdit1})
-        Me.GridControl2.Size = New System.Drawing.Size(695, 140)
-        Me.GridControl2.TabIndex = 1
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.inputbayar.DataSource = Me.pelunasan
+        Me.inputbayar.Location = New System.Drawing.Point(8, 24)
+        Me.inputbayar.MainView = Me.pembayaran
+        Me.inputbayar.Name = "inputbayar"
+        Me.inputbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemDateEdit1})
+        Me.inputbayar.Size = New System.Drawing.Size(695, 140)
+        Me.inputbayar.TabIndex = 1
+        Me.inputbayar.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.pembayaran})
         '
-        'GridView1
+        'pembayaran
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabank, Me.nomerbg, Me.nominalbank, Me.tanggalcair, Me.akun})
-        Me.GridView1.GridControl = Me.GridControl2
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
-        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.pembayaran.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabank, Me.nomerbg, Me.nominalbank, Me.tanggalcair, Me.akun})
+        Me.pembayaran.GridControl = Me.inputbayar
+        Me.pembayaran.Name = "pembayaran"
+        Me.pembayaran.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.pembayaran.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        Me.pembayaran.OptionsView.ShowGroupPanel = False
         '
         'namabank
         '
@@ -279,14 +285,16 @@ Partial Class pelunasan_piutang
         'akun
         '
         Me.akun.Caption = "Akun"
+        Me.akun.ColumnEdit = Me.RepositoryItemLookUpEdit1
         Me.akun.Name = "akun"
         Me.akun.Visible = True
         Me.akun.VisibleIndex = 4
         '
-        'RepositoryItemCheckEdit2
+        'RepositoryItemLookUpEdit1
         '
-        Me.RepositoryItemCheckEdit2.AutoHeight = False
-        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
         '
         'LabelControl7
         '
@@ -297,19 +305,10 @@ Partial Class pelunasan_piutang
         Me.LabelControl7.TabIndex = 48
         Me.LabelControl7.Text = "Total Nominal Piutang"
         '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(531, 525)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(98, 18)
-        Me.LabelControl8.TabIndex = 49
-        Me.LabelControl8.Text = "Total Terbayar"
-        '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(497, 549)
+        Me.LabelControl9.Location = New System.Drawing.Point(497, 523)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(132, 18)
         Me.LabelControl9.TabIndex = 50
@@ -317,32 +316,29 @@ Partial Class pelunasan_piutang
         '
         'totalpiutang
         '
+        Me.totalpiutang.Enabled = False
         Me.totalpiutang.Location = New System.Drawing.Point(636, 498)
         Me.totalpiutang.Name = "totalpiutang"
         Me.totalpiutang.Size = New System.Drawing.Size(174, 21)
         Me.totalpiutang.TabIndex = 48
-        '
-        'totalterbayar
-        '
-        Me.totalterbayar.Location = New System.Drawing.Point(636, 522)
-        Me.totalterbayar.Name = "totalterbayar"
-        Me.totalterbayar.Size = New System.Drawing.Size(174, 21)
-        Me.totalterbayar.TabIndex = 51
+        Me.totalpiutang.Text = "0"
         '
         'totaldibayar
         '
-        Me.totaldibayar.Location = New System.Drawing.Point(636, 546)
+        Me.totaldibayar.Enabled = False
+        Me.totaldibayar.Location = New System.Drawing.Point(636, 520)
         Me.totaldibayar.Name = "totaldibayar"
         Me.totaldibayar.Size = New System.Drawing.Size(174, 21)
         Me.totaldibayar.TabIndex = 52
+        Me.totaldibayar.Text = "0"
         '
-        'RichTextBox2
+        'catatan
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(72, 501)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(375, 66)
-        Me.RichTextBox2.TabIndex = 54
-        Me.RichTextBox2.Text = ""
+        Me.catatan.Location = New System.Drawing.Point(72, 501)
+        Me.catatan.Name = "catatan"
+        Me.catatan.Size = New System.Drawing.Size(375, 66)
+        Me.catatan.TabIndex = 54
+        Me.catatan.Text = ""
         '
         'LabelControl10
         '
@@ -374,11 +370,11 @@ Partial Class pelunasan_piutang
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(456, 12)
+        Me.LabelControl13.Location = New System.Drawing.Point(482, 12)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(114, 18)
+        Me.LabelControl13.Size = New System.Drawing.Size(90, 18)
         Me.LabelControl13.TabIndex = 150
-        Me.LabelControl13.Text = "Nomer Pelunasan"
+        Me.LabelControl13.Text = "Nomer Faktur"
         '
         'nomerpelunasan
         '
@@ -392,7 +388,7 @@ Partial Class pelunasan_piutang
         'pelunasan
         '
         Me.pelunasan.DataSetName = "NewDataSet"
-        Me.pelunasan.Tables.AddRange(New System.Data.DataTable() {Me.daftarpiutang})
+        Me.pelunasan.Tables.AddRange(New System.Data.DataTable() {Me.daftarpiutang, Me.bayaran})
         '
         'daftarpiutang
         '
@@ -434,14 +430,39 @@ Partial Class pelunasan_piutang
         Me.DataColumn7.Caption = "Nominal Bayar"
         Me.DataColumn7.ColumnName = "nominalbayar"
         '
+        'bayaran
+        '
+        Me.bayaran.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn8, Me.DataColumn9, Me.DataColumn10, Me.DataColumn11})
+        Me.bayaran.TableName = "bayaran"
+        '
+        'DataColumn8
+        '
+        Me.DataColumn8.Caption = "Nama Bank"
+        Me.DataColumn8.ColumnName = "namabank"
+        '
+        'DataColumn9
+        '
+        Me.DataColumn9.Caption = "Nomer BG"
+        Me.DataColumn9.ColumnName = "nomerbg"
+        '
+        'DataColumn10
+        '
+        Me.DataColumn10.Caption = "Nominal"
+        Me.DataColumn10.ColumnName = "nominal"
+        '
+        'DataColumn11
+        '
+        Me.DataColumn11.Caption = "Tanggal Cair"
+        Me.DataColumn11.ColumnName = "tanggalcair"
+        '
         'idprinciple
         '
         Me.idprinciple.AutoSize = True
         Me.idprinciple.Location = New System.Drawing.Point(448, 80)
         Me.idprinciple.Name = "idprinciple"
-        Me.idprinciple.Size = New System.Drawing.Size(38, 13)
+        Me.idprinciple.Size = New System.Drawing.Size(54, 13)
         Me.idprinciple.TabIndex = 152
-        Me.idprinciple.Text = "Label1"
+        Me.idprinciple.Text = "idprinciple"
         Me.idprinciple.Visible = False
         '
         'pelunasan_piutang
@@ -454,13 +475,11 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.LabelControl13)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.RichTextBox2)
+        Me.Controls.Add(Me.catatan)
         Me.Controls.Add(Me.LabelControl10)
         Me.Controls.Add(Me.totaldibayar)
-        Me.Controls.Add(Me.totalterbayar)
         Me.Controls.Add(Me.totalpiutang)
         Me.Controls.Add(Me.LabelControl9)
-        Me.Controls.Add(Me.LabelControl8)
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
@@ -484,13 +503,14 @@ Partial Class pelunasan_piutang
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.inputbayar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pelunasan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bayaran, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -506,28 +526,24 @@ Partial Class pelunasan_piutang
     Friend WithEvents datapiutang As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents inputbayar As DevExpress.XtraGrid.GridControl
+    Friend WithEvents pembayaran As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents namabank As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents nomerbg As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents nominalbank As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents tanggalcair As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents akun As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents nominalbg As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents totalpiutang As System.Windows.Forms.TextBox
-    Friend WithEvents totalterbayar As System.Windows.Forms.TextBox
     Friend WithEvents totaldibayar As System.Windows.Forms.TextBox
-    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents catatan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents save As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents labeltotalbayar As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nomerpelunasan As System.Windows.Forms.TextBox
@@ -542,4 +558,11 @@ Partial Class pelunasan_piutang
     Friend WithEvents DataColumn6 As System.Data.DataColumn
     Friend WithEvents DataColumn7 As System.Data.DataColumn
     Friend WithEvents idprinciple As System.Windows.Forms.Label
+    Friend WithEvents bayaran As System.Data.DataTable
+    Friend WithEvents DataColumn8 As System.Data.DataColumn
+    Friend WithEvents DataColumn9 As System.Data.DataColumn
+    Friend WithEvents DataColumn10 As System.Data.DataColumn
+    Friend WithEvents DataColumn11 As System.Data.DataColumn
+    Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
