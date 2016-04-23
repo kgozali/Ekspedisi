@@ -1,7 +1,17 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_kategori_supplier
     Dim cek As Boolean
+    Dim data As New DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        Data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+        master_kategori_supplier.GridControl1.DataSource = data
+        master_kategori_supplier.GridControl1.Visible = True
+        Data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+        master_kategori_supplier.GridControl2.DataSource = data
+        master_kategori_supplier.GridControl2.Visible = False
+        master_kategori_supplier.deldata.Down = False
+        master_kategori_supplier.edit.Down = False
+
         Me.Close()
     End Sub
 
@@ -12,11 +22,20 @@ Public Class add_kategori_supplier
                 If msg = DialogResult.OK Then
                     add_kategori_supplier_Load(sender, e)
                     Reset()
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                    master_kategori_supplier.GridControl1.DataSource = data
+                    master_kategori_supplier.GridControl1.Visible = True
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                    master_kategori_supplier.GridControl2.DataSource = data
+                    master_kategori_supplier.GridControl2.Visible = False
+                    master_kategori_supplier.deldata.Down = False
+                    master_kategori_supplier.edit.Down = False
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_kategori_supplier_Load(sender, e)
+
                 Reset()
             End If
         Catch ex As Exception
@@ -30,7 +49,7 @@ Public Class add_kategori_supplier
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mkategori_supplier values ('" & id.Text & "','" & nama.Text & "') ")
+                InsertInto("insert into mkategori_supplier values ('" & id.Text & "','" & nama.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -38,6 +57,14 @@ Public Class add_kategori_supplier
                     Reset()
                 Else
                     cek = False
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                    master_kategori_supplier.GridControl1.DataSource = data
+                    master_kategori_supplier.GridControl1.Visible = True
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                    master_kategori_supplier.GridControl2.DataSource = data
+                    master_kategori_supplier.GridControl2.Visible = False
+                    master_kategori_supplier.deldata.Down = False
+                    master_kategori_supplier.edit.Down = False
                     Me.Close()
                 End If
 
@@ -52,7 +79,7 @@ Public Class add_kategori_supplier
     Private Sub add_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tanggal As New DataTable
         Dim tgl As String = "ME"
-        tanggal = DtTable("select * from mkategori_supplier where substring(id_kategori,1,10) = '" & tgl & "'")
+        tanggal = DtTable("select * from mkategori_supplier where substring(id_kategori,1,2) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
             hitung = "0" + hitung

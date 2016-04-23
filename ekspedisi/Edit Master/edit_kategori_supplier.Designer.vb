@@ -21,16 +21,16 @@ Partial Class edit_kategori_supplier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_kategori_supplier))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.nama = New DevExpress.XtraEditors.TextEdit()
+        Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.id = New DevExpress.XtraEditors.TextEdit()
-        Me.nama = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -44,6 +44,39 @@ Partial Class edit_kategori_supplier
         Me.GroupControl1.Size = New System.Drawing.Size(338, 78)
         Me.GroupControl1.TabIndex = 141
         Me.GroupControl1.Text = "Data"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(138, 18)
+        Me.LabelControl1.TabIndex = 32
+        Me.LabelControl1.Text = "ID Kategori Supplier :"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(161, 18)
+        Me.LabelControl2.TabIndex = 33
+        Me.LabelControl2.Text = "Nama Kategori Supplier :"
+        '
+        'nama
+        '
+        Me.nama.Location = New System.Drawing.Point(172, 47)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(143, 20)
+        Me.nama.TabIndex = 46
+        '
+        'id
+        '
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(149, 22)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(100, 20)
+        Me.id.TabIndex = 45
         '
         'Submit
         '
@@ -63,39 +96,6 @@ Partial Class edit_kategori_supplier
         Me.SimpleButton1.TabIndex = 143
         Me.SimpleButton1.Text = "Cancel"
         '
-        'id
-        '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(149, 22)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(100, 20)
-        Me.id.TabIndex = 45
-        '
-        'nama
-        '
-        Me.nama.Location = New System.Drawing.Point(172, 47)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(143, 20)
-        Me.nama.TabIndex = 46
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(161, 18)
-        Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Nama Kategori Supplier :"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(138, 18)
-        Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Kategori Supplier :"
-        '
         'edit_kategori_supplier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -109,8 +109,8 @@ Partial Class edit_kategori_supplier
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -1,7 +1,15 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_jabatan
     Dim cek As Boolean
+    Dim data As New DataTable
+
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_jabatan.GridControl1.Visible = True
+        master_jabatan.GridControl2.Visible = False
+        data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
+        master_jabatan.GridControl1.DataSource = data
+        master_jabatan.edit.Down = False
+        master_jabatan.deldata.Down = False
         Me.Close()
     End Sub
 
@@ -13,6 +21,12 @@ Public Class add_jabatan
                     add_jabatan_Load(sender, e)
                     Reset()
                 Else
+                    master_jabatan.GridControl1.Visible = True
+                    master_jabatan.GridControl2.Visible = False
+                    data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
+                    master_jabatan.GridControl1.DataSource = data
+                    master_jabatan.edit.Down = False
+                    master_jabatan.deldata.Down = False
                     e.Cancel = True
                 End If
             Else
@@ -27,13 +41,19 @@ Public Class add_jabatan
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             'insert ke dalam database
-            InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "')")
+            InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "','1')")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
                 add_jabatan_Load(sender, e)
                 Reset()
             Else
+                master_jabatan.GridControl1.Visible = True
+                master_jabatan.GridControl2.Visible = False
+                data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
+                master_jabatan.GridControl1.DataSource = data
+                master_jabatan.edit.Down = False
+                master_jabatan.deldata.Down = False
                 cek = False
                 Me.Close()
             End If
@@ -48,7 +68,7 @@ Public Class add_jabatan
 
         Dim tanggal As New DataTable
         Dim tgl As String = "MJ"
-        tanggal = DtTable("select * from mjabatan where substring(ID_jabatan,1,10) = '" & tgl & "'")
+        tanggal = DtTable("select * from mjabatan where substring(ID_jabatan,1,2) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
             hitung = "0" + hitung
