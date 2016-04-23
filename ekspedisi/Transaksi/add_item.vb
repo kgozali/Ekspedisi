@@ -99,4 +99,8 @@ Public Class add_item
         End Try
         
     End Sub
+
+    Private Sub addbarang_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addbarang.ItemClick
+        add_barang.ShowDialog()
+    End Sub
 End Class
