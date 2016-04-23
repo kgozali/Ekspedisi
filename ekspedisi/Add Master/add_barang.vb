@@ -2,6 +2,7 @@
 Public Class add_barang
     Dim cbprinciple As New DataTable
     Dim cek As Boolean = False
+    Dim data As DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
@@ -97,6 +98,7 @@ Public Class add_barang
 
 
     Private Sub add_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataTable1.Rows.Clear()
         cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
         principle.DataSource = cbprinciple
         principle.DisplayMember = "Nama Principle"
@@ -105,25 +107,41 @@ Public Class add_barang
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
-            Dim i As Long
-            Dim dtbaris As DataRow
-            For i = 0 To DataSet1.Tables("Table1").Rows.Count - 1
-                dtbaris = DataSet1.Tables("Table1").Rows(i)
-                Dim tanggal As New DataTable
-                Dim tgl As String = "MB"
-                tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,10) = '" & tgl & "'")
-                Dim hitung As String = tanggal.Rows.Count() + 1
-                While hitung.LongCount < 5
-                    hitung = "0" + hitung
-                End While
-                Dim ccc As String = tgl + hitung
-                InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','1')")
-                MsgBox(dtbaris("Keterangan"))
-            Next
+            Try
+                Dim i As Long
+                Dim dtbaris As DataRow
+                For i = 0 To DataSet1.Tables("Table1").Rows.Count - 1
+                    dtbaris = DataSet1.Tables("Table1").Rows(i)
+                    Dim tanggal As New DataTable
+                    Dim tgl As String = "MB"
+                    tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,2) = '" & tgl & "'")
+                    Dim hitung As String = tanggal.Rows.Count() + 1
+                    While hitung.LongCount < 5
+                        hitung = "0" + hitung
+                    End While
+                    Dim ccc As String = tgl + hitung
+                    InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','1')")
+                    MsgBox(dtbaris("Nama_Barang") & "terinput")
+                Next
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            'konfirmasi melakukan booking ulang
+            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            If msg = DialogResult.Yes Then
+                add_barang_Load(sender, e)
+                Reset()
+            Else
+                cek = False
+                DataTable1.Rows.Clear()
+                Me.Close()
+                Data = DtTable("SELECT id_barang `ID Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                master_barang.GridControl1.DataSource = data
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-       
 
 
     End Sub
