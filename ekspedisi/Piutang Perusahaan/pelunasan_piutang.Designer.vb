@@ -53,7 +53,7 @@ Partial Class pelunasan_piutang
         Me.totaldibayar = New System.Windows.Forms.TextBox()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.save = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.nomerpelunasan = New System.Windows.Forms.TextBox()
@@ -353,14 +353,14 @@ Partial Class pelunasan_piutang
         Me.LabelControl10.TabIndex = 53
         Me.LabelControl10.Text = "Catatan "
         '
-        'SimpleButton1
+        'cancel
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(710, 573)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 149
-        Me.SimpleButton1.Text = "Cancel"
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(710, 573)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 149
+        Me.cancel.Text = "Cancel"
         '
         'save
         '
@@ -452,7 +452,7 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.idprinciple)
         Me.Controls.Add(Me.nomerpelunasan)
         Me.Controls.Add(Me.LabelControl13)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.LabelControl10)
@@ -525,7 +525,7 @@ Partial Class pelunasan_piutang
     Friend WithEvents totaldibayar As System.Windows.Forms.TextBox
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents save As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
