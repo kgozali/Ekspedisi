@@ -49,7 +49,7 @@ Public Class edit_booking
         If rutebook = "" Then
             MessageBox.Show("Pilih rute terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            supir_booking.ShowDialog()
+            list_edit_supir.ShowDialog()
         End If
 
     End Sub

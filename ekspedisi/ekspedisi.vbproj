@@ -626,6 +626,12 @@
     <Compile Include="Transaksi\edit_booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\list_edit_supir.Designer.vb">
+      <DependentUpon>list_edit_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\list_edit_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\list_principle_edit.Designer.vb">
       <DependentUpon>list_principle_edit.vb</DependentUpon>
     </Compile>
@@ -975,6 +981,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\edit_item.resx">
       <DependentUpon>edit_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\list_edit_supir.resx">
+      <DependentUpon>list_edit_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\list_principle_edit.resx">
       <DependentUpon>list_principle_edit.vb</DependentUpon>
