@@ -44,6 +44,8 @@ Public Class list_edit_barang
         master_barang.GridControl1.DataSource = data
         data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         master_barang.GridControl2.DataSource = data
+        master_barang.deldata.Down = False
+        master_barang.edit.Down = False
 
     End Sub
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick

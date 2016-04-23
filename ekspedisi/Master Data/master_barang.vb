@@ -60,7 +60,7 @@ Public Class master_barang
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Then
+        If edit.Down = True Or deldata.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
                     data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang like '%" & cari.Text & "%'")

@@ -128,13 +128,14 @@ Public Class master_kontak_principle
                     Case MsgBoxResult.Yes
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
-                                InsertInto("update mkontakprinciple set `s`=0 where id_kontak='" & GridView2.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Kontak").ToString & "'")
+                                InsertInto("update mkontakprinciple set `s`=0 where id_kontak='" & GridView2.GetRowCellValue(i, "Kode Kontak").ToString & "'")
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
                         connect.Close()
                         GridControl2.Visible = False
                         GridControl1.Visible = True
+                        deldata.Down = False
                         master_kontak_principle_Load(sender, e)
                 End Select
             Else

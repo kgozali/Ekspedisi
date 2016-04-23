@@ -55,7 +55,7 @@ Public Class master_customer
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Then
+        If edit.Down = True Or deldata.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
                     data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer where `s`='1'and id_customer like '%" & cari.Text & "%'")
@@ -73,10 +73,10 @@ Public Class master_customer
             GridControl2.DataSource = data
             'memberi cek ke Kode yg udah didalam dttable checks
             If checks.Rows.Count > 0 Then
-                For i = 0 To gridview1.DataRowCount - 1
+                For i = 0 To GridView1.DataRowCount - 1
                     For j = 0 To checks.Rows.Count() - 1
-                        If gridview1.GetRowCellValue(i, "Kode customer").ToString = checks.Rows(j).Item(0).ToString Then
-                            gridview1.SelectRow(i)
+                        If GridView1.GetRowCellValue(i, "Kode customer").ToString = checks.Rows(j).Item(0).ToString Then
+                            GridView1.SelectRow(i)
                         End If
                     Next
                 Next
