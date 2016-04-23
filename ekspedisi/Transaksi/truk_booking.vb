@@ -69,7 +69,8 @@ Public Class truk_booking
             Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk")
             Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "No.Polisi")
             booking_truk.ButtonEdit1.Text = nama
-            booking_truk.trukbook = kode
+            edit_booking.trukbook = kode
+            MsgBox(edit_booking.trukbook)
             truk_booking_Load(sender, e)
             Me.Close()
         Catch ex As Exception
@@ -79,6 +80,29 @@ Public Class truk_booking
     End Sub
 
     Private Sub GridControl1_DoubleClick(sender As Object, e As EventArgs) Handles GridControl1.DoubleClick
-        check(sender, e)
+        Try
+            'pilih truk ditampilkan pada buttonedit Booking truk
+            Dim query As New DataTable
+            'cek supir apa ada bookingan pada hari itu
+            query = DtTable("select id_truk from booking_truk where id_truk='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk") + "' and tgl='" + booking_truk.DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "'")
+            If query.Rows.Count > 0 Then
+                Dim msg As Integer = MessageBox.Show("Truk yang dipilih telah terdaftar dalam salah satu booking pada tanggal yang telah dipilih, apakah anda ingin melanjutkan booking?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                If msg = DialogResult.OK Then
+                    check(sender, e)
+                End If
+            Else
+                check(sender, e)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub id_CheckedChanged(sender As Object, e As EventArgs) Handles id.CheckedChanged
+        proc()
+    End Sub
+
+    Private Sub nama_CheckedChanged(sender As Object, e As EventArgs) Handles nama.CheckedChanged
+        proc()
     End Sub
 End Class

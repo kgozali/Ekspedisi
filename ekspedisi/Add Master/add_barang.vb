@@ -20,6 +20,12 @@ Public Class add_barang
                 If msg = DialogResult.OK Then
                     add_barang_Load(sender, e)
                     DataTable1.Rows.Clear()
+                    master_barang.GridControl1.Visible = True
+                    master_barang.GridControl2.Visible = False
+                    data = DtTable("SELECT id_barang `ID Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                    master_barang.GridControl1.DataSource = data
+                    master_barang.deldata.Down = False
+                    master_barang.deldata.Down = True
                     Reset()
                 Else
                     e.Cancel = True

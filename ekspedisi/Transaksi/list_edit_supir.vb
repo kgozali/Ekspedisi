@@ -1,10 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class supir_booking
+Public Class list_edit_supir
     Dim tabelid As New DataTable
     Public tampung As New DataTable
-    Private Sub supir_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub list_edit_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim route As String = booking_truk.ButtonEdit4.Text.ToString
+            Dim route As String = edit_booking.ButtonEdit4.Text.ToString
             cari.Text = ""
             proc()
             GroupControl3.Text = "Daftar Supir Rute " & route
@@ -12,15 +12,15 @@ Public Class supir_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
+
     Sub proc()
         Try
             If id.Checked = True Then
-                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota` ,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and  msupir.id_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + booking_truk.rutebook + "'")
+                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota` ,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and  msupir.id_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "'")
                 editing()
             ElseIf nama.Checked = True Then
-                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota`,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and nama_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + booking_truk.rutebook + "'")
+                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota`,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and nama_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "'")
                 editing()
             End If
         Catch ex As Exception
@@ -43,38 +43,7 @@ Public Class supir_booking
 
     End Sub
 
-    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        proc()
-    End Sub
-
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        Try
-            Dim query As New DataTable
-            'cek supir apa ada bookingan pada hari itu
-            query = DtTable("select id_supir from booking_truk where id_supir='" + gridbooking.GetRowCellValue(gridbooking.FocusedRowHandle, "Kode Supir") + "' and tgl='" + booking_truk.DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "'")
-            If query.Rows.Count > 0 Then
-                Dim msg As Integer = MessageBox.Show("Supir yang dipilih telah terdaftar dalam salah satu booking pada tanggal yang telah dipilih, apakah anda ingin melanjutkan booking?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                If msg = DialogResult.OK Then
-                    pilih(sender, e)
-                Else
-
-                End If
-            Else
-                pilih(sender, e)
-            End If
-
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-    End Sub
-
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        Me.Close()
-    End Sub
-
-    Private Sub controlbooking_DoubleClick(sender As Object, e As EventArgs) Handles controlbooking.DoubleClick
         Try
             Dim query As New DataTable
             'cek supir apa ada bookingan pada hari itu
@@ -108,9 +77,21 @@ Public Class supir_booking
         End If
         tampung.Clear()
         tampung.Rows.Add(kode, nama, "0", tarif)
-        booking_truk.GridControl2.DataSource = tampung
-        booking_truk.max = tarif
-        supir_booking_Load(sender, e)
+        edit_booking.GridControl2.DataSource = tampung
+        edit_booking.max = tarif
+        list_edit_supir_Load(sender, e)
         Me.Close()
+    End Sub
+
+    Private Sub id_CheckedChanged(sender As Object, e As EventArgs) Handles id.CheckedChanged
+        proc()
+    End Sub
+
+    Private Sub nama_CheckedChanged(sender As Object, e As EventArgs) Handles nama.CheckedChanged
+        proc()
+    End Sub
+
+    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
+        proc()
     End Sub
 End Class

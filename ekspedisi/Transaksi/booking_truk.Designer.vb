@@ -43,6 +43,7 @@ Partial Class booking_truk
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +124,7 @@ Partial Class booking_truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(700, 480)
+        Me.SimpleButton1.Location = New System.Drawing.Point(700, 419)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 142
@@ -132,7 +133,7 @@ Partial Class booking_truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(594, 480)
+        Me.Submit.Location = New System.Drawing.Point(594, 419)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 141
@@ -140,18 +141,19 @@ Partial Class booking_truk
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Location = New System.Drawing.Point(15, 112)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(785, 98)
+        Me.GroupControl1.Size = New System.Drawing.Size(785, 63)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data Booking"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(15, 136)
+        Me.GridControl1.Location = New System.Drawing.Point(0, 19)
         Me.GridControl1.MainView = Me.gridkontak
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(775, 74)
+        Me.GridControl1.Size = New System.Drawing.Size(775, 46)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridkontak})
         '
@@ -159,6 +161,7 @@ Partial Class booking_truk
         '
         Me.gridkontak.GridControl = Me.GridControl1
         Me.gridkontak.Name = "gridkontak"
+        Me.gridkontak.OptionsView.ShowGroupPanel = False
         '
         'ButtonEdit1
         '
@@ -206,9 +209,9 @@ Partial Class booking_truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl2)
-        Me.GroupControl2.Location = New System.Drawing.Point(14, 228)
+        Me.GroupControl2.Location = New System.Drawing.Point(15, 200)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(700, 110)
+        Me.GroupControl2.Size = New System.Drawing.Size(700, 69)
         Me.GroupControl2.TabIndex = 147
         Me.GroupControl2.Text = "Pembayaran DP"
         '
@@ -217,7 +220,7 @@ Partial Class booking_truk
         Me.GridControl2.Location = New System.Drawing.Point(5, 24)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(690, 74)
+        Me.GridControl2.Size = New System.Drawing.Size(690, 47)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -225,10 +228,11 @@ Partial Class booking_truk
         '
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsView.ShowGroupPanel = False
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(91, 357)
+        Me.RichTextBox2.Location = New System.Drawing.Point(136, 295)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
         Me.RichTextBox2.TabIndex = 56
@@ -237,7 +241,7 @@ Partial Class booking_truk
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(19, 356)
+        Me.LabelControl10.Location = New System.Drawing.Point(76, 294)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl10.TabIndex = 55
@@ -247,8 +251,7 @@ Partial Class booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(815, 519)
-        Me.Controls.Add(Me.GridControl1)
+        Me.ClientSize = New System.Drawing.Size(815, 454)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.LabelControl10)
@@ -271,6 +274,7 @@ Partial Class booking_truk
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Booking Truk"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
