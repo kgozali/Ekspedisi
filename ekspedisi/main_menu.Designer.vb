@@ -57,6 +57,7 @@ Partial Class main_menu
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.hutangdo = New DevExpress.XtraEditors.SimpleButton()
         Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.bukapiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.peluanasapiutangprinciple = New DevExpress.XtraEditors.SimpleButton()
@@ -115,7 +116,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.hutangdo = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -151,8 +151,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem7
-        Me.BackstageViewControl1.SelectedTabIndex = 3
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
+        Me.BackstageViewControl1.SelectedTabIndex = 0
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -516,6 +516,15 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
         Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
+        '
+        'hutangdo
+        '
+        Me.hutangdo.Image = CType(resources.GetObject("hutangdo.Image"), System.Drawing.Image)
+        Me.hutangdo.Location = New System.Drawing.Point(48, 160)
+        Me.hutangdo.Name = "hutangdo"
+        Me.hutangdo.Size = New System.Drawing.Size(196, 54)
+        Me.hutangdo.TabIndex = 26
+        Me.hutangdo.Text = "Pelunasan Hutang DO"
         '
         'pelunasanpiutangkaryawan
         '
@@ -926,7 +935,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = False
+        Me.BackstageViewTabItem1.Selected = True
         '
         'BackstageViewTabItem5
         '
@@ -950,7 +959,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
         Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
-        Me.BackstageViewTabItem7.Selected = True
+        Me.BackstageViewTabItem7.Selected = False
         '
         'BackstageViewTabItem6
         '
@@ -1039,22 +1048,13 @@ Partial Class main_menu
         'sfd
         '
         '
-        'hutangdo
-        '
-        Me.hutangdo.Image = CType(resources.GetObject("hutangdo.Image"), System.Drawing.Image)
-        Me.hutangdo.Location = New System.Drawing.Point(48, 160)
-        Me.hutangdo.Name = "hutangdo"
-        Me.hutangdo.Size = New System.Drawing.Size(196, 54)
-        Me.hutangdo.TabIndex = 26
-        Me.hutangdo.Text = "Pelunasan Hutang DO"
-        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.BackstageViewControl1)
-        Me.LookAndFeel.SkinName = "DevExpress Dark Style"
+        Me.LookAndFeel.SkinName = "VS2010"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
