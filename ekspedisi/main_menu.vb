@@ -175,4 +175,8 @@ Public Class main_menu
     Private Sub SimpleButton28_Click(sender As Object, e As EventArgs) Handles SimpleButton28.Click
         kas_masuk.ShowDialog()
     End Sub
+
+    Private Sub kaskeluar_Click(sender As Object, e As EventArgs) Handles kaskeluar.Click
+        kas_keluar.ShowDialog()
+    End Sub
 End Class
