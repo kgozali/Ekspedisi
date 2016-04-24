@@ -14,6 +14,7 @@ Public Class KIR_Truk
     Dim kodekir As String = ""
     Dim inserts As Boolean = False
     Public trukbook As String = ""
+
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'autogenerate kode kir
