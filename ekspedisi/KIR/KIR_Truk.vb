@@ -55,8 +55,8 @@ Public Class KIR_Truk
     Sub autogen()
         Try
             Dim tanggal As New DataTable
-            Dim tgl As String = "KIR" + Today.Date.ToString("yyyyMMdd")
-            tanggal = DtTable("select * from kir where substring(id_kir,1,11) = '" & tgl & "'")
+            Dim tgl As String = "KIR" + Today.Date.ToString("yyMMdd")
+            tanggal = DtTable("select * from kir where substring(id_kir,1,9) = '" & tgl & "'")
             Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" + hitung

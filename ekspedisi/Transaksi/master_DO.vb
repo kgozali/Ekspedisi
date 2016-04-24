@@ -15,15 +15,7 @@ Public Class master_DO
         unallowedit()
 
     End Sub
-    Sub summary()
-        For i = 0 To GridView1.Columns.Count - 1
-            GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-            GridView1.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
-            GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-
-        Next
-
-    End Sub
+   
     Sub process()
         Try
             Dim x As String = ""
@@ -36,10 +28,10 @@ Public Class master_DO
             If nama.Checked = True Then
                 cari.Visible = True
                 DateTimePicker1.Visible = False
-
+                GridView1.OptionsView.ShowFooter = True
                 datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
-
+                summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
@@ -48,10 +40,10 @@ Public Class master_DO
 
                 cari.Visible = True
                 DateTimePicker1.Visible = False
-
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_booking LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
+                GridView1.OptionsView.ShowFooter = True
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_transaksi LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
-
+                summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
@@ -59,10 +51,10 @@ Public Class master_DO
             ElseIf tgl.Checked = True Then
                 cari.Visible = False
                 DateTimePicker1.Visible = True
-
+                GridView1.OptionsView.ShowFooter = True
                 datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' order by jatuh_tempo asc")
                 GridControl1.DataSource = datatable
-
+                summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
                 Label1.Text = path
@@ -77,43 +69,43 @@ Public Class master_DO
 
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
         process()
-        summary()
+
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         process()
-        summary()
+
     End Sub
 
     Private Sub nama_CheckedChanged(sender As Object, e As EventArgs) Handles nama.CheckedChanged
         process()
-        summary()
+
         cari.Text = ""
         DateTimePicker1.ResetText()
     End Sub
 
     Private Sub tgl_CheckedChanged(sender As Object, e As EventArgs) Handles tgl.CheckedChanged
         process()
-        summary()
+
         cari.Text = ""
         DateTimePicker1.ResetText()
     End Sub
 
     Private Sub kodebooking_CheckedChanged(sender As Object, e As EventArgs) Handles kodebooking.CheckedChanged
         process()
-        summary()
+
         cari.Text = ""
         DateTimePicker1.ResetText()
     End Sub
     
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
         process()
-        summary()
+
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
         process()
-        summary()
+
     End Sub
 
     Private Sub GridControl1_DataSourceChanged(sender As Object, e As EventArgs) Handles GridControl1.DataSourceChanged
@@ -163,6 +155,16 @@ Public Class master_DO
         DateTimePicker1.ResetText()
         cari.Text = ""
     End Sub
+    Sub summary()
+        For i = 0 To GridView1.Columns.Count - 1
+            GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            If GridView1.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                GridView1.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+            End If
+        Next
 
+    End Sub
 
 End Class

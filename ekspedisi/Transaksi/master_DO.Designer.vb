@@ -117,7 +117,7 @@ Partial Class master_DO
         'kodebooking
         '
         Me.kodebooking.AutoSize = True
-        Me.kodebooking.Location = New System.Drawing.Point(5, 47)
+        Me.kodebooking.Location = New System.Drawing.Point(5, 50)
         Me.kodebooking.Name = "kodebooking"
         Me.kodebooking.Size = New System.Drawing.Size(89, 17)
         Me.kodebooking.TabIndex = 3
@@ -139,7 +139,7 @@ Partial Class master_DO
         'tgl
         '
         Me.tgl.AutoSize = True
-        Me.tgl.Location = New System.Drawing.Point(85, 23)
+        Me.tgl.Location = New System.Drawing.Point(101, 23)
         Me.tgl.Name = "tgl"
         Me.tgl.Size = New System.Drawing.Size(88, 17)
         Me.tgl.TabIndex = 1
