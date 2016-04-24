@@ -179,4 +179,8 @@ Public Class main_menu
     Private Sub kaskeluar_Click(sender As Object, e As EventArgs) Handles kaskeluar.Click
         kas_keluar.ShowDialog()
     End Sub
+
+    Private Sub hutangdo_Click(sender As Object, e As EventArgs) Handles hutangdo.Click
+        pelunasan_hutang_supir.ShowDialog()
+    End Sub
 End Class
