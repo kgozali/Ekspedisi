@@ -24,13 +24,14 @@ Partial Class form_perubahan_harga
         Me.rute = New DevExpress.XtraGrid.GridControl()
         Me.datarute = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.principle = New System.Windows.Forms.ComboBox()
+        Me.namaprinciple = New System.Windows.Forms.RadioButton()
         Me.namatujuan = New System.Windows.Forms.RadioButton()
         Me.namaasal = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.namaprinciple = New System.Windows.Forms.RadioButton()
-        Me.principle = New System.Windows.Forms.ComboBox()
+        Me.history = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.rute, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +77,25 @@ Partial Class form_perubahan_harga
         Me.GroupControl2.Size = New System.Drawing.Size(250, 96)
         Me.GroupControl2.TabIndex = 123
         Me.GroupControl2.Text = "Cari Berdasarkan"
+        '
+        'principle
+        '
+        Me.principle.FormattingEnabled = True
+        Me.principle.Location = New System.Drawing.Point(8, 72)
+        Me.principle.Name = "principle"
+        Me.principle.Size = New System.Drawing.Size(144, 21)
+        Me.principle.TabIndex = 126
+        Me.principle.Visible = False
+        '
+        'namaprinciple
+        '
+        Me.namaprinciple.AutoSize = True
+        Me.namaprinciple.Location = New System.Drawing.Point(8, 48)
+        Me.namaprinciple.Name = "namaprinciple"
+        Me.namaprinciple.Size = New System.Drawing.Size(94, 17)
+        Me.namaprinciple.TabIndex = 4
+        Me.namaprinciple.Text = "Nama Principle"
+        Me.namaprinciple.UseVisualStyleBackColor = True
         '
         'namatujuan
         '
@@ -124,35 +144,27 @@ Partial Class form_perubahan_harga
         Me.cancel.TabIndex = 124
         Me.cancel.Text = "Cancel"
         '
-        'namaprinciple
+        'history
         '
-        Me.namaprinciple.AutoSize = True
-        Me.namaprinciple.Location = New System.Drawing.Point(8, 48)
-        Me.namaprinciple.Name = "namaprinciple"
-        Me.namaprinciple.Size = New System.Drawing.Size(94, 17)
-        Me.namaprinciple.TabIndex = 4
-        Me.namaprinciple.Text = "Nama Principle"
-        Me.namaprinciple.UseVisualStyleBackColor = True
-        '
-        'principle
-        '
-        Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(8, 72)
-        Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(144, 21)
-        Me.principle.TabIndex = 126
-        Me.principle.Visible = False
+        Me.history.Image = CType(resources.GetObject("history.Image"), System.Drawing.Image)
+        Me.history.Location = New System.Drawing.Point(480, 80)
+        Me.history.Name = "history"
+        Me.history.Size = New System.Drawing.Size(191, 27)
+        Me.history.TabIndex = 126
+        Me.history.Text = "History Perubahan Harga"
         '
         'form_perubahan_harga
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(683, 450)
+        Me.Controls.Add(Me.history)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Name = "form_perubahan_harga"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Perubahan Harga"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -176,4 +188,5 @@ Partial Class form_perubahan_harga
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents principle As System.Windows.Forms.ComboBox
     Friend WithEvents namaprinciple As System.Windows.Forms.RadioButton
+    Friend WithEvents history As DevExpress.XtraEditors.SimpleButton
 End Class

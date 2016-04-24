@@ -5,8 +5,10 @@
     End Sub
 
     Private Sub form_perubahan_harga_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        isi.Columns.Add("id_rute")
-        isi.Columns.Add("hargabaru")
+        If isi.Columns.Count = 0 Then
+            isi.Columns.Add("id_rute")
+            isi.Columns.Add("hargabaru")
+        End If
         Dim data As New DataTable
         data = DtTableupdateharga("SELECT id_rute `Kode Rute` , kota_asal `Kota Asal` , kota_tujuan `Kota Tujuan` , nama_principle `Nama Principle` , price_per_unit `Harga Awal` FROM  `mrute` mr,  `mprinciple` mp WHERE mr.s =  '1' AND mr.id_principle = mp.id_principle")
         rute.DataSource = data
@@ -100,6 +102,7 @@
                 If IsDBNull(datarute.GetRowCellValue(i, "Harga Baru")) = False Then
                     If datarute.GetRowCellValue(i, "Harga Baru") <> datarute.GetRowCellValue(i, "Harga Awal") Then
                         InsertInto("INSERT INTO `mperubahan_harga` VALUES ('" & datarute.GetRowCellValue(i, "Kode Rute") & "','" & datarute.GetRowCellValue(i, "Harga Awal") & "','" & datarute.GetRowCellValue(i, "Harga Baru") & "'," & DateTime.Now.ToString("yyyyMMdd") & ")")
+                        InsertInto("UPDATE `mrute` SET `price_per_unit`=" & datarute.GetRowCellValue(i, "Harga Baru") & " WHERE id_rute='" & datarute.GetRowCellValue(i, "Kode Rute") & "'")
                     End If
                 End If
             Next i
@@ -109,5 +112,31 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub history_Click(sender As Object, e As EventArgs) Handles history.Click
+        Try
+            Dim data As New DataTable
+            data = DtTable("SELECT tgl_perubahan `Tanggal Perubahan`, price_awal `Harga Awal`, price_akhir `Harga Akhir` FROM `mperubahan_harga` WHERE id_rute='" & datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") & "'")
+            history_perubahan_harga.history.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        history_perubahan_harga.ShowDialog()
+    End Sub
+    Dim keamanan As String
+    Private Sub datarute_ShownEditor(sender As Object, e As EventArgs) Handles datarute.ShownEditor
+        If datarute.FocusedColumn.AbsoluteIndex <> 5 Then
+            keamanan = datarute.GetRowCellValue(datarute.FocusedRowHandle, datarute.FocusedColumn)
+        End If
+    End Sub
+
+    Private Sub datarute_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datarute.CellValueChanging
+        If e.Column.AbsoluteIndex <> 5 Then
+            With datarute
+                .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+            End With
+        End If
+
     End Sub
 End Class
