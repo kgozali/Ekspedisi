@@ -191,7 +191,7 @@ Public Class kas_masuk
                 MessageBox.Show(ex2.Message)
             End Try
         Finally
-            If IsNothing(connect)=False Then
+            If IsNothing(connect) = False Then
                 connect.Close()
             End If
             If flagval And savestatus = True Then

@@ -21,7 +21,7 @@ Partial Class add_supplier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_supplier))
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.kategori = New System.Windows.Forms.ComboBox()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.provinsi = New DevExpress.XtraEditors.TextEdit()
         Me.tel2 = New DevExpress.XtraEditors.TextEdit()
@@ -39,8 +39,8 @@ Partial Class add_supplier
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.kota = New System.Windows.Forms.ComboBox()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,13 +60,13 @@ Partial Class add_supplier
         Me.LabelControl13.TabIndex = 75
         Me.LabelControl13.Text = "Kategori Supplier :"
         '
-        'ComboBox1
+        'kategori
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(129, 193)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(335, 21)
-        Me.ComboBox1.TabIndex = 10
+        Me.kategori.FormattingEnabled = True
+        Me.kategori.Location = New System.Drawing.Point(129, 193)
+        Me.kategori.Name = "kategori"
+        Me.kategori.Size = New System.Drawing.Size(335, 21)
+        Me.kategori.TabIndex = 10
         '
         'cancel
         '
@@ -202,10 +202,10 @@ Partial Class add_supplier
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.ComboBox2)
+        Me.GroupControl1.Controls.Add(Me.kota)
         Me.GroupControl1.Controls.Add(Me.provinsi)
         Me.GroupControl1.Controls.Add(Me.tel2)
-        Me.GroupControl1.Controls.Add(Me.ComboBox1)
+        Me.GroupControl1.Controls.Add(Me.kategori)
         Me.GroupControl1.Controls.Add(Me.tel1)
         Me.GroupControl1.Controls.Add(Me.LabelControl13)
         Me.GroupControl1.Controls.Add(Me.email)
@@ -226,6 +226,14 @@ Partial Class add_supplier
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
         '
+        'kota
+        '
+        Me.kota.FormattingEnabled = True
+        Me.kota.Location = New System.Drawing.Point(129, 144)
+        Me.kota.Name = "kota"
+        Me.kota.Size = New System.Drawing.Size(335, 21)
+        Me.kota.TabIndex = 76
+        '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -234,14 +242,6 @@ Partial Class add_supplier
         Me.LabelControl9.Size = New System.Drawing.Size(40, 18)
         Me.LabelControl9.TabIndex = 55
         Me.LabelControl9.Text = "Kota :"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(129, 144)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(335, 21)
-        Me.ComboBox2.TabIndex = 76
         '
         'add_supplier
         '
@@ -266,7 +266,7 @@ Partial Class add_supplier
 
     End Sub
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents kategori As System.Windows.Forms.ComboBox
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents provinsi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tel2 As DevExpress.XtraEditors.TextEdit
@@ -284,6 +284,6 @@ Partial Class add_supplier
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents kota As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
 End Class

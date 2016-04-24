@@ -39,7 +39,6 @@ Public Class master_karyawan
         For i = 0 To data.Columns.Count - 1
             GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next
-
         checks.Columns.Add("ID karyawan")
         unchecks.Columns.Add("ID karyawan")
         For i = 0 To GridView1.DataRowCount - 1

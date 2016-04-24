@@ -44,7 +44,7 @@ Public Class daftar_kas_masuk
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         Dim keyid As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "keyid").ToString
         If keyid = "" Then Exit Sub
-        frmcetaknota.gencetak("TRANSAKSI KAS", keyid, "M")
+        'frmcetaknota.gencetak("TRANSAKSI KAS", keyid, "M")
 
     End Sub
 End Class
