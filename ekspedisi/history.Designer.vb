@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class history_perubahan_harga
+Partial Class historyperubahan
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -20,54 +20,53 @@ Partial Class history_perubahan_harga
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.history = New DevExpress.XtraGrid.GridControl()
-        Me.datarute = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.perubahan = New DevExpress.XtraGrid.GridControl()
+        Me.daftarperubahan = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.history, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.datarute, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.perubahan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.daftarperubahan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.history)
+        Me.GroupControl1.Controls.Add(Me.perubahan)
         Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(752, 496)
-        Me.GroupControl1.TabIndex = 123
-        Me.GroupControl1.Text = "Daftar Rute"
+        Me.GroupControl1.Size = New System.Drawing.Size(848, 488)
+        Me.GroupControl1.TabIndex = 0
+        Me.GroupControl1.Text = "Daftar Perubahan Harga"
         '
-        'history
+        'perubahan
         '
-        Me.history.Location = New System.Drawing.Point(8, 24)
-        Me.history.MainView = Me.datarute
-        Me.history.Name = "history"
-        Me.history.Size = New System.Drawing.Size(736, 464)
-        Me.history.TabIndex = 0
-        Me.history.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.datarute})
+        Me.perubahan.Location = New System.Drawing.Point(8, 24)
+        Me.perubahan.MainView = Me.daftarperubahan
+        Me.perubahan.Name = "perubahan"
+        Me.perubahan.Size = New System.Drawing.Size(832, 456)
+        Me.perubahan.TabIndex = 0
+        Me.perubahan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.daftarperubahan})
         '
-        'datarute
+        'daftarperubahan
         '
-        Me.datarute.GridControl = Me.history
-        Me.datarute.Name = "datarute"
-        Me.datarute.OptionsView.ShowGroupPanel = False
+        Me.daftarperubahan.GridControl = Me.perubahan
+        Me.daftarperubahan.Name = "daftarperubahan"
         '
-        'history_perubahan_harga
+        'historyperubahan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(771, 515)
+        Me.ClientSize = New System.Drawing.Size(863, 504)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Name = "history_perubahan_harga"
+        Me.Name = "historyperubahan"
         Me.Text = "Perubahan Harga"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
-        CType(Me.history, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.datarute, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.perubahan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.daftarperubahan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents history As DevExpress.XtraGrid.GridControl
-    Friend WithEvents datarute As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents perubahan As DevExpress.XtraGrid.GridControl
+    Friend WithEvents daftarperubahan As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
