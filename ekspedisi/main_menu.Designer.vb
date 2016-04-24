@@ -115,6 +115,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.hutangdo = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -150,8 +151,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem6
-        Me.BackstageViewControl1.SelectedTabIndex = 4
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem7
+        Me.BackstageViewControl1.SelectedTabIndex = 3
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -506,6 +507,7 @@ Partial Class main_menu
         '
         'BackstageViewClientControl7
         '
+        Me.BackstageViewClientControl7.Controls.Add(Me.hutangdo)
         Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.bukapiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.peluanasapiutangprinciple)
@@ -948,7 +950,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
         Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
-        Me.BackstageViewTabItem7.Selected = False
+        Me.BackstageViewTabItem7.Selected = True
         '
         'BackstageViewTabItem6
         '
@@ -956,7 +958,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem6.ContentControl = Me.BackstageViewClientControl6
         Me.BackstageViewTabItem6.Glyph = CType(resources.GetObject("BackstageViewTabItem6.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem6.Name = "BackstageViewTabItem6"
-        Me.BackstageViewTabItem6.Selected = True
+        Me.BackstageViewTabItem6.Selected = False
         '
         'BackstageViewTabItem10
         '
@@ -1036,6 +1038,15 @@ Partial Class main_menu
         '
         'sfd
         '
+        '
+        'hutangdo
+        '
+        Me.hutangdo.Image = CType(resources.GetObject("hutangdo.Image"), System.Drawing.Image)
+        Me.hutangdo.Location = New System.Drawing.Point(48, 160)
+        Me.hutangdo.Name = "hutangdo"
+        Me.hutangdo.Size = New System.Drawing.Size(196, 54)
+        Me.hutangdo.TabIndex = 26
+        Me.hutangdo.Text = "Pelunasan Hutang DO"
         '
         'main_menu
         '
@@ -1168,4 +1179,5 @@ Partial Class main_menu
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton42 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents hutangdo As DevExpress.XtraEditors.SimpleButton
 End Class

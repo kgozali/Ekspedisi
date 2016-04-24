@@ -12,6 +12,9 @@ Public Class KIR_Truk
     Dim nominal As Integer = 0
     Dim path As String = ""
     Dim kodekir As String = ""
+    Dim inserts As Boolean = False
+    Public trukbook As String = ""
+
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'autogenerate kode kir
@@ -202,4 +205,65 @@ Public Class KIR_Truk
     '            GridView1.Columns(i).OptionsColumn.AllowEdit = False
     '        Next
     '    End Sub
+
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+        Try
+            If TextEdit2.Text = "" Then
+                MessageBox.Show("Harap mengisi No. KIR terlebih dahulu", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                If trukbook = "" Then
+                    MessageBox.Show("Harap memilih truk terlebih dahulu", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    If DateTimePicker2.Value > DateTimePicker1.Value Then
+                        MessageBox.Show("Tanggal KIR berikutnya wajib sesudah tanggal KIR yang ditentukan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        If nominal = 0 Then
+                            MessageBox.Show("Nominal KIR Rp.0 , harap mengisi nominal KIR lebih dari Rp.0", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            If TextEdit4.Text = "" Then
+                                Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda tetap ingin melanjutkan KIR tanpa mencantumkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                If msg = DialogResult.OK Then
+                                    insert()
+                                    Me.Close()
+                                End If
+                            Else
+                                insert()
+                                Me.Close()
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Sub insert()
+        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','')")
+        If inserts = True Then
+            MessageBox.Show("KIR berhasil dilakukan, silahkan membuka Form KIR untuk melakukan KIR kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub ButtonEdit1_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles ButtonEdit1.ButtonClick
+        kir_daftar_truk.ShowDialog()
+    End Sub
+
+    Private Sub KIR_Truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        master_KIR.master_KIR_Load(sender, e)
+        reset()
+    End Sub
+    Sub reset()
+        TextEdit2.Text = ""
+        TextEdit3.Text = "0"
+        trukbook = ""
+        DateTimePicker1.ResetText()
+        DateTimePicker2.ResetText()
+        TextEdit4.Text = ""
+        ButtonEdit1.Text = ""
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
 End Class

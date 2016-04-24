@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class truk_booking
+Partial Class kir_daftar_truk
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,7 +19,7 @@ Partial Class truk_booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(truk_booking))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(kir_daftar_truk))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -44,7 +44,7 @@ Partial Class truk_booking
         Me.GroupControl3.Location = New System.Drawing.Point(12, 94)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(760, 422)
-        Me.GroupControl3.TabIndex = 38
+        Me.GroupControl3.TabIndex = 42
         Me.GroupControl3.Text = "Data Truk"
         '
         'GridControl1
@@ -69,7 +69,7 @@ Partial Class truk_booking
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
-        Me.GroupControl1.TabIndex = 37
+        Me.GroupControl1.TabIndex = 41
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'nama
@@ -107,7 +107,7 @@ Partial Class truk_booking
         Me.SimpleButton1.Location = New System.Drawing.Point(672, 522)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 40
+        Me.SimpleButton1.TabIndex = 44
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -116,21 +116,20 @@ Partial Class truk_booking
         Me.Submit.Location = New System.Drawing.Point(566, 522)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 39
+        Me.Submit.TabIndex = 43
         Me.Submit.Text = "Submit"
         '
-        'truk_booking
+        'kir_daftar_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 561)
-        Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Name = "truk_booking"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Truk"
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.Submit)
+        Me.Name = "kir_daftar_truk"
+        Me.Text = "kir_daftar_truk"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()

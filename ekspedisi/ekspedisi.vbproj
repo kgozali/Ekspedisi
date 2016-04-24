@@ -275,6 +275,18 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="history_perubahan_harga.Designer.vb">
+      <DependentUpon>history_perubahan_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="history_perubahan_harga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIR\kir_daftar_truk.Designer.vb">
+      <DependentUpon>kir_daftar_truk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\kir_daftar_truk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\edit_item.Designer.vb">
       <DependentUpon>edit_item.vb</DependentUpon>
     </Compile>
@@ -842,8 +854,14 @@
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="history_perubahan_harga.resx">
+      <DependentUpon>history_perubahan_harga.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KIR\edit_kir_truk.resx">
       <DependentUpon>edit_kir_truk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\kir_daftar_truk.resx">
+      <DependentUpon>kir_daftar_truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
