@@ -49,14 +49,14 @@ Partial Class master_rute
         Me.aktif = New System.Windows.Forms.RadioButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,10 +66,10 @@ Partial Class master_rute
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -320,6 +320,23 @@ Partial Class master_rute
         Me.GroupControl3.TabIndex = 55
         Me.GroupControl3.Text = "Data Rute"
         '
+        'GridControl2
+        '
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(671, 311)
+        Me.GridControl2.TabIndex = 8
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
+        '
         'GridControl1
         '
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
@@ -373,23 +390,6 @@ Partial Class master_rute
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'GridControl2
-        '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.MenuManager = Me.RibbonControl1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(671, 311)
-        Me.GridControl2.TabIndex = 8
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
-        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
-        '
         'master_rute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -416,10 +416,10 @@ Partial Class master_rute
         Me.GroupControl2.PerformLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
