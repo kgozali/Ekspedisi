@@ -119,10 +119,10 @@ Partial Class daftar_hutang_karyawan
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl1.Location = New System.Drawing.Point(8, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(682, 325)
+        Me.GridControl1.Size = New System.Drawing.Size(664, 312)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -133,7 +133,7 @@ Partial Class daftar_hutang_karyawan
         '
         'daftar_hutang_karyawan
         '
-        Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
+        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
