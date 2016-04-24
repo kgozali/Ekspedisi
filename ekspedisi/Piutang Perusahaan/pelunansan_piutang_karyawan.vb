@@ -76,7 +76,6 @@
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
         If datapiutang.FocusedColumn.AbsoluteIndex <> 7 Then
             keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
-            
         End If
     End Sub
 

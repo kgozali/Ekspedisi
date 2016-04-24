@@ -28,15 +28,15 @@ Partial Class daftar_hutang_karyawan
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.daftarhutang = New DevExpress.XtraGrid.GridControl()
+        Me.hutang = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.daftarhutang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hutang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -47,7 +47,7 @@ Partial Class daftar_hutang_karyawan
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 109)
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 100)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
@@ -93,7 +93,7 @@ Partial Class daftar_hutang_karyawan
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(594, 477)
+        Me.SimpleButton1.Location = New System.Drawing.Point(594, 472)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 149
@@ -102,7 +102,7 @@ Partial Class daftar_hutang_karyawan
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(488, 477)
+        Me.Submit.Location = New System.Drawing.Point(488, 472)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 148
@@ -110,26 +110,27 @@ Partial Class daftar_hutang_karyawan
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 127)
+        Me.GroupControl3.Controls.Add(Me.daftarhutang)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 120)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
         Me.GroupControl3.TabIndex = 147
         Me.GroupControl3.Text = "Data Hutang Karyawan"
         '
-        'GridControl1
+        'daftarhutang
         '
-        Me.GridControl1.Location = New System.Drawing.Point(8, 24)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(664, 312)
-        Me.GridControl1.TabIndex = 0
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.daftarhutang.Location = New System.Drawing.Point(8, 24)
+        Me.daftarhutang.MainView = Me.hutang
+        Me.daftarhutang.Name = "daftarhutang"
+        Me.daftarhutang.Size = New System.Drawing.Size(664, 312)
+        Me.daftarhutang.TabIndex = 0
+        Me.daftarhutang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.hutang})
         '
-        'GridView1
+        'hutang
         '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
+        Me.hutang.GridControl = Me.daftarhutang
+        Me.hutang.Name = "hutang"
+        Me.hutang.OptionsBehavior.Editable = False
         '
         'daftar_hutang_karyawan
         '
@@ -137,7 +138,7 @@ Partial Class daftar_hutang_karyawan
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(701, 514)
+        Me.ClientSize = New System.Drawing.Size(701, 506)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
@@ -150,8 +151,8 @@ Partial Class daftar_hutang_karyawan
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.daftarhutang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hutang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -163,6 +164,6 @@ Partial Class daftar_hutang_karyawan
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents idkaryawan As System.Windows.Forms.RadioButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents daftarhutang As DevExpress.XtraGrid.GridControl
+    Friend WithEvents hutang As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
