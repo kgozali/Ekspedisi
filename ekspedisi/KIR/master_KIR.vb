@@ -93,4 +93,8 @@ Public Class master_KIR
         Next i
 
     End Sub
+
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+
+    End Sub
 End Class

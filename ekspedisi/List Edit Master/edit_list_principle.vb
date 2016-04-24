@@ -14,7 +14,7 @@ Public Class edit_list_Principle
 
             For i = 0 To master_Principle.GridView1.RowCount - 1
                 If master_Principle.GridView1.IsRowSelected(i) Then
-                    Dim a As String = master_Principle.GridView1.GetRowCellValue(i, "ID Principle").ToString()
+                    Dim a As String = master_principle.GridView1.GetRowCellValue(i, "Kode Principle").ToString()
                     Dim b As String = master_Principle.GridView1.GetRowCellValue(i, "Nama Principle").ToString()
                     Dim c As String = master_Principle.GridView1.GetRowCellValue(i, "Alamat").ToString()
                     Dim d As String = master_Principle.GridView1.GetRowCellValue(i, "Email").ToString()

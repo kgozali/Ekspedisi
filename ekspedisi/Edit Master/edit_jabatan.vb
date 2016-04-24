@@ -3,16 +3,12 @@ Public Class edit_jabatan
 
     Private Sub edit_jabatan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-           
-
             id.Text = edit_list_jabatan.GridView1.GetRowCellValue(edit_list_jabatan.GridView1.FocusedRowHandle, "Kode Jabatan").ToString()
             nama.Text = edit_list_jabatan.GridView1.GetRowCellValue(edit_list_jabatan.GridView1.FocusedRowHandle, "Nama Jabatan").ToString()
 
         Catch ex As Exception
 
         End Try
-
-
 
     End Sub
 
