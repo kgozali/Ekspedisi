@@ -123,7 +123,7 @@ Public Class edit_DO
         sum = CInt(GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString)
         total = price * sum
         If sum <> 0 Then
-            Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',total_bayar='" + total.ToString + "' where id_transaksi='" + kodetrans.ToString + "'")
+            Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "' where id_transaksi='" + kodetrans.ToString + "'")
             'delete
             InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
             'insert baru

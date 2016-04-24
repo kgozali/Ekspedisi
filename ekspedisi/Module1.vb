@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Module Module1
-
+    Public username As String = "jangozstev"
     Public connect As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("ekspedisi").ConnectionString)
 
     Function tglserver() As DateTime

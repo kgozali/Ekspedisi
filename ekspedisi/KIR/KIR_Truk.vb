@@ -14,12 +14,16 @@ Public Class KIR_Truk
     Dim kodekir As String = ""
     Dim inserts As Boolean = False
     Public trukbook As String = ""
+    Dim akunkir As String = ""
+    Dim akunkas As String = ""
 
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'autogenerate kode kir
             autogen()
             TextEdit1.Text = kode
+            akunkir = Scalar("select id_akun from control_account where keterangan='Def. Akun KIR'")
+            akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
             '            Select truk
             '            dt = DtTable("select id_truk,no_pol from mtruk")
             '            ComboBox1.DataSource = dt
@@ -51,8 +55,8 @@ Public Class KIR_Truk
     Sub autogen()
         Try
             Dim tanggal As New DataTable
-            Dim tgl As String = "KIR" + Today.Date.ToString("yyyyMMdd")
-            tanggal = DtTable("select * from kir where substring(id_kir,1,11) = '" & tgl & "'")
+            Dim tgl As String = "KIR" + Today.Date.ToString("yyMMdd")
+            tanggal = DtTable("select * from kir where substring(id_kir,1,9) = '" & tgl & "'")
             Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" + hitung
@@ -224,10 +228,12 @@ Public Class KIR_Truk
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda tetap ingin melanjutkan KIR tanpa mencantumkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     insert()
+                                    insertakun()
                                     Me.Close()
                                 End If
                             Else
                                 insert()
+                                insertakun()
                                 Me.Close()
                             End If
                         End If
@@ -265,5 +271,16 @@ Public Class KIR_Truk
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
+    End Sub
+    Sub insertakun()
+        Try
+            Dim nominalminus As Integer = nominal * -1
+            InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas + "','','" + nominalminus.ToString + "')")
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkir + "','','" + nominal.ToString + "')")
+        Catch ex As Exception
+
+        End Try
+       
     End Sub
 End Class

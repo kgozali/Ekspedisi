@@ -202,11 +202,11 @@ Partial Class KIR_Truk
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(20, 58)
+        Me.Label6.Location = New System.Drawing.Point(52, 61)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 18)
+        Me.Label6.Size = New System.Drawing.Size(38, 18)
         Me.Label6.TabIndex = 56
-        Me.Label6.Text = "Kode KIR"
+        Me.Label6.Text = "Truk"
         '
         'ButtonEdit1
         '

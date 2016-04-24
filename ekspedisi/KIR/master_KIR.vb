@@ -90,7 +90,11 @@ Public Class master_KIR
                 GridView1.Columns(i).SummaryItem.FieldName = "No. Polisi"
                 GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
             End If
-        Next
+        Next i
+
+    End Sub
+
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
 
     End Sub
 End Class
