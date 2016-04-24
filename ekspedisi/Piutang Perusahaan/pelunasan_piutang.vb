@@ -8,11 +8,10 @@
         Try
             Dim data As New DataTable
             nomerpelunasan.Text = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
-            data = DtTable("select nama_akun,kode_akun from makun")
-
-            'RepositoryItemLookUpEdit1.DataSource = data
-            'RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
-            'RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
+            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank'")
+            RepositoryItemLookUpEdit1.DataSource = data
+            RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
+            RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -52,30 +51,54 @@
 
     Private Sub datapiutang_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datapiutang.CellValueChanging
         Try
-            Dim angka As Double = 0
             If datapiutang.FocusedColumn.AbsoluteIndex = 6 Then
-                If datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") = False Then
-                    With datapiutang
-                        .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, True)
-                    End With
-                Else
-                    With datapiutang
-                        .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, False)
-                    End With
-                End If
-                
-                For i = 0 To datapiutang.RowCount - 1
-
-                    If datapiutang.GetRowCellValue(i, "Bayar") = True Then
-                        angka = angka + datapiutang.GetRowCellValue(i, "Nominal")
+                Dim angka As Double = 0
+                If datapiutang.FocusedColumn.AbsoluteIndex = 6 Then
+                    If datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") = False Then
+                        With datapiutang
+                            .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, True)
+                        End With
+                    Else
+                        With datapiutang
+                            .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, False)
+                        End With
                     End If
-                Next i
-                labeltotalbayar.Text = angka.ToString
-                totaldibayar.Text = angka.ToString
+
+                    For i = 0 To datapiutang.RowCount - 1
+
+                        If datapiutang.GetRowCellValue(i, "Bayar") = True Then
+                            angka = angka + datapiutang.GetRowCellValue(i, "Nominal")
+                        End If
+                    Next i
+                    labeltotalbayar.Text = angka.ToString
+                    totaldibayar.Text = angka.ToString
+                End If
+            Else
+                With datapiutang
+                    .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+                End With
+            End If
+
+            
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Dim keamanan As String
+    Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
+        Try
+            If datapiutang.FocusedColumn.AbsoluteIndex <> 6 Then
+                keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
 
+    Private Sub pembayaran_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles pembayaran.CellValueChanging
+        If datapiutang.FocusedColumn.AbsoluteIndex = 2 Then
+            'datapiutang.GetRowCellValue(
+        End If
+
+    End Sub
 End Class

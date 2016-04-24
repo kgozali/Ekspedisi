@@ -49,13 +49,13 @@ Partial Class pelunasan_piutang
         Me.DataColumn11 = New System.Data.DataColumn()
         Me.DataColumn12 = New System.Data.DataColumn()
         Me.pembayaran = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.nama_bank = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.namabank = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.nobg = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.nominal = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.tanggalcair = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.namaakun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colnominal = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
-        Me.coltruk = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.labeltotalbayar = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.nominalbg = New DevExpress.XtraEditors.LabelControl()
@@ -86,9 +86,9 @@ Partial Class pelunasan_piutang
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bayaran, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -195,17 +195,12 @@ Partial Class pelunasan_piutang
         '
         Me.daftarbayar.DataMember = "bayaran"
         Me.daftarbayar.DataSource = Me.pelunasan
-        Me.daftarbayar.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.daftarbayar.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.daftarbayar.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.daftarbayar.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.daftarbayar.Location = New System.Drawing.Point(8, 24)
         Me.daftarbayar.MainView = Me.pembayaran
         Me.daftarbayar.Name = "daftarbayar"
-        Me.daftarbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit2})
+        Me.daftarbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemLookUpEdit1})
         Me.daftarbayar.Size = New System.Drawing.Size(688, 144)
         Me.daftarbayar.TabIndex = 151
-        Me.daftarbayar.UseEmbeddedNavigator = True
         Me.daftarbayar.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.pembayaran})
         '
         'pelunasan
@@ -272,6 +267,7 @@ Partial Class pelunasan_piutang
         '
         Me.DataColumn10.Caption = "Nominal"
         Me.DataColumn10.ColumnName = "nominal"
+        Me.DataColumn10.DataType = GetType(Double)
         '
         'DataColumn11
         '
@@ -285,81 +281,67 @@ Partial Class pelunasan_piutang
         '
         'pembayaran
         '
-        Me.pembayaran.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.nama_bank, Me.colketerangan, Me.colnominal, Me.coltruk})
+        Me.pembayaran.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabank, Me.nobg, Me.nominal, Me.tanggalcair, Me.namaakun})
         Me.pembayaran.GridControl = Me.daftarbayar
         Me.pembayaran.Name = "pembayaran"
-        Me.pembayaran.OptionsCustomization.AllowGroup = False
+        Me.pembayaran.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.pembayaran.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
-        Me.pembayaran.OptionsView.ShowFooter = True
         Me.pembayaran.OptionsView.ShowGroupPanel = False
         '
-        'nama_bank
+        'namabank
         '
-        Me.nama_bank.Caption = "Nama Bank"
-        Me.nama_bank.ColumnEdit = Me.RepositoryItemLookUpEdit1
-        Me.nama_bank.FieldName = "nama_bank"
-        Me.nama_bank.Name = "nama_bank"
-        Me.nama_bank.Visible = True
-        Me.nama_bank.VisibleIndex = 0
-        Me.nama_bank.Width = 233
+        Me.namabank.Caption = "Nama Bank"
+        Me.namabank.FieldName = "namabank"
+        Me.namabank.Name = "namabank"
+        Me.namabank.Visible = True
+        Me.namabank.VisibleIndex = 0
+        '
+        'nobg
+        '
+        Me.nobg.Caption = "Nomor BG"
+        Me.nobg.FieldName = "nomerbg"
+        Me.nobg.Name = "nobg"
+        Me.nobg.Visible = True
+        Me.nobg.VisibleIndex = 1
+        '
+        'nominal
+        '
+        Me.nominal.Caption = "Nominal"
+        Me.nominal.FieldName = "nominal"
+        Me.nominal.Name = "nominal"
+        Me.nominal.Visible = True
+        Me.nominal.VisibleIndex = 2
+        '
+        'tanggalcair
+        '
+        Me.tanggalcair.Caption = "Tanggal Cair"
+        Me.tanggalcair.ColumnEdit = Me.RepositoryItemDateEdit1
+        Me.tanggalcair.FieldName = "tanggalcair"
+        Me.tanggalcair.Name = "tanggalcair"
+        Me.tanggalcair.Visible = True
+        Me.tanggalcair.VisibleIndex = 3
+        '
+        'RepositoryItemDateEdit1
+        '
+        Me.RepositoryItemDateEdit1.AutoHeight = False
+        Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
+        '
+        'namaakun
+        '
+        Me.namaakun.Caption = "Nama Akun"
+        Me.namaakun.ColumnEdit = Me.RepositoryItemLookUpEdit1
+        Me.namaakun.FieldName = "akun"
+        Me.namaakun.Name = "namaakun"
+        Me.namaakun.Visible = True
+        Me.namaakun.VisibleIndex = 4
         '
         'RepositoryItemLookUpEdit1
         '
         Me.RepositoryItemLookUpEdit1.AutoHeight = False
         Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("descr", "Nama Akun"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("kode_akun", "kode_akun", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
         Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
-        '
-        'colketerangan
-        '
-        Me.colketerangan.Caption = "Keterangan"
-        Me.colketerangan.FieldName = "keterangan"
-        Me.colketerangan.Name = "colketerangan"
-        Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 1
-        Me.colketerangan.Width = 223
-        '
-        'colnominal
-        '
-        Me.colnominal.AppearanceCell.Options.UseTextOptions = True
-        Me.colnominal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colnominal.AppearanceHeader.Options.UseTextOptions = True
-        Me.colnominal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.colnominal.Caption = "Nominal"
-        Me.colnominal.ColumnEdit = Me.RepositoryItemTextEdit1
-        Me.colnominal.FieldName = "nominal"
-        Me.colnominal.Name = "colnominal"
-        Me.colnominal.OptionsFilter.AllowAutoFilter = False
-        Me.colnominal.OptionsFilter.AllowFilter = False
-        Me.colnominal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "nominal", "{0:N2}")})
-        Me.colnominal.Visible = True
-        Me.colnominal.VisibleIndex = 2
-        Me.colnominal.Width = 161
-        '
-        'RepositoryItemTextEdit1
-        '
-        Me.RepositoryItemTextEdit1.AutoHeight = False
-        Me.RepositoryItemTextEdit1.Mask.EditMask = "n"
-        Me.RepositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.RepositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = True
-        Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
-        '
-        'coltruk
-        '
-        Me.coltruk.Caption = "Truk"
-        Me.coltruk.ColumnEdit = Me.RepositoryItemLookUpEdit2
-        Me.coltruk.FieldName = "id_truk"
-        Me.coltruk.Name = "coltruk"
-        Me.coltruk.Visible = True
-        Me.coltruk.VisibleIndex = 3
-        Me.coltruk.Width = 79
-        '
-        'RepositoryItemLookUpEdit2
-        '
-        Me.RepositoryItemLookUpEdit2.AutoHeight = False
-        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit2.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("no_pol", "No Pol"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_truk", "Name11", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
-        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
         '
         'labeltotalbayar
         '
@@ -382,7 +364,7 @@ Partial Class pelunasan_piutang
         'nominalbg
         '
         Me.nominalbg.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nominalbg.Location = New System.Drawing.Point(134, 170)
+        Me.nominalbg.Location = New System.Drawing.Point(136, 170)
         Me.nominalbg.Name = "nominalbg"
         Me.nominalbg.Size = New System.Drawing.Size(8, 18)
         Me.nominalbg.TabIndex = 47
@@ -391,7 +373,7 @@ Partial Class pelunasan_piutang
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(5, 170)
+        Me.LabelControl5.Location = New System.Drawing.Point(8, 170)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(123, 18)
         Me.LabelControl5.TabIndex = 46
@@ -539,9 +521,9 @@ Partial Class pelunasan_piutang
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bayaran, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -590,11 +572,11 @@ Partial Class pelunasan_piutang
     Friend WithEvents DataColumn12 As System.Data.DataColumn
     Friend WithEvents daftarbayar As DevExpress.XtraGrid.GridControl
     Friend WithEvents pembayaran As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents nama_bank As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents namabank As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents nobg As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents nominal As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents tanggalcair As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents namaakun As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colnominal As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
-    Friend WithEvents coltruk As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
