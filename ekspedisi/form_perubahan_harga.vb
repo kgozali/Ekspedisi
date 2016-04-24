@@ -115,14 +115,14 @@
     End Sub
 
     Private Sub history_Click(sender As Object, e As EventArgs) Handles history.Click
-        Try
-            Dim data As New DataTable
-            data = DtTable("SELECT tgl_perubahan `Tanggal Perubahan`, price_awal `Harga Awal`, price_akhir `Harga Akhir` FROM `mperubahan_harga` WHERE id_rute='" & datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") & "'")
-            history_perubahan_harga.history.DataSource = data
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-        history_perubahan_harga.ShowDialog()
+        'Try
+        '    Dim data As New DataTable
+        '    data = DtTable("SELECT tgl_perubahan `Tanggal Perubahan`, price_awal `Harga Awal`, price_akhir `Harga Akhir` FROM `mperubahan_harga` WHERE id_rute='" & datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") & "'")
+        '    history_perubahan_harga.history.DataSource = data
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
+        'history_perubahan_harga.ShowDialog()
     End Sub
     Dim keamanan As String
     Private Sub datarute_ShownEditor(sender As Object, e As EventArgs) Handles datarute.ShownEditor
