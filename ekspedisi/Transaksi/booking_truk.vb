@@ -9,8 +9,14 @@ Public Class booking_truk
     Public max As Integer = 0
     Dim kode As String = ""
     Dim ceking As Boolean = False
+    Dim akunkas As String = ""
+    Dim akunhutang As String = ""
+    Dim akundpsupir As String = ""
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Hutang Usaha'")
+            akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
             autogen()
             id.Text = kode
             grid()
@@ -175,6 +181,7 @@ Public Class booking_truk
             Dim jam As New DateTime
             jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
             Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "',now(),'" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',1,1)")
+            insertakun()
             If insert = True Then
                 MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
@@ -238,8 +245,8 @@ Public Class booking_truk
     Sub autogen()
         Try
             Dim tanggal As New DataTable
-            Dim tgl As String = "BK" + Today.Date.ToString("yyyyMMdd")
-            tanggal = DtTable("select * from booking_truk where substring(id_booking,1,10) = '" & tgl & "'")
+            Dim tgl As String = "BK" + Today.Date.ToString("yyMMdd")
+            tanggal = DtTable("select * from booking_truk where substring(id_booking,1,8) = '" & tgl & "'")
             Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" + hitung
@@ -251,7 +258,21 @@ Public Class booking_truk
 
 
     End Sub
-    Sub resetall()
+    Sub insertakun()
+        Dim jumlahdp As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString)
+        Dim totbayar As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString)
+        Dim dpkredit As Integer = jumlahdp * -1
+        Dim totkredit As Integer = totbayar * -1
+        'insert jurnal
+        InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
+
+        'Inser djurnal biaya gaji pada hutang
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akundpsupir.ToString + "','','" + totbayar.ToString + "')")
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + totkredit.ToString + "')")
+
+        'Insert djurnal bayar dp = hutang pada kas
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
 
     End Sub
 End Class

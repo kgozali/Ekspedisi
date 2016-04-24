@@ -230,7 +230,7 @@ Partial Class master_KIR
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
         Me.GroupControl3.TabIndex = 164
-        Me.GroupControl3.Text = "Daftar DO"
+        Me.GroupControl3.Text = "Daftar KIR"
         '
         'GridControl1
         '
@@ -323,7 +323,7 @@ Partial Class master_KIR
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(244, 319)
         Me.GroupControl2.TabIndex = 165
-        Me.GroupControl2.Text = "Scan DO"
+        Me.GroupControl2.Text = "Scan KIR"
         '
         'PictureBox1
         '

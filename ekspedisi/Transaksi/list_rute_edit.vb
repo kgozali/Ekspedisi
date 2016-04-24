@@ -33,7 +33,6 @@ Public Class list_rute_edit
         Dim rute As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Rute")
         edit_booking.ButtonEdit4.Text = rute
         edit_booking.rutebook = kode
-        MsgBox(edit_booking.rutebook)
         list_rute_edit_Load(sender, e)
         Me.Close()
     End Sub
