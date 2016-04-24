@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_supplier
     Dim cek As Boolean
+    Dim data As New DataTable
+    Dim cbkota As New DataTable
+    Dim cbsupplier As New DataTable
 
     Private Sub add_supplier_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
@@ -8,6 +11,13 @@ Public Class add_supplier
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_supplier_Load(sender, e)
+                    master_supplier.GridControl1.Visible = True
+                    master_supplier.GridControl2.Visible = False
+                    data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
+                    master_supplier.GridControl1.DataSource = data
+                    master_supplier.edit.Down = False
+                    master_supplier.deldata.Down = False
+                    master_supplier.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
@@ -22,17 +32,32 @@ Public Class add_supplier
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_supplier.GridControl1.Visible = True
+        master_supplier.GridControl2.Visible = False
+        data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
+        master_supplier.GridControl1.DataSource = data
+        master_supplier.edit.Down = False
+        master_supplier.deldata.Down = False
         Me.Close()
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
 
-        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or tel2.Text = "" Or provinsi.Text = "" Then
+        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MS"
+                tanggal = DtTable("select * from msupplier where substring(id_supplier,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
-                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & "','" & ComboBox1.SelectedValue.ToString & "') ")
+                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','" & kategori.SelectedValue.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -41,6 +66,12 @@ Public Class add_supplier
                 Else
                     cek = False
                     Me.Close()
+                    master_supplier.GridControl1.Visible = True
+                    master_supplier.GridControl2.Visible = False
+                    data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
+                    master_supplier.GridControl1.DataSource = data
+                    master_supplier.edit.Down = False
+                    master_supplier.deldata.Down = False
                 End If
 
             Catch ex As Exception
@@ -53,10 +84,19 @@ Public Class add_supplier
     End Sub
 
     Private Sub add_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+        kota.DataSource = cbkota
+        kota.ValueMember = "kota"
+        kota.DisplayMember = "kota"
+
+        cbsupplier = DtTable("select id_kategori, kategori_supplier from mkategori_supplier where s = '1'")
+        kategori.DataSource = cbsupplier
+        kategori.ValueMember = "id_kategori"
+        kategori.DisplayMember = "kategori_supplier"
 
         Dim tanggal As New DataTable
         Dim tgl As String = "MS"
-        tanggal = DtTable("select * from msupplier where substring(ID_supplier,1,2) = '" & tgl & "'")
+        tanggal = DtTable("select * from msupplier where substring(id_supplier,1,2) = '" & tgl & "'")
         Dim hitung As String = tanggal.Rows.Count() + 1
         While hitung.LongCount < 5
             hitung = "0" + hitung
@@ -69,11 +109,7 @@ Public Class add_supplier
         tel1.Text = ""
         tel2.Text = ""
         provinsi.Text = ""
-        Dim combo As New DataTable
-        combo = DtTable("select id_kategori `id`, kategori_supplier `kategori` from mkategori_supplier")
-        ComboBox1.DataSource = combo
-        ComboBox1.ValueMember = "id"
-        ComboBox1.DisplayMember = "kategori"
+        kota.Text = ""
     End Sub
 
     Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
@@ -110,14 +146,6 @@ Public Class add_supplier
         End If
     End Sub
 
-    Private Sub tel2_TextChanged(sender As Object, e As EventArgs) Handles tel2.TextChanged
-        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If tel2.Text = "" Then
-            cek = False
-        Else
-            cek = True
-        End If
-    End Sub
 
     Private Sub provinsi_TextChanged(sender As Object, e As EventArgs) Handles provinsi.TextChanged
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
@@ -128,7 +156,14 @@ Public Class add_supplier
         End If
     End Sub
 
-
+    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
+        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
+        If kota.Text = "" Then
+            cek = False
+        Else
+            cek = True
+        End If
+    End Sub
 
     Private Sub alamat_TextChanged(sender As Object, e As EventArgs) Handles alamat.TextChanged
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
@@ -138,4 +173,12 @@ Public Class add_supplier
             cek = True
         End If
     End Sub
+
+
+    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
+        Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
+        Dim prov As String = Scalar(carip)
+        provinsi.Text = prov
+    End Sub
+
 End Class
