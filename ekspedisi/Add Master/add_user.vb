@@ -29,8 +29,42 @@ Public Class add_user
         Else
             Try
                 If password.Text = reenterpass.Text Then
-                    inputuser = "insert into muser values ('" & username.Text & "',md5('" & password.Text & "')) "
+                    inputuser = "insert into muser values ('" & username.Text & "',md5('" & password.Text & "'),'1') "
                     InsertInto(inputuser)
+
+                    For i = 0 To GridView1.RowCount() - 1
+                        Dim name As String = GridView1.GetRowCellValue(i, "Kode Form").ToString
+                        Dim a, b, c, d, e1 As String
+                        If GridView1.GetRowCellValue(i, "View") = True Then
+                            a = "1"
+                        Else
+                            a = "0"
+                        End If
+                        If GridView1.GetRowCellValue(i, "Baru") = True Then
+                            b = "1"
+                        Else
+                            b = "0"
+                        End If
+                        If GridView1.GetRowCellValue(i, "Edit") = True Then
+                            c = "1"
+                        Else
+                            c = "0"
+                        End If
+                        If GridView1.GetRowCellValue(i, "Hapus") = True Then
+                            d = "1"
+                        Else
+                            d = "0"
+                        End If
+                        If GridView1.GetRowCellValue(i, "Cetak") = True Then
+                            e1 = "1"
+                        Else
+                            e1 = "0"
+                        End If
+                        
+                        inputuser = "insert into hak_akses values ('" & username.Text & "', '" & name & "','" & a & "','" & b & "','" & c & "','" & d & "','" & e1 & "') "
+                        InsertInto(inputuser)
+                    Next
+
                     Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                     If msg = DialogResult.Yes Then
                         add_user_Load(sender, e)
@@ -59,5 +93,22 @@ Public Class add_user
         username.Text = ""
         password.Text = ""
         reenterpass.Text = ""
+
+        Dim data As New DataTable
+        data = DtTable("select form_id `Kode Form`, nama_form `Nama Form` from form_akses")
+        Dim baru As New DataTable
+        baru.Columns.Add("Kode Form")
+        baru.Columns.Add("Nama Form")
+        baru.Columns.Add("View", GetType(Boolean))
+        baru.Columns.Add("Baru", GetType(Boolean))
+        baru.Columns.Add("Edit", GetType(Boolean))
+        baru.Columns.Add("Hapus", GetType(Boolean))
+        baru.Columns.Add("Cetak", GetType(Boolean))
+        For i = 0 To data.Rows.Count - 1
+            Dim a As String = data.Rows(i).Item("Kode Form").ToString
+            Dim b As String = data.Rows(i).Item("Nama Form").ToString
+            baru.Rows.Add(a, b, False, False, False, False, False)
+        Next
+        levelakses.DataSource = baru
     End Sub
 End Class

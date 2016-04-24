@@ -32,6 +32,7 @@ Partial Class add_user
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.levelakses = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,6 +40,7 @@ Partial Class add_user
         Me.GroupControl2.SuspendLayout()
         CType(Me.levelakses, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -137,6 +139,7 @@ Partial Class add_user
         Me.levelakses.Location = New System.Drawing.Point(8, 24)
         Me.levelakses.MainView = Me.GridView1
         Me.levelakses.Name = "levelakses"
+        Me.levelakses.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit4})
         Me.levelakses.Size = New System.Drawing.Size(632, 216)
         Me.levelakses.TabIndex = 0
         Me.levelakses.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -145,6 +148,13 @@ Partial Class add_user
         '
         Me.GridView1.GridControl = Me.levelakses
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'RepositoryItemCheckEdit4
+        '
+        Me.RepositoryItemCheckEdit4.AutoHeight = False
+        Me.RepositoryItemCheckEdit4.Caption = "Hapus"
+        Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
         '
         'add_user
         '
@@ -165,6 +175,7 @@ Partial Class add_user
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.levelakses, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -180,4 +191,5 @@ Partial Class add_user
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents levelakses As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents RepositoryItemCheckEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 End Class
