@@ -9,10 +9,10 @@ Public Class principle_booking
     Sub proc()
         'query sesuai dengan radiobutton
         If id.Checked = True Then
-            tabelid = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle`,alamat `Alamat`,email `E-Mail`, tel1 `Kontak 1`,tel2 `Kontak 2`,provinsi `Provinsi`,kota `Kota` from mprinciple where id_principle LIKE '%" + cari.Text.ToString + "%'")
+            tabelid = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle`,alamat `Alamat`,email `E-Mail`, tel1 `Kontak 1`,tel2 `Kontak 2`,provinsi `Provinsi`,kota `Kota` from mprinciple where id_principle LIKE '%" + cari.Text.ToString + "%' and s=1")
             edit()
         ElseIf nama.Checked = True Then
-            tabelid = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle`,alamat `Alamat`,email `E-Mail`, tel1 `Kontak 1`,tel2 `Kontak 2`,provinsi `Provinsi`,kota `Kota` from mprinciple where nama_principle LIKE '%" + cari.Text.ToString + "%'")
+            tabelid = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle`,alamat `Alamat`,email `E-Mail`, tel1 `Kontak 1`,tel2 `Kontak 2`,provinsi `Provinsi`,kota `Kota` from mprinciple where nama_principle LIKE '%" + cari.Text.ToString + "%' and s=1")
             edit()
         End If
     End Sub
