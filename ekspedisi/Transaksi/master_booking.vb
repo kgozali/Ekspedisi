@@ -41,7 +41,7 @@ Public Class master_booking
             End If
                 unallowedit()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Sub summary()
