@@ -106,14 +106,14 @@ Partial Class KIR_Truk
         Me.TextEdit1.Location = New System.Drawing.Point(96, 8)
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Size = New System.Drawing.Size(174, 20)
-        Me.TextEdit1.TabIndex = 3
+        Me.TextEdit1.TabIndex = 1
         '
         'TextEdit2
         '
         Me.TextEdit2.Location = New System.Drawing.Point(96, 34)
         Me.TextEdit2.Name = "TextEdit2"
         Me.TextEdit2.Size = New System.Drawing.Size(224, 20)
-        Me.TextEdit2.TabIndex = 46
+        Me.TextEdit2.TabIndex = 2
         '
         'TextEdit3
         '
@@ -121,21 +121,21 @@ Partial Class KIR_Truk
         Me.TextEdit3.Location = New System.Drawing.Point(560, 481)
         Me.TextEdit3.Name = "TextEdit3"
         Me.TextEdit3.Size = New System.Drawing.Size(200, 20)
-        Me.TextEdit3.TabIndex = 47
+        Me.TextEdit3.TabIndex = 8
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(559, 32)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 48
+        Me.DateTimePicker1.TabIndex = 5
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(559, 6)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 49
+        Me.DateTimePicker2.TabIndex = 4
         '
         'SimpleButton1
         '
@@ -143,7 +143,7 @@ Partial Class KIR_Truk
         Me.SimpleButton1.Location = New System.Drawing.Point(664, 521)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 51
+        Me.SimpleButton1.TabIndex = 10
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -152,7 +152,7 @@ Partial Class KIR_Truk
         Me.Submit.Location = New System.Drawing.Point(557, 521)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 50
+        Me.Submit.TabIndex = 9
         Me.Submit.Text = "Submit"
         '
         'GroupControl2
@@ -179,7 +179,7 @@ Partial Class KIR_Truk
         Me.TextEdit4.Location = New System.Drawing.Point(40, 481)
         Me.TextEdit4.Name = "TextEdit4"
         Me.TextEdit4.Size = New System.Drawing.Size(257, 20)
-        Me.TextEdit4.TabIndex = 53
+        Me.TextEdit4.TabIndex = 6
         '
         'SimpleButton2
         '
@@ -187,7 +187,7 @@ Partial Class KIR_Truk
         Me.SimpleButton2.Location = New System.Drawing.Point(303, 472)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(42, 37)
-        Me.SimpleButton2.TabIndex = 54
+        Me.SimpleButton2.TabIndex = 7
         '
         'Label7
         '
@@ -214,7 +214,7 @@ Partial Class KIR_Truk
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(174, 20)
-        Me.ButtonEdit1.TabIndex = 57
+        Me.ButtonEdit1.TabIndex = 3
         '
         'KIR_Truk
         '
