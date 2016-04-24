@@ -27,12 +27,12 @@ Public Class add_supplier
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
 
-        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or tel2.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
+        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or tel2.Text = "" Or provinsi.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "','" & ComboBox1.SelectedValue.ToString & "') ")
+                InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & "','" & ComboBox1.SelectedValue.ToString & "') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -69,7 +69,6 @@ Public Class add_supplier
         tel1.Text = ""
         tel2.Text = ""
         provinsi.Text = ""
-        kota.Text = ""
         Dim combo As New DataTable
         combo = DtTable("select id_kategori `id`, kategori_supplier `kategori` from mkategori_supplier")
         ComboBox1.DataSource = combo
@@ -129,7 +128,6 @@ Public Class add_supplier
         End If
     End Sub
 
-    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
 
 
     Private Sub alamat_TextChanged(sender As Object, e As EventArgs) Handles alamat.TextChanged

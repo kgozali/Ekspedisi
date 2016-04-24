@@ -97,9 +97,15 @@
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             For i = 0 To datarute.RowCount - 1
-                InsertInto("insert into mperubahan_harga values ()")
+                If IsDBNull(datarute.GetRowCellValue(i, "Harga Baru")) = False Then
+                    If datarute.GetRowCellValue(i, "Harga Baru") <> datarute.GetRowCellValue(i, "Harga Awal") Then
+                        InsertInto("INSERT INTO `mperubahan_harga` VALUES ('" & datarute.GetRowCellValue(i, "Kode Rute") & "','" & datarute.GetRowCellValue(i, "Harga Awal") & "','" & datarute.GetRowCellValue(i, "Harga Baru") & "'," & DateTime.Now.ToString("yyyyMMdd") & ")")
+                    End If
+                End If
             Next i
-
+            MessageBox.Show("Data telah berhasil diupdate")
+            isi = New DataTable
+            form_perubahan_harga_Load(sender, e)
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
