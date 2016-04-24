@@ -7,7 +7,7 @@ Public Class master_DO
         booking_do.ShowDialog()
     End Sub
 
-    Private Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub master_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nama.Checked = True
         aktif.Checked = True
         process()

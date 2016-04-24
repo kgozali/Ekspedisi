@@ -94,7 +94,7 @@ Public Class transaksi_DO
                     total = sum * price
                     generate()
                     Dim totalkredit As Integer = total * -1
-                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','','" + total.ToString + "',0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
                     For i = 0 To GridView1.DataRowCount - 1
                         InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
                     Next
@@ -150,12 +150,13 @@ Public Class transaksi_DO
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     res()
-
+                    master_DO.master_DO_Load(sender, e)
                 Else
                     e.Cancel = True
                 End If
             Else
                 res()
+                master_DO.master_DO_Load(sender, e)
             End If
 
         Catch ex As Exception

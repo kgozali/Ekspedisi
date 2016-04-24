@@ -129,6 +129,7 @@ Partial Class list_truk_edit
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Name = "list_truk_edit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Truk"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
