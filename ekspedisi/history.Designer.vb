@@ -50,6 +50,7 @@ Partial Class historyperubahan
         '
         Me.daftarperubahan.GridControl = Me.perubahan
         Me.daftarperubahan.Name = "daftarperubahan"
+        Me.daftarperubahan.OptionsView.ShowGroupPanel = False
         '
         'historyperubahan
         '
