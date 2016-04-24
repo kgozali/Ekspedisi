@@ -25,7 +25,7 @@ Partial Class daftar_hutang_karyawan
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.nomerdo = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.daftarhutang = New DevExpress.XtraGrid.GridControl()
@@ -56,9 +56,9 @@ Partial Class daftar_hutang_karyawan
         Me.idkaryawan.AutoSize = True
         Me.idkaryawan.Location = New System.Drawing.Point(85, 24)
         Me.idkaryawan.Name = "idkaryawan"
-        Me.idkaryawan.Size = New System.Drawing.Size(87, 17)
+        Me.idkaryawan.Size = New System.Drawing.Size(76, 17)
         Me.idkaryawan.TabIndex = 3
-        Me.idkaryawan.Text = "ID Karyawan"
+        Me.idkaryawan.Text = "Kode Supir"
         Me.idkaryawan.UseVisualStyleBackColor = True
         '
         'nama
@@ -66,9 +66,9 @@ Partial Class daftar_hutang_karyawan
         Me.nama.AutoSize = True
         Me.nama.Location = New System.Drawing.Point(5, 47)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(103, 17)
+        Me.nama.Size = New System.Drawing.Size(79, 17)
         Me.nama.TabIndex = 2
-        Me.nama.Text = "Nama Karyawan"
+        Me.nama.Text = "Nama Supir"
         Me.nama.UseVisualStyleBackColor = True
         '
         'nomerdo
@@ -90,14 +90,14 @@ Partial Class daftar_hutang_karyawan
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
-        'SimpleButton1
+        'cancel
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(594, 472)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 149
-        Me.SimpleButton1.Text = "Cancel"
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(594, 472)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 149
+        Me.cancel.Text = "Cancel"
         '
         'Submit
         '
@@ -131,6 +131,7 @@ Partial Class daftar_hutang_karyawan
         Me.hutang.GridControl = Me.daftarhutang
         Me.hutang.Name = "hutang"
         Me.hutang.OptionsBehavior.Editable = False
+        Me.hutang.OptionsView.ShowGroupPanel = False
         '
         'daftar_hutang_karyawan
         '
@@ -141,9 +142,10 @@ Partial Class daftar_hutang_karyawan
         Me.ClientSize = New System.Drawing.Size(701, 506)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
         Me.Name = "daftar_hutang_karyawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Hutang Karyawan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -160,7 +162,7 @@ Partial Class daftar_hutang_karyawan
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents nomerdo As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents idkaryawan As System.Windows.Forms.RadioButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl

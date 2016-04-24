@@ -90,7 +90,7 @@ Public Class master_KIR
                 GridView1.Columns(i).SummaryItem.FieldName = "No. Polisi"
                 GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
             End If
-        Next
+        Next i
 
     End Sub
 End Class

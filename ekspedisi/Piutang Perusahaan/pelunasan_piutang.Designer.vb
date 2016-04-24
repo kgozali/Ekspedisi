@@ -23,7 +23,7 @@ Partial Class pelunasan_piutang
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.principle = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.tanggalpelunasan = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.alamat = New System.Windows.Forms.RichTextBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -58,8 +58,6 @@ Partial Class pelunasan_piutang
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.labeltotalbayar = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.nominalbg = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.totalpiutang = New System.Windows.Forms.TextBox()
@@ -117,12 +115,12 @@ Partial Class pelunasan_piutang
         Me.LabelControl2.TabIndex = 37
         Me.LabelControl2.Text = "Tanggal"
         '
-        'DateTimePicker1
+        'tanggalpelunasan
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(582, 33)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 38
+        Me.tanggalpelunasan.Location = New System.Drawing.Point(582, 33)
+        Me.tanggalpelunasan.Name = "tanggalpelunasan"
+        Me.tanggalpelunasan.Size = New System.Drawing.Size(200, 21)
+        Me.tanggalpelunasan.TabIndex = 38
         '
         'LabelControl3
         '
@@ -183,11 +181,9 @@ Partial Class pelunasan_piutang
         Me.GroupControl2.Controls.Add(Me.daftarbayar)
         Me.GroupControl2.Controls.Add(Me.labeltotalbayar)
         Me.GroupControl2.Controls.Add(Me.LabelControl11)
-        Me.GroupControl2.Controls.Add(Me.nominalbg)
-        Me.GroupControl2.Controls.Add(Me.LabelControl5)
         Me.GroupControl2.Location = New System.Drawing.Point(12, 295)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(705, 195)
+        Me.GroupControl2.Size = New System.Drawing.Size(705, 201)
         Me.GroupControl2.TabIndex = 42
         Me.GroupControl2.Text = "Pembayaran"
         '
@@ -286,6 +282,7 @@ Partial Class pelunasan_piutang
         Me.pembayaran.Name = "pembayaran"
         Me.pembayaran.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.pembayaran.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        Me.pembayaran.OptionsView.ShowFooter = True
         Me.pembayaran.OptionsView.ShowGroupPanel = False
         '
         'namabank
@@ -334,6 +331,7 @@ Partial Class pelunasan_piutang
         Me.namaakun.ColumnEdit = Me.RepositoryItemLookUpEdit1
         Me.namaakun.FieldName = "akun"
         Me.namaakun.Name = "namaakun"
+        Me.namaakun.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "nominal", "Rp. {0:#,###,##},00")})
         Me.namaakun.Visible = True
         Me.namaakun.VisibleIndex = 4
         '
@@ -346,7 +344,7 @@ Partial Class pelunasan_piutang
         'labeltotalbayar
         '
         Me.labeltotalbayar.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labeltotalbayar.Location = New System.Drawing.Point(523, 170)
+        Me.labeltotalbayar.Location = New System.Drawing.Point(100, 176)
         Me.labeltotalbayar.Name = "labeltotalbayar"
         Me.labeltotalbayar.Size = New System.Drawing.Size(8, 18)
         Me.labeltotalbayar.TabIndex = 150
@@ -355,34 +353,16 @@ Partial Class pelunasan_piutang
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(431, 170)
+        Me.LabelControl11.Location = New System.Drawing.Point(8, 176)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(86, 18)
         Me.LabelControl11.TabIndex = 48
         Me.LabelControl11.Text = "Total Bayar :"
         '
-        'nominalbg
-        '
-        Me.nominalbg.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nominalbg.Location = New System.Drawing.Point(136, 170)
-        Me.nominalbg.Name = "nominalbg"
-        Me.nominalbg.Size = New System.Drawing.Size(8, 18)
-        Me.nominalbg.TabIndex = 47
-        Me.nominalbg.Text = "0"
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(8, 170)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(123, 18)
-        Me.LabelControl5.TabIndex = 46
-        Me.LabelControl5.Text = "Total Nominal BG :"
-        '
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(488, 501)
+        Me.LabelControl7.Location = New System.Drawing.Point(488, 507)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(141, 18)
         Me.LabelControl7.TabIndex = 48
@@ -391,7 +371,7 @@ Partial Class pelunasan_piutang
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(497, 523)
+        Me.LabelControl9.Location = New System.Drawing.Point(497, 531)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(132, 18)
         Me.LabelControl9.TabIndex = 50
@@ -400,7 +380,7 @@ Partial Class pelunasan_piutang
         'totalpiutang
         '
         Me.totalpiutang.Enabled = False
-        Me.totalpiutang.Location = New System.Drawing.Point(636, 498)
+        Me.totalpiutang.Location = New System.Drawing.Point(636, 504)
         Me.totalpiutang.Name = "totalpiutang"
         Me.totalpiutang.Size = New System.Drawing.Size(174, 21)
         Me.totalpiutang.TabIndex = 48
@@ -409,7 +389,7 @@ Partial Class pelunasan_piutang
         'totaldibayar
         '
         Me.totaldibayar.Enabled = False
-        Me.totaldibayar.Location = New System.Drawing.Point(636, 520)
+        Me.totaldibayar.Location = New System.Drawing.Point(636, 528)
         Me.totaldibayar.Name = "totaldibayar"
         Me.totaldibayar.Size = New System.Drawing.Size(174, 21)
         Me.totaldibayar.TabIndex = 52
@@ -417,7 +397,7 @@ Partial Class pelunasan_piutang
         '
         'catatan
         '
-        Me.catatan.Location = New System.Drawing.Point(72, 501)
+        Me.catatan.Location = New System.Drawing.Point(72, 504)
         Me.catatan.Name = "catatan"
         Me.catatan.Size = New System.Drawing.Size(375, 66)
         Me.catatan.TabIndex = 54
@@ -426,7 +406,7 @@ Partial Class pelunasan_piutang
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(12, 501)
+        Me.LabelControl10.Location = New System.Drawing.Point(12, 504)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(56, 18)
         Me.LabelControl10.TabIndex = 53
@@ -435,7 +415,7 @@ Partial Class pelunasan_piutang
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(710, 573)
+        Me.cancel.Location = New System.Drawing.Point(710, 576)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 149
@@ -444,7 +424,7 @@ Partial Class pelunasan_piutang
         'save
         '
         Me.save.Image = CType(resources.GetObject("save.Image"), System.Drawing.Image)
-        Me.save.Location = New System.Drawing.Point(604, 573)
+        Me.save.Location = New System.Drawing.Point(604, 576)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(100, 27)
         Me.save.TabIndex = 148
@@ -453,11 +433,11 @@ Partial Class pelunasan_piutang
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(482, 12)
+        Me.LabelControl13.Location = New System.Drawing.Point(458, 12)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(90, 18)
+        Me.LabelControl13.Size = New System.Drawing.Size(114, 18)
         Me.LabelControl13.TabIndex = 150
-        Me.LabelControl13.Text = "Nomer Faktur"
+        Me.LabelControl13.Text = "Nomer Pelunasan"
         '
         'nomerpelunasan
         '
@@ -498,7 +478,7 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.alamat)
         Me.Controls.Add(Me.LabelControl3)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.tanggalpelunasan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.principle)
         Me.Controls.Add(Me.LabelControl1)
@@ -531,7 +511,7 @@ Partial Class pelunasan_piutang
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents principle As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tanggalpelunasan As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents alamat As System.Windows.Forms.RichTextBox
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
@@ -539,8 +519,6 @@ Partial Class pelunasan_piutang
     Friend WithEvents datapiutang As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nominalbg As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents totalpiutang As System.Windows.Forms.TextBox
