@@ -9,9 +9,10 @@
             Dim data As New DataTable
             nomerpelunasan.Text = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
             data = DtTable("select nama_akun,kode_akun from makun")
-            RepositoryItemLookUpEdit1.DataSource = data
-            RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
-            RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
+
+            'RepositoryItemLookUpEdit1.DataSource = data
+            'RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
+            'RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

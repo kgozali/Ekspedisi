@@ -64,7 +64,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl6 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.SimpleButton24 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton26 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton27 = New DevExpress.XtraEditors.SimpleButton()
+        Me.kaskeluar = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton28 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton29 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton30 = New DevExpress.XtraEditors.SimpleButton()
@@ -150,8 +150,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
-        Me.BackstageViewControl1.SelectedTabIndex = 0
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem6
+        Me.BackstageViewControl1.SelectedTabIndex = 4
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -557,7 +557,7 @@ Partial Class main_menu
         '
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton24)
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton26)
-        Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton27)
+        Me.BackstageViewClientControl6.Controls.Add(Me.kaskeluar)
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton28)
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton29)
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton30)
@@ -586,14 +586,14 @@ Partial Class main_menu
         Me.SimpleButton26.TabIndex = 24
         Me.SimpleButton26.Text = "Tutup Periode"
         '
-        'SimpleButton27
+        'kaskeluar
         '
-        Me.SimpleButton27.Image = CType(resources.GetObject("SimpleButton27.Image"), System.Drawing.Image)
-        Me.SimpleButton27.Location = New System.Drawing.Point(241, 157)
-        Me.SimpleButton27.Name = "SimpleButton27"
-        Me.SimpleButton27.Size = New System.Drawing.Size(136, 54)
-        Me.SimpleButton27.TabIndex = 23
-        Me.SimpleButton27.Text = "Kas Keluar"
+        Me.kaskeluar.Image = CType(resources.GetObject("kaskeluar.Image"), System.Drawing.Image)
+        Me.kaskeluar.Location = New System.Drawing.Point(241, 157)
+        Me.kaskeluar.Name = "kaskeluar"
+        Me.kaskeluar.Size = New System.Drawing.Size(136, 54)
+        Me.kaskeluar.TabIndex = 23
+        Me.kaskeluar.Text = "Kas Keluar"
         '
         'SimpleButton28
         '
@@ -924,7 +924,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = True
+        Me.BackstageViewTabItem1.Selected = False
         '
         'BackstageViewTabItem5
         '
@@ -956,7 +956,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem6.ContentControl = Me.BackstageViewClientControl6
         Me.BackstageViewTabItem6.Glyph = CType(resources.GetObject("BackstageViewTabItem6.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem6.Name = "BackstageViewTabItem6"
-        Me.BackstageViewTabItem6.Selected = False
+        Me.BackstageViewTabItem6.Selected = True
         '
         'BackstageViewTabItem10
         '
@@ -1121,7 +1121,7 @@ Partial Class main_menu
     Friend WithEvents bukapiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton24 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton26 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton27 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents kaskeluar As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton28 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton29 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton30 As DevExpress.XtraEditors.SimpleButton
