@@ -157,7 +157,7 @@ Public Class main_menu
 
     End Sub
     Private Sub SimpleButton42_Click(sender As Object, e As EventArgs) Handles SimpleButton42.Click
-        KIR_Truk.ShowDialog()
+        master_KIR.ShowDialog()
     End Sub
 
     Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs) Handles pelunasanpiutangkaryawan.Click
