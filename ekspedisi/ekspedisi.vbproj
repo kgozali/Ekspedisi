@@ -251,6 +251,12 @@
     <Compile Include="Akuntansi\frmcetaknota.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\frmprevlapkeu.Designer.vb">
+      <DependentUpon>frmprevlapkeu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\frmprevlapkeu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\kas_keluar.Designer.vb">
       <DependentUpon>kas_keluar.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,18 @@
     <Compile Include="Akuntansi\kas_masuk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\subneraca_ak.Designer.vb">
+      <DependentUpon>subneraca_ak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\subneraca_ak.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\subneraca_kw.Designer.vb">
+      <DependentUpon>subneraca_kw.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\subneraca_kw.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Akuntansi\tutup_karyawan.Designer.vb">
       <DependentUpon>tutup_karyawan.vb</DependentUpon>
     </Compile>
@@ -274,6 +292,24 @@
     </Compile>
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="labarugi.Designer.vb">
+      <DependentUpon>labarugi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="labarugi.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lapjurnal.Designer.vb">
+      <DependentUpon>lapjurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="lapjurnal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="neracax.Designer.vb">
+      <DependentUpon>neracax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="neracax.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transaksi\edit_item.Designer.vb">
       <DependentUpon>edit_item.vb</DependentUpon>
@@ -752,6 +788,12 @@
     <Compile Include="User Settings\change_password.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="XtraReport1.Designer.vb">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Add Master\add_akun.resx">
       <DependentUpon>add_akun.vb</DependentUpon>
     </EmbeddedResource>
@@ -827,11 +869,20 @@
     <EmbeddedResource Include="Akuntansi\frmcetaknota.resx">
       <DependentUpon>frmcetaknota.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\frmprevlapkeu.resx">
+      <DependentUpon>frmprevlapkeu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
       <DependentUpon>kas_keluar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_masuk.resx">
       <DependentUpon>kas_masuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\subneraca_ak.resx">
+      <DependentUpon>subneraca_ak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\subneraca_kw.resx">
+      <DependentUpon>subneraca_kw.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_karyawan.resx">
       <DependentUpon>tutup_karyawan.vb</DependentUpon>
@@ -850,6 +901,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\master_KIR.resx">
       <DependentUpon>master_KIR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="labarugi.resx">
+      <DependentUpon>labarugi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lapjurnal.resx">
+      <DependentUpon>lapjurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="neracax.resx">
+      <DependentUpon>neracax.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
@@ -1083,6 +1143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Settings\change_password.resx">
       <DependentUpon>change_password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
