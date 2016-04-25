@@ -6,8 +6,16 @@ Public Class add_truck
     Dim cbpenystn As New DataTable
     Dim cbdpresiasi As New DataTable
     Dim cek As Boolean
+    Dim data As New DataTable
 
-    Private Sub cancel_Click(sender As Object, e As EventArgs)
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+        master_truck.GridControl1.DataSource = data
+        master_truck.GridControl1.Visible = True
+        master_truck.GridControl2.Visible = False
+        master_truck.GroupControl2.Enabled = True
+        master_truck.deldata.Down = False
+        master_truck.edit.Down = False
         Me.Close()
     End Sub
 
@@ -18,6 +26,13 @@ Public Class add_truck
                 If msg = DialogResult.OK Then
                     add_truck_Load(sender, e)
                     Reset()
+                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                    master_truck.GridControl1.DataSource = data
+                    master_truck.GridControl1.Visible = True
+                    master_truck.GridControl2.Visible = False
+                    master_truck.GroupControl2.Enabled = True
+                    master_truck.deldata.Down = False
+                    master_truck.edit.Down = False
                 Else
                     e.Cancel = True
                 End If
@@ -30,16 +45,16 @@ Public Class add_truck
         End Try
     End Sub
 
-    Private Sub simpan_Click(sender As Object, e As EventArgs)
+    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         If nop.Text = "" Or nomesin.Text = "" Or norangka.Text = "" Or hargabeli.Text = "" Or nilairesidu.Text = "" Or umur.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
 
             Try
                 'insert ke dalam database
-                MsgBox(aktiva.SelectedValue.ToString)
+                'MsgBox(aktiva.SelectedValue.ToString)
                 Dim penampung As String = "insert into mtruk values ('" & id.Text & "','" & nop.Text & "','" & nomesin.Text & "','" & norangka.Text & "" & "','" & Cmbbxsupp.SelectedValue.ToString & "','" & hargabeli.Text & "','" & umur.Text & "','" & nilairesidu.Text & "','" & aktiva.SelectedValue.ToString & "','" & penyusutan.SelectedValue.ToString & "','" & depresiasi.SelectedValue.ToString & "','1') "
-                MsgBox(penampung)
+                'MsgBox(penampung)
                 InsertInto(penampung)
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
@@ -48,6 +63,13 @@ Public Class add_truck
                     Reset()
                 Else
                     cek = False
+                    Data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                    master_truck.GridControl1.DataSource = data
+                    master_truck.GridControl1.Visible = True
+                    master_truck.GridControl2.Visible = False
+                    master_truck.GroupControl2.Enabled = True
+                    master_truck.deldata.Down = False
+                    master_truck.edit.Down = False
                     Me.Close()
                 End If
 
@@ -56,11 +78,11 @@ Public Class add_truck
             End Try
         End If
     End Sub
-    Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargabeli.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
-    Private Sub nilairesidu_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub nilairesidu_KeyPress(sender As Object, e As KeyPressEventArgs) Handles nilairesidu.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
@@ -101,7 +123,7 @@ Public Class add_truck
 
             Dim tanggal As New DataTable
             Dim tgl As String = "MT"
-            tanggal = DtTable("select * from msupplier where substring(id_supplier,1,2) = '" & tgl & "'")
+            tanggal = DtTable("select * from mtruk where substring(id_truk,1,2) = '" & tgl & "'")
             Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" + hitung
