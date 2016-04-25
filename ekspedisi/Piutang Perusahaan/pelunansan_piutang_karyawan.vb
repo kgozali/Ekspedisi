@@ -1,5 +1,6 @@
 ﻿Public Class pelunansan_piutang_karyawan 
-
+    Dim debet As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
+    Dim kredit As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
@@ -21,6 +22,11 @@
                     If syaratlunas = True And syaratnol = False Then
                         InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                         InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
+                        InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & ")")
+                        Dim opo As Double = CDbl(nominal.Text) * -1
+                        InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
+                        InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
+
                         MessageBox.Show("Piutang berhasil di update")
                     ElseIf syaratlunas = False And syaratnol = False Then
                         InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
