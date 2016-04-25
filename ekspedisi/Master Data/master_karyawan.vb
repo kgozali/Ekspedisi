@@ -129,7 +129,7 @@ Public Class master_karyawan
                     Case MsgBoxResult.Yes
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
-                                InsertInto("update mkaryawan set `s`=0 where id_karyawan='" & GridView2.GetRowCellValue(i, "Kode Karyawan").ToString & "'")
+                                InsertInto("update mkaryawan set `s`=0 , tgl_keluar ='" & Date.Now.ToString("yyyyMMdd") & "' where id_karyawan='" & GridView2.GetRowCellValue(i, "Kode Karyawan").ToString & "'")
                             End If
                         Next i
                         MessageBox.Show("File Deleted")

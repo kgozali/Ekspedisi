@@ -10,7 +10,7 @@
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            If idkaryawan.Text = "Belum Terisi" or kotaasal.Text=="Belum Terisi" Then
+            If idkaryawan.Text = "Belum Terisi" Or kotaasal.Text = "Belum Terisi" Then
                 MessageBox.Show("Karyawan Belum Dipilih")
             End If
         Catch ex As Exception
