@@ -47,6 +47,7 @@
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v14.2" />
+    <Reference Include="DevExpress.DataAccess.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -294,17 +295,17 @@
     <Compile Include="KIR\kir_daftar_truk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Piutang Perusahaan\edit_pelunasan_principle.Designer.vb">
-      <DependentUpon>edit_pelunasan_principle.vb</DependentUpon>
+    <Compile Include="Report\frm_reportprinciple.Designer.vb">
+      <DependentUpon>frm_reportprinciple.vb</DependentUpon>
     </Compile>
-    <Compile Include="Piutang Perusahaan\edit_pelunasan_principle.vb">
+    <Compile Include="Report\frm_reportprinciple.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Piutang Perusahaan\master_piutang_principle.Designer.vb">
-      <DependentUpon>master_piutang_principle.vb</DependentUpon>
+    <Compile Include="Report\Reportprinciple.Designer.vb">
+      <DependentUpon>Reportprinciple.vb</DependentUpon>
     </Compile>
-    <Compile Include="Piutang Perusahaan\master_piutang_principle.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Report\Reportprinciple.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transaksi\edit_item.Designer.vb">
       <DependentUpon>edit_item.vb</DependentUpon>
@@ -894,12 +895,6 @@
     <EmbeddedResource Include="Piutang Perusahaan\daftar_principle_pelunasan.resx">
       <DependentUpon>daftar_principle_pelunasan.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Piutang Perusahaan\edit_pelunasan_principle.resx">
-      <DependentUpon>edit_pelunasan_principle.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Piutang Perusahaan\master_piutang_principle.resx">
-      <DependentUpon>master_piutang_principle.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
     </EmbeddedResource>
@@ -926,6 +921,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\karyawan_piutang.resx">
       <DependentUpon>karyawan_piutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_reportprinciple.resx">
+      <DependentUpon>frm_reportprinciple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Reportprinciple.resx">
+      <DependentUpon>Reportprinciple.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\add_item.resx">
       <DependentUpon>add_item.vb</DependentUpon>
