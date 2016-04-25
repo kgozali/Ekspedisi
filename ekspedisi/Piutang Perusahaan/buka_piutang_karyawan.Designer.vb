@@ -279,7 +279,7 @@ Partial Class buka_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 335)
+        Me.ClientSize = New System.Drawing.Size(786, 339)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)

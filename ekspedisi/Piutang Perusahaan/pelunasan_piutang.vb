@@ -39,7 +39,7 @@
                     isisemua = True
                 ElseIf pembayaran.GetRowCellValue(i, "tanggalcair").ToString = "" Then
                     isisemua = True
-                ElseIf pembayaran.GetRowCellValue(i, "namaakun").ToString = "" Then
+                ElseIf IsDBNull(pembayaran.GetRowCellValue(i, "namaakun")) = True Then
                     isisemua = True
                 End If
 
@@ -54,7 +54,7 @@
                     MessageBox.Show("Transaksi DO belum terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 ElseIf pembayaran.RowCount = 0 Or pembayaran.Columns(4).SummaryItem.SummaryValue.ToString = "" Then
                     MessageBox.Show("Pembayaran belum diisi", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                ElseIf nominalbayar < piutang Or nominalbayar > piutang Then
+                ElseIf piutang <> nominalbayar Then
                     MessageBox.Show("Detail pembayaran tidak sesuai", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     'ganti di sini untuk bayar bisa nyicil
@@ -62,19 +62,20 @@
                     For i = 0 To datapiutang.RowCount - 1
                         If datapiutang.GetRowCellValue(i, "Bayar") = True Then
 
-                            InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple.Text & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
-                            InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
-                            InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
-                            MessageBox.Show("Transksi Berhasil")
+                            'InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple.Text & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
+                            'InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
+                            'InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
+                            'MessageBox.Show("Transksi Berhasil")
                         End If
                     Next i
 
                     For i = 0 To pembayaran.RowCount - 1
                         InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & pembayaran.GetRowCellValue(i, "Nama Akun") & "'," & pembayaran.GetRowCellValue(i, "Nominal") & ",'" & pembayaran.GetRowCellValue(i, "Nomor BG") & "'," & pembayaran.GetRowCellValue(i, "Tanggal Cair") & ",'" & catatan.Text & "'," & i + 1 & ",'0','Rekening')")
                     Next i
-
+                    Me.Close()
                 End If
             End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

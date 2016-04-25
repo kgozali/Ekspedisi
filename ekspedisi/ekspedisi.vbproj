@@ -294,6 +294,18 @@
     <Compile Include="KIR\kir_daftar_truk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Piutang Perusahaan\edit_pelunasan_principle.Designer.vb">
+      <DependentUpon>edit_pelunasan_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edit_pelunasan_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\master_piutang_principle.Designer.vb">
+      <DependentUpon>master_piutang_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\master_piutang_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\edit_item.Designer.vb">
       <DependentUpon>edit_item.vb</DependentUpon>
     </Compile>
@@ -881,6 +893,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_principle_pelunasan.resx">
       <DependentUpon>daftar_principle_pelunasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\edit_pelunasan_principle.resx">
+      <DependentUpon>edit_pelunasan_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\master_piutang_principle.resx">
+      <DependentUpon>master_piutang_principle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
