@@ -56,6 +56,7 @@ Partial Class pelunansan_piutang_karyawan
         '
         Me.datapiutang.GridControl = Me.daftarutang
         Me.datapiutang.Name = "datapiutang"
+        Me.datapiutang.OptionsView.ShowGroupPanel = False
         '
         'daftarutang
         '

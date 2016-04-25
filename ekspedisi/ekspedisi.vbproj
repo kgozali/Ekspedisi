@@ -295,12 +295,6 @@
     <Compile Include="KIR\kir_daftar_truk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="master_piutang_principle.Designer.vb">
-      <DependentUpon>master_piutang_principle.vb</DependentUpon>
-    </Compile>
-    <Compile Include="master_piutang_principle.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="notapelunasanprinciple.Designer.vb">
       <DependentUpon>notapelunasanprinciple.vb</DependentUpon>
     </Compile>
@@ -900,9 +894,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\master_KIR.resx">
       <DependentUpon>master_KIR.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="master_piutang_principle.resx">
-      <DependentUpon>master_piutang_principle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="notapelunasanprinciple.resx">
       <DependentUpon>notapelunasanprinciple.vb</DependentUpon>

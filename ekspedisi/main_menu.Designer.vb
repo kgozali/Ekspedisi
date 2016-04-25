@@ -115,6 +115,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -506,6 +507,7 @@ Partial Class main_menu
         '
         'BackstageViewClientControl7
         '
+        Me.BackstageViewClientControl7.Controls.Add(Me.SimpleButton8)
         Me.BackstageViewClientControl7.Controls.Add(Me.hutangdo)
         Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.peluanasapiutangprinciple)
@@ -531,7 +533,7 @@ Partial Class main_menu
         Me.pelunasanpiutangkaryawan.Name = "pelunasanpiutangkaryawan"
         Me.pelunasanpiutangkaryawan.Size = New System.Drawing.Size(196, 54)
         Me.pelunasanpiutangkaryawan.TabIndex = 25
-        Me.pelunasanpiutangkaryawan.Text = "Piutang Karyawaan"
+        Me.pelunasanpiutangkaryawan.Text = "Pelunasan Piutang Karyawaan"
         '
         'peluanasapiutangprinciple
         '
@@ -1037,6 +1039,15 @@ Partial Class main_menu
         'sfd
         '
         '
+        'SimpleButton8
+        '
+        Me.SimpleButton8.Image = CType(resources.GetObject("SimpleButton8.Image"), System.Drawing.Image)
+        Me.SimpleButton8.Location = New System.Drawing.Point(49, 158)
+        Me.SimpleButton8.Name = "SimpleButton8"
+        Me.SimpleButton8.Size = New System.Drawing.Size(196, 54)
+        Me.SimpleButton8.TabIndex = 27
+        Me.SimpleButton8.Text = "Buka Piutang Karyawan"
+        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1168,4 +1179,5 @@ Partial Class main_menu
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton42 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hutangdo As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
 End Class

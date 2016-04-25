@@ -1,6 +1,6 @@
 ﻿Public Class buka_piutang_karyawan 
     Dim debet As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
-    Dim kredit As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
+    Dim kredit As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
 
 
     Private Sub buka_piutang_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
