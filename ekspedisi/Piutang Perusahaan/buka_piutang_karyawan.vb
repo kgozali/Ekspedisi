@@ -14,6 +14,8 @@
             harilunas.DataSource = data
             harilunas.DisplayMember = "jumlah_hari"
             harilunas.ValueMember = "id_hari"
+            data = New DataTable
+            data = DtTable()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
