@@ -32,7 +32,7 @@ Public Class edit_user
                 Dim check As Boolean = True
                 If CheckBox1.Checked = True Then
                     If MaskedTextBox1.Text = MaskedTextBox2.Text Then
-                        InsertInto("update muser set password ='" & MaskedTextBox1.Text & "' where username = 'md5(" & id.Text & ")'")
+                        InsertInto("update muser set password ='" & MaskedTextBox1.Text & "' where username = md5('" & id.Text & "')")
                     Else
                         MsgBox("Password anda tidak sesuai", MsgBoxStyle.OkOnly, "System Error")
                         check = False
