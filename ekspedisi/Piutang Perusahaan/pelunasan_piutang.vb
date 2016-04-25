@@ -70,16 +70,11 @@
                     Next i
 
                     For i = 0 To pembayaran.RowCount - 1
-                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & pembayaran.GetRowCellValue(i, "Nama Akun") & "'," & pembayaran.GetRowCellValue(i, "Nominal") & ",'" & pembayaran.GetRowCellValue(i, "Nomor BG") & "'," & pembayaran.GetRowCellValue(i, "Tanggal Cair") & ",'" & catatan.Text & "',,[value-8],[value-9])")
+                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & pembayaran.GetRowCellValue(i, "Nama Akun") & "'," & pembayaran.GetRowCellValue(i, "Nominal") & ",'" & pembayaran.GetRowCellValue(i, "Nomor BG") & "'," & pembayaran.GetRowCellValue(i, "Tanggal Cair") & ",'" & catatan.Text & "'," & i + 1 & ",'0','Rekening')")
                     Next i
 
                 End If
             End If
-
-           
-
-            'InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang") & "','" & idprinciple.Text & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
-            'InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" &  & "',nominal,pembayaran,0)")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
