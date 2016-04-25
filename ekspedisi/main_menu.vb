@@ -183,4 +183,8 @@ Public Class main_menu
     Private Sub hutangdo_Click(sender As Object, e As EventArgs) Handles hutangdo.Click
         pelunasan_hutang_supir.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton39_Click(sender As Object, e As EventArgs) Handles SimpleButton39.Click
+        frm_reportprinciple.ShowDialog()
+    End Sub
 End Class
