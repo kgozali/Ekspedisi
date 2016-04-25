@@ -34,13 +34,13 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.akunkas = New System.Windows.Forms.ComboBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.harilunas = New System.Windows.Forms.ComboBox()
         Me.idkaryawan = New System.Windows.Forms.Label()
         Me.keterangan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
@@ -188,6 +188,15 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1.TabIndex = 159
         Me.GroupControl1.Text = "Data Piutang"
         '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(256, 99)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(25, 18)
+        Me.LabelControl8.TabIndex = 163
+        Me.LabelControl8.Text = "Hari"
+        '
         'harilunas
         '
         Me.harilunas.FormattingEnabled = True
@@ -240,15 +249,6 @@ Partial Class buka_piutang_karyawan
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(256, 99)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(25, 18)
-        Me.LabelControl8.TabIndex = 163
-        Me.LabelControl8.Text = "Hari"
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -279,7 +279,7 @@ Partial Class buka_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 346)
+        Me.ClientSize = New System.Drawing.Size(786, 339)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)

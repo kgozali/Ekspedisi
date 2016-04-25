@@ -462,7 +462,7 @@ Partial Class pelunasan_piutang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(823, 608)
+        Me.ClientSize = New System.Drawing.Size(823, 610)
         Me.Controls.Add(Me.idprinciple)
         Me.Controls.Add(Me.nomerpelunasan)
         Me.Controls.Add(Me.LabelControl13)
