@@ -20,142 +20,95 @@ Partial Class pelunasan_hutang_supir
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pelunasan_hutang_supir))
-        Me.sisa = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.bayar = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.nominal = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.tangggalkirim = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.tanggal = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.booking = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.datapiutang = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.nominalbayar = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.daftarpiutang = New DevExpress.XtraGrid.GridControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.nomertelepon = New DevExpress.XtraEditors.LabelControl()
         Me.kotaasal = New DevExpress.XtraEditors.LabelControl()
-        Me.jabatan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.idpiutang = New DevExpress.XtraEditors.ButtonEdit()
-        Me.namakaryawan = New DevExpress.XtraEditors.LabelControl()
+        Me.namakaryawan = New DevExpress.XtraEditors.ButtonEdit()
+        Me.idkaryawan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.tanggaljatuhtempo = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.nomerdo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.openfile = New DevExpress.XtraEditors.SimpleButton()
+        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.tanggalpembayaran = New System.Windows.Forms.DateTimePicker()
+        Me.totaldibayar = New System.Windows.Forms.TextBox()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.namaakun = New System.Windows.Forms.ComboBox()
+        Me.totalhutang = New System.Windows.Forms.TextBox()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.idpiutang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.namakaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'sisa
-        '
-        Me.sisa.Caption = "Sisa"
-        Me.sisa.Name = "sisa"
-        Me.sisa.Visible = True
-        Me.sisa.VisibleIndex = 6
         '
         'RepositoryItemCheckEdit1
         '
         Me.RepositoryItemCheckEdit1.AutoHeight = False
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
-        'bayar
-        '
-        Me.bayar.Caption = "Bayar"
-        Me.bayar.ColumnEdit = Me.RepositoryItemCheckEdit1
-        Me.bayar.Name = "bayar"
-        Me.bayar.Visible = True
-        Me.bayar.VisibleIndex = 5
-        '
-        'nominal
-        '
-        Me.nominal.Caption = "Nominal"
-        Me.nominal.Name = "nominal"
-        Me.nominal.Visible = True
-        Me.nominal.VisibleIndex = 4
-        '
-        'tangggalkirim
-        '
-        Me.tangggalkirim.Caption = "Tanggal Kirim"
-        Me.tangggalkirim.Name = "tangggalkirim"
-        Me.tangggalkirim.Visible = True
-        Me.tangggalkirim.VisibleIndex = 3
-        '
-        'tanggal
-        '
-        Me.tanggal.Caption = "Tanggal & Jam"
-        Me.tanggal.Name = "tanggal"
-        Me.tanggal.Visible = True
-        Me.tanggal.VisibleIndex = 2
-        '
-        'booking
-        '
-        Me.booking.Caption = "ID Booking"
-        Me.booking.Name = "booking"
-        Me.booking.Visible = True
-        Me.booking.VisibleIndex = 1
-        '
         'datapiutang
         '
-        Me.datapiutang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.nomerdo, Me.booking, Me.tanggal, Me.tangggalkirim, Me.tanggaljatuhtempo, Me.nominal, Me.bayar, Me.nominalbayar, Me.sisa})
-        Me.datapiutang.GridControl = Me.GridControl1
+        Me.datapiutang.GridControl = Me.daftarpiutang
         Me.datapiutang.Name = "datapiutang"
+        Me.datapiutang.OptionsView.ShowGroupPanel = False
         '
-        'nominalbayar
+        'daftarpiutang
         '
-        Me.nominalbayar.Caption = "Nominal Bayar"
-        Me.nominalbayar.Name = "nominalbayar"
-        Me.nominalbayar.Visible = True
-        Me.nominalbayar.VisibleIndex = 7
-        '
-        'GridControl1
-        '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl1.MainView = Me.datapiutang
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(743, 135)
-        Me.GridControl1.TabIndex = 0
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.datapiutang})
+        Me.daftarpiutang.Location = New System.Drawing.Point(5, 24)
+        Me.daftarpiutang.MainView = Me.datapiutang
+        Me.daftarpiutang.Name = "daftarpiutang"
+        Me.daftarpiutang.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
+        Me.daftarpiutang.Size = New System.Drawing.Size(787, 128)
+        Me.daftarpiutang.TabIndex = 0
+        Me.daftarpiutang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.datapiutang})
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 316)
+        Me.GroupControl3.Controls.Add(Me.daftarpiutang)
+        Me.GroupControl3.Location = New System.Drawing.Point(8, 88)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(758, 164)
+        Me.GroupControl3.Size = New System.Drawing.Size(800, 160)
         Me.GroupControl3.TabIndex = 153
-        Me.GroupControl3.Text = "Daftar Piutang"
+        Me.GroupControl3.Text = "Daftar Hutang"
         '
-        'SimpleButton1
+        'cancel
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(670, 486)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 152
-        Me.SimpleButton1.Text = "Cancel"
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(708, 552)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 152
+        Me.cancel.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(564, 486)
+        Me.Submit.Location = New System.Drawing.Point(600, 552)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
@@ -164,205 +117,286 @@ Partial Class pelunasan_hutang_supir
         'nomertelepon
         '
         Me.nomertelepon.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomertelepon.Location = New System.Drawing.Point(310, 121)
+        Me.nomertelepon.Location = New System.Drawing.Point(644, 48)
         Me.nomertelepon.Name = "nomertelepon"
-        Me.nomertelepon.Size = New System.Drawing.Size(111, 18)
+        Me.nomertelepon.Size = New System.Drawing.Size(79, 18)
         Me.nomertelepon.TabIndex = 53
-        Me.nomertelepon.Text = "Nomor Telepon :"
+        Me.nomertelepon.Text = "Belum Terisi"
         '
         'kotaasal
         '
         Me.kotaasal.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kotaasal.Location = New System.Drawing.Point(270, 97)
+        Me.kotaasal.Location = New System.Drawing.Point(644, 24)
         Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(71, 18)
+        Me.kotaasal.Size = New System.Drawing.Size(79, 18)
         Me.kotaasal.TabIndex = 52
-        Me.kotaasal.Text = "Kota Asal :"
-        '
-        'jabatan
-        '
-        Me.jabatan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jabatan.Location = New System.Drawing.Point(260, 73)
-        Me.jabatan.Name = "jabatan"
-        Me.jabatan.Size = New System.Drawing.Size(61, 18)
-        Me.jabatan.TabIndex = 51
-        Me.jabatan.Text = "Jabatan :"
+        Me.kotaasal.Text = "Belum Terisi"
         '
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(193, 121)
+        Me.LabelControl5.Location = New System.Drawing.Point(536, 48)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(111, 18)
+        Me.LabelControl5.Size = New System.Drawing.Size(101, 18)
         Me.LabelControl5.TabIndex = 50
-        Me.LabelControl5.Text = "Nomor Telepon :"
+        Me.LabelControl5.Text = "Nomor Telepon"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(193, 97)
+        Me.LabelControl4.Location = New System.Drawing.Point(576, 24)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl4.TabIndex = 49
-        Me.LabelControl4.Text = "Kota Asal :"
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(193, 73)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(61, 18)
-        Me.LabelControl3.TabIndex = 48
-        Me.LabelControl3.Text = "Jabatan :"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(5, 25)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(182, 268)
-        Me.PictureBox2.TabIndex = 47
-        Me.PictureBox2.TabStop = False
-        '
-        'idpiutang
-        '
-        Me.idpiutang.Location = New System.Drawing.Point(294, 23)
-        Me.idpiutang.Name = "idpiutang"
-        Me.idpiutang.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.idpiutang.Size = New System.Drawing.Size(191, 20)
-        Me.idpiutang.TabIndex = 1
+        Me.LabelControl4.Text = "Kota Asal"
         '
         'namakaryawan
         '
-        Me.namakaryawan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.namakaryawan.Location = New System.Drawing.Point(317, 49)
+        Me.namakaryawan.Location = New System.Drawing.Point(132, 46)
         Me.namakaryawan.Name = "namakaryawan"
-        Me.namakaryawan.Size = New System.Drawing.Size(104, 18)
-        Me.namakaryawan.TabIndex = 43
-        Me.namakaryawan.Text = "nama karyawan"
+        Me.namakaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.namakaryawan.Size = New System.Drawing.Size(191, 20)
+        Me.namakaryawan.TabIndex = 1
+        '
+        'idkaryawan
+        '
+        Me.idkaryawan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idkaryawan.Location = New System.Drawing.Point(132, 24)
+        Me.idkaryawan.Name = "idkaryawan"
+        Me.idkaryawan.Size = New System.Drawing.Size(79, 18)
+        Me.idkaryawan.TabIndex = 43
+        Me.idkaryawan.Text = "Belum Terisi"
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(193, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(41, 24)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(95, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(85, 18)
         Me.LabelControl1.TabIndex = 36
-        Me.LabelControl1.Text = "ID Karyawan :"
+        Me.LabelControl1.Text = "ID Karyawan"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(193, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(18, 48)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(118, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(108, 18)
         Me.LabelControl2.TabIndex = 37
-        Me.LabelControl2.Text = "Nama Karyawan :"
+        Me.LabelControl2.Text = "Nama Karyawan"
         '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.nomertelepon)
         Me.GroupControl1.Controls.Add(Me.kotaasal)
-        Me.GroupControl1.Controls.Add(Me.jabatan)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
-        Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Controls.Add(Me.PictureBox2)
-        Me.GroupControl1.Controls.Add(Me.idpiutang)
         Me.GroupControl1.Controls.Add(Me.namakaryawan)
+        Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Location = New System.Drawing.Point(275, 12)
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(495, 298)
+        Me.GroupControl1.Size = New System.Drawing.Size(800, 72)
         Me.GroupControl1.TabIndex = 149
         Me.GroupControl1.Text = "Data Karyawan"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(245, 268)
+        Me.PictureBox1.Size = New System.Drawing.Size(400, 208)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl2.Location = New System.Drawing.Point(392, 256)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(257, 298)
+        Me.GroupControl2.Size = New System.Drawing.Size(416, 240)
         Me.GroupControl2.TabIndex = 150
         Me.GroupControl2.Text = "Bukti Piutang"
         '
-        'tanggaljatuhtempo
+        'openfile
         '
-        Me.tanggaljatuhtempo.Caption = "Tanggal Jatuh Tempo"
-        Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
-        Me.tanggaljatuhtempo.Visible = True
-        Me.tanggaljatuhtempo.VisibleIndex = 8
+        Me.openfile.Image = CType(resources.GetObject("openfile.Image"), System.Drawing.Image)
+        Me.openfile.Location = New System.Drawing.Point(768, 504)
+        Me.openfile.Name = "openfile"
+        Me.openfile.Size = New System.Drawing.Size(42, 37)
+        Me.openfile.TabIndex = 155
         '
-        'nomerdo
+        'TextEdit4
         '
-        Me.nomerdo.Caption = "Nomer DO"
-        Me.nomerdo.Name = "nomerdo"
-        Me.nomerdo.Visible = True
-        Me.nomerdo.VisibleIndex = 0
+        Me.TextEdit4.Enabled = False
+        Me.TextEdit4.Location = New System.Drawing.Point(442, 520)
+        Me.TextEdit4.Name = "TextEdit4"
+        Me.TextEdit4.Size = New System.Drawing.Size(320, 20)
+        Me.TextEdit4.TabIndex = 154
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(402, 522)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(29, 18)
+        Me.LabelControl6.TabIndex = 54
+        Me.LabelControl6.Text = "Path"
+        '
+        'GroupControl4
+        '
+        Me.GroupControl4.Controls.Add(Me.tanggalpembayaran)
+        Me.GroupControl4.Controls.Add(Me.totaldibayar)
+        Me.GroupControl4.Controls.Add(Me.LabelControl3)
+        Me.GroupControl4.Controls.Add(Me.namaakun)
+        Me.GroupControl4.Controls.Add(Me.totalhutang)
+        Me.GroupControl4.Controls.Add(Me.LabelControl12)
+        Me.GroupControl4.Controls.Add(Me.LabelControl9)
+        Me.GroupControl4.Controls.Add(Me.LabelControl7)
+        Me.GroupControl4.Location = New System.Drawing.Point(8, 256)
+        Me.GroupControl4.Name = "GroupControl4"
+        Me.GroupControl4.Size = New System.Drawing.Size(376, 136)
+        Me.GroupControl4.TabIndex = 150
+        Me.GroupControl4.Text = "Pembayaran"
+        '
+        'tanggalpembayaran
+        '
+        Me.tanggalpembayaran.Location = New System.Drawing.Point(160, 54)
+        Me.tanggalpembayaran.Name = "tanggalpembayaran"
+        Me.tanggalpembayaran.Size = New System.Drawing.Size(200, 21)
+        Me.tanggalpembayaran.TabIndex = 161
+        '
+        'totaldibayar
+        '
+        Me.totaldibayar.Enabled = False
+        Me.totaldibayar.Location = New System.Drawing.Point(160, 104)
+        Me.totaldibayar.Name = "totaldibayar"
+        Me.totaldibayar.Size = New System.Drawing.Size(174, 21)
+        Me.totaldibayar.TabIndex = 159
+        Me.totaldibayar.Text = "0"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(10, 57)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(139, 18)
+        Me.LabelControl3.TabIndex = 160
+        Me.LabelControl3.Text = "Tanggal Pembayaran"
+        '
+        'namaakun
+        '
+        Me.namaakun.FormattingEnabled = True
+        Me.namaakun.Location = New System.Drawing.Point(160, 29)
+        Me.namaakun.Name = "namaakun"
+        Me.namaakun.Size = New System.Drawing.Size(184, 21)
+        Me.namaakun.TabIndex = 38
+        '
+        'totalhutang
+        '
+        Me.totalhutang.Enabled = False
+        Me.totalhutang.Location = New System.Drawing.Point(160, 79)
+        Me.totalhutang.Name = "totalhutang"
+        Me.totalhutang.Size = New System.Drawing.Size(174, 21)
+        Me.totalhutang.TabIndex = 156
+        Me.totalhutang.Text = "0"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Location = New System.Drawing.Point(73, 32)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(76, 18)
+        Me.LabelControl12.TabIndex = 37
+        Me.LabelControl12.Text = "Nama Akun"
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(17, 107)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(132, 18)
+        Me.LabelControl9.TabIndex = 158
+        Me.LabelControl9.Text = "Total Nominal Bayar"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(8, 82)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(141, 18)
+        Me.LabelControl7.TabIndex = 157
+        Me.LabelControl7.Text = "Total Nominal Hutang"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'pelunasan_hutang_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(783, 521)
+        Me.ClientSize = New System.Drawing.Size(818, 588)
+        Me.Controls.Add(Me.GroupControl4)
+        Me.Controls.Add(Me.LabelControl6)
+        Me.Controls.Add(Me.openfile)
+        Me.Controls.Add(Me.TextEdit4)
         Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "pelunasan_hutang_supir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Hutang Karyawan"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.idpiutang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.namakaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
+        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        Me.GroupControl4.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents sisa As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents bayar As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents nominal As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents tangggalkirim As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents tanggal As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents booking As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents datapiutang As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents nominalbayar As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents daftarpiutang As DevExpress.XtraGrid.GridControl
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents nomertelepon As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kotaasal As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents jabatan As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents idpiutang As DevExpress.XtraEditors.ButtonEdit
-    Friend WithEvents namakaryawan As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents namakaryawan As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents idkaryawan As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents tanggaljatuhtempo As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents nomerdo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents openfile As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents namaakun As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents totaldibayar As System.Windows.Forms.TextBox
+    Friend WithEvents totalhutang As System.Windows.Forms.TextBox
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents tanggalpembayaran As System.Windows.Forms.DateTimePicker
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

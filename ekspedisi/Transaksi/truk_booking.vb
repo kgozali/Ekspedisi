@@ -69,8 +69,7 @@ Public Class truk_booking
             Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk")
             Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "No.Polisi")
             booking_truk.ButtonEdit1.Text = nama
-            edit_booking.trukbook = kode
-            MsgBox(edit_booking.trukbook)
+            booking_truk.trukbook = kode
             truk_booking_Load(sender, e)
             Me.Close()
         Catch ex As Exception

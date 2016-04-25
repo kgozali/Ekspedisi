@@ -45,6 +45,8 @@ Partial Class master_karyawan
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -54,21 +56,19 @@ Partial Class master_karyawan
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarButtonItem9
@@ -277,6 +277,23 @@ Partial Class master_karyawan
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Karayawan"
         '
+        'GridControl2
+        '
+        Me.GridControl2.Location = New System.Drawing.Point(5, 28)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(672, 311)
+        Me.GridControl2.TabIndex = 8
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
+        '
         'GridControl1
         '
         Me.GridControl1.Location = New System.Drawing.Point(5, 28)
@@ -363,23 +380,6 @@ Partial Class master_karyawan
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
-        'GridControl2
-        '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 28)
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.MenuManager = Me.RibbonControl1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(672, 311)
-        Me.GridControl2.TabIndex = 8
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
-        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
-        '
         'master_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -400,6 +400,8 @@ Partial Class master_karyawan
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -408,8 +410,6 @@ Partial Class master_karyawan
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -58,12 +58,17 @@ Public Class list_truk_edit
         Try
             Dim kode As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk")
             Dim nama As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "No.Polisi")
-            booking_truk.ButtonEdit1.Text = nama
+            edit_booking.ButtonEdit1.Text = nama
+            edit_booking.trukbook = kode
             list_truk_edit_Load(sender, e)
             Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+
+    Private Sub list_truk_edit_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        edit_booking.edit_booking_Load(sender, e)
     End Sub
 End Class

@@ -123,7 +123,7 @@ Partial Class truk_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(785, 557)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)

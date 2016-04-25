@@ -177,11 +177,15 @@ Public Class master_kota
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
         deldata.Enabled = True
         edit.Enabled = True
+        data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
+        GridControl1.DataSource = data
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
         deldata.Enabled = False
         edit.Enabled = False
+        data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='0'")
+        GridControl1.DataSource = data
     End Sub
 
     Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged

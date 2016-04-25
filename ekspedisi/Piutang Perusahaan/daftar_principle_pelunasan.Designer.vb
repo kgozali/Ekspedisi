@@ -21,21 +21,21 @@ Partial Class daftar_principle_pelunasan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_principle_pelunasan))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.dataprinciple = New DevExpress.XtraGrid.GridControl()
+        Me.allprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.submit = New DevExpress.XtraEditors.SimpleButton()
-        Me.dataprinciple = New DevExpress.XtraGrid.GridControl()
-        Me.allprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
@@ -46,6 +46,21 @@ Partial Class daftar_principle_pelunasan
         Me.GroupControl3.Size = New System.Drawing.Size(776, 414)
         Me.GroupControl3.TabIndex = 151
         Me.GroupControl3.Text = "Data Principle"
+        '
+        'dataprinciple
+        '
+        Me.dataprinciple.Location = New System.Drawing.Point(8, 24)
+        Me.dataprinciple.MainView = Me.allprinciple
+        Me.dataprinciple.Name = "dataprinciple"
+        Me.dataprinciple.Size = New System.Drawing.Size(760, 384)
+        Me.dataprinciple.TabIndex = 1
+        Me.dataprinciple.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.allprinciple})
+        '
+        'allprinciple
+        '
+        Me.allprinciple.GridControl = Me.dataprinciple
+        Me.allprinciple.Name = "allprinciple"
+        Me.allprinciple.OptionsBehavior.Editable = False
         '
         'GroupControl1
         '
@@ -105,21 +120,6 @@ Partial Class daftar_principle_pelunasan
         Me.submit.TabIndex = 152
         Me.submit.Text = "Submit"
         '
-        'dataprinciple
-        '
-        Me.dataprinciple.Location = New System.Drawing.Point(8, 24)
-        Me.dataprinciple.MainView = Me.allprinciple
-        Me.dataprinciple.Name = "dataprinciple"
-        Me.dataprinciple.Size = New System.Drawing.Size(760, 384)
-        Me.dataprinciple.TabIndex = 1
-        Me.dataprinciple.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.allprinciple})
-        '
-        'allprinciple
-        '
-        Me.allprinciple.GridControl = Me.dataprinciple
-        Me.allprinciple.Name = "allprinciple"
-        Me.allprinciple.OptionsBehavior.Editable = False
-        '
         'daftar_principle_pelunasan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -130,15 +130,16 @@ Partial Class daftar_principle_pelunasan
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.submit)
         Me.Name = "daftar_principle_pelunasan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Principle"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dataprinciple, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.allprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

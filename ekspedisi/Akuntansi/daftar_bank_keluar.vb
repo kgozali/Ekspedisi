@@ -43,7 +43,7 @@
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         Dim keyid As String = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "keyid").ToString
         If keyid = "" Then Exit Sub
-        frmcetaknota.gencetak("TRANSAKSI BANK", keyid, "K")
+        ' frmcetaknota.gencetak("TRANSAKSI BANK", keyid, "K")
 
     End Sub
 End Class

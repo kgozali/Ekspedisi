@@ -129,7 +129,7 @@ Partial Class kas_masuk
         '
         'GridControl1
         '
-        Me.GridControl1.DataMember = "datadetil"
+        Me.GridControl1.DataMember = Nothing
         Me.GridControl1.DataSource = Me.DataSet1
         Me.GridControl1.EmbeddedNavigator.Buttons.Append.Visible = False
         Me.GridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = False

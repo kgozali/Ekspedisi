@@ -10,9 +10,15 @@ Public Class edit_booking
     Public max As Integer = 0
     Dim kode As String = ""
     Dim ceking As Boolean = False
+    Dim akunkas As String = ""
+    Dim akunhutang As String = ""
+    Dim akundpsupir As String = ""
     Public Sub edit_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-
+            'select akun default
+            akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Hutang Usaha'")
+            akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
             'select principle
             kode = id.Text.ToString
             principlebook = Scalar("select id_principle from booking_truk where id_booking='" + kode + "'")
@@ -26,6 +32,11 @@ Public Class edit_booking
             rutebook = Scalar("select id_rute from booking_truk where id_booking='" + kode + "'")
             ButtonEdit4.Text = Scalar("select concat(kota_asal,' - ',kota_tujuan) from mrute where id_rute='" + rutebook.ToString + "'")
 
+            'select tanggal dan jam kirim
+            Dim tgljam As New DataTable
+            tgljam = DtTable("select tgl,jam from booking_truk where id_booking='" + kode + "'")
+            DateTimePicker1.Value = tgljam.Rows(0).Item("tgl")
+            TimeEdit1.EditValue = tgljam.Rows(0).Item("jam")
             grid()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -105,7 +116,7 @@ Public Class edit_booking
             'tabelsupir.Rows.Add(arr(0), arr(1), arr(2))
             tabelsupir = DtTable("select booking_truk.id_supir `Kode Supir`,nama_supir `Nama Supir`,dp_awal_supir `Jumlah DP (Rp)`,harga_supir_total `Total Bayar (Rp)` from booking_truk,msupir where booking_truk.id_supir=msupir.id_supir and booking_truk.id_booking='" + kode.ToString + "'")
             GridControl2.DataSource = tabelsupir
-
+            max = tabelsupir.Rows(0).Item("Total Bayar (Rp)").ToString
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -156,8 +167,9 @@ Public Class edit_booking
 
             Dim jam As New DateTime
             jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
-            Dim insert As Boolean = InsertInto("update booking_truk set tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "',id_principle='" + principlebook + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "',id_truk='" + trukbook + "',keteranga='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "' where id_booking='" + kode.ToString + "'")
+            Dim insert As Boolean = InsertInto("update booking_truk set tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)").ToString + "',id_principle='" + principlebook.ToString + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir").ToString + "',id_truk='" + trukbook + "',keterangan='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook.ToString + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat").ToString + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person").ToString + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon").ToString + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString + "' where id_booking='" + kode.ToString + "'")
             If insert = True Then
+                insertakun()
                 MessageBox.Show("Perubahan terhadap booking berhasil dilakukan, Untuk melakukan perubahan kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
                 Me.Close()
@@ -214,10 +226,23 @@ Public Class edit_booking
         For i = 0 To GridView2.Columns.Count - 3
             GridView2.Columns(i).OptionsColumn.AllowEdit = False
         Next
+    End Sub
 
+    Sub insertakun()
+        Dim jumlahdp As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString)
+        Dim totbayar As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString)
+        Dim dpkredit As Integer = jumlahdp * -1
+        Dim totkredit As Integer = totbayar * -1
+        'insert jurnal
+        InsertInto("delete from djurnal where no_jurnal='" + kode.ToString + "'")
 
+        'Inser djurnal biaya gaji pada hutang
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akundpsupir.ToString + "','','" + totbayar.ToString + "')")
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + totkredit.ToString + "')")
 
-
+        'Insert djurnal bayar dp = hutang pada kas
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
+        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
     End Sub
    
     

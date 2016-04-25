@@ -44,16 +44,14 @@ Partial Class master_KIR
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.kir = New System.Windows.Forms.RadioButton()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.kodebooking = New System.Windows.Forms.RadioButton()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.tgl = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.nonaktif = New System.Windows.Forms.RadioButton()
-        Me.aktif = New System.Windows.Forms.RadioButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,12 +60,10 @@ Partial Class master_KIR
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl4.SuspendLayout()
         Me.SuspendLayout()
         '
         'hapus
@@ -234,7 +230,7 @@ Partial Class master_KIR
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
         Me.GroupControl3.TabIndex = 164
-        Me.GroupControl3.Text = "Daftar DO"
+        Me.GroupControl3.Text = "Daftar KIR"
         '
         'GridControl1
         '
@@ -252,63 +248,73 @@ Partial Class master_KIR
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.TextEdit1)
+        Me.GroupControl1.Controls.Add(Me.kir)
+        Me.GroupControl1.Controls.Add(Me.ComboBox1)
         Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupControl1.Controls.Add(Me.kodebooking)
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.tgl)
-        Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 102)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(263, 98)
         Me.GroupControl1.TabIndex = 163
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
+        'TextEdit1
+        '
+        Me.TextEdit1.Location = New System.Drawing.Point(5, 73)
+        Me.TextEdit1.MenuManager = Me.RibbonControl1
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(232, 20)
+        Me.TextEdit1.TabIndex = 7
+        '
+        'kir
+        '
+        Me.kir.AutoSize = True
+        Me.kir.Checked = True
+        Me.kir.Location = New System.Drawing.Point(6, 24)
+        Me.kir.Name = "kir"
+        Me.kir.Size = New System.Drawing.Size(62, 17)
+        Me.kir.TabIndex = 6
+        Me.kir.TabStop = True
+        Me.kir.Text = "No. KIR"
+        Me.kir.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(5, 73)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox1.TabIndex = 5
+        '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 70)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(4, 73)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 21)
         Me.DateTimePicker1.TabIndex = 4
         Me.DateTimePicker1.Visible = False
-        '
-        'kodebooking
-        '
-        Me.kodebooking.AutoSize = True
-        Me.kodebooking.Location = New System.Drawing.Point(5, 47)
-        Me.kodebooking.Name = "kodebooking"
-        Me.kodebooking.Size = New System.Drawing.Size(89, 17)
-        Me.kodebooking.TabIndex = 3
-        Me.kodebooking.Text = "Kode Booking"
-        Me.kodebooking.UseVisualStyleBackColor = True
         '
         'nama
         '
         Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(5, 23)
+        Me.nama.Location = New System.Drawing.Point(97, 24)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(76, 17)
+        Me.nama.Size = New System.Drawing.Size(59, 17)
         Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nomer KIR"
+        Me.nama.Text = "No. Pol"
         Me.nama.UseVisualStyleBackColor = True
         '
         'tgl
         '
         Me.tgl.AutoSize = True
-        Me.tgl.Location = New System.Drawing.Point(85, 23)
+        Me.tgl.Location = New System.Drawing.Point(6, 47)
         Me.tgl.Name = "tgl"
-        Me.tgl.Size = New System.Drawing.Size(88, 17)
+        Me.tgl.Size = New System.Drawing.Size(83, 17)
         Me.tgl.TabIndex = 1
-        Me.tgl.Text = "Tanggal Kirim"
+        Me.tgl.Text = "Tanggal KIR"
         Me.tgl.UseVisualStyleBackColor = True
-        '
-        'cari
-        '
-        Me.cari.Location = New System.Drawing.Point(5, 73)
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
-        Me.cari.TabIndex = 0
         '
         'GroupControl2
         '
@@ -317,7 +323,7 @@ Partial Class master_KIR
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(244, 319)
         Me.GroupControl2.TabIndex = 165
-        Me.GroupControl2.Text = "Scan DO"
+        Me.GroupControl2.Text = "Scan KIR"
         '
         'PictureBox1
         '
@@ -327,38 +333,6 @@ Partial Class master_KIR
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'GroupControl4
-        '
-        Me.GroupControl4.Controls.Add(Me.nonaktif)
-        Me.GroupControl4.Controls.Add(Me.aktif)
-        Me.GroupControl4.Location = New System.Drawing.Point(281, 102)
-        Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
-        Me.GroupControl4.TabIndex = 167
-        Me.GroupControl4.Text = "Sortir"
-        '
-        'nonaktif
-        '
-        Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 46)
-        Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(90, 17)
-        Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "KIR Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = True
-        '
-        'aktif
-        '
-        Me.aktif.AutoSize = True
-        Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 23)
-        Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(67, 17)
-        Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = True
-        Me.aktif.Text = "KIR Aktif"
-        Me.aktif.UseVisualStyleBackColor = True
         '
         'SimpleButton1
         '
@@ -380,9 +354,9 @@ Partial Class master_KIR
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl2)
-        Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "master_KIR"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master KIR"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -392,13 +366,10 @@ Partial Class master_KIR
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl4.ResumeLayout(False)
-        Me.GroupControl4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -428,14 +399,12 @@ Partial Class master_KIR
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents kodebooking As System.Windows.Forms.RadioButton
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents tgl As System.Windows.Forms.RadioButton
-    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
-    Friend WithEvents aktif As System.Windows.Forms.RadioButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents kir As System.Windows.Forms.RadioButton
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
 End Class

@@ -1,10 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class edit_list_rute
     Dim data As New DataTable
+
+
     Private Sub edit_list_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-            data.Columns.Add("Kode rute")
+            data.Columns.Add("Kode Rute")
             data.Columns.Add("Kota Asal")
             data.Columns.Add("Kota Tujuan")
             data.Columns.Add("Nama Principle")
@@ -14,8 +16,8 @@ Public Class edit_list_rute
 
             For i = 0 To master_rute.GridView1.RowCount - 1
                 If master_rute.GridView1.IsRowSelected(i) Then
-                    Dim a As String = master_rute.GridView1.GetRowCellValue(i, "ID rute").ToString()
-                    Dim b As String = master_rute.GridView1.GetRowCellValue(i, "KOta Asal").ToString()
+                    Dim a As String = master_rute.GridView1.GetRowCellValue(i, "Kode Rute").ToString()
+                    Dim b As String = master_rute.GridView1.GetRowCellValue(i, "Kota Asal").ToString()
                     Dim c As String = master_rute.GridView1.GetRowCellValue(i, "Kota Tujuan").ToString()
                     Dim d As String = master_rute.GridView1.GetRowCellValue(i, "Nama Principle").ToString()
                     Dim e1 As String = master_rute.GridView1.GetRowCellValue(i, "Price Per Unit").ToString()

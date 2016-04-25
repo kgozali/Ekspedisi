@@ -33,35 +33,39 @@ Public Class master_karyawan
     End Sub
 
     Private Sub master_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GridControl2.Visible = False
-        data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
-        GridControl1.DataSource = data
-        For i = 0 To data.Columns.Count - 1
-            GridView1.Columns(i).OptionsColumn.AllowEdit = False
-        Next
-
-        checks.Columns.Add("ID karyawan")
-        unchecks.Columns.Add("ID karyawan")
-        For i = 0 To GridView1.DataRowCount - 1
-            Dim temp As String = GridView1.GetRowCellValue(i, "ID karyawan").ToString
-            unchecks.Rows.Add(temp)
-        Next
+        Try
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+            GridControl1.DataSource = data
+            For i = 0 To data.Columns.Count - 1
+                GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            Next
+            checks.Columns.Add("Kode Karyawan")
+            unchecks.Columns.Add("Kode Karyawan")
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Karyawan").ToString
+                unchecks.Rows.Add(temp)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+       
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
         If edit.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and id_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and id_karyawan like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and id_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and id_karyawan like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and nama_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and nama_karyawan like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and nama_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and nama_karyawan like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
@@ -69,7 +73,7 @@ Public Class master_karyawan
             If checks.Rows.Count > 0 Then
                 For i = 0 To GridView2.DataRowCount - 1
                     For j = 0 To checks.Rows.Count() - 1
-                        If GridView2.GetRowCellValue(i, "ID karyawan").ToString = checks.Rows(j).Item(0).ToString Then
+                        If GridView2.GetRowCellValue(i, "Kode Karyawan").ToString = checks.Rows(j).Item(0).ToString Then
                             GridView2.SelectRow(i)
                         End If
                     Next
@@ -79,16 +83,16 @@ Public Class master_karyawan
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and id_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and id_karyawan like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and id_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and id_karyawan like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and nama_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='1' and nama_karyawan like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_karyawan `ID karyawan`, b.nama_karyawan `Nama karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and nama_karyawan like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '0' and b.`s`='0' and nama_karyawan like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
@@ -125,7 +129,7 @@ Public Class master_karyawan
                     Case MsgBoxResult.Yes
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
-                                InsertInto("update mkaryawan set `s`=0 where id_karyawan='" & GridView2.GetRowCellValue(GridView1.FocusedRowHandle, "ID karyawan").ToString & "'")
+                                InsertInto("update mkaryawan set `s`=0 , tgl_keluar ='" & Date.Now.ToString("yyyyMMdd") & "' where id_karyawan='" & GridView2.GetRowCellValue(i, "Kode Karyawan").ToString & "'")
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -161,7 +165,7 @@ Public Class master_karyawan
         Try
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
-                    If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "ID karyawan").ToString Then
+                    If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Karyawan").ToString Then
                         MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
@@ -170,7 +174,7 @@ Public Class master_karyawan
                 Next
             Else
                 For i = 0 To checks.Rows.Count() - 1
-                    If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "ID karyawan").ToString Then
+                    If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Karyawan").ToString Then
                         MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
