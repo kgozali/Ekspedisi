@@ -57,9 +57,8 @@ Partial Public Class Reportprinciple
         Me.tglakhir = New DevExpress.XtraReports.Parameters.Parameter()
         Me.principle = New DevExpress.XtraReports.Parameters.Parameter()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
-        Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
@@ -75,8 +74,9 @@ Partial Public Class Reportprinciple
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -118,14 +118,14 @@ Partial Public Class Reportprinciple
         '
         'XrLabel13
         '
-        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.nominal", "{0:Rp 10,000.00}")})
-        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(614.5834!, 10.00001!)
+        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.nominal", "{0:Rp #,#}")})
+        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(639.5833!, 10.00001!)
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel13.SizeF = New System.Drawing.SizeF(148.9583!, 23.0!)
+        Me.XrLabel13.SizeF = New System.Drawing.SizeF(147.4166!, 23.0!)
         Me.XrLabel13.StylePriority.UseTextAlignment = False
         Me.XrLabel13.Text = "XrLabel13"
-        Me.XrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel11
         '
@@ -268,42 +268,34 @@ Partial Public Class Reportprinciple
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel18, Me.XrLabel17, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrPictureBox1, Me.XrLabel1, Me.XrLabel6, Me.XrLabel7, Me.XrLabel9})
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel14, Me.XrLabel15, Me.XrLabel16, Me.XrLabel18, Me.XrLabel17, Me.XrPictureBox1, Me.XrLabel1, Me.XrLabel6, Me.XrLabel7, Me.XrLabel9})
         Me.ReportHeader.HeightF = 195.8334!
         Me.ReportHeader.Name = "ReportHeader"
         '
-        'XrLabel16
+        'XrLabel18
         '
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(376.6667!, 56.00001!)
-        Me.XrLabel16.Name = "XrLabel16"
-        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel16.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
-        Me.XrLabel16.StylePriority.UseTextAlignment = False
-        Me.XrLabel16.Text = "JOMBANG"
-        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.kota")})
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(600.0!, 115.2083!)
+        Me.XrLabel18.Name = "XrLabel18"
+        Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel18.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel18.Text = "XrLabel18"
         '
-        'XrLabel15
+        'XrLabel17
         '
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(297.4999!, 33.00001!)
-        Me.XrLabel15.Name = "XrLabel15"
-        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(250.0!, 23.0!)
-        Me.XrLabel15.Text = "DUSUN JABON DS. JABON RT 01 RW 01"
-        '
-        'XrLabel14
-        '
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(277.0833!, 10.00001!)
-        Me.XrLabel14.Name = "XrLabel14"
-        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel14.SizeF = New System.Drawing.SizeF(295.8334!, 23.0!)
-        Me.XrLabel14.Text = "PT.SENTONG SULTAN KERATON MOJOPAHIT"
+        Me.XrLabel17.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.alamat")})
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(564.5832!, 148.25!)
+        Me.XrLabel17.Name = "XrLabel17"
+        Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel17.SizeF = New System.Drawing.SizeF(153.125!, 23.0!)
+        Me.XrLabel17.Text = "XrLabel17"
         '
         'XrPictureBox1
         '
         Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.00001!)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(20.2083!, 10.00001!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(104.1667!, 110.125!)
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
         Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze
         '
         'XrLabel1
@@ -491,23 +483,35 @@ Partial Public Class Reportprinciple
         Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrTableCell7.Weight = 1.1313869746326293R
         '
-        'XrLabel17
+        'XrLabel14
         '
-        Me.XrLabel17.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.alamat")})
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(564.5832!, 148.25!)
-        Me.XrLabel17.Name = "XrLabel17"
-        Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel17.SizeF = New System.Drawing.SizeF(153.125!, 23.0!)
-        Me.XrLabel17.Text = "XrLabel17"
+        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(178.7083!, 10.00001!)
+        Me.XrLabel14.Name = "XrLabel14"
+        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel14.SizeF = New System.Drawing.SizeF(450.0!, 24.04167!)
+        Me.XrLabel14.StylePriority.UseFont = False
+        Me.XrLabel14.StylePriority.UseTextAlignment = False
+        Me.XrLabel14.Text = "PT SENTONG SULTAN KERATON MOJOPAHIT"
+        Me.XrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
-        'XrLabel18
+        'XrLabel15
         '
-        Me.XrLabel18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.kota")})
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(600.0!, 115.2083!)
-        Me.XrLabel18.Name = "XrLabel18"
-        Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel18.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
-        Me.XrLabel18.Text = "XrLabel18"
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(282.875!, 34.04166!)
+        Me.XrLabel15.Name = "XrLabel15"
+        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(250.0!, 23.0!)
+        Me.XrLabel15.Text = "DUSUN JABON DS. JABON RT 01 RW 01"
+        '
+        'XrLabel16
+        '
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(356.8333!, 57.04168!)
+        Me.XrLabel16.Name = "XrLabel16"
+        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel16.SizeF = New System.Drawing.SizeF(100.0!, 16.75!)
+        Me.XrLabel16.StylePriority.UseTextAlignment = False
+        Me.XrLabel16.Text = "JOMBANG"
+        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'Reportprinciple
         '
@@ -555,10 +559,10 @@ Partial Public Class Reportprinciple
     Friend WithEvents XrTableCell6 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell5 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrLabel16 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel15 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel14 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
     Friend WithEvents XrLabel18 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel17 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel14 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel15 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel16 As DevExpress.XtraReports.UI.XRLabel
 End Class

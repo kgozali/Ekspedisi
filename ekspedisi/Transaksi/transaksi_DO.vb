@@ -188,4 +188,43 @@ Public Class transaksi_DO
         End Try
        
     End Sub
+
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        Try
+            Dim kem As String = ""
+            If nomerdo.Text = "" Then
+                MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                If GridView1.DataRowCount < 1 Then
+                    MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+                    Dim sum As Integer = 0
+                    sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+                    total = sum * price
+                    generate()
+                    Dim totalkredit As Integer = total * -1
+                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                    For i = 0 To GridView1.DataRowCount - 1
+                        InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+                    Next
+                    InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
+                    Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
+                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
+                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+                    If ins = True Then
+                        MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        frm_notado.transid = kode
+                        frm_notado.ShowDialog()
+                    End If
+                    res()
+                    Me.Close()
+
+                End If
+
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

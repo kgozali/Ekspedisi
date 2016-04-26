@@ -706,6 +706,12 @@
     <Compile Include="Transaksi\edit_booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\frm_notado.Designer.vb">
+      <DependentUpon>frm_notado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\frm_notado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\list_edit_supir.Designer.vb">
       <DependentUpon>list_edit_supir.vb</DependentUpon>
     </Compile>
@@ -741,6 +747,12 @@
     </Compile>
     <Compile Include="KIR\master_KIR.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\NotaDO.Designer.vb">
+      <DependentUpon>NotaDO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\NotaDO.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transaksi\supir_booking.Designer.vb">
       <DependentUpon>supir_booking.vb</DependentUpon>
@@ -1098,6 +1110,9 @@
     <EmbeddedResource Include="Transaksi\edit_item.resx">
       <DependentUpon>edit_item.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\frm_notado.resx">
+      <DependentUpon>frm_notado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\list_edit_supir.resx">
       <DependentUpon>list_edit_supir.vb</DependentUpon>
     </EmbeddedResource>
@@ -1112,6 +1127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\master_booking.resx">
       <DependentUpon>master_booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\NotaDO.resx">
+      <DependentUpon>NotaDO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\supir_booking.resx">
       <DependentUpon>supir_booking.vb</DependentUpon>

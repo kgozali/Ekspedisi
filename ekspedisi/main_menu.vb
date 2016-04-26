@@ -179,4 +179,8 @@ Public Class main_menu
     Private Sub SimpleButton8_Click_1(sender As Object, e As EventArgs) Handles SimpleButton8.Click
         buka_piutang_karyawan.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton39_Click(sender As Object, e As EventArgs) Handles SimpleButton39.Click
+        frm_reportprinciple.ShowDialog()
+    End Sub
 End Class

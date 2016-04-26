@@ -40,6 +40,7 @@ Partial Class transaksi_DO
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -135,19 +136,19 @@ Partial Class transaksi_DO
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(901, 638)
+        Me.SimpleButton1.Location = New System.Drawing.Point(883, 638)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 11
+        Me.SimpleButton1.Size = New System.Drawing.Size(118, 27)
+        Me.SimpleButton1.TabIndex = 12
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(796, 638)
+        Me.Submit.Location = New System.Drawing.Point(759, 638)
         Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 10
+        Me.Submit.Size = New System.Drawing.Size(118, 27)
+        Me.Submit.TabIndex = 11
         Me.Submit.Text = "Submit"
         '
         'GroupControl3
@@ -213,11 +214,21 @@ Partial Class transaksi_DO
         Me.SimpleButton2.TabIndex = 153
         Me.SimpleButton2.Text = "Add Item"
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(635, 638)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(118, 27)
+        Me.SimpleButton3.TabIndex = 10
+        Me.SimpleButton3.Text = "Submit and Print"
+        '
         'transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 677)
+        Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LabelControl7)
@@ -268,4 +279,5 @@ Partial Class transaksi_DO
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
 End Class
