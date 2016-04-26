@@ -24,13 +24,25 @@ Public Class add_kota
                     data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
                     master_kota.GridControl1.DataSource = data
                     master_kota.edit.Down = False
+                    master_kota.hapus.Visible = False
+                    master_kota.editing.Visible = False
                     master_kota.deldata.Down = False
+                    Me.Close()
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_kota_Load(sender, e)
+                master_kota.GridControl1.Visible = True
+                master_kota.GridControl2.Visible = False
+                data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
+                master_kota.GridControl1.DataSource = data
+                master_kota.edit.Down = False
+                master_kota.hapus.Visible = False
+                master_kota.editing.Visible = False
+                master_kota.deldata.Down = False
                 Reset()
+                Me.Close()
             End If
         Catch ex As Exception
 
@@ -40,7 +52,7 @@ Public Class add_kota
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
             'insert ke dalam database
-            InsertInto("insert into mkota values ('','" & kota.Text & "','" & provinsi.Text & "','1') ")
+            InsertInto("insert into mkota values ('','" & provinsi.Text & "','" & kota.Text & "','1') ")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
@@ -53,6 +65,8 @@ Public Class add_kota
                 data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
                 master_kota.GridControl1.DataSource = data
                 master_kota.edit.Down = False
+                master_kota.hapus.Visible = False
+                master_kota.editing.Visible = False
                 master_kota.deldata.Down = False
                 Me.Close()
             End If

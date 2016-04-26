@@ -13,42 +13,35 @@ Public Class master_customer
         Me.Close()
     End Sub
 
-    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
-        If edit.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            deldata.Down = False
-            editing.Visible = True
-            hapus.Visible = False
-            GridControl1.Visible = False
-
-            For i = 0 To data.Columns.Count - 1
-                gridview1.Columns(i).OptionsColumn.AllowEdit = False
-            Next
-        Else
-            GridControl1.Visible = True
-            GridControl2.Visible = False
-            editing.Visible = False
-        End If
-    End Sub
 
     Private Sub master_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            checks.Clear()
+            unchecks.Clear()
+            data.Clear()
+            deldata.Down = False
+            edit.Down = False
+            GroupControl2.Enabled = True
+            GridControl1.Visible = True
             GridControl2.Visible = False
+            editing.Visible = False
+            hapus.Visible = False
+
             data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1
                 gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
             Next
 
-            If data.Rows.Count > 0 Then
+            If checks.Columns.Count = 0 Then
                 checks.Columns.Add("Kode Customer")
                 unchecks.Columns.Add("Kode Customer")
-                For i = 0 To gridcustomer.DataRowCount - 1
-                    Dim temp As String = gridcustomer.GetRowCellValue(i, "Kode Customer").ToString
-                    unchecks.Rows.Add(temp)
-                Next
+               
             End If
+            For i = 0 To gridcustomer.DataRowCount - 1
+                Dim temp As String = gridcustomer.GetRowCellValue(i, "Kode Customer").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -148,20 +141,6 @@ Public Class master_customer
         End Try
     End Sub
 
-    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        If deldata.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            edit.Down = False
-            GridControl1.Visible = False
-            editing.Visible = False
-            hapus.Visible = True
-        Else
-            GridControl1.Visible = True
-            GridControl2.Visible = False
-            hapus.Visible = False
-        End If
-    End Sub
 
     Private Sub gridview1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
         Try
@@ -205,20 +184,61 @@ Public Class master_customer
         GridControl1.DataSource = data
     End Sub
 
-    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         If edit.Down = True Then
+            deldata.Down = False
             GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = True
+            hapus.Visible = False
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Customer").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
             GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+            GridControl1.DataSource = data
         End If
-
     End Sub
-
-    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
         If deldata.Down = True Then
+            edit.Down = False
             GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = True
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Customer").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
             GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+            GridControl1.DataSource = data
         End If
     End Sub
+    
 End Class

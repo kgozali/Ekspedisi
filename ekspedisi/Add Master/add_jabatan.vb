@@ -19,18 +19,24 @@ Public Class add_jabatan
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_jabatan_Load(sender, e)
-                    Reset()
-                Else
                     master_jabatan.GridControl1.Visible = True
                     master_jabatan.GridControl2.Visible = False
                     data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
                     master_jabatan.GridControl1.DataSource = data
                     master_jabatan.edit.Down = False
                     master_jabatan.deldata.Down = False
+                    Reset()
+                Else
                     e.Cancel = True
                 End If
             Else
                 add_jabatan_Load(sender, e)
+                master_jabatan.GridControl1.Visible = True
+                master_jabatan.GridControl2.Visible = False
+                data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
+                master_jabatan.GridControl1.DataSource = data
+                master_jabatan.edit.Down = False
+                master_jabatan.deldata.Down = False
                 Reset()
             End If
         Catch ex As Exception

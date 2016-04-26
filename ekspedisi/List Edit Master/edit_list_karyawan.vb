@@ -1,34 +1,48 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class edit_list_karyawan
     Dim data As New DataTable
+    Private Sub edit_list_karyawan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        master_karyawan.GridControl1.Visible = True
+        master_karyawan.GridControl2.Visible = False
+        data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+        master_karyawan.GridControl1.DataSource = data
+        data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+        master_karyawan.GridControl2.DataSource = data
+        master_karyawan.edit.Down = False
+        master_karyawan.GroupControl2.Enabled = True
+        master_karyawan.editing.Visible = False
+        master_karyawan.hapus.Visible = False
+    End Sub
     Private Sub edit_list_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Columns.Add("Kode Karyawan")
-            data.Columns.Add("Nama Karyawan")
-            data.Columns.Add("Alamat")
-            data.Columns.Add("Email")
-            data.Columns.Add("Telepon 1")
-            data.Columns.Add("Telepon 2")
-            data.Columns.Add("Kota")
-            data.Columns.Add("Jabatan")
-            data.Columns.Add("Tanggal Masuk")
-            data.Columns.Add("Keterangan")
-            data.Columns.Add("No KTP")
+            data.Clear()
+            If data.Columns.Count = 0 Then
+                data.Columns.Add("Kode Karyawan")
+                data.Columns.Add("Nama Karyawan")
+                data.Columns.Add("Alamat")
+                data.Columns.Add("Email")
+                data.Columns.Add("Telepon 1")
+                data.Columns.Add("Telepon 2")
+                data.Columns.Add("Kota")
+                data.Columns.Add("Jabatan")
+                data.Columns.Add("Tanggal Masuk")
+                data.Columns.Add("Keterangan")
+                data.Columns.Add("No KTP")
+            End If
 
-
-            For i = 0 To master_karyawan.GridView1.RowCount - 1
-                If master_karyawan.GridView1.IsRowSelected(i) Then
-                    Dim a As String = master_karyawan.GridView1.GetRowCellValue(i, "Kode Karyawan").ToString()
-                    Dim b As String = master_karyawan.GridView1.GetRowCellValue(i, "Nama Karyawan").ToString()
-                    Dim c As String = master_karyawan.GridView1.GetRowCellValue(i, "Alamat").ToString()
-                    Dim d As String = master_karyawan.GridView1.GetRowCellValue(i, "Email").ToString()
-                    Dim e1 As String = master_karyawan.GridView1.GetRowCellValue(i, "Telepon 1").ToString()
-                    Dim f As String = master_karyawan.GridView1.GetRowCellValue(i, "Telepon 2").ToString()
-                    Dim g As String = master_karyawan.GridView1.GetRowCellValue(i, "Kota").ToString()
-                    Dim h As String = master_karyawan.GridView1.GetRowCellValue(i, "Jabatan").ToString()
-                    Dim j As String = master_karyawan.GridView1.GetRowCellValue(i, "Tanggal Masuk").ToString()
-                    Dim k As String = master_karyawan.GridView1.GetRowCellValue(i, "Keterangan").ToString()
-                    Dim l As String = master_karyawan.GridView1.GetRowCellValue(i, "No KTP").ToString()
+            For i = 0 To master_karyawan.GridView2.RowCount - 1
+                If master_karyawan.GridView2.IsRowSelected(i) Then
+                    Dim a As String = master_karyawan.GridView2.GetRowCellValue(i, "Kode Karyawan").ToString()
+                    Dim b As String = master_karyawan.GridView2.GetRowCellValue(i, "Nama Karyawan").ToString()
+                    Dim c As String = master_karyawan.GridView2.GetRowCellValue(i, "Alamat").ToString()
+                    Dim d As String = master_karyawan.GridView2.GetRowCellValue(i, "Email").ToString()
+                    Dim e1 As String = master_karyawan.GridView2.GetRowCellValue(i, "Telepon 1").ToString()
+                    Dim f As String = master_karyawan.GridView2.GetRowCellValue(i, "Telepon 2").ToString()
+                    Dim g As String = master_karyawan.GridView2.GetRowCellValue(i, "Kota").ToString()
+                    Dim h As String = master_karyawan.GridView2.GetRowCellValue(i, "Jabatan").ToString()
+                    Dim j As String = master_karyawan.GridView2.GetRowCellValue(i, "Tanggal Masuk").ToString()
+                    Dim k As String = master_karyawan.GridView2.GetRowCellValue(i, "Keterangan").ToString()
+                    Dim l As String = master_karyawan.GridView2.GetRowCellValue(i, "No KTP").ToString()
 
                     data.Rows.Add(a, b, c, d, e1, f, g, h, j, k, l)
                 End If

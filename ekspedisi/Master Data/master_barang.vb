@@ -10,29 +10,15 @@ Public Class master_barang
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+
         Me.Close()
     End Sub
 
-    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
-        If edit.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            deldata.Down = False
-            editing.Visible = True
-            hapus.Visible = False
-            GridControl1.Visible = False
-
-            For i = 0 To data.Columns.Count - 1
-                GridView2.Columns(i).OptionsColumn.AllowEdit = False
-            Next
-        Else
-            GridControl1.Visible = True
-            GridControl2.Visible = False
-            editing.Visible = False
-        End If
-    End Sub
-
     Private Sub master_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        data.Clear()
+        checks.Clear()
+        unchecks.Clear()
+        data.Clear()
         deldata.Down = False
         edit.Down = False
         GridControl2.Visible = False
@@ -45,9 +31,11 @@ Public Class master_barang
                 For i = 0 To data.Columns.Count - 1
                     GridView1.Columns(i).OptionsColumn.AllowEdit = False
                 Next
+                If checks.Columns.Count = 0 Then
+                    checks.Columns.Add("Kode Barang")
+                    unchecks.Columns.Add("Kode Barang")
+                End If
 
-                checks.Columns.Add("Kode Barang")
-                unchecks.Columns.Add("Kode Barang")
                 For i = 0 To GridView1.DataRowCount - 1
                     Dim temp As String = GridView1.GetRowCellValue(i, "Kode Barang").ToString
                     unchecks.Rows.Add(temp)
@@ -153,18 +141,60 @@ Public Class master_barang
         End Try
     End Sub
 
-    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        If deldata.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            edit.Down = False
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        If edit.Down = True Then
+            deldata.Down = False
+            GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = True
+            hapus.Visible = False
             GridControl1.Visible = False
-            editing.Visible = False
-            hapus.Visible = True
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Barang").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
+            GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
             GridControl1.Visible = True
             GridControl2.Visible = False
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            GridControl1.DataSource = data
+        End If
+    End Sub
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
+        If deldata.Down = True Then
+            edit.Down = False
+            GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = True
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Barang").ToString
+                unchecks.Rows.Add(temp)
+            Next
+        Else
+            GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
             hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            GridControl1.DataSource = data
         End If
     End Sub
 
@@ -173,7 +203,7 @@ Public Class master_barang
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
                     If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Barang").ToString Then
-                        MsgBox(unchecks.Rows(i).Item(0).ToString)
+                        'MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
                         checks.Rows.Add(cc)
@@ -182,7 +212,7 @@ Public Class master_barang
             Else
                 For i = 0 To checks.Rows.Count() - 1
                     If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Barang").ToString Then
-                        MsgBox(checks.Rows(i).Item(0).ToString)
+                        'MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
                         unchecks.Rows.Add(cc)
@@ -210,21 +240,4 @@ Public Class master_barang
         GridControl1.DataSource = data
     End Sub
 
-    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
-        If edit.Down = True Then
-            GroupControl2.Enabled = False
-        Else
-            GroupControl2.Enabled = True
-        End If
-
-    End Sub
-
-    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
-        If deldata.Down = True Then
-            GroupControl2.Enabled = False
-        Else
-            GroupControl2.Enabled = True
-        End If
-
-    End Sub
 End Class

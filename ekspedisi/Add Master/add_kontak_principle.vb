@@ -5,23 +5,29 @@ Public Class add_kontak_principle
     Dim cbprinciple As New DataTable
 
     Private Sub add_kontak_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim tanggal As New DataTable
-        Dim tgl As String = "MO"
-        tanggal = DtTable("select * from mkontakprinciple where substring(ID_Kontak,1,2) = '" & tgl & "'")
-        Dim hitung As String = tanggal.Rows.Count() + 1
-        While hitung.LongCount < 5
-            hitung = "0" + hitung
-        End While
 
-        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
-        principle.DataSource = cbprinciple
-        principle.DisplayMember = "Nama Principle"
-        principle.ValueMember = "Kode Principle"
+        Try
+            Dim tanggal As New DataTable
+            Dim tgl As String = "MO"
+            tanggal = DtTable("select * from mkontakprinciple where substring(ID_Kontak,1,2) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
 
-        id.Text = tgl + hitung
-        nama.Text = ""
-        tel1.Text = ""
-        tel2.Text = ""
+            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
+            principle.DataSource = cbprinciple
+            principle.DisplayMember = "Nama Principle"
+            principle.ValueMember = "Kode Principle"
+
+            id.Text = tgl + hitung
+            nama.Text = ""
+            tel1.Text = ""
+            tel2.Text = ""
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
@@ -38,16 +44,26 @@ Public Class add_kontak_principle
                     add_kontak_principle_Load(sender, e)
                     master_kontak_principle.GridControl1.Visible = True
                     master_kontak_principle.GridControl2.Visible = False
-                    data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, Nama_Kontak_Principle `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
+                    data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
                     master_kontak_principle.GridControl1.DataSource = data
                     master_kontak_principle.edit.Down = False
                     master_kontak_principle.deldata.Down = False
+                    master_kontak_principle.editing.Visible = False
+                    master_kontak_principle.hapus.Visible = False
                     Reset()
                 Else
                     e.Cancel = True
                 End If
             Else
-                add_Kontak_Principle_Load(sender, e)
+                add_kontak_principle_Load(sender, e)
+                master_kontak_principle.GridControl1.Visible = True
+                master_kontak_principle.GridControl2.Visible = False
+                data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
+                master_kontak_principle.GridControl1.DataSource = data
+                master_kontak_principle.edit.Down = False
+                master_kontak_principle.deldata.Down = False
+                master_kontak_principle.editing.Visible = False
+                master_kontak_principle.hapus.Visible = False
                 Reset()
             End If
         Catch ex As Exception
@@ -70,13 +86,14 @@ Public Class add_kontak_principle
                     Reset()
                 Else
                     cek = False
-
                     master_kontak_principle.GridControl1.Visible = True
                     master_kontak_principle.GridControl2.Visible = False
-                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
+                    data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
                     master_kontak_principle.GridControl1.DataSource = data
                     master_kontak_principle.edit.Down = False
                     master_kontak_principle.deldata.Down = False
+                    master_kontak_principle.editing.Visible = False
+                    master_kontak_principle.hapus.Visible = False
                     Me.Close()
                 End If
 
@@ -91,10 +108,12 @@ Public Class add_kontak_principle
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_kontak_principle.GridControl1.Visible = True
         master_kontak_principle.GridControl2.Visible = False
-        data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, Nama_Kontak_Principle `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mKontakPrinciple b where b.`s`='1'")
+        data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
         master_kontak_principle.GridControl1.DataSource = data
+        master_kontak_principle.edit.Down = False
         master_kontak_principle.deldata.Down = False
-        master_kontak_principle.deldata.Down = True
+        master_kontak_principle.editing.Visible = False
+        master_kontak_principle.hapus.Visible = False
         Me.Close()
     End Sub
 

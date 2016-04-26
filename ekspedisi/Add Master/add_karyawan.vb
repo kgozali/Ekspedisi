@@ -4,12 +4,22 @@ Public Class add_karyawan
     Dim cbjabatan As New DataTable
     Dim cbkota As New DataTable
     Dim chckbx As Integer = 1
+    Dim data As New DataTable
     Private Sub add_karyawan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If cek = True Then
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_karyawan_Load(sender, e)
+                    master_karyawan.deldata.Down = False
+                    master_karyawan.edit.Down = False
+                    master_karyawan.GroupControl2.Enabled = True
+                    master_karyawan.GridControl1.Visible = True
+                    master_karyawan.GridControl2.Visible = False
+                    master_karyawan.editing.Visible = False
+                    master_karyawan.hapus.Visible = False
+                    Data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+                    master_karyawan.GridControl1.DataSource = Data
                     Reset()
                 Else
                     e.Cancel = True
@@ -42,6 +52,14 @@ Public Class add_karyawan
                     Reset()
                 Else
                     cek = False
+                    add_karyawan_Load(sender, e)
+                    master_karyawan.deldata.Down = False
+                    master_karyawan.edit.Down = False
+                    master_karyawan.GroupControl2.Enabled = True
+                    master_karyawan.GridControl1.Visible = True
+                    master_karyawan.GridControl2.Visible = False
+                    data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+                    master_karyawan.GridControl1.DataSource = data
                     Me.Close()
                 End If
 
