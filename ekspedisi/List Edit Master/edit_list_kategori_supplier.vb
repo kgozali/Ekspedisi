@@ -13,8 +13,11 @@ Public Class edit_list_kategori_supplier
     End Sub
     Private Sub edit_list_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Columns.Add("Kode Kategori Supplier")
-            data.Columns.Add("Nama Kategori Supplier")
+            If data.Columns.Count = 0 Then
+                data.Columns.Add("Kode Kategori Supplier")
+                data.Columns.Add("Nama Kategori Supplier")
+            End If
+
 
             For i = 0 To master_kategori_supplier.GridView2.RowCount - 1
                 If master_kategori_supplier.GridView2.IsRowSelected(i) Then

@@ -17,6 +17,8 @@ Public Class add_supplier
                     master_supplier.GridControl1.DataSource = data
                     master_supplier.edit.Down = False
                     master_supplier.deldata.Down = False
+                    master_supplier.editing.Visible = False
+                    master_supplier.hapus.Visible = False
                     master_supplier.GroupControl2.Enabled = True
                     Reset()
                 Else
@@ -24,6 +26,15 @@ Public Class add_supplier
                 End If
             Else
                 add_supplier_Load(sender, e)
+                master_supplier.GridControl1.Visible = True
+                master_supplier.GridControl2.Visible = False
+                data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
+                master_supplier.GridControl1.DataSource = data
+                master_supplier.edit.Down = False
+                master_supplier.deldata.Down = False
+                master_supplier.editing.Visible = False
+                master_supplier.hapus.Visible = False
+                master_supplier.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -38,6 +49,9 @@ Public Class add_supplier
         master_supplier.GridControl1.DataSource = data
         master_supplier.edit.Down = False
         master_supplier.deldata.Down = False
+        master_supplier.editing.Visible = False
+        master_supplier.hapus.Visible = False
+        master_supplier.GroupControl2.Enabled = True
         Me.Close()
     End Sub
 
@@ -84,32 +98,37 @@ Public Class add_supplier
     End Sub
 
     Private Sub add_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
-        kota.DataSource = cbkota
-        kota.ValueMember = "kota"
-        kota.DisplayMember = "kota"
+        Try
+            cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+            kota.DataSource = cbkota
+            kota.ValueMember = "kota"
+            kota.DisplayMember = "kota"
 
-        cbsupplier = DtTable("select id_kategori, kategori_supplier from mkategori_supplier where s = '1'")
-        kategori.DataSource = cbsupplier
-        kategori.ValueMember = "id_kategori"
-        kategori.DisplayMember = "kategori_supplier"
+            cbsupplier = DtTable("select id_kategori, kategori_supplier from mkategori_supplier where s = '1'")
+            kategori.DataSource = cbsupplier
+            kategori.ValueMember = "id_kategori"
+            kategori.DisplayMember = "kategori_supplier"
 
-        Dim tanggal As New DataTable
-        Dim tgl As String = "MS"
-        tanggal = DtTable("select * from msupplier where substring(id_supplier,1,2) = '" & tgl & "'")
-        Dim hitung As String = tanggal.Rows.Count() + 1
-        While hitung.LongCount < 5
-            hitung = "0" + hitung
-        End While
-        id.Text = tgl + hitung
+            Dim tanggal As New DataTable
+            Dim tgl As String = "MS"
+            tanggal = DtTable("select * from msupplier where substring(id_supplier,1,2) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            id.Text = tgl + hitung
 
-        nama.Text = ""
-        alamat.Text = ""
-        email.Text = ""
-        tel1.Text = ""
-        tel2.Text = ""
-        provinsi.Text = ""
-        kota.Text = ""
+            nama.Text = ""
+            alamat.Text = ""
+            email.Text = ""
+            tel1.Text = ""
+            tel2.Text = ""
+            provinsi.Text = ""
+            kota.Text = ""
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress

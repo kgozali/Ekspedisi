@@ -4,6 +4,14 @@ Public Class add_barang
     Dim cek As Boolean = False
     Dim data As DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_barang.GridControl1.Visible = True
+        master_barang.GridControl2.Visible = False
+        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+        master_barang.GridControl1.DataSource = data
+        master_barang.edit.Down = False
+        master_barang.deldata.Down = False
+        master_barang.hapus.Visible = False
+        master_barang.editing.Visible = False
         Me.Close()
     End Sub
     Private Sub add_barang_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -22,10 +30,12 @@ Public Class add_barang
                     DataTable1.Rows.Clear()
                     master_barang.GridControl1.Visible = True
                     master_barang.GridControl2.Visible = False
-                    data = DtTable("SELECT id_barang `ID Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
                     master_barang.GridControl1.DataSource = data
+                    master_barang.edit.Down = False
                     master_barang.deldata.Down = False
-                    master_barang.deldata.Down = True
+                    master_barang.hapus.Visible = False
+                    master_barang.editing.Visible = False
                     Reset()
                 Else
                     e.Cancel = True
@@ -33,6 +43,14 @@ Public Class add_barang
             Else
                 add_barang_Load(sender, e)
                 DataTable1.Rows.Clear()
+                master_barang.GridControl1.Visible = True
+                master_barang.GridControl2.Visible = False
+                data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                master_barang.GridControl1.DataSource = data
+                master_barang.edit.Down = False
+                master_barang.deldata.Down = False
+                master_barang.hapus.Visible = False
+                master_barang.editing.Visible = False
                 Reset()
             End If
         Catch ex As Exception
@@ -136,13 +154,19 @@ Public Class add_barang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
                 add_barang_Load(sender, e)
+                master_barang.GridControl1.Visible = True
+                master_barang.GridControl2.Visible = False
+                data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                master_barang.GridControl1.DataSource = data
+                master_barang.edit.Down = False
+                master_barang.deldata.Down = False
+                master_barang.hapus.Visible = False
+                master_barang.editing.Visible = False
                 Reset()
             Else
                 cek = False
                 DataTable1.Rows.Clear()
                 Me.Close()
-                Data = DtTable("SELECT id_barang `ID Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
-                master_barang.GridControl1.DataSource = data
             End If
 
         Catch ex As Exception

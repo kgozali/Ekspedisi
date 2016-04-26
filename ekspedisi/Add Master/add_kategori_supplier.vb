@@ -3,14 +3,16 @@ Public Class add_kategori_supplier
     Dim cek As Boolean
     Dim data As New DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+        data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
         master_kategori_supplier.GridControl1.DataSource = data
         master_kategori_supplier.GridControl1.Visible = True
-        Data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+        data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
         master_kategori_supplier.GridControl2.DataSource = data
         master_kategori_supplier.GridControl2.Visible = False
         master_kategori_supplier.deldata.Down = False
+        master_kategori_supplier.hapus.Visible = False
         master_kategori_supplier.edit.Down = False
+        master_kategori_supplier.editing.Visible = False
 
         Me.Close()
     End Sub
@@ -29,13 +31,24 @@ Public Class add_kategori_supplier
                     master_kategori_supplier.GridControl2.DataSource = data
                     master_kategori_supplier.GridControl2.Visible = False
                     master_kategori_supplier.deldata.Down = False
+                    master_kategori_supplier.hapus.Visible = False
                     master_kategori_supplier.edit.Down = False
+                    master_kategori_supplier.editing.Visible = False
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_kategori_supplier_Load(sender, e)
-
+                data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                master_kategori_supplier.GridControl1.DataSource = data
+                master_kategori_supplier.GridControl1.Visible = True
+                data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+                master_kategori_supplier.GridControl2.DataSource = data
+                master_kategori_supplier.GridControl2.Visible = False
+                master_kategori_supplier.deldata.Down = False
+                master_kategori_supplier.hapus.Visible = False
+                master_kategori_supplier.edit.Down = False
+                master_kategori_supplier.editing.Visible = False
                 Reset()
             End If
         Catch ex As Exception
@@ -64,7 +77,9 @@ Public Class add_kategori_supplier
                     master_kategori_supplier.GridControl2.DataSource = data
                     master_kategori_supplier.GridControl2.Visible = False
                     master_kategori_supplier.deldata.Down = False
+                    master_kategori_supplier.hapus.Visible = False
                     master_kategori_supplier.edit.Down = False
+                    master_kategori_supplier.editing.Visible = False
                     Me.Close()
                 End If
 

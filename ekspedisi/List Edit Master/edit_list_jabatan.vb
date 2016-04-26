@@ -9,12 +9,17 @@ Public Class edit_list_jabatan
         data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
         master_jabatan.GridControl2.DataSource = data
         master_jabatan.edit.Down = False
+        master_jabatan.hapus.Visible = False
+        master_jabatan.editing.Visible = False
         master_jabatan.GroupControl2.Enabled = True
     End Sub
     Private Sub edit_list_jabatan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Columns.Add("Kode Jabatan")
-            data.Columns.Add("Nama Jabatan")
+            data.Clear()
+            If data.Columns.Count = 0 Then
+                data.Columns.Add("Kode Jabatan")
+                data.Columns.Add("Nama Jabatan")
+            End If
 
             For i = 0 To master_jabatan.GridView2.RowCount - 1
                 If master_jabatan.GridView2.IsRowSelected(i) Then

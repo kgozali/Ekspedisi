@@ -4,24 +4,27 @@ Public Class list_edit_customer
     Private Sub list_edit_customer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         master_customer.GridControl1.Visible = True
         master_customer.GridControl2.Visible = False
-        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_Customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
         master_customer.GridControl1.DataSource = data
-        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
-        master_customer.GridControl2.DataSource = data
         master_customer.edit.Down = False
+        master_customer.editing.Visible = False
+        master_customer.deldata.Down = False
+        master_customer.hapus.Visible = False
         master_customer.GroupControl2.Enabled = True
     End Sub
     Private Sub list_edit_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Columns.Add("Kode Customer")
-            data.Columns.Add("Nama Customer")
-            data.Columns.Add("Alamat")
-            data.Columns.Add("Email")
-            data.Columns.Add("Telepon 1")
-            data.Columns.Add("Telepon 2")
-            data.Columns.Add("Kota")
-            data.Columns.Add("Provinsi")
-
+            data.Clear()
+            If data.Columns.Count = 0 Then
+                data.Columns.Add("Kode Customer")
+                data.Columns.Add("Nama Customer")
+                data.Columns.Add("Alamat")
+                data.Columns.Add("Email")
+                data.Columns.Add("Telepon 1")
+                data.Columns.Add("Telepon 2")
+                data.Columns.Add("Kota")
+                data.Columns.Add("Provinsi")
+            End If
 
             For i = 0 To master_customer.GridView1.RowCount - 1
                 If master_customer.GridView1.IsRowSelected(i) Then
@@ -50,11 +53,12 @@ Public Class list_edit_customer
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_customer.GridControl1.Visible = True
         master_customer.GridControl2.Visible = False
-        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_Customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
         master_customer.GridControl1.DataSource = data
-        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
-        master_customer.GridControl2.DataSource = data
         master_customer.edit.Down = False
+        master_customer.editing.Visible = False
+        master_customer.deldata.Down = False
+        master_customer.hapus.Visible = False
         master_customer.GroupControl2.Enabled = True
         Me.Close()
     End Sub
