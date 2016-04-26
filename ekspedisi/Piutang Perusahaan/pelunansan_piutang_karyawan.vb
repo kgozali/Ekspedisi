@@ -7,17 +7,21 @@
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            Dim syaratnol As Boolean = False
-            Dim syaratlunas As Boolean = False
+           
             If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
                 MessageBox.Show("Karyawan belum dipilih")
 
             ElseIf datapiutang.RowCount > 0 Then
                 For i = 0 To datapiutang.RowCount - 1
+                    Dim syaratnol As Boolean = False
+                    Dim syaratlunas As Boolean = False
+                    Dim syaratcicil As Boolean = False
                     If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
                         syaratlunas = True
                     ElseIf IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = True Then
                         syaratnol = True
+                    ElseIf syaratcicil = True Then
+
                     End If
                     If syaratlunas = True And syaratnol = False Then
                         InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
@@ -32,11 +36,11 @@
                         InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                         MessageBox.Show("Piutang berhasil di update")
                         InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
-                        InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
+                    ElseIf syaratcicil = True And syaratnol = False Then
 
                     End If
                 Next i
@@ -99,5 +103,10 @@
                 .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
             End With
         End If
+    End Sub
+
+    Private Sub pelunansan_piutang_karyawan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim kosong As New DataTable
+        daftarutang.DataSource = kosong
     End Sub
 End Class
