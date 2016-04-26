@@ -57,6 +57,9 @@ Partial Public Class Reportprinciple
         Me.tglakhir = New DevExpress.XtraReports.Parameters.Parameter()
         Me.principle = New DevExpress.XtraReports.Parameters.Parameter()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
@@ -74,15 +77,12 @@ Partial Public Class Reportprinciple
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "principlereport"
+        Me.SqlDataSource1.ConnectionName = "139.162.57.197_ekspedisiConnection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "vw_principlerpt"
         TableInfo1.Name = "vw_principlerpt"
@@ -118,7 +118,7 @@ Partial Public Class Reportprinciple
         '
         'XrLabel13
         '
-        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.nominal", "{0:Rp #,#}")})
+        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.nominal", "{0:Rp #,#.00}")})
         Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(639.5833!, 10.00001!)
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -271,6 +271,36 @@ Partial Public Class Reportprinciple
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel14, Me.XrLabel15, Me.XrLabel16, Me.XrLabel18, Me.XrLabel17, Me.XrPictureBox1, Me.XrLabel1, Me.XrLabel6, Me.XrLabel7, Me.XrLabel9})
         Me.ReportHeader.HeightF = 195.8334!
         Me.ReportHeader.Name = "ReportHeader"
+        '
+        'XrLabel14
+        '
+        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(178.7083!, 10.00001!)
+        Me.XrLabel14.Name = "XrLabel14"
+        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel14.SizeF = New System.Drawing.SizeF(450.0!, 24.04167!)
+        Me.XrLabel14.StylePriority.UseFont = False
+        Me.XrLabel14.StylePriority.UseTextAlignment = False
+        Me.XrLabel14.Text = "PT SENTONG SULTAN KERATON MOJOPAHIT"
+        Me.XrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'XrLabel15
+        '
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(282.875!, 34.04166!)
+        Me.XrLabel15.Name = "XrLabel15"
+        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(250.0!, 23.0!)
+        Me.XrLabel15.Text = "DUSUN JABON DS. JABON RT 01 RW 01"
+        '
+        'XrLabel16
+        '
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(356.8333!, 57.04168!)
+        Me.XrLabel16.Name = "XrLabel16"
+        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel16.SizeF = New System.Drawing.SizeF(100.0!, 16.75!)
+        Me.XrLabel16.StylePriority.UseTextAlignment = False
+        Me.XrLabel16.Text = "JOMBANG"
+        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrLabel18
         '
@@ -482,36 +512,6 @@ Partial Public Class Reportprinciple
         Me.XrTableCell7.Text = "Total"
         Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrTableCell7.Weight = 1.1313869746326293R
-        '
-        'XrLabel14
-        '
-        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(178.7083!, 10.00001!)
-        Me.XrLabel14.Name = "XrLabel14"
-        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel14.SizeF = New System.Drawing.SizeF(450.0!, 24.04167!)
-        Me.XrLabel14.StylePriority.UseFont = False
-        Me.XrLabel14.StylePriority.UseTextAlignment = False
-        Me.XrLabel14.Text = "PT SENTONG SULTAN KERATON MOJOPAHIT"
-        Me.XrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        '
-        'XrLabel15
-        '
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(282.875!, 34.04166!)
-        Me.XrLabel15.Name = "XrLabel15"
-        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(250.0!, 23.0!)
-        Me.XrLabel15.Text = "DUSUN JABON DS. JABON RT 01 RW 01"
-        '
-        'XrLabel16
-        '
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(356.8333!, 57.04168!)
-        Me.XrLabel16.Name = "XrLabel16"
-        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel16.SizeF = New System.Drawing.SizeF(100.0!, 16.75!)
-        Me.XrLabel16.StylePriority.UseTextAlignment = False
-        Me.XrLabel16.Text = "JOMBANG"
-        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'Reportprinciple
         '
