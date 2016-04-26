@@ -164,10 +164,6 @@ Public Class main_menu
         pelunansan_piutang_karyawan.ShowDialog()
     End Sub
 
-    Private Sub bukapiutangkaryawan_Click(sender As Object, e As EventArgs) Handles bukapiutangkaryawan.Click
-        buka_piutang_karyawan.ShowDialog()
-    End Sub
-
     Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
         pelunasan_piutang.ShowDialog()
     End Sub
@@ -180,7 +176,7 @@ Public Class main_menu
         kas_keluar.ShowDialog()
     End Sub
 
-    Private Sub hutangdo_Click(sender As Object, e As EventArgs) Handles hutangdo.Click
-        pelunasan_hutang_supir.ShowDialog()
+    Private Sub SimpleButton8_Click_1(sender As Object, e As EventArgs) Handles SimpleButton8.Click
+        buka_piutang_karyawan.ShowDialog()
     End Sub
 End Class

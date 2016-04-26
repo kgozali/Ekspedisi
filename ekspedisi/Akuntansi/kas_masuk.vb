@@ -18,7 +18,11 @@ Public Class kas_masuk
             command.Transaction = vartr
             command.CommandText = "delete from trans_kas where id_transaksi_kas='" & mkeyid & "'"
             command.ExecuteNonQuery()
+            command.CommandText = "delete from jurnal where no_jurnal='" & mkeyid & "'"
+            command.ExecuteNonQuery()
             command.CommandText = "delete from dtrans_kas where id_transaksi_kas='" & mkeyid & "'"
+            command.ExecuteNonQuery()
+            command.CommandText = "delete from djurnal where no_jurnal='" & mkeyid & "'"
             command.ExecuteNonQuery()
             vartr.Commit()
             connect.Close()
@@ -157,7 +161,7 @@ Public Class kas_masuk
                     command.ExecuteNonQuery()
                     command.CommandText = "delete from dtrans_kas where id_transaksi_kas='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
-                    command.CommandText = "delete from djurnal where id_parent='" & _mkeyid & "'"
+                    command.CommandText = "delete from djurnal where no_jurnal='" & _mkeyid & "'"
                     command.ExecuteNonQuery()
                 End If
                 'insert jurnal
@@ -170,11 +174,11 @@ Public Class kas_masuk
                     dtrow = DataSet1.Tables.Item("datadetil").Rows(i)
                     command.CommandText = "insert into dtrans_kas (id_transaksi_kas,tgl,nominal,id_akun_detil,id_truk,keterangan,urutan) VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'," & dtrow("nominal") & ",'" & dtrow("id_akun_detil") & "','" & dtrow("id_truk") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & i + 1 & ")"
                     command.ExecuteNonQuery()
-                    command.CommandText = "insert into djurnal (id_parent,id_akun,keterangan,nominal) VALUES ('" & TextBox1.Text & "','" & dtrow("id_akun_detil") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & -1 * dtrow("nominal") & ")"
+                    command.CommandText = "insert into djurnal (no_jurnal,id_akun,keterangan,nominal) VALUES ('" & TextBox1.Text & "','" & dtrow("id_akun_detil") & "','" & CekTandaPetik(dtrow("keterangan")) & "'," & -1 * dtrow("nominal") & ")"
                     command.ExecuteNonQuery()
                 Next
                 Dim total As Double = GridView1.Columns("nominal").SummaryItem.SummaryValue
-                command.CommandText = "insert into djurnal (id_parent,id_akun,keterangan,nominal) VALUES ('" & TextBox1.Text & "','" & GridLookUpEdit1.EditValue & "','" & CekTandaPetik(RichTextBox1.Text) & "'," & total & ")"
+                command.CommandText = "insert into djurnal (no_jurnal,id_akun,keterangan,nominal) VALUES ('" & TextBox1.Text & "','" & GridLookUpEdit1.EditValue & "','" & CekTandaPetik(RichTextBox1.Text) & "'," & total & ")"
                 command.ExecuteNonQuery()
 
                 vartr.Commit()
