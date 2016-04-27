@@ -30,13 +30,13 @@ Partial Class pelunansan_piutang_karyawan
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nomertelepon = New DevExpress.XtraEditors.LabelControl()
-        Me.kotaasal = New DevExpress.XtraEditors.LabelControl()
+        Me.nomortelepon = New System.Windows.Forms.TextBox()
+        Me.kotaasal = New System.Windows.Forms.TextBox()
+        Me.jabatan = New System.Windows.Forms.TextBox()
+        Me.namakaryawan = New System.Windows.Forms.TextBox()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.namakaryawan = New System.Windows.Forms.TextBox()
-        Me.jabatan = New System.Windows.Forms.TextBox()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.daftarutang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,10 +123,10 @@ Partial Class pelunansan_piutang_karyawan
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.nomortelepon)
+        Me.GroupControl1.Controls.Add(Me.kotaasal)
         Me.GroupControl1.Controls.Add(Me.jabatan)
         Me.GroupControl1.Controls.Add(Me.namakaryawan)
-        Me.GroupControl1.Controls.Add(Me.nomertelepon)
-        Me.GroupControl1.Controls.Add(Me.kotaasal)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
@@ -139,28 +139,42 @@ Partial Class pelunansan_piutang_karyawan
         Me.GroupControl1.TabIndex = 149
         Me.GroupControl1.Text = "Data Karyawan"
         '
-        'nomertelepon
+        'nomortelepon
         '
-        Me.nomertelepon.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomertelepon.Location = New System.Drawing.Point(704, 48)
-        Me.nomertelepon.Name = "nomertelepon"
-        Me.nomertelepon.Size = New System.Drawing.Size(79, 18)
-        Me.nomertelepon.TabIndex = 59
-        Me.nomertelepon.Text = "Belum Terisi"
+        Me.nomortelepon.Enabled = False
+        Me.nomortelepon.Location = New System.Drawing.Point(689, 47)
+        Me.nomortelepon.Name = "nomortelepon"
+        Me.nomortelepon.Size = New System.Drawing.Size(191, 21)
+        Me.nomortelepon.TabIndex = 63
         '
         'kotaasal
         '
-        Me.kotaasal.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kotaasal.Location = New System.Drawing.Point(704, 24)
+        Me.kotaasal.Enabled = False
+        Me.kotaasal.Location = New System.Drawing.Point(689, 23)
         Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(79, 18)
-        Me.kotaasal.TabIndex = 58
-        Me.kotaasal.Text = "Belum Terisi"
+        Me.kotaasal.Size = New System.Drawing.Size(191, 21)
+        Me.kotaasal.TabIndex = 62
+        '
+        'jabatan
+        '
+        Me.jabatan.Enabled = False
+        Me.jabatan.Location = New System.Drawing.Point(128, 69)
+        Me.jabatan.Name = "jabatan"
+        Me.jabatan.Size = New System.Drawing.Size(191, 21)
+        Me.jabatan.TabIndex = 61
+        '
+        'namakaryawan
+        '
+        Me.namakaryawan.Enabled = False
+        Me.namakaryawan.Location = New System.Drawing.Point(128, 45)
+        Me.namakaryawan.Name = "namakaryawan"
+        Me.namakaryawan.Size = New System.Drawing.Size(191, 21)
+        Me.namakaryawan.TabIndex = 60
         '
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(592, 48)
+        Me.LabelControl5.Location = New System.Drawing.Point(574, 48)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(101, 18)
         Me.LabelControl5.TabIndex = 56
@@ -169,7 +183,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(632, 24)
+        Me.LabelControl4.Location = New System.Drawing.Point(614, 24)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(61, 18)
         Me.LabelControl4.TabIndex = 55
@@ -183,20 +197,6 @@ Partial Class pelunansan_piutang_karyawan
         Me.LabelControl3.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl3.TabIndex = 54
         Me.LabelControl3.Text = "Jabatan"
-        '
-        'namakaryawan
-        '
-        Me.namakaryawan.Location = New System.Drawing.Point(128, 45)
-        Me.namakaryawan.Name = "namakaryawan"
-        Me.namakaryawan.Size = New System.Drawing.Size(191, 21)
-        Me.namakaryawan.TabIndex = 60
-        '
-        'jabatan
-        '
-        Me.jabatan.Location = New System.Drawing.Point(128, 69)
-        Me.jabatan.Name = "jabatan"
-        Me.jabatan.Size = New System.Drawing.Size(191, 21)
-        Me.jabatan.TabIndex = 61
         '
         'pelunansan_piutang_karyawan
         '
@@ -232,11 +232,11 @@ Partial Class pelunansan_piutang_karyawan
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nomertelepon As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kotaasal As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents jabatan As System.Windows.Forms.TextBox
     Friend WithEvents namakaryawan As System.Windows.Forms.TextBox
+    Friend WithEvents nomortelepon As System.Windows.Forms.TextBox
+    Friend WithEvents kotaasal As System.Windows.Forms.TextBox
 End Class

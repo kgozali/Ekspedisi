@@ -8,7 +8,7 @@
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
            
-            If namakaryawan.Text = "Belum terisi" Or idkaryawan.Text = "" Then
+            If namakaryawan.Text = "" Or idkaryawan.Text = "" Then
                 MessageBox.Show("Karyawan belum dipilih")
 
             ElseIf datapiutang.RowCount > 0 Then
@@ -21,9 +21,11 @@
 
                     If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
                         syaratlunas = True
-                    ElseIf IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = True Then
+                    End If
+                    If datapiutang.GetRowCellValue(i, "Bayar").ToString = "" Then
                         syaratnol = True
-                    ElseIf data.Rows.Count > 0 Then
+                    End If
+                    If data.Rows.Count > 0 Then
                         syaratcicil = True
                     End If
                     If syaratlunas = True And syaratnol = False And syaratcicil = False Then
@@ -34,18 +36,18 @@
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratlunas = False And syaratnol = False And syaratcicil = False Then
-                       InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratcicil = True And syaratnol = False And syaratlunas = False Then
-                       InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratcicil = False And syaratnol = False And syaratlunas = False Then
-                       InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
@@ -59,7 +61,7 @@
                     End If
                 Next i
                 Dim tabel As New DataTable
-                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,0,nominal-sum(jumlah_dibayar)) as `Sisa` FROM dpiutang_karyawan d, piutang_karyawan p where d.id_piutangkaryawan=p.id_piutangkaryawan and status='1' and p.id_karyawan='" & namakaryawan.Text & "' group by p.id_piutangkaryawan;")
+                tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,nominal,nominal-sum(jumlah_dibayar)) as `Sisa` FROM piutang_karyawan p left join dpiutang_karyawan d on d.id_piutangkaryawan=p.id_piutangkaryawan where p.id_karyawan='" & namakaryawan.Text & "' and status='1' group by p.id_piutangkaryawan;")
                 daftarutang.DataSource = tabel
                 MessageBox.Show("Piutang berhasil di update")
             Else
@@ -123,4 +125,44 @@
         Dim kosong As New DataTable
         daftarutang.DataSource = kosong
     End Sub
+
+    Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
+        daftar_karyawan_pelunasan.ShowDialog()
+    End Sub
+
+    Private Sub idkaryawan_TextChanged(sender As Object, e As EventArgs) Handles idkaryawan.TextChanged
+        'Try
+        '    Dim data As New DataTable
+        '    data = DtTable("SELECT id_karyawan as `Kode Karyawan`, nama_karyawan as `Nama Karyawan`, nama_jabatan as `Jabatan`, tel1 as `Nomor Telepon 1`, tel2 as `Nomor Telepon 2`,kota as 'Kota'  FROM mkaryawan mk,mjabatan mj where mj.id_jabatan=mk.id_jabatan and nama_karyawan = '" & idkaryawan.Text & "'")
+        '    If data.Rows.Count > 0 Then
+        '        idkaryawan.Text = data.Rows(0).Item("Kode Karyawan").ToString
+        '        namakaryawan.Text = data.Rows(0).Item("Nama Karyawan").ToString
+        '        jabatan.Text = data.Rows(0).Item("Jabatan").ToString
+        '        kotaasal.Text = data.Rows(0).Item("Kota").ToString
+        '        nomortelepon.Text = data.Rows(0).Item("Nomor Telepon 1").ToString
+        '    End If
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
+    End Sub
+
+    Public Sub New()
+        Try
+            Dim tabel As New DataTable
+            tabel = DtTable("SELECT nama_karyawan as `Nama Karyawan` FROM mkaryawan mk where s='1'")
+            InitializeComponent()
+            Dim collection As New AutoCompleteStringCollection()
+
+            For i = 0 To tabel.Rows.Count - 1
+                collection.Add(tabel.Rows(i).Item("Nama Karyawan"))
+            Next i
+
+            idkaryawan.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource
+            idkaryawan.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            idkaryawan.MaskBox.AutoCompleteCustomSource = collection
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 End Class

@@ -21,7 +21,21 @@
         End Try
     End Sub
 
- 
+    Public Sub New()
+        Dim tabel As New DataTable
+        tabel = DtTable("SELECT nama_karyawan as `Nama Karyawan` FROM mkaryawan mk where s='1'")
+        InitializeComponent()
+        Dim collection As New AutoCompleteStringCollection()
+
+        For i = 0 To tabel.Rows.Count - 1
+            collection.Add(tabel.Rows(i).Item("Nama Karyawan"))
+        Next i
+
+        pilihkaryawan.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource
+        pilihkaryawan.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        pilihkaryawan.MaskBox.AutoCompleteCustomSource = collection
+    End Sub
+
     Private Sub pilihkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles pilihkaryawan.ButtonClick
         karyawan_piutang.ShowDialog()
     End Sub
@@ -31,15 +45,33 @@
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
-        id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
-        If InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`,`id_akun`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & tanggalpiutang.Value.ToString("yyyyMMdd") & ",'" & keterangan.Text & "','0','" & akunkas.SelectedValue.ToString & "',0)") = True Then
-            InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & ")")
-            Dim opo As Double = CDbl(nominal.Text) * -1
-            InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
-            InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
-            MessageBox.Show("Input Piutang Berhasil")
+        If idkaryawan.Text <> "" Then
+            id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
+            If InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`,`id_akun`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & tanggalpiutang.Value.ToString("yyyyMMdd") & ",'" & keterangan.Text & "','1','" & akunkas.SelectedValue.ToString & "',0)") = True Then
+                InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & ")")
+                Dim opo As Double = CDbl(nominal.Text) * -1
+                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
+                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
+                MessageBox.Show("Input Piutang Berhasil")
+            Else
+                MessageBox.Show("Input Piutang Gagal")
+            End If
         Else
-            MessageBox.Show("Input Piutang Gagal")
+            MessageBox.Show("Karyawan belum di pilih")
+        End If
+
+       
+    End Sub
+
+    Private Sub pilihkaryawan_Click(sender As Object, e As EventArgs) Handles pilihkaryawan.Click
+        karyawan_piutang.ShowDialog()
+    End Sub
+
+    Private Sub pilihkaryawan_TextChanged(sender As Object, e As EventArgs) Handles pilihkaryawan.TextChanged
+        idkaryawan.Text = Scalar("SELECT id_karyawan FROM mkaryawan mk,mjabatan mj where mj.id_jabatan=mk.id_jabatan and nama_karyawan='" & pilihkaryawan.Text & "'")
+        If idkaryawan.Text = "" Then
+            idkaryawan.Text = ""
+            pilihkaryawan.Text = ""
         End If
     End Sub
 End Class
