@@ -9,6 +9,8 @@ Public Class edit_list_user
         data = DtTable("SELECT Username from muser where`s`='1'")
         master_user.GridControl2.DataSource = data
         master_user.deldata.Down = False
+        master_user.hapus.Visible = False
+        master_user.editing.Visible = False
         master_user.edit.Down = False
     End Sub
     Private Sub edit_list_user_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,6 +44,8 @@ Public Class edit_list_user
         data = DtTable("SELECT Username from muser where`s`='1'")
         master_user.GridControl2.DataSource = data
         master_user.deldata.Down = False
+        master_user.hapus.Visible = False
+        master_user.editing.Visible = False
         master_user.edit.Down = False
         Me.Close()
     End Sub

@@ -13,31 +13,19 @@ Public Class master_truck
         Me.Close()
     End Sub
 
-    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
-        If edit.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            deldata.Down = False
-            editing.Visible = True
-            hapus.Visible = False
-            GridControl1.Visible = False
-
-            For i = 0 To data.Columns.Count - 1
-                GridView2.Columns(i).OptionsColumn.AllowEdit = False
-            Next
-        Else
-            GridControl1.Visible = True
-            GridControl2.Visible = False
-            editing.Visible = False
-        End If
-    End Sub
+   
 
     Private Sub master_truck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        data.Clear()
+        checks.Clear()
+        unchecks.Clear()
         deldata.Down = False
         edit.Down = False
         GridControl2.Visible = False
         GridControl1.Visible = True
-
+        GroupControl2.Enabled = True
+        editing.Visible = False
+        hapus.Visible = False
         data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
         GridControl1.DataSource = data
 
@@ -156,18 +144,60 @@ Public Class master_truck
         End Try
     End Sub
 
-    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        If deldata.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            edit.Down = False
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        If edit.Down = True Then
+            deldata.Down = False
+            GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = True
+            hapus.Visible = False
             GridControl1.Visible = False
-            editing.Visible = False
-            hapus.Visible = True
+            GridControl2.Visible = True
+            data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Truk").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
+            GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
             GridControl1.Visible = True
             GridControl2.Visible = False
+            data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+            GridControl1.DataSource = data
+        End If
+    End Sub
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
+        If deldata.Down = True Then
+            edit.Down = False
+            GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = True
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Truk").ToString
+                unchecks.Rows.Add(temp)
+            Next
+        Else
+            GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
             hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+            GridControl1.DataSource = data
         End If
     End Sub
 
@@ -176,7 +206,7 @@ Public Class master_truck
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
                     If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Truk").ToString Then
-                        MsgBox(unchecks.Rows(i).Item(0).ToString)
+                        'MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
                         checks.Rows.Add(cc)
@@ -185,7 +215,7 @@ Public Class master_truck
             Else
                 For i = 0 To checks.Rows.Count() - 1
                     If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Truk").ToString Then
-                        MsgBox(checks.Rows(i).Item(0).ToString)
+                        'MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
                         unchecks.Rows.Add(cc)
@@ -213,37 +243,4 @@ Public Class master_truck
         GridControl1.DataSource = data
     End Sub
 
-    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
-        If edit.Down = True Then
-            Try
-                GroupControl2.Enabled = False
-                data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
-                GridControl2.DataSource = data
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-
-        Else
-            GroupControl2.Enabled = True
-        End If
-
-    End Sub
-
-    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
-        If deldata.Down = True Then
-            GroupControl2.Enabled = False
-            checks.Clear()
-            unchecks.Clear()
-            For i = 0 To GridView1.DataRowCount - 1
-                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Truk").ToString
-                unchecks.Rows.Add(temp)
-            Next
-
-            data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
-            GridControl2.DataSource = data
-        Else
-            GroupControl2.Enabled = True
-        End If
-
-    End Sub
 End Class

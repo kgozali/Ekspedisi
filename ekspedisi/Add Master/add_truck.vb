@@ -15,6 +15,8 @@ Public Class add_truck
         master_truck.GridControl2.Visible = False
         master_truck.GroupControl2.Enabled = True
         master_truck.deldata.Down = False
+        master_truck.hapus.Visible = False
+        master_truck.editing.Visible = False
         master_truck.edit.Down = False
         Me.Close()
     End Sub
@@ -32,12 +34,23 @@ Public Class add_truck
                     master_truck.GridControl2.Visible = False
                     master_truck.GroupControl2.Enabled = True
                     master_truck.deldata.Down = False
+                    master_truck.hapus.Visible = False
+                    master_truck.editing.Visible = False
                     master_truck.edit.Down = False
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_truck_Load(sender, e)
+                data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                master_truck.GridControl1.DataSource = data
+                master_truck.GridControl1.Visible = True
+                master_truck.GridControl2.Visible = False
+                master_truck.GroupControl2.Enabled = True
+                master_truck.deldata.Down = False
+                master_truck.hapus.Visible = False
+                master_truck.editing.Visible = False
+                master_truck.edit.Down = False
                 Reset()
             End If
         Catch ex As Exception
@@ -63,12 +76,14 @@ Public Class add_truck
                     Reset()
                 Else
                     cek = False
-                    Data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
                     master_truck.GridControl1.DataSource = data
                     master_truck.GridControl1.Visible = True
                     master_truck.GridControl2.Visible = False
                     master_truck.GroupControl2.Enabled = True
                     master_truck.deldata.Down = False
+                    master_truck.hapus.Visible = False
+                    master_truck.editing.Visible = False
                     master_truck.edit.Down = False
                     Me.Close()
                 End If

@@ -12,10 +12,12 @@ Public Class add_customer
                     add_customer_Load(sender, e)
                     master_customer.GridControl1.Visible = True
                     master_customer.GridControl2.Visible = False
-                    data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_Customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
                     master_customer.GridControl1.DataSource = data
                     master_customer.edit.Down = False
+                    master_customer.editing.Visible = False
                     master_customer.deldata.Down = False
+                    master_customer.hapus.Visible = False
                     master_customer.GroupControl2.Enabled = True
                     Reset()
                 Else
@@ -23,6 +25,15 @@ Public Class add_customer
                 End If
             Else
                 add_customer_Load(sender, e)
+                master_customer.GridControl1.Visible = True
+                master_customer.GridControl2.Visible = False
+                data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+                master_customer.GridControl1.DataSource = data
+                master_customer.edit.Down = False
+                master_customer.editing.Visible = False
+                master_customer.deldata.Down = False
+                master_customer.hapus.Visible = False
+                master_customer.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -33,10 +44,13 @@ Public Class add_customer
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_customer.GridControl1.Visible = True
         master_customer.GridControl2.Visible = False
-        data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+        data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
         master_customer.GridControl1.DataSource = data
         master_customer.edit.Down = False
+        master_customer.editing.Visible = False
         master_customer.deldata.Down = False
+        master_customer.hapus.Visible = False
+        master_customer.GroupControl2.Enabled = True
         Me.Close()
     End Sub
 
@@ -47,7 +61,7 @@ Public Class add_customer
         Else
             Try
                 'insert ke dalam database
-                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.SelectedText.ToString & "','1') ")
+                InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -55,13 +69,16 @@ Public Class add_customer
                     Reset()
                 Else
                     cek = False
-                    Me.Close()
                     master_customer.GridControl1.Visible = True
                     master_customer.GridControl2.Visible = False
-                    data = DtTable("SELECT id_customer `Kode customer`, nama_customer `Nama customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
+                    data = DtTable("SELECT id_customer `Kode Customer`, nama_Customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
                     master_customer.GridControl1.DataSource = data
+                    master_customer.edit.Down = False
+                    master_customer.editing.Visible = False
                     master_customer.deldata.Down = False
-                    master_customer.deldata.Down = True
+                    master_customer.hapus.Visible = False
+                    master_customer.GroupControl2.Enabled = True
+                    Me.Close()
                 End If
 
             Catch ex As Exception

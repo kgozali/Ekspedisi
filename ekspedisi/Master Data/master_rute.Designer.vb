@@ -21,7 +21,6 @@ Partial Class master_rute
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_rute))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
@@ -74,7 +73,6 @@ Partial Class master_rute
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
         Me.GroupControl1.Location = New System.Drawing.Point(13, 101)
@@ -83,25 +81,15 @@ Partial Class master_rute
         Me.GroupControl1.TabIndex = 51
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
-        'nama
-        '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(73, 25)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(78, 17)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Rute"
-        Me.nama.UseVisualStyleBackColor = True
-        '
         'id
         '
         Me.id.AutoSize = True
+        Me.id.Checked = True
         Me.id.Location = New System.Drawing.Point(5, 25)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(62, 17)
         Me.id.TabIndex = 1
+        Me.id.TabStop = True
         Me.id.Text = "ID Rute"
         Me.id.UseVisualStyleBackColor = True
         '
@@ -425,7 +413,6 @@ Partial Class master_rute
 
     End Sub
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl

@@ -4,8 +4,19 @@ Public Class add_rute
     Dim cbasal As New DataTable
     Dim ctujuan As New DataTable
     Dim cbprinciple As New DataTable
+    Dim data As New DataTable
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_rute.GroupControl2.Enabled = True
+        master_rute.GridControl1.Visible = True
+        master_rute.GridControl2.Visible = False
+        master_rute.hapus.Visible = False
+        master_rute.editing.Visible = False
+        master_rute.edit.Down = False
+        master_rute.deldata.Down = False
 
-    Private Sub cancel_Click(sender As Object, e As EventArgs)
+
+        data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
+        master_rute.GridControl1.DataSource = data
         Me.Close()
     End Sub
 
@@ -15,12 +26,34 @@ Public Class add_rute
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_rute_Load(sender, e)
+                    master_rute.GroupControl2.Enabled = True
+                    master_rute.GridControl1.Visible = True
+                    master_rute.GridControl2.Visible = False
+                    master_rute.hapus.Visible = False
+                    master_rute.editing.Visible = False
+                    master_rute.edit.Down = False
+                    master_rute.deldata.Down = False
+
+
+                    data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
+                    master_rute.GridControl1.DataSource = data
                     Reset()
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_rute_Load(sender, e)
+                master_rute.GroupControl2.Enabled = True
+                master_rute.GridControl1.Visible = True
+                master_rute.GridControl2.Visible = False
+                master_rute.hapus.Visible = False
+                master_rute.editing.Visible = False
+                master_rute.edit.Down = False
+                master_rute.deldata.Down = False
+
+
+                data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
+                master_rute.GridControl1.DataSource = data
                 Reset()
             End If
         Catch ex As Exception
@@ -28,7 +61,7 @@ Public Class add_rute
         End Try
     End Sub
 
-    Private Sub simpan_Click(sender As Object, e As EventArgs)
+    Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         If hargaunit.Text = "" Or unit.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
@@ -45,6 +78,14 @@ Public Class add_rute
                         Reset()
                     Else
                         cek = False
+                        master_rute.GroupControl2.Enabled = True
+                        master_rute.GridControl1.Visible = True
+                        master_rute.GridControl2.Visible = False
+                        master_rute.hapus.Visible = False
+                        master_rute.editing.Visible = False
+
+                        Data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
+                        master_rute.GridControl1.DataSource = Data
                         Me.Close()
                     End If
 
@@ -91,7 +132,7 @@ Public Class add_rute
     End Sub
 
 
-    Private Sub hargaunit_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub hargaunit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargaunit.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If hargaunit.Text = "" Then

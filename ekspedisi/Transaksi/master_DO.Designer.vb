@@ -22,6 +22,8 @@ Partial Class master_DO
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_DO))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -58,6 +60,7 @@ Partial Class master_DO
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -81,12 +84,25 @@ Partial Class master_DO
         '
         'GridControl1
         '
+        Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(724, 415)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(167, 26)
+        '
+        'PrintToolStripMenuItem
+        '
+        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.PrintToolStripMenuItem.Text = "Preview and Print"
         '
         'GridView1
         '
@@ -388,6 +404,7 @@ Partial Class master_DO
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -439,4 +456,6 @@ Partial Class master_DO
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents PrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

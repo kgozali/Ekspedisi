@@ -79,6 +79,7 @@ Partial Class add_supplier
         '
         'provinsi
         '
+        Me.provinsi.Enabled = False
         Me.provinsi.Location = New System.Drawing.Point(129, 170)
         Me.provinsi.Name = "provinsi"
         Me.provinsi.Size = New System.Drawing.Size(336, 20)

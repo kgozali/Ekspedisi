@@ -1,4 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid.Menu
+Imports DevExpress.XtraGrid.Columns
+Imports DevExpress.Utils.Menu
+Imports DevExpress.XtraGrid.Views.Grid
 Public Class master_DO
     Dim path As String = ""
     Dim cellvalue As String = ""
@@ -15,6 +19,7 @@ Public Class master_DO
         unallowedit()
 
     End Sub
+    
    
     Sub process()
         Try
@@ -167,4 +172,9 @@ Public Class master_DO
 
     End Sub
 
+
+    Private Sub PrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem.Click
+        frm_notado.transid = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
+        frm_notado.ShowDialog()
+    End Sub
 End Class

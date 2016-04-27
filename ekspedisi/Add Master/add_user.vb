@@ -20,18 +20,32 @@ Public Class add_user
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_user_Load(sender, e)
-                    master_user.deldata.Down = False
-                    master_user.edit.Down = False
-                    master_user.GridControl2.Visible = False
                     master_user.GridControl1.Visible = True
-                    Data = DtTable("SELECT Username from muser where`s`='1'")
-                    master_user.GridControl1.DataSource = Data
+                    master_user.GridControl2.Visible = False
+                    data = DtTable("SELECT Username from muser where`s`='1'")
+                    master_user.GridControl1.DataSource = data
+                    data = DtTable("SELECT Username from muser where`s`='1'")
+                    master_user.GridControl2.DataSource = data
+                    master_user.deldata.Down = False
+                    master_user.hapus.Visible = False
+                    master_user.editing.Visible = False
+                    master_user.edit.Down = False
                     Reset()
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_user_Load(sender, e)
+                master_user.GridControl1.Visible = True
+                master_user.GridControl2.Visible = False
+                data = DtTable("SELECT Username from muser where`s`='1'")
+                master_user.GridControl1.DataSource = data
+                data = DtTable("SELECT Username from muser where`s`='1'")
+                master_user.GridControl2.DataSource = data
+                master_user.deldata.Down = False
+                master_user.hapus.Visible = False
+                master_user.editing.Visible = False
+                master_user.edit.Down = False
                 Reset()
             End If
         Catch ex As Exception
@@ -89,12 +103,16 @@ Public Class add_user
                             Reset()
                         Else
                             cek = False
-                            master_user.deldata.Down = False
-                            master_user.edit.Down = False
-                            master_user.GridControl2.Visible = False
                             master_user.GridControl1.Visible = True
+                            master_user.GridControl2.Visible = False
                             data = DtTable("SELECT Username from muser where`s`='1'")
                             master_user.GridControl1.DataSource = data
+                            data = DtTable("SELECT Username from muser where`s`='1'")
+                            master_user.GridControl2.DataSource = data
+                            master_user.deldata.Down = False
+                            master_user.hapus.Visible = False
+                            master_user.editing.Visible = False
+                            master_user.edit.Down = False
                             Me.Close()
                         End If
                     Else
@@ -117,25 +135,34 @@ Public Class add_user
     End Sub
 
     Private Sub add_user_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        username.Text = ""
-        password.Text = ""
-        reenterpass.Text = ""
+        Try
+            username.Text = ""
+            password.Text = ""
+            reenterpass.Text = ""
 
-        Dim data As New DataTable
-        data = DtTable("select form_id `Kode Form`, nama_form `Nama Form` from form_akses")
-        Dim baru As New DataTable
-        baru.Columns.Add("Kode Form")
-        baru.Columns.Add("Nama Form")
-        baru.Columns.Add("View", GetType(Boolean))
-        baru.Columns.Add("Baru", GetType(Boolean))
-        baru.Columns.Add("Edit", GetType(Boolean))
-        baru.Columns.Add("Hapus", GetType(Boolean))
-        baru.Columns.Add("Cetak", GetType(Boolean))
-        For i = 0 To data.Rows.Count - 1
-            Dim a As String = data.Rows(i).Item("Kode Form").ToString
-            Dim b As String = data.Rows(i).Item("Nama Form").ToString
-            baru.Rows.Add(a, b, False, False, False, False, False)
-        Next
-        levelakses.DataSource = baru
+            Dim data As New DataTable
+            data = DtTable("select form_id `Kode Form`, nama_form `Nama Form` from form_akses")
+            Dim baru As New DataTable
+            If baru.Columns.Count = 0 Then
+                baru.Columns.Add("Kode Form")
+                baru.Columns.Add("Nama Form")
+                baru.Columns.Add("View", GetType(Boolean))
+                baru.Columns.Add("Baru", GetType(Boolean))
+                baru.Columns.Add("Edit", GetType(Boolean))
+                baru.Columns.Add("Hapus", GetType(Boolean))
+                baru.Columns.Add("Cetak", GetType(Boolean))
+            End If
+
+
+            For i = 0 To data.Rows.Count - 1
+                Dim a As String = data.Rows(i).Item("Kode Form").ToString
+                Dim b As String = data.Rows(i).Item("Nama Form").ToString
+                baru.Rows.Add(a, b, False, False, False, False, False)
+            Next
+            levelakses.DataSource = baru
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

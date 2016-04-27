@@ -57,6 +57,7 @@ Partial Class main_menu
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl7 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
         Me.hutangdo = New DevExpress.XtraEditors.SimpleButton()
         Me.pelunasanpiutangkaryawan = New DevExpress.XtraEditors.SimpleButton()
         Me.peluanasapiutangprinciple = New DevExpress.XtraEditors.SimpleButton()
@@ -115,7 +116,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
@@ -151,8 +151,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem7
-        Me.BackstageViewControl1.SelectedTabIndex = 3
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
+        Me.BackstageViewControl1.SelectedTabIndex = 1
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -516,6 +516,15 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
         Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
+        '
+        'SimpleButton8
+        '
+        Me.SimpleButton8.Image = CType(resources.GetObject("SimpleButton8.Image"), System.Drawing.Image)
+        Me.SimpleButton8.Location = New System.Drawing.Point(49, 158)
+        Me.SimpleButton8.Name = "SimpleButton8"
+        Me.SimpleButton8.Size = New System.Drawing.Size(196, 54)
+        Me.SimpleButton8.TabIndex = 27
+        Me.SimpleButton8.Text = "Buka Piutang Karyawan"
         '
         'hutangdo
         '
@@ -934,7 +943,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = False
+        Me.BackstageViewTabItem5.Selected = True
         '
         'BackstageViewTabItem8
         '
@@ -950,7 +959,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
         Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
-        Me.BackstageViewTabItem7.Selected = True
+        Me.BackstageViewTabItem7.Selected = False
         '
         'BackstageViewTabItem6
         '
@@ -1038,15 +1047,6 @@ Partial Class main_menu
         '
         'sfd
         '
-        '
-        'SimpleButton8
-        '
-        Me.SimpleButton8.Image = CType(resources.GetObject("SimpleButton8.Image"), System.Drawing.Image)
-        Me.SimpleButton8.Location = New System.Drawing.Point(49, 158)
-        Me.SimpleButton8.Name = "SimpleButton8"
-        Me.SimpleButton8.Size = New System.Drawing.Size(196, 54)
-        Me.SimpleButton8.TabIndex = 27
-        Me.SimpleButton8.Text = "Buka Piutang Karyawan"
         '
         'main_menu
         '

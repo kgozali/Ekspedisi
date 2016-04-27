@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_reportprinciple
+Partial Class frm_notado
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,9 +19,10 @@ Partial Class frm_reportprinciple
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_reportprinciple))
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_notado))
         Me.DocumentViewer1 = New DevExpress.XtraPrinting.Preview.DocumentViewer()
-        Me.DocumentViewerBarManager1 = New DevExpress.XtraPrinting.Preview.DocumentViewerBarManager()
+        Me.DocumentViewerBarManager1 = New DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(Me.components)
         Me.PreviewBar1 = New DevExpress.XtraPrinting.Preview.PreviewBar()
         Me.PrintPreviewBarItem2 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem3 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
@@ -773,7 +774,7 @@ Partial Class frm_reportprinciple
         Me.PrintPreviewBarCheckItem17.Id = 56
         Me.PrintPreviewBarCheckItem17.Name = "PrintPreviewBarCheckItem17"
         '
-        'frm_reportprinciple
+        'frm_notado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -783,9 +784,9 @@ Partial Class frm_reportprinciple
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.Name = "frm_reportprinciple"
+        Me.Name = "frm_notado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Laporan Rekap Transaksi"
+        Me.Text = "Delivery Order Print Preview"
         CType(Me.DocumentViewerBarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintPreviewRepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemProgressBar1, System.ComponentModel.ISupportInitialize).EndInit()

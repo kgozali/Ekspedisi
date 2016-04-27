@@ -13,55 +13,53 @@ Public Class master_kategori_supplier
         Me.Close()
     End Sub
 
-    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
-        If edit.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
+    Private Sub master_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            checks.Clear()
+            unchecks.Clear()
+            data.Clear()
             deldata.Down = False
-            editing.Visible = True
-            hapus.Visible = False
-            GridControl1.Visible = False
-
-            For i = 0 To data.Columns.Count - 1
-                GridView2.Columns(i).OptionsColumn.AllowEdit = False
-            Next
-        Else
+            edit.Down = False
+            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
             editing.Visible = False
-        End If
-    End Sub
+            hapus.Visible = False
 
-    Private Sub master_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GridControl2.Visible = False
-        data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
-        GridControl1.DataSource = data
-        For i = 0 To data.Columns.Count - 1
-            GridView1.Columns(i).OptionsColumn.AllowEdit = False
-        Next
+            data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+            GridControl1.DataSource = data
+            For i = 0 To data.Columns.Count - 1
+                GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            Next
+            If checks.Columns.Count = 0 Then
+                checks.Columns.Add("Kode Kategori Supplier")
+                unchecks.Columns.Add("Kode Kategori Supplier")
+            End If
 
-        checks.Columns.Add("Kode Kategori Supplier")
-        unchecks.Columns.Add("Kode Kategori Supplier")
-        For i = 0 To GridView1.DataRowCount - 1
-            Dim temp As String = GridView1.GetRowCellValue(i, "Kode Kategori Supplier").ToString
-            unchecks.Rows.Add(temp)
-        Next
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Kategori Supplier").ToString
+                unchecks.Rows.Add(temp)
+            Next
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
         If edit.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and id_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and id_kategori like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and id_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and id_kategori like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and nama_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and kategori_supplier like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and nama_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and kategori_supplier like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
@@ -79,16 +77,16 @@ Public Class master_kategori_supplier
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and id_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and id_kategori like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and id_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and id_kategori like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and nama_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and kategori_supplier like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and nama_kategori_supplier like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='0' and kategori_supplier like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
@@ -142,21 +140,6 @@ Public Class master_kategori_supplier
         End Try
     End Sub
 
-    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        If deldata.Down = True Then
-            GridControl2.DataSource = data
-            GridControl2.Visible = True
-            edit.Down = False
-            GridControl1.Visible = False
-            editing.Visible = False
-            hapus.Visible = True
-        Else
-            GridControl1.Visible = True
-            GridControl2.Visible = False
-            hapus.Visible = False
-        End If
-    End Sub
-
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
         Try
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
@@ -198,19 +181,60 @@ Public Class master_kategori_supplier
         GridControl1.DataSource = data
     End Sub
 
-    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         If edit.Down = True Then
+            deldata.Down = False
             GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = True
+            hapus.Visible = False
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Kategori Supplier").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
             GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+            GridControl1.DataSource = data
         End If
-
     End Sub
-    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
         If deldata.Down = True Then
+            edit.Down = False
             GroupControl2.Enabled = False
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = True
+            GridControl1.Visible = False
+            GridControl2.Visible = True
+            data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+            GridControl2.DataSource = data
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Kategori Supplier").ToString
+                unchecks.Rows.Add(temp)
+            Next
         Else
             GroupControl2.Enabled = True
+            checks.Clear()
+            unchecks.Clear()
+            editing.Visible = False
+            hapus.Visible = False
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            data = DtTable("SELECT id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
+            GridControl1.DataSource = data
         End If
     End Sub
 End Class
