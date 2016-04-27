@@ -36,7 +36,6 @@ Partial Class buka_piutang_karyawan
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.harilunas = New System.Windows.Forms.ComboBox()
-        Me.idkaryawan = New System.Windows.Forms.Label()
         Me.keterangan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -44,6 +43,7 @@ Partial Class buka_piutang_karyawan
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
+        Me.idkaryawan = New System.Windows.Forms.TextBox()
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -168,7 +168,6 @@ Partial Class buka_piutang_karyawan
         '
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.harilunas)
-        Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.keterangan)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.akunkas)
@@ -204,16 +203,6 @@ Partial Class buka_piutang_karyawan
         Me.harilunas.Name = "harilunas"
         Me.harilunas.Size = New System.Drawing.Size(72, 21)
         Me.harilunas.TabIndex = 162
-        '
-        'idkaryawan
-        '
-        Me.idkaryawan.AutoSize = True
-        Me.idkaryawan.Location = New System.Drawing.Point(2, 206)
-        Me.idkaryawan.Name = "idkaryawan"
-        Me.idkaryawan.Size = New System.Drawing.Size(38, 13)
-        Me.idkaryawan.TabIndex = 161
-        Me.idkaryawan.Text = "Label1"
-        Me.idkaryawan.Visible = False
         '
         'keterangan
         '
@@ -275,11 +264,20 @@ Partial Class buka_piutang_karyawan
         Me.TextEdit4.Size = New System.Drawing.Size(216, 20)
         Me.TextEdit4.TabIndex = 161
         '
+        'idkaryawan
+        '
+        Me.idkaryawan.Location = New System.Drawing.Point(17, 290)
+        Me.idkaryawan.Name = "idkaryawan"
+        Me.idkaryawan.Size = New System.Drawing.Size(164, 21)
+        Me.idkaryawan.TabIndex = 164
+        Me.idkaryawan.Visible = False
+        '
         'buka_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(786, 339)
+        Me.Controls.Add(Me.idkaryawan)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)
@@ -288,6 +286,7 @@ Partial Class buka_piutang_karyawan
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "buka_piutang_karyawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Piutang Karyawan"
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -319,10 +318,10 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents idkaryawan As System.Windows.Forms.Label
     Friend WithEvents harilunas As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents idkaryawan As System.Windows.Forms.TextBox
 End Class

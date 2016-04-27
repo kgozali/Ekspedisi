@@ -121,7 +121,6 @@ Public Module Module1
     Function DtTablebayar(ByVal x As String)
         'select khusus master data yang perlu checkbox 
         Try
-
             Dim command As New MySqlCommand(x, connect)
             command.Connection = connect
             Dim data As DataTable = New DataTable
@@ -218,13 +217,18 @@ Public Module Module1
             Dim currentTime As System.DateTime = System.DateTime.Now
             Dim urutan As Integer
             Dim kode As String = Scalar(cekmax).ToString
+            If kode <> "" Then
+                urutan = kode.Substring(kode.Length - 5)
+            Else
+                urutan = 0
+            End If
             Dim fix As String = ""
             If urutan = 0 Then
                 kode = prefix & currentTime.Date.ToString("yyMMdd") & "00001"
             ElseIf kode.Substring(2, 6) = currentTime.Date.ToString("yyMMdd") Or kode.Substring(3, 6) = currentTime.Date.ToString("yyMMdd") Then
-                urutan = kode.Substring(Scalar(cekmax).Length - 5)
+                urutan = kode.Substring(kode.Length - 5)
                 urutan = urutan + 1
-                For i = 0 To 4 - urutan.ToString.Substring(Scalar(cekmax).Length - 5).Length
+                For i = 0 To 4 - urutan.ToString.Length
                     fix = fix & "0"
                 Next i
                 fix = fix & urutan.ToString
