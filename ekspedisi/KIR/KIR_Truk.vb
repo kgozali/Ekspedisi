@@ -19,6 +19,7 @@ Public Class KIR_Truk
 
     Private Sub KIR_Truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            DateTimePicker1.Value = DateTimePicker2.Value.AddMonths(6)
             'autogenerate kode kir
             autogen()
             TextEdit1.Text = kode
@@ -221,7 +222,7 @@ Public Class KIR_Truk
                     If DateTimePicker2.Value > DateTimePicker1.Value Then
                         MessageBox.Show("Tanggal KIR berikutnya wajib sesudah tanggal KIR yang ditentukan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
-                        If nominal = 0 Then
+                        If nominal = 0 Or Not IsNumeric(nominal) Then
                             MessageBox.Show("Nominal KIR Rp.0 , harap mengisi nominal KIR lebih dari Rp.0", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
                             If TextEdit4.Text = "" Then
@@ -282,5 +283,9 @@ Public Class KIR_Truk
 
         End Try
        
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+        DateTimePicker1.Value = DateTimePicker2.Value.AddMonths(6)
     End Sub
 End Class
