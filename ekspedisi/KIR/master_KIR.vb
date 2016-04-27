@@ -95,6 +95,11 @@ Public Class master_KIR
     End Sub
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        Try
+            edit_kir_truk.TextEdit1.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR").ToString
+            edit_kir_truk.ShowDialog()
+        Catch ex As Exception
 
+        End Try
     End Sub
 End Class

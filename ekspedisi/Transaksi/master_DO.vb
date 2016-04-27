@@ -177,4 +177,14 @@ Public Class master_DO
         frm_notado.transid = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
         frm_notado.ShowDialog()
     End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        Try
+            edit_DO.id.Text = ""
+            edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+            edit_DO.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
