@@ -98,7 +98,7 @@ Partial Class master_DO
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.PrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 48)
         '
         'EditToolStripMenuItem
         '
@@ -410,7 +410,7 @@ Partial Class master_DO
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "master_DO"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Delivery Order"
+        Me.Text = "Master Delivery Order"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
