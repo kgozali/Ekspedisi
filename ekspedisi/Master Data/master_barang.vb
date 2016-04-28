@@ -241,17 +241,4 @@ Public Class master_barang
         GridControl1.DataSource = data
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
-
-        grid.ShowPrintPreview()
-    End Sub
-
-    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
-        showgridpreview(GridControl1)
-    End Sub
-
 End Class
