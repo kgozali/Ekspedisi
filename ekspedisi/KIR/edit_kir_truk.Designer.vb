@@ -38,6 +38,8 @@ Partial Class edit_kir_truk
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +47,7 @@ Partial Class edit_kir_truk
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SimpleButton2
@@ -84,9 +87,9 @@ Partial Class edit_kir_truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(4, 62)
+        Me.GroupControl2.Location = New System.Drawing.Point(4, 83)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(752, 336)
+        Me.GroupControl2.Size = New System.Drawing.Size(752, 315)
         Me.GroupControl2.TabIndex = 68
         Me.GroupControl2.Text = "Bukti Kir"
         '
@@ -195,11 +198,32 @@ Partial Class edit_kir_truk
         Me.Label1.TabIndex = 57
         Me.Label1.Text = "Kode KIR"
         '
+        'ButtonEdit1
+        '
+        Me.ButtonEdit1.Enabled = False
+        Me.ButtonEdit1.Location = New System.Drawing.Point(92, 58)
+        Me.ButtonEdit1.Name = "ButtonEdit1"
+        Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.ButtonEdit1.Size = New System.Drawing.Size(174, 20)
+        Me.ButtonEdit1.TabIndex = 72
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label6.Location = New System.Drawing.Point(48, 57)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(38, 18)
+        Me.Label6.TabIndex = 73
+        Me.Label6.Text = "Truk"
+        '
         'edit_kir_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(768, 489)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.ButtonEdit1)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)
         Me.Controls.Add(Me.Label7)
@@ -226,6 +250,7 @@ Partial Class edit_kir_truk
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -248,4 +273,6 @@ Partial Class edit_kir_truk
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class
