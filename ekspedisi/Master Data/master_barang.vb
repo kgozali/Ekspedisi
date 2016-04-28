@@ -239,5 +239,4 @@ Public Class master_barang
         data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0'")
         GridControl1.DataSource = data
     End Sub
-
 End Class
