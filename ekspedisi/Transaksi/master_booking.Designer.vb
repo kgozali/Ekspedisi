@@ -19,6 +19,7 @@ Partial Class master_booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_booking))
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
@@ -41,6 +42,8 @@ Partial Class master_booking
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditBookingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -55,6 +58,7 @@ Partial Class master_booking
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -221,12 +225,26 @@ Partial Class master_booking
         '
         'GridControl1
         '
+        Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(953, 423)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditBookingToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(142, 26)
+        '
+        'EditBookingToolStripMenuItem
+        '
+        Me.EditBookingToolStripMenuItem.Image = CType(resources.GetObject("EditBookingToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EditBookingToolStripMenuItem.Name = "EditBookingToolStripMenuItem"
+        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.EditBookingToolStripMenuItem.Text = "Edit Booking"
         '
         'GridView1
         '
@@ -341,6 +359,7 @@ Partial Class master_booking
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -384,4 +403,6 @@ Partial Class master_booking
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
     Friend WithEvents aktif As System.Windows.Forms.RadioButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents EditBookingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -1,8 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid
 Public Class master_jabatan
     Dim data As New DataTable
     Dim cc() As String
-    Dim checks As New DataTable
+    Public checks As New DataTable
     Dim unchecks As New DataTable
 
     Private Sub addjabatanbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addjabatanbaru.ItemClick
@@ -239,22 +240,18 @@ Public Class master_jabatan
         GridControl1.DataSource = data
     End Sub
 
-    Private Sub edit_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.DownChanged
-        If edit.Down = True Then
-            GroupControl2.Enabled = False
-        Else
-            GroupControl2.Enabled = True
-        End If
 
+    Sub showgridpreview(ByVal grid As GridControl)
+        If Not grid.IsPrintingAvailable Then
+            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+            Return
+        End If
+        grid.ShowPrintPreview()
     End Sub
 
-    Private Sub deldata_DownChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.DownChanged
-        If deldata.Down = True Then
-            GroupControl2.Enabled = False
-        Else
-            GroupControl2.Enabled = True
-        End If
-    End Sub
 
+    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
+        showgridpreview(GridControl1)
+    End Sub
 
 End Class

@@ -1,7 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid
 Public Class master_kota
     Dim data As New DataTable
-    Dim checks As New DataTable
+    Public checks As New DataTable
     Dim unchecks As New DataTable
 
     Private Sub addkotabaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addkotabaru.ItemClick
@@ -225,4 +226,15 @@ Public Class master_kota
         End If
     End Sub
 
+    Sub showgridpreview(ByVal grid As GridControl)
+        If Not grid.IsPrintingAvailable Then
+            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+            Return
+        End If
+        grid.ShowPrintPreview()
+    End Sub
+
+    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
+        showgridpreview(GridControl1)
+    End Sub
 End Class

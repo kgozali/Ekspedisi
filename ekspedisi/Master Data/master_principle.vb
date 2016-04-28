@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid
 Public Class master_principle
     Dim data As New DataTable
     Dim cc() As String

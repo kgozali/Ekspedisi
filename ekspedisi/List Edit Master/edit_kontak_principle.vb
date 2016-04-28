@@ -25,16 +25,25 @@ Public Class edit_kontak_principle
                 data.Columns.Add("Email")
             End If
 
-            For i = 0 To master_kontak_principle.GridView2.RowCount - 1
-                If master_kontak_principle.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Kode Kontak").ToString()
-                    Dim b As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
-                    Dim c As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Kontak").ToString()
-                    Dim d As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 1").ToString()
-                    Dim e1 As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 2").ToString()
-                    Dim f As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Email").ToString()
-                    data.Rows.Add(a, b, c, d, e1, f)
-                End If
+            For i = 0 To master_kontak_principle.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                'datatemp = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
+                'Dim a As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Kode Kontak").ToString()
+                'Dim b As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
+                'Dim c As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Kontak").ToString()
+                'Dim d As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 1").ToString()
+                'Dim e1 As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 2").ToString()
+                'Dim f As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Email").ToString()
+                'data.Rows.Add(a, b, c, d, e1, f)
+                'If master_kontak_principle.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Kode Kontak").ToString()
+                '    Dim b As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
+                '    Dim c As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Nama Kontak").ToString()
+                '    Dim d As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 1").ToString()
+                '    Dim e1 As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Telepon 2").ToString()
+                '    Dim f As String = master_kontak_principle.GridView2.GetRowCellValue(i, "Email").ToString()
+                '    data.Rows.Add(a, b, c, d, e1, f)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

@@ -21,12 +21,18 @@ Public Class edit_list_jabatan
                 data.Columns.Add("Nama Jabatan")
             End If
 
-            For i = 0 To master_jabatan.GridView2.RowCount - 1
-                If master_jabatan.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_jabatan.GridView2.GetRowCellValue(i, "Kode Jabatan").ToString()
-                    Dim b As String = master_jabatan.GridView2.GetRowCellValue(i, "Nama Jabatan").ToString()
-                    data.Rows.Add(a, b)
-                End If
+            For i = 0 To master_jabatan.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1' and id_jabatan = '" & master_jabatan.checks.Rows(i).Item("Kode Jabatan") & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Jabatan")
+                Dim b As String = datatemp.Rows(0).Item("Nama Jabatan")
+                data.Rows.Add(a, b)
+
+                'If master_jabatan.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_jabatan.GridView2.GetRowCellValue(i, "Kode Jabatan").ToString()
+                '    Dim b As String = master_jabatan.GridView2.GetRowCellValue(i, "Nama Jabatan").ToString()
+                '    data.Rows.Add(a, b)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

@@ -1,8 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports DevExpress.XtraGrid
 Public Class master_supplier
     Dim data As New DataTable
     Dim cc() As String
-    Dim checks As New DataTable
+    Public checks As New DataTable
     Dim unchecks As New DataTable
 
     Private Sub addsupplierbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addsupplierbaru.ItemClick
@@ -240,5 +241,17 @@ Public Class master_supplier
             data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
             GridControl1.DataSource = data
         End If
+    End Sub
+
+    Sub showgridpreview(ByVal grid As GridControl)
+        If Not grid.IsPrintingAvailable Then
+            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+            Return
+        End If
+        grid.ShowPrintPreview()
+    End Sub
+
+    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
+        showgridpreview(GridControl1)
     End Sub
 End Class

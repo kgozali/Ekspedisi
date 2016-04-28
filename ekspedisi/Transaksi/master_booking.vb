@@ -13,9 +13,11 @@ Public Class master_booking
             If aktif.Checked = True Then
                 x = 1
                 edit.Enabled = True
+                ContextMenuStrip1.Enabled = True
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
+                ContextMenuStrip1.Enabled = False
             End If
 
            
@@ -97,6 +99,17 @@ Public Class master_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
+    End Sub
+
+ 
+    Private Sub EditBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditBookingToolStripMenuItem.Click
+        Try
+            edit_booking.id.Text = ""
+            edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+            edit_booking.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
