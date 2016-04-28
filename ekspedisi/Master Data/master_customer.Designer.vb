@@ -19,6 +19,7 @@ Partial Class master_customer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_customer))
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
@@ -56,6 +57,8 @@ Partial Class master_customer
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Print = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +72,7 @@ Partial Class master_customer
         Me.GroupControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'BarButtonItem9
@@ -296,6 +300,7 @@ Partial Class master_customer
         '
         'GridControl1
         '
+        Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Location = New System.Drawing.Point(0, 19)
         Me.GridControl1.MainView = Me.gridcustomer
         Me.GridControl1.MenuManager = Me.RibbonControl1
@@ -378,6 +383,19 @@ Partial Class master_customer
         Me.hapus.TabIndex = 40
         Me.hapus.Text = "Delete"
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        '
+        'Print
+        '
+        Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
+        Me.Print.Name = "Print"
+        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Text = "Print"
+        '
         'master_customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -408,6 +426,7 @@ Partial Class master_customer
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,4 +467,6 @@ Partial Class master_customer
     Friend WithEvents gridcustomer As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
 End Class

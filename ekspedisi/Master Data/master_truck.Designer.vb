@@ -19,6 +19,7 @@ Partial Class master_truck
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_truck))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
@@ -51,6 +52,8 @@ Partial Class master_truck
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Print = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
@@ -68,6 +71,7 @@ Partial Class master_truck
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -312,7 +316,7 @@ Partial Class master_truck
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.Location = New System.Drawing.Point(5, 23)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
@@ -329,6 +333,7 @@ Partial Class master_truck
         '
         'GridControl1
         '
+        Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Location = New System.Drawing.Point(5, 23)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
@@ -336,6 +341,18 @@ Partial Class master_truck
         Me.GridControl1.Size = New System.Drawing.Size(671, 316)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        '
+        'Print
+        '
+        Me.Print.Name = "Print"
+        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Text = "Print"
         '
         'GridView1
         '
@@ -409,6 +426,7 @@ Partial Class master_truck
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -450,4 +468,6 @@ Partial Class master_truck
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
 End Class
