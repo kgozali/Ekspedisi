@@ -264,20 +264,27 @@ Public Class booking_truk
 
     End Sub
     Sub insertakun()
-        Dim jumlahdp As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString)
-        Dim totbayar As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString)
-        Dim dpkredit As Integer = jumlahdp * -1
-        Dim totkredit As Integer = totbayar * -1
-        'insert jurnal
-        InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
+        Try
+            Dim jumlahdp As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString)
+            Dim totbayar As Integer = CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString)
+            Dim dpkredit As Integer = jumlahdp * -1
+            Dim totkredit As Integer = totbayar * -1
+            'insert jurnal
+            InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
 
-        'Inser djurnal biaya gaji pada hutang
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akundpsupir.ToString + "','','" + totbayar.ToString + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + totkredit.ToString + "')")
+            'Inser djurnal biaya gaji pada hutang
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akundpsupir.ToString + "','','" + totbayar.ToString + "')")
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + totkredit.ToString + "')")
 
-        'Insert djurnal bayar dp = hutang pada kas
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
+            'Insert djurnal bayar dp = hutang pada kas
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
+            InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+       
 
     End Sub
+
+    
 End Class
