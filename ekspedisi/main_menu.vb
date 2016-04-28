@@ -186,4 +186,7 @@ Public Class main_menu
 
     
 
+    Private Sub SimpleButton37_Click(sender As Object, e As EventArgs) Handles SimpleButton37.Click
+        frm_laporankir.ShowDialog()
+    End Sub
 End Class
