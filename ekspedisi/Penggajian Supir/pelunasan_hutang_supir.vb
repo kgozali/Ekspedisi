@@ -26,7 +26,7 @@
                 MessageBox.Show("Pelunasan berhasil dilakukan")
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -37,8 +37,9 @@
             namaakun.DataSource = data
             namaakun.DisplayMember = "nama_akun"
             namaakun.ValueMember = "kode_akun"
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Dim keamanan As String
@@ -70,11 +71,15 @@
 
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub openfile_Click(sender As Object, e As EventArgs) Handles openfile.Click
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
+    End Sub
+
+    Sub jurnal()
+
     End Sub
 End Class
