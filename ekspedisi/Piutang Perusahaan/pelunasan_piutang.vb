@@ -1,5 +1,8 @@
 ﻿Public Class pelunasan_piutang
-
+    Public idprinciple As String
+    Public namakeamanan As String
+    Dim debet As String
+    Dim kredit As String
     Private Sub principle_ButtonPressed(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles principle.ButtonPressed
         daftar_principle_pelunasan.ShowDialog()
     End Sub
@@ -8,7 +11,7 @@
         Try
             Dim data As New DataTable
             nomerpelunasan.Text = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
-            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank'")
+            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank' and detil='1'")
             RepositoryItemLookUpEdit1.DataSource = data
             RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
             RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
@@ -25,6 +28,7 @@
             Dim piutang As Double = labeltotalbayar.Text
             Dim centang As Boolean = False
             Dim isisemua As Boolean = False
+            Dim datarow As DataRow
             For i = 0 To datapiutang.RowCount - 1
                 If datapiutang.GetRowCellValue(i, "Bayar") = True Then
                     centang = True
@@ -48,7 +52,7 @@
             If isisemua = True Then
                 MessageBox.Show("Data pembayaran harus di isi semua")
             Else
-                If idprinciple.Text = "idprinciple" Then
+                If idprinciple = "" Then
                     MessageBox.Show("Principle belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 ElseIf centang = False Then
                     MessageBox.Show("Transaksi DO belum terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -61,16 +65,16 @@
                     Dim tampung As String = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
                     For i = 0 To datapiutang.RowCount - 1
                         If datapiutang.GetRowCellValue(i, "Bayar") = True Then
-
-                            'InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple.Text & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
-                            'InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
-                            'InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
-                            'MessageBox.Show("Transksi Berhasil")
+                            InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
+                            InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
+                            InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
+                            MessageBox.Show("Transksi Berhasil")
                         End If
                     Next i
 
                     For i = 0 To pembayaran.RowCount - 1
-                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & pembayaran.GetRowCellValue(i, "Nama Akun") & "'," & pembayaran.GetRowCellValue(i, "Nominal") & ",'" & pembayaran.GetRowCellValue(i, "Nomor BG") & "'," & pembayaran.GetRowCellValue(i, "Tanggal Cair") & ",'" & catatan.Text & "'," & i + 1 & ",'0','Rekening')")
+                        datarow = pelunasan.Tables.Item(1).Rows(i)
+                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & datarow(4) & "'," & datarow("nominal") & ",'" & datarow("nomerbg") & "'," & datarow("tanggalcair") & ",'" & catatan.Text & "'," & i + 1 & ",'0','Rekening')")
                     Next i
                     Me.Close()
                 End If
@@ -112,8 +116,6 @@
                         .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
                     End With
                 End If
-
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -129,4 +131,20 @@
         End Try
     End Sub
 
+    Private Sub principle_Click(sender As Object, e As EventArgs) Handles principle.Click
+        daftar_principle_pelunasan.ShowDialog()
+    End Sub
+
+    Private Sub pelunasan_piutang_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Try
+            principle.Text = ""
+            alamat.Text = ""
+            nomerpelunasan.Text = ""
+            Dim kosong As New DataTable
+            bayarpiutang.DataSource = kosong
+            pelunasan.Tables("Bayaran").Rows.Clear()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
