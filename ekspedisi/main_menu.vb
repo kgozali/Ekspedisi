@@ -3,7 +3,7 @@ Public Class main_menu
 
 
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
-        master_akun.ShowDialog()
+        master_supir.ShowDialog()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
@@ -69,7 +69,7 @@ Public Class main_menu
 
 
 
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -115,7 +115,7 @@ Public Class main_menu
 
             End Try
         End If
-      
+
 
     End Sub
 
@@ -182,5 +182,11 @@ Public Class main_menu
 
     Private Sub SimpleButton39_Click(sender As Object, e As EventArgs) Handles SimpleButton39.Click
         frm_reportprinciple.ShowDialog()
+    End Sub
+
+    
+
+    Private Sub SimpleButton37_Click(sender As Object, e As EventArgs) Handles SimpleButton37.Click
+        frm_laporankir.ShowDialog()
     End Sub
 End Class

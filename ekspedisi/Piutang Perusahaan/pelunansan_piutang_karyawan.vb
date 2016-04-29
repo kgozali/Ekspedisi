@@ -86,7 +86,10 @@
             Dim angka As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Nominal")
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
-                angka = angka - angka2 - e.Value
+                If IsDBNull(e.Value) = False Then
+                    angka = angka - angka2 - e.Value
+                End If
+
                 If angka < 0 Then
                     With datapiutang
                         MessageBox.Show("Uang Kembali = " & angka * -1)
@@ -97,9 +100,14 @@
                         .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
                     End With
                 End If
-                
-            Else
 
+                Dim hitung As Double = 0
+                For i = 0 To datapiutang.RowCount - 1
+                    If IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = False Then
+                        hitung = hitung + datapiutang.GetRowCellValue(i, "Bayar")
+                    End If
+                Next i
+                totalbayar.Text = hitung.ToString
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -107,23 +115,50 @@
     End Sub
 
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
-        If datapiutang.FocusedColumn.AbsoluteIndex <> 7 Then
-            keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
-        End If
+        Try
+            If datapiutang.FocusedColumn.AbsoluteIndex <> 8 Then
+                keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 
     Private Sub datapiutang_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datapiutang.CellValueChanging
-        If e.Column.FieldName <> "Bayar" Then
-            With datapiutang
-                .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
-            End With
-        End If
+        Try
+            If e.Column.FieldName <> "Bayar" Then
+                With datapiutang
+                    .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+                End With
+
+            End If
+            If e.Column.FieldName = "Check List Bayar" Then
+                With datapiutang
+                    .SetRowCellValue(.FocusedRowHandle, "Bayar", datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Sisa"))
+                End With
+                Dim hitung As Double = 0
+                For i = 0 To datapiutang.RowCount - 1
+                    If IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = False Then
+                        hitung = hitung + datapiutang.GetRowCellValue(i, "Bayar")
+                    End If
+                Next i
+                totalbayar.Text = hitung.ToString
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub pelunansan_piutang_karyawan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Dim kosong As New DataTable
         daftarutang.DataSource = kosong
+        idkaryawan.Text = ""
+        namakaryawan.Text = ""
+        jabatan.Text = ""
+        kotaasal.Text = ""
+        nomortelepon.Text = ""
     End Sub
 
     Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
@@ -165,4 +200,11 @@
         End Try
     End Sub
 
+    Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
+        Try
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class

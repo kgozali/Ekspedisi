@@ -21,6 +21,25 @@ Partial Class main_menu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main_menu))
         Me.BackstageViewControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewControl()
+        Me.BackstageViewClientControl12 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
+        Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.XtraTabPage4 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl4 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.BackstageViewClientControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SimpleButton12 = New DevExpress.XtraEditors.SimpleButton()
@@ -76,29 +95,30 @@ Partial Class main_menu
         Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewClientControl2 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.XtraTabControl2 = New DevExpress.XtraTab.XtraTabControl()
+        Me.XtraTabPage5 = New DevExpress.XtraTab.XtraTabPage()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.buttonrestore = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton41 = New DevExpress.XtraEditors.SimpleButton()
-        Me.restorepath = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.restorepath = New System.Windows.Forms.TextBox()
+        Me.SimpleButton41 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.buttonrestore = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.XtraTabPage6 = New DevExpress.XtraTab.XtraTabPage()
         Me.SimpleButton40 = New DevExpress.XtraEditors.SimpleButton()
-        Me.backup = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.backuppath = New System.Windows.Forms.TextBox()
+        Me.backup = New DevExpress.XtraEditors.SimpleButton()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.BackstageViewTabItem2 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem5 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.BackstageViewTabItem8 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
@@ -118,6 +138,29 @@ Partial Class main_menu
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
+        Me.BackstageViewClientControl12.SuspendLayout()
+        CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabControl1.SuspendLayout()
+        Me.XtraTabPage1.SuspendLayout()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage2.SuspendLayout()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage3.SuspendLayout()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage4.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.GridControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewClientControl1.SuspendLayout()
         Me.BackstageViewClientControl5.SuspendLayout()
         Me.XtraScrollableControl1.SuspendLayout()
@@ -126,14 +169,16 @@ Partial Class main_menu
         Me.BackstageViewClientControl6.SuspendLayout()
         Me.BackstageViewClientControl10.SuspendLayout()
         Me.BackstageViewClientControl2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        CType(Me.XtraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabControl2.SuspendLayout()
+        Me.XtraTabPage5.SuspendLayout()
+        Me.XtraTabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
         '
         Me.BackstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl12)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl1)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl5)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl8)
@@ -142,6 +187,7 @@ Partial Class main_menu
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl10)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl2)
         Me.BackstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem2)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem1)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem8)
@@ -151,11 +197,169 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
-        Me.BackstageViewControl1.SelectedTabIndex = 1
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
+        Me.BackstageViewControl1.SelectedTabIndex = 3
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
+        '
+        'BackstageViewClientControl12
+        '
+        Me.BackstageViewClientControl12.Controls.Add(Me.Label21)
+        Me.BackstageViewClientControl12.Controls.Add(Me.XtraTabControl1)
+        Me.BackstageViewClientControl12.Location = New System.Drawing.Point(197, 0)
+        Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
+        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(811, 691)
+        Me.BackstageViewClientControl12.TabIndex = 10
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.White
+        Me.Label21.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(321, 9)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(255, 33)
+        Me.Label21.TabIndex = 15
+        Me.Label21.Text = "Application Manager"
+        '
+        'XtraTabControl1
+        '
+        Me.XtraTabControl1.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal
+        Me.XtraTabControl1.Location = New System.Drawing.Point(28, 81)
+        Me.XtraTabControl1.Name = "XtraTabControl1"
+        Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
+        Me.XtraTabControl1.Size = New System.Drawing.Size(759, 578)
+        Me.XtraTabControl1.TabIndex = 0
+        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2, Me.XtraTabPage3, Me.XtraTabPage4})
+        '
+        'XtraTabPage1
+        '
+        Me.XtraTabPage1.Controls.Add(Me.GroupControl2)
+        Me.XtraTabPage1.Name = "XtraTabPage1"
+        Me.XtraTabPage1.Size = New System.Drawing.Size(751, 548)
+        Me.XtraTabPage1.Text = "Delivery Order"
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.GridControl1)
+        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(751, 548)
+        Me.GroupControl2.TabIndex = 0
+        Me.GroupControl2.Text = "Notifikasi Delivery Order"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(747, 524)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
+        'XtraTabPage2
+        '
+        Me.XtraTabPage2.Controls.Add(Me.GroupControl3)
+        Me.XtraTabPage2.Name = "XtraTabPage2"
+        Me.XtraTabPage2.Size = New System.Drawing.Size(751, 548)
+        Me.XtraTabPage2.Text = "Piutang Principle"
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl2)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(751, 548)
+        Me.GroupControl3.TabIndex = 0
+        Me.GroupControl3.Text = "Notifikasi Piutang Principle"
+        '
+        'GridControl2
+        '
+        Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl2.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(747, 524)
+        Me.GridControl2.TabIndex = 1
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        '
+        'XtraTabPage3
+        '
+        Me.XtraTabPage3.Controls.Add(Me.GroupControl4)
+        Me.XtraTabPage3.Name = "XtraTabPage3"
+        Me.XtraTabPage3.Size = New System.Drawing.Size(751, 548)
+        Me.XtraTabPage3.Text = "Piutang Karyawan"
+        '
+        'GroupControl4
+        '
+        Me.GroupControl4.Controls.Add(Me.GridControl3)
+        Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl4.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl4.Name = "GroupControl4"
+        Me.GroupControl4.Size = New System.Drawing.Size(751, 548)
+        Me.GroupControl4.TabIndex = 0
+        Me.GroupControl4.Text = "Notifikasi Piutang Karyawan"
+        '
+        'GridControl3
+        '
+        Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl3.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl3.MainView = Me.GridView3
+        Me.GridControl3.Name = "GridControl3"
+        Me.GridControl3.Size = New System.Drawing.Size(747, 524)
+        Me.GridControl3.TabIndex = 1
+        Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
+        '
+        'GridView3
+        '
+        Me.GridView3.GridControl = Me.GridControl3
+        Me.GridView3.Name = "GridView3"
+        '
+        'XtraTabPage4
+        '
+        Me.XtraTabPage4.Controls.Add(Me.GroupControl1)
+        Me.XtraTabPage4.Name = "XtraTabPage4"
+        Me.XtraTabPage4.Size = New System.Drawing.Size(751, 548)
+        Me.XtraTabPage4.Text = "KIR"
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.GridControl4)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(751, 548)
+        Me.GroupControl1.TabIndex = 0
+        Me.GroupControl1.Text = "Notifikasi KIR"
+        '
+        'GridControl4
+        '
+        Me.GridControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl4.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl4.MainView = Me.GridView4
+        Me.GridControl4.Name = "GridControl4"
+        Me.GridControl4.Size = New System.Drawing.Size(747, 524)
+        Me.GridControl4.TabIndex = 1
+        Me.GridControl4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
+        '
+        'GridView4
+        '
+        Me.GridView4.GridControl = Me.GridControl4
+        Me.GridView4.Name = "GridView4"
         '
         'BackstageViewClientControl1
         '
@@ -174,9 +378,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton2)
         Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton1)
         Me.BackstageViewClientControl1.Controls.Add(Me.masterakun)
-        Me.BackstageViewClientControl1.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl1.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl1.Name = "BackstageViewClientControl1"
-        Me.BackstageViewClientControl1.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl1.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl1.TabIndex = 0
         '
         'Label1
@@ -192,7 +396,7 @@ Partial Class main_menu
         'SimpleButton12
         '
         Me.SimpleButton12.Image = CType(resources.GetObject("SimpleButton12.Image"), System.Drawing.Image)
-        Me.SimpleButton12.Location = New System.Drawing.Point(48, 224)
+        Me.SimpleButton12.Location = New System.Drawing.Point(59, 218)
         Me.SimpleButton12.Name = "SimpleButton12"
         Me.SimpleButton12.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton12.TabIndex = 13
@@ -201,7 +405,7 @@ Partial Class main_menu
         'SimpleButton11
         '
         Me.SimpleButton11.Image = CType(resources.GetObject("SimpleButton11.Image"), System.Drawing.Image)
-        Me.SimpleButton11.Location = New System.Drawing.Point(598, 149)
+        Me.SimpleButton11.Location = New System.Drawing.Point(609, 145)
         Me.SimpleButton11.Name = "SimpleButton11"
         Me.SimpleButton11.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton11.TabIndex = 12
@@ -210,7 +414,7 @@ Partial Class main_menu
         'SimpleButton10
         '
         Me.SimpleButton10.Image = CType(resources.GetObject("SimpleButton10.Image"), System.Drawing.Image)
-        Me.SimpleButton10.Location = New System.Drawing.Point(416, 225)
+        Me.SimpleButton10.Location = New System.Drawing.Point(427, 219)
         Me.SimpleButton10.Name = "SimpleButton10"
         Me.SimpleButton10.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton10.TabIndex = 11
@@ -219,7 +423,7 @@ Partial Class main_menu
         'SimpleButton9
         '
         Me.SimpleButton9.Image = CType(resources.GetObject("SimpleButton9.Image"), System.Drawing.Image)
-        Me.SimpleButton9.Location = New System.Drawing.Point(416, 149)
+        Me.SimpleButton9.Location = New System.Drawing.Point(427, 145)
         Me.SimpleButton9.Name = "SimpleButton9"
         Me.SimpleButton9.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton9.TabIndex = 10
@@ -228,7 +432,7 @@ Partial Class main_menu
         'SimpleButton7
         '
         Me.SimpleButton7.Image = CType(resources.GetObject("SimpleButton7.Image"), System.Drawing.Image)
-        Me.SimpleButton7.Location = New System.Drawing.Point(232, 225)
+        Me.SimpleButton7.Location = New System.Drawing.Point(243, 219)
         Me.SimpleButton7.Name = "SimpleButton7"
         Me.SimpleButton7.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton7.TabIndex = 8
@@ -237,7 +441,7 @@ Partial Class main_menu
         'SimpleButton6
         '
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
-        Me.SimpleButton6.Location = New System.Drawing.Point(232, 149)
+        Me.SimpleButton6.Location = New System.Drawing.Point(243, 145)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton6.TabIndex = 7
@@ -246,7 +450,7 @@ Partial Class main_menu
         'SimpleButton5
         '
         Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(48, 149)
+        Me.SimpleButton5.Location = New System.Drawing.Point(59, 145)
         Me.SimpleButton5.Name = "SimpleButton5"
         Me.SimpleButton5.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton5.TabIndex = 6
@@ -255,7 +459,7 @@ Partial Class main_menu
         'SimpleButton4
         '
         Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(598, 72)
+        Me.SimpleButton4.Location = New System.Drawing.Point(609, 71)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton4.TabIndex = 5
@@ -264,7 +468,7 @@ Partial Class main_menu
         'SimpleButton3
         '
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(416, 72)
+        Me.SimpleButton3.Location = New System.Drawing.Point(247, 71)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton3.TabIndex = 4
@@ -273,7 +477,7 @@ Partial Class main_menu
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(232, 72)
+        Me.SimpleButton2.Location = New System.Drawing.Point(59, 71)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton2.TabIndex = 3
@@ -282,7 +486,7 @@ Partial Class main_menu
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(598, 225)
+        Me.SimpleButton1.Location = New System.Drawing.Point(609, 219)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton1.TabIndex = 2
@@ -291,18 +495,18 @@ Partial Class main_menu
         'masterakun
         '
         Me.masterakun.Image = CType(resources.GetObject("masterakun.Image"), System.Drawing.Image)
-        Me.masterakun.Location = New System.Drawing.Point(48, 72)
+        Me.masterakun.Location = New System.Drawing.Point(427, 71)
         Me.masterakun.Name = "masterakun"
         Me.masterakun.Size = New System.Drawing.Size(136, 54)
         Me.masterakun.TabIndex = 1
-        Me.masterakun.Text = "Master Akun"
+        Me.masterakun.Text = "Master Supir"
         '
         'BackstageViewClientControl5
         '
         Me.BackstageViewClientControl5.Controls.Add(Me.XtraScrollableControl1)
-        Me.BackstageViewClientControl5.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl5.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl5.Name = "BackstageViewClientControl5"
-        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl5.TabIndex = 4
         '
         'XtraScrollableControl1
@@ -331,7 +535,7 @@ Partial Class main_menu
         'SimpleButton14
         '
         Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(46, 309)
+        Me.SimpleButton14.Location = New System.Drawing.Point(63, 309)
         Me.SimpleButton14.Name = "SimpleButton14"
         Me.SimpleButton14.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton14.TabIndex = 26
@@ -342,7 +546,7 @@ Partial Class main_menu
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(340, 9)
+        Me.Label3.Location = New System.Drawing.Point(353, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 33)
         Me.Label3.TabIndex = 16
@@ -351,7 +555,7 @@ Partial Class main_menu
         'SimpleButton15
         '
         Me.SimpleButton15.Image = CType(resources.GetObject("SimpleButton15.Image"), System.Drawing.Image)
-        Me.SimpleButton15.Location = New System.Drawing.Point(46, 227)
+        Me.SimpleButton15.Location = New System.Drawing.Point(63, 227)
         Me.SimpleButton15.Name = "SimpleButton15"
         Me.SimpleButton15.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton15.TabIndex = 25
@@ -360,7 +564,7 @@ Partial Class main_menu
         'SimpleButton35
         '
         Me.SimpleButton35.Image = CType(resources.GetObject("SimpleButton35.Image"), System.Drawing.Image)
-        Me.SimpleButton35.Location = New System.Drawing.Point(600, 148)
+        Me.SimpleButton35.Location = New System.Drawing.Point(617, 148)
         Me.SimpleButton35.Name = "SimpleButton35"
         Me.SimpleButton35.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton35.TabIndex = 18
@@ -369,7 +573,7 @@ Partial Class main_menu
         'SimpleButton16
         '
         Me.SimpleButton16.Image = CType(resources.GetObject("SimpleButton16.Image"), System.Drawing.Image)
-        Me.SimpleButton16.Location = New System.Drawing.Point(414, 227)
+        Me.SimpleButton16.Location = New System.Drawing.Point(431, 227)
         Me.SimpleButton16.Name = "SimpleButton16"
         Me.SimpleButton16.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton16.TabIndex = 24
@@ -378,7 +582,7 @@ Partial Class main_menu
         'SimpleButton23
         '
         Me.SimpleButton23.Image = CType(resources.GetObject("SimpleButton23.Image"), System.Drawing.Image)
-        Me.SimpleButton23.Location = New System.Drawing.Point(600, 227)
+        Me.SimpleButton23.Location = New System.Drawing.Point(617, 227)
         Me.SimpleButton23.Name = "SimpleButton23"
         Me.SimpleButton23.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton23.TabIndex = 23
@@ -387,7 +591,7 @@ Partial Class main_menu
         'SimpleButton25
         '
         Me.SimpleButton25.Image = CType(resources.GetObject("SimpleButton25.Image"), System.Drawing.Image)
-        Me.SimpleButton25.Location = New System.Drawing.Point(414, 148)
+        Me.SimpleButton25.Location = New System.Drawing.Point(431, 148)
         Me.SimpleButton25.Name = "SimpleButton25"
         Me.SimpleButton25.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton25.TabIndex = 22
@@ -396,7 +600,7 @@ Partial Class main_menu
         'SimpleButton38
         '
         Me.SimpleButton38.Image = CType(resources.GetObject("SimpleButton38.Image"), System.Drawing.Image)
-        Me.SimpleButton38.Location = New System.Drawing.Point(600, 71)
+        Me.SimpleButton38.Location = New System.Drawing.Point(617, 71)
         Me.SimpleButton38.Name = "SimpleButton38"
         Me.SimpleButton38.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton38.TabIndex = 15
@@ -405,7 +609,7 @@ Partial Class main_menu
         'SimpleButton31
         '
         Me.SimpleButton31.Image = CType(resources.GetObject("SimpleButton31.Image"), System.Drawing.Image)
-        Me.SimpleButton31.Location = New System.Drawing.Point(230, 227)
+        Me.SimpleButton31.Location = New System.Drawing.Point(247, 227)
         Me.SimpleButton31.Name = "SimpleButton31"
         Me.SimpleButton31.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton31.TabIndex = 21
@@ -414,7 +618,7 @@ Partial Class main_menu
         'SimpleButton33
         '
         Me.SimpleButton33.Image = CType(resources.GetObject("SimpleButton33.Image"), System.Drawing.Image)
-        Me.SimpleButton33.Location = New System.Drawing.Point(230, 148)
+        Me.SimpleButton33.Location = New System.Drawing.Point(247, 148)
         Me.SimpleButton33.Name = "SimpleButton33"
         Me.SimpleButton33.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton33.TabIndex = 20
@@ -423,7 +627,7 @@ Partial Class main_menu
         'SimpleButton34
         '
         Me.SimpleButton34.Image = CType(resources.GetObject("SimpleButton34.Image"), System.Drawing.Image)
-        Me.SimpleButton34.Location = New System.Drawing.Point(46, 148)
+        Me.SimpleButton34.Location = New System.Drawing.Point(63, 148)
         Me.SimpleButton34.Name = "SimpleButton34"
         Me.SimpleButton34.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton34.TabIndex = 19
@@ -432,7 +636,7 @@ Partial Class main_menu
         'SimpleButton36
         '
         Me.SimpleButton36.Image = CType(resources.GetObject("SimpleButton36.Image"), System.Drawing.Image)
-        Me.SimpleButton36.Location = New System.Drawing.Point(414, 71)
+        Me.SimpleButton36.Location = New System.Drawing.Point(431, 71)
         Me.SimpleButton36.Name = "SimpleButton36"
         Me.SimpleButton36.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton36.TabIndex = 17
@@ -441,20 +645,20 @@ Partial Class main_menu
         'SimpleButton37
         '
         Me.SimpleButton37.Image = CType(resources.GetObject("SimpleButton37.Image"), System.Drawing.Image)
-        Me.SimpleButton37.Location = New System.Drawing.Point(230, 71)
+        Me.SimpleButton37.Location = New System.Drawing.Point(247, 71)
         Me.SimpleButton37.Name = "SimpleButton37"
         Me.SimpleButton37.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton37.TabIndex = 16
-        Me.SimpleButton37.Text = "Master Customer"
+        Me.SimpleButton37.Text = "Laporan KIR"
         '
         'SimpleButton39
         '
         Me.SimpleButton39.Image = CType(resources.GetObject("SimpleButton39.Image"), System.Drawing.Image)
-        Me.SimpleButton39.Location = New System.Drawing.Point(46, 71)
+        Me.SimpleButton39.Location = New System.Drawing.Point(63, 71)
         Me.SimpleButton39.Name = "SimpleButton39"
         Me.SimpleButton39.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton39.TabIndex = 14
-        Me.SimpleButton39.Text = "Master Akun"
+        Me.SimpleButton39.Text = "Laporan Transaksi"
         '
         'BackstageViewClientControl8
         '
@@ -462,9 +666,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton19)
         Me.BackstageViewClientControl8.Controls.Add(Me.SimpleButton20)
         Me.BackstageViewClientControl8.Controls.Add(Me.Label6)
-        Me.BackstageViewClientControl8.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl8.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl8.Name = "BackstageViewClientControl8"
-        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl8.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl8.TabIndex = 7
         '
         'SimpleButton42
@@ -512,9 +716,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl7.Controls.Add(Me.pelunasanpiutangkaryawan)
         Me.BackstageViewClientControl7.Controls.Add(Me.peluanasapiutangprinciple)
         Me.BackstageViewClientControl7.Controls.Add(Me.Label4)
-        Me.BackstageViewClientControl7.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl7.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl7.Name = "BackstageViewClientControl7"
-        Me.BackstageViewClientControl7.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl7.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl7.TabIndex = 6
         '
         'SimpleButton8
@@ -574,9 +778,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton30)
         Me.BackstageViewClientControl6.Controls.Add(Me.SimpleButton32)
         Me.BackstageViewClientControl6.Controls.Add(Me.Label5)
-        Me.BackstageViewClientControl6.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl6.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl6.Name = "BackstageViewClientControl6"
-        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl6.TabIndex = 5
         '
         'SimpleButton24
@@ -658,9 +862,9 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.Controls.Add(Me.Label7)
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton21)
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
-        Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl10.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
-        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl10.TabIndex = 8
         '
         'Label7
@@ -694,12 +898,226 @@ Partial Class main_menu
         '
         'BackstageViewClientControl2
         '
+        Me.BackstageViewClientControl2.Controls.Add(Me.XtraTabControl2)
         Me.BackstageViewClientControl2.Controls.Add(Me.Label11)
-        Me.BackstageViewClientControl2.Controls.Add(Me.TabControl1)
-        Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
+        Me.BackstageViewClientControl2.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
-        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(813, 691)
+        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl2.TabIndex = 9
+        '
+        'XtraTabControl2
+        '
+        Me.XtraTabControl2.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal
+        Me.XtraTabControl2.Location = New System.Drawing.Point(51, 74)
+        Me.XtraTabControl2.Name = "XtraTabControl2"
+        Me.XtraTabControl2.SelectedTabPage = Me.XtraTabPage5
+        Me.XtraTabControl2.Size = New System.Drawing.Size(451, 300)
+        Me.XtraTabControl2.TabIndex = 37
+        Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage5, Me.XtraTabPage6})
+        '
+        'XtraTabPage5
+        '
+        Me.XtraTabPage5.Controls.Add(Me.Label20)
+        Me.XtraTabPage5.Controls.Add(Me.Label17)
+        Me.XtraTabPage5.Controls.Add(Me.Label19)
+        Me.XtraTabPage5.Controls.Add(Me.Label9)
+        Me.XtraTabPage5.Controls.Add(Me.Label18)
+        Me.XtraTabPage5.Controls.Add(Me.restorepath)
+        Me.XtraTabPage5.Controls.Add(Me.SimpleButton41)
+        Me.XtraTabPage5.Controls.Add(Me.Label16)
+        Me.XtraTabPage5.Controls.Add(Me.buttonrestore)
+        Me.XtraTabPage5.Controls.Add(Me.Label15)
+        Me.XtraTabPage5.Controls.Add(Me.Label2)
+        Me.XtraTabPage5.Controls.Add(Me.Label14)
+        Me.XtraTabPage5.Controls.Add(Me.Label12)
+        Me.XtraTabPage5.Controls.Add(Me.Label13)
+        Me.XtraTabPage5.Name = "XtraTabPage5"
+        Me.XtraTabPage5.Size = New System.Drawing.Size(443, 270)
+        Me.XtraTabPage5.Text = "Restore"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(112, 159)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(11, 13)
+        Me.Label20.TabIndex = 44
+        Me.Label20.Text = "-"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(26, 242)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(64, 13)
+        Me.Label17.TabIndex = 41
+        Me.Label17.Text = "Last Edited:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(26, 159)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(57, 13)
+        Me.Label19.TabIndex = 43
+        Me.Label19.Text = "File Name:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(23, 60)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 13)
+        Me.Label9.TabIndex = 31
+        Me.Label9.Text = "Backup Path:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(26, 213)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(50, 13)
+        Me.Label18.TabIndex = 42
+        Me.Label18.Text = "Created:"
+        '
+        'restorepath
+        '
+        Me.restorepath.Location = New System.Drawing.Point(23, 75)
+        Me.restorepath.Name = "restorepath"
+        Me.restorepath.Size = New System.Drawing.Size(357, 21)
+        Me.restorepath.TabIndex = 32
+        '
+        'SimpleButton41
+        '
+        Me.SimpleButton41.Image = CType(resources.GetObject("SimpleButton41.Image"), System.Drawing.Image)
+        Me.SimpleButton41.Location = New System.Drawing.Point(386, 75)
+        Me.SimpleButton41.Name = "SimpleButton41"
+        Me.SimpleButton41.Size = New System.Drawing.Size(26, 23)
+        Me.SimpleButton41.TabIndex = 33
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(26, 185)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(77, 13)
+        Me.Label16.TabIndex = 40
+        Me.Label16.Text = "File Extension:"
+        '
+        'buttonrestore
+        '
+        Me.buttonrestore.Image = CType(resources.GetObject("buttonrestore.Image"), System.Drawing.Image)
+        Me.buttonrestore.Location = New System.Drawing.Point(302, 102)
+        Me.buttonrestore.Name = "buttonrestore"
+        Me.buttonrestore.Size = New System.Drawing.Size(78, 23)
+        Me.buttonrestore.TabIndex = 34
+        Me.buttonrestore.Text = "Restore"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(112, 213)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(11, 13)
+        Me.Label15.TabIndex = 39
+        Me.Label15.Text = "-"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(17, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(106, 33)
+        Me.Label2.TabIndex = 35
+        Me.Label2.Text = "Restore"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(112, 242)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.TabIndex = 38
+        Me.Label14.Text = "-"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(23, 131)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(97, 13)
+        Me.Label12.TabIndex = 36
+        Me.Label12.Text = "File Information"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(112, 185)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(11, 13)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "-"
+        '
+        'XtraTabPage6
+        '
+        Me.XtraTabPage6.Controls.Add(Me.SimpleButton40)
+        Me.XtraTabPage6.Controls.Add(Me.backuppath)
+        Me.XtraTabPage6.Controls.Add(Me.backup)
+        Me.XtraTabPage6.Controls.Add(Me.Label10)
+        Me.XtraTabPage6.Controls.Add(Me.Label8)
+        Me.XtraTabPage6.Name = "XtraTabPage6"
+        Me.XtraTabPage6.Size = New System.Drawing.Size(443, 270)
+        Me.XtraTabPage6.Text = "Backup"
+        '
+        'SimpleButton40
+        '
+        Me.SimpleButton40.Image = CType(resources.GetObject("SimpleButton40.Image"), System.Drawing.Image)
+        Me.SimpleButton40.Location = New System.Drawing.Point(389, 79)
+        Me.SimpleButton40.Name = "SimpleButton40"
+        Me.SimpleButton40.Size = New System.Drawing.Size(26, 23)
+        Me.SimpleButton40.TabIndex = 28
+        '
+        'backuppath
+        '
+        Me.backuppath.Location = New System.Drawing.Point(22, 76)
+        Me.backuppath.Name = "backuppath"
+        Me.backuppath.Size = New System.Drawing.Size(357, 21)
+        Me.backuppath.TabIndex = 23
+        '
+        'backup
+        '
+        Me.backup.Image = CType(resources.GetObject("backup.Image"), System.Drawing.Image)
+        Me.backup.Location = New System.Drawing.Point(301, 103)
+        Me.backup.Name = "backup"
+        Me.backup.Size = New System.Drawing.Size(78, 23)
+        Me.backup.TabIndex = 27
+        Me.backup.Text = "Backup"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(16, 18)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(100, 33)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Backup"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(22, 60)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 13)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Backup Path:"
         '
         'Label11
         '
@@ -712,222 +1130,13 @@ Partial Class main_menu
         Me.Label11.TabIndex = 36
         Me.Label11.Text = "Backup / Restore"
         '
-        'TabControl1
+        'BackstageViewTabItem2
         '
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(53, 78)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(471, 306)
-        Me.TabControl1.TabIndex = 22
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Label20)
-        Me.TabPage2.Controls.Add(Me.Label19)
-        Me.TabPage2.Controls.Add(Me.Label18)
-        Me.TabPage2.Controls.Add(Me.Label17)
-        Me.TabPage2.Controls.Add(Me.Label16)
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.Label13)
-        Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Controls.Add(Me.buttonrestore)
-        Me.TabPage2.Controls.Add(Me.SimpleButton41)
-        Me.TabPage2.Controls.Add(Me.restorepath)
-        Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(463, 280)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Restore"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(107, 160)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(0, 13)
-        Me.Label20.TabIndex = 44
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(19, 160)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(57, 13)
-        Me.Label19.TabIndex = 43
-        Me.Label19.Text = "File Name:"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(19, 214)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(50, 13)
-        Me.Label18.TabIndex = 42
-        Me.Label18.Text = "Created:"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(19, 243)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(64, 13)
-        Me.Label17.TabIndex = 41
-        Me.Label17.Text = "Last Edited:"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(19, 186)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(77, 13)
-        Me.Label16.TabIndex = 40
-        Me.Label16.Text = "File Extension:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(107, 214)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(0, 13)
-        Me.Label15.TabIndex = 39
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(107, 243)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(0, 13)
-        Me.Label14.TabIndex = 38
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(110, 186)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(0, 13)
-        Me.Label13.TabIndex = 37
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(16, 132)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(97, 13)
-        Me.Label12.TabIndex = 36
-        Me.Label12.Text = "File Information"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(10, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 33)
-        Me.Label2.TabIndex = 35
-        Me.Label2.Text = "Restore"
-        '
-        'buttonrestore
-        '
-        Me.buttonrestore.Image = CType(resources.GetObject("buttonrestore.Image"), System.Drawing.Image)
-        Me.buttonrestore.Location = New System.Drawing.Point(295, 98)
-        Me.buttonrestore.Name = "buttonrestore"
-        Me.buttonrestore.Size = New System.Drawing.Size(78, 23)
-        Me.buttonrestore.TabIndex = 34
-        Me.buttonrestore.Text = "Restore"
-        '
-        'SimpleButton41
-        '
-        Me.SimpleButton41.Image = CType(resources.GetObject("SimpleButton41.Image"), System.Drawing.Image)
-        Me.SimpleButton41.Location = New System.Drawing.Point(379, 71)
-        Me.SimpleButton41.Name = "SimpleButton41"
-        Me.SimpleButton41.Size = New System.Drawing.Size(26, 23)
-        Me.SimpleButton41.TabIndex = 33
-        '
-        'restorepath
-        '
-        Me.restorepath.Location = New System.Drawing.Point(16, 71)
-        Me.restorepath.Name = "restorepath"
-        Me.restorepath.Size = New System.Drawing.Size(357, 21)
-        Me.restorepath.TabIndex = 32
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(16, 56)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 13)
-        Me.Label9.TabIndex = 31
-        Me.Label9.Text = "Backup Path:"
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.SimpleButton40)
-        Me.TabPage1.Controls.Add(Me.backup)
-        Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.backuppath)
-        Me.TabPage1.Controls.Add(Me.Label10)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(463, 280)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Backup"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'SimpleButton40
-        '
-        Me.SimpleButton40.Image = CType(resources.GetObject("SimpleButton40.Image"), System.Drawing.Image)
-        Me.SimpleButton40.Location = New System.Drawing.Point(379, 72)
-        Me.SimpleButton40.Name = "SimpleButton40"
-        Me.SimpleButton40.Size = New System.Drawing.Size(26, 23)
-        Me.SimpleButton40.TabIndex = 28
-        '
-        'backup
-        '
-        Me.backup.Image = CType(resources.GetObject("backup.Image"), System.Drawing.Image)
-        Me.backup.Location = New System.Drawing.Point(295, 99)
-        Me.backup.Name = "backup"
-        Me.backup.Size = New System.Drawing.Size(78, 23)
-        Me.backup.TabIndex = 27
-        Me.backup.Text = "Backup"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 56)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 13)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Backup Path:"
-        '
-        'backuppath
-        '
-        Me.backuppath.Location = New System.Drawing.Point(16, 72)
-        Me.backuppath.Name = "backuppath"
-        Me.backuppath.Size = New System.Drawing.Size(357, 21)
-        Me.backuppath.TabIndex = 23
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.White
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(10, 14)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(100, 33)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Backup"
+        Me.BackstageViewTabItem2.Caption = "Application Manager"
+        Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl12
+        Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
+        Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
+        Me.BackstageViewTabItem2.Selected = False
         '
         'BackstageViewTabItem1
         '
@@ -943,7 +1152,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = True
+        Me.BackstageViewTabItem5.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -951,7 +1160,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = False
+        Me.BackstageViewTabItem8.Selected = True
         '
         'BackstageViewTabItem7
         '
@@ -1061,6 +1270,30 @@ Partial Class main_menu
         Me.Text = "Main Menu"
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackstageViewControl1.ResumeLayout(False)
+        Me.BackstageViewClientControl12.ResumeLayout(False)
+        Me.BackstageViewClientControl12.PerformLayout()
+        CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabControl1.ResumeLayout(False)
+        Me.XtraTabPage1.ResumeLayout(False)
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage2.ResumeLayout(False)
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage3.ResumeLayout(False)
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage4.ResumeLayout(False)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.GridControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackstageViewClientControl1.ResumeLayout(False)
         Me.BackstageViewClientControl1.PerformLayout()
         Me.BackstageViewClientControl5.ResumeLayout(False)
@@ -1076,11 +1309,12 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.PerformLayout()
         Me.BackstageViewClientControl2.ResumeLayout(False)
         Me.BackstageViewClientControl2.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        CType(Me.XtraTabControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabControl2.ResumeLayout(False)
+        Me.XtraTabPage5.ResumeLayout(False)
+        Me.XtraTabPage5.PerformLayout()
+        Me.XtraTabPage6.ResumeLayout(False)
+        Me.XtraTabPage6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1152,14 +1386,6 @@ Partial Class main_menu
     Friend WithEvents SimpleButton39 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents backuprestore As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
     Friend WithEvents BackstageViewClientControl2 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents buttonrestore As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton41 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents restorepath As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton40 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents backup As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label8 As System.Windows.Forms.Label
@@ -1168,16 +1394,44 @@ Partial Class main_menu
     Friend WithEvents opd As System.Windows.Forms.OpenFileDialog
     Friend WithEvents sfd As System.Windows.Forms.SaveFileDialog
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton42 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hutangdo As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BackstageViewClientControl12 As DevExpress.XtraBars.Ribbon.BackstageViewClientControl
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents BackstageViewTabItem2 As DevExpress.XtraBars.Ribbon.BackstageViewTabItem
+    Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XtraTabPage3 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl3 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XtraTabPage4 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl4 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XtraTabControl2 As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents XtraTabPage5 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XtraTabPage6 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents buttonrestore As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton41 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents restorepath As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

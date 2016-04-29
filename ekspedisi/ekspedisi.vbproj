@@ -307,11 +307,23 @@
     <Compile Include="history.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIR\frm_laporankir.Designer.vb">
+      <DependentUpon>frm_laporankir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\frm_laporankir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KIR\kir_daftar_truk.Designer.vb">
       <DependentUpon>kir_daftar_truk.vb</DependentUpon>
     </Compile>
     <Compile Include="KIR\kir_daftar_truk.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIR\laporanKIR.Designer.vb">
+      <DependentUpon>laporanKIR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\laporanKIR.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="labarugi.Designer.vb">
       <DependentUpon>labarugi.vb</DependentUpon>
@@ -354,6 +366,30 @@
     </Compile>
     <Compile Include="notapelunasanprinciple.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\detail_cicilan.Designer.vb">
+      <DependentUpon>detail_cicilan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\detail_cicilan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansi.Designer.vb">
+      <DependentUpon>kwitansi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansi.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\lihat_cicilan_karyawan.Designer.vb">
+      <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\lihat_cicilan_karyawan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\viewkwitansi.Designer.vb">
+      <DependentUpon>viewkwitansi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\viewkwitansi.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\frm_reportprinciple.Designer.vb">
       <DependentUpon>frm_reportprinciple.vb</DependentUpon>
@@ -967,11 +1003,17 @@
     <EmbeddedResource Include="KIR\edit_kir_truk.resx">
       <DependentUpon>edit_kir_truk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KIR\frm_laporankir.resx">
+      <DependentUpon>frm_laporankir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KIR\kir_daftar_truk.resx">
       <DependentUpon>kir_daftar_truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\laporanKIR.resx">
+      <DependentUpon>laporanKIR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\master_KIR.resx">
       <DependentUpon>master_KIR.vb</DependentUpon>
@@ -991,6 +1033,9 @@
     <EmbeddedResource Include="Master Data Print\ViewerMasterBarang.resx">
       <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_supir.resx">
+      <DependentUpon>master_supir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="neracax.resx">
       <DependentUpon>neracax.vb</DependentUpon>
     </EmbeddedResource>
@@ -1002,6 +1047,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_principle_pelunasan.resx">
       <DependentUpon>daftar_principle_pelunasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\detail_cicilan.resx">
+      <DependentUpon>detail_cicilan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\kwitansi.resx">
+      <DependentUpon>kwitansi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\lihat_cicilan_karyawan.resx">
+      <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
@@ -1029,6 +1083,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\karyawan_piutang.resx">
       <DependentUpon>karyawan_piutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\viewkwitansi.resx">
+      <DependentUpon>viewkwitansi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_reportprinciple.resx">
       <DependentUpon>frm_reportprinciple.vb</DependentUpon>

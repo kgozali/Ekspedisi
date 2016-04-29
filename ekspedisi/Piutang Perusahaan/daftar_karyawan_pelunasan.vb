@@ -16,8 +16,14 @@
             pelunansan_piutang_karyawan.nomortelepon.Text = viewdatakaryawan.GetRowCellValue(viewdatakaryawan.FocusedRowHandle, "Nomor Telepon 1")
             tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,nominal,nominal-sum(jumlah_dibayar)) as `Sisa` FROM piutang_karyawan p left join dpiutang_karyawan d on d.id_piutangkaryawan=p.id_piutangkaryawan where p.id_karyawan='" & pelunansan_piutang_karyawan.namakaryawan.Text & "' and status='1' group by p.id_piutangkaryawan;")
             pelunansan_piutang_karyawan.daftarutang.DataSource = tabel
-
-
+            Dim hitung As Double = 0
+            For i = 0 To tabel.Rows.Count - 1
+                With pelunansan_piutang_karyawan.datapiutang
+                    .SetRowCellValue(i, "Check List Bayar", False)
+                End With
+                hitung = hitung + tabel.Rows(i).Item("Sisa")
+            Next i
+            pelunansan_piutang_karyawan.totalhutang.Text = hitung.ToString
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

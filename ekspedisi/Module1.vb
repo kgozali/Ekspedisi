@@ -130,6 +130,8 @@ Public Module Module1
             'Ini nambahnya di samping kiri, kalo mau disamping kanan code buat nambahnya di taruk setelah adapter fill
 
             adapter.Fill(data)
+            data.Columns.Add("Check List Bayar", GetType(Boolean))
+            data.Columns("Check List Bayar").DefaultValue = False
             data.Columns.Add("Bayar", GetType(Double))
             data.Columns("Bayar").DefaultValue = 0
             Return data

@@ -13,9 +13,11 @@ Public Class master_booking
             If aktif.Checked = True Then
                 x = 1
                 edit.Enabled = True
+                ContextMenuStrip1.Enabled = True
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
+                ContextMenuStrip1.Enabled = False
             End If
 
            
