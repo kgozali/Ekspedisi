@@ -59,6 +59,7 @@ Partial Class master_jabatan
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
@@ -78,7 +79,7 @@ Partial Class master_jabatan
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(338, 532)
+        Me.cancel.Location = New System.Drawing.Point(672, 531)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 35
@@ -205,7 +206,7 @@ Partial Class master_jabatan
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(11, 182)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(761, 344)
         Me.GroupControl3.TabIndex = 34
         Me.GroupControl3.Text = "Data Jabatan"
         '
@@ -215,7 +216,7 @@ Partial Class master_jabatan
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(414, 315)
+        Me.GridControl2.Size = New System.Drawing.Size(748, 315)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -244,7 +245,7 @@ Partial Class master_jabatan
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(450, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(787, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -333,13 +334,13 @@ Partial Class master_jabatan
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
         '
         'Print
         '
         Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(152, 22)
+        Me.Print.Size = New System.Drawing.Size(99, 22)
         Me.Print.Text = "Print"
         '
         'GridView1
@@ -398,11 +399,21 @@ Partial Class master_jabatan
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(703, 147)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
+        Me.SimpleButton1.TabIndex = 45
+        Me.SimpleButton1.Text = "Print"
+        '
         'master_jabatan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(447, 564)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.editing)
@@ -471,4 +482,5 @@ Partial Class master_jabatan
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

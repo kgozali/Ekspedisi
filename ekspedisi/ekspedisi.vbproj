@@ -325,6 +325,24 @@
     <Compile Include="lapjurnal.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Master Data Print\ReportMasterBarang.Designer.vb">
+      <DependentUpon>ReportMasterBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data Print\ReportMasterBarang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Master Data Print\ReportMasterTruk.Designer.vb">
+      <DependentUpon>ReportMasterTruk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data Print\ReportMasterTruk.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Master Data Print\ViewerMasterBarang.Designer.vb">
+      <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data Print\ViewerMasterBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="neracax.Designer.vb">
       <DependentUpon>neracax.vb</DependentUpon>
     </Compile>
@@ -963,6 +981,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lapjurnal.resx">
       <DependentUpon>lapjurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data Print\ReportMasterBarang.resx">
+      <DependentUpon>ReportMasterBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data Print\ReportMasterTruk.resx">
+      <DependentUpon>ReportMasterTruk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data Print\ViewerMasterBarang.resx">
+      <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="neracax.resx">
       <DependentUpon>neracax.vb</DependentUpon>

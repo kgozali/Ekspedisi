@@ -35,21 +35,36 @@ Public Class edit_list_truck
                 data.Columns.Add("Akun Penyusutan")
             End If
 
-            For i = 0 To master_truck.GridView2.RowCount - 1
-                If master_truck.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_truck.GridView2.GetRowCellValue(i, "Kode Truk").ToString()
-                    Dim b As String = master_truck.GridView2.GetRowCellValue(i, "No Polisi").ToString()
-                    Dim c As String = master_truck.GridView2.GetRowCellValue(i, "No Mesin").ToString()
-                    Dim d As String = master_truck.GridView2.GetRowCellValue(i, "No Rangka").ToString()
-                    Dim e1 As String = master_truck.GridView2.GetRowCellValue(i, "Nama Supplier").ToString()
-                    Dim f As String = master_truck.GridView2.GetRowCellValue(i, "Harga Beli").ToString()
-                    Dim g As String = master_truck.GridView2.GetRowCellValue(i, "Umur Default").ToString()
-                    Dim h As String = master_truck.GridView2.GetRowCellValue(i, "Nilai Residu").ToString()
-                    Dim i1 As String = master_truck.GridView2.GetRowCellValue(i, "Akun Aktiva").ToString()
-                    Dim j As String = master_truck.GridView2.GetRowCellValue(i, "Akun Depresiasi").ToString()
-                    Dim k As String = master_truck.GridView2.GetRowCellValue(i, "Akun Penyusutan").ToString()
-                    data.Rows.Add(a, b, c, d, e1, f, g, h, i1, j, k)
-                End If
+            For i = 0 To master_truck.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1' and t.id_truk ='" & master_truck.checks.Rows(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Truk").ToString()
+                Dim b As String = datatemp.Rows(0).Item("No Polisi").ToString()
+                Dim c As String = datatemp.Rows(0).Item("No Mesin").ToString()
+                Dim d As String = datatemp.Rows(0).Item("No Rangka").ToString()
+                Dim e1 As String = datatemp.Rows(0).Item("Nama Supplier").ToString()
+                Dim f As String = datatemp.Rows(0).Item("Harga Beli").ToString()
+                Dim g As String = datatemp.Rows(0).Item("Umur Default").ToString()
+                Dim h As String = datatemp.Rows(0).Item("Nilai Residu").ToString()
+                Dim i1 As String = datatemp.Rows(0).Item("Akun Aktiva").ToString()
+                Dim j As String = datatemp.Rows(0).Item("Akun Depresiasi").ToString()
+                Dim k As String = datatemp.Rows(0).Item("Akun Penyusutan").ToString()
+                data.Rows.Add(a, b, c, d, e1, f, g, h, i1, j, k)
+
+                'If master_truck.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_truck.GridView2.GetRowCellValue(i, "Kode Truk").ToString()
+                '    Dim b As String = master_truck.GridView2.GetRowCellValue(i, "No Polisi").ToString()
+                '    Dim c As String = master_truck.GridView2.GetRowCellValue(i, "No Mesin").ToString()
+                '    Dim d As String = master_truck.GridView2.GetRowCellValue(i, "No Rangka").ToString()
+                '    Dim e1 As String = master_truck.GridView2.GetRowCellValue(i, "Nama Supplier").ToString()
+                '    Dim f As String = master_truck.GridView2.GetRowCellValue(i, "Harga Beli").ToString()
+                '    Dim g As String = master_truck.GridView2.GetRowCellValue(i, "Umur Default").ToString()
+                '    Dim h As String = master_truck.GridView2.GetRowCellValue(i, "Nilai Residu").ToString()
+                '    Dim i1 As String = master_truck.GridView2.GetRowCellValue(i, "Akun Aktiva").ToString()
+                '    Dim j As String = master_truck.GridView2.GetRowCellValue(i, "Akun Depresiasi").ToString()
+                '    Dim k As String = master_truck.GridView2.GetRowCellValue(i, "Akun Penyusutan").ToString()
+                '    data.Rows.Add(a, b, c, d, e1, f, g, h, i1, j, k)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

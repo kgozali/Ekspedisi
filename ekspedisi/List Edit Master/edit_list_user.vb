@@ -20,10 +20,13 @@ Public Class edit_list_user
                 data.Columns.Add("Username")
             End If
 
-            For i = 0 To master_user.GridView2.RowCount - 1
-                If master_user.GridView2.IsRowSelected(i) Then
-                    data.Rows.Add(master_user.GridView2.GetRowCellValue(i, "Username").ToString())
-                End If
+            For i = 0 To master_user.checks.Rows.Count - 1
+                Dim temp As New DataTable
+                temp = DtTable("select Username from muser where `s` = '1' and Username = '" & master_user.checks.Rows(i).Item(0).ToString & "'")
+                data.Rows.Add(temp.Rows(0).Item("Username").ToString())
+                'If master_user.GridView2.IsRowSelected(i) Then
+                '    data.Rows.Add(master_user.GridView2.GetRowCellValue(i, "Username").ToString())
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

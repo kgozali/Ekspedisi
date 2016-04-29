@@ -18,13 +18,17 @@ Public Class edit_list_kategori_supplier
                 data.Columns.Add("Nama Kategori Supplier")
             End If
 
-
-            For i = 0 To master_kategori_supplier.GridView2.RowCount - 1
-                If master_kategori_supplier.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_kategori_supplier.GridView2.GetRowCellValue(i, "Kode Kategori Supplier").ToString()
-                    Dim b As String = master_kategori_supplier.GridView2.GetRowCellValue(i, "Nama Kategori Supplier").ToString()
-                    data.Rows.Add(a, b)
-                End If
+            For i = 0 To master_kategori_supplier.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT b.id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1' and b.id_kategori = '" & master_kategori_supplier.checks.Rows(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Kategori Supplier").ToString()
+                Dim b As String = datatemp.Rows(0).Item("Nama Kategori Supplier").ToString()
+                data.Rows.Add(a, b)
+                'If master_kategori_supplier.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_kategori_supplier.GridView2.GetRowCellValue(i, "Kode Kategori Supplier").ToString()
+                '    Dim b As String = master_kategori_supplier.GridView2.GetRowCellValue(i, "Nama Kategori Supplier").ToString()
+                '    data.Rows.Add(a, b)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

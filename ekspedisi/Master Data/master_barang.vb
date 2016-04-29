@@ -251,7 +251,11 @@ Public Class master_barang
     End Sub
 
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
-        showgridpreview(GridControl1)
+        ViewerMasterBarang.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
+        ViewerMasterBarang.ShowDialog()
     End Sub
 
 End Class

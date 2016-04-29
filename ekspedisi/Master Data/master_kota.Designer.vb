@@ -85,7 +85,7 @@ Partial Class master_kota
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(12, 535)
+        Me.editing.Location = New System.Drawing.Point(12, 532)
         Me.editing.Name = "editing"
         Me.editing.Size = New System.Drawing.Size(198, 26)
         Me.editing.TabIndex = 38
@@ -94,7 +94,7 @@ Partial Class master_kota
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(12, 535)
+        Me.hapus.Location = New System.Drawing.Point(12, 532)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 40
@@ -127,7 +127,7 @@ Partial Class master_kota
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(450, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(786, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -259,7 +259,7 @@ Partial Class master_kota
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(339, 535)
+        Me.cancel.Location = New System.Drawing.Point(671, 531)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 42
@@ -303,7 +303,7 @@ Partial Class master_kota
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 185)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(760, 344)
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Kota"
         '
@@ -313,7 +313,7 @@ Partial Class master_kota
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(414, 311)
+        Me.GridControl2.Size = New System.Drawing.Size(750, 311)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -331,7 +331,7 @@ Partial Class master_kota
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(414, 311)
+        Me.GridControl1.Size = New System.Drawing.Size(750, 311)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -339,13 +339,13 @@ Partial Class master_kota
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
         '
         'Print
         '
         Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(152, 22)
+        Me.Print.Size = New System.Drawing.Size(99, 22)
         Me.Print.Text = "Print"
         '
         'GridView1
@@ -376,7 +376,7 @@ Partial Class master_kota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(448, 571)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.cancel)
