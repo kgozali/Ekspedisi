@@ -17,7 +17,7 @@ Public Class edit_booking
         Try
             'select akun default
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
-            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Hutang Usaha'")
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
             akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
             'select principle
             kode = id.Text.ToString
@@ -68,7 +68,8 @@ Public Class edit_booking
     Private Sub booking_truk_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If ceking = True Then
-
+                reset()
+                master_booking.master_booking_Load(sender, e)
             Else
                 If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
                     cek = True
