@@ -5,6 +5,7 @@
             Dim rpt As New kwitansi
             rpt.Parameters(0).Value = tangkap
             DocumentViewer1.DocumentSource = rpt
+            rpt.Parameters("username").Value = username
             rpt.CreateDocument()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
