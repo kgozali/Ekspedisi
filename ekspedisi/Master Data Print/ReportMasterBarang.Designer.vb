@@ -45,8 +45,8 @@ Partial Public Class ReportMasterBarang
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
-        Me.SqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.SqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -247,7 +247,7 @@ Partial Public Class ReportMasterBarang
         'XrLabel2
         '
         Me.XrLabel2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(413.4583!, 68.75!)
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(417.0!, 67.70834!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 22.99999!)
@@ -258,24 +258,13 @@ Partial Public Class ReportMasterBarang
         '
         'XrPageInfo1
         '
-        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(513.4583!, 68.75!)
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(517.0!, 67.70834!)
         Me.XrPageInfo1.Name = "XrPageInfo1"
         Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
         Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
         Me.XrPageInfo1.StylePriority.UseTextAlignment = False
         Me.XrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'SqlDataSource1
-        '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
-        Me.SqlDataSource1.Name = "SqlDataSource1"
-        CustomSqlQuery1.Name = "CustomSqlQuery"
-        CustomSqlQuery1.Sql = "SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Na" & _
-    "ma Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p." & _
-    "id_principle and b.`s`='1'"
-        Me.SqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {CustomSqlQuery1})
-        Me.SqlDataSource1.ResultSchemaSerializable = resources.GetString("SqlDataSource1.ResultSchemaSerializable")
         '
         'XrLabel3
         '
@@ -288,6 +277,17 @@ Partial Public Class ReportMasterBarang
         Me.XrLabel3.StylePriority.UseTextAlignment = False
         Me.XrLabel3.Text = "Report Master Barang"
         Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'SqlDataSource1
+        '
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.Name = "SqlDataSource1"
+        CustomSqlQuery1.Name = "CustomSqlQuery"
+        CustomSqlQuery1.Sql = "SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Na" & _
+    "ma Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p." & _
+    "id_principle and b.`s`='1'"
+        Me.SqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {CustomSqlQuery1})
+        Me.SqlDataSource1.ResultSchemaSerializable = resources.GetString("SqlDataSource1.ResultSchemaSerializable")
         '
         'ReportMasterBarang
         '

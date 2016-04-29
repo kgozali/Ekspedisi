@@ -343,6 +343,12 @@
     <Compile Include="Master Data Print\ReportMasterBarang.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Master Data Print\ReportMasterCustomer.Designer.vb">
+      <DependentUpon>ReportMasterCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data Print\ReportMasterCustomer.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Master Data Print\ReportMasterTruk.Designer.vb">
       <DependentUpon>ReportMasterTruk.vb</DependentUpon>
     </Compile>
@@ -1032,6 +1038,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data Print\ReportMasterBarang.resx">
       <DependentUpon>ReportMasterBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data Print\ReportMasterCustomer.resx">
+      <DependentUpon>ReportMasterCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data Print\ReportMasterTruk.resx">
       <DependentUpon>ReportMasterTruk.vb</DependentUpon>
