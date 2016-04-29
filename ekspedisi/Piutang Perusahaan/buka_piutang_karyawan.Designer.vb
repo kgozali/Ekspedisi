@@ -279,7 +279,6 @@ Partial Class buka_piutang_karyawan
         Me.tanggalpelunasan.Name = "tanggalpelunasan"
         Me.tanggalpelunasan.Size = New System.Drawing.Size(200, 21)
         Me.tanggalpelunasan.TabIndex = 165
-        Me.tanggalpelunasan.Visible = False
         '
         'buka_piutang_karyawan
         '

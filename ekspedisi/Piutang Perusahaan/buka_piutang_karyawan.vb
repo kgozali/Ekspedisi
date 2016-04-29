@@ -90,7 +90,7 @@
         Try
             If cekform = True Then
                 Dim harian As Integer
-                tanggalpiutang.Value = tanggalpelunasan.Value.AddDays(CDbl(harilunas.SelectedValue.ToString))
+                tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
