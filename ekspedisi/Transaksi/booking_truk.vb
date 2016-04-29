@@ -55,7 +55,8 @@ Public Class booking_truk
         Try
 
             If ceking = True Then
-
+                reset()
+                master_booking.master_booking_Load(sender, e)
             Else
                 If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
                     cek = True
@@ -87,6 +88,7 @@ Public Class booking_truk
         ButtonEdit2.Text = ""
         ButtonEdit4.Text = ""
         principlebook = ""
+        TimeEdit1.Reset()
         trukbook = ""
         rutebook = ""
         tabelkontak.Rows.Clear()
@@ -190,6 +192,8 @@ Public Class booking_truk
             If insert = True Then
                 MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
+                reset()
+
                 Me.Close()
             End If
         Catch ex As Exception
