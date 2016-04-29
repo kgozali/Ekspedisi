@@ -20,7 +20,8 @@
                 tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
     End Sub
 
@@ -55,15 +56,17 @@
             If InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`,`id_akun`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & keterangan.Text & "','1','" & akunkas.SelectedValue.ToString & "',0)") = True Then
                 InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & ")")
                 Dim opo As Double = CDbl(nominal.Text) * -1
-                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
-                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
+                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & nominal.Text & ")")
+                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & opo & ")")
                 MessageBox.Show("Input Piutang Berhasil")
 
             Else
-                MessageBox.Show("Input Piutang Gagal")
+                MessageBox.Show("Input piutang gagal", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             End If
         Else
-            MessageBox.Show("Karyawan belum di pilih")
+            MessageBox.Show("Karywawan belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End If
 
         viewkwitansi.tangkap = id.Text.ToString
@@ -84,7 +87,8 @@
                 pilihkaryawan.Text = ""
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
     End Sub
 
@@ -107,7 +111,8 @@
             keterangan.Text = ""
             cekform = False
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
     End Sub
 End Class
