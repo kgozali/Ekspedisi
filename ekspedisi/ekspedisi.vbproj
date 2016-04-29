@@ -1012,9 +1012,6 @@
     <EmbeddedResource Include="lapjurnal.resx">
       <DependentUpon>lapjurnal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Master Data\master_supir.resx">
-      <DependentUpon>master_supir.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="neracax.resx">
       <DependentUpon>neracax.vb</DependentUpon>
     </EmbeddedResource>
