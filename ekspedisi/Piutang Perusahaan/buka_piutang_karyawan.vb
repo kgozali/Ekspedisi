@@ -17,6 +17,9 @@
             harilunas.DisplayMember = "jumlah_hari"
             harilunas.ValueMember = "jumlah_hari"
             cekform = True
+            If cekform = True Then
+                tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -89,7 +92,6 @@
     Private Sub harilunas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles harilunas.SelectedIndexChanged
         Try
             If cekform = True Then
-                Dim harian As Integer
                 tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
             End If
         Catch ex As Exception
