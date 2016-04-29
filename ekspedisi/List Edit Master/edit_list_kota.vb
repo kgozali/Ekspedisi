@@ -23,12 +23,18 @@ Public Class edit_list_kota
 
 
 
-            For i = 0 To master_kota.GridView2.RowCount - 1
-                If master_kota.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_kota.GridView2.GetRowCellValue(i, "Nama Kota").ToString()
-                    Dim b As String = master_kota.GridView2.GetRowCellValue(i, "Nama Provinsi").ToString()
-                    data.Rows.Add(a, b)
-                End If
+            For i = 0 To master_kota.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1' and b.kota = '" & master_kota.checks.Rows(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Nama Kota").ToString()
+                Dim b As String = datatemp.Rows(0).Item("Nama Provinsi").ToString()
+                data.Rows.Add(a, b)
+
+                'If master_kota.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_kota.GridView2.GetRowCellValue(i, "Nama Kota").ToString()
+                '    Dim b As String = master_kota.GridView2.GetRowCellValue(i, "Nama Provinsi").ToString()
+                '    data.Rows.Add(a, b)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

@@ -21,13 +21,21 @@ Public Class list_edit_barang
             End If
 
             For i = 0 To master_barang.GridView2.RowCount - 1
-                If master_barang.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_barang.GridView2.GetRowCellValue(i, "Kode Barang").ToString()
-                    Dim b As String = master_barang.GridView2.GetRowCellValue(i, "Nama Barang").ToString()
-                    Dim c As String = master_barang.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
-                    Dim d As String = master_barang.GridView2.GetRowCellValue(i, "Keterangan").ToString()
-                    data.Rows.Add(a, b, c, d)
-                End If
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang = '" & master_barang.checks.Rows(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Barang").ToString()
+                Dim b As String = datatemp.Rows(0).Item("Nama Barang").ToString()
+                Dim c As String = datatemp.Rows(0).Item("Nama Principle").ToString()
+                Dim d As String = datatemp.Rows(0).Item("Keterangan").ToString()
+                data.Rows.Add(a, b, c, d)
+
+                'If master_barang.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_barang.GridView2.GetRowCellValue(i, "Kode Barang").ToString()
+                '    Dim b As String = master_barang.GridView2.GetRowCellValue(i, "Nama Barang").ToString()
+                '    Dim c As String = master_barang.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
+                '    Dim d As String = master_barang.GridView2.GetRowCellValue(i, "Keterangan").ToString()
+                '    data.Rows.Add(a, b, c, d)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1
