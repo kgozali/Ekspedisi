@@ -7,7 +7,7 @@
         Try
             id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
             Dim data As New DataTable
-            data = DtTable("select * from makun where tipe_akun='Kas&Bank'")
+            data = DtTable("select * from makun where tipe_akun='Kas&Bank' and detil='1'")
             akunkas.DataSource = data
             akunkas.DisplayMember = "nama_akun"
             akunkas.ValueMember = "kode_akun"
@@ -17,9 +17,8 @@
             harilunas.DisplayMember = "jumlah_hari"
             harilunas.ValueMember = "jumlah_hari"
             cekform = True
-            If cekform = True Then
                 tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
-            End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
