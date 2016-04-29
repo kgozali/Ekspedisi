@@ -84,7 +84,7 @@ Partial Public Class Reportprinciple
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.ConnectionName = "Koneksi Ekspedisi"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         CustomSqlQuery1.Name = "vw_principlerpt"
         CustomSqlQuery1.Sql = resources.GetString("CustomSqlQuery1.Sql")

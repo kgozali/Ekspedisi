@@ -19,11 +19,10 @@ Partial Class master_DO
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_DO))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -221,9 +220,9 @@ Partial Class master_DO
         Me.nonaktif.AutoSize = True
         Me.nonaktif.Location = New System.Drawing.Point(5, 46)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(88, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(75, 17)
         Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "DO Non-Aktif"
+        Me.nonaktif.Text = "Closed DO"
         Me.nonaktif.UseVisualStyleBackColor = True
         '
         'aktif
@@ -232,10 +231,10 @@ Partial Class master_DO
         Me.aktif.Checked = True
         Me.aktif.Location = New System.Drawing.Point(5, 23)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(65, 17)
+        Me.aktif.Size = New System.Drawing.Size(69, 17)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
-        Me.aktif.Text = "DO Aktif"
+        Me.aktif.Text = "Open DO"
         Me.aktif.UseVisualStyleBackColor = True
         '
         'RibbonControl1

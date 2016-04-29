@@ -307,11 +307,23 @@
     <Compile Include="history.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIR\frm_laporankir.Designer.vb">
+      <DependentUpon>frm_laporankir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\frm_laporankir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KIR\kir_daftar_truk.Designer.vb">
       <DependentUpon>kir_daftar_truk.vb</DependentUpon>
     </Compile>
     <Compile Include="KIR\kir_daftar_truk.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIR\laporanKIR.Designer.vb">
+      <DependentUpon>laporanKIR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KIR\laporanKIR.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="labarugi.Designer.vb">
       <DependentUpon>labarugi.vb</DependentUpon>
@@ -324,6 +336,12 @@
     </Compile>
     <Compile Include="lapjurnal.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_supir.Designer.vb">
+      <DependentUpon>master_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_supir.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="neracax.Designer.vb">
       <DependentUpon>neracax.vb</DependentUpon>
@@ -979,11 +997,17 @@
     <EmbeddedResource Include="KIR\edit_kir_truk.resx">
       <DependentUpon>edit_kir_truk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KIR\frm_laporankir.resx">
+      <DependentUpon>frm_laporankir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KIR\kir_daftar_truk.resx">
       <DependentUpon>kir_daftar_truk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\KIR_Truk.resx">
       <DependentUpon>KIR_Truk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIR\laporanKIR.resx">
+      <DependentUpon>laporanKIR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIR\master_KIR.resx">
       <DependentUpon>master_KIR.vb</DependentUpon>
@@ -993,6 +1017,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lapjurnal.resx">
       <DependentUpon>lapjurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_supir.resx">
+      <DependentUpon>master_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="neracax.resx">
       <DependentUpon>neracax.vb</DependentUpon>

@@ -133,7 +133,7 @@ Public Class edit_DO
 
 
             If update = True And boolcek = True Then
-                MessageBox.Show("Update Transaksi " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 'insert jurnal
                 jurnal()
                 reset()
@@ -153,7 +153,7 @@ Public Class edit_DO
                 Next
 
                 If update = True And boolcek = True Then
-                    MessageBox.Show("Update Transaksi " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     'insert jurnal
                     jurnal()
                     reset()
