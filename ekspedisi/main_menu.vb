@@ -3,7 +3,7 @@ Public Class main_menu
 
 
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
-        master_akun.ShowDialog()
+        master_supir.ShowDialog()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click

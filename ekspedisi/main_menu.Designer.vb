@@ -197,8 +197,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
-        Me.BackstageViewControl1.SelectedTabIndex = 2
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
+        Me.BackstageViewControl1.SelectedTabIndex = 3
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -396,7 +396,7 @@ Partial Class main_menu
         'SimpleButton12
         '
         Me.SimpleButton12.Image = CType(resources.GetObject("SimpleButton12.Image"), System.Drawing.Image)
-        Me.SimpleButton12.Location = New System.Drawing.Point(48, 224)
+        Me.SimpleButton12.Location = New System.Drawing.Point(59, 218)
         Me.SimpleButton12.Name = "SimpleButton12"
         Me.SimpleButton12.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton12.TabIndex = 13
@@ -405,7 +405,7 @@ Partial Class main_menu
         'SimpleButton11
         '
         Me.SimpleButton11.Image = CType(resources.GetObject("SimpleButton11.Image"), System.Drawing.Image)
-        Me.SimpleButton11.Location = New System.Drawing.Point(598, 149)
+        Me.SimpleButton11.Location = New System.Drawing.Point(609, 145)
         Me.SimpleButton11.Name = "SimpleButton11"
         Me.SimpleButton11.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton11.TabIndex = 12
@@ -414,7 +414,7 @@ Partial Class main_menu
         'SimpleButton10
         '
         Me.SimpleButton10.Image = CType(resources.GetObject("SimpleButton10.Image"), System.Drawing.Image)
-        Me.SimpleButton10.Location = New System.Drawing.Point(416, 225)
+        Me.SimpleButton10.Location = New System.Drawing.Point(427, 219)
         Me.SimpleButton10.Name = "SimpleButton10"
         Me.SimpleButton10.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton10.TabIndex = 11
@@ -423,7 +423,7 @@ Partial Class main_menu
         'SimpleButton9
         '
         Me.SimpleButton9.Image = CType(resources.GetObject("SimpleButton9.Image"), System.Drawing.Image)
-        Me.SimpleButton9.Location = New System.Drawing.Point(416, 149)
+        Me.SimpleButton9.Location = New System.Drawing.Point(427, 145)
         Me.SimpleButton9.Name = "SimpleButton9"
         Me.SimpleButton9.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton9.TabIndex = 10
@@ -432,7 +432,7 @@ Partial Class main_menu
         'SimpleButton7
         '
         Me.SimpleButton7.Image = CType(resources.GetObject("SimpleButton7.Image"), System.Drawing.Image)
-        Me.SimpleButton7.Location = New System.Drawing.Point(232, 225)
+        Me.SimpleButton7.Location = New System.Drawing.Point(243, 219)
         Me.SimpleButton7.Name = "SimpleButton7"
         Me.SimpleButton7.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton7.TabIndex = 8
@@ -441,7 +441,7 @@ Partial Class main_menu
         'SimpleButton6
         '
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
-        Me.SimpleButton6.Location = New System.Drawing.Point(232, 149)
+        Me.SimpleButton6.Location = New System.Drawing.Point(243, 145)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton6.TabIndex = 7
@@ -450,7 +450,7 @@ Partial Class main_menu
         'SimpleButton5
         '
         Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(48, 149)
+        Me.SimpleButton5.Location = New System.Drawing.Point(59, 145)
         Me.SimpleButton5.Name = "SimpleButton5"
         Me.SimpleButton5.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton5.TabIndex = 6
@@ -459,7 +459,7 @@ Partial Class main_menu
         'SimpleButton4
         '
         Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(598, 72)
+        Me.SimpleButton4.Location = New System.Drawing.Point(609, 71)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton4.TabIndex = 5
@@ -468,7 +468,7 @@ Partial Class main_menu
         'SimpleButton3
         '
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(416, 72)
+        Me.SimpleButton3.Location = New System.Drawing.Point(247, 71)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton3.TabIndex = 4
@@ -477,7 +477,7 @@ Partial Class main_menu
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(232, 72)
+        Me.SimpleButton2.Location = New System.Drawing.Point(59, 71)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton2.TabIndex = 3
@@ -486,7 +486,7 @@ Partial Class main_menu
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(598, 225)
+        Me.SimpleButton1.Location = New System.Drawing.Point(609, 219)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton1.TabIndex = 2
@@ -495,11 +495,11 @@ Partial Class main_menu
         'masterakun
         '
         Me.masterakun.Image = CType(resources.GetObject("masterakun.Image"), System.Drawing.Image)
-        Me.masterakun.Location = New System.Drawing.Point(48, 72)
+        Me.masterakun.Location = New System.Drawing.Point(427, 71)
         Me.masterakun.Name = "masterakun"
         Me.masterakun.Size = New System.Drawing.Size(136, 54)
         Me.masterakun.TabIndex = 1
-        Me.masterakun.Text = "Master Akun"
+        Me.masterakun.Text = "Master Supir"
         '
         'BackstageViewClientControl5
         '
@@ -535,7 +535,7 @@ Partial Class main_menu
         'SimpleButton14
         '
         Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(46, 309)
+        Me.SimpleButton14.Location = New System.Drawing.Point(63, 309)
         Me.SimpleButton14.Name = "SimpleButton14"
         Me.SimpleButton14.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton14.TabIndex = 26
@@ -546,7 +546,7 @@ Partial Class main_menu
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(340, 9)
+        Me.Label3.Location = New System.Drawing.Point(353, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 33)
         Me.Label3.TabIndex = 16
@@ -555,7 +555,7 @@ Partial Class main_menu
         'SimpleButton15
         '
         Me.SimpleButton15.Image = CType(resources.GetObject("SimpleButton15.Image"), System.Drawing.Image)
-        Me.SimpleButton15.Location = New System.Drawing.Point(46, 227)
+        Me.SimpleButton15.Location = New System.Drawing.Point(63, 227)
         Me.SimpleButton15.Name = "SimpleButton15"
         Me.SimpleButton15.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton15.TabIndex = 25
@@ -564,7 +564,7 @@ Partial Class main_menu
         'SimpleButton35
         '
         Me.SimpleButton35.Image = CType(resources.GetObject("SimpleButton35.Image"), System.Drawing.Image)
-        Me.SimpleButton35.Location = New System.Drawing.Point(600, 148)
+        Me.SimpleButton35.Location = New System.Drawing.Point(617, 148)
         Me.SimpleButton35.Name = "SimpleButton35"
         Me.SimpleButton35.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton35.TabIndex = 18
@@ -573,7 +573,7 @@ Partial Class main_menu
         'SimpleButton16
         '
         Me.SimpleButton16.Image = CType(resources.GetObject("SimpleButton16.Image"), System.Drawing.Image)
-        Me.SimpleButton16.Location = New System.Drawing.Point(414, 227)
+        Me.SimpleButton16.Location = New System.Drawing.Point(431, 227)
         Me.SimpleButton16.Name = "SimpleButton16"
         Me.SimpleButton16.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton16.TabIndex = 24
@@ -582,7 +582,7 @@ Partial Class main_menu
         'SimpleButton23
         '
         Me.SimpleButton23.Image = CType(resources.GetObject("SimpleButton23.Image"), System.Drawing.Image)
-        Me.SimpleButton23.Location = New System.Drawing.Point(600, 227)
+        Me.SimpleButton23.Location = New System.Drawing.Point(617, 227)
         Me.SimpleButton23.Name = "SimpleButton23"
         Me.SimpleButton23.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton23.TabIndex = 23
@@ -591,7 +591,7 @@ Partial Class main_menu
         'SimpleButton25
         '
         Me.SimpleButton25.Image = CType(resources.GetObject("SimpleButton25.Image"), System.Drawing.Image)
-        Me.SimpleButton25.Location = New System.Drawing.Point(414, 148)
+        Me.SimpleButton25.Location = New System.Drawing.Point(431, 148)
         Me.SimpleButton25.Name = "SimpleButton25"
         Me.SimpleButton25.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton25.TabIndex = 22
@@ -600,7 +600,7 @@ Partial Class main_menu
         'SimpleButton38
         '
         Me.SimpleButton38.Image = CType(resources.GetObject("SimpleButton38.Image"), System.Drawing.Image)
-        Me.SimpleButton38.Location = New System.Drawing.Point(600, 71)
+        Me.SimpleButton38.Location = New System.Drawing.Point(617, 71)
         Me.SimpleButton38.Name = "SimpleButton38"
         Me.SimpleButton38.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton38.TabIndex = 15
@@ -609,7 +609,7 @@ Partial Class main_menu
         'SimpleButton31
         '
         Me.SimpleButton31.Image = CType(resources.GetObject("SimpleButton31.Image"), System.Drawing.Image)
-        Me.SimpleButton31.Location = New System.Drawing.Point(230, 227)
+        Me.SimpleButton31.Location = New System.Drawing.Point(247, 227)
         Me.SimpleButton31.Name = "SimpleButton31"
         Me.SimpleButton31.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton31.TabIndex = 21
@@ -618,7 +618,7 @@ Partial Class main_menu
         'SimpleButton33
         '
         Me.SimpleButton33.Image = CType(resources.GetObject("SimpleButton33.Image"), System.Drawing.Image)
-        Me.SimpleButton33.Location = New System.Drawing.Point(230, 148)
+        Me.SimpleButton33.Location = New System.Drawing.Point(247, 148)
         Me.SimpleButton33.Name = "SimpleButton33"
         Me.SimpleButton33.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton33.TabIndex = 20
@@ -627,7 +627,7 @@ Partial Class main_menu
         'SimpleButton34
         '
         Me.SimpleButton34.Image = CType(resources.GetObject("SimpleButton34.Image"), System.Drawing.Image)
-        Me.SimpleButton34.Location = New System.Drawing.Point(46, 148)
+        Me.SimpleButton34.Location = New System.Drawing.Point(63, 148)
         Me.SimpleButton34.Name = "SimpleButton34"
         Me.SimpleButton34.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton34.TabIndex = 19
@@ -636,7 +636,7 @@ Partial Class main_menu
         'SimpleButton36
         '
         Me.SimpleButton36.Image = CType(resources.GetObject("SimpleButton36.Image"), System.Drawing.Image)
-        Me.SimpleButton36.Location = New System.Drawing.Point(414, 71)
+        Me.SimpleButton36.Location = New System.Drawing.Point(431, 71)
         Me.SimpleButton36.Name = "SimpleButton36"
         Me.SimpleButton36.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton36.TabIndex = 17
@@ -645,7 +645,7 @@ Partial Class main_menu
         'SimpleButton37
         '
         Me.SimpleButton37.Image = CType(resources.GetObject("SimpleButton37.Image"), System.Drawing.Image)
-        Me.SimpleButton37.Location = New System.Drawing.Point(230, 71)
+        Me.SimpleButton37.Location = New System.Drawing.Point(247, 71)
         Me.SimpleButton37.Name = "SimpleButton37"
         Me.SimpleButton37.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton37.TabIndex = 16
@@ -654,7 +654,7 @@ Partial Class main_menu
         'SimpleButton39
         '
         Me.SimpleButton39.Image = CType(resources.GetObject("SimpleButton39.Image"), System.Drawing.Image)
-        Me.SimpleButton39.Location = New System.Drawing.Point(46, 71)
+        Me.SimpleButton39.Location = New System.Drawing.Point(63, 71)
         Me.SimpleButton39.Name = "SimpleButton39"
         Me.SimpleButton39.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton39.TabIndex = 14
@@ -1152,7 +1152,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = True
+        Me.BackstageViewTabItem5.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -1160,7 +1160,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = False
+        Me.BackstageViewTabItem8.Selected = True
         '
         'BackstageViewTabItem7
         '
