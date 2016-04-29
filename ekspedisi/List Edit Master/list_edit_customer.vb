@@ -26,18 +26,30 @@ Public Class list_edit_customer
                 data.Columns.Add("Provinsi")
             End If
 
-            For i = 0 To master_customer.GridView1.RowCount - 1
-                If master_customer.GridView1.IsRowSelected(i) Then
-                    Dim a As String = master_customer.GridView1.GetRowCellValue(i, "Kode Customer").ToString()
-                    Dim b As String = master_customer.GridView1.GetRowCellValue(i, "Nama Customer").ToString()
-                    Dim c As String = master_customer.GridView1.GetRowCellValue(i, "Alamat").ToString()
-                    Dim d As String = master_customer.GridView1.GetRowCellValue(i, "Email").ToString()
-                    Dim e1 As String = master_customer.GridView1.GetRowCellValue(i, "Telepon 1").ToString()
-                    Dim f As String = master_customer.GridView1.GetRowCellValue(i, "Telepon 2").ToString()
-                    Dim g As String = master_customer.GridView1.GetRowCellValue(i, "Kota").ToString()
-                    Dim h As String = master_customer.GridView1.GetRowCellValue(i, "Provinsi").ToString()
-                    data.Rows.Add(a, b, c, d, e1, f, g, h)
-                End If
+            For i = 0 To master_customer.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT id_customer `Kode Customer`, nama_Customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1' and id_customer = '" & master_customer.checks(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Customer").ToString()
+                Dim b As String = datatemp.Rows(0).Item("Nama Customer").ToString()
+                Dim c As String = datatemp.Rows(0).Item("Alamat").ToString()
+                Dim d As String = datatemp.Rows(0).Item("Email").ToString()
+                Dim e1 As String = datatemp.Rows(0).Item("Telepon 1").ToString()
+                Dim f As String = datatemp.Rows(0).Item("Telepon 2").ToString()
+                Dim g As String = datatemp.Rows(0).Item("Kota").ToString()
+                Dim h As String = datatemp.Rows(0).Item("Provinsi").ToString()
+                data.Rows.Add(a, b, c, d, e1, f, g, h)
+
+                'If master_customer.GridView1.IsRowSelected(i) Then
+                '    Dim a As String = master_customer.GridView1.GetRowCellValue(i, "Kode Customer").ToString()
+                '    Dim b As String = master_customer.GridView1.GetRowCellValue(i, "Nama Customer").ToString()
+                '    Dim c As String = master_customer.GridView1.GetRowCellValue(i, "Alamat").ToString()
+                '    Dim d As String = master_customer.GridView1.GetRowCellValue(i, "Email").ToString()
+                '    Dim e1 As String = master_customer.GridView1.GetRowCellValue(i, "Telepon 1").ToString()
+                '    Dim f As String = master_customer.GridView1.GetRowCellValue(i, "Telepon 2").ToString()
+                '    Dim g As String = master_customer.GridView1.GetRowCellValue(i, "Kota").ToString()
+                '    Dim h As String = master_customer.GridView1.GetRowCellValue(i, "Provinsi").ToString()
+                '    data.Rows.Add(a, b, c, d, e1, f, g, h)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

@@ -198,4 +198,5 @@ Public Class master_user
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
         showgridpreview(GridControl1)
     End Sub
+
 End Class

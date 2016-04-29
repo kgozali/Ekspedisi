@@ -32,7 +32,7 @@ Public Class edit_list_karyawan
 
             For i = 0 To master_karyawan.checks.Rows.Count - 1
                 Dim datatemp As New DataTable
-                datatemp = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+                datatemp = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1' and id_karyawan = '" & master_karyawan.checks.Rows(i).Item(0).ToString & "'")
                 Dim a As String = datatemp.Rows(0).Item("Kode Karyawan").ToString
                 Dim b As String = datatemp.Rows(0).Item("Nama Karyawan").ToString
                 Dim c As String = datatemp.Rows(0).Item("Alamat").ToString

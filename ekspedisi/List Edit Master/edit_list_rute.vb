@@ -27,17 +27,28 @@ Public Class edit_list_rute
                 data.Columns.Add("Unit")
             End If
 
-            For i = 0 To master_rute.GridView2.RowCount - 1
-                If master_rute.GridView2.IsRowSelected(i) Then
-                    Dim a As String = master_rute.GridView2.GetRowCellValue(i, "Kode Rute").ToString()
-                    Dim b As String = master_rute.GridView2.GetRowCellValue(i, "Kota Asal").ToString()
-                    Dim c As String = master_rute.GridView2.GetRowCellValue(i, "Kota Tujuan").ToString()
-                    Dim d As String = master_rute.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
-                    Dim e1 As String = master_rute.GridView2.GetRowCellValue(i, "Price Per Unit").ToString()
-                    Dim f As String = master_rute.GridView2.GetRowCellValue(i, "Unit").ToString()
+            For i = 0 To master_rute.checks.Rows.Count - 1
+                Dim datatemp As New DataTable
+                datatemp = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1' and id_rute = '" & master_rute.checks.Rows(i).Item(0).ToString & "'")
+                Dim a As String = datatemp.Rows(0).Item("Kode Rute").ToString()
+                Dim b As String = datatemp.Rows(0).Item("Kota Asal").ToString()
+                Dim c As String = datatemp.Rows(0).Item("Kota Tujuan").ToString()
+                Dim d As String = datatemp.Rows(0).Item("Nama Principle").ToString()
+                Dim e1 As String = datatemp.Rows(0).Item("Price Per Unit").ToString()
+                Dim f As String = datatemp.Rows(0).Item("Unit").ToString()
 
-                    data.Rows.Add(a, b, c, d, e1, f)
-                End If
+                data.Rows.Add(a, b, c, d, e1, f)
+
+                'If master_rute.GridView2.IsRowSelected(i) Then
+                '    Dim a As String = master_rute.GridView2.GetRowCellValue(i, "Kode Rute").ToString()
+                '    Dim b As String = master_rute.GridView2.GetRowCellValue(i, "Kota Asal").ToString()
+                '    Dim c As String = master_rute.GridView2.GetRowCellValue(i, "Kota Tujuan").ToString()
+                '    Dim d As String = master_rute.GridView2.GetRowCellValue(i, "Nama Principle").ToString()
+                '    Dim e1 As String = master_rute.GridView2.GetRowCellValue(i, "Price Per Unit").ToString()
+                '    Dim f As String = master_rute.GridView2.GetRowCellValue(i, "Unit").ToString()
+
+                '    data.Rows.Add(a, b, c, d, e1, f)
+                'End If
             Next
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1

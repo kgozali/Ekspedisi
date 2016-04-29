@@ -69,6 +69,6 @@ Public Class list_truk_edit
     End Sub
 
     Private Sub list_truk_edit_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        edit_booking.edit_booking_Load(sender, e)
+
     End Sub
 End Class

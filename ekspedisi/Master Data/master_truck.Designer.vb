@@ -59,6 +59,7 @@ Partial Class master_truck
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,7 +135,7 @@ Partial Class master_truck
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(708, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1012, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -298,7 +299,7 @@ Partial Class master_truck
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(595, 534)
+        Me.cancel.Location = New System.Drawing.Point(896, 658)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 56
@@ -310,17 +311,17 @@ Partial Class master_truck
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(13, 184)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(682, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(983, 469)
         Me.GroupControl3.TabIndex = 55
         Me.GroupControl3.Text = "Data Truck"
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 23)
+        Me.GridControl2.Location = New System.Drawing.Point(6, 24)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(671, 316)
+        Me.GridControl2.Size = New System.Drawing.Size(973, 440)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -338,7 +339,7 @@ Partial Class master_truck
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(671, 316)
+        Me.GridControl1.Size = New System.Drawing.Size(973, 441)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -361,7 +362,7 @@ Partial Class master_truck
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(13, 534)
+        Me.editing.Location = New System.Drawing.Point(12, 659)
         Me.editing.Name = "editing"
         Me.editing.Size = New System.Drawing.Size(198, 26)
         Me.editing.TabIndex = 52
@@ -370,7 +371,7 @@ Partial Class master_truck
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(13, 534)
+        Me.hapus.Location = New System.Drawing.Point(12, 659)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 54
@@ -397,11 +398,21 @@ Partial Class master_truck
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(927, 149)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
+        Me.SimpleButton1.TabIndex = 58
+        Me.SimpleButton1.Text = "Print"
+        '
         'master_truck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(704, 568)
+        Me.ClientSize = New System.Drawing.Size(1008, 697)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.cancel)
@@ -470,4 +481,5 @@ Partial Class master_truck
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

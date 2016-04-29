@@ -15,7 +15,7 @@ Public Class booking_truk
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
-            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Hutang Usaha'")
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
             akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
             autogen()
             id.Text = kode
@@ -55,7 +55,8 @@ Public Class booking_truk
         Try
 
             If ceking = True Then
-
+                reset()
+                master_booking.master_booking_Load(sender, e)
             Else
                 If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
                     cek = True
@@ -87,6 +88,7 @@ Public Class booking_truk
         ButtonEdit2.Text = ""
         ButtonEdit4.Text = ""
         principlebook = ""
+        TimeEdit1.Reset()
         trukbook = ""
         rutebook = ""
         tabelkontak.Rows.Clear()
@@ -190,6 +192,8 @@ Public Class booking_truk
             If insert = True Then
                 MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
+                reset()
+
                 Me.Close()
             End If
         Catch ex As Exception
@@ -279,6 +283,10 @@ Public Class booking_truk
             'Insert djurnal bayar dp = hutang pada kas
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
+
+            
+
+           
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

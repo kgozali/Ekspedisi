@@ -1,5 +1,7 @@
 ﻿Public Class pelunasan_hutang_supir 
-
+    Dim akunhutang As String = ""
+    Dim idakun As String = ""
+    Dim tampung As String = ""
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
@@ -13,7 +15,7 @@
             If idkaryawan.Text = "Belum Terisi" Or kotaasal.Text = "Belum Terisi" Then
                 MessageBox.Show("Karyawan Belum Dipilih")
             Else
-                Dim tampung As String = autogenerate("PPS", "select max(id_phutangkaryawan) from pelunasan_hutang_supir")
+                tampung = autogenerate("PPS", "select max(id_phutangkaryawan) from pelunasan_hutang_supir")
                 InsertInto("INSERT INTO `pelunasan_hutang_supir`(`id_phutangkaryawan`, `tgl`, `total_nominal`, `id_karyawan`) VALUES ('" & tampung & "'," & tanggalpembayaran.Value.ToString("yyyyMMdd") & "," & totaldibayar.Text & ",'" & idkaryawan.Text & "')")
                 For i = 0 To datapiutang.RowCount - 1
                     If datapiutang.GetRowCellValue(i, "Bayar") = True Then
@@ -33,10 +35,13 @@
     Private Sub pelunasan_hutang_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim data As New DataTable
-            data = DtTable("select * from makun where tipe_akun='Kas&Bank'")
+            data = DtTable("select * from makun where tipe_akun='Kas&Bank' and det")
             namaakun.DataSource = data
             namaakun.DisplayMember = "nama_akun"
             namaakun.ValueMember = "kode_akun"
+
+
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -80,6 +85,16 @@
     End Sub
 
     Sub jurnal()
+        Try
+            Dim total As Integer = totaldibayar.Text
+            Dim mintotal As Integer = total * -1
+            idakun = namaakun.SelectedValue.ToString
+            InsertInto("insert into jurnal values('" + tampung.ToString + "',now()")
+            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + akunhutang.ToString + "','','" + total.ToString + "'")
+            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + idakun.ToString + "','','" + mintotal.ToString + "'")
+        Catch ex As Exception
 
+        End Try
+        
     End Sub
 End Class
