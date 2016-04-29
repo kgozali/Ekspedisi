@@ -68,7 +68,6 @@ Partial Class pelunasan_piutang
         Me.save = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.nomerpelunasan = New System.Windows.Forms.TextBox()
-        Me.idprinciple = New System.Windows.Forms.Label()
         CType(Me.principle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -133,6 +132,7 @@ Partial Class pelunasan_piutang
         '
         'alamat
         '
+        Me.alamat.Enabled = False
         Me.alamat.Location = New System.Drawing.Point(112, 37)
         Me.alamat.Name = "alamat"
         Me.alamat.Size = New System.Drawing.Size(270, 60)
@@ -448,22 +448,11 @@ Partial Class pelunasan_piutang
         Me.nomerpelunasan.Size = New System.Drawing.Size(174, 21)
         Me.nomerpelunasan.TabIndex = 151
         '
-        'idprinciple
-        '
-        Me.idprinciple.AutoSize = True
-        Me.idprinciple.Location = New System.Drawing.Point(448, 80)
-        Me.idprinciple.Name = "idprinciple"
-        Me.idprinciple.Size = New System.Drawing.Size(54, 13)
-        Me.idprinciple.TabIndex = 152
-        Me.idprinciple.Text = "idprinciple"
-        Me.idprinciple.Visible = False
-        '
         'pelunasan_piutang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(823, 610)
-        Me.Controls.Add(Me.idprinciple)
         Me.Controls.Add(Me.nomerpelunasan)
         Me.Controls.Add(Me.LabelControl13)
         Me.Controls.Add(Me.cancel)
@@ -541,7 +530,6 @@ Partial Class pelunasan_piutang
     Friend WithEvents DataColumn5 As System.Data.DataColumn
     Friend WithEvents DataColumn6 As System.Data.DataColumn
     Friend WithEvents DataColumn7 As System.Data.DataColumn
-    Friend WithEvents idprinciple As System.Windows.Forms.Label
     Friend WithEvents bayaran As System.Data.DataTable
     Friend WithEvents DataColumn8 As System.Data.DataColumn
     Friend WithEvents DataColumn9 As System.Data.DataColumn

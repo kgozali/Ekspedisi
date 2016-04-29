@@ -92,7 +92,7 @@ Public Class main_menu
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-      
+
     End Sub
 
     Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
@@ -120,7 +120,7 @@ Public Class main_menu
     End Sub
 
     Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
-      
+
         If backuppath.Text = "" Then
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
@@ -184,7 +184,7 @@ Public Class main_menu
         frm_reportprinciple.ShowDialog()
     End Sub
 
-    
+
 
     Private Sub SimpleButton37_Click(sender As Object, e As EventArgs) Handles SimpleButton37.Click
         frm_laporankir.ShowDialog()

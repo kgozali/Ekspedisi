@@ -142,6 +142,8 @@ Public Module Module1
 
     End Function
 
+
+
     Function DtTableupdateharga(ByVal x As String)
         'select khusus master data yang perlu checkbox 
         Try

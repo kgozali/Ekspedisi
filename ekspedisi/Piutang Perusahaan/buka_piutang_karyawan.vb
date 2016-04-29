@@ -45,6 +45,8 @@
         Me.Close()
     End Sub
 
+
+
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         If idkaryawan.Text <> "" Then
             id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")

@@ -379,6 +379,12 @@
     <Compile Include="Piutang Perusahaan\kwitansi.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansipembayarankaryawan.Designer.vb">
+      <DependentUpon>kwitansipembayarankaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansipembayarankaryawan.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\lihat_cicilan_karyawan.Designer.vb">
       <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>
     </Compile>
@@ -1053,6 +1059,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\kwitansi.resx">
       <DependentUpon>kwitansi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\kwitansipembayarankaryawan.resx">
+      <DependentUpon>kwitansipembayarankaryawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\lihat_cicilan_karyawan.resx">
       <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>

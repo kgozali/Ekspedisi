@@ -53,8 +53,9 @@
                 End With
             Next i
             pelunasan_piutang.totalpiutang.Text = angka.ToString
+            pelunasan_piutang.namakeamanan = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Nama Principle")
             pelunasan_piutang.principle.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Nama Principle")
-            pelunasan_piutang.idprinciple.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Kode Principle")
+            pelunasan_piutang.idprinciple = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Kode Principle")
             pelunasan_piutang.alamat.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Alamat")
             Me.Close()
         Catch ex As Exception

@@ -1,6 +1,7 @@
 ﻿Public Class pelunansan_piutang_karyawan 
     Dim debet As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
     Dim kredit As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
+    Public keamanankaryawan As String = ""
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
@@ -19,41 +20,41 @@
                     Dim data As New DataTable
                     data = DtTable("SELECT id_piutangkaryawan FROM `dpiutang_karyawan` WHERE id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
 
-                    If datapiutang.GetRowCellValue(i, "Sisa") = 0 Then
+                    If datapiutang.GetRowCellValue(i, "Sisa") = datapiutang.GetRowCellValue(i, "Bayar") Then
                         syaratlunas = True
                     End If
-                    If datapiutang.GetRowCellValue(i, "Bayar").ToString = "" Then
+                    If datapiutang.GetRowCellValue(i, "Check List Bayar") = False Then
                         syaratnol = True
                     End If
                     If data.Rows.Count > 0 Then
                         syaratcicil = True
                     End If
                     If syaratlunas = True And syaratnol = False And syaratcicil = False Then
-                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
                         InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratlunas = False And syaratnol = False And syaratcicil = False Then
-                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratcicil = True And syaratnol = False And syaratlunas = False Then
-                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratcicil = False And syaratnol = False And syaratlunas = False Then
-                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
                         InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & System.DateTime.Today.ToString("yyyMMdd") & ")")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & kredit & "','Buka Piutang Karyawan'," & opo & ")")
                     ElseIf syaratlunas = True And syaratnol = False And syaratcicil = True Then
-                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "')")
+                        InsertInto("insert into dpiutang_karyawan values ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & datapiutang.GetRowCellValue(i, "Bayar") & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
                         InsertInto("update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
                         Dim opo As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") * -1
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "','" & debet & "','Buka Piutang Karyawan'," & datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") & ")")
@@ -63,6 +64,16 @@
                 Dim tabel As New DataTable
                 tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,nominal,nominal-sum(jumlah_dibayar)) as `Sisa` FROM piutang_karyawan p left join dpiutang_karyawan d on d.id_piutangkaryawan=p.id_piutangkaryawan where p.id_karyawan='" & namakaryawan.Text & "' and status='1' group by p.id_piutangkaryawan;")
                 daftarutang.DataSource = tabel
+                Dim hitung As Integer = 0
+                For i = 0 To tabel.Rows.Count - 1
+                    With datapiutang
+                        .SetRowCellValue(i, "Check List Bayar", False)
+                    End With
+                    With datapiutang
+                        .SetRowCellValue(i, "Bayar", 0)
+                    End With
+                    hitung = hitung + tabel.Rows(i).Item("Sisa")
+                Next i
                 MessageBox.Show("Piutang berhasil di update")
             Else
                 MessageBox.Show("Karyawan tidak memiliki piutang")
@@ -86,20 +97,16 @@
             Dim angka As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Nominal")
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
-                If IsDBNull(e.Value) = False Then
-                    angka = angka - angka2 - e.Value
-                End If
 
-                If angka < 0 Then
-                    With datapiutang
-                        MessageBox.Show("Uang Kembali = " & angka * -1)
-                        .SetRowCellValue(.FocusedRowHandle, "Sisa", 0)
-                    End With
-                Else
-                    With datapiutang
-                        .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
-                    End With
-                End If
+                'If angka < 0 Then
+                '    With datapiutang
+                '        .SetRowCellValue(.FocusedRowHandle, "Bayar", datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Sisa"))
+                '    End With
+                'Else
+                '    With datapiutang
+                '        .SetRowCellValue(.FocusedRowHandle, "Sisa", angka)
+                '    End With
+                'End If
 
                 Dim hitung As Double = 0
                 For i = 0 To datapiutang.RowCount - 1
@@ -116,7 +123,7 @@
 
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
         Try
-            If datapiutang.FocusedColumn.AbsoluteIndex <> 8 Then
+            If datapiutang.FocusedColumn.AbsoluteIndex <> 8 And IsDBNull(datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Check List Bayar")) = False Then
                 keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
             End If
         Catch ex As Exception
@@ -134,17 +141,23 @@
 
             End If
             If e.Column.FieldName = "Check List Bayar" Then
-                With datapiutang
-                    .SetRowCellValue(.FocusedRowHandle, "Bayar", datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Sisa"))
-                End With
-                Dim hitung As Double = 0
-                For i = 0 To datapiutang.RowCount - 1
-                    If IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = False Then
-                        hitung = hitung + datapiutang.GetRowCellValue(i, "Bayar")
-                    End If
-                Next i
-                totalbayar.Text = hitung.ToString
-            End If
+                If e.Value = True Then
+                    With datapiutang
+                        .SetRowCellValue(.FocusedRowHandle, "Bayar", datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Sisa"))
+                    End With
+                Else
+                    With datapiutang
+                        .SetRowCellValue(.FocusedRowHandle, "Bayar", 0)
+                    End With
+                End If
+                    Dim hitung As Double = 0
+                    For i = 0 To datapiutang.RowCount - 1
+                        If IsDBNull(datapiutang.GetRowCellValue(i, "Bayar")) = False Then
+                            hitung = hitung + datapiutang.GetRowCellValue(i, "Bayar")
+                        End If
+                    Next i
+                    totalbayar.Text = hitung.ToString
+                End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -163,22 +176,6 @@
 
     Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
         daftar_karyawan_pelunasan.ShowDialog()
-    End Sub
-
-    Private Sub idkaryawan_TextChanged(sender As Object, e As EventArgs) Handles idkaryawan.TextChanged
-        'Try
-        '    Dim data As New DataTable
-        '    data = DtTable("SELECT id_karyawan as `Kode Karyawan`, nama_karyawan as `Nama Karyawan`, nama_jabatan as `Jabatan`, tel1 as `Nomor Telepon 1`, tel2 as `Nomor Telepon 2`,kota as 'Kota'  FROM mkaryawan mk,mjabatan mj where mj.id_jabatan=mk.id_jabatan and nama_karyawan = '" & idkaryawan.Text & "'")
-        '    If data.Rows.Count > 0 Then
-        '        idkaryawan.Text = data.Rows(0).Item("Kode Karyawan").ToString
-        '        namakaryawan.Text = data.Rows(0).Item("Nama Karyawan").ToString
-        '        jabatan.Text = data.Rows(0).Item("Jabatan").ToString
-        '        kotaasal.Text = data.Rows(0).Item("Kota").ToString
-        '        nomortelepon.Text = data.Rows(0).Item("Nomor Telepon 1").ToString
-        '    End If
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message)
-        'End Try
     End Sub
 
     Public Sub New()

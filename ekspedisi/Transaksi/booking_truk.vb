@@ -15,7 +15,7 @@ Public Class booking_truk
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
-            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Hutang Usaha'")
+            akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
             akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
             autogen()
             id.Text = kode
@@ -279,6 +279,10 @@ Public Class booking_truk
             'Insert djurnal bayar dp = hutang pada kas
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
+
+            
+
+           
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
