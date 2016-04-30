@@ -14,23 +14,28 @@ Public Class transaksi_DO
     Dim defpendapatan As String = ""
     Private Sub idbooking_EditValueChanged(sender As Object, e As EventArgs) Handles idbooking.EditValueChanged
         Try
-            'select nama principle
-            Dim data As String = ""
-            data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + idbooking.Text.ToString + "' and mprinciple.id_principle=booking_truk.id_principle")
-            TextBox2.Text = data
-            namaprinciple = data
+            If idbooking.Text = "" Then
 
-            'select id principle
-            Dim data2 As String = ""
-            data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
-            idprinciple = data2
+            Else
+                'select nama principle
+                Dim data As String = ""
+                data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + idbooking.Text.ToString + "' and mprinciple.id_principle=booking_truk.id_principle")
+                TextBox2.Text = data
+                namaprinciple = data
+                'select tanggal kirim
+                tanggalterkirim.Value = Scalar("select tgl from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+                'select id principle
+                Dim data2 As String = ""
+                data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+                idprinciple = data2
 
-            'select rute
-            Dim rute As String = ""
-            rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
+                'select rute
+                Dim rute As String = ""
+                rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
 
-            'select price untuk rute
-            price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
+                'select price untuk rute
+                price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -82,33 +87,41 @@ Public Class transaksi_DO
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            Dim kem As String = ""
-            If nomerdo.Text = "" Then
-                MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Else
-                If GridView1.DataRowCount < 1 Then
-                    MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Else
-                    Dim sum As Integer = 0
-                    sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
-                    total = sum * price
-                    generate()
-                    Dim totalkredit As Integer = total * -1
-                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
-                    For i = 0 To GridView1.DataRowCount - 1
-                        InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
-                    Next
-                    InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
-                    Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
-                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
-                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
-                    If ins = True Then
-                        MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        audit()
-                    End If
-                    res()
-                    Me.Close()
 
+            If tgldo.Value > tanggalterkirim.Value Then
+                MessageBox.Show("Tanggal DO tidak diperbolehkan melebihi Tanggal Kirim", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                If tanggalterkirim.Value > tanggaljatuhtempo.Value Then
+                    MessageBox.Show("Tanggal Kirim tidak diperbolehkan melebihi Tanggal Jatuh Tempo", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    If nomerdo.Text = "" Then
+                        MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        If GridView1.DataRowCount < 1 Then
+                            MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            Dim sum As Integer = 0
+                            sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+                            total = sum * price
+                            generate()
+                            Dim totalkredit As Integer = total * -1
+                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                            For i = 0 To GridView1.DataRowCount - 1
+                                InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+                            Next
+                            InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
+                            Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "')")
+                            InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
+                            InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+                            If ins = True Then
+                                MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                audit()
+                            End If
+                            res()
+                            Me.Close()
+
+                        End If
+                    End If
                 End If
 
 
@@ -199,38 +212,44 @@ Public Class transaksi_DO
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         Try
-            Dim kem As String = ""
-            If nomerdo.Text = "" Then
-                MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            If tgldo.Value > tanggalterkirim.Value Then
+                MessageBox.Show("Tanggal DO tidak diperbolehkan melebihi Tanggal Kirim", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If GridView1.DataRowCount < 1 Then
-                    MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                If tanggalterkirim.Value > tanggaljatuhtempo.Value Then
+                    MessageBox.Show("Tanggal Kirim tidak diperbolehkan melebihi Tanggal Jatuh Tempo", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    Dim sum As Integer = 0
-                    sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
-                    total = sum * price
-                    generate()
-                    Dim totalkredit As Integer = total * -1
-                    InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "',now(),'" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
-                    For i = 0 To GridView1.DataRowCount - 1
-                        InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
-                    Next
-                    InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
-                    Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
-                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
-                    InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
-                    If ins = True Then
-                        MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        audit()
-                        frm_notado.transid = kode
-                        frm_notado.ShowDialog()
+                    If nomerdo.Text = "" Then
+                        MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        If GridView1.DataRowCount < 1 Then
+                            MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            Dim sum As Integer = 0
+                            sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+                            total = sum * price
+                            generate()
+                            Dim totalkredit As Integer = total * -1
+                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                            For i = 0 To GridView1.DataRowCount - 1
+                                InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+                            Next
+                            InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
+                            Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "')")
+                            InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
+                            InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+                            If ins = True Then
+                                MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                audit()
+                                frm_notado.transid = kode
+                                frm_notado.ShowDialog()
+                            End If
+                            res()
+                            Me.Close()
+
+                        End If
                     End If
-                    res()
-                    Me.Close()
-
                 End If
-
-
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)

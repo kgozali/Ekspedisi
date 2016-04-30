@@ -132,6 +132,7 @@ Public Class kas_masuk
         RepositoryItemLookUpEdit1.DataSource = tbakundetil
         RepositoryItemLookUpEdit1.DisplayMember = "descr"
         RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
+
         tbtruk = DtTable(" select * from (select '' no_pol,0 id_truk union all select no_pol, id_truk from mtruk) x  order by no_pol")
 
         RepositoryItemLookUpEdit2.DataSource = tbtruk
@@ -248,5 +249,9 @@ Public Class kas_masuk
                 Me.Close()
             End If
         End If
+    End Sub
+
+    Private Sub GridControl1_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

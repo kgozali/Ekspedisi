@@ -195,4 +195,12 @@ Public Class main_menu
     Private Sub SimpleButton13_Click(sender As Object, e As EventArgs) Handles SimpleButton13.Click
         Audit_Log.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton30_Click(sender As Object, e As EventArgs) Handles SimpleButton30.Click
+        Bank_Masuk.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton29_Click(sender As Object, e As EventArgs) Handles SimpleButton29.Click
+        Bank_Keluar.ShowDialog()
+    End Sub
 End Class

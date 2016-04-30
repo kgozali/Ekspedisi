@@ -41,6 +41,8 @@ Partial Class transaksi_DO
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.tgldo = New System.Windows.Forms.DateTimePicker()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -80,16 +82,16 @@ Partial Class transaksi_DO
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(50, 62)
+        Me.LabelControl4.Location = New System.Drawing.Point(72, 86)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(109, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl4.TabIndex = 36
-        Me.LabelControl4.Text = "Tanggal Terkirim"
+        Me.LabelControl4.Text = "Tanggal Kirim"
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(15, 86)
+        Me.LabelControl6.Location = New System.Drawing.Point(12, 112)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(149, 18)
         Me.LabelControl6.TabIndex = 38
@@ -121,14 +123,15 @@ Partial Class transaksi_DO
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
-        Me.tanggalterkirim.Location = New System.Drawing.Point(174, 59)
+        Me.tanggalterkirim.Enabled = False
+        Me.tanggalterkirim.Location = New System.Drawing.Point(175, 86)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
         Me.tanggalterkirim.TabIndex = 5
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 83)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 112)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
         Me.tanggaljatuhtempo.TabIndex = 7
@@ -154,9 +157,9 @@ Partial Class transaksi_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 119)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 154)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(989, 510)
+        Me.GroupControl3.Size = New System.Drawing.Size(989, 475)
         Me.GroupControl3.TabIndex = 148
         Me.GroupControl3.Text = "Data Transaksi"
         '
@@ -208,7 +211,7 @@ Partial Class transaksi_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(896, 75)
+        Me.SimpleButton2.Location = New System.Drawing.Point(896, 121)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 153
@@ -223,11 +226,30 @@ Partial Class transaksi_DO
         Me.SimpleButton3.TabIndex = 10
         Me.SimpleButton3.Text = "Submit and Print"
         '
+        'tgldo
+        '
+        Me.tgldo.CustomFormat = "ddMMyyyy"
+        Me.tgldo.Location = New System.Drawing.Point(175, 62)
+        Me.tgldo.Name = "tgldo"
+        Me.tgldo.Size = New System.Drawing.Size(200, 21)
+        Me.tgldo.TabIndex = 154
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(81, 64)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl5.TabIndex = 155
+        Me.LabelControl5.Text = "Tanggal DO"
+        '
         'transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 677)
+        Me.Controls.Add(Me.tgldo)
+        Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextBox2)
@@ -280,4 +302,6 @@ Partial Class transaksi_DO
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents tgldo As System.Windows.Forms.DateTimePicker
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
 End Class

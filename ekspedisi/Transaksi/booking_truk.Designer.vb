@@ -42,6 +42,8 @@ Partial Class booking_truk
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,11 +72,11 @@ Partial Class booking_truk
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(12, 34)
+        Me.Label2.Location = New System.Drawing.Point(31, 57)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 18)
+        Me.Label2.Size = New System.Drawing.Size(96, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Tanggal Booking"
+        Me.Label2.Text = "Tanggal Kirim"
         '
         'Label4
         '
@@ -90,7 +92,7 @@ Partial Class booking_truk
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(88, 56)
+        Me.Label6.Location = New System.Drawing.Point(592, 58)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 18)
         Me.Label6.TabIndex = 5
@@ -116,7 +118,7 @@ Partial Class booking_truk
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(136, 31)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(136, 55)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 13
@@ -165,7 +167,7 @@ Partial Class booking_truk
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(136, 56)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(640, 58)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
@@ -247,11 +249,30 @@ Partial Class booking_truk
         Me.LabelControl10.TabIndex = 55
         Me.LabelControl10.Text = "Catatan"
         '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(136, 31)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker2.TabIndex = 155
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label5.Location = New System.Drawing.Point(12, 34)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(115, 18)
+        Me.Label5.TabIndex = 154
+        Me.Label5.Text = "Tanggal Booking"
+        '
         'booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(815, 454)
+        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.LabelControl10)
@@ -311,4 +332,6 @@ Partial Class booking_truk
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

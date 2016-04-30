@@ -42,6 +42,8 @@ Partial Class edit_booking
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +115,7 @@ Partial Class edit_booking
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(48, 82)
+        Me.Label3.Location = New System.Drawing.Point(48, 86)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 18)
         Me.Label3.TabIndex = 172
@@ -122,7 +124,7 @@ Partial Class edit_booking
         'TimeEdit1
         '
         Me.TimeEdit1.EditValue = New Date(2016, 4, 8, 0, 0, 0, 0)
-        Me.TimeEdit1.Location = New System.Drawing.Point(128, 80)
+        Me.TimeEdit1.Location = New System.Drawing.Point(128, 84)
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
@@ -147,7 +149,7 @@ Partial Class edit_booking
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(128, 58)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(632, 60)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
@@ -181,7 +183,7 @@ Partial Class edit_booking
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(128, 33)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(128, 60)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 161
@@ -208,7 +210,7 @@ Partial Class edit_booking
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(80, 58)
+        Me.Label6.Location = New System.Drawing.Point(584, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 18)
         Me.Label6.TabIndex = 158
@@ -228,11 +230,11 @@ Partial Class edit_booking
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(4, 36)
+        Me.Label2.Location = New System.Drawing.Point(4, 63)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 18)
+        Me.Label2.Size = New System.Drawing.Size(96, 18)
         Me.Label2.TabIndex = 156
-        Me.Label2.Text = "Tanggal Booking"
+        Me.Label2.Text = "Tanggal Kirim"
         '
         'Label1
         '
@@ -244,11 +246,30 @@ Partial Class edit_booking
         Me.Label1.TabIndex = 155
         Me.Label1.Text = "Kode Booking"
         '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(128, 35)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker2.TabIndex = 174
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label5.Location = New System.Drawing.Point(3, 37)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(115, 18)
+        Me.Label5.TabIndex = 173
+        Me.Label5.Text = "Tanggal Booking"
+        '
         'edit_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(798, 516)
+        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.RichTextBox2)
@@ -308,4 +329,6 @@ Partial Class edit_booking
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

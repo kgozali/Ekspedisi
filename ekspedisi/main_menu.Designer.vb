@@ -189,8 +189,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
-        Me.BackstageViewControl1.SelectedTabIndex = 2
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem6
+        Me.BackstageViewControl1.SelectedTabIndex = 5
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -723,21 +723,21 @@ Partial Class main_menu
         '
         'SimpleButton29
         '
-        Me.SimpleButton29.Image = CType(resources.GetObject("SimpleButton29.Image"), System.Drawing.Image)
+        Me.SimpleButton29.Image = Global.ekspedisi.My.Resources.Resources.product_32x32
         Me.SimpleButton29.Location = New System.Drawing.Point(425, 80)
         Me.SimpleButton29.Name = "SimpleButton29"
         Me.SimpleButton29.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton29.TabIndex = 21
-        Me.SimpleButton29.Text = "Tutup Principle"
+        Me.SimpleButton29.Text = "Bank Keluar"
         '
         'SimpleButton30
         '
-        Me.SimpleButton30.Image = CType(resources.GetObject("SimpleButton30.Image"), System.Drawing.Image)
+        Me.SimpleButton30.Image = Global.ekspedisi.My.Resources.Resources.packageproduct_32x32
         Me.SimpleButton30.Location = New System.Drawing.Point(241, 80)
         Me.SimpleButton30.Name = "SimpleButton30"
         Me.SimpleButton30.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton30.TabIndex = 20
-        Me.SimpleButton30.Text = "Tutup Karyawan"
+        Me.SimpleButton30.Text = "Bank Masuk"
         '
         'SimpleButton32
         '
@@ -1064,7 +1064,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = True
+        Me.BackstageViewTabItem5.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -1088,7 +1088,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem6.ContentControl = Me.BackstageViewClientControl6
         Me.BackstageViewTabItem6.Glyph = CType(resources.GetObject("BackstageViewTabItem6.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem6.Name = "BackstageViewTabItem6"
-        Me.BackstageViewTabItem6.Selected = False
+        Me.BackstageViewTabItem6.Selected = True
         '
         'BackstageViewTabItem10
         '
