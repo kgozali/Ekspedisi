@@ -104,6 +104,7 @@ Public Class transaksi_DO
                     InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
                     If ins = True Then
                         MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        audit()
                     End If
                     res()
                     Me.Close()
@@ -116,6 +117,13 @@ Public Class transaksi_DO
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Transaksi DO"
+        Dim aktivitas As String = "Add DO: " & kode.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub tanggalterkirim_ValueChanged(sender As Object, e As EventArgs) Handles tanggalterkirim.ValueChanged
@@ -213,6 +221,7 @@ Public Class transaksi_DO
                     InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
                     If ins = True Then
                         MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        audit()
                         frm_notado.transid = kode
                         frm_notado.ShowDialog()
                     End If

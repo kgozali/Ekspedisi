@@ -19,10 +19,11 @@ Partial Class master_DO
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_DO))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -32,8 +33,6 @@ Partial Class master_DO
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.tgl = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
@@ -57,7 +56,6 @@ Partial Class master_DO
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,9 +64,6 @@ Partial Class master_DO
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,7 +74,7 @@ Partial Class master_DO
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 203)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
+        Me.GroupControl3.Size = New System.Drawing.Size(979, 444)
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Daftar DO"
         '
@@ -89,7 +84,7 @@ Partial Class master_DO
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(724, 415)
+        Me.GridControl1.Size = New System.Drawing.Size(969, 415)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -177,24 +172,6 @@ Partial Class master_DO
         Me.cari.Name = "cari"
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(752, 203)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(244, 319)
-        Me.GroupControl2.TabIndex = 49
-        Me.GroupControl2.Text = "Scan DO"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(234, 286)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'SimpleButton1
         '
@@ -384,27 +361,15 @@ Partial Class master_DO
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(757, 529)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 161
-        Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
-        '
         'master_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "master_DO"
@@ -419,9 +384,6 @@ Partial Class master_DO
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
@@ -438,8 +400,6 @@ Partial Class master_DO
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents tgl As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
@@ -464,7 +424,6 @@ Partial Class master_DO
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents PrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

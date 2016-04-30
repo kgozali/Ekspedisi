@@ -155,6 +155,7 @@ Public Class edit_DO
                 If update = True And boolcek = True Then
                     MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     'insert jurnal
+                    auditloger()
                     jurnal()
                     reset()
                     Me.Close()
@@ -165,6 +166,13 @@ Public Class edit_DO
         End If
 
 
+    End Sub
+    Sub auditloger()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Transaksi DO"
+        Dim aktivitas As String = "Edit DO: " & kodetrans.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub edit_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

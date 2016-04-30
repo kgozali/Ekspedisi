@@ -45,7 +45,7 @@ Public Class master_DO
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
-                Label1.Text = path
+
 
             ElseIf kodebooking.Checked = True Then
 
@@ -57,7 +57,7 @@ Public Class master_DO
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
-                Label1.Text = path
+
 
             ElseIf tgl.Checked = True Then
                 cari.Visible = False
@@ -68,7 +68,7 @@ Public Class master_DO
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
                 path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
-                Label1.Text = path
+
             End If
             unallowedit()
 
@@ -130,14 +130,7 @@ Public Class master_DO
     End Sub
 
    
-    Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
-        Try
-            PictureBox1.Image = Image.FromFile(Label1.Text)
-        Catch
-
-        End Try
-
-    End Sub
+    
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()

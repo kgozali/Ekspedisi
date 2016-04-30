@@ -72,7 +72,13 @@ Public Class edit_kir_truk
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Edit KIR"
+        Dim aktivitas As String = "Edit KIR Truk: " & kode.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Sub insert()
         Try
             Dim bool As Boolean = InsertInto("update kir set no_kir='" + TextEdit2.Text.ToString + "',tgl_kir='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl_kir_berikutnya='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',nominal='" + nominal.ToString + "' where id_kir='" + kode.ToString + "'")

@@ -230,11 +230,13 @@ Public Class KIR_Truk
                                 If msg = DialogResult.OK Then
                                     insert()
                                     insertakun()
+                                    audit()
                                     Me.Close()
                                 End If
                             Else
                                 insert()
                                 insertakun()
+                                audit()
                                 Me.Close()
                             End If
                         End If
@@ -244,6 +246,13 @@ Public Class KIR_Truk
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "KIR"
+        Dim aktivitas As String = "KIR Truk: " & kode.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Sub insert()
         inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")

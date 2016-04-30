@@ -19,6 +19,7 @@ Partial Class master_KIR
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_KIR))
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
@@ -42,7 +43,7 @@ Partial Class master_KIR
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteKIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
