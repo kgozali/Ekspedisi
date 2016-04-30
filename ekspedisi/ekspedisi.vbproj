@@ -301,6 +301,12 @@
     <Compile Include="Akuntansi\tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Audit Log\Audit Log.Designer.vb">
+      <DependentUpon>Audit Log.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Audit Log\Audit Log.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="history.Designer.vb">
       <DependentUpon>history.vb</DependentUpon>
     </Compile>
@@ -999,6 +1005,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\tutup_principle.resx">
       <DependentUpon>tutup_principle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit Log\Audit Log.resx">
+      <DependentUpon>Audit Log.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>

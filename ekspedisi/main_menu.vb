@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class main_menu
 
-
+    Public username As String = ""
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
         'master_supir.ShowDialog()
     End Sub

@@ -136,6 +136,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -197,8 +198,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
-        Me.BackstageViewControl1.SelectedTabIndex = 2
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem10
+        Me.BackstageViewControl1.SelectedTabIndex = 6
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -859,6 +860,7 @@ Partial Class main_menu
         '
         'BackstageViewClientControl10
         '
+        Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton13)
         Me.BackstageViewClientControl10.Controls.Add(Me.Label7)
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton21)
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
@@ -881,18 +883,18 @@ Partial Class main_menu
         'SimpleButton21
         '
         Me.SimpleButton21.Image = CType(resources.GetObject("SimpleButton21.Image"), System.Drawing.Image)
-        Me.SimpleButton21.Location = New System.Drawing.Point(456, 83)
+        Me.SimpleButton21.Location = New System.Drawing.Point(297, 79)
         Me.SimpleButton21.Name = "SimpleButton21"
-        Me.SimpleButton21.Size = New System.Drawing.Size(252, 54)
+        Me.SimpleButton21.Size = New System.Drawing.Size(218, 54)
         Me.SimpleButton21.TabIndex = 5
         Me.SimpleButton21.Text = "Log Out"
         '
         'SimpleButton22
         '
         Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
-        Me.SimpleButton22.Location = New System.Drawing.Point(104, 83)
+        Me.SimpleButton22.Location = New System.Drawing.Point(49, 79)
         Me.SimpleButton22.Name = "SimpleButton22"
-        Me.SimpleButton22.Size = New System.Drawing.Size(252, 54)
+        Me.SimpleButton22.Size = New System.Drawing.Size(218, 54)
         Me.SimpleButton22.TabIndex = 4
         Me.SimpleButton22.Text = "Change Password"
         '
@@ -1152,7 +1154,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = True
+        Me.BackstageViewTabItem5.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -1184,7 +1186,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
         Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
-        Me.BackstageViewTabItem10.Selected = False
+        Me.BackstageViewTabItem10.Selected = True
         '
         'backuprestore
         '
@@ -1256,6 +1258,15 @@ Partial Class main_menu
         '
         'sfd
         '
+        '
+        'SimpleButton13
+        '
+        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
+        Me.SimpleButton13.Location = New System.Drawing.Point(545, 79)
+        Me.SimpleButton13.Name = "SimpleButton13"
+        Me.SimpleButton13.Size = New System.Drawing.Size(218, 54)
+        Me.SimpleButton13.TabIndex = 21
+        Me.SimpleButton13.Text = "Audit Log"
         '
         'main_menu
         '
@@ -1434,4 +1445,5 @@ Partial Class main_menu
     Friend WithEvents SimpleButton41 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents restorepath As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
 End Class

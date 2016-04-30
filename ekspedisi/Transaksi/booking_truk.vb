@@ -182,7 +182,7 @@ Public Class booking_truk
         End Try
     End Sub
     Sub audit()
-        Dim user As String = "Kevin"
+        Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Booking Truk"
         Dim aktivitas As String = "Add Booking: " & kode.ToString
