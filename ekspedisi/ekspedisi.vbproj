@@ -379,11 +379,23 @@
     <Compile Include="Piutang Perusahaan\viewkwitansi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report\frm_principledetail.Designer.vb">
+      <DependentUpon>frm_principledetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_principledetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report\frm_reportprinciple.Designer.vb">
       <DependentUpon>frm_reportprinciple.vb</DependentUpon>
     </Compile>
     <Compile Include="Report\frm_reportprinciple.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\principledetail.Designer.vb">
+      <DependentUpon>principledetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\principledetail.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\Reportprinciple.Designer.vb">
       <DependentUpon>Reportprinciple.vb</DependentUpon>
@@ -1066,8 +1078,14 @@
     <EmbeddedResource Include="Piutang Perusahaan\viewkwitansi.resx">
       <DependentUpon>viewkwitansi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_principledetail.resx">
+      <DependentUpon>frm_principledetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_reportprinciple.resx">
       <DependentUpon>frm_reportprinciple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\principledetail.resx">
+      <DependentUpon>principledetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Reportprinciple.resx">
       <DependentUpon>Reportprinciple.vb</DependentUpon>

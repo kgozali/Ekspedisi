@@ -201,7 +201,7 @@ Partial Public Class Reportprinciple
         '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 26.0!
+        Me.TopMargin.HeightF = 63.49999!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -663,7 +663,7 @@ Partial Public Class Reportprinciple
         Me.DataSource = Me.SqlDataSource1
         Me.FilterString = "[tgl_terkirim] Between(?tglawal, ?tglakhir) And [id_principle] = ?principle And [" & _
     "Status] = ?status"
-        Me.Margins = New System.Drawing.Printing.Margins(11, 0, 26, 100)
+        Me.Margins = New System.Drawing.Printing.Margins(11, 0, 63, 100)
         Me.PageHeight = 1169
         Me.PageWidth = 827
         Me.PaperKind = System.Drawing.Printing.PaperKind.A4
