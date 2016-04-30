@@ -17,7 +17,8 @@ Public Class master_booking
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
-                ContextMenuStrip1.Enabled = False
+                ContextMenuStrip1.Items(0).Enabled = False
+                ContextMenuStrip1.Items(1).Enabled = True
             End If
 
            

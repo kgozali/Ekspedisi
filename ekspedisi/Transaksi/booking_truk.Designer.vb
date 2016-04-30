@@ -44,6 +44,7 @@ Partial Class booking_truk
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,18 +127,18 @@ Partial Class booking_truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(700, 419)
+        Me.SimpleButton1.Location = New System.Drawing.Point(691, 415)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.Size = New System.Drawing.Size(118, 27)
         Me.SimpleButton1.TabIndex = 142
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(594, 419)
+        Me.Submit.Location = New System.Drawing.Point(567, 415)
         Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.Size = New System.Drawing.Size(118, 27)
         Me.Submit.TabIndex = 141
         Me.Submit.Text = "Submit"
         '
@@ -234,7 +235,7 @@ Partial Class booking_truk
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(136, 295)
+        Me.RichTextBox2.Location = New System.Drawing.Point(75, 288)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
         Me.RichTextBox2.TabIndex = 56
@@ -243,7 +244,7 @@ Partial Class booking_truk
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(76, 294)
+        Me.LabelControl10.Location = New System.Drawing.Point(15, 287)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl10.TabIndex = 55
@@ -266,11 +267,21 @@ Partial Class booking_truk
         Me.Label5.TabIndex = 154
         Me.Label5.Text = "Tanggal Booking"
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(443, 415)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(118, 27)
+        Me.SimpleButton3.TabIndex = 156
+        Me.SimpleButton3.Text = "Submit and Print"
+        '
         'booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(815, 454)
+        Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.RichTextBox2)
@@ -334,4 +345,5 @@ Partial Class booking_truk
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
 End Class
