@@ -1015,6 +1015,9 @@
     <EmbeddedResource Include="Audit Log\Audit Log.resx">
       <DependentUpon>Audit Log.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Audit Log\XtraReport2.resx">
+      <DependentUpon>XtraReport2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>
     </EmbeddedResource>
