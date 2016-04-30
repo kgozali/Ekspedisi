@@ -337,6 +337,12 @@
     <Compile Include="lapjurnal.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Master Data\master_supir.Designer.vb">
+      <DependentUpon>master_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="neracax.Designer.vb">
       <DependentUpon>neracax.vb</DependentUpon>
     </Compile>
@@ -1023,6 +1029,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lapjurnal.resx">
       <DependentUpon>lapjurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_supir.resx">
+      <DependentUpon>master_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="neracax.resx">
       <DependentUpon>neracax.vb</DependentUpon>
