@@ -231,7 +231,7 @@ Partial Public Class principledetail
         'ReportHeader
         '
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo1, Me.XrLabel22, Me.XrLabel11, Me.XrLabel10, Me.XrLabel7, Me.XrLabel24, Me.XrPictureBox1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLine2})
-        Me.ReportHeader.HeightF = 322.9167!
+        Me.ReportHeader.HeightF = 323.9583!
         Me.ReportHeader.Name = "ReportHeader"
         '
         'XrPictureBox1
@@ -244,29 +244,35 @@ Partial Public Class principledetail
         '
         'XrLabel16
         '
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(327.3202!, 74.60524!)
+        Me.XrLabel16.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(306.25!, 74.60524!)
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel16.SizeF = New System.Drawing.SizeF(100.0!, 16.75!)
+        Me.XrLabel16.SizeF = New System.Drawing.SizeF(120.5247!, 16.75!)
+        Me.XrLabel16.StylePriority.UseFont = False
         Me.XrLabel16.StylePriority.UseTextAlignment = False
         Me.XrLabel16.Text = "JOMBANG"
         Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrLabel15
         '
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(253.3619!, 51.60522!)
+        Me.XrLabel15.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(232.8372!, 51.60526!)
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(250.0!, 23.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(293.9684!, 23.0!)
+        Me.XrLabel15.StylePriority.UseFont = False
         Me.XrLabel15.Text = "DUSUN JABON DS. JABON RT 01 RW 01"
         '
         'XrLabel14
         '
-        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel14.BorderColor = System.Drawing.Color.Black
+        Me.XrLabel14.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(149.1952!, 27.56359!)
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel14.SizeF = New System.Drawing.SizeF(450.0!, 24.04167!)
+        Me.XrLabel14.StylePriority.UseBorderColor = False
         Me.XrLabel14.StylePriority.UseFont = False
         Me.XrLabel14.StylePriority.UseTextAlignment = False
         Me.XrLabel14.Text = "PT SENTONG SULTAN KERATON MOJOPAHIT"
@@ -281,10 +287,12 @@ Partial Public Class principledetail
         'XrLabel4
         '
         Me.XrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.price_per_unit", "{0:Rp #,#.00}")})
-        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(578.2888!, 38.87501!)
+        Me.XrLabel4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(610.0!, 10.00001!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel4.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.StylePriority.UseTextAlignment = False
         Me.XrLabel4.Text = "XrLabel4"
         Me.XrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -292,28 +300,30 @@ Partial Public Class principledetail
         'XrLabel5
         '
         Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.no_DO")})
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(419.7185!, 38.87501!)
+        Me.XrLabel5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(79.89851!, 10.00001!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(82.29169!, 23.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(93.3268!, 23.0!)
+        Me.XrLabel5.StylePriority.UseFont = False
         Me.XrLabel5.StylePriority.UseTextAlignment = False
         Me.XrLabel5.Text = "XrLabel5"
         Me.XrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'GroupHeader1
         '
-        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1, Me.XrLabel6, Me.XrLabel3, Me.XrTable2, Me.XrLabel9, Me.XrLabel8, Me.XrLabel5, Me.XrLabel4})
+        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1, Me.XrLabel6, Me.XrLabel3, Me.XrTable2, Me.XrLabel9, Me.XrLabel4, Me.XrLabel5, Me.XrLabel8})
         Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("id_transaksi", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeader1.HeightF = 100.0!
+        Me.GroupHeader1.HeightF = 71.125!
         Me.GroupHeader1.Name = "GroupHeader1"
         '
         'XrLabel8
         '
-        Me.XrLabel8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(370.7602!, 38.87501!)
+        Me.XrLabel8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(23.00002!, 9.999974!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(48.95833!, 23.0!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(56.8985!, 23.0!)
         Me.XrLabel8.StylePriority.UseFont = False
         Me.XrLabel8.StylePriority.UseTextAlignment = False
         Me.XrLabel8.Text = "No.DO: "
@@ -321,11 +331,11 @@ Partial Public Class principledetail
         '
         'XrLabel9
         '
-        Me.XrLabel9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(511.3853!, 38.87501!)
+        Me.XrLabel9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(526.8055!, 10.00001!)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel9.SizeF = New System.Drawing.SizeF(66.90356!, 23.0!)
+        Me.XrLabel9.SizeF = New System.Drawing.SizeF(83.1944!, 23.0!)
         Me.XrLabel9.StylePriority.UseFont = False
         Me.XrLabel9.StylePriority.UseTextAlignment = False
         Me.XrLabel9.Text = "Harga/Kg: "
@@ -335,10 +345,10 @@ Partial Public Class principledetail
         '
         Me.XrTable1.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(20.83333!, 0.0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(27.08352!, 0.0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(657.4553!, 25.0!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(669.9553!, 25.0!)
         Me.XrTable1.StylePriority.UseBorders = False
         Me.XrTable1.StylePriority.UseTextAlignment = False
         Me.XrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
@@ -354,14 +364,18 @@ Partial Public Class principledetail
         Me.XrTableCell1.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.nama_barang")})
+        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell1.Name = "XrTableCell1"
         Me.XrTableCell1.StylePriority.UseBorders = False
+        Me.XrTableCell1.StylePriority.UseFont = False
         Me.XrTableCell1.Weight = 2.61458251953125R
         '
         'XrTableCell2
         '
         Me.XrTableCell2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.berat_per_kg", "{0:#,#}")})
+        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseFont = False
         Me.XrTableCell2.Weight = 1.731536865234375R
         '
         'XrTable2
@@ -372,10 +386,10 @@ Partial Public Class principledetail
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTable2.ForeColor = System.Drawing.Color.White
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(20.83333!, 75.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(27.08333!, 46.125!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(657.4554!, 25.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(669.9555!, 25.0!)
         Me.XrTable2.StylePriority.UseBackColor = False
         Me.XrTable2.StylePriority.UseBorders = False
         Me.XrTable2.StylePriority.UseFont = False
@@ -391,25 +405,33 @@ Partial Public Class principledetail
         '
         'XrTableCell4
         '
+        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell4.Name = "XrTableCell4"
+        Me.XrTableCell4.StylePriority.UseFont = False
         Me.XrTableCell4.Text = "Nama Barang"
         Me.XrTableCell4.Weight = 2.7916665649414067R
         '
         'XrTableCell5
         '
+        Me.XrTableCell5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell5.Name = "XrTableCell5"
+        Me.XrTableCell5.StylePriority.UseFont = False
         Me.XrTableCell5.Text = "Berat (Kg)"
         Me.XrTableCell5.Weight = 1.5544528198242185R
         '
         'XrTableCell7
         '
+        Me.XrTableCell7.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell7.Name = "XrTableCell7"
+        Me.XrTableCell7.StylePriority.UseFont = False
         Me.XrTableCell7.Text = "No"
         Me.XrTableCell7.Weight = 0.375R
         '
         'XrTableCell8
         '
+        Me.XrTableCell8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell8.Name = "XrTableCell8"
+        Me.XrTableCell8.StylePriority.UseFont = False
         Me.XrTableCell8.StylePriority.UseTextAlignment = False
         XrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber
         XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
@@ -421,18 +443,20 @@ Partial Public Class principledetail
         'XrLabel3
         '
         Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.tgl_terkirim", "{0:dd-MMMM-yyyy}")})
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(74.92695!, 38.87501!)
+        Me.XrLabel3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(232.8372!, 9.999974!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(92.70824!, 23.0!)
+        Me.XrLabel3.StylePriority.UseFont = False
         Me.XrLabel3.StylePriority.UseTextAlignment = False
         Me.XrLabel3.Text = "XrLabel3"
         Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel6
         '
-        Me.XrLabel6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(15.31506!, 38.87501!)
+        Me.XrLabel6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(173.2253!, 9.999974!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(59.61188!, 23.0!)
@@ -443,15 +467,19 @@ Partial Public Class principledetail
         '
         'XrTableCell3
         '
+        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell3.Name = "XrTableCell3"
+        Me.XrTableCell3.StylePriority.UseFont = False
         Me.XrTableCell3.Text = "Subtotal"
-        Me.XrTableCell3.Weight = 1.8643660357727789R
+        Me.XrTableCell3.Weight = 1.9895744744769528R
         '
         'XrTableCell6
         '
         Me.XrTableCell6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.CalculatedField1", "{0:Rp #,#.00}")})
+        Me.XrTableCell6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell6.Name = "XrTableCell6"
-        Me.XrTableCell6.Weight = 1.8643654535331706R
+        Me.XrTableCell6.StylePriority.UseFont = False
+        Me.XrTableCell6.Weight = 1.9895726816820982R
         '
         'CalculatedField1
         '
@@ -474,21 +502,23 @@ Partial Public Class principledetail
         'XrLabel1
         '
         Me.XrLabel1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.jatuh_tempo", "{0:dd-MMMM-yyyy}")})
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(268.203!, 38.87501!)
+        Me.XrLabel1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(424.2484!, 9.999974!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel1.SizeF = New System.Drawing.SizeF(102.5572!, 23.0!)
+        Me.XrLabel1.StylePriority.UseFont = False
         Me.XrLabel1.StylePriority.UseTextAlignment = False
         Me.XrLabel1.Text = "XrLabel1"
         Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel2
         '
-        Me.XrLabel2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(183.7734!, 38.87501!)
+        Me.XrLabel2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(325.5454!, 10.00001!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(84.42953!, 23.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(98.70294!, 23.0!)
         Me.XrLabel2.StylePriority.UseFont = False
         Me.XrLabel2.StylePriority.UseTextAlignment = False
         Me.XrLabel2.Text = "Jatuh Tempo:"
@@ -500,10 +530,10 @@ Partial Public Class principledetail
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable3.BorderWidth = 2.0!
-        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(20.83333!, 0.0!)
+        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(27.08352!, 0.0!)
         Me.XrTable3.Name = "XrTable3"
         Me.XrTable3.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
-        Me.XrTable3.SizeF = New System.Drawing.SizeF(657.4553!, 25.0!)
+        Me.XrTable3.SizeF = New System.Drawing.SizeF(669.9553!, 25.0!)
         Me.XrTable3.StylePriority.UseBorders = False
         Me.XrTable3.StylePriority.UseBorderWidth = False
         '
@@ -515,7 +545,7 @@ Partial Public Class principledetail
         '
         'XrTableCell9
         '
-        Me.XrTableCell9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell9.Name = "XrTableCell9"
         Me.XrTableCell9.StylePriority.UseFont = False
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
@@ -526,7 +556,7 @@ Partial Public Class principledetail
         'XrTableCell10
         '
         Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.berat_per_kg")})
-        Me.XrTableCell10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell10.Name = "XrTableCell10"
         Me.XrTableCell10.StylePriority.UseFont = False
         Me.XrTableCell10.StylePriority.UseTextAlignment = False
@@ -539,7 +569,7 @@ Partial Public Class principledetail
         'XrTableCell11
         '
         Me.XrTableCell11.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.CalculatedField1")})
-        Me.XrTableCell11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell11.Name = "XrTableCell11"
         Me.XrTableCell11.StylePriority.UseFont = False
         Me.XrTableCell11.StylePriority.UseTextAlignment = False
@@ -547,7 +577,7 @@ Partial Public Class principledetail
         XrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrTableCell11.Summary = XrSummary3
         Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell11.Weight = 0.89124898731903257R
+        Me.XrTableCell11.Weight = 0.95110354704295208R
         '
         'GroupFooter1
         '
@@ -557,7 +587,7 @@ Partial Public Class principledetail
         '
         'XrLabel24
         '
-        Me.XrLabel24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(37.43776!, 194.3081!)
         Me.XrLabel24.Name = "XrLabel24"
         Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -569,7 +599,7 @@ Partial Public Class principledetail
         '
         Me.XrCrossBandBox2.BorderWidth = 2.0!
         Me.XrCrossBandBox2.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(23.00002!, 294.75!)
+        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(23.00002!, 299.9583!)
         Me.XrCrossBandBox2.LocationFloat = New DevExpress.Utils.PointFloat(23.00002!, 181.2083!)
         Me.XrCrossBandBox2.Name = "XrCrossBandBox2"
         Me.XrCrossBandBox2.StartBand = Me.ReportHeader
@@ -579,34 +609,40 @@ Partial Public Class principledetail
         'XrLabel7
         '
         Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.nama_principle")})
+        Me.XrLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(37.43776!, 217.3081!)
         Me.XrLabel7.Name = "XrLabel7"
-        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(312.4891!, 23.0!)
+        Me.XrLabel7.StylePriority.UseFont = False
         Me.XrLabel7.Text = "XrLabel7"
         '
         'XrLabel10
         '
         Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.alamat")})
+        Me.XrLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(37.43776!, 240.3081!)
         Me.XrLabel10.Name = "XrLabel10"
-        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(312.4891!, 23.00002!)
+        Me.XrLabel10.StylePriority.UseFont = False
         Me.XrLabel10.Text = "XrLabel10"
         '
         'XrLabel11
         '
         Me.XrLabel11.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.kota")})
+        Me.XrLabel11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(37.43776!, 263.3081!)
         Me.XrLabel11.Name = "XrLabel11"
-        Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel11.SizeF = New System.Drawing.SizeF(209.9319!, 23.0!)
+        Me.XrLabel11.StylePriority.UseFont = False
         Me.XrLabel11.Text = "XrLabel11"
         '
         'XrLabel22
         '
-        Me.XrLabel22.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(499.1952!, 181.2083!)
+        Me.XrLabel22.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(498.4116!, 181.2083!)
         Me.XrLabel22.Name = "XrLabel22"
         Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel22.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -617,12 +653,14 @@ Partial Public Class principledetail
         '
         'XrPageInfo1
         '
+        Me.XrPageInfo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrPageInfo1.Format = "{0:dd-MMMM-yyyy}"
         Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(599.1952!, 181.2083!)
         Me.XrPageInfo1.Name = "XrPageInfo1"
-        Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
         Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(110.8048!, 23.0!)
+        Me.XrPageInfo1.StylePriority.UseFont = False
         Me.XrPageInfo1.StylePriority.UseTextAlignment = False
         Me.XrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
