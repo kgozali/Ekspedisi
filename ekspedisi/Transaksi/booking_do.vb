@@ -5,7 +5,7 @@ Public Class booking_do
         Try
             Dim data As New DataTable
             gridbooking.OptionsView.ShowFooter = True
-            data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s=1")
+            data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s=1 order by tgl asc,jam asc")
             controlbooking.DataSource = data
 
             For i = 0 To data.Columns.Count - 1
@@ -106,7 +106,5 @@ Public Class booking_do
         transaksi_DO.idbooking.Text = kodebooking
         Me.Visible = False
         transaksi_DO.ShowDialog()
-
-
     End Sub
 End Class

@@ -17,10 +17,10 @@ Public Class list_edit_supir
     Sub proc()
         Try
             If id.Checked = True Then
-                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota` ,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and  msupir.id_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "'")
+                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota` ,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and  msupir.id_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "' order by nama_supir asc")
                 editing()
             ElseIf nama.Checked = True Then
-                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota`,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and nama_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "'")
+                tabelid = DtTable("select msupir.id_supir `Kode Supir`,nama_supir `Nama Supir`,alamat `Alamat`,tel1 `Kontak 1`,tel2 `Kontak 2`,kota `Kota`,tarif `Tariff Maksimum` from msupir,dsupir where msupir.id_supir=dsupir.id_supir and nama_supir LIKE '%" + cari.Text.ToString + "%' and id_rute='" + edit_booking.rutebook + "' order by nama_supir asc")
                 editing()
             End If
         Catch ex As Exception
