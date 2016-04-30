@@ -91,6 +91,7 @@ Partial Class main_menu
         Me.SimpleButton32 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
@@ -136,7 +137,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -869,6 +869,15 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.Size = New System.Drawing.Size(811, 691)
         Me.BackstageViewClientControl10.TabIndex = 8
         '
+        'SimpleButton13
+        '
+        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
+        Me.SimpleButton13.Location = New System.Drawing.Point(545, 79)
+        Me.SimpleButton13.Name = "SimpleButton13"
+        Me.SimpleButton13.Size = New System.Drawing.Size(218, 54)
+        Me.SimpleButton13.TabIndex = 21
+        Me.SimpleButton13.Text = "Audit Log"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -1258,15 +1267,6 @@ Partial Class main_menu
         '
         'sfd
         '
-        '
-        'SimpleButton13
-        '
-        Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
-        Me.SimpleButton13.Location = New System.Drawing.Point(545, 79)
-        Me.SimpleButton13.Name = "SimpleButton13"
-        Me.SimpleButton13.Size = New System.Drawing.Size(218, 54)
-        Me.SimpleButton13.TabIndex = 21
-        Me.SimpleButton13.Text = "Audit Log"
         '
         'main_menu
         '

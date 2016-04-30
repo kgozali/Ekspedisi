@@ -307,6 +307,12 @@
     <Compile Include="Audit Log\Audit Log.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Audit Log\XtraReport2.Designer.vb">
+      <DependentUpon>XtraReport2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Audit Log\XtraReport2.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="history.Designer.vb">
       <DependentUpon>history.vb</DependentUpon>
     </Compile>
