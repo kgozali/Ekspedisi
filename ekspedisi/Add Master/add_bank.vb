@@ -31,8 +31,9 @@ Public Class add_bank
                 'insert ke dalam database
                 InsertInto("insert into mbank values ('" & id.Text & "','" & nama.Text & "') ")
                 'konfirmasi melakukan booking ulang
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Bank berhasil ditambahkan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
+                    audit()
                     add_bank_Load(sender, e)
                     Reset()
                 Else
@@ -47,6 +48,13 @@ Public Class add_bank
 
 
         
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Bank"
+        Dim aktivitas As String = "Add Bank: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_bank_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -46,6 +46,7 @@ Public Class add_karyawan
                 'insert ke dalam database
                 InsertInto("insert into mkaryawan values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','" & jabatan.SelectedValue.ToString & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "',null,'" & RichTextBox1.Text & "','" & ktp.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_karyawan_Load(sender, e)
@@ -70,6 +71,13 @@ Public Class add_karyawan
 
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Karyawan"
+        Dim aktivitas As String = "Add Karyawan: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load

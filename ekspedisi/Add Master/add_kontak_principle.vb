@@ -80,6 +80,7 @@ Public Class add_kontak_principle
                 'insert ke dalam database
                 InsertInto("insert into mkontakprinciple values ('" & id.Text & "','" & principle.SelectedValue.ToString & "','" & nama.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_kontak_principle_Load(sender, e)
@@ -103,6 +104,13 @@ Public Class add_kontak_principle
 
 
         End If
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kontak Principle"
+        Dim aktivitas As String = "Add Kontak Principle: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click

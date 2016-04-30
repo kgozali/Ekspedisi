@@ -54,6 +54,7 @@ Public Class add_kota
             'insert ke dalam database
             InsertInto("insert into mkota values ('','" & provinsi.Text & "','" & kota.Text & "','1') ")
             'konfirmasi melakukan booking ulang
+            audit()
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
                 add_kota_Load(sender, e)
@@ -73,6 +74,13 @@ Public Class add_kota
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kota"
+        Dim aktivitas As String = "Add Kota: " & kota.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_kota_Load(sender As Object, e As EventArgs) Handles MyBase.Load

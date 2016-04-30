@@ -96,6 +96,7 @@ Public Class add_user
                             inputuser = "insert into hak_akses values ('" & username.Text & "', '" & name & "','" & a & "','" & b & "','" & c & "','" & d & "','" & e1 & "') "
                             InsertInto(inputuser)
                         Next
+                        audit()
 
                         Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                         If msg = DialogResult.Yes Then
@@ -132,6 +133,13 @@ Public Class add_user
         
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master User"
+        Dim aktivitas As String = "Add User: " & username.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_user_Load(sender As Object, e As EventArgs) Handles MyBase.Load

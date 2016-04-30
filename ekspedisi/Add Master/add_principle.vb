@@ -48,6 +48,13 @@ Public Class add_principle
 
         
     End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Principle"
+        Dim aktivitas As String = "Add Principle: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tanggal As New DataTable

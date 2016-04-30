@@ -72,6 +72,7 @@ Public Class add_rute
                     'insert ke dalam database
                     InsertInto("insert into mrute values ('" & id.Text & "','" & asal.SelectedValue.ToString & "','" & tujuan.SelectedValue.ToString & "','" & principle.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','1') ")
                     'konfirmasi melakukan booking ulang
+                    audit()
                     Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                     If msg = DialogResult.Yes Then
                         add_rute_Load(sender, e)
@@ -101,6 +102,13 @@ Public Class add_rute
 
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Rute"
+        Dim aktivitas As String = "Add Rute: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load

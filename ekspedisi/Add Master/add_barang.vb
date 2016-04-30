@@ -3,6 +3,7 @@ Public Class add_barang
     Dim cbprinciple As New DataTable
     Dim cek As Boolean = False
     Dim data As DataTable
+    Dim ccc As String
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_barang.GridControl1.Visible = True
         master_barang.GridControl2.Visible = False
@@ -143,9 +144,10 @@ Public Class add_barang
                     While hitung.LongCount < 5
                         hitung = "0" + hitung
                     End While
-                    Dim ccc As String = tgl + hitung
+                    ccc = tgl + hitung
                     InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','1')")
                     MsgBox(dtbaris("Nama_Barang") & "terinput")
+                    audit()
                 Next
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -174,5 +176,12 @@ Public Class add_barang
         End Try
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Barang"
+        Dim aktivitas As String = "Add Barang: " & ccc.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 End Class

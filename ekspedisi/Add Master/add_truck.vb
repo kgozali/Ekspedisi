@@ -68,6 +68,7 @@ Public Class add_truck
                 'MsgBox(aktiva.SelectedValue.ToString)
                 Dim penampung As String = "insert into mtruk values ('" & id.Text & "','" & nop.Text & "','" & nomesin.Text & "','" & norangka.Text & "" & "','" & Cmbbxsupp.SelectedValue.ToString & "','" & hargabeli.Text & "','" & umur.Text & "','" & nilairesidu.Text & "','" & aktiva.SelectedValue.ToString & "','" & penyusutan.SelectedValue.ToString & "','" & depresiasi.SelectedValue.ToString & "','1') "
                 'MsgBox(penampung)
+                audit()
                 InsertInto(penampung)
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
@@ -92,6 +93,13 @@ Public Class add_truck
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Truk"
+        Dim aktivitas As String = "Add Truk: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargabeli.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""

@@ -90,7 +90,13 @@ Public Class add_kategori_supplier
 
         
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kategori"
+        Dim aktivitas As String = "Add Kategori: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub add_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim tanggal As New DataTable
         Dim tgl As String = "ME"

@@ -50,6 +50,7 @@ Public Class add_jabatan
             InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "','1')")
             'konfirmasi melakukan booking ulang
             Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            audit()
             If msg = DialogResult.Yes Then
                 add_jabatan_Load(sender, e)
                 Reset()
@@ -67,6 +68,13 @@ Public Class add_jabatan
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Jabatan"
+        Dim aktivitas As String = "Add Jabatan: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_jabatan_Load(sender As Object, e As EventArgs) Handles MyBase.Load

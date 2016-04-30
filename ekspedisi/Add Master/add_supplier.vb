@@ -73,6 +73,7 @@ Public Class add_supplier
                 'insert ke dalam database
                 InsertInto("insert into msupplier values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','" & kategori.SelectedValue.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_supplier_Load(sender, e)
@@ -95,6 +96,13 @@ Public Class add_supplier
 
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Supplier"
+        Dim aktivitas As String = "Add Supplier: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
