@@ -42,6 +42,8 @@ Partial Class edit_DO
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.tgldo = New System.Windows.Forms.DateTimePicker()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +59,7 @@ Partial Class edit_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(613, 76)
+        Me.SimpleButton2.Location = New System.Drawing.Point(613, 114)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 169
@@ -96,7 +98,7 @@ Partial Class edit_DO
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(693, 472)
+        Me.GridControl1.Size = New System.Drawing.Size(693, 433)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -111,9 +113,9 @@ Partial Class edit_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(10, 110)
+        Me.GroupControl3.Location = New System.Drawing.Point(10, 147)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(703, 499)
+        Me.GroupControl3.Size = New System.Drawing.Size(703, 462)
         Me.GroupControl3.TabIndex = 166
         Me.GroupControl3.Text = "Data Transaksi"
         '
@@ -137,7 +139,7 @@ Partial Class edit_DO
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 77)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 106)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
         Me.tanggaljatuhtempo.TabIndex = 158
@@ -145,7 +147,8 @@ Partial Class edit_DO
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
-        Me.tanggalterkirim.Location = New System.Drawing.Point(175, 53)
+        Me.tanggalterkirim.Enabled = False
+        Me.tanggalterkirim.Location = New System.Drawing.Point(175, 82)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
         Me.tanggalterkirim.TabIndex = 157
@@ -177,7 +180,7 @@ Partial Class edit_DO
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(15, 80)
+        Me.LabelControl6.Location = New System.Drawing.Point(15, 108)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(144, 18)
         Me.LabelControl6.TabIndex = 165
@@ -186,11 +189,11 @@ Partial Class edit_DO
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(50, 53)
+        Me.LabelControl4.Location = New System.Drawing.Point(71, 82)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(109, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl4.TabIndex = 164
-        Me.LabelControl4.Text = "Tanggal Terkirim"
+        Me.LabelControl4.Text = "Tanggal Kirim"
         '
         'LabelControl3
         '
@@ -204,7 +207,7 @@ Partial Class edit_DO
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(71, 29)
+        Me.LabelControl2.Location = New System.Drawing.Point(71, 32)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl2.TabIndex = 162
@@ -222,9 +225,9 @@ Partial Class edit_DO
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.PictureBox1)
-        Me.GroupControl1.Location = New System.Drawing.Point(719, 110)
+        Me.GroupControl1.Location = New System.Drawing.Point(719, 147)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(280, 496)
+        Me.GroupControl1.Size = New System.Drawing.Size(280, 459)
         Me.GroupControl1.TabIndex = 170
         Me.GroupControl1.Text = "Scan DO"
         '
@@ -232,15 +235,34 @@ Partial Class edit_DO
         '
         Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(268, 467)
+        Me.PictureBox1.Size = New System.Drawing.Size(268, 430)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'tgldo
+        '
+        Me.tgldo.CustomFormat = "ddMMyyyy"
+        Me.tgldo.Location = New System.Drawing.Point(175, 56)
+        Me.tgldo.Name = "tgldo"
+        Me.tgldo.Size = New System.Drawing.Size(200, 21)
+        Me.tgldo.TabIndex = 171
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(81, 58)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl5.TabIndex = 172
+        Me.LabelControl5.Text = "Tanggal DO"
         '
         'edit_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 664)
+        Me.Controls.Add(Me.tgldo)
+        Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.LabelControl7)
@@ -297,4 +319,6 @@ Partial Class edit_DO
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents tgldo As System.Windows.Forms.DateTimePicker
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
 End Class

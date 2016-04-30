@@ -35,11 +35,12 @@ Public Class edit_DO
             defpendapatan = Scalar("select id_akun from control_account where keterangan='Def. Akun Pendapatan'")
 
             'select awal ambil data semua
-            datatable = DtTable("select id_booking,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
+            datatable = DtTable("select id_booking,tgl_jam,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
             idbooking.Text = datatable.Rows(0).Item("id_booking").ToString
             tanggalterkirim.Value = datatable.Rows(0).Item("tgl_terkirim").ToString
             tanggaljatuhtempo.Value = datatable.Rows(0).Item("jatuh_tempo").ToString
             nomerdo.Text = datatable.Rows(0).Item("no_do").ToString
+            tgldo.Value = datatable.Rows(0).Item("tgl_jam").ToString
 
             kodetrans = id.Text.ToString
 
@@ -123,7 +124,7 @@ Public Class edit_DO
         sum = CInt(GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString)
         total = price * sum
         If sum <> 0 Then
-            Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "' where id_transaksi='" + kodetrans.ToString + "'")
+            Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_jam='" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "' where id_transaksi='" + kodetrans.ToString + "'")
             'delete
             InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
             'insert baru
@@ -144,7 +145,7 @@ Public Class edit_DO
         Else
             Dim msg As Integer = MessageBox.Show("Total berat dari barang adalah 0 Kilogram, apakah anda ingin tetap melakukan perubahan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
             If msg = DialogResult.Yes Then
-                Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',total_bayar='" + total.ToString + "' where id_transaksi='" + kodetrans.ToString + "'")
+                Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_jam='" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',total_bayar='" + total.ToString + "' where id_transaksi='" + kodetrans.ToString + "'")
                 'delete
                 InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
                 'insert baru
@@ -212,6 +213,7 @@ Public Class edit_DO
 
     Sub jurnal()
         Dim totalkredit As Integer = total * -1
+        InsertInto("update jurnal set tgl='" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "' where no_jurnal='" + kodetrans.ToString + "'")
         InsertInto("delete from djurnal where no_jurnal='" + kodetrans.ToString + "'")
         InsertInto("insert into djurnal values('" + kodetrans.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
         InsertInto("insert into djurnal values('" + kodetrans.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")

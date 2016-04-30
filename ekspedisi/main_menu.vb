@@ -63,7 +63,13 @@ Public Class main_menu
     End Sub
 
     Private Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim dtdo As New DataTable
+        dtdo = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo))` Tanggal Jatuh Tempo` from trans_do where jatuh_tempo <= date_add(now(),INTERVAL 31 DAY) and jatuh_tempo >= now() and s=1 order by jatuh_tempo asc")
+        GridControl1.DataSource = dtdo
 
+        Dim dtkir As New DataTable
+        dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() group by kir.id_truk order by tgl_kir_berikutnya")
+        GridControl4.DataSource = dtkir
     End Sub
 
 
@@ -202,5 +208,14 @@ Public Class main_menu
 
     Private Sub SimpleButton29_Click(sender As Object, e As EventArgs) Handles SimpleButton29.Click
         Bank_Keluar.ShowDialog()
+    End Sub
+
+  
+    Private Sub XtraTabControl1_Click(sender As Object, e As EventArgs) Handles XtraTabControl1.Click
+        main_menu_Load(sender, e)
+    End Sub
+
+    Private Sub BackstageViewTabItem2_ItemPressed(sender As Object, e As DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs) Handles BackstageViewTabItem2.ItemPressed
+        main_menu_Load(sender, e)
     End Sub
 End Class

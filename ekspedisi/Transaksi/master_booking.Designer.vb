@@ -54,6 +54,7 @@ Partial Class master_booking
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.PreviewAndPrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -235,15 +236,15 @@ Partial Class master_booking
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditBookingToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditBookingToolStripMenuItem, Me.PreviewAndPrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(142, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(167, 70)
         '
         'EditBookingToolStripMenuItem
         '
         Me.EditBookingToolStripMenuItem.Image = CType(resources.GetObject("EditBookingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EditBookingToolStripMenuItem.Name = "EditBookingToolStripMenuItem"
-        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.EditBookingToolStripMenuItem.Text = "Edit Booking"
         '
         'GridView1
@@ -341,6 +342,13 @@ Partial Class master_booking
         Me.SimpleButton1.TabIndex = 166
         Me.SimpleButton1.Text = "Cancel"
         '
+        'PreviewAndPrintToolStripMenuItem
+        '
+        Me.PreviewAndPrintToolStripMenuItem.Image = CType(resources.GetObject("PreviewAndPrintToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PreviewAndPrintToolStripMenuItem.Name = "PreviewAndPrintToolStripMenuItem"
+        Me.PreviewAndPrintToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.PreviewAndPrintToolStripMenuItem.Text = "Preview and Print"
+        '
         'master_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -405,4 +413,5 @@ Partial Class master_booking
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditBookingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PreviewAndPrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
