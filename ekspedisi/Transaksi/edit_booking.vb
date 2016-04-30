@@ -142,12 +142,14 @@ Public Class edit_booking
                                 Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     insert()
+                                    audit()
                                 Else
 
                                 End If
 
                             Else
                                 insert()
+                                audit()
                             End If
 
                         End If
@@ -161,6 +163,13 @@ Public Class edit_booking
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = "Kevin"
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Booking Truk"
+        Dim aktivitas As String = "Edit Booking: " & kode.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Sub insert()
         'insert ke database

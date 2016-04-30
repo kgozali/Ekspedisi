@@ -160,13 +160,13 @@ Public Class booking_truk
                                     If msg = DialogResult.OK Then
                                         autogen()
                                         insert()
-
+                                        audit()
                                     Else
 
                                     End If
                                 Else
                                     insert()
-
+                                    audit()
                                 End If
 
                         End If
@@ -180,6 +180,13 @@ Public Class booking_truk
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = "Kevin"
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Booking Truk"
+        Dim aktivitas As String = "Add Booking: " & kode.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Sub insert()
         'insert ke database

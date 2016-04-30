@@ -190,11 +190,11 @@ Public Module Module1
 
     End Function
 
-    Function auditlog(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String, ByVal f As String)
+    Function auditlog(ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String)
         'untuk insert auditlog, tinggal panggil trus lempar
         Try
             connect.Open()
-            Dim Command As MySqlCommand = New MySqlCommand("insert into audit_log values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "')", connect)
+            Dim Command As MySqlCommand = New MySqlCommand("insert into audit_log values(now(),'" + b + "','" + c + "','" + d + "','" + e + "')", connect)
             Command.ExecuteNonQuery()
             connect.Close()
             Return True
