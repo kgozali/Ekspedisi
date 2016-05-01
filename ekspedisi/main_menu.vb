@@ -68,7 +68,7 @@ Public Class main_menu
         GridControl1.DataSource = dtdo
 
         Dim dtkir As New DataTable
-        dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() order by tgl_kir_berikutnya")
+        dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() and del=0 order by tgl_kir_berikutnya")
         GridControl4.DataSource = dtkir
     End Sub
 
