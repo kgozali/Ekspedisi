@@ -15,6 +15,7 @@ Public Class edit_kir_truk
             kode = TextEdit1.Text.ToString
             DateTimePicker2.Value = query.Rows(0).Item("tgl_kir")
             DateTimePicker1.Value = query.Rows(0).Item("tgl_kir_berikutnya")
+            DateTimePicker3.Value = query.Rows(0).Item("tgl")
             TextEdit3.Text = query.Rows(0).Item("nominal")
             trukbook = query.Rows(0).Item("id_truk").ToString
 
