@@ -253,6 +253,12 @@
     <Compile Include="Akuntansi\daftar_tutup_principle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\frmbukaperiode.Designer.vb">
+      <DependentUpon>frmbukaperiode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\frmbukaperiode.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\frmcetaknota.Designer.vb">
       <DependentUpon>frmcetaknota.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,12 @@
       <DependentUpon>frmprevlapkeu.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\frmprevlapkeu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\frntutupperiode.Designer.vb">
+      <DependentUpon>frntutupperiode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\frntutupperiode.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\kas_keluar.Designer.vb">
@@ -1000,11 +1012,17 @@
     <EmbeddedResource Include="Akuntansi\daftar_tutup_principle.resx">
       <DependentUpon>daftar_tutup_principle.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\frmbukaperiode.resx">
+      <DependentUpon>frmbukaperiode.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\frmcetaknota.resx">
       <DependentUpon>frmcetaknota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\frmprevlapkeu.resx">
       <DependentUpon>frmprevlapkeu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\frntutupperiode.resx">
+      <DependentUpon>frntutupperiode.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\kas_keluar.resx">
       <DependentUpon>kas_keluar.vb</DependentUpon>
