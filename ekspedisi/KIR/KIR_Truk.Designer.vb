@@ -40,6 +40,8 @@ Partial Class KIR_Truk
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +66,7 @@ Partial Class KIR_Truk
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(9, 34)
+        Me.Label2.Location = New System.Drawing.Point(9, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 18)
         Me.Label2.TabIndex = 42
@@ -74,7 +76,7 @@ Partial Class KIR_Truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(464, 8)
+        Me.Label3.Location = New System.Drawing.Point(465, 35)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(89, 18)
         Me.Label3.TabIndex = 43
@@ -84,7 +86,7 @@ Partial Class KIR_Truk
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(391, 35)
+        Me.Label4.Location = New System.Drawing.Point(392, 62)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(162, 18)
         Me.Label4.TabIndex = 44
@@ -110,7 +112,7 @@ Partial Class KIR_Truk
         '
         'TextEdit2
         '
-        Me.TextEdit2.Location = New System.Drawing.Point(96, 34)
+        Me.TextEdit2.Location = New System.Drawing.Point(96, 32)
         Me.TextEdit2.Name = "TextEdit2"
         Me.TextEdit2.Size = New System.Drawing.Size(224, 20)
         Me.TextEdit2.TabIndex = 2
@@ -125,14 +127,14 @@ Partial Class KIR_Truk
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(559, 32)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(560, 59)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 5
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(559, 6)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(560, 33)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker2.TabIndex = 4
@@ -216,11 +218,30 @@ Partial Class KIR_Truk
         Me.ButtonEdit1.Size = New System.Drawing.Size(174, 20)
         Me.ButtonEdit1.TabIndex = 3
         '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(560, 8)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker3.TabIndex = 57
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label8.Location = New System.Drawing.Point(458, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(96, 18)
+        Me.Label8.TabIndex = 58
+        Me.Label8.Text = "Tanggal Nota"
+        '
         'KIR_Truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.DateTimePicker3)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ButtonEdit1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
@@ -274,6 +295,8 @@ Partial Class KIR_Truk
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 
     
 End Class

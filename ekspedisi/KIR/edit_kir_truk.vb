@@ -56,12 +56,12 @@ Public Class edit_kir_truk
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda tetap ingin melanjutkan KIR tanpa mencantumkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     insert()
-                                    insertakun()
+
                                     Me.Close()
                                 End If
                             Else
                                 insert()
-                                insertakun()
+
                                 Me.Close()
                             End If
                         End If
@@ -81,9 +81,11 @@ Public Class edit_kir_truk
     End Sub
     Sub insert()
         Try
-            Dim bool As Boolean = InsertInto("update kir set no_kir='" + TextEdit2.Text.ToString + "',tgl_kir='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl_kir_berikutnya='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',nominal='" + nominal.ToString + "' where id_kir='" + kode.ToString + "'")
+            Dim bool As Boolean = InsertInto("update kir set no_kir='" + TextEdit2.Text.ToString + "',tgl='" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "',tgl_kir='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl_kir_berikutnya='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',nominal='" + nominal.ToString + "' where id_kir='" + kode.ToString + "'")
             If bool = True Then
                 MessageBox.Show("Data KIR berhasil diubah", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                insertakun()
+                audit()
             Else
                 MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -95,6 +97,7 @@ Public Class edit_kir_truk
     Sub insertakun()
         Try
             Dim nominalminus As Integer = nominal * -1
+            InsertInto("UPDATE jurnal SET tgl='" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "' where no_jurnal='" + kode.ToString + "'")
             InsertInto("delete from djurnal where no_jurnal='" + kode.ToString + "'")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas + "','','" + nominalminus.ToString + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkir + "','','" + nominal.ToString + "')")

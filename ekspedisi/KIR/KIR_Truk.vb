@@ -229,14 +229,10 @@ Public Class KIR_Truk
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda tetap ingin melanjutkan KIR tanpa mencantumkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     insert()
-                                    insertakun()
-                                    audit()
                                     Me.Close()
                                 End If
                             Else
                                 insert()
-                                insertakun()
-                                audit()
                                 Me.Close()
                             End If
                         End If
@@ -255,9 +251,11 @@ Public Class KIR_Truk
         auditlog(user, kompname, form, aktivitas)
     End Sub
     Sub insert()
-        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "',now(),'" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")
+        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "','" + DateTimePicker3.Text.ToString + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")
         If inserts = True Then
             MessageBox.Show("KIR berhasil dilakukan, silahkan membuka Form KIR untuk melakukan KIR kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            insertakun()
+            audit()
         Else
             MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -287,7 +285,7 @@ Public Class KIR_Truk
     Sub insertakun()
         Try
             Dim nominalminus As Integer = nominal * -1
-            InsertInto("insert into jurnal values('" + kode.ToString + "',now())")
+            InsertInto("insert into jurnal values('" + kode.ToString + "','" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas + "','','" + nominalminus.ToString + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkir + "','','" + nominal.ToString + "')")
         Catch ex As Exception

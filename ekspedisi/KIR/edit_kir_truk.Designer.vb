@@ -40,6 +40,8 @@ Partial Class edit_kir_truk
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,14 +115,14 @@ Partial Class edit_kir_truk
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(555, 4)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(556, 30)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker2.TabIndex = 65
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(555, 30)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(556, 56)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 64
@@ -162,7 +164,7 @@ Partial Class edit_kir_truk
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(387, 33)
+        Me.Label4.Location = New System.Drawing.Point(388, 59)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(162, 18)
         Me.Label4.TabIndex = 60
@@ -172,7 +174,7 @@ Partial Class edit_kir_truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(460, 6)
+        Me.Label3.Location = New System.Drawing.Point(461, 32)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(89, 18)
         Me.Label3.TabIndex = 59
@@ -217,11 +219,30 @@ Partial Class edit_kir_truk
         Me.Label6.TabIndex = 73
         Me.Label6.Text = "Truk"
         '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(556, 6)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker3.TabIndex = 74
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.Label8.Location = New System.Drawing.Point(454, 8)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(96, 18)
+        Me.Label8.TabIndex = 75
+        Me.Label8.Text = "Tanggal Nota"
+        '
         'edit_kir_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(768, 489)
+        Me.Controls.Add(Me.DateTimePicker3)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ButtonEdit1)
         Me.Controls.Add(Me.SimpleButton2)
@@ -275,4 +296,6 @@ Partial Class edit_kir_truk
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

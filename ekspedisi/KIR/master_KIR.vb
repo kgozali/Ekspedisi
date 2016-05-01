@@ -121,6 +121,8 @@ Public Class master_KIR
                 Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
                 If test = True Then
                     MessageBox.Show("Data KIR berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    deljurnal()
+                    auditdel()
                     master_KIR_Load(sender, e)
                 Else
                     MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -135,6 +137,18 @@ Public Class master_KIR
 
 
     End Sub
+    Sub deljurnal()
+        InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
+        InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
+
+    End Sub
+    Sub auditdel()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Delete KIR"
+        Dim aktivitas As String = "Delete KIR Truk: " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR")
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
     Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
         Try
@@ -143,6 +157,8 @@ Public Class master_KIR
                 Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
                 If test = True Then
                     MessageBox.Show("Data KIR berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    deljurnal()
+                    auditdel()
                     master_KIR_Load(sender, e)
                 Else
                     MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
