@@ -346,8 +346,18 @@
     <Compile Include="Audit Log\XtraReport2.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="buktiformpinjam.vb" />
-    <Compile Include="bukti_pinjam_supir.vb" />
+    <Compile Include="buktiformpinjam.Designer.vb">
+      <DependentUpon>buktiformpinjam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="buktiformpinjam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bukti_pinjam_supir.Designer.vb">
+      <DependentUpon>bukti_pinjam_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bukti_pinjam_supir.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Edit Master\edit_supir.Designer.vb">
       <DependentUpon>edit_supir.vb</DependentUpon>
     </Compile>
@@ -1259,6 +1269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Audit Log\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buktiformpinjam.resx">
+      <DependentUpon>buktiformpinjam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bukti_pinjam_supir.resx">
+      <DependentUpon>bukti_pinjam_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit Master\edit_supir.resx">
       <DependentUpon>edit_supir.vb</DependentUpon>
