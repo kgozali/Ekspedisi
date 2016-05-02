@@ -442,6 +442,48 @@
     <Compile Include="Piutang Perusahaan\viewkwitansi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report Master\ReportHargaSupir.Designer.vb">
+      <DependentUpon>ReportHargaSupir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportHargaSupir.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportKartuAktiva.Designer.vb">
+      <DependentUpon>ReportKartuAktiva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportKartuAktiva.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasteKaryawan.Designer.vb">
+      <DependentUpon>ReportMasteKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasteKaryawan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterKontak.Designer.vb">
+      <DependentUpon>ReportMasterKontak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterKontak.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterSupir.Designer.vb">
+      <DependentUpon>ReportMasterSupir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterSupir.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterSupplier.Designer.vb">
+      <DependentUpon>ReportMasterSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterSupplier.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerMasterKaryawan.Designer.vb">
+      <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerMasterKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report\frm_principledetail.Designer.vb">
       <DependentUpon>frm_principledetail.vb</DependentUpon>
     </Compile>
@@ -1177,6 +1219,27 @@
     <EmbeddedResource Include="Piutang Perusahaan\viewkwitansi.resx">
       <DependentUpon>viewkwitansi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportHargaSupir.resx">
+      <DependentUpon>ReportHargaSupir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportKartuAktiva.resx">
+      <DependentUpon>ReportKartuAktiva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasteKaryawan.resx">
+      <DependentUpon>ReportMasteKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterKontak.resx">
+      <DependentUpon>ReportMasterKontak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterSupir.resx">
+      <DependentUpon>ReportMasterSupir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterSupplier.resx">
+      <DependentUpon>ReportMasterSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerMasterKaryawan.resx">
+      <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_principledetail.resx">
       <DependentUpon>frm_principledetail.vb</DependentUpon>
     </EmbeddedResource>
@@ -1449,6 +1512,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
