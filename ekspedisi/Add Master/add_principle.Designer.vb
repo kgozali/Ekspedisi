@@ -22,8 +22,6 @@ Partial Class add_principle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_principle))
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.kota = New DevExpress.XtraEditors.TextEdit()
-        Me.provinsi = New DevExpress.XtraEditors.TextEdit()
         Me.tel2 = New DevExpress.XtraEditors.TextEdit()
         Me.tel1 = New DevExpress.XtraEditors.TextEdit()
         Me.email = New DevExpress.XtraEditors.TextEdit()
@@ -38,15 +36,16 @@ Partial Class add_principle
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.kota = New System.Windows.Forms.ComboBox()
+        Me.provinsi = New DevExpress.XtraEditors.TextEdit()
         Me.nama = New DevExpress.XtraEditors.TextEdit()
-        CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,20 +66,6 @@ Partial Class add_principle
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 147
         Me.cancel.Text = "Cancel"
-        '
-        'kota
-        '
-        Me.kota.Location = New System.Drawing.Point(128, 167)
-        Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(336, 20)
-        Me.kota.TabIndex = 65
-        '
-        'provinsi
-        '
-        Me.provinsi.Location = New System.Drawing.Point(128, 143)
-        Me.provinsi.Name = "provinsi"
-        Me.provinsi.Size = New System.Drawing.Size(336, 20)
-        Me.provinsi.TabIndex = 64
         '
         'tel2
         '
@@ -106,7 +91,7 @@ Partial Class add_principle
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(5, 169)
+        Me.LabelControl9.Location = New System.Drawing.Point(8, 142)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(40, 18)
         Me.LabelControl9.TabIndex = 55
@@ -115,7 +100,7 @@ Partial Class add_principle
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 145)
+        Me.LabelControl8.Location = New System.Drawing.Point(5, 166)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(58, 18)
         Me.LabelControl8.TabIndex = 54
@@ -215,6 +200,22 @@ Partial Class add_principle
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
         '
+        'kota
+        '
+        Me.kota.FormattingEnabled = True
+        Me.kota.Location = New System.Drawing.Point(128, 143)
+        Me.kota.Name = "kota"
+        Me.kota.Size = New System.Drawing.Size(336, 21)
+        Me.kota.TabIndex = 66
+        '
+        'provinsi
+        '
+        Me.provinsi.Enabled = False
+        Me.provinsi.Location = New System.Drawing.Point(129, 167)
+        Me.provinsi.Name = "provinsi"
+        Me.provinsi.Size = New System.Drawing.Size(336, 20)
+        Me.provinsi.TabIndex = 64
+        '
         'nama
         '
         Me.nama.Location = New System.Drawing.Point(128, 46)
@@ -232,8 +233,6 @@ Partial Class add_principle
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_principle"
         Me.Text = "Tambah Principle"
-        CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -241,14 +240,13 @@ Partial Class add_principle
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents kota As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents provinsi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tel2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tel1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents email As DevExpress.XtraEditors.TextEdit
@@ -264,4 +262,6 @@ Partial Class add_principle
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nama As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents kota As System.Windows.Forms.ComboBox
+    Friend WithEvents provinsi As DevExpress.XtraEditors.TextEdit
 End Class

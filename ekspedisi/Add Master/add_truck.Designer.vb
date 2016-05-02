@@ -46,6 +46,8 @@ Partial Class add_truck
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.nop = New DevExpress.XtraEditors.TextEdit()
         Me.id = New DevExpress.XtraEditors.TextEdit()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.umur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hargabeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +62,7 @@ Partial Class add_truck
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(113, 309)
+        Me.simpan.Location = New System.Drawing.Point(401, 418)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 168
@@ -69,7 +71,7 @@ Partial Class add_truck
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(219, 309)
+        Me.cancel.Location = New System.Drawing.Point(507, 418)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 167
@@ -78,7 +80,7 @@ Partial Class add_truck
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(242, 191)
+        Me.LabelControl5.Location = New System.Drawing.Point(311, 191)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(42, 18)
         Me.LabelControl5.TabIndex = 81
@@ -96,7 +98,7 @@ Partial Class add_truck
         'umur
         '
         Me.umur.EditValue = "5"
-        Me.umur.Location = New System.Drawing.Point(107, 191)
+        Me.umur.Location = New System.Drawing.Point(176, 191)
         Me.umur.Name = "umur"
         Me.umur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.umur.Properties.Appearance.Options.UseFont = True
@@ -107,7 +109,7 @@ Partial Class add_truck
         '
         Me.depresiasi.FormattingEnabled = True
         Me.depresiasi.ItemHeight = 13
-        Me.depresiasi.Location = New System.Drawing.Point(123, 262)
+        Me.depresiasi.Location = New System.Drawing.Point(192, 262)
         Me.depresiasi.Name = "depresiasi"
         Me.depresiasi.Size = New System.Drawing.Size(167, 21)
         Me.depresiasi.TabIndex = 78
@@ -116,7 +118,7 @@ Partial Class add_truck
         '
         Me.penyusutan.FormattingEnabled = True
         Me.penyusutan.ItemHeight = 13
-        Me.penyusutan.Location = New System.Drawing.Point(134, 238)
+        Me.penyusutan.Location = New System.Drawing.Point(203, 238)
         Me.penyusutan.Name = "penyusutan"
         Me.penyusutan.Size = New System.Drawing.Size(156, 21)
         Me.penyusutan.TabIndex = 77
@@ -125,7 +127,7 @@ Partial Class add_truck
         '
         Me.aktiva.FormattingEnabled = True
         Me.aktiva.ItemHeight = 13
-        Me.aktiva.Location = New System.Drawing.Point(98, 214)
+        Me.aktiva.Location = New System.Drawing.Point(167, 214)
         Me.aktiva.Name = "aktiva"
         Me.aktiva.Size = New System.Drawing.Size(192, 21)
         Me.aktiva.TabIndex = 76
@@ -133,7 +135,7 @@ Partial Class add_truck
         'Cmbbxsupp
         '
         Me.Cmbbxsupp.FormattingEnabled = True
-        Me.Cmbbxsupp.Location = New System.Drawing.Point(114, 118)
+        Me.Cmbbxsupp.Location = New System.Drawing.Point(183, 118)
         Me.Cmbbxsupp.Name = "Cmbbxsupp"
         Me.Cmbbxsupp.Size = New System.Drawing.Size(176, 21)
         Me.Cmbbxsupp.TabIndex = 6
@@ -167,13 +169,15 @@ Partial Class add_truck
         '
         'hargabeli
         '
-        Me.hargabeli.Location = New System.Drawing.Point(86, 143)
+        Me.hargabeli.Location = New System.Drawing.Point(155, 143)
         Me.hargabeli.Name = "hargabeli"
         Me.hargabeli.Size = New System.Drawing.Size(204, 20)
         Me.hargabeli.TabIndex = 7
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.LabelControl12)
+        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.umur)
@@ -199,27 +203,27 @@ Partial Class add_truck
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(307, 291)
+        Me.GroupControl1.Size = New System.Drawing.Size(616, 400)
         Me.GroupControl1.TabIndex = 166
         Me.GroupControl1.Text = "Data"
         '
         'nilairesidu
         '
-        Me.nilairesidu.Location = New System.Drawing.Point(92, 167)
+        Me.nilairesidu.Location = New System.Drawing.Point(161, 167)
         Me.nilairesidu.Name = "nilairesidu"
         Me.nilairesidu.Size = New System.Drawing.Size(198, 20)
         Me.nilairesidu.TabIndex = 6
         '
         'norangka
         '
-        Me.norangka.Location = New System.Drawing.Point(125, 95)
+        Me.norangka.Location = New System.Drawing.Point(194, 95)
         Me.norangka.Name = "norangka"
         Me.norangka.Size = New System.Drawing.Size(165, 20)
         Me.norangka.TabIndex = 5
         '
         'nomesin
         '
-        Me.nomesin.Location = New System.Drawing.Point(107, 71)
+        Me.nomesin.Location = New System.Drawing.Point(176, 71)
         Me.nomesin.Name = "nomesin"
         Me.nomesin.Size = New System.Drawing.Size(183, 20)
         Me.nomesin.TabIndex = 4
@@ -289,7 +293,7 @@ Partial Class add_truck
         '
         'nop
         '
-        Me.nop.Location = New System.Drawing.Point(99, 46)
+        Me.nop.Location = New System.Drawing.Point(168, 46)
         Me.nop.Name = "nop"
         Me.nop.Size = New System.Drawing.Size(191, 20)
         Me.nop.TabIndex = 2
@@ -297,16 +301,32 @@ Partial Class add_truck
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(86, 24)
+        Me.id.Location = New System.Drawing.Point(155, 24)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(204, 20)
         Me.id.TabIndex = 1
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(159, 289)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.TabIndex = 82
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Location = New System.Drawing.Point(5, 291)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl12.TabIndex = 83
+        Me.LabelControl12.Text = "Tanggal Beli"
         '
         'add_truck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(328, 342)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
@@ -351,4 +371,6 @@ Partial Class add_truck
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nop As DevExpress.XtraEditors.TextEdit
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
 End Class

@@ -28,7 +28,7 @@ Public Class add_truck
                 If msg = DialogResult.OK Then
                     add_truck_Load(sender, e)
                     Reset()
-                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` , tgl_beli `Tanggal Beli` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
                     master_truck.GridControl1.DataSource = data
                     master_truck.GridControl1.Visible = True
                     master_truck.GridControl2.Visible = False
@@ -42,7 +42,7 @@ Public Class add_truck
                 End If
             Else
                 add_truck_Load(sender, e)
-                data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` , tgl_beli `Tanggal Beli` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
                 master_truck.GridControl1.DataSource = data
                 master_truck.GridControl1.Visible = True
                 master_truck.GridControl2.Visible = False
@@ -66,10 +66,46 @@ Public Class add_truck
             Try
                 'insert ke dalam database
                 'MsgBox(aktiva.SelectedValue.ToString)
-                Dim penampung As String = "insert into mtruk values ('" & id.Text & "','" & nop.Text & "','" & nomesin.Text & "','" & norangka.Text & "" & "','" & Cmbbxsupp.SelectedValue.ToString & "','" & hargabeli.Text & "','" & umur.Text & "','" & nilairesidu.Text & "','" & aktiva.SelectedValue.ToString & "','" & penyusutan.SelectedValue.ToString & "','" & depresiasi.SelectedValue.ToString & "','1') "
+                Dim penampung As String = "insert into mtruk values ('" & id.Text & "','" & nop.Text & "','" & nomesin.Text & "','" & norangka.Text & "" & "','" & Cmbbxsupp.SelectedValue.ToString & "','" & hargabeli.Text & "','" & umur.Text & "','" & nilairesidu.Text & "','" & aktiva.SelectedValue.ToString & "','" & penyusutan.SelectedValue.ToString & "','" & depresiasi.SelectedValue.ToString & "','" & DateTimePicker1.Value.ToString("yyyyMMdd") & "','1') "
                 'MsgBox(penampung)
-                audit()
                 InsertInto(penampung)
+                Dim pnmpungharga As Double = (CInt(hargabeli.Text) - CInt(nilairesidu.Text)) / CInt(umur.Text)
+
+                If DateTimePicker1.Value.ToString("MM") = "01" Then
+                    Dim nilaibuku As Double = CInt(hargabeli.Text)
+                    For i = 0 To CInt(umur.Text) - 1
+                        nilaibuku = nilaibuku - pnmpungharga
+                        Dim tglakhir As Integer = CInt(DateTimePicker1.Value.ToString("yyyy")) + CInt(i)
+                        Dim inserting As String = "insert into kartu_aktiva values ('" & id.Text & "','January " & tglakhir.ToString & "- December " & tglakhir.ToString & "', '" & pnmpungharga.ToString & "','" & nilaibuku.ToString & "') "
+                        InsertInto(inserting)
+                    Next
+                Else
+                    Dim penghitung As Integer = 0
+                    For i = CInt(DateTimePicker1.Value.ToString("MM")) To 12
+                        penghitung = penghitung + 1
+                    Next
+
+                    Dim nilaipertama As Double = (penghitung / 12) * pnmpungharga
+                    Dim nilaibuku2 As Double = CInt(hargabeli.Text) - nilaipertama
+                    'MsgBox(nilaipertama)
+                    Dim masukan As String = "insert into kartu_aktiva values ('" & id.Text & "','" & DateTimePicker1.Value.ToString("MMMM yyyy") & "- December " & DateTimePicker1.Value.ToString("yyyy") & "', '" & nilaipertama.ToString & "','" & nilaibuku2.ToString & "') "
+                    InsertInto(masukan)
+
+
+                    For i = 1 To CInt(umur.Text) - 1
+                        nilaibuku2 = nilaibuku2 - pnmpungharga
+                        Dim tglakhir As Integer = CInt(DateTimePicker1.Value.ToString("yyyy")) + CInt(i)
+                        Dim inserting As String = "insert into kartu_aktiva values ('" & id.Text & "','January " & tglakhir.ToString & "- December " & tglakhir.ToString & "', '" & pnmpungharga.ToString & "','" & nilaibuku2.ToString & "') "
+                        InsertInto(inserting)
+                    Next
+
+                    Dim nilaiterakhir As Double = pnmpungharga - nilaipertama
+                    nilaibuku2 = nilaibuku2 - nilaiterakhir
+                    Dim tanggalnya As Integer = CInt(DateTimePicker1.Value.ToString("yyyy")) + CInt(umur.Text)
+                    Dim masukan2 As String = "insert into kartu_aktiva values ('" & id.Text & "','January " & tanggalnya.ToString & "- " & DateTimePicker1.Value.ToString("MMMM") & " " & tanggalnya.ToString & "', '" & nilaiterakhir.ToString & "','" & nilaibuku2.ToString & "') "
+                    InsertInto(masukan2)
+
+                End If
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -77,7 +113,7 @@ Public Class add_truck
                     Reset()
                 Else
                     cek = False
-                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
+                    data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi` , tgl_beli `Tanggal Beli` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
                     master_truck.GridControl1.DataSource = data
                     master_truck.GridControl1.Visible = True
                     master_truck.GridControl2.Visible = False
@@ -93,13 +129,6 @@ Public Class add_truck
                 MsgBox(ex.Message)
             End Try
         End If
-    End Sub
-    Sub audit()
-        Dim user As String = main_menu.username
-        Dim kompname As String = System.Net.Dns.GetHostName
-        Dim form As String = "Master Truk"
-        Dim aktivitas As String = "Add Truk: " & id.Text.ToString
-        auditlog(user, kompname, form, aktivitas)
     End Sub
     Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargabeli.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
@@ -122,7 +151,7 @@ Public Class add_truck
             norangka.Text = ""
             hargabeli.Text = ""
             nilairesidu.Text = ""
-
+            DateTimePicker1.Text = Now()
 
             cbsupplier = DtTable("select id_supplier `Kode Supplier`,nama_supplier `Nama Supplier` from msupplier where `s` = 1")
             Cmbbxsupp.DataSource = cbsupplier

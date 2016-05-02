@@ -1,9 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_principle
     Dim cek As Boolean
-    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Me.Close()
-    End Sub
+    Dim data As New DataTable
+    Dim cbkota As New DataTable
+    Dim cbprinciple As New DataTable
 
     Private Sub add_principle_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
@@ -11,12 +11,30 @@ Public Class add_principle
                 Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                 If msg = DialogResult.OK Then
                     add_principle_Load(sender, e)
+                    master_principle.GridControl1.Visible = True
+                    master_principle.GridControl2.Visible = False
+                    data = DtTable("SELECT s.id_principle `Kode Principle`, s.nama_principle `Nama Principle`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi from mprinciple s where s.`s`='1'")
+                    master_principle.GridControl1.DataSource = data
+                    master_principle.edit.Down = False
+                    master_principle.deldata.Down = False
+                    master_principle.editing.Visible = False
+                    master_principle.hapus.Visible = False
+                    master_principle.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
                 End If
             Else
                 add_principle_Load(sender, e)
+                master_principle.GridControl1.Visible = True
+                master_principle.GridControl2.Visible = False
+                data = DtTable("SELECT s.id_principle `Kode Principle`, s.nama_principle `Nama Principle`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi from mprinciple s where s.`s`='1'")
+                master_principle.GridControl1.DataSource = data
+                master_principle.edit.Down = False
+                master_principle.deldata.Down = False
+                master_principle.editing.Visible = False
+                master_principle.hapus.Visible = False
+                master_principle.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -24,13 +42,36 @@ Public Class add_principle
         End Try
     End Sub
 
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_principle.GridControl1.Visible = True
+        master_principle.GridControl2.Visible = False
+        data = DtTable("SELECT s.id_principle `Kode Principle`, s.nama_principle `Nama Principle`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi from mprinciple s where s.`s`='1'")
+        master_principle.GridControl1.DataSource = data
+        master_principle.edit.Down = False
+        master_principle.deldata.Down = False
+        master_principle.editing.Visible = False
+        master_principle.hapus.Visible = False
+        master_principle.GroupControl2.Enabled = True
+        Me.Close()
+    End Sub
+
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
-        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or tel2.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
+
+        If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MP"
+                tanggal = DtTable("select * from mprinciple where substring(id_principle,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
-                InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text & "') ")
+                InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
@@ -39,6 +80,12 @@ Public Class add_principle
                 Else
                     cek = False
                     Me.Close()
+                    master_principle.GridControl1.Visible = True
+                    master_principle.GridControl2.Visible = False
+                    data = DtTable("SELECT s.id_principle `Kode Principle`, s.nama_principle `Nama Principle`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi from mprinciple s where s.`s`='1'")
+                    master_principle.GridControl1.DataSource = data
+                    master_principle.edit.Down = False
+                    master_principle.deldata.Down = False
                 End If
 
             Catch ex As Exception
@@ -46,33 +93,45 @@ Public Class add_principle
             End Try
         End If
 
-        
-    End Sub
-    Sub audit()
-        Dim user As String = main_menu.username
-        Dim kompname As String = System.Net.Dns.GetHostName
-        Dim form As String = "Master Principle"
-        Dim aktivitas As String = "Add Principle: " & id.Text.ToString
-        auditlog(user, kompname, form, aktivitas)
+
+
     End Sub
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim tanggal As New DataTable
-        Dim tgl As String = "MP"
-        tanggal = DtTable("select * from mprinciple where substring(ID_principle,1,10) = '" & tgl & "'")
-        Dim hitung As String = tanggal.Rows.Count() + 1
-        While hitung.LongCount < 5
-            hitung = "0" + hitung
-        End While
-        id.Text = tgl + hitung
+        Try
+            cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+            kota.DataSource = cbkota
+            kota.ValueMember = "kota"
+            kota.DisplayMember = "kota"
 
-        nama.Text = ""
-        alamat.Text = ""
-        email.Text = ""
-        tel1.Text = ""
-        tel2.Text = ""
-        provinsi.Text = ""
-        kota.Text = ""
+
+            Dim tanggal As New DataTable
+            Dim tgl As String = "MP"
+            tanggal = DtTable("select * from mprinciple where substring(id_principle,1,2) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            id.Text = tgl + hitung
+
+            nama.Text = ""
+            alamat.Text = ""
+            email.Text = ""
+            tel1.Text = ""
+            tel2.Text = ""
+            provinsi.Text = ""
+            kota.Text = ""
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+    End Sub
+    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel2.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
     Private Sub nama_TextChanged(sender As Object, e As EventArgs) Handles nama.TextChanged
@@ -102,14 +161,6 @@ Public Class add_principle
         End If
     End Sub
 
-    Private Sub tel2_TextChanged(sender As Object, e As EventArgs) Handles tel2.TextChanged
-        'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
-        If tel2.Text = "" Then
-            cek = False
-        Else
-            cek = True
-        End If
-    End Sub
 
     Private Sub provinsi_TextChanged(sender As Object, e As EventArgs) Handles provinsi.TextChanged
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
@@ -120,7 +171,7 @@ Public Class add_principle
         End If
     End Sub
 
-    Private Sub kota_TextChanged(sender As Object, e As EventArgs) Handles kota.TextChanged
+    Private Sub kota_TextChanged(sender As Object, e As EventArgs)
         'pengecekan untuk mengetahui apakah form sudah di edit atau belum (jika belum, untuk menghindari system warning pertanyaan)
         If kota.Text = "" Then
             cek = False
@@ -138,10 +189,11 @@ Public Class add_principle
         End If
     End Sub
 
-    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
-        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+
+    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
+        Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
+        Dim prov As String = Scalar(carip)
+        provinsi.Text = prov
     End Sub
-    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel2.KeyPress
-        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
-    End Sub
+
 End Class
