@@ -58,7 +58,7 @@ Partial Class edit_kir_truk
         Me.SimpleButton2.Location = New System.Drawing.Point(299, 405)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(42, 37)
-        Me.SimpleButton2.TabIndex = 70
+        Me.SimpleButton2.TabIndex = 8
         '
         'TextEdit4
         '
@@ -66,7 +66,7 @@ Partial Class edit_kir_truk
         Me.TextEdit4.Location = New System.Drawing.Point(36, 414)
         Me.TextEdit4.Name = "TextEdit4"
         Me.TextEdit4.Size = New System.Drawing.Size(257, 20)
-        Me.TextEdit4.TabIndex = 69
+        Me.TextEdit4.TabIndex = 7
         '
         'PictureBox1
         '
@@ -101,7 +101,7 @@ Partial Class edit_kir_truk
         Me.SimpleButton1.Location = New System.Drawing.Point(660, 454)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 67
+        Me.SimpleButton1.TabIndex = 11
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -110,7 +110,7 @@ Partial Class edit_kir_truk
         Me.Submit.Location = New System.Drawing.Point(553, 454)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 66
+        Me.Submit.TabIndex = 10
         Me.Submit.Text = "Submit"
         '
         'DateTimePicker2
@@ -118,14 +118,14 @@ Partial Class edit_kir_truk
         Me.DateTimePicker2.Location = New System.Drawing.Point(556, 30)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 65
+        Me.DateTimePicker2.TabIndex = 5
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(556, 56)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 64
+        Me.DateTimePicker1.TabIndex = 6
         '
         'TextEdit3
         '
@@ -133,14 +133,14 @@ Partial Class edit_kir_truk
         Me.TextEdit3.Location = New System.Drawing.Point(556, 414)
         Me.TextEdit3.Name = "TextEdit3"
         Me.TextEdit3.Size = New System.Drawing.Size(200, 20)
-        Me.TextEdit3.TabIndex = 63
+        Me.TextEdit3.TabIndex = 9
         '
         'TextEdit2
         '
         Me.TextEdit2.Location = New System.Drawing.Point(92, 32)
         Me.TextEdit2.Name = "TextEdit2"
         Me.TextEdit2.Size = New System.Drawing.Size(224, 20)
-        Me.TextEdit2.TabIndex = 62
+        Me.TextEdit2.TabIndex = 2
         '
         'TextEdit1
         '
@@ -148,7 +148,7 @@ Partial Class edit_kir_truk
         Me.TextEdit1.Location = New System.Drawing.Point(92, 6)
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Size = New System.Drawing.Size(174, 20)
-        Me.TextEdit1.TabIndex = 56
+        Me.TextEdit1.TabIndex = 1
         '
         'Label5
         '
@@ -207,7 +207,7 @@ Partial Class edit_kir_truk
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(174, 20)
-        Me.ButtonEdit1.TabIndex = 72
+        Me.ButtonEdit1.TabIndex = 3
         '
         'Label6
         '
@@ -224,7 +224,7 @@ Partial Class edit_kir_truk
         Me.DateTimePicker3.Location = New System.Drawing.Point(556, 6)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker3.TabIndex = 74
+        Me.DateTimePicker3.TabIndex = 4
         '
         'Label8
         '

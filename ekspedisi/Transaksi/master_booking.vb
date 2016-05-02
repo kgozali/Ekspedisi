@@ -118,4 +118,33 @@ Public Class master_booking
         frm_bookingtruk.bookcode = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
         frm_bookingtruk.ShowDialog()
     End Sub
+
+    Private Sub DeleteBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteBookingToolStripMenuItem.Click
+        del(sender, e)
+    End Sub
+    Sub del(sender As Object, e As EventArgs)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking"), "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        If msg = DialogResult.OK Then
+            InsertInto("update booking_truk set del=1,s=0 where id_booking='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
+            InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
+            Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
+            If ret = True Then
+                audit()
+                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                master_booking_Load(sender, e)
+            End If
+
+        End If
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Booking Truk"
+        Dim aktivitas As String = "Delete Booking: " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
+        del(sender, e)
+    End Sub
 End Class
