@@ -33,32 +33,37 @@ Partial Class change_password
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(8, 59)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 13)
+        Me.Label3.Size = New System.Drawing.Size(155, 16)
         Me.Label3.TabIndex = 128
         Me.Label3.Text = "Re-enter New Password :"
         '
         'repass
         '
-        Me.repass.Location = New System.Drawing.Point(144, 56)
+        Me.repass.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.repass.Location = New System.Drawing.Point(174, 56)
         Me.repass.Name = "repass"
         Me.repass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.repass.Size = New System.Drawing.Size(175, 21)
+        Me.repass.Size = New System.Drawing.Size(175, 22)
         Me.repass.TabIndex = 125
         '
         'pass
         '
-        Me.pass.Location = New System.Drawing.Point(98, 29)
+        Me.pass.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pass.Location = New System.Drawing.Point(174, 29)
         Me.pass.Name = "pass"
         Me.pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.pass.Size = New System.Drawing.Size(175, 21)
+        Me.pass.Size = New System.Drawing.Size(175, 22)
         Me.pass.TabIndex = 122
         '
         'simpan
         '
+        Me.simpan.Appearance.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.simpan.Appearance.Options.UseFont = True
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(139, 83)
+        Me.simpan.Location = New System.Drawing.Point(169, 97)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(87, 26)
         Me.simpan.TabIndex = 126
@@ -66,8 +71,10 @@ Partial Class change_password
         '
         'cancel
         '
+        Me.cancel.Appearance.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancel.Appearance.Options.UseFont = True
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(232, 83)
+        Me.cancel.Location = New System.Drawing.Point(262, 97)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(87, 26)
         Me.cancel.TabIndex = 127
@@ -76,27 +83,30 @@ Partial Class change_password
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 32)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(61, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 13)
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
         Me.Label2.TabIndex = 124
         Me.Label2.Text = "New Password :"
         '
         'nama
         '
         Me.nama.AutoSize = True
-        Me.nama.Location = New System.Drawing.Point(76, 8)
+        Me.nama.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nama.Location = New System.Drawing.Point(171, 8)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(57, 13)
+        Me.nama.Size = New System.Drawing.Size(69, 16)
         Me.nama.TabIndex = 123
         Me.nama.Text = "nama user"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 8)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(88, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 13)
+        Me.Label1.Size = New System.Drawing.Size(75, 16)
         Me.Label1.TabIndex = 121
         Me.Label1.Text = "Username :"
         '
@@ -104,7 +114,7 @@ Partial Class change_password
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(333, 116)
+        Me.ClientSize = New System.Drawing.Size(361, 135)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.repass)
         Me.Controls.Add(Me.pass)
