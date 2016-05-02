@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Master_supir
+Partial Class master_supir
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -20,7 +20,7 @@ Partial Class Master_supir
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Master_supir))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_supir))
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -40,7 +40,7 @@ Partial Class Master_supir
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.addkaryawanbaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.addsupirbaru = New DevExpress.XtraBars.BarButtonItem()
         Me.edit = New DevExpress.XtraBars.BarButtonItem()
         Me.deldata = New DevExpress.XtraBars.BarButtonItem()
         Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
@@ -60,21 +60,21 @@ Partial Class Master_supir
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GroupControl3,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl3.SuspendLayout
+        CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RibbonControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ContextMenuStrip1.SuspendLayout
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GroupControl2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl2.SuspendLayout
+        CType(Me.GroupControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl1.SuspendLayout
+        CType(Me.cari.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'hapus
         '
@@ -83,28 +83,28 @@ Partial Class Master_supir
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 50
         Me.hapus.Text = "Delete"
-        Me.hapus.Visible = False
+        Me.hapus.Visible = false
         '
         'RepositoryItemCheckEdit1
         '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.AutoHeight = false
         Me.RepositoryItemCheckEdit1.Caption = "Check"
         Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
         'msiswa
         '
-        Me.msiswa.ActAsDropDown = True
+        Me.msiswa.ActAsDropDown = true
         Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.msiswa.Caption = "Master Data"
-        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"), System.Drawing.Image)
+        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"),System.Drawing.Image)
         Me.msiswa.Id = 1
-        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
+        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"),System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
         '
         'cancel
         '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"),System.Drawing.Image)
         Me.cancel.Location = New System.Drawing.Point(892, 666)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
@@ -135,17 +135,17 @@ Partial Class Master_supir
         '
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelect = true
         Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'RibbonControl1
         '
-        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addkaryawanbaru, Me.edit, Me.deldata, Me.jumpmenu})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsupirbaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(1, 3)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -155,9 +155,9 @@ Partial Class Master_supir
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.ShowToolbarCustomizeItem = False
+        Me.RibbonControl1.ShowToolbarCustomizeItem = false
         Me.RibbonControl1.Size = New System.Drawing.Size(1007, 96)
-        Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
+        Me.RibbonControl1.Toolbar.ShowCustomizeItem = false
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'RibbonGalleryBarItem1
@@ -169,7 +169,7 @@ Partial Class Master_supir
         'datasiswa
         '
         Me.datasiswa.Caption = "Master Data Siswa"
-        Me.datasiswa.Glyph = CType(resources.GetObject("datasiswa.Glyph"), System.Drawing.Image)
+        Me.datasiswa.Glyph = CType(resources.GetObject("datasiswa.Glyph"),System.Drawing.Image)
         Me.datasiswa.Id = 10
         Me.datasiswa.Name = "datasiswa"
         '
@@ -196,8 +196,8 @@ Partial Class Master_supir
         '
         Me.mastersiswa.Caption = "Master Data Siswa"
         Me.mastersiswa.Id = 13
-        Me.mastersiswa.LargeGlyph = CType(resources.GetObject("mastersiswa.LargeGlyph"), System.Drawing.Image)
-        Me.mastersiswa.LargeGlyphDisabled = CType(resources.GetObject("mastersiswa.LargeGlyphDisabled"), System.Drawing.Image)
+        Me.mastersiswa.LargeGlyph = CType(resources.GetObject("mastersiswa.LargeGlyph"),System.Drawing.Image)
+        Me.mastersiswa.LargeGlyphDisabled = CType(resources.GetObject("mastersiswa.LargeGlyphDisabled"),System.Drawing.Image)
         Me.mastersiswa.Name = "mastersiswa"
         '
         'BarButtonItem4
@@ -230,38 +230,38 @@ Partial Class Master_supir
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'addkaryawanbaru
+        'addsupirbaru
         '
-        Me.addkaryawanbaru.Caption = "Tambah Data"
-        Me.addkaryawanbaru.Glyph = CType(resources.GetObject("addkaryawanbaru.Glyph"), System.Drawing.Image)
-        Me.addkaryawanbaru.Id = 23
-        Me.addkaryawanbaru.LargeGlyph = CType(resources.GetObject("addkaryawanbaru.LargeGlyph"), System.Drawing.Image)
-        Me.addkaryawanbaru.Name = "addkaryawanbaru"
+        Me.addsupirbaru.Caption = "Tambah Data"
+        Me.addsupirbaru.Glyph = CType(resources.GetObject("addsupirbaru.Glyph"),System.Drawing.Image)
+        Me.addsupirbaru.Id = 23
+        Me.addsupirbaru.LargeGlyph = CType(resources.GetObject("addsupirbaru.LargeGlyph"),System.Drawing.Image)
+        Me.addsupirbaru.Name = "addsupirbaru"
         '
         'edit
         '
         Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.edit.Caption = "Edit Data"
-        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
+        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"),System.Drawing.Image)
         Me.edit.Id = 27
-        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
+        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"),System.Drawing.Image)
         Me.edit.Name = "edit"
         '
         'deldata
         '
         Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.deldata.Caption = "Delete Data"
-        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
+        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"),System.Drawing.Image)
         Me.deldata.Id = 30
-        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
+        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"),System.Drawing.Image)
         Me.deldata.Name = "deldata"
         '
         'jumpmenu
         '
         Me.jumpmenu.Caption = "Main Menu"
-        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
+        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"),System.Drawing.Image)
         Me.jumpmenu.Id = 31
-        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
+        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"),System.Drawing.Image)
         Me.jumpmenu.Name = "jumpmenu"
         '
         'RibbonPage1
@@ -273,7 +273,7 @@ Partial Class Master_supir
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addkaryawanbaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addsupirbaru)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
@@ -297,7 +297,7 @@ Partial Class Master_supir
         '
         'Print
         '
-        Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
+        Me.Print.Image = CType(resources.GetObject("Print.Image"),System.Drawing.Image)
         Me.Print.Name = "Print"
         Me.Print.Size = New System.Drawing.Size(99, 22)
         Me.Print.Text = "Print"
@@ -319,25 +319,25 @@ Partial Class Master_supir
         '
         'nonaktif
         '
-        Me.nonaktif.AutoSize = True
+        Me.nonaktif.AutoSize = true
         Me.nonaktif.Location = New System.Drawing.Point(5, 47)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(121, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(97, 17)
         Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Karyawan Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = True
+        Me.nonaktif.Text = "Supir Non-Aktif"
+        Me.nonaktif.UseVisualStyleBackColor = true
         '
         'aktif
         '
-        Me.aktif.AutoSize = True
-        Me.aktif.Checked = True
+        Me.aktif.AutoSize = true
+        Me.aktif.Checked = true
         Me.aktif.Location = New System.Drawing.Point(5, 24)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(98, 17)
+        Me.aktif.Size = New System.Drawing.Size(74, 17)
         Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = True
-        Me.aktif.Text = "Karyawan Aktif"
-        Me.aktif.UseVisualStyleBackColor = True
+        Me.aktif.TabStop = true
+        Me.aktif.Text = "Supir Aktif"
+        Me.aktif.UseVisualStyleBackColor = true
         '
         'editing
         '
@@ -346,7 +346,7 @@ Partial Class Master_supir
         Me.editing.Size = New System.Drawing.Size(198, 26)
         Me.editing.TabIndex = 48
         Me.editing.Text = "Edit"
-        Me.editing.Visible = False
+        Me.editing.Visible = false
         '
         'GroupControl1
         '
@@ -361,25 +361,25 @@ Partial Class Master_supir
         '
         'nama
         '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
+        Me.nama.AutoSize = true
+        Me.nama.Checked = true
         Me.nama.Location = New System.Drawing.Point(98, 24)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(103, 17)
+        Me.nama.Size = New System.Drawing.Size(79, 17)
         Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nama Karyawan"
-        Me.nama.UseVisualStyleBackColor = True
+        Me.nama.TabStop = true
+        Me.nama.Text = "Nama Supir"
+        Me.nama.UseVisualStyleBackColor = true
         '
         'id
         '
-        Me.id.AutoSize = True
+        Me.id.AutoSize = true
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(87, 17)
+        Me.id.Size = New System.Drawing.Size(63, 17)
         Me.id.TabIndex = 1
-        Me.id.Text = "ID Karyawan"
-        Me.id.UseVisualStyleBackColor = True
+        Me.id.Text = "ID Supir"
+        Me.id.UseVisualStyleBackColor = true
         '
         'cari
         '
@@ -391,26 +391,26 @@ Partial Class Master_supir
         '
         'BarButtonItem2
         '
-        Me.BarButtonItem2.ActAsDropDown = True
+        Me.BarButtonItem2.ActAsDropDown = true
         Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.BarButtonItem2.Caption = "Master Data"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"),System.Drawing.Image)
         Me.BarButtonItem2.Id = 1
-        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"),System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"),System.Drawing.Image)
         Me.SimpleButton1.Location = New System.Drawing.Point(928, 152)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
         Me.SimpleButton1.TabIndex = 53
         Me.SimpleButton1.Text = "Print"
         '
-        'Master_supir
+        'master_supir
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 697)
         Me.Controls.Add(Me.hapus)
@@ -421,28 +421,28 @@ Partial Class Master_supir
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Name = "Master_supir"
-        Me.Text = "Master_supir"
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        Me.GroupControl2.PerformLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.Name = "master_supir"
+        Me.Text = "Master Supir"
+        CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GroupControl3,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl3.ResumeLayout(false)
+        CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RibbonControl1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ContextMenuStrip1.ResumeLayout(false)
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GroupControl2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl2.ResumeLayout(false)
+        Me.GroupControl2.PerformLayout
+        CType(Me.GroupControl1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl1.ResumeLayout(false)
+        Me.GroupControl1.PerformLayout
+        CType(Me.cari.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
@@ -462,7 +462,7 @@ Partial Class Master_supir
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents addkaryawanbaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents addsupirbaru As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem

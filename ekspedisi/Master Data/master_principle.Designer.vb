@@ -52,13 +52,13 @@ Partial Class master_principle
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Print = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Gridprinciple = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,12 +67,12 @@ Partial Class master_principle
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
+        CType(Me.Gridprinciple, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'msiswa
@@ -97,7 +97,7 @@ Partial Class master_principle
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(12, 534)
+        Me.editing.Location = New System.Drawing.Point(12, 659)
         Me.editing.Name = "editing"
         Me.editing.Size = New System.Drawing.Size(198, 26)
         Me.editing.TabIndex = 38
@@ -106,7 +106,7 @@ Partial Class master_principle
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(12, 534)
+        Me.hapus.Location = New System.Drawing.Point(12, 659)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(198, 26)
         Me.hapus.TabIndex = 40
@@ -139,7 +139,7 @@ Partial Class master_principle
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(450, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1012, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -271,7 +271,7 @@ Partial Class master_principle
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(339, 534)
+        Me.cancel.Location = New System.Drawing.Point(896, 658)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 42
@@ -327,42 +327,54 @@ Partial Class master_principle
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 184)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(984, 468)
         Me.GroupControl3.TabIndex = 41
         Me.GroupControl3.Text = "Data Principle"
         '
         'GridControl2
         '
         Me.GridControl2.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.MainView = Me.GridView1
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(414, 311)
+        Me.GridControl2.Size = New System.Drawing.Size(974, 439)
         Me.GridControl2.TabIndex = 8
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'GridView2
+        'GridView1
         '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
-        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
+        Me.GridView1.GridControl = Me.GridControl2
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsSelection.MultiSelect = True
+        Me.GridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MainView = Me.Gridprinciple
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(414, 311)
+        Me.GridControl1.Size = New System.Drawing.Size(974, 439)
         Me.GridControl1.TabIndex = 7
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.Gridprinciple})
         '
-        'GridView1
+        'ContextMenuStrip1
         '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        '
+        'Print
+        '
+        Me.Print.Name = "Print"
+        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Text = "Print"
+        '
+        'Gridprinciple
+        '
+        Me.Gridprinciple.GridControl = Me.GridControl1
+        Me.Gridprinciple.Name = "Gridprinciple"
         '
         'GroupControl1
         '
@@ -385,23 +397,11 @@ Partial Class master_principle
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
-        '
-        'Print
-        '
-        Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(99, 22)
-        Me.Print.Text = "Print"
-        '
         'master_principle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 567)
+        Me.ClientSize = New System.Drawing.Size(1008, 697)
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.cancel)
@@ -421,13 +421,13 @@ Partial Class master_principle
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.Gridprinciple, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -465,9 +465,9 @@ Partial Class master_principle
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents Gridprinciple As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
 End Class
