@@ -191,7 +191,7 @@ Partial Class main_menu
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
         Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem2
         Me.BackstageViewControl1.SelectedTabIndex = 0
-        Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 691)
+        Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
         '
@@ -201,7 +201,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl12.Controls.Add(Me.XtraTabControl1)
         Me.BackstageViewClientControl12.Location = New System.Drawing.Point(197, 0)
         Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
-        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(811, 691)
+        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(811, 697)
         Me.BackstageViewClientControl12.TabIndex = 10
         '
         'Label21
@@ -1173,13 +1173,13 @@ Partial Class main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1008, 697)
         Me.Controls.Add(Me.BackstageViewControl1)
         Me.LookAndFeel.SkinName = "McSkin"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Main Menu"
+        Me.Text = "PT SSKM- JOMBANG"
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackstageViewControl1.ResumeLayout(False)
         Me.BackstageViewClientControl12.ResumeLayout(False)

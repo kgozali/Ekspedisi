@@ -6,14 +6,16 @@ Public Class master_booking
         booking_truk.ShowDialog()
     End Sub
 
-
     Sub process()
         Try
             Dim x As String = ""
             If aktif.Checked = True Then
                 x = 1
                 edit.Enabled = True
-                ContextMenuStrip1.Enabled = True
+                deldata.Enabled = True
+                ContextMenuStrip1.Items(0).Enabled = True
+                ContextMenuStrip1.Items(1).Enabled = True
+                ContextMenuStrip1.Items(2).Enabled = True
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
@@ -28,7 +30,7 @@ Public Class master_booking
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and id_booking LIKE '%" + cari.Text.ToString + "%' order by tgl asc, Jam asc, id_booking asc")
+                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and id_booking LIKE '%" + cari.Text.ToString + "%' and del=0 order by tgl asc, Jam asc, id_booking asc")
                 GridControl1.DataSource = data
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -38,7 +40,7 @@ Public Class master_booking
                 cari.Visible = False
                 DateTimePicker1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and booking_truk.tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' order by Jam asc,id_booking asc")
+                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and booking_truk.tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and del=0 order by Jam asc,id_booking asc")
                 GridControl1.DataSource = data
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")

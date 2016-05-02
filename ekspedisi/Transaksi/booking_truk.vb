@@ -202,8 +202,7 @@ Public Class booking_truk
             
             If insert = True Then
                 MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                frm_bookingtruk.bookcode = kode.ToString
-                frm_bookingtruk.ShowDialog()
+                
                 ceking = True
                 reset()
 
@@ -333,13 +332,19 @@ Public Class booking_truk
                                         If msg = DialogResult.OK Then
                                             autogen()
                                             insert()
+                                           
                                             audit()
+                                            frm_bookingtruk.bookcode = kode.ToString
+                                            frm_bookingtruk.ShowDialog()
                                         Else
 
                                         End If
                                     Else
                                         insert()
+                                        
                                         audit()
+                                        frm_bookingtruk.bookcode = kode.ToString
+                                        frm_bookingtruk.ShowDialog()
                                     End If
 
                                 End If

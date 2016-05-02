@@ -221,7 +221,7 @@ Partial Class master_booking
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(20, 181)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(963, 452)
+        Me.GroupControl3.Size = New System.Drawing.Size(963, 448)
         Me.GroupControl3.TabIndex = 164
         Me.GroupControl3.Text = "Daftar Booking"
         '
@@ -361,7 +361,7 @@ Partial Class master_booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1000, 691)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl3)

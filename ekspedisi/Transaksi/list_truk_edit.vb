@@ -40,7 +40,7 @@ Public Class list_truk_edit
             'pilih truk ditampilkan pada buttonedit Booking truk
             Dim query As New DataTable
             'cek supir apa ada bookingan pada hari itu
-            query = DtTable("select id_truk from booking_truk where id_truk='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk") + "' and tgl='" + edit_booking.DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "'")
+            query = DtTable("select id_truk from booking_truk where id_truk='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Truk") + "' and tgl='" + edit_booking.DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and del=0")
             If query.Rows.Count > 0 Then
                 Dim msg As Integer = MessageBox.Show("Truk yang dipilih telah terdaftar dalam salah satu booking pada tanggal yang telah dipilih, apakah anda ingin melanjutkan booking?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                 If msg = DialogResult.OK Then
