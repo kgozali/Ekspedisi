@@ -1,4 +1,4 @@
-﻿Public Class edit_principle_pelunasan 
+﻿Public Class edit_principle_pelunasan
     Public idprinciple As String
     Private Sub principle_ButtonPressed(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)
         daftar_edit_piutang_principle.ShowDialog()
@@ -15,14 +15,15 @@
             RepositoryItemLookUpEdit1.DataSource = Data
             RepositoryItemLookUpEdit1.DisplayMember = "nama_akun"
             RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
-            Dim datapembayaran As DataTable = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and no_do='" & master_pelunasan_principle.viewdatapelunasan.GetRowCellValue(master_pelunasan_principle.viewdatapelunasan.FocusedRowHandle, "Nomor DO") & "' and t.s=0 and mprinciple.id_principle='" & idprinciple & "' group by t.id_transaksi")
+            Dim datapembayaran As DataTable = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt,pelunasan_piutang pp,dpelunasan_piutang dp where pp.id_pelunasan=dp.id_pelunasan and dp.id_faktur=no_do and dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and pp.id_pelunasan='" & nomerpelunasan.Text & "' and t.s=0 and mprinciple.id_principle='" & idprinciple & "' group by t.id_transaksi")
             'Dim mreader As DataTableReader = datapembayaran.CreateDataReader
+            'Dim tampung As String = master_pelunasan_principle.viewdatapelunasan.GetRowCellValue(master_peluanasan_karyawan.viewdatapelunasan.FocusedRowHandle, 0)
             Dim tabelpembayaran As DataTable = DtTable("SELECT id_rekening `namabank`, no_BG `nomerbg`,nominal `nominal`,tgl_cair `tanggalcair`,id_akun `akun` FROM `dmetode_pelunasan`d,makun ma WHERE ma.kode_akun=d.id_akun and id_pelunasan='" & nomerpelunasan.Text & "'")
             Dim mreader As DataTableReader
             'tabel = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and no_do='" & master_pelunasan_principle.viewdatapelunasan.GetRowCellValue(master_pelunasan_principle.viewdatapelunasan.FocusedRowHandle, "Nomor DO") & "' and t.s=0 and mprinciple.id_principle='" & idprinciple & "' group by t.id_transaksi")
             bayarpiutang.DataSource = tabel
             Dim angka As Double = 0
-           
+
             mreader = tabelpembayaran.CreateDataReader
             pelunasan.Tables(1).Load(mreader)
 

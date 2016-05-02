@@ -68,9 +68,9 @@
                 Else
                     'ganti di sini untuk bayar bisa nyicil
                     Dim tampung As String = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
+                    InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
                     For i = 0 To datapiutang.RowCount - 1
                         If datapiutang.GetRowCellValue(i, "Bayar") = True Then
-                            InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
                             InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
                             InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
 
@@ -97,6 +97,8 @@
                             .SetRowCellValue(i, "Bayar", False)
                         End With
                     Next i
+                    Dim datakosong As New DataTable
+                    daftarbayar.DataSource = datakosong
                     totaldibayar.Text = "0"
                     'Me.Close()
                     MessageBox.Show("Pelunasan sukses diinput", "Konfirmasi Pelunasan", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -116,29 +118,29 @@
         Try
             If datapiutang.FocusedColumn.AbsoluteIndex = 6 Then
                 Dim angka As Double = 0
-                    If datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") = False Then
-                        With datapiutang
-                            .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, True)
-                        End With
-                    Else
-                        With datapiutang
-                            .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, False)
-                        End With
-                    End If
-
-                    For i = 0 To datapiutang.RowCount - 1
-                        If datapiutang.GetRowCellValue(i, "Bayar") = True Then
-                            angka = angka + datapiutang.GetRowCellValue(i, "Nominal")
-                        End If
-                    Next i
-                    labeltotalbayar.Text = angka.ToString
-                    totaldibayar.Text = angka.ToString
-
+                If datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") = False Then
+                    With datapiutang
+                        .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, True)
+                    End With
                 Else
                     With datapiutang
-                        .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+                        .SetRowCellValue(datapiutang.FocusedRowHandle, .FocusedColumn, False)
                     End With
                 End If
+
+                For i = 0 To datapiutang.RowCount - 1
+                    If datapiutang.GetRowCellValue(i, "Bayar") = True Then
+                        angka = angka + datapiutang.GetRowCellValue(i, "Nominal")
+                    End If
+                Next i
+                labeltotalbayar.Text = angka.ToString
+                totaldibayar.Text = angka.ToString
+
+            Else
+                With datapiutang
+                    .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+                End With
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
