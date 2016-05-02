@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class edit_list_principle
+Partial Class edit_list_supir
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,7 +19,7 @@ Partial Class edit_list_principle
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_list_Principle))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_list_supir))
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
@@ -33,7 +33,7 @@ Partial Class edit_list_principle
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(674, 309)
+        Me.cancel.Location = New System.Drawing.Point(673, 309)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 119
@@ -44,16 +44,16 @@ Partial Class edit_list_principle
         Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(762, 291)
+        Me.GroupControl1.Size = New System.Drawing.Size(761, 291)
         Me.GroupControl1.TabIndex = 118
-        Me.GroupControl1.Text = "Daftar Edit Customer"
+        Me.GroupControl1.Text = "Daftar Edit Bank"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.Location = New System.Drawing.Point(6, 25)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(751, 262)
+        Me.GridControl1.Size = New System.Drawing.Size(750, 261)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -62,15 +62,15 @@ Partial Class edit_list_principle
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'edit_list_principle
+        'edit_list_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 343)
+        Me.ClientSize = New System.Drawing.Size(786, 345)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Name = "edit_list_principle"
-        Me.Text = "Edit List Principle"
+        Me.Name = "edit_list_karyawan"
+        Me.Text = "Edit List Supir"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
