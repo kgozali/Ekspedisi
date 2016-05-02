@@ -7,4 +7,12 @@
         rpt.CreateDocument()
 
     End Sub
+
+    Private Sub PrintPreviewBarItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PrintPreviewBarItem8.ItemClick
+        
+    End Sub
+
+    Private Sub PrintPreviewBarItem9_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PrintPreviewBarItem9.ItemClick
+        
+    End Sub
 End Class
