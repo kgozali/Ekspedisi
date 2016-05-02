@@ -460,6 +460,18 @@
     <Compile Include="Report Master\ReportMasteKaryawan.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report Master\ReportMasterBarang.Designer.vb">
+      <DependentUpon>ReportMasterBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterBarang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterCustomer.Designer.vb">
+      <DependentUpon>ReportMasterCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterCustomer.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report Master\ReportMasterKontak.Designer.vb">
       <DependentUpon>ReportMasterKontak.vb</DependentUpon>
     </Compile>
@@ -477,6 +489,18 @@
     </Compile>
     <Compile Include="Report Master\ReportMasterSupplier.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterTruk.Designer.vb">
+      <DependentUpon>ReportMasterTruk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterTruk.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerMasterBarang.Designer.vb">
+      <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerMasterBarang.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report Master\ViewerMasterKaryawan.Designer.vb">
       <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
@@ -1228,6 +1252,12 @@
     <EmbeddedResource Include="Report Master\ReportMasteKaryawan.resx">
       <DependentUpon>ReportMasteKaryawan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterBarang.resx">
+      <DependentUpon>ReportMasterBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterCustomer.resx">
+      <DependentUpon>ReportMasterCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ReportMasterKontak.resx">
       <DependentUpon>ReportMasterKontak.vb</DependentUpon>
     </EmbeddedResource>
@@ -1236,6 +1266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ReportMasterSupplier.resx">
       <DependentUpon>ReportMasterSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterTruk.resx">
+      <DependentUpon>ReportMasterTruk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerMasterBarang.resx">
+      <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ViewerMasterKaryawan.resx">
       <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
