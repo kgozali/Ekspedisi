@@ -346,6 +346,12 @@
     <Compile Include="Audit Log\XtraReport2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Edit Master\edit_supir.Designer.vb">
+      <DependentUpon>edit_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Master\edit_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="history.Designer.vb">
       <DependentUpon>history.vb</DependentUpon>
     </Compile>
@@ -1071,6 +1077,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Audit Log\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Master\edit_supir.resx">
+      <DependentUpon>edit_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>
