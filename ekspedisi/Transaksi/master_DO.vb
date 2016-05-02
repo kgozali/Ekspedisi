@@ -29,18 +29,22 @@ Public Class master_DO
                 edit.Enabled = True
                 deldata.Enabled = True
                 ContextMenuStrip1.Items(0).Enabled = True
+                ContextMenuStrip1.Items(1).Enabled = True
+                ContextMenuStrip1.Items(2).Enabled = True
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
                 deldata.Enabled = False
                 ContextMenuStrip1.Items(0).Enabled = False
+                ContextMenuStrip1.Items(1).Enabled = False
+                ContextMenuStrip1.Items(2).Enabled = True
             End If
 
             If nama.Checked = True Then
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -52,7 +56,7 @@ Public Class master_DO
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_transaksi LIKE '%" + cari.Text.ToString + "%' and s='" + x + "'order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_transaksi LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -63,7 +67,7 @@ Public Class master_DO
                 cari.Visible = False
                 DateTimePicker1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -187,4 +191,35 @@ Public Class master_DO
         End Try
     End Sub
 
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
+        del(sender, e)
+    End Sub
+    Sub del(sender As Object, e As EventArgs)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & "? Data yang telah dihapus tidak dapat dikemablikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        If msg = DialogResult.OK Then
+            InsertInto("update trans_do set del=1 where id_transaksi='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
+            Dim x As String = Scalar("select id_booking from trans_do where id_transaksi='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
+            InsertInto("update booking_truk set s=1 where id_booking='" + x.ToString + "'")
+            InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
+            Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
+            If ret = True Then
+                audit()
+                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                master_DO_Load(sender, e)
+                main_menu.main_menu_Load(sender, e)
+            End If
+
+        End If
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Delivery Order"
+        Dim aktivitas As String = "Delete DO: " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub DeleteDeliveryOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteDeliveryOrderToolStripMenuItem.Click
+        del(sender, e)
+    End Sub
 End Class

@@ -62,14 +62,39 @@ Public Class main_menu
         master_DO.ShowDialog()
     End Sub
 
-    Private Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dtdo As New DataTable
-        dtdo = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo))` Tanggal Jatuh Tempo` from trans_do where jatuh_tempo <= date_add(now(),INTERVAL 31 DAY) and jatuh_tempo >= now() and s=1 order by jatuh_tempo asc")
-        GridControl1.DataSource = dtdo
+    Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        GridView2.OptionsView.ShowFooter = True
+        GridView3.OptionsView.ShowFooter = True
+
+        'MENU DO APPLICATION MANAGER
+        Dim dtdo As New DataTable
+        dtdo = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo))` Tanggal Jatuh Tempo` from trans_do where jatuh_tempo <= date_add(now(),INTERVAL 31 DAY) and jatuh_tempo >= now() and s=1 and del=0 order by jatuh_tempo asc")
+        GridControl1.DataSource = dtdo
+        GridView1.OptionsView.ShowFooter = True
+        For i = 0 To GridView1.Columns.Count - 1
+            GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            If GridView1.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                GridView1.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+            End If
+        Next
+
+        'MENU KIR APPLICATION MANAGER
         Dim dtkir As New DataTable
         dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() and del=0 order by tgl_kir_berikutnya")
         GridControl4.DataSource = dtkir
+        GridView4.OptionsView.ShowFooter = True
+        For i = 0 To GridView4.Columns.Count - 1
+            GridView4.Columns(i).OptionsColumn.AllowEdit = False
+            If GridView4.Columns(i).FieldName.ToString = "Tanggal KIR Berikutnya" Then
+                GridView4.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                GridView4.Columns(i).SummaryItem.FieldName = "Tanggal KIR Berikutnya"
+                GridView4.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+            End If
+        Next
+
     End Sub
 
 

@@ -105,7 +105,7 @@ Public Class transaksi_DO
                             total = sum * price
                             generate()
                             Dim totalkredit As Integer = total * -1
-                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1,0)")
                             For i = 0 To GridView1.DataRowCount - 1
                                 InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
                             Next
@@ -230,7 +230,7 @@ Public Class transaksi_DO
                             total = sum * price
                             generate()
                             Dim totalkredit As Integer = total * -1
-                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1)")
+                            InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "','',0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1,0)")
                             For i = 0 To GridView1.DataRowCount - 1
                                 InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
                             Next
