@@ -44,6 +44,7 @@ Partial Class master_booking
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditBookingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteBookingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreviewAndPrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -55,7 +56,6 @@ Partial Class master_booking
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.DeleteBookingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -248,6 +248,13 @@ Partial Class master_booking
         Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.EditBookingToolStripMenuItem.Text = "Edit Booking"
         '
+        'DeleteBookingToolStripMenuItem
+        '
+        Me.DeleteBookingToolStripMenuItem.Image = CType(resources.GetObject("DeleteBookingToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.DeleteBookingToolStripMenuItem.Name = "DeleteBookingToolStripMenuItem"
+        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.DeleteBookingToolStripMenuItem.Text = "Delete Booking"
+        '
         'PreviewAndPrintToolStripMenuItem
         '
         Me.PreviewAndPrintToolStripMenuItem.Image = CType(resources.GetObject("PreviewAndPrintToolStripMenuItem.Image"), System.Drawing.Image)
@@ -349,13 +356,6 @@ Partial Class master_booking
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 166
         Me.SimpleButton1.Text = "Cancel"
-        '
-        'DeleteBookingToolStripMenuItem
-        '
-        Me.DeleteBookingToolStripMenuItem.Image = CType(resources.GetObject("DeleteBookingToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.DeleteBookingToolStripMenuItem.Name = "DeleteBookingToolStripMenuItem"
-        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.DeleteBookingToolStripMenuItem.Text = "Delete Booking"
         '
         'master_booking
         '

@@ -494,7 +494,7 @@ Partial Public Class Nota_bookingtruk
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Koneksi Ekspedisi"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "booking_truk"
         RelationColumnInfo1.NestedKeyColumn = "id_principle"

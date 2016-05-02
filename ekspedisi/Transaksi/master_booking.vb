@@ -17,8 +17,10 @@ Public Class master_booking
             ElseIf nonaktif.Checked = True Then
                 x = 0
                 edit.Enabled = False
+                deldata.Enabled = False
                 ContextMenuStrip1.Items(0).Enabled = False
-                ContextMenuStrip1.Items(1).Enabled = True
+                ContextMenuStrip1.Items(1).Enabled = False
+                ContextMenuStrip1.Items(2).Enabled = True
             End If
 
            
@@ -123,7 +125,7 @@ Public Class master_booking
         del(sender, e)
     End Sub
     Sub del(sender As Object, e As EventArgs)
-        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking"), "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "? Data yang telah dihapus tidak dapat dikemablikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
         If msg = DialogResult.OK Then
             InsertInto("update booking_truk set del=1,s=0 where id_booking='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
             InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
@@ -146,5 +148,10 @@ Public Class master_booking
 
     Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
         del(sender, e)
+    End Sub
+
+   
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
     End Sub
 End Class
