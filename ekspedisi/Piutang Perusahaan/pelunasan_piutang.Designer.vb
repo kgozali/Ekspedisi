@@ -51,6 +51,7 @@ Partial Class pelunasan_piutang
         Me.pembayaran = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.namabank = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.nobg = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.nominal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.tanggalcair = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
@@ -83,6 +84,7 @@ Partial Class pelunasan_piutang
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bayaran, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,7 +196,7 @@ Partial Class pelunasan_piutang
         Me.daftarbayar.Location = New System.Drawing.Point(8, 24)
         Me.daftarbayar.MainView = Me.pembayaran
         Me.daftarbayar.Name = "daftarbayar"
-        Me.daftarbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemLookUpEdit1})
+        Me.daftarbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemComboBox1})
         Me.daftarbayar.Size = New System.Drawing.Size(688, 144)
         Me.daftarbayar.TabIndex = 151
         Me.daftarbayar.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.pembayaran})
@@ -256,22 +258,27 @@ Partial Class pelunasan_piutang
         '
         'DataColumn9
         '
+        Me.DataColumn9.AllowDBNull = False
         Me.DataColumn9.Caption = "nomerbg"
         Me.DataColumn9.ColumnName = "nomerbg"
         '
         'DataColumn10
         '
+        Me.DataColumn10.AllowDBNull = False
         Me.DataColumn10.Caption = "Nominal"
         Me.DataColumn10.ColumnName = "nominal"
         Me.DataColumn10.DataType = GetType(Double)
         '
         'DataColumn11
         '
+        Me.DataColumn11.AllowDBNull = False
         Me.DataColumn11.Caption = "tanggalcair"
         Me.DataColumn11.ColumnName = "tanggalcair"
+        Me.DataColumn11.DataType = GetType(Date)
         '
         'DataColumn12
         '
+        Me.DataColumn12.AllowDBNull = False
         Me.DataColumn12.Caption = "Akun"
         Me.DataColumn12.ColumnName = "akun"
         '
@@ -296,10 +303,18 @@ Partial Class pelunasan_piutang
         'nobg
         '
         Me.nobg.Caption = "Nomor BG"
+        Me.nobg.ColumnEdit = Me.RepositoryItemComboBox1
         Me.nobg.FieldName = "nomerbg"
         Me.nobg.Name = "nobg"
         Me.nobg.Visible = True
         Me.nobg.VisibleIndex = 1
+        '
+        'RepositoryItemComboBox1
+        '
+        Me.RepositoryItemComboBox1.AutoHeight = False
+        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"Tunai", "Transfer"})
+        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
         'nominal
         '
@@ -323,6 +338,10 @@ Partial Class pelunasan_piutang
         Me.RepositoryItemDateEdit1.AutoHeight = False
         Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.RepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.RepositoryItemDateEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.DisplayText
+        Me.RepositoryItemDateEdit1.Mask.EditMask = "dd MMMM yyyy"
         Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
         '
         'namaakun
@@ -490,6 +509,7 @@ Partial Class pelunasan_piutang
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bayaran, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pembayaran, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -545,4 +565,5 @@ Partial Class pelunasan_piutang
     Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents namaakun As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryItemComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
 End Class

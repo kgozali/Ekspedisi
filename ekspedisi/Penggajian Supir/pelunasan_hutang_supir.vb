@@ -12,8 +12,18 @@
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
-            If idkaryawan.Text = "Belum Terisi" Or kotaasal.Text = "Belum Terisi" Then
-                MessageBox.Show("Karyawan Belum Dipilih")
+            Dim centang As Boolean = False
+            For i = 0 To datapiutang.RowCount - 1
+                If datapiutang.GetRowCellValue(i, "Bayar") = True Then
+                    centang = True
+                End If
+
+            Next i
+
+            If idkaryawan.Text = "" Or kotaasal.Text = "" Then
+                MessageBox.Show("Supir belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ElseIf centang = False Then
+                MessageBox.Show("Hutang belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 tampung = autogenerate("PPS", "select max(id_phutangkaryawan) from pelunasan_hutang_supir")
                 InsertInto("INSERT INTO `pelunasan_hutang_supir`(`id_phutangkaryawan`, `tgl`, `total_nominal`, `id_karyawan`) VALUES ('" & tampung & "'," & tanggalpembayaran.Value.ToString("yyyyMMdd") & "," & totaldibayar.Text & ",'" & idkaryawan.Text & "')")
@@ -24,8 +34,10 @@
                     End If
 
                 Next i
+                MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                lihat_slip_gaji.nomergaji = tampung
+                lihat_slip_gaji.ShowDialog()
 
-                MessageBox.Show("Pelunasan berhasil dilakukan")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -35,14 +47,11 @@
     Private Sub pelunasan_hutang_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim data As New DataTable
-            data = DtTable("select * from makun where tipe_akun='Kas&Bank' and det")
+            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank' and tipe_akun='Kas&Bank'")
             namaakun.DataSource = data
             namaakun.DisplayMember = "nama_akun"
             namaakun.ValueMember = "kode_akun"
-
-
             akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -80,20 +89,17 @@
         End Try
     End Sub
 
-    Private Sub openfile_Click(sender As Object, e As EventArgs) Handles openfile.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-    End Sub
 
     Sub jurnal()
         Try
             Dim total As Integer = totaldibayar.Text
             Dim mintotal As Integer = total * -1
             idakun = namaakun.SelectedValue.ToString
-            InsertInto("insert into jurnal values('" + tampung.ToString + "',now()")
+            InsertInto("insert into jurnal values('" + tampung.ToString + "'," & tanggalpembayaran.Value.ToString("yyyyMMdd"))
             InsertInto("insert into djurnal values('" + tampung.ToString + "','" + akunhutang.ToString + "','','" + total.ToString + "'")
             InsertInto("insert into djurnal values('" + tampung.ToString + "','" + idakun.ToString + "','','" + mintotal.ToString + "'")
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
     End Sub

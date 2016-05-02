@@ -17,7 +17,7 @@
             RepositoryItemLookUpEdit1.ValueMember = "kode_akun"
             pembayaran.OptionsView.ShowFooter = True
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -29,13 +29,14 @@
             Dim centang As Boolean = False
             Dim isisemua As Boolean = False
             Dim datarow As DataRow
+            Dim tunaisalah As Boolean = False
             For i = 0 To datapiutang.RowCount - 1
                 If datapiutang.GetRowCellValue(i, "Bayar") = True Then
                     centang = True
                 End If
             Next i
             For i = 0 To pembayaran.RowCount - 1
-                If pembayaran.GetRowCellValue(i, "namabank").ToString = "" Then
+                If pembayaran.GetRowCellValue(i, "namabank").ToString = "" And pelunasan.Tables.Item(1).Rows(i).Item(1) <> "Tunai" Then
                     isisemua = True
                 ElseIf pembayaran.GetRowCellValue(i, "nomerbg").ToString = "" Then
                     isisemua = True
@@ -45,12 +46,14 @@
                     isisemua = True
                 ElseIf IsDBNull(pembayaran.GetRowCellValue(i, "namaakun")) = True Then
                     isisemua = True
+                ElseIf pembayaran.GetRowCellValue(i, "namabank").ToString <> "" And pelunasan.Tables.Item(1).Rows(i).Item(1) = "Tunai" Then
+                    tunaisalah = True
                 End If
 
             Next i
 
             If isisemua = True Then
-                MessageBox.Show("Data pembayaran harus di isi semua")
+                MessageBox.Show("Data pembayaran harus di isi semua", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 If idprinciple = "" Then
                     MessageBox.Show("Principle belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -60,6 +63,8 @@
                     MessageBox.Show("Pembayaran belum diisi", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 ElseIf piutang <> nominalbayar Then
                     MessageBox.Show("Detail pembayaran tidak sesuai", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ElseIf tunaisalah = True Then
+                    MessageBox.Show("Pembayaran tunai tidak memerlukan Bank", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     'ganti di sini untuk bayar bisa nyicil
                     Dim tampung As String = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
@@ -68,20 +73,38 @@
                             InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
                             InsertInto("INSERT INTO `dpelunasan_piutang`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
                             InsertInto("update trans_do set total_bayar=" & datapiutang.GetRowCellValue(i, "Nominal") & ",s='0' where id_transaksi='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
-                            MessageBox.Show("Transksi Berhasil")
+
                         End If
                     Next i
-
+                    InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
+                    kredit = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
+                    Dim opo As Integer = CDbl(totaldibayar.Text) * -1
+                    InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & tampung & "','" & kredit & "','Pelunasan Piutang Principle'," & opo & ")")
                     For i = 0 To pembayaran.RowCount - 1
                         datarow = pelunasan.Tables.Item(1).Rows(i)
-                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & datarow(4) & "'," & datarow("nominal") & ",'" & datarow("nomerbg") & "'," & datarow("tanggalcair") & ",'" & catatan.Text & "'," & i + 1 & ",'0','Rekening')")
+                        debet = datarow(4)
+                        InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & tampung & "','" & debet & "','Pelunasan Piutang Principle'," & datarow("nominal") & ")")
+                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & datarow(4) & "'," & datarow("nominal") & ",'" & datarow("nomerbg") & "',STR_TO_DATE('" & datarow("tanggalcair") & "','%d/%m/%Y'),'" & catatan.Text & "'," & i + 1 & ",'0','" & datarow(0) & "')")
                     Next i
-                    Me.Close()
+                    'refresh page
+                    Dim tabel As New DataTable
+                    tabel = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and t.s=1 and mprinciple.id_principle='" & idprinciple & "' group by t.id_transaksi")
+                    bayarpiutang.DataSource = tabel
+                    Dim angka As Double = 0
+                    For i = 0 To datapiutang.RowCount - 1
+                        angka = angka + datapiutang.GetRowCellValue(i, "Nominal")
+                        With datapiutang
+                            .SetRowCellValue(i, "Bayar", False)
+                        End With
+                    Next i
+                    totaldibayar.Text = "0"
+                    'Me.Close()
+                    MessageBox.Show("Pelunasan sukses diinput", "Konfirmasi Pelunasan", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 
@@ -117,7 +140,7 @@
                     End With
                 End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Dim keamanan As String
@@ -127,7 +150,7 @@
                 keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -144,7 +167,7 @@
             bayarpiutang.DataSource = kosong
             pelunasan.Tables("Bayaran").Rows.Clear()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

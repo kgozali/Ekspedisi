@@ -10,7 +10,7 @@
             data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' group by ms.id_supir")
             daftarhutang.DataSource = data
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -33,7 +33,7 @@
             pelunasan_hutang_supir.totalhutang.Text = angka.ToString
             Me.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
     End Sub
@@ -42,19 +42,19 @@
         Try
             If nama.Checked = True Then
                 Dim data As New DataTable
-                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon`,t.no_do `Nomor DO` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and nama_supir like '%" & cari.Text & "%' group by ms.id_supir")
+                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and nama_supir like '%" & cari.Text & "%' group by ms.id_supir")
                 daftarhutang.DataSource = data
             ElseIf idkaryawan.Checked = True Then
                 Dim data As New DataTable
-                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon`,t.no_do `Nomor DO` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1 and status_bayar_supir='1' and ms.id_supir like '%" & cari.Text & "%' group by ms.id_supir")
+                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and ms.id_supir like '%" & cari.Text & "%' group by ms.id_supir")
                 daftarhutang.DataSource = data
             Else
                 Dim data As New DataTable
-                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon`,t.no_do `Nomor DO` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and t.no_do like '%" & cari.Text & "%' group by ms.id_supir")
+                data = DtTable("SELECT ms.id_supir `Kode Supir`, nama_supir `Nama Supir`,kota `Kota`, tel1 `Nomor Telepon` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and t.no_do like '%" & cari.Text & "%' group by ms.id_supir")
                 daftarhutang.DataSource = data
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

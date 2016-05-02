@@ -412,10 +412,70 @@
     <Compile Include="notapelunasanprinciple.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Penggajian Supir\harga_supir.Designer.vb">
+      <DependentUpon>harga_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\harga_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penggajian Supir\lihat_slip_gaji.Designer.vb">
+      <DependentUpon>lihat_slip_gaji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\lihat_slip_gaji.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penggajian Supir\master_harga_supir.Designer.vb">
+      <DependentUpon>master_harga_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\master_harga_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penggajian Supir\penggajian_DO.Designer.vb">
+      <DependentUpon>penggajian_DO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penggajian Supir\penggajian_DO.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\cicilan_piutang_karyawan.Designer.vb">
+      <DependentUpon>cicilan_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\cicilan_piutang_karyawan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\cicilan_piutang_supir.Designer.vb">
+      <DependentUpon>cicilan_piutang_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\cicilan_piutang_supir.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_edit_piutang_principle.Designer.vb">
+      <DependentUpon>daftar_edit_piutang_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\daftar_edit_piutang_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\detail_cicilan.Designer.vb">
       <DependentUpon>detail_cicilan.vb</DependentUpon>
     </Compile>
     <Compile Include="Piutang Perusahaan\detail_cicilan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edit_pelunasan_karyawan.Designer.vb">
+      <DependentUpon>edit_pelunasan_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edit_pelunasan_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edit_principle_pelunasan.Designer.vb">
+      <DependentUpon>edit_principle_pelunasan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edit_principle_pelunasan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edi_buka_piutang_karyawan.Designer.vb">
+      <DependentUpon>edi_buka_piutang_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\edi_buka_piutang_karyawan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Piutang Perusahaan\kwitansi.Designer.vb">
@@ -430,16 +490,64 @@
     <Compile Include="Piutang Perusahaan\kwitansipembayarankaryawan.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansi_pembayaran_piutang_supir.Designer.vb">
+      <DependentUpon>kwitansi_pembayaran_piutang_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\kwitansi_pembayaran_piutang_supir.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\laporan_piutang_karyawansupir.Designer.vb">
+      <DependentUpon>laporan_piutang_karyawansupir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\laporan_piutang_karyawansupir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\lihat_cicilan_karyawan.Designer.vb">
       <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>
     </Compile>
     <Compile Include="Piutang Perusahaan\lihat_cicilan_karyawan.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Piutang Perusahaan\master_peluanasan_karyawan.Designer.vb">
+      <DependentUpon>master_peluanasan_karyawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\master_peluanasan_karyawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\master_pelunasan_principle.Designer.vb">
+      <DependentUpon>master_pelunasan_principle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\master_pelunasan_principle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Piutang Perusahaan\viewkwitansi.Designer.vb">
       <DependentUpon>viewkwitansi.vb</DependentUpon>
     </Compile>
     <Compile Include="Piutang Perusahaan\viewkwitansi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\viewkwitansipinjaman.Designer.vb">
+      <DependentUpon>viewkwitansipinjaman.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\viewkwitansipinjaman.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_cicilan_supir.Designer.vb">
+      <DependentUpon>view_cicilan_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_cicilan_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_kwitansi_supir.Designer.vb">
+      <DependentUpon>view_kwitansi_supir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_kwitansi_supir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_lihat_cicilan.Designer.vb">
+      <DependentUpon>view_lihat_cicilan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Piutang Perusahaan\view_lihat_cicilan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report Master\ReportHargaSupir.Designer.vb">
@@ -1195,6 +1303,27 @@
     <EmbeddedResource Include="notapelunasanprinciple.resx">
       <DependentUpon>notapelunasanprinciple.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\harga_supir.resx">
+      <DependentUpon>harga_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\lihat_slip_gaji.resx">
+      <DependentUpon>lihat_slip_gaji.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\master_harga_supir.resx">
+      <DependentUpon>master_harga_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penggajian Supir\penggajian_DO.resx">
+      <DependentUpon>penggajian_DO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\cicilan_piutang_karyawan.resx">
+      <DependentUpon>cicilan_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\cicilan_piutang_supir.resx">
+      <DependentUpon>cicilan_piutang_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\daftar_edit_piutang_principle.resx">
+      <DependentUpon>daftar_edit_piutang_principle.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\daftar_karyawan_pelunasan.resx">
       <DependentUpon>daftar_karyawan_pelunasan.vb</DependentUpon>
     </EmbeddedResource>
@@ -1204,14 +1333,35 @@
     <EmbeddedResource Include="Piutang Perusahaan\detail_cicilan.resx">
       <DependentUpon>detail_cicilan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\edit_pelunasan_karyawan.resx">
+      <DependentUpon>edit_pelunasan_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\edit_principle_pelunasan.resx">
+      <DependentUpon>edit_principle_pelunasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\edi_buka_piutang_karyawan.resx">
+      <DependentUpon>edi_buka_piutang_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\kwitansi.resx">
       <DependentUpon>kwitansi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\kwitansipembayarankaryawan.resx">
       <DependentUpon>kwitansipembayarankaryawan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\kwitansi_pembayaran_piutang_supir.resx">
+      <DependentUpon>kwitansi_pembayaran_piutang_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\laporan_piutang_karyawansupir.resx">
+      <DependentUpon>laporan_piutang_karyawansupir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\lihat_cicilan_karyawan.resx">
       <DependentUpon>lihat_cicilan_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\master_peluanasan_karyawan.resx">
+      <DependentUpon>master_peluanasan_karyawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\master_pelunasan_principle.resx">
+      <DependentUpon>master_pelunasan_principle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunansan_piutang_karyawan.resx">
       <DependentUpon>pelunansan_piutang_karyawan.vb</DependentUpon>
@@ -1242,6 +1392,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\viewkwitansi.resx">
       <DependentUpon>viewkwitansi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\viewkwitansipinjaman.resx">
+      <DependentUpon>viewkwitansipinjaman.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\view_cicilan_supir.resx">
+      <DependentUpon>view_cicilan_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\view_kwitansi_supir.resx">
+      <DependentUpon>view_kwitansi_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Piutang Perusahaan\view_lihat_cicilan.resx">
+      <DependentUpon>view_lihat_cicilan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ReportHargaSupir.resx">
       <DependentUpon>ReportHargaSupir.vb</DependentUpon>
@@ -1548,7 +1710,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

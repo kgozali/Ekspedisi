@@ -26,20 +26,15 @@ Partial Class pelunasan_hutang_supir
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
-        Me.nomertelepon = New DevExpress.XtraEditors.LabelControl()
-        Me.kotaasal = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.namakaryawan = New DevExpress.XtraEditors.ButtonEdit()
-        Me.idkaryawan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.openfile = New DevExpress.XtraEditors.SimpleButton()
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.idkaryawan = New System.Windows.Forms.TextBox()
+        Me.nomertelepon = New System.Windows.Forms.TextBox()
+        Me.kotaasal = New System.Windows.Forms.TextBox()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.tanggalpembayaran = New System.Windows.Forms.DateTimePicker()
         Me.totaldibayar = New System.Windows.Forms.TextBox()
@@ -49,7 +44,6 @@ Partial Class pelunasan_hutang_supir
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +52,6 @@ Partial Class pelunasan_hutang_supir
         CType(Me.namakaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
         Me.SuspendLayout()
@@ -99,7 +89,7 @@ Partial Class pelunasan_hutang_supir
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(708, 552)
+        Me.cancel.Location = New System.Drawing.Point(700, 342)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 152
@@ -108,29 +98,11 @@ Partial Class pelunasan_hutang_supir
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(600, 552)
+        Me.Submit.Location = New System.Drawing.Point(592, 342)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
         Me.Submit.Text = "Submit"
-        '
-        'nomertelepon
-        '
-        Me.nomertelepon.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomertelepon.Location = New System.Drawing.Point(644, 48)
-        Me.nomertelepon.Name = "nomertelepon"
-        Me.nomertelepon.Size = New System.Drawing.Size(79, 18)
-        Me.nomertelepon.TabIndex = 53
-        Me.nomertelepon.Text = "Belum Terisi"
-        '
-        'kotaasal
-        '
-        Me.kotaasal.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kotaasal.Location = New System.Drawing.Point(644, 24)
-        Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(79, 18)
-        Me.kotaasal.TabIndex = 52
-        Me.kotaasal.Text = "Belum Terisi"
         '
         'LabelControl5
         '
@@ -158,15 +130,6 @@ Partial Class pelunasan_hutang_supir
         Me.namakaryawan.Size = New System.Drawing.Size(191, 20)
         Me.namakaryawan.TabIndex = 1
         '
-        'idkaryawan
-        '
-        Me.idkaryawan.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.idkaryawan.Location = New System.Drawing.Point(132, 24)
-        Me.idkaryawan.Name = "idkaryawan"
-        Me.idkaryawan.Size = New System.Drawing.Size(79, 18)
-        Me.idkaryawan.TabIndex = 43
-        Me.idkaryawan.Text = "Belum Terisi"
-        '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -187,12 +150,12 @@ Partial Class pelunasan_hutang_supir
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.nomertelepon)
         Me.GroupControl1.Controls.Add(Me.kotaasal)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
         Me.GroupControl1.Controls.Add(Me.namakaryawan)
-        Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
@@ -201,47 +164,29 @@ Partial Class pelunasan_hutang_supir
         Me.GroupControl1.TabIndex = 149
         Me.GroupControl1.Text = "Data Karyawan"
         '
-        'PictureBox1
+        'idkaryawan
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(400, 208)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.idkaryawan.Enabled = False
+        Me.idkaryawan.Location = New System.Drawing.Point(132, 21)
+        Me.idkaryawan.Name = "idkaryawan"
+        Me.idkaryawan.Size = New System.Drawing.Size(149, 21)
+        Me.idkaryawan.TabIndex = 56
         '
-        'GroupControl2
+        'nomertelepon
         '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(392, 256)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(416, 240)
-        Me.GroupControl2.TabIndex = 150
-        Me.GroupControl2.Text = "Bukti Piutang"
+        Me.nomertelepon.Enabled = False
+        Me.nomertelepon.Location = New System.Drawing.Point(643, 45)
+        Me.nomertelepon.Name = "nomertelepon"
+        Me.nomertelepon.Size = New System.Drawing.Size(149, 21)
+        Me.nomertelepon.TabIndex = 55
         '
-        'openfile
+        'kotaasal
         '
-        Me.openfile.Image = CType(resources.GetObject("openfile.Image"), System.Drawing.Image)
-        Me.openfile.Location = New System.Drawing.Point(768, 504)
-        Me.openfile.Name = "openfile"
-        Me.openfile.Size = New System.Drawing.Size(42, 37)
-        Me.openfile.TabIndex = 155
-        '
-        'TextEdit4
-        '
-        Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(442, 520)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Size = New System.Drawing.Size(320, 20)
-        Me.TextEdit4.TabIndex = 154
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(402, 522)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(29, 18)
-        Me.LabelControl6.TabIndex = 54
-        Me.LabelControl6.Text = "Path"
+        Me.kotaasal.Enabled = False
+        Me.kotaasal.Location = New System.Drawing.Point(643, 21)
+        Me.kotaasal.Name = "kotaasal"
+        Me.kotaasal.Size = New System.Drawing.Size(149, 21)
+        Me.kotaasal.TabIndex = 54
         '
         'GroupControl4
         '
@@ -253,9 +198,9 @@ Partial Class pelunasan_hutang_supir
         Me.GroupControl4.Controls.Add(Me.LabelControl12)
         Me.GroupControl4.Controls.Add(Me.LabelControl9)
         Me.GroupControl4.Controls.Add(Me.LabelControl7)
-        Me.GroupControl4.Location = New System.Drawing.Point(8, 256)
+        Me.GroupControl4.Location = New System.Drawing.Point(8, 254)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(376, 136)
+        Me.GroupControl4.Size = New System.Drawing.Size(792, 82)
         Me.GroupControl4.TabIndex = 150
         Me.GroupControl4.Text = "Pembayaran"
         '
@@ -269,7 +214,7 @@ Partial Class pelunasan_hutang_supir
         'totaldibayar
         '
         Me.totaldibayar.Enabled = False
-        Me.totaldibayar.Location = New System.Drawing.Point(160, 104)
+        Me.totaldibayar.Location = New System.Drawing.Point(613, 54)
         Me.totaldibayar.Name = "totaldibayar"
         Me.totaldibayar.Size = New System.Drawing.Size(174, 21)
         Me.totaldibayar.TabIndex = 159
@@ -295,7 +240,7 @@ Partial Class pelunasan_hutang_supir
         'totalhutang
         '
         Me.totalhutang.Enabled = False
-        Me.totalhutang.Location = New System.Drawing.Point(160, 79)
+        Me.totalhutang.Location = New System.Drawing.Point(613, 29)
         Me.totalhutang.Name = "totalhutang"
         Me.totalhutang.Size = New System.Drawing.Size(174, 21)
         Me.totalhutang.TabIndex = 156
@@ -313,7 +258,7 @@ Partial Class pelunasan_hutang_supir
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(17, 107)
+        Me.LabelControl9.Location = New System.Drawing.Point(470, 57)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(132, 18)
         Me.LabelControl9.TabIndex = 158
@@ -322,29 +267,21 @@ Partial Class pelunasan_hutang_supir
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(8, 82)
+        Me.LabelControl7.Location = New System.Drawing.Point(461, 32)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(141, 18)
         Me.LabelControl7.TabIndex = 157
         Me.LabelControl7.Text = "Total Nominal Hutang"
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'pelunasan_hutang_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 588)
+        Me.ClientSize = New System.Drawing.Size(814, 375)
         Me.Controls.Add(Me.GroupControl4)
-        Me.Controls.Add(Me.LabelControl6)
-        Me.Controls.Add(Me.openfile)
-        Me.Controls.Add(Me.TextEdit4)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
-        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "pelunasan_hutang_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -358,15 +295,10 @@ Partial Class pelunasan_hutang_supir
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -375,20 +307,12 @@ Partial Class pelunasan_hutang_supir
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents nomertelepon As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kotaasal As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents namakaryawan As DevExpress.XtraEditors.ButtonEdit
-    Friend WithEvents idkaryawan As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents openfile As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents namaakun As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
@@ -398,5 +322,7 @@ Partial Class pelunasan_hutang_supir
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tanggalpembayaran As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents nomertelepon As System.Windows.Forms.TextBox
+    Friend WithEvents kotaasal As System.Windows.Forms.TextBox
+    Friend WithEvents idkaryawan As System.Windows.Forms.TextBox
 End Class

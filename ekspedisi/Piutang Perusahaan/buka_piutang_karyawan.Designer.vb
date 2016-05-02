@@ -38,20 +38,11 @@ Partial Class buka_piutang_karyawan
         Me.harilunas = New System.Windows.Forms.ComboBox()
         Me.keterangan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
         Me.idkaryawan = New System.Windows.Forms.TextBox()
         Me.tanggalpelunasan = New System.Windows.Forms.DateTimePicker()
         CType(Me.pilihkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -133,7 +124,7 @@ Partial Class buka_piutang_karyawan
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(678, 304)
+        Me.SimpleButton1.Location = New System.Drawing.Point(362, 290)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 145
@@ -142,7 +133,7 @@ Partial Class buka_piutang_karyawan
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(576, 304)
+        Me.Submit.Location = New System.Drawing.Point(260, 290)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 144
@@ -222,49 +213,6 @@ Partial Class buka_piutang_karyawan
         Me.LabelControl7.TabIndex = 159
         Me.LabelControl7.Text = "Keterangan"
         '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(468, 9)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(308, 239)
-        Me.GroupControl2.TabIndex = 160
-        Me.GroupControl2.Text = "Bukti Piutang"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(299, 208)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(471, 267)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(37, 18)
-        Me.Label7.TabIndex = 163
-        Me.Label7.Text = "Path"
-        '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(736, 256)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(42, 37)
-        Me.SimpleButton2.TabIndex = 162
-        '
-        'TextEdit4
-        '
-        Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(512, 264)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Size = New System.Drawing.Size(216, 20)
-        Me.TextEdit4.TabIndex = 161
-        '
         'idkaryawan
         '
         Me.idkaryawan.Location = New System.Drawing.Point(17, 290)
@@ -285,13 +233,9 @@ Partial Class buka_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 339)
+        Me.ClientSize = New System.Drawing.Size(473, 325)
         Me.Controls.Add(Me.tanggalpelunasan)
         Me.Controls.Add(Me.idkaryawan)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.SimpleButton2)
-        Me.Controls.Add(Me.TextEdit4)
-        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
@@ -302,10 +246,6 @@ Partial Class buka_piutang_karyawan
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -324,15 +264,10 @@ Partial Class buka_piutang_karyawan
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents akunkas As System.Windows.Forms.ComboBox
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents harilunas As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents idkaryawan As System.Windows.Forms.TextBox
     Friend WithEvents tanggalpelunasan As System.Windows.Forms.DateTimePicker
 End Class

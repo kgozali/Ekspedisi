@@ -3,9 +3,10 @@
     Private Sub viewkwitansi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim rpt As New kwitansi
+            rpt.Parameters("username").Value = username
             rpt.Parameters(0).Value = tangkap
             DocumentViewer1.DocumentSource = rpt
-            rpt.Parameters("username").Value = username
+
             rpt.CreateDocument()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

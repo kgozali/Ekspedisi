@@ -33,7 +33,7 @@ Partial Class KIR_Truk
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -47,7 +47,7 @@ Partial Class KIR_Truk
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -159,21 +159,21 @@ Partial Class KIR_Truk
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
+        Me.GroupControl2.Controls.Add(Me.PictureEdit1)
         Me.GroupControl2.Location = New System.Drawing.Point(8, 95)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(752, 360)
         Me.GroupControl2.TabIndex = 52
         Me.GroupControl2.Text = "Bukti Kir"
         '
-        'PictureBox1
+        'PictureEdit1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(736, 328)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureEdit1.Location = New System.Drawing.Point(2, 21)
+        Me.PictureEdit1.Name = "PictureEdit1"
+        Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
+        Me.PictureEdit1.Size = New System.Drawing.Size(748, 337)
+        Me.PictureEdit1.TabIndex = 0
         '
         'TextEdit4
         '
@@ -268,7 +268,7 @@ Partial Class KIR_Truk
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -288,7 +288,6 @@ Partial Class KIR_Truk
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
@@ -297,6 +296,7 @@ Partial Class KIR_Truk
     Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
 
     
 End Class

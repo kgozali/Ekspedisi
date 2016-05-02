@@ -23,8 +23,6 @@ Partial Class pelunansan_piutang_karyawan
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.datapiutang = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.daftarutang = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
@@ -48,7 +46,6 @@ Partial Class pelunansan_piutang_karyawan
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.daftarutang, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +66,6 @@ Partial Class pelunansan_piutang_karyawan
         '
         'daftarutang
         '
-        Me.daftarutang.ContextMenuStrip = Me.ContextMenuStrip1
         Me.daftarutang.Location = New System.Drawing.Point(8, 24)
         Me.daftarutang.MainView = Me.datapiutang
         Me.daftarutang.Name = "daftarutang"
@@ -78,22 +74,10 @@ Partial Class pelunansan_piutang_karyawan
         Me.daftarutang.TabIndex = 0
         Me.daftarutang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.datapiutang})
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(138, 26)
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
-        Me.ViewToolStripMenuItem.Text = "View Details"
-        '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.daftarutang)
-        Me.GroupControl3.Location = New System.Drawing.Point(16, 112)
+        Me.GroupControl3.Location = New System.Drawing.Point(11, 116)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(980, 465)
         Me.GroupControl3.TabIndex = 153
@@ -102,7 +86,7 @@ Partial Class pelunansan_piutang_karyawan
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(891, 634)
+        Me.SimpleButton1.Location = New System.Drawing.Point(891, 638)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 152
@@ -111,7 +95,7 @@ Partial Class pelunansan_piutang_karyawan
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(785, 634)
+        Me.Submit.Location = New System.Drawing.Point(785, 638)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
@@ -157,7 +141,7 @@ Partial Class pelunansan_piutang_karyawan
         Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Location = New System.Drawing.Point(16, 8)
+        Me.GroupControl1.Location = New System.Drawing.Point(11, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(980, 96)
         Me.GroupControl1.TabIndex = 149
@@ -241,7 +225,7 @@ Partial Class pelunansan_piutang_karyawan
         'totalbayar
         '
         Me.totalbayar.Enabled = False
-        Me.totalbayar.Location = New System.Drawing.Point(800, 607)
+        Me.totalbayar.Location = New System.Drawing.Point(800, 611)
         Me.totalbayar.Name = "totalbayar"
         Me.totalbayar.Size = New System.Drawing.Size(191, 21)
         Me.totalbayar.TabIndex = 65
@@ -249,7 +233,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(718, 610)
+        Me.LabelControl6.Location = New System.Drawing.Point(718, 614)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(76, 18)
         Me.LabelControl6.TabIndex = 64
@@ -258,7 +242,7 @@ Partial Class pelunansan_piutang_karyawan
         'totalhutang
         '
         Me.totalhutang.Enabled = False
-        Me.totalhutang.Location = New System.Drawing.Point(800, 583)
+        Me.totalhutang.Location = New System.Drawing.Point(800, 587)
         Me.totalhutang.Name = "totalhutang"
         Me.totalhutang.Size = New System.Drawing.Size(191, 21)
         Me.totalhutang.TabIndex = 155
@@ -266,7 +250,7 @@ Partial Class pelunansan_piutang_karyawan
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(709, 586)
+        Me.LabelControl7.Location = New System.Drawing.Point(709, 590)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(85, 18)
         Me.LabelControl7.TabIndex = 154
@@ -276,7 +260,7 @@ Partial Class pelunansan_piutang_karyawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 671)
+        Me.ClientSize = New System.Drawing.Size(1001, 675)
         Me.Controls.Add(Me.totalhutang)
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.totalbayar)
@@ -291,7 +275,6 @@ Partial Class pelunansan_piutang_karyawan
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.daftarutang, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -322,8 +305,6 @@ Partial Class pelunansan_piutang_karyawan
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents totalhutang As System.Windows.Forms.TextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents ViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tanggalpelunasan As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nomortelepon As System.Windows.Forms.TextBox

@@ -57,7 +57,7 @@ Public Class KIR_Truk
         Try
             Dim tanggal As New DataTable
             Dim tgl As String = "KIR" + Today.Date.ToString("yyMMdd")
-            tanggal = DtTable("select * from kir where substring(id_kir,1,9) = '" & tgl & "'")
+            tanggal = DtTable("select * from kir where substring(id_kir,1,9) = '" & tgl.ToString & "'")
             Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" + hitung
@@ -212,6 +212,7 @@ Public Class KIR_Truk
     '    End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+
         Try
             If TextEdit2.Text = "" Then
                 MessageBox.Show("Harap mengisi No. KIR terlebih dahulu", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -251,7 +252,21 @@ Public Class KIR_Truk
         auditlog(user, kompname, form, aktivitas)
     End Sub
     Sub insert()
-        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "','" + DateTimePicker3.Text.ToString + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")
+        Dim arrpic() As Byte
+        If PictureEdit1.Text <> "" Then
+            Dim ms As New MemoryStream
+            PictureEdit1.Image.Save(ms, PictureEdit1.Image.RawFormat)
+            arrpic = ms.GetBuffer()
+            ms.Close()
+            'Exit Sub
+        End If
+
+        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "','" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")
+        Dim Command = New MySqlCommand("Update kir set imgfile=@imgfile where id_kir='" + kode + "'", connect)
+        connect.Open()
+        Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+        Command.ExecuteNonQuery()
+        connect.Close()
         If inserts = True Then
             MessageBox.Show("KIR berhasil dilakukan, silahkan membuka Form KIR untuk melakukan KIR kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             insertakun()
@@ -291,10 +306,43 @@ Public Class KIR_Truk
         Catch ex As Exception
 
         End Try
-       
+
     End Sub
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
         DateTimePicker1.Value = DateTimePicker2.Value.AddMonths(6)
+    End Sub
+
+    Function ResizeImage(ByVal pic As Image, ByVal percentResize As Double) As Image
+        'following code resizes picture to fit
+
+        Dim bm As New Bitmap(pic)
+
+        Dim width As Integer = bm.Width - (bm.Width * percentResize) 'image width. 
+
+        Dim height As Integer = bm.Height - (bm.Height * percentResize)  'image height
+
+        Dim thumb As New Bitmap(width, height)
+
+        Dim g As Graphics = Graphics.FromImage(thumb)
+
+        g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+
+        g.DrawImage(bm, New Rectangle(0, 0, width, height), New Rectangle(0, 0, bm.Width, _
+bm.Height), GraphicsUnit.Pixel)
+
+        g.Dispose()
+
+        bm.Dispose()
+
+        'image path.
+        'thumb.Save("C:\" & dir & "\" & fileName, _
+        'System.Drawing.Imaging.ImageFormat.Jpeg) 'can use any image format 
+        Return thumb
+        thumb.Dispose()
+
+    End Function
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+
     End Sub
 End Class

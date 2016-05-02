@@ -1,6 +1,5 @@
 ﻿Public Class buka_piutang_karyawan 
     Dim debet As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
-    Dim kredit As String = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
     Dim cekform As Boolean = False
 
     Private Sub buka_piutang_karyawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -47,19 +46,26 @@
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
-
-
-
+    Public idbukapiutang As String
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         If idkaryawan.Text <> "" Then
             id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
+
             If InsertInto("INSERT INTO `piutang_karyawan`(`id_piutangkaryawan`, `id_karyawan`, `tgl`, `nominal`, `path_bukti`, `jatuh_tempo`, `keterangan`, `status`,`id_akun`, `cetakan_ke`) VALUES ('" & id.Text & "','" & idkaryawan.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & "," & nominal.Text & ",'path'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & keterangan.Text & "','1','" & akunkas.SelectedValue.ToString & "',0)") = True Then
                 InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id.Text & "'," & tanggalpiutang.Value.ToString("yyyMMdd") & ")")
                 Dim opo As Double = CDbl(nominal.Text) * -1
-                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & nominal.Text & ")")
+                InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
                 InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & opo & ")")
                 MessageBox.Show("Input Piutang Berhasil")
-
+                If karyawan_piutang.bukasupirataukaryawan = "karyawan" Then
+                    viewkwitansi.tangkap = id.Text.ToString
+                    viewkwitansi.ShowDialog()
+                Else
+                    idbukapiutang = id.Text
+                    buktiformpinjam.ShowDialog()
+                End If
+                
+                buka_piutang_karyawan_FormClosed()
             Else
                 MessageBox.Show("Input piutang gagal", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -69,28 +75,25 @@
 
         End If
 
-        viewkwitansi.tangkap = id.Text.ToString
-        viewkwitansi.ShowDialog()
-        buka_piutang_karyawan_FormClosed()
     End Sub
 
     Private Sub pilihkaryawan_Click(sender As Object, e As EventArgs) Handles pilihkaryawan.Click
         karyawan_piutang.ShowDialog()
     End Sub
 
-    Private Sub pilihkaryawan_TextChanged(sender As Object, e As EventArgs) Handles pilihkaryawan.TextChanged
-        
-        Try
-            idkaryawan.Text = Scalar("SELECT id_karyawan FROM mkaryawan mk,mjabatan mj where mj.id_jabatan=mk.id_jabatan and nama_karyawan='" & pilihkaryawan.Text & "'")
-            If idkaryawan.Text = "" Then
-                idkaryawan.Text = ""
-                pilihkaryawan.Text = ""
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    'Private Sub pilihkaryawan_TextChanged(sender As Object, e As EventArgs) Handles pilihkaryawan.TextChanged
 
-        End Try
-    End Sub
+    '    Try
+    '        idkaryawan.Text = Scalar("SELECT id_karyawan FROM mkaryawan mk,mjabatan mj where mj.id_jabatan=mk.id_jabatan and nama_karyawan='" & pilihkaryawan.Text & "'")
+    '        If idkaryawan.Text = "" Then
+    '            idkaryawan.Text = ""
+    '            pilihkaryawan.Text = ""
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+    '    End Try
+    'End Sub
 
     Private Sub harilunas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles harilunas.SelectedIndexChanged
         Try
@@ -98,7 +101,7 @@
                 tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

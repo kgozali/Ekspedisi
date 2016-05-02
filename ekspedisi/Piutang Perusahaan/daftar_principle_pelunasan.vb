@@ -5,7 +5,7 @@
             tabel = DtTable("SELECT id_principle as `Kode Principle`, nama_principle `Nama Principle`, alamat `Alamat`, provinsi `Provinsi`, kota `Kota` FROM `mprinciple` WHERE s='1'")
             dataprinciple.DataSource = tabel
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -24,7 +24,7 @@
                 dataprinciple.DataSource = data
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -59,7 +59,7 @@
             pelunasan_piutang.alamat.Text = allprinciple.GetRowCellValue(allprinciple.FocusedRowHandle, "Alamat")
             Me.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class
