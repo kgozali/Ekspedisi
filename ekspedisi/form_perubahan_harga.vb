@@ -5,18 +5,23 @@
     End Sub
 
     Private Sub form_perubahan_harga_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If isi.Columns.Count = 0 Then
-            isi.Columns.Add("id_rute")
-            isi.Columns.Add("hargabaru")
-        End If
-        Dim data As New DataTable
-        data = DtTableupdateharga("SELECT id_rute `Kode Rute` , kota_asal `Kota Asal` , kota_tujuan `Kota Tujuan` , nama_principle `Nama Principle` , price_per_unit `Harga Awal` FROM  `mrute` mr,  `mprinciple` mp WHERE mr.s =  '1' AND mr.id_principle = mp.id_principle")
-        rute.DataSource = data
-        data = New DataTable
-        data = DtTable("select id_principle,nama_principle from mprinciple where s='1'")
-        principle.DataSource = data
-        principle.DisplayMember = "nama_principle"
-        principle.ValueMember = "id_principle"
+        Try
+            If isi.Columns.Count = 0 Then
+                isi.Columns.Add("id_rute")
+                isi.Columns.Add("hargabaru")
+            End If
+            Dim data As New DataTable
+            data = DtTableupdateharga("SELECT id_rute `Kode Rute` , kota_asal `Kota Asal` , kota_tujuan `Kota Tujuan` , nama_principle `Nama Principle` , price_per_unit `Harga Awal` FROM  `mrute` mr,  `mprinciple` mp WHERE mr.s =  '1' AND mr.id_principle = mp.id_principle")
+            rute.DataSource = data
+            data = New DataTable
+            data = DtTable("select id_principle,nama_principle from mprinciple where s='1'")
+            principle.DataSource = data
+            principle.DisplayMember = "nama_principle"
+            principle.ValueMember = "id_principle"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+        
     End Sub
 
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
@@ -43,57 +48,67 @@
             Next i
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 
     Private Sub namaprinciple_CheckedChanged(sender As Object, e As EventArgs) Handles namaprinciple.CheckedChanged
-        If namaprinciple.Checked = True Then
-            cari.Visible = False
-            principle.Visible = True
-        Else
-            cari.Visible = True
-            principle.Visible = False
-        End If
+        Try
+            If namaprinciple.Checked = True Then
+                cari.Visible = False
+                principle.Visible = True
+            Else
+                cari.Visible = True
+                principle.Visible = False
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+       
     End Sub
 
 
     Private Sub datarute_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datarute.CellValueChanged
-        If datarute.FocusedColumn.AbsoluteIndex = 5 Then
-            If isi.Rows.Count = 0 Then
-                isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
-            Else
-                Dim hapus As Boolean = False
-                Dim ganti As Boolean = False
-                Dim tambah As Boolean = False
-                Dim value As Integer
-                For i = 0 To isi.Rows.Count - 1
-                    If isi.Rows(i).Item("id_rute") = datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") Then
-                        If IsDBNull(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru")) = True Then
-                            hapus = True
-                            value = i
-                            tambah = False
-                        ElseIf IsDBNull(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru")) = False Then
-                            ganti = True
-                            value = i
-                            tambah = False
+        
+        Try
+            If datarute.FocusedColumn.AbsoluteIndex = 5 Then
+                If isi.Rows.Count = 0 Then
+                    isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
+                Else
+                    Dim hapus As Boolean = False
+                    Dim ganti As Boolean = False
+                    Dim tambah As Boolean = False
+                    Dim value As Integer
+                    For i = 0 To isi.Rows.Count - 1
+                        If isi.Rows(i).Item("id_rute") = datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") Then
+                            If IsDBNull(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru")) = True Then
+                                hapus = True
+                                value = i
+                                tambah = False
+                            ElseIf IsDBNull(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru")) = False Then
+                                ganti = True
+                                value = i
+                                tambah = False
+                            End If
+                        Else
+                            tambah = True
                         End If
-                    Else
-                        tambah = True
-                    End If
 
-                Next i
-                
-                If hapus = True Then
-                    isi.Rows.RemoveAt(value)
-                ElseIf ganti = True Then
-                    isi.Rows.RemoveAt(value)
-                    isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
-                ElseIf tambah = True Then
-                    isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
+                    Next i
+
+                    If hapus = True Then
+                        isi.Rows.RemoveAt(value)
+                    ElseIf ganti = True Then
+                        isi.Rows.RemoveAt(value)
+                        isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
+                    ElseIf tambah = True Then
+                        isi.Rows.Add(datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute"), datarute.GetRowCellValue(datarute.FocusedRowHandle, "Harga Baru"))
+                    End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
@@ -110,7 +125,7 @@
             isi = New DataTable
             form_perubahan_harga_Load(sender, e)
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 
@@ -126,17 +141,26 @@
     End Sub
     Dim keamanan As String
     Private Sub datarute_ShownEditor(sender As Object, e As EventArgs) Handles datarute.ShownEditor
-        If datarute.FocusedColumn.AbsoluteIndex <> 5 Then
-            keamanan = datarute.GetRowCellValue(datarute.FocusedRowHandle, datarute.FocusedColumn)
-        End If
+        
+        Try
+            If datarute.FocusedColumn.AbsoluteIndex <> 5 Then
+                keamanan = datarute.GetRowCellValue(datarute.FocusedRowHandle, datarute.FocusedColumn)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
     End Sub
 
     Private Sub datarute_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datarute.CellValueChanging
-        If e.Column.AbsoluteIndex <> 5 Then
-            With datarute
-                .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
-            End With
-        End If
-
+       
+        Try
+            If e.Column.AbsoluteIndex <> 5 Then
+                With datarute
+                    .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
+                End With
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
     End Sub
 End Class

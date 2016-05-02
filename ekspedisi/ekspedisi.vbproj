@@ -346,6 +346,8 @@
     <Compile Include="Audit Log\XtraReport2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buktiformpinjam.vb" />
+    <Compile Include="bukti_pinjam_supir.vb" />
     <Compile Include="Edit Master\edit_supir.Designer.vb">
       <DependentUpon>edit_supir.vb</DependentUpon>
     </Compile>
