@@ -286,7 +286,8 @@ Partial Class list_edit_supir
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "list_edit_supir"
-        Me.Text = "list_edit_supir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Daftar Supir"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.controlbooking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridbooking, System.ComponentModel.ISupportInitialize).EndInit()

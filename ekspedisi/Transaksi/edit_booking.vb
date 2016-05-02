@@ -184,7 +184,7 @@ Public Class edit_booking
             Dim insert As Boolean = InsertInto("update booking_truk set jam_input='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)").ToString + "',id_principle='" + principlebook.ToString + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir").ToString + "',id_truk='" + trukbook + "',keterangan='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook.ToString + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat").ToString + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person").ToString + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon").ToString + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString + "' where id_booking='" + kode.ToString + "'")
             If insert = True Then
                 insertakun()
-                MessageBox.Show("Perubahan terhadap booking berhasil dilakukan, Untuk melakukan perubahan kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Perubahan terhadap booking" & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
                 Me.Close()
             End If
@@ -261,4 +261,7 @@ Public Class edit_booking
     End Sub
    
     
+    Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
+        
+    End Sub
 End Class

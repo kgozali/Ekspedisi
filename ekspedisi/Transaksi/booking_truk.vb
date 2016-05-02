@@ -201,7 +201,7 @@ Public Class booking_truk
             insertakun()
             
             If insert = True Then
-                MessageBox.Show("Booking berhasil dilakukan, Untuk melakukan booking kembali, silahkan membuka kembali form Booking Truk", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Booking dengan No. " & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 
                 ceking = True
                 reset()
@@ -358,5 +358,9 @@ Public Class booking_truk
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
+        grid()
     End Sub
 End Class

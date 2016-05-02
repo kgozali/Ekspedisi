@@ -43,7 +43,7 @@ Public Class list_edit_supir
 
     End Sub
 
-    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click, gridbooking.DoubleClick
         Try
             Dim query As New DataTable
             'cek supir apa ada bookingan pada hari itu
