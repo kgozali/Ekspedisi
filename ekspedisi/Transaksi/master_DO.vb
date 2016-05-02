@@ -195,7 +195,7 @@ Public Class master_DO
         del(sender, e)
     End Sub
     Sub del(sender As Object, e As EventArgs)
-        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & "? Data yang telah dihapus tidak dapat dikemablikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
         If msg = DialogResult.OK Then
             InsertInto("update trans_do set del=1 where id_transaksi='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
             Dim x As String = Scalar("select id_booking from trans_do where id_transaksi='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
@@ -204,7 +204,7 @@ Public Class master_DO
             Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
             If ret = True Then
                 audit()
-                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 master_DO_Load(sender, e)
                 main_menu.main_menu_Load(sender, e)
             End If

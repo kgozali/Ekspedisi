@@ -127,14 +127,14 @@ Public Class master_booking
         del(sender, e)
     End Sub
     Sub del(sender As Object, e As EventArgs)
-        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "? Data yang telah dihapus tidak dapat dikemablikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
         If msg = DialogResult.OK Then
             InsertInto("update booking_truk set del=1,s=0 where id_booking='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
             InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
             Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
             If ret = True Then
                 audit()
-                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 master_booking_Load(sender, e)
             End If
 
