@@ -93,7 +93,7 @@ Partial Class master_DO
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteDeliveryOrderToolStripMenuItem, Me.PrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(186, 92)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(186, 70)
         '
         'EditToolStripMenuItem
         '
@@ -380,6 +380,7 @@ Partial Class master_DO
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "master_DO"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Delivery Order"

@@ -82,6 +82,7 @@ Partial Class edit_item
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_item"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Item"

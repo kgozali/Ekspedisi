@@ -141,6 +141,7 @@ Partial Class barang_DO
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "barang_DO"
         Me.Text = "Pilih Barang"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
