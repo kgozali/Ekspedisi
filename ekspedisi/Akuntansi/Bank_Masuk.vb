@@ -209,7 +209,7 @@ Public Class Bank_Masuk
             End If
             If flagval And savestatus = True Then
 
-                MessageBox.Show("Simpan Data Bank Masuk " + TextBox1.Text + " Sukses")
+                MessageBox.Show("Simpan Data Bank Masuk " + TextBox1.Text + " Sukses", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If _modelayar = 1 Then
                     ResetValues()
                     If IsNothing(daftar_bank_masuk) = False Then

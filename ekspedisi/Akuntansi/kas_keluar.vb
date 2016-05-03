@@ -201,7 +201,7 @@ Public Class kas_keluar
             End If
             If flagval And savestatus = True Then
 
-                MessageBox.Show("Simpan Data Kas Keluar " + TextBox1.Text + " Sukses")
+                MessageBox.Show("Simpan Data Kas Keluar " + TextBox1.Text + " Sukses", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If _modelayar = 1 Then
                     ResetValues()
                     If IsNothing(daftar_kas_keluar) = False Then

@@ -42,7 +42,7 @@ Public Class Bank_Keluar
             End If
             If savestatus Then
                 'connect.Close()
-                MessageBox.Show("Hapus transaksi bank  " + mkeyid + " berhasil")
+                MessageBox.Show("Hapus transaksi bank  " + mkeyid + " berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 audithapus()
                 Me.Close()
             End If
