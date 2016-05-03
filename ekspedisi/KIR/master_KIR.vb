@@ -120,7 +120,7 @@ Public Class master_KIR
             If msg = DialogResult.OK Then
                 Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
                 If test = True Then
-                    MessageBox.Show("Data KIR berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     deljurnal()
                     auditdel()
                     master_KIR_Load(sender, e)
@@ -156,7 +156,7 @@ Public Class master_KIR
             If msg = DialogResult.OK Then
                 Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
                 If test = True Then
-                    MessageBox.Show("Data KIR berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     deljurnal()
                     auditdel()
                     master_KIR_Load(sender, e)

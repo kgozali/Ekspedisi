@@ -109,7 +109,7 @@ Public Class edit_kir_truk
             Command.ExecuteNonQuery()
             connect.Close()
             If bool = True Then
-                MessageBox.Show("Data KIR berhasil diubah", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Data KIR dengan No." & kode.ToString & " berhasil diubah", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 insertakun()
                 audit()
 
