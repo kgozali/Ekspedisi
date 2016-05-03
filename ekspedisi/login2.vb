@@ -29,7 +29,8 @@
                 If simpan2.Rows.Count = 0 Then
                     MessageBox.Show("Password Salah", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    main_menu.ShowDialog()
+                    cek = True
+                    Me.Close()
                 End If
             End If
         Catch ex As Exception
