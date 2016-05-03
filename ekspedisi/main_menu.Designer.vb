@@ -193,8 +193,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem2
-        Me.BackstageViewControl1.SelectedTabIndex = 0
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
+        Me.BackstageViewControl1.SelectedTabIndex = 1
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -212,7 +212,7 @@ Partial Class main_menu
         'SimpleButton14
         '
         Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(694, 78)
+        Me.SimpleButton14.Location = New System.Drawing.Point(689, 75)
         Me.SimpleButton14.Name = "SimpleButton14"
         Me.SimpleButton14.Size = New System.Drawing.Size(89, 23)
         Me.SimpleButton14.TabIndex = 4
@@ -233,6 +233,7 @@ Partial Class main_menu
         '
         Me.XtraTabControl1.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal
         Me.XtraTabControl1.Location = New System.Drawing.Point(28, 81)
+        Me.XtraTabControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
         Me.XtraTabControl1.Size = New System.Drawing.Size(755, 592)
@@ -243,7 +244,7 @@ Partial Class main_menu
         '
         Me.XtraTabPage1.Controls.Add(Me.GroupControl2)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(753, 559)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(749, 564)
         Me.XtraTabPage1.Text = "Delivery Order"
         '
         'GroupControl2
@@ -251,8 +252,9 @@ Partial Class main_menu
         Me.GroupControl2.Controls.Add(Me.GridControl1)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl2.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(753, 559)
+        Me.GroupControl2.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl2.TabIndex = 0
         Me.GroupControl2.Text = "Notifikasi Delivery Order"
         '
@@ -260,9 +262,10 @@ Partial Class main_menu
         '
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl1.Location = New System.Drawing.Point(2, 15)
+        Me.GridControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(749, 542)
+        Me.GridControl1.Size = New System.Drawing.Size(745, 547)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -888,7 +891,7 @@ Partial Class main_menu
         Me.XtraTabPage5.Controls.Add(Me.Label12)
         Me.XtraTabPage5.Controls.Add(Me.Label13)
         Me.XtraTabPage5.Name = "XtraTabPage5"
-        Me.XtraTabPage5.Size = New System.Drawing.Size(449, 267)
+        Me.XtraTabPage5.Size = New System.Drawing.Size(445, 272)
         Me.XtraTabPage5.Text = "Restore"
         '
         'Label20
@@ -1092,7 +1095,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl12
         Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
-        Me.BackstageViewTabItem2.Selected = True
+        Me.BackstageViewTabItem2.Selected = False
         '
         'BackstageViewTabItem1
         '
@@ -1100,7 +1103,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = False
+        Me.BackstageViewTabItem1.Selected = True
         '
         'BackstageViewTabItem8
         '
@@ -1220,7 +1223,7 @@ Partial Class main_menu
         Me.ClientSize = New System.Drawing.Size(1008, 697)
         Me.Controls.Add(Me.BackstageViewControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.LookAndFeel.SkinName = "VS2010"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
