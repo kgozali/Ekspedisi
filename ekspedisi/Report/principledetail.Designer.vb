@@ -123,7 +123,7 @@ Partial Public Class principledetail
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Koneksi Ekspedisi"
+        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "trans_do"
         RelationColumnInfo1.NestedKeyColumn = "id_transaksi"
