@@ -156,6 +156,7 @@ Partial Class daftar_tutup_karyawan
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_tutup_karyawan"
         Me.Text = "Daftar Karyawan"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()

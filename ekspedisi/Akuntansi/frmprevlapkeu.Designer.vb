@@ -899,6 +899,7 @@ Partial Class frmprevlapkeu
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmprevlapkeu"
         Me.Text = "Laporan Keuangan"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

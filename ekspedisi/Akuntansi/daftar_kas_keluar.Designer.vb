@@ -290,6 +290,7 @@ Partial Class daftar_kas_keluar
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_kas_keluar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Kas Keluar"

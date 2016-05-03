@@ -164,6 +164,7 @@ Partial Class COA
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.GridLookUpEdit1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "COA"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "COA"

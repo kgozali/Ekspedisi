@@ -21,25 +21,25 @@ Partial Class daftar_tutup_principle
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_tutup_principle))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.checklist = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.principle = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
@@ -50,6 +50,42 @@ Partial Class daftar_tutup_principle
         Me.GroupControl3.Size = New System.Drawing.Size(427, 344)
         Me.GroupControl3.TabIndex = 43
         Me.GroupControl3.Text = "Data Principle"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
+        Me.GridControl1.Size = New System.Drawing.Size(417, 315)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.checklist, Me.principle})
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
+        'checklist
+        '
+        Me.checklist.Caption = "Checklist"
+        Me.checklist.ColumnEdit = Me.RepositoryItemCheckEdit1
+        Me.checklist.Name = "checklist"
+        Me.checklist.Visible = True
+        Me.checklist.VisibleIndex = 0
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        '
+        'principle
+        '
+        Me.principle.Caption = "Nama Principle"
+        Me.principle.Name = "principle"
+        Me.principle.Visible = True
+        Me.principle.VisibleIndex = 1
         '
         'GroupControl1
         '
@@ -91,42 +127,6 @@ Partial Class daftar_tutup_principle
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
-        'GridControl1
-        '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(417, 315)
-        Me.GridControl1.TabIndex = 0
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.checklist, Me.principle})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        '
-        'checklist
-        '
-        Me.checklist.Caption = "Checklist"
-        Me.checklist.ColumnEdit = Me.RepositoryItemCheckEdit1
-        Me.checklist.Name = "checklist"
-        Me.checklist.Visible = True
-        Me.checklist.VisibleIndex = 0
-        '
-        'RepositoryItemCheckEdit1
-        '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        '
-        'principle
-        '
-        Me.principle.Caption = "Nama Principle"
-        Me.principle.Name = "principle"
-        Me.principle.Visible = True
-        Me.principle.VisibleIndex = 1
-        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
@@ -154,17 +154,18 @@ Partial Class daftar_tutup_principle
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_tutup_principle"
         Me.Text = "Daftar Principle"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -275,6 +275,7 @@ Partial Class daftar_bank_masuk
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_bank_masuk"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bank Masuk"
