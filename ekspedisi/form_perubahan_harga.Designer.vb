@@ -165,7 +165,7 @@ Partial Class form_perubahan_harga
         Me.Controls.Add(Me.cancel)
         Me.Name = "form_perubahan_harga"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Perubahan Harga"
+        Me.Text = "34"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.rute, System.ComponentModel.ISupportInitialize).EndInit()
