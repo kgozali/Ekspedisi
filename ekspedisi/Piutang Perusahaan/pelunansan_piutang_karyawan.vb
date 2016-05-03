@@ -169,7 +169,7 @@
             Dim angka As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Nominal")
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
-                
+
 
                 'If angka < 0 Then
                 '    With datapiutang
