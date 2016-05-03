@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 Public Class edit_kir_truk
     Dim query As New DataTable
     Dim nominal As Integer = 0
@@ -19,6 +20,10 @@ Public Class edit_kir_truk
             TextEdit3.Text = query.Rows(0).Item("nominal")
             trukbook = query.Rows(0).Item("id_truk").ToString
 
+            Dim arrpic() As Byte = CType(query.Rows(0).Item("imgfile"), Byte())
+            Dim ms As New MemoryStream(arrpic)
+            PictureEdit1.Image = Image.FromStream(ms)
+            ms.close()
             Dim nopol As String = Scalar("select no_pol from mtruk where id_truk='" + trukbook + "'")
             ButtonEdit1.Text = nopol
 

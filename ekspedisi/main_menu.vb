@@ -243,4 +243,12 @@ Public Class main_menu
     Private Sub BackstageViewTabItem2_ItemPressed(sender As Object, e As DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs) Handles BackstageViewTabItem2.ItemPressed
         main_menu_Load(sender, e)
     End Sub
+
+    Private Sub SimpleButton32_Click(sender As Object, e As EventArgs) Handles SimpleButton32.Click
+        master_akun.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton38_Click(sender As Object, e As EventArgs) Handles SimpleButton38.Click
+        frmprevlapkeu.ShowDialog()
+    End Sub
 End Class

@@ -52,8 +52,8 @@ Partial Class master_akun
         Me.coltipe_akun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colsub_akun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldetil = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.colkeyid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.dataview = New System.Windows.Forms.DataGridView()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -339,17 +339,17 @@ Partial Class master_akun
         Me.coldetil.Visible = True
         Me.coldetil.VisibleIndex = 4
         '
+        'colkeyid
+        '
+        Me.colkeyid.FieldName = "keyid"
+        Me.colkeyid.Name = "colkeyid"
+        '
         'RepositoryItemCheckEdit2
         '
         Me.RepositoryItemCheckEdit2.AutoHeight = False
         Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
         Me.RepositoryItemCheckEdit2.ValueChecked = 1.0!
         Me.RepositoryItemCheckEdit2.ValueUnchecked = 0.0!
-        '
-        'colkeyid
-        '
-        Me.colkeyid.FieldName = "keyid"
-        Me.colkeyid.Name = "colkeyid"
         '
         'dataview
         '

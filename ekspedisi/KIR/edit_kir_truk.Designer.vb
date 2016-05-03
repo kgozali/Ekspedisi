@@ -23,9 +23,9 @@ Partial Class edit_kir_truk
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -43,9 +43,9 @@ Partial Class edit_kir_truk
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,15 +68,6 @@ Partial Class edit_kir_truk
         Me.TextEdit4.Size = New System.Drawing.Size(257, 20)
         Me.TextEdit4.TabIndex = 7
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(736, 304)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -88,12 +79,20 @@ Partial Class edit_kir_truk
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
+        Me.GroupControl2.Controls.Add(Me.PictureEdit1)
         Me.GroupControl2.Location = New System.Drawing.Point(4, 83)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(752, 315)
         Me.GroupControl2.TabIndex = 68
         Me.GroupControl2.Text = "Bukti Kir"
+        '
+        'PictureEdit1
+        '
+        Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureEdit1.Location = New System.Drawing.Point(2, 21)
+        Me.PictureEdit1.Name = "PictureEdit1"
+        Me.PictureEdit1.Size = New System.Drawing.Size(748, 292)
+        Me.PictureEdit1.TabIndex = 0
         '
         'SimpleButton1
         '
@@ -265,9 +264,9 @@ Partial Class edit_kir_truk
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit KIR Truk"
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -279,7 +278,6 @@ Partial Class edit_kir_truk
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
@@ -298,4 +296,5 @@ Partial Class edit_kir_truk
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
 End Class
