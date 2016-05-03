@@ -119,6 +119,7 @@
                         hitung = hitung + tabel.Rows(i).Item("Sisa")
                     Next i
                     MessageBox.Show("Transaksi pelunasan telah berhasil", "Informasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    auditlog()
                     totalbayar.Text = "0"
                     totalhutang.Text = hitung
                     If supirataukarywan = "karyawan" Then
@@ -140,6 +141,13 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         End Try
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Pelunasan Piutang Karyawan"
+        Dim aktivitas As String = "Pelunasan piutang dengan Kode: " & id.Text
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Public id As String
     Private Sub idkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idkaryawan.ButtonClick

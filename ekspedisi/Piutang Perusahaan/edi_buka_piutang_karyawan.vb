@@ -5,7 +5,13 @@
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Edit Buka Piutang Karyawan"
+        Dim aktivitas As String = "Edit Buka Piutang: " & id.Text
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             InsertInto("UPDATE `piutang_karyawan` SET `id_karyawan`='" & pilihkaryawan.SelectedValue.ToString & "',`tgl`=" & tanggalpiutang.Value.ToString("yyyyMMdd") & ",`nominal`=" & nominal.Text & ",`jatuh_tempo`=" & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",`keterangan`='" & keterangan.Text & "',`status`='1',`id_akun`='" & akunkas.SelectedValue.ToString & "' WHERE id_piutangkaryawan='" & id.Text & "'")
@@ -16,6 +22,7 @@
             InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & opo & ")")
 
             MessageBox.Show("Piutang berhasil diubah", "Konfirmasi edit", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            audit()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

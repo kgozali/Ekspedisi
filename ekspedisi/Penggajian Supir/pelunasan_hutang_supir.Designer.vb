@@ -285,7 +285,7 @@ Partial Class pelunasan_hutang_supir
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "pelunasan_hutang_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Pelunasan Hutang Karyawan"
+        Me.Text = "Pelunasan Hutang Supir"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datapiutang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.daftarpiutang, System.ComponentModel.ISupportInitialize).EndInit()

@@ -47,6 +47,13 @@
         Me.Close()
     End Sub
     Public idbukapiutang As String
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Buka Piutang Karyawan"
+        Dim aktivitas As String = "Buka Piutang: " & id.Text
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         If idkaryawan.Text <> "" Then
             id.Text = autogenerate("BPK", "select max(id_piutangkaryawan) FROM piutang_karyawan p")
@@ -56,7 +63,9 @@
                 Dim opo As Double = CDbl(nominal.Text) * -1
                 InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & debet & "','Buka Piutang Karyawan'," & nominal.Text & ")")
                 InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id.Text & "','" & akunkas.SelectedValue.ToString & "','Buka Piutang Karyawan'," & opo & ")")
-                MessageBox.Show("Input Piutang Berhasil")
+                MessageBox.Show("Input piutang Berhasil", "Konfirmasi Buka Piutang", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                audit()
                 If karyawan_piutang.bukasupirataukaryawan = "karyawan" Then
                     viewkwitansi.tangkap = id.Text.ToString
                     viewkwitansi.ShowDialog()

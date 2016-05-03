@@ -9,7 +9,13 @@
     Private Sub namakaryawan_ButtonPressed(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles namakaryawan.ButtonPressed
         daftar_hutang_karyawan.ShowDialog()
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Pelunasan Hutang Supir"
+        Dim aktivitas As String = "Pelunasan hutang supir dengan kode: " & tampung
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             Dim centang As Boolean = False
@@ -35,6 +41,7 @@
 
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                audit()
                 lihat_slip_gaji.nomergaji = tampung
                 lihat_slip_gaji.ShowDialog()
 

@@ -78,6 +78,13 @@
         End Try
     End Sub
 
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Harga Supir"
+        Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir" & supir.SelectedValue.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             InsertInto("delete from dsupir where id_supir='" & supir.SelectedValue.ToString & "'")

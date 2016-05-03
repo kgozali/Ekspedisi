@@ -20,7 +20,14 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Pelunasan Piutang Principle"
+        Dim aktivitas As String = "Pelunasan piutang principle dengan kode: " & tampung
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+    Dim tampung As String
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Try
             Dim nominalbayar As Double
@@ -67,7 +74,7 @@
                     MessageBox.Show("Pembayaran tunai tidak memerlukan Bank", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     'ganti di sini untuk bayar bisa nyicil
-                    Dim tampung As String = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
+                    tampung = autogenerate("PPP", "select max(id_pelunasan) from pelunasan_piutang")
                     InsertInto("INSERT INTO `pelunasan_piutang`(`id_pelunasan`, `id_principle`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
                     For i = 0 To datapiutang.RowCount - 1
                         If datapiutang.GetRowCellValue(i, "Bayar") = True Then
@@ -102,6 +109,7 @@
                     totaldibayar.Text = "0"
                     'Me.Close()
                     MessageBox.Show("Pelunasan sukses diinput", "Konfirmasi Pelunasan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    audit()
                 End If
             End If
 
