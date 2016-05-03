@@ -80,58 +80,65 @@
                 'Else
                 '    MessageBox.Show("Karyawan tidak memiliki piutang")
                 Dim centang As Boolean = False
-
+                Dim bayarbenar As Integer = 0
                 For i = 0 To datapiutang.RowCount - 1
                     If datapiutang.GetRowCellValue(i, "Check List Bayar") = True Then
                         centang = True
                     End If
-                Next i
-                If centang = True Then
-                    id = autogenerate("PPK", "SELECT max(id_peluanasan_karyawan) FROM `pelunasapiutang_karyawan`")
-                    InsertInto("INSERT INTO `pelunasapiutang_karyawan`(`id_peluanasan_karyawan`,`tanggal_pelunasan`) VALUES ('" & id & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
-
-                    For i = 0 To datapiutang.RowCount - 1
-                        If datapiutang.GetRowCellValue(i, "Check List Bayar") = True Then
-                            InsertInto("INSERT INTO `dpiutang_karyawan`(`id_piutangkaryawan`, `jumlah_dibayar`, `id_peluanasan_karyawan`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & datapiutang.GetRowCellValue(i, "Bayar") & ",'" & id & "')")
-                            If datapiutang.GetRowCellValue(i, "Sisa") = datapiutang.GetRowCellValue(i, "Bayar") Then
-                                InsertInto("Update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
-                            End If
-
-                        End If
-                    Next i
-                    Dim masukjurnal As String = Scalar("select no_jurnal from jurnal where no_jurnal='" & id & "'")
-                    If IsNothing(masukjurnal) = True Then
-                        InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id & "','" & tanggalpelunasan.Value.ToString("yyyyMMdd") & "')")
+                    If datapiutang.GetRowCellValue(i, "Sisa") < datapiutang.GetRowCellValue(i, "Bayar") Then
+                        bayarbenar = bayarbenar + 1
                     End If
-                    Dim opo As Double = CDbl(totalbayar.Text) * -1
-                    InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id & "','" & debet & "','Pelunasan Piutang Pribadi Karywawan'," & CDbl(totalbayar.Text) & ")")
-                    InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id & "','" & kredit & "','Pelunasan Piutang Pribadi Karyawan'," & opo & ")")
-                    Dim tabel As New DataTable
-                    tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,nominal,nominal-sum(jumlah_dibayar)) as `Sisa` FROM piutang_karyawan p left join dpiutang_karyawan d on d.id_piutangkaryawan=p.id_piutangkaryawan where p.id_karyawan='" & namakaryawan.Text & "' and status='1' group by p.id_piutangkaryawan;")
-                    daftarutang.DataSource = tabel
-                    Dim hitung As Double = 0
-                    Dim itungan As Double = 0
-                    For i = 0 To tabel.Rows.Count - 1
-                        With datapiutang
-                            .SetRowCellValue(i, "Check List Bayar", False)
-                            .SetRowCellValue(i, "Bayar", 0)
-                        End With
-                        hitung = hitung + tabel.Rows(i).Item("Sisa")
-                    Next i
-                    MessageBox.Show("Transaksi pelunasan telah berhasil", "Informasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    audit()
-                    totalbayar.Text = "0"
-                    totalhutang.Text = hitung
-                    If supirataukarywan = "karyawan" Then
-                        viewkwitansipinjaman.penerima = id
-                        viewkwitansipinjaman.ShowDialog()
+                Next i
+                If bayarbenar = 0 Then
+                    If centang = True Then
+                        id = autogenerate("PPK", "SELECT max(id_peluanasan_karyawan) FROM `pelunasapiutang_karyawan`")
+                        InsertInto("INSERT INTO `pelunasapiutang_karyawan`(`id_peluanasan_karyawan`,`tanggal_pelunasan`) VALUES ('" & id & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ")")
+
+                        For i = 0 To datapiutang.RowCount - 1
+                            If datapiutang.GetRowCellValue(i, "Check List Bayar") = True Then
+                                InsertInto("INSERT INTO `dpiutang_karyawan`(`id_piutangkaryawan`, `jumlah_dibayar`, `id_peluanasan_karyawan`) VALUES ('" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'," & datapiutang.GetRowCellValue(i, "Bayar") & ",'" & id & "')")
+                                If datapiutang.GetRowCellValue(i, "Sisa") = datapiutang.GetRowCellValue(i, "Bayar") Then
+                                    InsertInto("Update piutang_karyawan set `status`='0' where id_piutangkaryawan='" & datapiutang.GetRowCellValue(i, "Kode Piutang") & "'")
+                                End If
+
+                            End If
+                        Next i
+                        Dim masukjurnal As String = Scalar("select no_jurnal from jurnal where no_jurnal='" & id & "'")
+                        If IsNothing(masukjurnal) = True Then
+                            InsertInto("INSERT INTO `jurnal`(`no_jurnal`, `tgl`) VALUES ('" & id & "','" & tanggalpelunasan.Value.ToString("yyyyMMdd") & "')")
+                        End If
+                        Dim opo As Double = CDbl(totalbayar.Text) * -1
+                        InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id & "','" & debet & "','Pelunasan Piutang Pribadi Karywawan'," & CDbl(totalbayar.Text) & ")")
+                        InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & id & "','" & kredit & "','Pelunasan Piutang Pribadi Karyawan'," & opo & ")")
+                        Dim tabel As New DataTable
+                        tabel = DtTablebayar("SELECT p.id_piutangkaryawan as `Kode Piutang`,tgl `Tanggal Piutang`,jatuh_tempo `Tanggal Jatuh Tempo`,nominal `Nominal`,keterangan `Keterangan`,if(sum(jumlah_dibayar) is null,0,sum(jumlah_dibayar)) as `Terbayar`,if(nominal-sum(jumlah_dibayar) is null or nominal-sum(jumlah_dibayar)=nominal,nominal,nominal-sum(jumlah_dibayar)) as `Sisa` FROM piutang_karyawan p left join dpiutang_karyawan d on d.id_piutangkaryawan=p.id_piutangkaryawan where p.id_karyawan='" & namakaryawan.Text & "' and status='1' group by p.id_piutangkaryawan;")
+                        daftarutang.DataSource = tabel
+                        Dim hitung As Double = 0
+                        Dim itungan As Double = 0
+                        For i = 0 To tabel.Rows.Count - 1
+                            With datapiutang
+                                .SetRowCellValue(i, "Check List Bayar", False)
+                                .SetRowCellValue(i, "Bayar", 0)
+                            End With
+                            hitung = hitung + tabel.Rows(i).Item("Sisa")
+                        Next i
+                        MessageBox.Show("Transaksi pelunasan telah berhasil", "Informasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        totalbayar.Text = "0"
+                        totalhutang.Text = hitung
+                        If supirataukarywan = "karyawan" Then
+                            viewkwitansipinjaman.penerima = id
+                            viewkwitansipinjaman.ShowDialog()
+                        Else
+                            view_kwitansi_supir.terima = id
+                            view_kwitansi_supir.ShowDialog()
+                        End If
                     Else
-                        view_kwitansi_supir.terima = id
-                        view_kwitansi_supir.ShowDialog()
+                        MessageBox.Show("Transaksi pelunasan belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
                     End If
                 Else
-                    MessageBox.Show("Transaksi pelunasan belum dipilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
+                    MessageBox.Show("Nominal pembayaran tidak sesuai dengan sisa hutang", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
             Else
                 MessageBox.Show("Karyawan tidak memiliki piutang", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -162,6 +169,7 @@
             Dim angka As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Nominal")
             Dim angka2 As Double = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Terbayar")
             If e.Column.FieldName = "Bayar" Then
+                
 
                 'If angka < 0 Then
                 '    With datapiutang
@@ -188,7 +196,7 @@
 
     Private Sub datapiutang_ShownEditor(sender As Object, e As EventArgs) Handles datapiutang.ShownEditor
         Try
-            If datapiutang.FocusedColumn.AbsoluteIndex <> 8 And IsDBNull(datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Check List Bayar")) = False Then
+            If (datapiutang.FocusedColumn.AbsoluteIndex <> 8 And IsDBNull(datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Check List Bayar")) = False) Then
                 keamanan = datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, datapiutang.FocusedColumn)
             End If
         Catch ex As Exception
@@ -205,6 +213,7 @@
                 End With
 
             End If
+            
             If e.Column.FieldName = "Check List Bayar" Then
                 If e.Value = True Then
                     With datapiutang
@@ -259,14 +268,6 @@
             idkaryawan.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource
             idkaryawan.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend
             idkaryawan.MaskBox.AutoCompleteCustomSource = collection
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End Try
-    End Sub
-
-    Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Try
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
