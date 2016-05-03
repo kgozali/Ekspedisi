@@ -4,7 +4,7 @@
         Try
             Dim rpt As New bukti_pinjam_supir
             rpt.Parameters("nomopiutang").Value = buka_piutang_karyawan.idbukapiutang
-            rpt.Parameters("username").Value = main_menu.username
+            rpt.Parameters("username").Value = ""
             rpt.CreateDocument()
             DocumentViewer1.DocumentSource = rpt
             

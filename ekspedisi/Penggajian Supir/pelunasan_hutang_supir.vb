@@ -54,7 +54,7 @@
     Private Sub pelunasan_hutang_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim data As New DataTable
-            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank' and tipe_akun='Kas&Bank'")
+            data = DtTable("select nama_akun,kode_akun from makun where tipe_akun='Kas&Bank' and detil='1'")
             namaakun.DataSource = data
             namaakun.DisplayMember = "nama_akun"
             namaakun.ValueMember = "kode_akun"
