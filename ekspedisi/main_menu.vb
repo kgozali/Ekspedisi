@@ -2,8 +2,9 @@
 Public Class main_menu
 
     Public username As String = ""
+
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
-        'master_supir.ShowDialog()
+        master_principle.ShowDialog()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
@@ -289,4 +290,11 @@ Public Class main_menu
     End Sub
 
    
+    Private Sub SimpleButton15_Click(sender As Object, e As EventArgs) Handles SimpleButton15.Click
+        master_supir.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton16_Click(sender As Object, e As EventArgs) Handles SimpleButton16.Click
+        ViewerAtiva.ShowDialog()
+    End Sub
 End Class

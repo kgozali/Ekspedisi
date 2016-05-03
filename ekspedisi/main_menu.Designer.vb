@@ -132,6 +132,8 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton16 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -193,8 +195,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
-        Me.BackstageViewControl1.SelectedTabIndex = 1
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem5
+        Me.BackstageViewControl1.SelectedTabIndex = 5
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -374,6 +376,7 @@ Partial Class main_menu
         '
         Me.BackstageViewClientControl1.Appearance.BackColor = System.Drawing.Color.White
         Me.BackstageViewClientControl1.Appearance.Options.UseBackColor = True
+        Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton15)
         Me.BackstageViewClientControl1.Controls.Add(Me.mastersupir)
         Me.BackstageViewClientControl1.Controls.Add(Me.Label1)
         Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton12)
@@ -400,7 +403,7 @@ Partial Class main_menu
         Me.mastersupir.Name = "mastersupir"
         Me.mastersupir.Size = New System.Drawing.Size(136, 54)
         Me.mastersupir.TabIndex = 16
-        Me.mastersupir.Text = "Master Supir"
+        Me.mastersupir.Text = "Master Harga Supir"
         '
         'Label1
         '
@@ -518,7 +521,7 @@ Partial Class main_menu
         Me.masterakun.Name = "masterakun"
         Me.masterakun.Size = New System.Drawing.Size(136, 54)
         Me.masterakun.TabIndex = 1
-        Me.masterakun.Text = "Master Supir"
+        Me.masterakun.Text = "Master Principle"
         '
         'BackstageViewClientControl8
         '
@@ -749,6 +752,7 @@ Partial Class main_menu
         '
         Me.XtraScrollableControl1.Appearance.BackColor = System.Drawing.Color.White
         Me.XtraScrollableControl1.Appearance.Options.UseBackColor = True
+        Me.XtraScrollableControl1.Controls.Add(Me.SimpleButton16)
         Me.XtraScrollableControl1.Controls.Add(Me.Label3)
         Me.XtraScrollableControl1.Controls.Add(Me.SimpleButton38)
         Me.XtraScrollableControl1.Controls.Add(Me.SimpleButton36)
@@ -775,7 +779,7 @@ Partial Class main_menu
         Me.SimpleButton38.Image = CType(resources.GetObject("SimpleButton38.Image"), System.Drawing.Image)
         Me.SimpleButton38.Location = New System.Drawing.Point(613, 71)
         Me.SimpleButton38.Name = "SimpleButton38"
-        Me.SimpleButton38.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton38.Size = New System.Drawing.Size(148, 54)
         Me.SimpleButton38.TabIndex = 15
         Me.SimpleButton38.Text = "Laporan Keuangan"
         '
@@ -784,7 +788,7 @@ Partial Class main_menu
         Me.SimpleButton36.Image = CType(resources.GetObject("SimpleButton36.Image"), System.Drawing.Image)
         Me.SimpleButton36.Location = New System.Drawing.Point(250, 71)
         Me.SimpleButton36.Name = "SimpleButton36"
-        Me.SimpleButton36.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton36.Size = New System.Drawing.Size(148, 54)
         Me.SimpleButton36.TabIndex = 17
         Me.SimpleButton36.Text = "Transaksi Detail"
         '
@@ -793,7 +797,7 @@ Partial Class main_menu
         Me.SimpleButton37.Image = CType(resources.GetObject("SimpleButton37.Image"), System.Drawing.Image)
         Me.SimpleButton37.Location = New System.Drawing.Point(434, 71)
         Me.SimpleButton37.Name = "SimpleButton37"
-        Me.SimpleButton37.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton37.Size = New System.Drawing.Size(148, 54)
         Me.SimpleButton37.TabIndex = 16
         Me.SimpleButton37.Text = "Riwayat KIR"
         '
@@ -802,7 +806,7 @@ Partial Class main_menu
         Me.SimpleButton39.Image = CType(resources.GetObject("SimpleButton39.Image"), System.Drawing.Image)
         Me.SimpleButton39.Location = New System.Drawing.Point(63, 71)
         Me.SimpleButton39.Name = "SimpleButton39"
-        Me.SimpleButton39.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton39.Size = New System.Drawing.Size(148, 54)
         Me.SimpleButton39.TabIndex = 14
         Me.SimpleButton39.Text = "Laporan Transaksi"
         '
@@ -1103,7 +1107,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = True
+        Me.BackstageViewTabItem1.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -1135,7 +1139,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem5.ContentControl = Me.BackstageViewClientControl5
         Me.BackstageViewTabItem5.Glyph = CType(resources.GetObject("BackstageViewTabItem5.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem5.Name = "BackstageViewTabItem5"
-        Me.BackstageViewTabItem5.Selected = False
+        Me.BackstageViewTabItem5.Selected = True
         '
         'BackstageViewTabItem10
         '
@@ -1215,6 +1219,24 @@ Partial Class main_menu
         '
         'sfd
         '
+        '
+        'SimpleButton15
+        '
+        Me.SimpleButton15.Image = CType(resources.GetObject("SimpleButton15.Image"), System.Drawing.Image)
+        Me.SimpleButton15.Location = New System.Drawing.Point(247, 294)
+        Me.SimpleButton15.Name = "SimpleButton15"
+        Me.SimpleButton15.Size = New System.Drawing.Size(136, 54)
+        Me.SimpleButton15.TabIndex = 17
+        Me.SimpleButton15.Text = "Master Supir"
+        '
+        'SimpleButton16
+        '
+        Me.SimpleButton16.Image = CType(resources.GetObject("SimpleButton16.Image"), System.Drawing.Image)
+        Me.SimpleButton16.Location = New System.Drawing.Point(63, 158)
+        Me.SimpleButton16.Name = "SimpleButton16"
+        Me.SimpleButton16.Size = New System.Drawing.Size(148, 54)
+        Me.SimpleButton16.TabIndex = 18
+        Me.SimpleButton16.Text = "Laporan Aktiva Truk"
         '
         'main_menu
         '
@@ -1390,4 +1412,6 @@ Partial Class main_menu
     Friend WithEvents peluanasapiutangprinciple As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents mastersupir As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
 End Class
