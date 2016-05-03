@@ -159,7 +159,7 @@ carilevelna:
             If flagval Then
                 savestatus = True
 
-                MessageBox.Show("Simpan Data Akun " + kodeakun.Text + " Sukses")
+                MessageBox.Show("Simpan Data Akun " + kodeakun.Text + " Sukses", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If _modelayar = 1 Then
                     ResetValues()
                 Else
