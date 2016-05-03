@@ -529,7 +529,7 @@ Partial Class main_menu
         'SimpleButton38
         '
         Me.SimpleButton38.Image = CType(resources.GetObject("SimpleButton38.Image"), System.Drawing.Image)
-        Me.SimpleButton38.Location = New System.Drawing.Point(613, 71)
+        Me.SimpleButton38.Location = New System.Drawing.Point(617, 71)
         Me.SimpleButton38.Name = "SimpleButton38"
         Me.SimpleButton38.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton38.TabIndex = 15
@@ -538,7 +538,7 @@ Partial Class main_menu
         'SimpleButton36
         '
         Me.SimpleButton36.Image = CType(resources.GetObject("SimpleButton36.Image"), System.Drawing.Image)
-        Me.SimpleButton36.Location = New System.Drawing.Point(431, 71)
+        Me.SimpleButton36.Location = New System.Drawing.Point(249, 71)
         Me.SimpleButton36.Name = "SimpleButton36"
         Me.SimpleButton36.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton36.TabIndex = 17
@@ -547,7 +547,7 @@ Partial Class main_menu
         'SimpleButton37
         '
         Me.SimpleButton37.Image = CType(resources.GetObject("SimpleButton37.Image"), System.Drawing.Image)
-        Me.SimpleButton37.Location = New System.Drawing.Point(247, 71)
+        Me.SimpleButton37.Location = New System.Drawing.Point(429, 71)
         Me.SimpleButton37.Name = "SimpleButton37"
         Me.SimpleButton37.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton37.TabIndex = 16
@@ -556,11 +556,11 @@ Partial Class main_menu
         'SimpleButton39
         '
         Me.SimpleButton39.Image = CType(resources.GetObject("SimpleButton39.Image"), System.Drawing.Image)
-        Me.SimpleButton39.Location = New System.Drawing.Point(63, 71)
+        Me.SimpleButton39.Location = New System.Drawing.Point(73, 71)
         Me.SimpleButton39.Name = "SimpleButton39"
         Me.SimpleButton39.Size = New System.Drawing.Size(136, 54)
         Me.SimpleButton39.TabIndex = 14
-        Me.SimpleButton39.Text = "Laporan Transaksi"
+        Me.SimpleButton39.Text = "Rekap Transaksi"
         '
         'BackstageViewClientControl8
         '
