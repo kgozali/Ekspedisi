@@ -409,6 +409,12 @@
     <Compile Include="List Edit Master\edit_list_supir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="login2.Designer.vb">
+      <DependentUpon>login2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Master Data\master_supir.Designer.vb">
       <DependentUpon>master_supir.vb</DependentUpon>
     </Compile>
@@ -1362,6 +1368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="List Edit Master\edit_list_supir.resx">
       <DependentUpon>edit_list_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login2.resx">
+      <DependentUpon>login2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data\master_supir.resx">
       <DependentUpon>master_supir.vb</DependentUpon>
