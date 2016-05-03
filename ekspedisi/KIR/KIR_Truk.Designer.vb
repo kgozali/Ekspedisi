@@ -35,9 +35,6 @@ Partial Class KIR_Truk
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ButtonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
@@ -48,7 +45,6 @@ Partial Class KIR_Truk
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +52,7 @@ Partial Class KIR_Truk
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(20, 10)
+        Me.Label1.Location = New System.Drawing.Point(34, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 18)
         Me.Label1.TabIndex = 41
@@ -66,7 +62,7 @@ Partial Class KIR_Truk
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(9, 32)
+        Me.Label2.Location = New System.Drawing.Point(23, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 18)
         Me.Label2.TabIndex = 42
@@ -105,14 +101,14 @@ Partial Class KIR_Truk
         'TextEdit1
         '
         Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(96, 8)
+        Me.TextEdit1.Location = New System.Drawing.Point(110, 8)
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Size = New System.Drawing.Size(174, 20)
         Me.TextEdit1.TabIndex = 1
         '
         'TextEdit2
         '
-        Me.TextEdit2.Location = New System.Drawing.Point(96, 32)
+        Me.TextEdit2.Location = New System.Drawing.Point(110, 32)
         Me.TextEdit2.Name = "TextEdit2"
         Me.TextEdit2.Size = New System.Drawing.Size(224, 20)
         Me.TextEdit2.TabIndex = 2
@@ -160,7 +156,7 @@ Partial Class KIR_Truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.PictureEdit1)
-        Me.GroupControl2.Location = New System.Drawing.Point(8, 95)
+        Me.GroupControl2.Location = New System.Drawing.Point(20, 102)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(752, 360)
         Me.GroupControl2.TabIndex = 52
@@ -175,36 +171,11 @@ Partial Class KIR_Truk
         Me.PictureEdit1.Size = New System.Drawing.Size(748, 337)
         Me.PictureEdit1.TabIndex = 0
         '
-        'TextEdit4
-        '
-        Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(40, 481)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Size = New System.Drawing.Size(257, 20)
-        Me.TextEdit4.TabIndex = 7
-        '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(303, 472)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(42, 37)
-        Me.SimpleButton2.TabIndex = 8
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(7, 484)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 13)
-        Me.Label7.TabIndex = 55
-        Me.Label7.Text = "Path"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(52, 61)
+        Me.Label6.Location = New System.Drawing.Point(66, 61)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 18)
         Me.Label6.TabIndex = 56
@@ -212,7 +183,7 @@ Partial Class KIR_Truk
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(96, 59)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(110, 59)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(174, 20)
@@ -244,9 +215,6 @@ Partial Class KIR_Truk
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ButtonEdit1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.SimpleButton2)
-        Me.Controls.Add(Me.TextEdit4)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
@@ -269,7 +237,6 @@ Partial Class KIR_Truk
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -289,9 +256,6 @@ Partial Class KIR_Truk
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ButtonEdit1 As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
