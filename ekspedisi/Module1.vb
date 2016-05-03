@@ -6,7 +6,14 @@ Public Module Module1
     Function tglserver() As DateTime
         Return Scalar("select now() ")
     End Function
-
+    Function checkconnection() As Boolean
+        Try
+            My.Computer.Network.Ping("139.162.57.197")
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     Function Scalar(ByVal x As String)
         'untuk select single data
         Try
