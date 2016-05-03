@@ -119,7 +119,7 @@
                         hitung = hitung + tabel.Rows(i).Item("Sisa")
                     Next i
                     MessageBox.Show("Transaksi pelunasan telah berhasil", "Informasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    auditlog()
+                    audit()
                     totalbayar.Text = "0"
                     totalhutang.Text = hitung
                     If supirataukarywan = "karyawan" Then
@@ -146,7 +146,7 @@
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Pelunasan Piutang Karyawan"
-        Dim aktivitas As String = "Pelunasan piutang dengan Kode: " & id.Text
+        Dim aktivitas As String = "Pelunasan piutang dengan Kode: " & id
         auditlog(user, kompname, form, aktivitas)
     End Sub
     Public id As String
