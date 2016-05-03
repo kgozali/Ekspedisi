@@ -2,6 +2,10 @@
 Public Class main_menu
 
     Public username As String = ""
+    Sub quit(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
 
     Private Sub masterakun_Click(sender As Object, e As EventArgs) Handles masterakun.Click
         master_principle.ShowDialog()
@@ -62,8 +66,10 @@ Public Class main_menu
     Private Sub SimpleButton19_Click(sender As Object, e As EventArgs) Handles SimpleButton19.Click
         master_DO.ShowDialog()
     End Sub
-   
+
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        login2.ShowDialog()
+
         Try
             If checkconnection() = True Then
                 GridView2.OptionsView.ShowFooter = True
@@ -102,7 +108,7 @@ Public Class main_menu
         Catch ex As Exception
 
         End Try
-       
+
 
     End Sub
 
@@ -244,7 +250,7 @@ Public Class main_menu
         daftar_bank_keluar.ShowDialog()
     End Sub
 
-  
+
     Private Sub XtraTabControl1_Click(sender As Object, e As EventArgs) Handles XtraTabControl1.Click
 
     End Sub
@@ -289,7 +295,7 @@ Public Class main_menu
         main_menu_Load(sender, e)
     End Sub
 
-   
+
     Private Sub SimpleButton15_Click(sender As Object, e As EventArgs) Handles SimpleButton15.Click
         master_supir.ShowDialog()
     End Sub
@@ -297,4 +303,5 @@ Public Class main_menu
     Private Sub SimpleButton16_Click(sender As Object, e As EventArgs) Handles SimpleButton16.Click
         ViewerAtiva.ShowDialog()
     End Sub
+
 End Class
