@@ -226,7 +226,7 @@ Public Class KIR_Truk
                         If nominal = 0 Or Not IsNumeric(nominal) Then
                             MessageBox.Show("Nominal KIR Rp.0 , harap mengisi nominal KIR lebih dari Rp.0", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
-                            If TextEdit4.Text = "" Then
+                            If PictureEdit1.Text = "" Then
                                 Dim msg As Integer = MessageBox.Show("Bukti KIR tidak ditemukan, apakah anda tetap ingin melanjutkan KIR tanpa mencantumkan bukti KIR?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
                                 If msg = DialogResult.OK Then
                                     insert()
@@ -261,7 +261,7 @@ Public Class KIR_Truk
             'Exit Sub
         End If
 
-        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "','" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','" + TextEdit4.Text.ToString + "','',0)")
+        inserts = InsertInto("insert into kir values('" + kode.ToString + "','" + TextEdit2.Text.ToString + "','" + DateTimePicker3.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + trukbook.ToString + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + nominal.ToString + "','','',0)")
         Dim Command = New MySqlCommand("Update kir set imgfile=@imgfile where id_kir='" + kode + "'", connect)
         connect.Open()
         Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
@@ -290,7 +290,7 @@ Public Class KIR_Truk
         trukbook = ""
         DateTimePicker1.ResetText()
         DateTimePicker2.ResetText()
-        TextEdit4.Text = ""
+
         ButtonEdit1.Text = ""
     End Sub
 
@@ -342,7 +342,7 @@ bm.Height), GraphicsUnit.Pixel)
         thumb.Dispose()
 
     End Function
-    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

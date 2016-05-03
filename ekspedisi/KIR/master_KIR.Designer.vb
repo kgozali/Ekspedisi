@@ -21,7 +21,6 @@ Partial Class master_KIR
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_KIR))
-        Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.mastersiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -37,7 +36,6 @@ Partial Class master_KIR
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
@@ -54,8 +52,6 @@ Partial Class master_KIR
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.tgl = New System.Windows.Forms.RadioButton()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,19 +62,7 @@ Partial Class master_KIR
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'hapus
-        '
-        Me.hapus.Location = New System.Drawing.Point(12, 656)
-        Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
-        Me.hapus.TabIndex = 168
-        Me.hapus.Text = "Delete"
-        Me.hapus.Visible = False
         '
         'BarButtonItem3
         '
@@ -184,16 +168,6 @@ Partial Class master_KIR
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(757, 532)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 169
-        Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
-        '
         'datasiswa
         '
         Me.datasiswa.Caption = "Master Data Siswa"
@@ -233,17 +207,18 @@ Partial Class master_KIR
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Location = New System.Drawing.Point(12, 206)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(734, 444)
+        Me.GroupControl3.Size = New System.Drawing.Size(979, 444)
         Me.GroupControl3.TabIndex = 164
         Me.GroupControl3.Text = "Daftar KIR"
         '
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(724, 415)
+        Me.GridControl1.Size = New System.Drawing.Size(975, 421)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -342,24 +317,6 @@ Partial Class master_KIR
         Me.tgl.Text = "Tanggal KIR"
         Me.tgl.UseVisualStyleBackColor = True
         '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.PictureBox1)
-        Me.GroupControl2.Location = New System.Drawing.Point(752, 206)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(244, 319)
-        Me.GroupControl2.TabIndex = 165
-        Me.GroupControl2.Text = "Scan KIR"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(234, 286)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
@@ -374,12 +331,9 @@ Partial Class master_KIR
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 691)
-        Me.Controls.Add(Me.hapus)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "master_KIR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -394,14 +348,10 @@ Partial Class master_KIR
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents mastersiswa As DevExpress.XtraBars.BarButtonItem
@@ -417,7 +367,6 @@ Partial Class master_KIR
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents datasiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonGalleryBarItem1 As DevExpress.XtraBars.RibbonGalleryBarItem
@@ -428,8 +377,6 @@ Partial Class master_KIR
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents tgl As System.Windows.Forms.RadioButton
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents kir As System.Windows.Forms.RadioButton
