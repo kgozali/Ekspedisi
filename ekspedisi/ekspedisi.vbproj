@@ -607,6 +607,12 @@
     <Compile Include="Report Master\ReportMasterKontak.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report Master\ReportMasterPrinciple.Designer.vb">
+      <DependentUpon>ReportMasterPrinciple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ReportMasterPrinciple.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report Master\ReportMasterSupir.Designer.vb">
       <DependentUpon>ReportMasterSupir.vb</DependentUpon>
     </Compile>
@@ -1500,6 +1506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ReportMasterKontak.resx">
       <DependentUpon>ReportMasterKontak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ReportMasterPrinciple.resx">
+      <DependentUpon>ReportMasterPrinciple.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ReportMasterSupir.resx">
       <DependentUpon>ReportMasterSupir.vb</DependentUpon>

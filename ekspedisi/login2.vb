@@ -7,11 +7,11 @@
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
-        main_menu.quit(sender, e)
+        'main_menu.quit(sender, e)
     End Sub
     Private Sub formclosing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
         If cek = False Then
-            main_menu.quit(sender, e)
+            'main_menu.quit(sender, e)
         End If
     End Sub
     Private Sub login_Click(sender As Object, e As EventArgs) Handles login.Click
