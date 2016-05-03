@@ -23,6 +23,6 @@ Public Class change_password
     Private Sub change_password_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pass.Text = ""
         repass.Text = ""
-        nama.Text = username
+        nama.Text = main_menu.username
     End Sub
 End Class
