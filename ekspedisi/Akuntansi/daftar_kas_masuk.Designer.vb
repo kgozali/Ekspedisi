@@ -20,9 +20,6 @@ Partial Class daftar_kas_masuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(daftar_kas_masuk))
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.editing = New DevExpress.XtraEditors.SimpleButton()
-        Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
@@ -50,38 +47,13 @@ Partial Class daftar_kas_masuk
         Me.colnobukti = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltgl = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'cancel
-        '
-        Me.cancel.Location = New System.Drawing.Point(460, 533)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 35
-        Me.cancel.Text = "Cancel"
-        '
-        'editing
-        '
-        Me.editing.Location = New System.Drawing.Point(12, 534)
-        Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
-        Me.editing.TabIndex = 31
-        Me.editing.Text = "Edit"
-        Me.editing.Visible = False
-        '
-        'hapus
-        '
-        Me.hapus.Location = New System.Drawing.Point(12, 534)
-        Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
-        Me.hapus.TabIndex = 33
-        Me.hapus.Text = "Delete"
-        Me.hapus.Visible = False
         '
         'BarButtonItem2
         '
@@ -112,7 +84,7 @@ Partial Class daftar_kas_masuk
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(572, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(784, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -223,6 +195,7 @@ Partial Class daftar_kas_masuk
         'BarButtonItem1
         '
         Me.BarButtonItem1.Caption = "Cetak"
+        Me.BarButtonItem1.Enabled = False
         Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
         Me.BarButtonItem1.Id = 33
         Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
@@ -246,10 +219,9 @@ Partial Class daftar_kas_masuk
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 102)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(572, 471)
+        Me.GroupControl3.Size = New System.Drawing.Size(784, 414)
         Me.GroupControl3.TabIndex = 38
         Me.GroupControl3.Text = "Data Kas Masuk"
         '
@@ -261,7 +233,7 @@ Partial Class daftar_kas_masuk
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(568, 448)
+        Me.GridControl1.Size = New System.Drawing.Size(780, 391)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -301,17 +273,25 @@ Partial Class daftar_kas_masuk
         Me.colketerangan.VisibleIndex = 2
         Me.colketerangan.Width = 273
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(670, 522)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.TabIndex = 172
+        Me.SimpleButton1.Text = "Cancel"
+        '
         'daftar_kas_masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(572, 567)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Controls.Add(Me.cancel)
-        Me.Controls.Add(Me.editing)
-        Me.Controls.Add(Me.hapus)
         Me.Name = "daftar_kas_masuk"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Kas Masuk"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -322,9 +302,6 @@ Partial Class daftar_kas_masuk
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
@@ -352,4 +329,5 @@ Partial Class daftar_kas_masuk
     Friend WithEvents coltgl As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

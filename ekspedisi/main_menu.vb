@@ -208,11 +208,11 @@ Public Class main_menu
     End Sub
 
     Private Sub SimpleButton28_Click(sender As Object, e As EventArgs) Handles SimpleButton28.Click
-        kas_masuk.ShowDialog()
+        daftar_kas_masuk.ShowDialog()
     End Sub
 
     Private Sub kaskeluar_Click(sender As Object, e As EventArgs) Handles kaskeluar.Click
-        kas_keluar.ShowDialog()
+        daftar_kas_keluar.ShowDialog()
     End Sub
 
     Private Sub SimpleButton8_Click_1(sender As Object, e As EventArgs)
@@ -236,11 +236,11 @@ Public Class main_menu
     End Sub
 
     Private Sub SimpleButton30_Click(sender As Object, e As EventArgs) Handles SimpleButton30.Click
-        Bank_Masuk.ShowDialog()
+        daftar_bank_masuk.ShowDialog()
     End Sub
 
     Private Sub SimpleButton29_Click(sender As Object, e As EventArgs) Handles SimpleButton29.Click
-        Bank_Keluar.ShowDialog()
+        daftar_bank_keluar.ShowDialog()
     End Sub
 
   
@@ -274,5 +274,17 @@ Public Class main_menu
 
     Private Sub hutangdo_Click(sender As Object, e As EventArgs) Handles hutangdo.Click
         pelunasan_hutang_supir.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton24_Click(sender As Object, e As EventArgs) Handles SimpleButton24.Click
+        frmbukaperiode.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton26_Click(sender As Object, e As EventArgs) Handles SimpleButton26.Click
+        frntutupperiode.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton14_Click(sender As Object, e As EventArgs) Handles SimpleButton14.Click
+        main_menu_Load(sender, e)
     End Sub
 End Class

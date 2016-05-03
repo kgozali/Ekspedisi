@@ -42,8 +42,6 @@ Partial Class master_akun
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.editing = New DevExpress.XtraEditors.SimpleButton()
-        Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -127,7 +125,7 @@ Partial Class master_akun
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(448, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(784, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -211,7 +209,7 @@ Partial Class master_akun
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(339, 533)
+        Me.cancel.Location = New System.Drawing.Point(672, 522)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 49
@@ -237,32 +235,13 @@ Partial Class master_akun
         Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
         '
-        'editing
-        '
-        Me.editing.Location = New System.Drawing.Point(12, 533)
-        Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
-        Me.editing.TabIndex = 45
-        Me.editing.Text = "Edit"
-        Me.editing.Visible = False
-        '
-        'hapus
-        '
-        Me.hapus.Location = New System.Drawing.Point(12, 533)
-        Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
-        Me.hapus.TabIndex = 47
-        Me.hapus.Text = "Delete"
-        Me.hapus.Visible = False
-        '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Controls.Add(Me.dataview)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 102)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(448, 467)
+        Me.GroupControl3.Size = New System.Drawing.Size(784, 414)
         Me.GroupControl3.TabIndex = 51
         Me.GroupControl3.Text = "Data Akun"
         '
@@ -274,7 +253,7 @@ Partial Class master_akun
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(444, 444)
+        Me.GridControl1.Size = New System.Drawing.Size(780, 391)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -365,11 +344,9 @@ Partial Class master_akun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(448, 563)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
-        Me.Controls.Add(Me.editing)
-        Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_akun"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -408,8 +385,6 @@ Partial Class master_akun
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView

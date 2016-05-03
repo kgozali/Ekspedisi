@@ -48,6 +48,7 @@ Partial Class daftar_bank_masuk
         Me.colnobukti = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltgl = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -68,7 +69,7 @@ Partial Class daftar_bank_masuk
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(572, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(784, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -179,6 +180,7 @@ Partial Class daftar_bank_masuk
         'BarButtonItem1
         '
         Me.BarButtonItem1.Caption = "Cetak"
+        Me.BarButtonItem1.Enabled = False
         Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
         Me.BarButtonItem1.Id = 33
         Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
@@ -202,10 +204,9 @@ Partial Class daftar_bank_masuk
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 102)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(572, 471)
+        Me.GroupControl3.Size = New System.Drawing.Size(784, 418)
         Me.GroupControl3.TabIndex = 39
         Me.GroupControl3.Text = "Data Bank Masuk"
         '
@@ -217,7 +218,7 @@ Partial Class daftar_bank_masuk
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(568, 448)
+        Me.GridControl1.Size = New System.Drawing.Size(780, 395)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -257,14 +258,25 @@ Partial Class daftar_bank_masuk
         Me.colketerangan.VisibleIndex = 2
         Me.colketerangan.Width = 273
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(670, 526)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.TabIndex = 171
+        Me.SimpleButton1.Text = "Cancel"
+        '
         'daftar_bank_masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(572, 567)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "daftar_bank_masuk"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bank Masuk"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -300,4 +312,5 @@ Partial Class daftar_bank_masuk
     Friend WithEvents colnobukti As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltgl As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

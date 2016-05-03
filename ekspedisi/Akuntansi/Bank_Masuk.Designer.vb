@@ -31,6 +31,12 @@ Partial Class Bank_Masuk
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.DataSet1 = New System.Data.DataSet()
+        Me.DataTable1 = New System.Data.DataTable()
+        Me.DataColumn1 = New System.Data.DataColumn()
+        Me.DataColumn2 = New System.Data.DataColumn()
+        Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colnama_akun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -43,12 +49,6 @@ Partial Class Bank_Masuk
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.DataSet1 = New System.Data.DataSet()
-        Me.DataTable1 = New System.Data.DataTable()
-        Me.DataColumn1 = New System.Data.DataColumn()
-        Me.DataColumn2 = New System.Data.DataColumn()
-        Me.DataColumn3 = New System.Data.DataColumn()
-        Me.DataColumn4 = New System.Data.DataColumn()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,9 +56,9 @@ Partial Class Bank_Masuk
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemLookUpEdit1
@@ -138,6 +138,36 @@ Partial Class Bank_Masuk
         Me.GridControl1.TabIndex = 3
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "NewDataSet"
+        Me.DataSet1.Tables.AddRange(New System.Data.DataTable() {Me.DataTable1})
+        '
+        'DataTable1
+        '
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
+        Me.DataTable1.TableName = "datadetil"
+        '
+        'DataColumn1
+        '
+        Me.DataColumn1.Caption = "id_akun_detil"
+        Me.DataColumn1.ColumnName = "id_akun_detil"
+        '
+        'DataColumn2
+        '
+        Me.DataColumn2.Caption = "keterangan"
+        Me.DataColumn2.ColumnName = "keterangan"
+        '
+        'DataColumn3
+        '
+        Me.DataColumn3.Caption = "nominal"
+        Me.DataColumn3.ColumnName = "nominal"
+        '
+        'DataColumn4
+        '
+        Me.DataColumn4.Caption = "id_truk"
+        Me.DataColumn4.ColumnName = "id_truk"
         '
         'GridView1
         '
@@ -253,36 +283,6 @@ Partial Class Bank_Masuk
         Me.LabelControl1.TabIndex = 162
         Me.LabelControl1.Text = "Nama Akun Bank:"
         '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "NewDataSet"
-        Me.DataSet1.Tables.AddRange(New System.Data.DataTable() {Me.DataTable1})
-        '
-        'DataTable1
-        '
-        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
-        Me.DataTable1.TableName = "datadetil"
-        '
-        'DataColumn1
-        '
-        Me.DataColumn1.Caption = "id_akun_detil"
-        Me.DataColumn1.ColumnName = "id_akun_detil"
-        '
-        'DataColumn2
-        '
-        Me.DataColumn2.Caption = "keterangan"
-        Me.DataColumn2.ColumnName = "keterangan"
-        '
-        'DataColumn3
-        '
-        Me.DataColumn3.Caption = "nominal"
-        Me.DataColumn3.ColumnName = "nominal"
-        '
-        'DataColumn4
-        '
-        Me.DataColumn4.Caption = "id_truk"
-        Me.DataColumn4.ColumnName = "id_truk"
-        '
         'Bank_Masuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -300,6 +300,7 @@ Partial Class Bank_Masuk
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "Bank_Masuk"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bank Masuk"
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -308,9 +309,9 @@ Partial Class Bank_Masuk
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -69,7 +69,7 @@ Public Class frntutupperiode
             command.CommandText = String.Format("insert into periode_transaksi (tgl_awal,tgl_akhir) VALUES ('{0}','{1}')", Format(tglawal, "yyyy-MM-dd"), Format(tglakhir, "yyyy-MM-dd"))
             command.ExecuteNonQuery()
             vartr.Commit()
-            MessageBox.Show("Tutup Periode Berhasil")
+            MessageBox.Show("Tutup Periode Berhasil", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -85,5 +85,9 @@ Public Class frntutupperiode
         Dim mindate As Date = CDate(Scalar("select tgl_awal from periode_transaksi"))
         DateEdit1.Properties.MinValue = mindate
         DateEdit1.EditValue = mindate
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        Me.Close()
     End Sub
 End Class

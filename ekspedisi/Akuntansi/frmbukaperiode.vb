@@ -30,7 +30,7 @@ Public Class frmbukaperiode
             command.CommandText = String.Format("insert into periode_transaksi (tgl_awal,tgl_akhir) VALUES ('{0}','{1}')", Format(tglawal, "yyyy-MM-dd"), Format(tglakhir, "yyyy-MM-dd"))
             command.ExecuteNonQuery()
             vartr.Commit()
-            MessageBox.Show("Buka Periode Berhasil")
+            MessageBox.Show("Buka Periode Berhasil", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -40,5 +40,9 @@ Public Class frmbukaperiode
                 MessageBox.Show(ex2.Message)
             End Try
         End Try
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        Me.Close()
     End Sub
 End Class
