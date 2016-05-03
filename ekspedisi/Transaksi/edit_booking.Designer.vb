@@ -99,7 +99,7 @@ Partial Class edit_booking
         Me.RichTextBox2.Location = New System.Drawing.Point(84, 363)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
-        Me.RichTextBox2.TabIndex = 163
+        Me.RichTextBox2.TabIndex = 8
         Me.RichTextBox2.Text = ""
         '
         'LabelControl10
@@ -128,7 +128,7 @@ Partial Class edit_booking
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
-        Me.TimeEdit1.TabIndex = 171
+        Me.TimeEdit1.TabIndex = 4
         '
         'ButtonEdit4
         '
@@ -136,7 +136,7 @@ Partial Class edit_booking
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit4.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit4.TabIndex = 170
+        Me.ButtonEdit4.TabIndex = 6
         '
         'ButtonEdit2
         '
@@ -145,7 +145,7 @@ Partial Class edit_booking
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit2.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit2.TabIndex = 169
+        Me.ButtonEdit2.TabIndex = 5
         '
         'ButtonEdit1
         '
@@ -153,7 +153,7 @@ Partial Class edit_booking
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit1.TabIndex = 167
+        Me.ButtonEdit1.TabIndex = 7
         '
         'GroupControl1
         '
@@ -169,7 +169,7 @@ Partial Class edit_booking
         Me.SimpleButton1.Location = New System.Drawing.Point(692, 482)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 165
+        Me.SimpleButton1.TabIndex = 10
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -178,7 +178,7 @@ Partial Class edit_booking
         Me.Submit.Location = New System.Drawing.Point(586, 482)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 164
+        Me.Submit.TabIndex = 9
         Me.Submit.Text = "Submit"
         '
         'DateTimePicker1
@@ -186,7 +186,7 @@ Partial Class edit_booking
         Me.DateTimePicker1.Location = New System.Drawing.Point(128, 60)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 161
+        Me.DateTimePicker1.TabIndex = 3
         '
         'id
         '
@@ -194,7 +194,7 @@ Partial Class edit_booking
         Me.id.Location = New System.Drawing.Point(128, 8)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(138, 21)
-        Me.id.TabIndex = 160
+        Me.id.TabIndex = 1
         '
         'Label7
         '
@@ -251,7 +251,7 @@ Partial Class edit_booking
         Me.DateTimePicker2.Location = New System.Drawing.Point(128, 35)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 174
+        Me.DateTimePicker2.TabIndex = 2
         '
         'Label5
         '

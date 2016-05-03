@@ -115,14 +115,14 @@ Partial Class booking_truk
         Me.id.Location = New System.Drawing.Point(136, 6)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(138, 21)
-        Me.id.TabIndex = 12
+        Me.id.TabIndex = 1
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(136, 55)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 13
+        Me.DateTimePicker1.TabIndex = 3
         '
         'SimpleButton1
         '
@@ -130,7 +130,7 @@ Partial Class booking_truk
         Me.SimpleButton1.Location = New System.Drawing.Point(691, 415)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(118, 27)
-        Me.SimpleButton1.TabIndex = 142
+        Me.SimpleButton1.TabIndex = 11
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -139,7 +139,7 @@ Partial Class booking_truk
         Me.Submit.Location = New System.Drawing.Point(567, 415)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(118, 27)
-        Me.Submit.TabIndex = 141
+        Me.Submit.TabIndex = 10
         Me.Submit.Text = "Submit"
         '
         'GroupControl1
@@ -172,7 +172,7 @@ Partial Class booking_truk
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit1.TabIndex = 147
+        Me.ButtonEdit1.TabIndex = 7
         '
         'ButtonEdit2
         '
@@ -180,7 +180,7 @@ Partial Class booking_truk
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit2.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit2.TabIndex = 149
+        Me.ButtonEdit2.TabIndex = 5
         '
         'ButtonEdit4
         '
@@ -188,7 +188,7 @@ Partial Class booking_truk
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit4.Size = New System.Drawing.Size(160, 20)
-        Me.ButtonEdit4.TabIndex = 151
+        Me.ButtonEdit4.TabIndex = 6
         '
         'TimeEdit1
         '
@@ -197,7 +197,7 @@ Partial Class booking_truk
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
-        Me.TimeEdit1.TabIndex = 152
+        Me.TimeEdit1.TabIndex = 4
         '
         'Label3
         '
@@ -238,7 +238,7 @@ Partial Class booking_truk
         Me.RichTextBox2.Location = New System.Drawing.Point(75, 288)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
-        Me.RichTextBox2.TabIndex = 56
+        Me.RichTextBox2.TabIndex = 8
         Me.RichTextBox2.Text = ""
         '
         'LabelControl10
@@ -255,7 +255,7 @@ Partial Class booking_truk
         Me.DateTimePicker2.Location = New System.Drawing.Point(136, 31)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker2.TabIndex = 155
+        Me.DateTimePicker2.TabIndex = 2
         '
         'Label5
         '
@@ -273,7 +273,7 @@ Partial Class booking_truk
         Me.SimpleButton3.Location = New System.Drawing.Point(443, 415)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(118, 27)
-        Me.SimpleButton3.TabIndex = 156
+        Me.SimpleButton3.TabIndex = 9
         Me.SimpleButton3.Text = "Submit and Print"
         '
         'booking_truk

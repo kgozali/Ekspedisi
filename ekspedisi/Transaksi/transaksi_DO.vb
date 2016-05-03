@@ -114,7 +114,7 @@ Public Class transaksi_DO
                             InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
                             InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
                             If ins = True Then
-                                MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 audit()
                             End If
                             res()
@@ -239,7 +239,7 @@ Public Class transaksi_DO
                             InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
                             InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
                             If ins = True Then
-                                MessageBox.Show("Delivery Order berhasil dilakukan, untuk melakukan Delivery Order lagi silahkan membuka Form Delivery Order kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 audit()
                                 frm_notado.transid = kode
                                 frm_notado.ShowDialog()

@@ -25,7 +25,7 @@ Public Class master_KIR
                 ComboBox1.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                query2 = DtTable("select concat(day(kir.tgl),' ',monthname(kir.tgl),' ',year(kir.tgl)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and mtruk.id_truk='" + ComboBox1.SelectedValue.ToString + "' and del=0")
+                query2 = DtTable("select concat(day(kir.tgl_kir),' ',monthname(kir.tgl_kir),' ',year(kir.tgl_kir)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and mtruk.id_truk='" + ComboBox1.SelectedValue.ToString + "' and del=0 order by tgl_kir")
                 GridControl1.DataSource = query2
                 summary()
             ElseIf tgl.Checked = True Then
@@ -34,7 +34,7 @@ Public Class master_KIR
                 ComboBox1.Visible = False
                 DateTimePicker1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                query2 = DtTable("select concat(day(kir.tgl),' ',monthname(kir.tgl),' ',year(kir.tgl)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and kir.tgl_kir='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and del=0")
+                query2 = DtTable("select concat(day(kir.tgl_kir),' ',monthname(kir.tgl_kir),' ',year(kir.tgl_kir)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and kir.tgl_kir='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and del=0 order by tgl_kir")
                 GridControl1.DataSource = query2
                 summary()
 
@@ -44,7 +44,7 @@ Public Class master_KIR
                 DateTimePicker1.Visible = False
                 TextEdit1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                query2 = DtTable("select concat(day(kir.tgl),' ',monthname(kir.tgl),' ',year(kir.tgl)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and kir.no_kir LIKE '%" + TextEdit1.Text.ToString + "%' and del=0")
+                query2 = DtTable("select concat(day(kir.tgl_kir),' ',monthname(kir.tgl_kir),' ',year(kir.tgl_kir)) `Tanggal KIR`,kir.id_kir `Kode KIR`,kir.no_kir `No. KIR`,mtruk.id_truk `Kode Truk`,mtruk.no_pol `No. Polisi` from kir,mtruk where kir.id_truk=mtruk.id_truk and kir.no_kir LIKE '%" + TextEdit1.Text.ToString + "%' and del=0 order by tgl_kir")
                 GridControl1.DataSource = query2
                 summary()
             End If

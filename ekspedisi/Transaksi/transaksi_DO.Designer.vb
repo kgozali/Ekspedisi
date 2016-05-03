@@ -118,7 +118,7 @@ Partial Class transaksi_DO
         Me.nomerdo.Location = New System.Drawing.Point(831, 35)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(165, 21)
-        Me.nomerdo.TabIndex = 4
+        Me.nomerdo.TabIndex = 7
         '
         'tanggalterkirim
         '
@@ -127,14 +127,14 @@ Partial Class transaksi_DO
         Me.tanggalterkirim.Location = New System.Drawing.Point(175, 86)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
-        Me.tanggalterkirim.TabIndex = 5
+        Me.tanggalterkirim.TabIndex = 4
         '
         'tanggaljatuhtempo
         '
         Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 112)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
-        Me.tanggaljatuhtempo.TabIndex = 7
+        Me.tanggaljatuhtempo.TabIndex = 5
         '
         'SimpleButton1
         '
@@ -142,7 +142,7 @@ Partial Class transaksi_DO
         Me.SimpleButton1.Location = New System.Drawing.Point(883, 638)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(118, 27)
-        Me.SimpleButton1.TabIndex = 12
+        Me.SimpleButton1.TabIndex = 11
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
@@ -151,7 +151,7 @@ Partial Class transaksi_DO
         Me.Submit.Location = New System.Drawing.Point(759, 638)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(118, 27)
-        Me.Submit.TabIndex = 11
+        Me.Submit.TabIndex = 10
         Me.Submit.Text = "Submit"
         '
         'GroupControl3
@@ -206,7 +206,7 @@ Partial Class transaksi_DO
         Me.TextBox2.Location = New System.Drawing.Point(831, 11)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(165, 21)
-        Me.TextBox2.TabIndex = 152
+        Me.TextBox2.TabIndex = 6
         '
         'SimpleButton2
         '
@@ -214,7 +214,7 @@ Partial Class transaksi_DO
         Me.SimpleButton2.Location = New System.Drawing.Point(896, 121)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton2.TabIndex = 153
+        Me.SimpleButton2.TabIndex = 8
         Me.SimpleButton2.Text = "Add Item"
         '
         'SimpleButton3
@@ -223,7 +223,7 @@ Partial Class transaksi_DO
         Me.SimpleButton3.Location = New System.Drawing.Point(635, 638)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(118, 27)
-        Me.SimpleButton3.TabIndex = 10
+        Me.SimpleButton3.TabIndex = 9
         Me.SimpleButton3.Text = "Submit and Print"
         '
         'tgldo
@@ -232,7 +232,7 @@ Partial Class transaksi_DO
         Me.tgldo.Location = New System.Drawing.Point(175, 62)
         Me.tgldo.Name = "tgldo"
         Me.tgldo.Size = New System.Drawing.Size(200, 21)
-        Me.tgldo.TabIndex = 154
+        Me.tgldo.TabIndex = 3
         '
         'LabelControl5
         '

@@ -204,7 +204,7 @@ Public Class master_DO
             Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") + "'")
             If ret = True Then
                 audit()
-                MessageBox.Show("Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 master_DO_Load(sender, e)
                 main_menu.main_menu_Load(sender, e)
             End If
