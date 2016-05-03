@@ -191,11 +191,11 @@ Public Class main_menu
         master_KIR.ShowDialog()
     End Sub
 
-    Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs) Handles pelunasanpiutangkaryawan.Click
+    Private Sub pelunasanpiutangkaryawan_Click(sender As Object, e As EventArgs)
         pelunansan_piutang_karyawan.ShowDialog()
     End Sub
 
-    Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs) Handles peluanasapiutangprinciple.Click
+    Private Sub peluanasapiutangprinciple_Click(sender As Object, e As EventArgs)
         pelunasan_piutang.ShowDialog()
     End Sub
 
@@ -207,7 +207,7 @@ Public Class main_menu
         kas_keluar.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton8_Click_1(sender As Object, e As EventArgs) Handles SimpleButton8.Click
+    Private Sub SimpleButton8_Click_1(sender As Object, e As EventArgs)
         buka_piutang_karyawan.ShowDialog()
     End Sub
 
@@ -250,5 +250,21 @@ Public Class main_menu
 
     Private Sub SimpleButton38_Click(sender As Object, e As EventArgs) Handles SimpleButton38.Click
         frmprevlapkeu.ShowDialog()
+    End Sub
+
+    Private Sub mastersupir_Click(sender As Object, e As EventArgs) Handles mastersupir.Click
+        master_harga_supir.ShowDialog()
+    End Sub
+
+    Private Sub master_pelunasan_Click(sender As Object, e As EventArgs) Handles master_pelunasan.Click
+        master_peluanasan_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub masterpiutangprinciple_Click(sender As Object, e As EventArgs) Handles masterpiutangprinciple.Click
+        master_pelunasan_principle.ShowDialog()
+    End Sub
+
+    Private Sub hutangdo_Click(sender As Object, e As EventArgs) Handles hutangdo.Click
+        pelunasan_hutang_supir.ShowDialog()
     End Sub
 End Class
