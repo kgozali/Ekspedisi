@@ -43,10 +43,18 @@ Public Class Bank_Masuk
             If savestatus Then
                 'connect.Close()
                 MessageBox.Show("Hapus transaksi bank  " + mkeyid + " berhasil")
+                audithapus()
                 Me.Close()
             End If
         End Try
     End Function
+    Sub audithapus()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim formvb As String = "Bank Masuk"
+        Dim aktivitas As String = "Hapus Bank Masuk: " & _mkeyid.ToString
+        auditlog(user, kompname, formvb, aktivitas)
+    End Sub
 
     Public Function initform(ByVal modelayar As Integer, ByVal KeyID As String) As Boolean
         GridLookUpEdit1.Enabled = True

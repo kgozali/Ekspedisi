@@ -43,10 +43,18 @@ Public Class Bank_Keluar
             If savestatus Then
                 'connect.Close()
                 MessageBox.Show("Hapus transaksi bank  " + mkeyid + " berhasil")
+                audithapus()
                 Me.Close()
             End If
         End Try
     End Function
+    Sub audithapus()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim formvb As String = "Bank Keluar"
+        Dim aktivitas As String = "Hapus Bank Keluar: " & _mkeyid.ToString
+        auditlog(user, kompname, formvb, aktivitas)
+    End Sub
 
     Public Function initform(ByVal modelayar As Integer, ByVal KeyID As String) As Boolean
         GridLookUpEdit1.Enabled = True
@@ -201,7 +209,7 @@ Public Class Bank_Keluar
             End If
             If flagval And savestatus = True Then
 
-                MessageBox.Show("Simpan Data Bank Keluar " + TextBox1.Text + " Sukses")
+                MessageBox.Show("Simpan Data Bank Keluar " + TextBox1.Text + " Sukses", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If _modelayar = 1 Then
                     ResetValues()
                     If IsNothing(daftar_bank_keluar) = False Then

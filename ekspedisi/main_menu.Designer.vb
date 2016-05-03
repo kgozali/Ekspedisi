@@ -22,6 +22,7 @@ Partial Class main_menu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main_menu))
         Me.BackstageViewControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewControl()
         Me.BackstageViewClientControl12 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
@@ -131,7 +132,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -176,19 +176,19 @@ Partial Class main_menu
         Me.BackstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl12)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl1)
-        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl5)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl8)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl7)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl6)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl10)
         Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl2)
+        Me.BackstageViewControl1.Controls.Add(Me.BackstageViewClientControl5)
         Me.BackstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem2)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem1)
-        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem8)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem7)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem6)
+        Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem5)
         Me.BackstageViewControl1.Items.Add(Me.BackstageViewTabItem10)
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
@@ -204,10 +204,19 @@ Partial Class main_menu
         Me.BackstageViewClientControl12.Controls.Add(Me.SimpleButton14)
         Me.BackstageViewClientControl12.Controls.Add(Me.Label21)
         Me.BackstageViewClientControl12.Controls.Add(Me.XtraTabControl1)
-        Me.BackstageViewClientControl12.Location = New System.Drawing.Point(197, 0)
+        Me.BackstageViewClientControl12.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
-        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(811, 697)
+        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(813, 697)
         Me.BackstageViewClientControl12.TabIndex = 10
+        '
+        'SimpleButton14
+        '
+        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
+        Me.SimpleButton14.Location = New System.Drawing.Point(694, 78)
+        Me.SimpleButton14.Name = "SimpleButton14"
+        Me.SimpleButton14.Size = New System.Drawing.Size(89, 23)
+        Me.SimpleButton14.TabIndex = 4
+        Me.SimpleButton14.Text = "Refresh"
         '
         'Label21
         '
@@ -1079,7 +1088,7 @@ Partial Class main_menu
         '
         'BackstageViewTabItem2
         '
-        Me.BackstageViewTabItem2.Caption = "Application Manager"
+        Me.BackstageViewTabItem2.Caption = "Organizer"
         Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl12
         Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
@@ -1204,21 +1213,13 @@ Partial Class main_menu
         'sfd
         '
         '
-        'SimpleButton14
-        '
-        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(694, 78)
-        Me.SimpleButton14.Name = "SimpleButton14"
-        Me.SimpleButton14.Size = New System.Drawing.Size(89, 23)
-        Me.SimpleButton14.TabIndex = 4
-        Me.SimpleButton14.Text = "Refresh"
-        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 697)
         Me.Controls.Add(Me.BackstageViewControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.LookAndFeel.SkinName = "McSkin"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "main_menu"

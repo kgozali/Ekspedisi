@@ -300,6 +300,7 @@ Partial Class kas_keluar
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "kas_keluar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kas Keluar"
         CType(Me.GridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
