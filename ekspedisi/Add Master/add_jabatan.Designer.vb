@@ -48,11 +48,11 @@ Partial Class add_jabatan
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(11, 24)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(82, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(99, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Jabatan :"
+        Me.LabelControl1.Text = "Kode Jabatan :"
         '
         'LabelControl2
         '
@@ -65,7 +65,7 @@ Partial Class add_jabatan
         '
         'nama
         '
-        Me.nama.Location = New System.Drawing.Point(116, 46)
+        Me.nama.Location = New System.Drawing.Point(116, 50)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(143, 20)
         Me.nama.TabIndex = 46
@@ -73,7 +73,7 @@ Partial Class add_jabatan
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(116, 23)
+        Me.id.Location = New System.Drawing.Point(116, 25)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 45

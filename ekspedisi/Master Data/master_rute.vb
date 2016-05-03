@@ -117,6 +117,8 @@ Public Class master_rute
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mrute set `s`='0' where id_rute='" & GridView2.GetRowCellValue(i, "Kode Rute").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Kode Rute").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -132,6 +134,18 @@ Public Class master_rute
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Rute"
+        Dim aktivitas As String = "Delete Rute: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         If edit.Down = True Then
@@ -246,4 +260,8 @@ Public Class master_rute
         showgridpreview(GridControl1)
     End Sub
   
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        showgridpreview(GridControl1)
+    End Sub
+    
 End Class

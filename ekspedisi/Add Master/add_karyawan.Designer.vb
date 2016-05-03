@@ -21,6 +21,7 @@ Partial Class add_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_karyawan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.kota = New System.Windows.Forms.ComboBox()
         Me.ktp = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.email = New DevExpress.XtraEditors.TextEdit()
@@ -44,7 +45,6 @@ Partial Class add_karyawan
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.kota = New System.Windows.Forms.ComboBox()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.ktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +84,14 @@ Partial Class add_karyawan
         Me.GroupControl1.Size = New System.Drawing.Size(721, 256)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
+        '
+        'kota
+        '
+        Me.kota.FormattingEnabled = True
+        Me.kota.Location = New System.Drawing.Point(129, 119)
+        Me.kota.Name = "kota"
+        Me.kota.Size = New System.Drawing.Size(165, 21)
+        Me.kota.TabIndex = 80
         '
         'ktp
         '
@@ -228,11 +236,11 @@ Partial Class add_karyawan
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(32, 24)
+        Me.LabelControl1.Location = New System.Drawing.Point(16, 25)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(85, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(102, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Karyawan"
+        Me.LabelControl1.Text = "Kode Karyawan"
         '
         'LabelControl2
         '
@@ -275,14 +283,6 @@ Partial Class add_karyawan
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 148
         Me.cancel.Text = "Cancel"
-        '
-        'kota
-        '
-        Me.kota.FormattingEnabled = True
-        Me.kota.Location = New System.Drawing.Point(129, 119)
-        Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(165, 21)
-        Me.kota.TabIndex = 80
         '
         'add_karyawan
         '

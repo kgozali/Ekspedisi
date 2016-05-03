@@ -36,11 +36,20 @@ Public Class edit_Supir
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update msupir set nama_Supir='" & nama.Text & "',  alamat = '" & alamat.Text & "', tel1 ='" & tel1.Text & "', tel2 = '" & tel2.Text & "',kota ='" & kota.Text & "', keterangan ='" & RichTextBox1.Text & "', tgl_masuk ='" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "' where id_Supir='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_supir.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
+    End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Supir"
+        Dim aktivitas As String = "Edit Supir: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
 End Class

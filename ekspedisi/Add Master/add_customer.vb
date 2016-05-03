@@ -60,6 +60,15 @@ Public Class add_customer
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MC"
+                tanggal = DtTable("select * from mcustomer where substring(ID_customer,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
                 InsertInto("insert into mcustomer values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','1') ")
                 audit()

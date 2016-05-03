@@ -65,38 +65,41 @@ Public Class add_rute
         If hargaunit.Text = "" Or unit.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Dim cc As New DataTable
-            cc = DtTable("select * from mrute where kota_asal = '" & asal.SelectedValue.ToString & "' and kota_tujuan = '" & tujuan.SelectedValue.ToString & "'")
-            If cc.Rows.Count = 0 Then
-                Try
-                    'insert ke dalam database
-                    InsertInto("insert into mrute values ('" & id.Text & "','" & asal.SelectedValue.ToString & "','" & tujuan.SelectedValue.ToString & "','" & principle.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','1') ")
-                    'konfirmasi melakukan booking ulang
-                    audit()
-                    Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
-                    If msg = DialogResult.Yes Then
-                        add_rute_Load(sender, e)
-                        Reset()
-                    Else
-                        cek = False
-                        master_rute.GroupControl2.Enabled = True
-                        master_rute.GridControl1.Visible = True
-                        master_rute.GridControl2.Visible = False
-                        master_rute.hapus.Visible = False
-                        master_rute.editing.Visible = False
+            Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MR"
+                tanggal = DtTable("select * from mrute where substring(ID_rute,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
 
-                        Data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
-                        master_rute.GridControl1.DataSource = Data
-                        Me.Close()
-                    End If
+                'insert ke dalam database
+                InsertInto("insert into mrute values ('" & id.Text & "','" & asal.SelectedValue.ToString & "','" & tujuan.SelectedValue.ToString & "','" & principle.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','1') ")
+                'konfirmasi melakukan booking ulang
+                audit()
+                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                If msg = DialogResult.Yes Then
+                    add_rute_Load(sender, e)
+                    Reset()
+                Else
+                    cek = False
+                    master_rute.GroupControl2.Enabled = True
+                    master_rute.GridControl1.Visible = True
+                    master_rute.GridControl2.Visible = False
+                    master_rute.hapus.Visible = False
+                    master_rute.editing.Visible = False
 
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-            Else
-                MessageBox.Show("Kota Asal dan Tujuan tidak boleh sama", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
+                    data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
+                    master_rute.GridControl1.DataSource = data
+                    Me.Close()
+                End If
 
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            
 
         End If
 
@@ -112,6 +115,9 @@ Public Class add_rute
     End Sub
 
     Private Sub add_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        unit.Text = ""
+        hargaunit.Text = ""
+
         Dim tanggal As New DataTable
         Dim tgl As String = "MR"
         tanggal = DtTable("select * from mrute where substring(ID_rute,1,2) = '" & tgl & "'")

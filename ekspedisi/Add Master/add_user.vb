@@ -9,6 +9,8 @@ Public Class add_user
         master_user.edit.Down = False
         master_user.GridControl2.Visible = False
         master_user.GridControl1.Visible = True
+        master_user.hapus.Visible = False
+        master_user.editing.Visible = False
         data = DtTable("SELECT Username from muser where`s`='1'")
         master_user.GridControl1.DataSource = data
         Reset()
@@ -138,7 +140,7 @@ Public Class add_user
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Master User"
-        Dim aktivitas As String = "Add User: " & username.ToString
+        Dim aktivitas As String = "Add User: " & username.Text.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
 

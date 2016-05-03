@@ -619,6 +619,30 @@
     <Compile Include="Report Master\ReportMasterTruk.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report Master\ViewerAktiva.Designer.vb">
+      <DependentUpon>ViewerAktiva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerAktiva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerCustomer.Designer.vb">
+      <DependentUpon>ViewerCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerHargaSUpir.Designer.vb">
+      <DependentUpon>ViewerHargaSUpir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerHargaSUpir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerKontakP.Designer.vb">
+      <DependentUpon>ViewerKontakP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerKontakP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report Master\ViewerMasterBarang.Designer.vb">
       <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
     </Compile>
@@ -629,6 +653,30 @@
       <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
     </Compile>
     <Compile Include="Report Master\ViewerMasterKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerPrinciple.Designer.vb">
+      <DependentUpon>ViewerPrinciple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerPrinciple.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerSupir.Designer.vb">
+      <DependentUpon>ViewerSupir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerSupir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerSupplier.Designer.vb">
+      <DependentUpon>ViewerSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Master\ViewerTruk.Designer.vb">
+      <DependentUpon>ViewerTruk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report Master\ViewerTruk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\frm_principledetail.Designer.vb">
@@ -1453,11 +1501,35 @@
     <EmbeddedResource Include="Report Master\ReportMasterTruk.resx">
       <DependentUpon>ReportMasterTruk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerAktiva.resx">
+      <DependentUpon>ViewerAktiva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerCustomer.resx">
+      <DependentUpon>ViewerCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerHargaSUpir.resx">
+      <DependentUpon>ViewerHargaSUpir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerKontakP.resx">
+      <DependentUpon>ViewerKontakP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ViewerMasterBarang.resx">
       <DependentUpon>ViewerMasterBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report Master\ViewerMasterKaryawan.resx">
       <DependentUpon>ViewerMasterKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerPrinciple.resx">
+      <DependentUpon>ViewerPrinciple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerSupir.resx">
+      <DependentUpon>ViewerSupir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerSupplier.resx">
+      <DependentUpon>ViewerSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Master\ViewerTruk.resx">
+      <DependentUpon>ViewerTruk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_principledetail.resx">
       <DependentUpon>frm_principledetail.vb</DependentUpon>

@@ -40,7 +40,7 @@ Partial Class edit_barang
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(11, 25)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl1.TabIndex = 32
@@ -73,7 +73,7 @@ Partial Class edit_barang
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(310, 251)
+        Me.SimpleButton1.Location = New System.Drawing.Point(312, 232)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 143
@@ -82,7 +82,7 @@ Partial Class edit_barang
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(204, 251)
+        Me.Submit.Location = New System.Drawing.Point(206, 232)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 142
@@ -100,7 +100,7 @@ Partial Class edit_barang
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(398, 224)
+        Me.GroupControl1.Size = New System.Drawing.Size(400, 214)
         Me.GroupControl1.TabIndex = 141
         Me.GroupControl1.Text = "Data"
         '
@@ -123,7 +123,7 @@ Partial Class edit_barang
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 97)
+        Me.LabelControl4.Location = New System.Drawing.Point(20, 97)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(85, 18)
         Me.LabelControl4.TabIndex = 48
@@ -132,7 +132,7 @@ Partial Class edit_barang
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl3.Location = New System.Drawing.Point(45, 73)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
         Me.LabelControl3.TabIndex = 47
@@ -142,7 +142,7 @@ Partial Class edit_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(424, 288)
+        Me.ClientSize = New System.Drawing.Size(424, 272)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)

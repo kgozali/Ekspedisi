@@ -14,10 +14,19 @@ Public Class edit_kota
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mkota set provinsi='" & provinsi.Text & "' where kota='" & kota.Text & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_kota.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
+    End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kota"
+        Dim aktivitas As String = "Edit Kota: " & kota.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 End Class

@@ -41,22 +41,22 @@ Partial Class add_kota
         Me.GroupControl1.Controls.Add(Me.kota)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(265, 84)
+        Me.GroupControl1.Size = New System.Drawing.Size(283, 84)
         Me.GroupControl1.TabIndex = 145
         Me.GroupControl1.Text = "Data"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(8, 47)
+        Me.LabelControl2.Location = New System.Drawing.Point(10, 47)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(92, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(102, 18)
         Me.LabelControl2.TabIndex = 47
-        Me.LabelControl2.Text = "Nama Provinsi"
+        Me.LabelControl2.Text = "Nama Provinsi :"
         '
         'provinsi
         '
-        Me.provinsi.Location = New System.Drawing.Point(106, 48)
+        Me.provinsi.Location = New System.Drawing.Point(118, 48)
         Me.provinsi.Name = "provinsi"
         Me.provinsi.Size = New System.Drawing.Size(142, 20)
         Me.provinsi.TabIndex = 46
@@ -64,23 +64,23 @@ Partial Class add_kota
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(8, 23)
+        Me.LabelControl1.Location = New System.Drawing.Point(28, 23)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(74, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(84, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Nama Kota"
+        Me.LabelControl1.Text = "Nama Kota :"
         '
         'kota
         '
-        Me.kota.Location = New System.Drawing.Point(88, 24)
+        Me.kota.Location = New System.Drawing.Point(118, 24)
         Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(160, 20)
+        Me.kota.Size = New System.Drawing.Size(142, 20)
         Me.kota.TabIndex = 45
         '
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(70, 104)
+        Me.simpan.Location = New System.Drawing.Point(89, 102)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 155
@@ -89,7 +89,7 @@ Partial Class add_kota
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(176, 104)
+        Me.cancel.Location = New System.Drawing.Point(195, 102)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 154
@@ -99,7 +99,7 @@ Partial Class add_kota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(283, 136)
+        Me.ClientSize = New System.Drawing.Size(307, 136)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)

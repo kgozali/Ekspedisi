@@ -5,7 +5,7 @@ Public Class master_customer
     Dim cc() As String
     Public checks As New DataTable
     Dim unchecks As New DataTable
-
+    Dim dataygdidelete As String = ""
     Private Sub addcustomerbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addcustomerbaru.ItemClick
         add_customer.ShowDialog()
     End Sub
@@ -126,6 +126,8 @@ Public Class master_customer
                         For i = 0 To gridview1.RowCount - 1
                             If gridview1.IsRowSelected(i) = True Then
                                 InsertInto("update mcustomer set `s`=0 where id_customer='" & GridView1.GetRowCellValue(i, "Kode Customer").ToString & "'")
+                                dataygdidelete = GridView1.GetRowCellValue(i, "Kode Customer").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -141,7 +143,13 @@ Public Class master_customer
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Cutomer"
+        Dim aktivitas As String = "Delete Customer: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
     Private Sub gridview1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
         Try
@@ -242,16 +250,21 @@ Public Class master_customer
         End If
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
 
-        grid.ShowPrintPreview()
+    'Sub showgridpreview(ByVal grid As GridControl)
+    '    If Not grid.IsPrintingAvailable Then
+    '        MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+    '        Return
+    '    End If
+
+    '    grid.ShowPrintPreview()
+    'End Sub
+
+    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
+        ViewerCustomer.ShowDialog()
     End Sub
 
-    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs)
-        showgridpreview(GridControl1)
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        ViewerCustomer.ShowDialog()
     End Sub
 End Class

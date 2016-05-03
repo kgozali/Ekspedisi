@@ -127,6 +127,8 @@ Public Class master_karyawan
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mkaryawan set `s`=0 , tgl_keluar ='" & Date.Now.ToString("yyyyMMdd") & "' where id_karyawan='" & GridView2.GetRowCellValue(i, "Kode Karyawan").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Kode Karyawan").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -141,6 +143,16 @@ Public Class master_karyawan
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Karyawan"
+        Dim aktivitas As String = "Delete Karyawan: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
@@ -239,15 +251,20 @@ Public Class master_karyawan
         GridControl1.DataSource = data
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
-        grid.ShowPrintPreview()
-    End Sub
+    'Sub showgridpreview(ByVal grid As GridControl)
+    '    If Not grid.IsPrintingAvailable Then
+    '        MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+    '        Return
+    '    End If
+
+    '    grid.ShowPrintPreview()
+    'End Sub
 
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
-        showgridpreview(GridControl1)
+        ViewerMasterKaryawan.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        ViewerMasterKaryawan.ShowDialog()
     End Sub
 End Class

@@ -43,6 +43,7 @@ Public Class edit_Karyawan
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mkaryawan set nama_Karyawan='" & nama.Text & "', email ='" & email.Text & "', alamat = '" & alamat.Text & "', tel1 ='" & tel1.Text & "', tel2 = '" & tel2.Text & "',kota ='" & kota.Text & "', no_ktp ='" & ktp.Text & "', id_jabatan ='" & jabatan.SelectedValue.ToString & "', keterangan ='" & RichTextBox1.Text & "', tgl_masuk ='" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "' where id_Karyawan='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_karyawan.GridView1.DeleteSelectedRows()
@@ -50,4 +51,11 @@ Public Class edit_Karyawan
         End Select
     End Sub
 
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Karyawan"
+        Dim aktivitas As String = "Edit Karyawan: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 End Class

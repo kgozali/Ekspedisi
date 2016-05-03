@@ -23,10 +23,19 @@ Public Class edit_barang
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mbarang set nama_barang='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',keterangan='" & RichTextBox1.Text & "' where id_barang='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 list_edit_barang.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
+    End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Barang"
+        Dim aktivitas As String = "Edit Barang: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 End Class

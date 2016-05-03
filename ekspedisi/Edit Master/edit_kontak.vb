@@ -19,10 +19,10 @@ Public Class edit_kontak
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
     End Sub
-    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
+    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
-    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel2.KeyPress
+    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
@@ -31,10 +31,19 @@ Public Class edit_kontak
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mkontakprinciple set nama_kontak='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',tel1='" & tel1.Text & "',tel2='" & tel2.Text & "',email='" & email.Text & "' where id_kontak='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_kontak_principle.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
+    End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kontak Principle"
+        Dim aktivitas As String = "Edit Principle: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 End Class

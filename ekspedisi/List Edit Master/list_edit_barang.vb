@@ -10,6 +10,7 @@ Public Class list_edit_barang
         master_barang.deldata.Down = False
         master_barang.hapus.Visible = False
         master_barang.editing.Visible = False
+        master_barang.GroupControl2.Enabled = True
     End Sub
     Private Sub list_edit_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -49,7 +50,6 @@ Public Class list_edit_barang
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Me.Close()
         master_barang.GridControl1.Visible = True
         master_barang.GridControl2.Visible = False
         data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
@@ -58,7 +58,8 @@ Public Class list_edit_barang
         master_barang.deldata.Down = False
         master_barang.hapus.Visible = False
         master_barang.editing.Visible = False
-
+        master_barang.GroupControl2.Enabled = True
+        Me.Close()
     End Sub
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         edit_barang.ShowDialog()

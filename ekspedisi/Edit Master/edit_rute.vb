@@ -43,6 +43,7 @@ Public Class edit_rute
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mrute set kota_asal='" & asal.Text & "', kota_tujuan ='" & tujuan.Text & "', id_principle = '" & principle.SelectedValue.ToString & "', unit ='" & unit.Text & "', price_per_unit = '" & hargaunit.Text & "' where id_rute='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_rute.GridView1.DeleteSelectedRows()
@@ -50,4 +51,11 @@ Public Class edit_rute
         End Select
     End Sub
 
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Rute"
+        Dim aktivitas As String = "Edit Rute: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 End Class

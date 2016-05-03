@@ -24,6 +24,7 @@ Public Class add_kontak_principle
             nama.Text = ""
             tel1.Text = ""
             tel2.Text = ""
+            email.Text = ""
         Catch ex As Exception
 
         End Try
@@ -50,6 +51,7 @@ Public Class add_kontak_principle
                     master_kontak_principle.deldata.Down = False
                     master_kontak_principle.editing.Visible = False
                     master_kontak_principle.hapus.Visible = False
+                    master_kontak_principle.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
@@ -64,6 +66,7 @@ Public Class add_kontak_principle
                 master_kontak_principle.deldata.Down = False
                 master_kontak_principle.editing.Visible = False
                 master_kontak_principle.hapus.Visible = False
+                master_kontak_principle.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -77,6 +80,14 @@ Public Class add_kontak_principle
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MO"
+                tanggal = DtTable("select * from mkontakprinciple where substring(ID_Kontak,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+
                 'insert ke dalam database
                 InsertInto("insert into mkontakprinciple values ('" & id.Text & "','" & principle.SelectedValue.ToString & "','" & nama.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
@@ -95,6 +106,7 @@ Public Class add_kontak_principle
                     master_kontak_principle.deldata.Down = False
                     master_kontak_principle.editing.Visible = False
                     master_kontak_principle.hapus.Visible = False
+                    master_kontak_principle.GroupControl2.Enabled = True
                     Me.Close()
                 End If
 
@@ -122,6 +134,7 @@ Public Class add_kontak_principle
         master_kontak_principle.deldata.Down = False
         master_kontak_principle.editing.Visible = False
         master_kontak_principle.hapus.Visible = False
+        master_kontak_principle.GroupControl2.Enabled = True
         Me.Close()
     End Sub
 

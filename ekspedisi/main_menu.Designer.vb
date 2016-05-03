@@ -261,11 +261,11 @@ Partial Class main_menu
         'GridControl1
         '
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 15)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(745, 547)
+        Me.GridControl1.Size = New System.Drawing.Size(745, 541)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -278,7 +278,7 @@ Partial Class main_menu
         '
         Me.XtraTabPage2.Controls.Add(Me.GroupControl3)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(757, 545)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(749, 564)
         Me.XtraTabPage2.Text = "Piutang Principle"
         '
         'GroupControl3
@@ -287,17 +287,17 @@ Partial Class main_menu
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(757, 545)
+        Me.GroupControl3.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl3.TabIndex = 0
         Me.GroupControl3.Text = "Notifikasi Piutang Principle"
         '
         'GridControl2
         '
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 15)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 21)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(753, 528)
+        Me.GridControl2.Size = New System.Drawing.Size(745, 541)
         Me.GridControl2.TabIndex = 1
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -310,7 +310,7 @@ Partial Class main_menu
         '
         Me.XtraTabPage3.Controls.Add(Me.GroupControl4)
         Me.XtraTabPage3.Name = "XtraTabPage3"
-        Me.XtraTabPage3.Size = New System.Drawing.Size(757, 545)
+        Me.XtraTabPage3.Size = New System.Drawing.Size(749, 564)
         Me.XtraTabPage3.Text = "Piutang Karyawan"
         '
         'GroupControl4
@@ -319,17 +319,17 @@ Partial Class main_menu
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(757, 545)
+        Me.GroupControl4.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl4.TabIndex = 0
         Me.GroupControl4.Text = "Notifikasi Piutang Karyawan"
         '
         'GridControl3
         '
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl3.Location = New System.Drawing.Point(2, 15)
+        Me.GridControl3.Location = New System.Drawing.Point(2, 21)
         Me.GridControl3.MainView = Me.GridView3
         Me.GridControl3.Name = "GridControl3"
-        Me.GridControl3.Size = New System.Drawing.Size(753, 528)
+        Me.GridControl3.Size = New System.Drawing.Size(745, 541)
         Me.GridControl3.TabIndex = 1
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -342,7 +342,7 @@ Partial Class main_menu
         '
         Me.XtraTabPage4.Controls.Add(Me.GroupControl1)
         Me.XtraTabPage4.Name = "XtraTabPage4"
-        Me.XtraTabPage4.Size = New System.Drawing.Size(757, 545)
+        Me.XtraTabPage4.Size = New System.Drawing.Size(749, 564)
         Me.XtraTabPage4.Text = "KIR"
         '
         'GroupControl1
@@ -351,17 +351,17 @@ Partial Class main_menu
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(757, 545)
+        Me.GroupControl1.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Notifikasi KIR"
         '
         'GridControl4
         '
         Me.GridControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl4.Location = New System.Drawing.Point(2, 15)
+        Me.GridControl4.Location = New System.Drawing.Point(2, 21)
         Me.GridControl4.MainView = Me.GridView4
         Me.GridControl4.Name = "GridControl4"
-        Me.GridControl4.Size = New System.Drawing.Size(753, 528)
+        Me.GridControl4.Size = New System.Drawing.Size(745, 541)
         Me.GridControl4.TabIndex = 1
         Me.GridControl4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -1030,7 +1030,7 @@ Partial Class main_menu
         Me.XtraTabPage6.Controls.Add(Me.Label10)
         Me.XtraTabPage6.Controls.Add(Me.Label8)
         Me.XtraTabPage6.Name = "XtraTabPage6"
-        Me.XtraTabPage6.Size = New System.Drawing.Size(449, 267)
+        Me.XtraTabPage6.Size = New System.Drawing.Size(445, 272)
         Me.XtraTabPage6.Text = "Backup"
         '
         'SimpleButton40

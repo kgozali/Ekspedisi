@@ -20,6 +20,7 @@ Public Class edit_kategori_supplier
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mkategori_supplier set kategori_supplier = '" & nama.Text & "' where id_kategori='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_kategori_supplier.GridView1.DeleteSelectedRows()
@@ -27,4 +28,11 @@ Public Class edit_kategori_supplier
         End Select
     End Sub
 
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kategori Supplier"
+        Dim aktivitas As String = "Edit Kategori Supplier: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 End Class

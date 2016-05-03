@@ -5,13 +5,12 @@ Public Class master_barang
     Dim cc() As String
     Public checks As New DataTable
     Dim unchecks As New DataTable
-
+    Dim dataygdidedelete As String = ""
     Private Sub addbarangbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addbarangbaru.ItemClick
         add_barang.ShowDialog()
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-
         Me.Close()
     End Sub
 
@@ -112,6 +111,14 @@ Public Class master_barang
         End If
     End Sub
 
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Barang"
+        Dim aktivitas As String = "Delete Barang: " & dataygdidedelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
     Private Sub hapus_Click(sender As Object, e As EventArgs) Handles hapus.Click
         Try
             Dim cek As Boolean = False
@@ -126,6 +133,8 @@ Public Class master_barang
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mbarang set `s`= 0 where id_barang='" & GridView2.GetRowCellValue(i, "Kode Barang").ToString & "'")
+                                dataygdidedelete = GridView2.GetRowCellValue(i, "Kode Barang").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -241,21 +250,21 @@ Public Class master_barang
         GridControl1.DataSource = data
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
+    'Sub showgridpreview(ByVal grid As GridControl)
+    '    If Not grid.IsPrintingAvailable Then
+    '        MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+    '        Return
+    '    End If
 
-        grid.ShowPrintPreview()
-    End Sub
+    '    grid.ShowPrintPreview()
+    'End Sub
 
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
-        ' ViewerMasterBarang.ShowDialog()
+        ViewerMasterBarang.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
-        'ViewerMasterBarang.ShowDialog()
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        ViewerMasterBarang.ShowDialog()
     End Sub
 
 End Class

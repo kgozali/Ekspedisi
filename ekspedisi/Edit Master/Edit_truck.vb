@@ -53,8 +53,7 @@ Public Class edit_truck
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mtruk set no_pol = '" & nop.Text & "',no_mesin = '" & nomesin.Text & "', no_rangka = '" & norangka.Text & "',id_supplier = '" & Cmbbxsupp.SelectedValue.ToString & "', harga_beli ='" & hargabeli.Text & "', umur_default ='" & umur.Text & "', nilai_residu = '" & nilairesidu.Text & "', id_akun_akt = '" & aktiva.SelectedValue.ToString & "', id_akun_depresiasi = '" & depresiasi.SelectedValue.ToString & "', id_akun_penyusutan = '" & penyusutan.SelectedValue.ToString & "', tgl_beli = '" & DateTimePicker1.Value.ToString("yyyyMMdd") & "' where id_truk='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
-                MessageBox.Show("File Updated")
-                connect.Close()
+
 
                 Dim cccc As String = "delete from kartu_aktiva where id_truck = '" & id.Text & "' "
                 InsertInto(cccc)
@@ -97,11 +96,20 @@ Public Class edit_truck
 
                 End If
 
+                audit()
+                MessageBox.Show("File Updated")
+                connect.Close()
                 edit_list_truck.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Truk"
+        Dim aktivitas As String = "Edit Truk: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
  
 End Class

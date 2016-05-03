@@ -43,6 +43,15 @@ Public Class add_karyawan
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MK"
+                tanggal = DtTable("select * from mkaryawan where substring(ID_KARYAWAN,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
                 InsertInto("insert into mkaryawan values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','" & jabatan.SelectedValue.ToString & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "',null,'" & RichTextBox1.Text & "','" & ktp.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
@@ -56,6 +65,8 @@ Public Class add_karyawan
                     add_karyawan_Load(sender, e)
                     master_karyawan.deldata.Down = False
                     master_karyawan.edit.Down = False
+                    master_karyawan.hapus.Visible = False
+                    master_karyawan.editing.Visible = False
                     master_karyawan.GroupControl2.Enabled = True
                     master_karyawan.GridControl1.Visible = True
                     master_karyawan.GridControl2.Visible = False
@@ -93,13 +104,13 @@ Public Class add_karyawan
 
         nama.Text = ""
         alamat.Text = ""
-
         tel1.Text = ""
         tel2.Text = ""
         kota.Text = ""
         RichTextBox1.Text = ""
         email.Text = ""
         DateTimePicker1.ResetText()
+        ktp.Text = ""
 
         cbjabatan = DtTable("select id_jabatan `Kode Jabatan`,nama_jabatan `Nama Jabatan` from mjabatan")
         jabatan.DataSource = cbjabatan

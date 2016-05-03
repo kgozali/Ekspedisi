@@ -13,6 +13,7 @@ Public Class add_kategori_supplier
         master_kategori_supplier.hapus.Visible = False
         master_kategori_supplier.edit.Down = False
         master_kategori_supplier.editing.Visible = False
+        master_kategori_supplier.GroupControl2.Enabled = True
 
         Me.Close()
     End Sub
@@ -34,6 +35,7 @@ Public Class add_kategori_supplier
                     master_kategori_supplier.hapus.Visible = False
                     master_kategori_supplier.edit.Down = False
                     master_kategori_supplier.editing.Visible = False
+                    master_kategori_supplier.GroupControl2.Enabled = True
                 Else
                     e.Cancel = True
                 End If
@@ -49,6 +51,7 @@ Public Class add_kategori_supplier
                 master_kategori_supplier.hapus.Visible = False
                 master_kategori_supplier.edit.Down = False
                 master_kategori_supplier.editing.Visible = False
+                master_kategori_supplier.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -61,6 +64,15 @@ Public Class add_kategori_supplier
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "ME"
+                tanggal = DtTable("select * from mkategori_supplier where substring(id_kategori,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
                 InsertInto("insert into mkategori_supplier values ('" & id.Text & "','" & nama.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
@@ -80,6 +92,8 @@ Public Class add_kategori_supplier
                     master_kategori_supplier.hapus.Visible = False
                     master_kategori_supplier.edit.Down = False
                     master_kategori_supplier.editing.Visible = False
+                    master_kategori_supplier.GroupControl2.Enabled = True
+
                     Me.Close()
                 End If
 

@@ -126,6 +126,8 @@ Public Class master_principle
                         For i = 0 To Gridprinciple.RowCount - 1
                             If Gridprinciple.IsRowSelected(i) = True Then
                                 InsertInto("update mprinciple set `s`=0 where id_principle='" & Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString & "'")
+                                dataygdidelete = Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -142,6 +144,15 @@ Public Class master_principle
         End Try
     End Sub
 
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Principle"
+        Dim aktivitas As String = "Delete Principle: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
     Private Sub gridview1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
         Try
@@ -242,16 +253,20 @@ Public Class master_principle
         End If
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
+    'Sub showgridpreview(ByVal grid As GridControl)
+    '    If Not grid.IsPrintingAvailable Then
+    '        MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+    '        Return
+    '    End If
 
-        grid.ShowPrintPreview()
+    '    grid.ShowPrintPreview()
+    'End Sub
+
+    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
+        ViewerPrinciple.ShowDialog()
     End Sub
 
-    Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs)
-        showgridpreview(GridControl1)
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        ViewerPrinciple.ShowDialog()
     End Sub
 End Class

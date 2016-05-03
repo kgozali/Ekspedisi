@@ -73,6 +73,7 @@ Public Class edit_user
                         InsertInto("insert into hak_akses values ('" & id.Text & "', '" & name & "','" & a & "','" & b & "','" & c & "','" & d & "','" & e1 & "') ")
                         connect.Close()
                         edit_list_user.GridView1.DeleteSelectedRows()
+                        audit()
                         Me.Close()
                     Next
 
@@ -82,7 +83,13 @@ Public Class edit_user
         End Select
     End Sub
 
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master User"
+        Dim aktivitas As String = "Edit User: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
             GroupControl3.Enabled = True

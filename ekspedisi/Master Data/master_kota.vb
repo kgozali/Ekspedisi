@@ -111,6 +111,8 @@ Public Class master_kota
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mkota set `s`=0 where kota='" & GridView2.GetRowCellValue(i, "Nama Kota").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Nama Kota").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -128,7 +130,16 @@ Public Class master_kota
         End Try
     End Sub
 
-    
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kota"
+        Dim aktivitas As String = "Delete Kota: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
         Try
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
@@ -237,4 +248,10 @@ Public Class master_kota
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
         showgridpreview(GridControl1)
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        showgridpreview(GridControl1)
+    End Sub
+
+
 End Class

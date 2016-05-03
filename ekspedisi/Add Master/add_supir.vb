@@ -27,6 +27,15 @@ Public Class add_supir
                 End If
             Else
                 add_supir_Load(sender, e)
+                master_supir.deldata.Down = False
+                master_supir.edit.Down = False
+                master_supir.GroupControl2.Enabled = True
+                master_supir.GridControl1.Visible = True
+                master_supir.GridControl2.Visible = False
+                master_supir.editing.Visible = False
+                master_supir.hapus.Visible = False
+                data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
+                master_supir.GridControl1.DataSource = data
                 Reset()
             End If
         Catch ex As Exception
@@ -35,6 +44,15 @@ Public Class add_supir
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_supir.deldata.Down = False
+        master_supir.edit.Down = False
+        master_supir.GroupControl2.Enabled = True
+        master_supir.GridControl1.Visible = True
+        master_supir.GridControl2.Visible = False
+        master_supir.editing.Visible = False
+        master_supir.hapus.Visible = False
+        data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
+        master_supir.GridControl1.DataSource = data
         Me.Close()
     End Sub
 
@@ -44,9 +62,19 @@ Public Class add_supir
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MI"
+                tanggal = DtTable("select * from msupir where substring(ID_SUPIR,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
+
                 'insert ke dalam database
                 InsertInto("insert into msupir values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "',null,'" & RichTextBox1.Text & "','1') ")
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_supir_Load(sender, e)
@@ -59,6 +87,8 @@ Public Class add_supir
                     master_supir.GroupControl2.Enabled = True
                     master_supir.GridControl1.Visible = True
                     master_supir.GridControl2.Visible = False
+                    master_supir.editing.Visible = False
+                    master_supir.hapus.Visible = False
                     data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
                     master_supir.GridControl1.DataSource = data
                     Me.Close()
@@ -69,10 +99,14 @@ Public Class add_supir
             End Try
         End If
 
-
-
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Supir"
+        Dim aktivitas As String = "Add Supir: " & kota.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub add_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim tanggal As New DataTable
@@ -86,7 +120,6 @@ Public Class add_supir
 
         nama.Text = ""
         alamat.Text = ""
-
         tel1.Text = ""
         tel2.Text = ""
         kota.Text = ""

@@ -91,6 +91,8 @@ Public Class edit_list_truck
             master_truck.GridControl2.DataSource = data
             master_truck.deldata.Down = False
             master_truck.edit.Down = False
+            master_truck.hapus.Visible = False
+            master_truck.editing.Visible = False
             master_truck.GroupControl2.Enabled = True
             Me.Close()
         Catch ex As Exception

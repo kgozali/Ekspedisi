@@ -34,6 +34,8 @@ Partial Class add_truck
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.hargabeli = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.nilairesidu = New DevExpress.XtraEditors.TextEdit()
         Me.norangka = New DevExpress.XtraEditors.TextEdit()
         Me.nomesin = New DevExpress.XtraEditors.TextEdit()
@@ -46,8 +48,6 @@ Partial Class add_truck
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.nop = New DevExpress.XtraEditors.TextEdit()
         Me.id = New DevExpress.XtraEditors.TextEdit()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.umur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hargabeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +62,7 @@ Partial Class add_truck
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(401, 418)
+        Me.simpan.Location = New System.Drawing.Point(566, 235)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 168
@@ -71,7 +71,7 @@ Partial Class add_truck
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(507, 418)
+        Me.cancel.Location = New System.Drawing.Point(672, 235)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 167
@@ -80,7 +80,7 @@ Partial Class add_truck
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(311, 191)
+        Me.LabelControl5.Location = New System.Drawing.Point(693, 54)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(42, 18)
         Me.LabelControl5.TabIndex = 81
@@ -89,7 +89,7 @@ Partial Class add_truck
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 193)
+        Me.LabelControl3.Location = New System.Drawing.Point(407, 57)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(97, 18)
         Me.LabelControl3.TabIndex = 80
@@ -98,52 +98,52 @@ Partial Class add_truck
         'umur
         '
         Me.umur.EditValue = "5"
-        Me.umur.Location = New System.Drawing.Point(176, 191)
+        Me.umur.Location = New System.Drawing.Point(535, 53)
         Me.umur.Name = "umur"
         Me.umur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.umur.Properties.Appearance.Options.UseFont = True
-        Me.umur.Size = New System.Drawing.Size(129, 22)
+        Me.umur.Size = New System.Drawing.Size(152, 22)
         Me.umur.TabIndex = 79
         '
         'depresiasi
         '
         Me.depresiasi.FormattingEnabled = True
         Me.depresiasi.ItemHeight = 13
-        Me.depresiasi.Location = New System.Drawing.Point(192, 262)
+        Me.depresiasi.Location = New System.Drawing.Point(535, 133)
         Me.depresiasi.Name = "depresiasi"
-        Me.depresiasi.Size = New System.Drawing.Size(167, 21)
+        Me.depresiasi.Size = New System.Drawing.Size(200, 21)
         Me.depresiasi.TabIndex = 78
         '
         'penyusutan
         '
         Me.penyusutan.FormattingEnabled = True
         Me.penyusutan.ItemHeight = 13
-        Me.penyusutan.Location = New System.Drawing.Point(203, 238)
+        Me.penyusutan.Location = New System.Drawing.Point(535, 108)
         Me.penyusutan.Name = "penyusutan"
-        Me.penyusutan.Size = New System.Drawing.Size(156, 21)
+        Me.penyusutan.Size = New System.Drawing.Size(200, 21)
         Me.penyusutan.TabIndex = 77
         '
         'aktiva
         '
         Me.aktiva.FormattingEnabled = True
         Me.aktiva.ItemHeight = 13
-        Me.aktiva.Location = New System.Drawing.Point(167, 214)
+        Me.aktiva.Location = New System.Drawing.Point(535, 81)
         Me.aktiva.Name = "aktiva"
-        Me.aktiva.Size = New System.Drawing.Size(192, 21)
+        Me.aktiva.Size = New System.Drawing.Size(200, 21)
         Me.aktiva.TabIndex = 76
         '
         'Cmbbxsupp
         '
         Me.Cmbbxsupp.FormattingEnabled = True
-        Me.Cmbbxsupp.Location = New System.Drawing.Point(183, 118)
+        Me.Cmbbxsupp.Location = New System.Drawing.Point(155, 134)
         Me.Cmbbxsupp.Name = "Cmbbxsupp"
-        Me.Cmbbxsupp.Size = New System.Drawing.Size(176, 21)
+        Me.Cmbbxsupp.Size = New System.Drawing.Size(204, 21)
         Me.Cmbbxsupp.TabIndex = 6
         '
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(5, 169)
+        Me.LabelControl13.Location = New System.Drawing.Point(423, 29)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(81, 18)
         Me.LabelControl13.TabIndex = 75
@@ -152,7 +152,7 @@ Partial Class add_truck
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(5, 241)
+        Me.LabelControl11.Location = New System.Drawing.Point(381, 111)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(123, 18)
         Me.LabelControl11.TabIndex = 71
@@ -161,7 +161,7 @@ Partial Class add_truck
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(5, 217)
+        Me.LabelControl10.Location = New System.Drawing.Point(416, 84)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(86, 18)
         Me.LabelControl10.TabIndex = 69
@@ -169,7 +169,7 @@ Partial Class add_truck
         '
         'hargabeli
         '
-        Me.hargabeli.Location = New System.Drawing.Point(155, 143)
+        Me.hargabeli.Location = New System.Drawing.Point(155, 161)
         Me.hargabeli.Name = "hargabeli"
         Me.hargabeli.Size = New System.Drawing.Size(204, 20)
         Me.hargabeli.TabIndex = 7
@@ -203,35 +203,51 @@ Partial Class add_truck
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(616, 400)
+        Me.GroupControl1.Size = New System.Drawing.Size(760, 204)
         Me.GroupControl1.TabIndex = 166
         Me.GroupControl1.Text = "Data"
         '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Location = New System.Drawing.Point(416, 161)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(88, 18)
+        Me.LabelControl12.TabIndex = 83
+        Me.LabelControl12.Text = "Tanggal Beli :"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(535, 158)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.TabIndex = 82
+        '
         'nilairesidu
         '
-        Me.nilairesidu.Location = New System.Drawing.Point(161, 167)
+        Me.nilairesidu.Location = New System.Drawing.Point(535, 28)
         Me.nilairesidu.Name = "nilairesidu"
         Me.nilairesidu.Size = New System.Drawing.Size(198, 20)
         Me.nilairesidu.TabIndex = 6
         '
         'norangka
         '
-        Me.norangka.Location = New System.Drawing.Point(194, 95)
+        Me.norangka.Location = New System.Drawing.Point(155, 109)
         Me.norangka.Name = "norangka"
-        Me.norangka.Size = New System.Drawing.Size(165, 20)
+        Me.norangka.Size = New System.Drawing.Size(204, 20)
         Me.norangka.TabIndex = 5
         '
         'nomesin
         '
-        Me.nomesin.Location = New System.Drawing.Point(176, 71)
+        Me.nomesin.Location = New System.Drawing.Point(155, 81)
         Me.nomesin.Name = "nomesin"
-        Me.nomesin.Size = New System.Drawing.Size(183, 20)
+        Me.nomesin.Size = New System.Drawing.Size(204, 20)
         Me.nomesin.TabIndex = 4
         '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(5, 145)
+        Me.LabelControl9.Location = New System.Drawing.Point(50, 161)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl9.TabIndex = 55
@@ -240,7 +256,7 @@ Partial Class add_truck
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 121)
+        Me.LabelControl8.Location = New System.Drawing.Point(22, 136)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(103, 18)
         Me.LabelControl8.TabIndex = 54
@@ -249,7 +265,7 @@ Partial Class add_truck
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 97)
+        Me.LabelControl7.Location = New System.Drawing.Point(18, 108)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(107, 18)
         Me.LabelControl7.TabIndex = 53
@@ -258,7 +274,7 @@ Partial Class add_truck
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl6.Location = New System.Drawing.Point(29, 80)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(96, 18)
         Me.LabelControl6.TabIndex = 52
@@ -267,7 +283,7 @@ Partial Class add_truck
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 265)
+        Me.LabelControl4.Location = New System.Drawing.Point(392, 136)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(112, 18)
         Me.LabelControl4.TabIndex = 48
@@ -276,16 +292,16 @@ Partial Class add_truck
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(40, 29)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(80, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(78, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Kode Truck:"
+        Me.LabelControl1.Text = "Kode Truk :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 48)
+        Me.LabelControl2.Location = New System.Drawing.Point(37, 53)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl2.TabIndex = 33
@@ -293,40 +309,24 @@ Partial Class add_truck
         '
         'nop
         '
-        Me.nop.Location = New System.Drawing.Point(168, 46)
+        Me.nop.Location = New System.Drawing.Point(155, 54)
         Me.nop.Name = "nop"
-        Me.nop.Size = New System.Drawing.Size(191, 20)
+        Me.nop.Size = New System.Drawing.Size(204, 20)
         Me.nop.TabIndex = 2
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(155, 24)
+        Me.id.Location = New System.Drawing.Point(155, 28)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(204, 20)
         Me.id.TabIndex = 1
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(159, 289)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 82
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(5, 291)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(78, 18)
-        Me.LabelControl12.TabIndex = 83
-        Me.LabelControl12.Text = "Tanggal Beli"
         '
         'add_truck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(784, 275)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)

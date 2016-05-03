@@ -41,12 +41,22 @@ Public Class edit_supplier
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update msupplier set nama_supplier='" & nama.Text & "', email ='" & email.Text & "', alamat = '" & alamat.Text & "', tel1 ='" & tel1.Text & "', tel2 = '" & tel2.Text & "',kota ='" & kota.Text & "', provinsi ='" & provinsi.Text & "', id_kategori = '" & kategori.SelectedValue.ToString & "' where id_supplier='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_supplier.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
     End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Supplier"
+        Dim aktivitas As String = "Edit Supplier: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
     Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
         Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
         Dim prov As String = Scalar(carip)

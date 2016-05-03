@@ -128,6 +128,8 @@ Public Class master_supplier
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update msupplier set `s`='0' where id_supplier='" & GridView2.GetRowCellValue(i, "Kode Supplier").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Kode Supplier").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -144,7 +146,15 @@ Public Class master_supplier
         End Try
     End Sub
 
-   
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Supplier"
+        Dim aktivitas As String = "Delete Supplier: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
         Try
@@ -243,15 +253,20 @@ Public Class master_supplier
         End If
     End Sub
 
-    Sub showgridpreview(ByVal grid As GridControl)
-        If Not grid.IsPrintingAvailable Then
-            MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
-            Return
-        End If
-        grid.ShowPrintPreview()
-    End Sub
+    'Sub showgridpreview(ByVal grid As GridControl)
+    '    If Not grid.IsPrintingAvailable Then
+    '        MsgBox("The 'Devexpress.Xtraprinting' library is not found", "Error")
+    '        Return
+    '    End If
+
+    '    grid.ShowPrintPreview()
+    'End Sub
 
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
-        showgridpreview(GridControl1)
+        ViewerSupplier.ShowDialog()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        ViewerSupplier.ShowDialog()
     End Sub
 End Class

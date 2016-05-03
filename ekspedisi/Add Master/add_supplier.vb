@@ -80,13 +80,16 @@ Public Class add_supplier
                     Reset()
                 Else
                     cek = False
-                    Me.Close()
                     master_supplier.GridControl1.Visible = True
                     master_supplier.GridControl2.Visible = False
                     data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
                     master_supplier.GridControl1.DataSource = data
                     master_supplier.edit.Down = False
                     master_supplier.deldata.Down = False
+                    master_supplier.editing.Visible = False
+                    master_supplier.hapus.Visible = False
+                    master_supplier.GroupControl2.Enabled = True
+                    Me.Close()
                 End If
 
             Catch ex As Exception

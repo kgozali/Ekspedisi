@@ -91,7 +91,7 @@ Partial Class add_principle
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(8, 142)
+        Me.LabelControl9.Location = New System.Drawing.Point(69, 142)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(40, 18)
         Me.LabelControl9.TabIndex = 55
@@ -100,7 +100,7 @@ Partial Class add_principle
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 166)
+        Me.LabelControl8.Location = New System.Drawing.Point(51, 166)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(58, 18)
         Me.LabelControl8.TabIndex = 54
@@ -109,7 +109,7 @@ Partial Class add_principle
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 121)
+        Me.LabelControl7.Location = New System.Drawing.Point(34, 118)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl7.TabIndex = 53
@@ -118,7 +118,7 @@ Partial Class add_principle
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 97)
+        Me.LabelControl6.Location = New System.Drawing.Point(33, 94)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl6.TabIndex = 52
@@ -127,7 +127,7 @@ Partial Class add_principle
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl5.Location = New System.Drawing.Point(66, 70)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(43, 18)
         Me.LabelControl5.TabIndex = 51
@@ -144,7 +144,7 @@ Partial Class add_principle
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 193)
+        Me.LabelControl4.Location = New System.Drawing.Point(54, 192)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(55, 18)
         Me.LabelControl4.TabIndex = 48
@@ -153,20 +153,20 @@ Partial Class add_principle
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(10, 26)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(89, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(98, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Customer:"
+        Me.LabelControl1.Text = "Kode Principle :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(117, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(104, 18)
         Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Nama Customer :"
+        Me.LabelControl2.Text = "Nama Principle :"
         '
         'id
         '

@@ -25,8 +25,8 @@ Partial Class edit_kota
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.provinsi = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -36,7 +36,7 @@ Partial Class edit_kota
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(23, 25)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(84, 18)
         Me.LabelControl1.TabIndex = 32
@@ -45,15 +45,15 @@ Partial Class edit_kota
         'kota
         '
         Me.kota.Enabled = False
-        Me.kota.Location = New System.Drawing.Point(95, 23)
+        Me.kota.Location = New System.Drawing.Point(131, 26)
         Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(160, 20)
+        Me.kota.Size = New System.Drawing.Size(147, 20)
         Me.kota.TabIndex = 45
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(177, 103)
+        Me.SimpleButton1.Location = New System.Drawing.Point(208, 103)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 146
@@ -62,7 +62,7 @@ Partial Class edit_kota
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(71, 103)
+        Me.Submit.Location = New System.Drawing.Point(102, 103)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 145
@@ -76,9 +76,16 @@ Partial Class edit_kota
         Me.GroupControl1.Controls.Add(Me.kota)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(265, 85)
+        Me.GroupControl1.Size = New System.Drawing.Size(296, 85)
         Me.GroupControl1.TabIndex = 144
         Me.GroupControl1.Text = "Data"
+        '
+        'provinsi
+        '
+        Me.provinsi.Location = New System.Drawing.Point(132, 50)
+        Me.provinsi.Name = "provinsi"
+        Me.provinsi.Size = New System.Drawing.Size(146, 20)
+        Me.provinsi.TabIndex = 47
         '
         'LabelControl2
         '
@@ -89,18 +96,11 @@ Partial Class edit_kota
         Me.LabelControl2.TabIndex = 46
         Me.LabelControl2.Text = "Nama Provinsi :"
         '
-        'provinsi
-        '
-        Me.provinsi.Location = New System.Drawing.Point(132, 50)
-        Me.provinsi.Name = "provinsi"
-        Me.provinsi.Size = New System.Drawing.Size(123, 20)
-        Me.provinsi.TabIndex = 47
-        '
         'edit_kota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(286, 142)
+        Me.ClientSize = New System.Drawing.Size(320, 141)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)

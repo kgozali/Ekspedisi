@@ -20,6 +20,11 @@ Partial Class edit_truck
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_truck))
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.umur = New DevExpress.XtraEditors.TextEdit()
@@ -43,11 +48,8 @@ Partial Class edit_truck
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.nop = New DevExpress.XtraEditors.TextEdit()
         Me.id = New DevExpress.XtraEditors.TextEdit()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
         CType(Me.umur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hargabeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nilairesidu.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,205 +57,25 @@ Partial Class edit_truck
         CType(Me.nomesin.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nop.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'LabelControl5
+        'SimpleButton1
         '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(277, 191)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(42, 18)
-        Me.LabelControl5.TabIndex = 81
-        Me.LabelControl5.Text = "Tahun"
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(672, 222)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.TabIndex = 158
+        Me.SimpleButton1.Text = "Cancel"
         '
-        'LabelControl3
+        'Submit
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 193)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(97, 18)
-        Me.LabelControl3.TabIndex = 80
-        Me.LabelControl3.Text = "Umur Default :"
-        '
-        'umur
-        '
-        Me.umur.EditValue = ""
-        Me.umur.Location = New System.Drawing.Point(142, 191)
-        Me.umur.Name = "umur"
-        Me.umur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.umur.Properties.Appearance.Options.UseFont = True
-        Me.umur.Size = New System.Drawing.Size(129, 22)
-        Me.umur.TabIndex = 79
-        '
-        'depresiasi
-        '
-        Me.depresiasi.FormattingEnabled = True
-        Me.depresiasi.ItemHeight = 13
-        Me.depresiasi.Location = New System.Drawing.Point(158, 262)
-        Me.depresiasi.Name = "depresiasi"
-        Me.depresiasi.Size = New System.Drawing.Size(167, 21)
-        Me.depresiasi.TabIndex = 78
-        '
-        'penyusutan
-        '
-        Me.penyusutan.FormattingEnabled = True
-        Me.penyusutan.ItemHeight = 13
-        Me.penyusutan.Location = New System.Drawing.Point(169, 238)
-        Me.penyusutan.Name = "penyusutan"
-        Me.penyusutan.Size = New System.Drawing.Size(156, 21)
-        Me.penyusutan.TabIndex = 77
-        '
-        'aktiva
-        '
-        Me.aktiva.FormattingEnabled = True
-        Me.aktiva.ItemHeight = 13
-        Me.aktiva.Location = New System.Drawing.Point(133, 214)
-        Me.aktiva.Name = "aktiva"
-        Me.aktiva.Size = New System.Drawing.Size(192, 21)
-        Me.aktiva.TabIndex = 76
-        '
-        'Cmbbxsupp
-        '
-        Me.Cmbbxsupp.FormattingEnabled = True
-        Me.Cmbbxsupp.Location = New System.Drawing.Point(149, 118)
-        Me.Cmbbxsupp.Name = "Cmbbxsupp"
-        Me.Cmbbxsupp.Size = New System.Drawing.Size(176, 21)
-        Me.Cmbbxsupp.TabIndex = 6
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(5, 169)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(81, 18)
-        Me.LabelControl13.TabIndex = 75
-        Me.LabelControl13.Text = "Nilai Residu :"
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(5, 241)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(123, 18)
-        Me.LabelControl11.TabIndex = 71
-        Me.LabelControl11.Text = "Akun Penyusutan :"
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(5, 217)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(86, 18)
-        Me.LabelControl10.TabIndex = 69
-        Me.LabelControl10.Text = "Akun Aktiva :"
-        '
-        'hargabeli
-        '
-        Me.hargabeli.Location = New System.Drawing.Point(121, 143)
-        Me.hargabeli.Name = "hargabeli"
-        Me.hargabeli.Size = New System.Drawing.Size(204, 20)
-        Me.hargabeli.TabIndex = 7
-        '
-        'nilairesidu
-        '
-        Me.nilairesidu.Location = New System.Drawing.Point(127, 167)
-        Me.nilairesidu.Name = "nilairesidu"
-        Me.nilairesidu.Size = New System.Drawing.Size(198, 20)
-        Me.nilairesidu.TabIndex = 6
-        '
-        'norangka
-        '
-        Me.norangka.Location = New System.Drawing.Point(160, 95)
-        Me.norangka.Name = "norangka"
-        Me.norangka.Size = New System.Drawing.Size(165, 20)
-        Me.norangka.TabIndex = 5
-        '
-        'nomesin
-        '
-        Me.nomesin.Location = New System.Drawing.Point(142, 71)
-        Me.nomesin.Name = "nomesin"
-        Me.nomesin.Size = New System.Drawing.Size(183, 20)
-        Me.nomesin.TabIndex = 4
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(5, 145)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(75, 18)
-        Me.LabelControl9.TabIndex = 55
-        Me.LabelControl9.Text = "Harga Beli :"
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 121)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(103, 18)
-        Me.LabelControl8.TabIndex = 54
-        Me.LabelControl8.Text = "Nama Supplier :"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 97)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(107, 18)
-        Me.LabelControl7.TabIndex = 53
-        Me.LabelControl7.Text = "Nomor Rangka :"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 73)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(96, 18)
-        Me.LabelControl6.TabIndex = 52
-        Me.LabelControl6.Text = "Nomor Mesin :"
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 265)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(112, 18)
-        Me.LabelControl4.TabIndex = 48
-        Me.LabelControl4.Text = "Akun Depresiasi :"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(80, 18)
-        Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Kode Truck:"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 48)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
-        Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Nomor Polisi :"
-        '
-        'nop
-        '
-        Me.nop.Location = New System.Drawing.Point(134, 46)
-        Me.nop.Name = "nop"
-        Me.nop.Size = New System.Drawing.Size(191, 20)
-        Me.nop.TabIndex = 2
-        '
-        'id
-        '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(121, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(204, 20)
-        Me.id.TabIndex = 1
+        Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
+        Me.Submit.Location = New System.Drawing.Point(566, 222)
+        Me.Submit.Name = "Submit"
+        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.TabIndex = 157
+        Me.Submit.Text = "Submit"
         '
         'GroupControl1
         '
@@ -282,16 +104,16 @@ Partial Class edit_truck
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.nop)
         Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 3)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(404, 329)
-        Me.GroupControl1.TabIndex = 169
+        Me.GroupControl1.Size = New System.Drawing.Size(760, 204)
+        Me.GroupControl1.TabIndex = 167
         Me.GroupControl1.Text = "Data"
         '
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(5, 291)
+        Me.LabelControl12.Location = New System.Drawing.Point(416, 161)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(88, 18)
         Me.LabelControl12.TabIndex = 83
@@ -299,52 +121,235 @@ Partial Class edit_truck
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(125, 289)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(535, 158)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 82
         '
-        'SimpleButton1
+        'LabelControl5
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(316, 338)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 158
-        Me.SimpleButton1.Text = "Cancel"
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(693, 54)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(42, 18)
+        Me.LabelControl5.TabIndex = 81
+        Me.LabelControl5.Text = "Tahun"
         '
-        'Submit
+        'LabelControl3
         '
-        Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(210, 338)
-        Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 157
-        Me.Submit.Text = "Submit"
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(407, 57)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(97, 18)
+        Me.LabelControl3.TabIndex = 80
+        Me.LabelControl3.Text = "Umur Default :"
+        '
+        'umur
+        '
+        Me.umur.EditValue = "5"
+        Me.umur.Location = New System.Drawing.Point(535, 53)
+        Me.umur.Name = "umur"
+        Me.umur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.umur.Properties.Appearance.Options.UseFont = True
+        Me.umur.Size = New System.Drawing.Size(152, 22)
+        Me.umur.TabIndex = 79
+        '
+        'depresiasi
+        '
+        Me.depresiasi.FormattingEnabled = True
+        Me.depresiasi.ItemHeight = 13
+        Me.depresiasi.Location = New System.Drawing.Point(535, 133)
+        Me.depresiasi.Name = "depresiasi"
+        Me.depresiasi.Size = New System.Drawing.Size(200, 21)
+        Me.depresiasi.TabIndex = 78
+        '
+        'penyusutan
+        '
+        Me.penyusutan.FormattingEnabled = True
+        Me.penyusutan.ItemHeight = 13
+        Me.penyusutan.Location = New System.Drawing.Point(535, 108)
+        Me.penyusutan.Name = "penyusutan"
+        Me.penyusutan.Size = New System.Drawing.Size(200, 21)
+        Me.penyusutan.TabIndex = 77
+        '
+        'aktiva
+        '
+        Me.aktiva.FormattingEnabled = True
+        Me.aktiva.ItemHeight = 13
+        Me.aktiva.Location = New System.Drawing.Point(535, 81)
+        Me.aktiva.Name = "aktiva"
+        Me.aktiva.Size = New System.Drawing.Size(200, 21)
+        Me.aktiva.TabIndex = 76
+        '
+        'Cmbbxsupp
+        '
+        Me.Cmbbxsupp.FormattingEnabled = True
+        Me.Cmbbxsupp.Location = New System.Drawing.Point(155, 134)
+        Me.Cmbbxsupp.Name = "Cmbbxsupp"
+        Me.Cmbbxsupp.Size = New System.Drawing.Size(204, 21)
+        Me.Cmbbxsupp.TabIndex = 6
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Location = New System.Drawing.Point(423, 29)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(81, 18)
+        Me.LabelControl13.TabIndex = 75
+        Me.LabelControl13.Text = "Nilai Residu :"
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Location = New System.Drawing.Point(381, 111)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(123, 18)
+        Me.LabelControl11.TabIndex = 71
+        Me.LabelControl11.Text = "Akun Penyusutan :"
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl10.Location = New System.Drawing.Point(416, 84)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(86, 18)
+        Me.LabelControl10.TabIndex = 69
+        Me.LabelControl10.Text = "Akun Aktiva :"
+        '
+        'hargabeli
+        '
+        Me.hargabeli.Location = New System.Drawing.Point(155, 161)
+        Me.hargabeli.Name = "hargabeli"
+        Me.hargabeli.Size = New System.Drawing.Size(204, 20)
+        Me.hargabeli.TabIndex = 7
+        '
+        'nilairesidu
+        '
+        Me.nilairesidu.Location = New System.Drawing.Point(535, 28)
+        Me.nilairesidu.Name = "nilairesidu"
+        Me.nilairesidu.Size = New System.Drawing.Size(198, 20)
+        Me.nilairesidu.TabIndex = 6
+        '
+        'norangka
+        '
+        Me.norangka.Location = New System.Drawing.Point(155, 109)
+        Me.norangka.Name = "norangka"
+        Me.norangka.Size = New System.Drawing.Size(204, 20)
+        Me.norangka.TabIndex = 5
+        '
+        'nomesin
+        '
+        Me.nomesin.Location = New System.Drawing.Point(155, 81)
+        Me.nomesin.Name = "nomesin"
+        Me.nomesin.Size = New System.Drawing.Size(204, 20)
+        Me.nomesin.TabIndex = 4
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(50, 161)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(75, 18)
+        Me.LabelControl9.TabIndex = 55
+        Me.LabelControl9.Text = "Harga Beli :"
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(22, 136)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(103, 18)
+        Me.LabelControl8.TabIndex = 54
+        Me.LabelControl8.Text = "Nama Supplier :"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(18, 108)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(107, 18)
+        Me.LabelControl7.TabIndex = 53
+        Me.LabelControl7.Text = "Nomor Rangka :"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(29, 80)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(96, 18)
+        Me.LabelControl6.TabIndex = 52
+        Me.LabelControl6.Text = "Nomor Mesin :"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Location = New System.Drawing.Point(392, 136)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(112, 18)
+        Me.LabelControl4.TabIndex = 48
+        Me.LabelControl4.Text = "Akun Depresiasi :"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(40, 29)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(85, 18)
+        Me.LabelControl1.TabIndex = 32
+        Me.LabelControl1.Text = "Kode Truck :"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(37, 53)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
+        Me.LabelControl2.TabIndex = 33
+        Me.LabelControl2.Text = "Nomor Polisi :"
+        '
+        'nop
+        '
+        Me.nop.Location = New System.Drawing.Point(155, 54)
+        Me.nop.Name = "nop"
+        Me.nop.Size = New System.Drawing.Size(204, 20)
+        Me.nop.TabIndex = 2
+        '
+        'id
+        '
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(155, 28)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(204, 20)
+        Me.id.TabIndex = 1
         '
         'edit_truck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(428, 377)
+        Me.ClientSize = New System.Drawing.Size(784, 263)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
-        Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_truck"
         Me.Text = "Edit Truck"
-        CType(Me.umur.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.hargabeli.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nilairesidu.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.norangka.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nomesin.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nop.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.id.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.GroupControl1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.GroupControl1.ResumeLayout(false)
-        Me.GroupControl1.PerformLayout
-        Me.ResumeLayout(false)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.umur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hargabeli.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nilairesidu.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.norangka.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nomesin.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nop.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
 
 End Sub
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents umur As DevExpress.XtraEditors.TextEdit
@@ -368,9 +373,4 @@ End Sub
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nop As DevExpress.XtraEditors.TextEdit
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
 End Class

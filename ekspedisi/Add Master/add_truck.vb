@@ -64,6 +64,14 @@ Public Class add_truck
         Else
 
             Try
+                Dim tanggal As New DataTable
+                Dim tgl As String = "MT"
+                tanggal = DtTable("select * from mtruk where substring(id_truk,1,2) = '" & tgl & "'")
+                Dim hitung As String = tanggal.Rows.Count() + 1
+                While hitung.LongCount < 5
+                    hitung = "0" + hitung
+                End While
+                id.Text = tgl + hitung
                 'insert ke dalam database
                 'MsgBox(aktiva.SelectedValue.ToString)
                 Dim penampung As String = "insert into mtruk values ('" & id.Text & "','" & nop.Text & "','" & nomesin.Text & "','" & norangka.Text & "" & "','" & Cmbbxsupp.SelectedValue.ToString & "','" & hargabeli.Text & "','" & umur.Text & "','" & nilairesidu.Text & "','" & aktiva.SelectedValue.ToString & "','" & penyusutan.SelectedValue.ToString & "','" & depresiasi.SelectedValue.ToString & "','" & DateTimePicker1.Value.ToString("yyyyMMdd") & "','1') "
@@ -107,6 +115,7 @@ Public Class add_truck
 
                 End If
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_truck_Load(sender, e)
@@ -122,6 +131,7 @@ Public Class add_truck
                     master_truck.hapus.Visible = False
                     master_truck.editing.Visible = False
                     master_truck.edit.Down = False
+
                     Me.Close()
                 End If
 
@@ -129,6 +139,14 @@ Public Class add_truck
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Truk"
+        Dim aktivitas As String = "Add Truk: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
     Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargabeli.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""

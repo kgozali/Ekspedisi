@@ -10,6 +10,9 @@ Public Class edit_list_kategori_supplier
         master_kategori_supplier.GridControl2.DataSource = data
         master_kategori_supplier.edit.Down = False
         master_kategori_supplier.GroupControl2.Enabled = True
+        master_kategori_supplier.hapus.Visible = False
+        master_kategori_supplier.editing.Visible = False
+
     End Sub
     Private Sub edit_list_kategori_supplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -42,16 +45,17 @@ Public Class edit_list_kategori_supplier
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Me.Close()
         master_kategori_supplier.GridControl1.Visible = True
         master_kategori_supplier.GridControl2.Visible = False
         data = DtTable("SELECT b.id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
         master_kategori_supplier.GridControl1.DataSource = data
         data = DtTable("SELECT b.id_kategori `Kode Kategori Supplier`, b.kategori_supplier `Nama Kategori Supplier` from mkategori_supplier b where b.`s`='1'")
         master_kategori_supplier.GridControl2.DataSource = data
-        master_kategori_supplier.deldata.Down = False
         master_kategori_supplier.edit.Down = False
-
+        master_kategori_supplier.GroupControl2.Enabled = True
+        master_kategori_supplier.hapus.Visible = False
+        master_kategori_supplier.editing.Visible = False
+        Me.Close()
     End Sub
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         edit_kategori_supplier.ShowDialog()

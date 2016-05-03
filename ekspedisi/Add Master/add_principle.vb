@@ -73,19 +73,23 @@ Public Class add_principle
                 'insert ke dalam database
                 InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','1') ")
                 'konfirmasi melakukan booking ulang
+                audit()
                 Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_principle_Load(sender, e)
                     Reset()
                 Else
                     cek = False
-                    Me.Close()
                     master_principle.GridControl1.Visible = True
                     master_principle.GridControl2.Visible = False
                     data = DtTable("SELECT s.id_principle `Kode Principle`, s.nama_principle `Nama Principle`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi from mprinciple s where s.`s`='1'")
                     master_principle.GridControl1.DataSource = data
                     master_principle.edit.Down = False
                     master_principle.deldata.Down = False
+                    master_principle.editing.Visible = False
+                    master_principle.hapus.Visible = False
+                    master_principle.GroupControl2.Enabled = True
+                    Me.Close()
                 End If
 
             Catch ex As Exception
@@ -95,6 +99,13 @@ Public Class add_principle
 
 
 
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Principle"
+        Dim aktivitas As String = "Add Principle: " & kota.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load

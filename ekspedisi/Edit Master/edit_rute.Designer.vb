@@ -20,9 +20,14 @@ Partial Class edit_rute
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_rute))
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.principle = New System.Windows.Forms.ComboBox()
+        Me.tujuan = New System.Windows.Forms.ComboBox()
+        Me.asal = New System.Windows.Forms.ComboBox()
+        Me.unit = New DevExpress.XtraEditors.TextEdit()
         Me.hargaunit = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
@@ -30,31 +35,17 @@ Partial Class edit_rute
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New DevExpress.XtraEditors.TextEdit()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.principle = New System.Windows.Forms.ComboBox()
-        Me.tujuan = New System.Windows.Forms.ComboBox()
-        Me.asal = New System.Windows.Forms.ComboBox()
-        Me.unit = New DevExpress.XtraEditors.TextEdit()
-        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 144)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(104, 18)
-        Me.LabelControl3.TabIndex = 58
-        Me.LabelControl3.Text = "Nama Principle :"
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(216, 176)
+        Me.SimpleButton1.Location = New System.Drawing.Point(244, 208)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton1.TabIndex = 156
@@ -63,71 +54,11 @@ Partial Class edit_rute
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(110, 176)
+        Me.Submit.Location = New System.Drawing.Point(138, 208)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 155
         Me.Submit.Text = "Submit"
-        '
-        'hargaunit
-        '
-        Me.hargaunit.Location = New System.Drawing.Point(114, 98)
-        Me.hargaunit.Name = "hargaunit"
-        Me.hargaunit.Size = New System.Drawing.Size(165, 20)
-        Me.hargaunit.TabIndex = 5
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(5, 121)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(35, 18)
-        Me.LabelControl8.TabIndex = 54
-        Me.LabelControl8.Text = "Unit :"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 97)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(103, 18)
-        Me.LabelControl7.TabIndex = 53
-        Me.LabelControl7.Text = "Harga per unit :"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 73)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(91, 18)
-        Me.LabelControl6.TabIndex = 52
-        Me.LabelControl6.Text = "Kota Tujuan :"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(78, 18)
-        Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Kode Rute :"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(71, 18)
-        Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Kota Asal :"
-        '
-        'id
-        '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(89, 26)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(190, 20)
-        Me.id.TabIndex = 1
         '
         'GroupControl1
         '
@@ -143,65 +74,139 @@ Partial Class edit_rute
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 1)
+        Me.GroupControl1.Location = New System.Drawing.Point(15, 13)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(304, 169)
-        Me.GroupControl1.TabIndex = 157
+        Me.GroupControl1.Size = New System.Drawing.Size(329, 189)
+        Me.GroupControl1.TabIndex = 163
         Me.GroupControl1.Text = "Data"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(23, 151)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(99, 18)
+        Me.LabelControl3.TabIndex = 58
+        Me.LabelControl3.Text = "Nama Principle:"
         '
         'principle
         '
         Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(102, 144)
+        Me.principle.Location = New System.Drawing.Point(132, 152)
         Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(177, 21)
+        Me.principle.Size = New System.Drawing.Size(169, 21)
         Me.principle.TabIndex = 57
         '
         'tujuan
         '
         Me.tujuan.FormattingEnabled = True
-        Me.tujuan.Location = New System.Drawing.Point(102, 74)
+        Me.tujuan.Location = New System.Drawing.Point(132, 81)
         Me.tujuan.Name = "tujuan"
-        Me.tujuan.Size = New System.Drawing.Size(177, 21)
+        Me.tujuan.Size = New System.Drawing.Size(169, 21)
         Me.tujuan.TabIndex = 56
         '
         'asal
         '
         Me.asal.FormattingEnabled = True
-        Me.asal.Location = New System.Drawing.Point(82, 50)
+        Me.asal.Location = New System.Drawing.Point(132, 53)
         Me.asal.Name = "asal"
-        Me.asal.Size = New System.Drawing.Size(197, 21)
+        Me.asal.Size = New System.Drawing.Size(169, 21)
         Me.asal.TabIndex = 55
         '
         'unit
         '
-        Me.unit.Location = New System.Drawing.Point(46, 122)
+        Me.unit.Location = New System.Drawing.Point(132, 129)
         Me.unit.Name = "unit"
-        Me.unit.Size = New System.Drawing.Size(233, 20)
+        Me.unit.Size = New System.Drawing.Size(169, 20)
         Me.unit.TabIndex = 6
+        '
+        'hargaunit
+        '
+        Me.hargaunit.Location = New System.Drawing.Point(132, 106)
+        Me.hargaunit.Name = "hargaunit"
+        Me.hargaunit.Size = New System.Drawing.Size(169, 20)
+        Me.hargaunit.TabIndex = 5
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(87, 127)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(35, 18)
+        Me.LabelControl8.TabIndex = 54
+        Me.LabelControl8.Text = "Unit :"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(19, 105)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(103, 18)
+        Me.LabelControl7.TabIndex = 53
+        Me.LabelControl7.Text = "Harga per unit :"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(31, 80)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(91, 18)
+        Me.LabelControl6.TabIndex = 52
+        Me.LabelControl6.Text = "Kota Tujuan :"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(44, 26)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl1.TabIndex = 32
+        Me.LabelControl1.Text = "Kode Rute :"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(51, 52)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(71, 18)
+        Me.LabelControl2.TabIndex = 33
+        Me.LabelControl2.Text = "Kota Asal :"
+        '
+        'id
+        '
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(132, 27)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(169, 20)
+        Me.id.TabIndex = 1
         '
         'edit_rute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(328, 205)
+        Me.ClientSize = New System.Drawing.Size(356, 247)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
-        Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_rute"
         Me.Text = "Edit Rute"
-        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hargaunit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents principle As System.Windows.Forms.ComboBox
+    Friend WithEvents tujuan As System.Windows.Forms.ComboBox
+    Friend WithEvents asal As System.Windows.Forms.ComboBox
+    Friend WithEvents unit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents hargaunit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
@@ -209,9 +214,4 @@ Partial Class edit_rute
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents principle As System.Windows.Forms.ComboBox
-    Friend WithEvents tujuan As System.Windows.Forms.ComboBox
-    Friend WithEvents asal As System.Windows.Forms.ComboBox
-    Friend WithEvents unit As DevExpress.XtraEditors.TextEdit
 End Class

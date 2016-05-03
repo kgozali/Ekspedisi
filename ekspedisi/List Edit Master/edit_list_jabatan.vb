@@ -46,16 +46,18 @@ Public Class edit_list_jabatan
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Me.Close()
         master_jabatan.GridControl1.Visible = True
         master_jabatan.GridControl2.Visible = False
         data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
         master_jabatan.GridControl1.DataSource = data
         data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
         master_jabatan.GridControl2.DataSource = data
-        master_jabatan.deldata.Down = False
         master_jabatan.edit.Down = False
-
+        master_jabatan.hapus.Visible = False
+        master_jabatan.editing.Visible = False
+        master_jabatan.GroupControl2.Enabled = True
+        Me.Close()
+        
     End Sub
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         edit_jabatan.ShowDialog()

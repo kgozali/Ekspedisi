@@ -36,16 +36,16 @@ Partial Class edit_jabatan
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(11, 22)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(82, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(99, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "ID Jabatan :"
+        Me.LabelControl1.Text = "Kode Jabatan :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(5, 45)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(105, 18)
         Me.LabelControl2.TabIndex = 33
@@ -61,7 +61,7 @@ Partial Class edit_jabatan
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(93, 22)
+        Me.id.Location = New System.Drawing.Point(116, 23)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(100, 20)
         Me.id.TabIndex = 45

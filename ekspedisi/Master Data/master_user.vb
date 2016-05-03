@@ -89,6 +89,9 @@ Public Class master_user
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update muser set `s`= 0 where username='" & GridView2.GetRowCellValue(i, "Username").ToString & "'")
                                 InsertInto("delete from hak_akses where username='" & GridView2.GetRowCellValue(i, "Username").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Username").ToString
+                                audit()
+
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -103,6 +106,16 @@ Public Class master_user
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master User"
+        Dim aktivitas As String = "Delete User: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
@@ -199,4 +212,8 @@ Public Class master_user
         showgridpreview(GridControl1)
     End Sub
 
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        showgridpreview(GridControl1)
+    End Sub
+    
 End Class

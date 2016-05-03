@@ -73,6 +73,16 @@ Public Class edit_list_karyawan
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_karyawan.GridControl1.Visible = True
+        master_karyawan.GridControl2.Visible = False
+        data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+        master_karyawan.GridControl1.DataSource = data
+        data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+        master_karyawan.GridControl2.DataSource = data
+        master_karyawan.edit.Down = False
+        master_karyawan.GroupControl2.Enabled = True
+        master_karyawan.editing.Visible = False
+        master_karyawan.hapus.Visible = False
         Me.Close()
     End Sub
 

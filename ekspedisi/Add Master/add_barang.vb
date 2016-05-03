@@ -9,6 +9,7 @@ Public Class add_barang
         master_barang.GridControl2.Visible = False
         data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         master_barang.GridControl1.DataSource = data
+        master_barang.GroupControl2.Enabled = True
         master_barang.edit.Down = False
         master_barang.deldata.Down = False
         master_barang.hapus.Visible = False
@@ -33,6 +34,7 @@ Public Class add_barang
                     master_barang.GridControl2.Visible = False
                     data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
                     master_barang.GridControl1.DataSource = data
+                    master_barang.GroupControl2.Enabled = True
                     master_barang.edit.Down = False
                     master_barang.deldata.Down = False
                     master_barang.hapus.Visible = False
@@ -50,6 +52,7 @@ Public Class add_barang
                 master_barang.GridControl1.DataSource = data
                 master_barang.edit.Down = False
                 master_barang.deldata.Down = False
+                master_barang.GroupControl2.Enabled = True
                 master_barang.hapus.Visible = False
                 master_barang.editing.Visible = False
                 Reset()
@@ -146,7 +149,7 @@ Public Class add_barang
                     End While
                     ccc = tgl + hitung
                     InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','1')")
-                    MsgBox(dtbaris("Nama_Barang") & "terinput")
+                    'MsgBox(dtbaris("Nama_Barang") & "terinput")
                     audit()
                 Next
             Catch ex As Exception
@@ -163,6 +166,7 @@ Public Class add_barang
                 master_barang.edit.Down = False
                 master_barang.deldata.Down = False
                 master_barang.hapus.Visible = False
+                master_barang.GroupControl2.Enabled = True
                 master_barang.editing.Visible = False
                 Reset()
             Else

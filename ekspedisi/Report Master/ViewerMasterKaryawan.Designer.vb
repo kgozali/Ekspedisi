@@ -788,7 +788,7 @@ Partial Class ViewerMasterKaryawan
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
         Me.Name = "ViewerMasterKaryawan"
-        Me.Text = "ViewerMasterKaryawan"
+        Me.Text = "Viewer Master Karyawan"
         CType(Me.DocumentViewerBarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintPreviewRepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemProgressBar1, System.ComponentModel.ISupportInitialize).EndInit()

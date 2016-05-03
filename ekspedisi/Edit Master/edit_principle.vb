@@ -29,10 +29,10 @@ Public Class edit_Principle
         Me.Close()
     End Sub
 
-    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
+    Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
-    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel2.KeyPress
+    Private Sub tel2_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 
@@ -41,13 +41,23 @@ Public Class edit_Principle
             Case MsgBoxResult.Yes
                 Dim ccccc As String = "update mprinciple set nama_principle='" & nama.Text & "', email ='" & email.Text & "', alamat = '" & alamat.Text & "', tel1 ='" & tel1.Text & "', tel2 = '" & tel2.Text & "',kota ='" & kota.Text & "', provinsi ='" & provinsi.Text & "' where id_principle='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
+                audit()
                 MessageBox.Show("File Updated")
                 connect.Close()
                 edit_list_Principle.GridView1.DeleteSelectedRows()
                 Me.Close()
         End Select
     End Sub
-    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs) Handles kota.SelectedValueChanged
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Principle"
+        Dim aktivitas As String = "Edit Principle: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub kota_SelectedValueChanged(sender As Object, e As EventArgs)
         Dim carip As String = "select provinsi from mkota where kota ='" & kota.Text.ToString & "' and s = '1'"
         Dim prov As String = Scalar(carip)
         provinsi.Text = prov

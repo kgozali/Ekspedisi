@@ -109,7 +109,7 @@ Partial Class add_supplier
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(4, 169)
+        Me.LabelControl8.Location = New System.Drawing.Point(63, 169)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(58, 18)
         Me.LabelControl8.TabIndex = 54
@@ -118,7 +118,7 @@ Partial Class add_supplier
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 121)
+        Me.LabelControl7.Location = New System.Drawing.Point(46, 118)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl7.TabIndex = 53
@@ -127,7 +127,7 @@ Partial Class add_supplier
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 97)
+        Me.LabelControl6.Location = New System.Drawing.Point(46, 94)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl6.TabIndex = 52
@@ -136,7 +136,7 @@ Partial Class add_supplier
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(5, 73)
+        Me.LabelControl5.Location = New System.Drawing.Point(78, 70)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(43, 18)
         Me.LabelControl5.TabIndex = 51
@@ -153,7 +153,7 @@ Partial Class add_supplier
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(5, 219)
+        Me.LabelControl4.Location = New System.Drawing.Point(66, 218)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(55, 18)
         Me.LabelControl4.TabIndex = 48
@@ -162,16 +162,16 @@ Partial Class add_supplier
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(24, 22)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(92, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(97, 18)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Kode Supplier:"
+        Me.LabelControl1.Text = "Kode Supplier :"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(18, 45)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(103, 18)
         Me.LabelControl2.TabIndex = 33
@@ -238,7 +238,7 @@ Partial Class add_supplier
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(5, 145)
+        Me.LabelControl9.Location = New System.Drawing.Point(81, 143)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(40, 18)
         Me.LabelControl9.TabIndex = 55

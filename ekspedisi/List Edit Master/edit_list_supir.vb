@@ -9,6 +9,7 @@ Public Class edit_list_supir
         data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
         master_supir.GridControl2.DataSource = data
         master_supir.edit.Down = False
+        master_supir.deldata.Down = False
         master_supir.GroupControl2.Enabled = True
         master_supir.editing.Visible = False
         master_supir.hapus.Visible = False
@@ -76,6 +77,7 @@ Public Class edit_list_supir
         data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
         master_supir.GridControl2.DataSource = data
         master_supir.edit.Down = False
+        master_supir.deldata.Down = False
         master_supir.GroupControl2.Enabled = True
         master_supir.editing.Visible = False
         master_supir.hapus.Visible = False

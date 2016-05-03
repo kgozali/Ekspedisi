@@ -10,6 +10,10 @@ Public Class add_jabatan
         master_jabatan.GridControl1.DataSource = data
         master_jabatan.edit.Down = False
         master_jabatan.deldata.Down = False
+        master_jabatan.editing.Visible = False
+        master_jabatan.hapus.Visible = False
+        master_jabatan.GroupControl2.Enabled = True
+
         Me.Close()
     End Sub
 
@@ -25,6 +29,9 @@ Public Class add_jabatan
                     master_jabatan.GridControl1.DataSource = data
                     master_jabatan.edit.Down = False
                     master_jabatan.deldata.Down = False
+                    master_jabatan.editing.Visible = False
+                    master_jabatan.hapus.Visible = False
+                    master_jabatan.GroupControl2.Enabled = True
                     Reset()
                 Else
                     e.Cancel = True
@@ -37,6 +44,9 @@ Public Class add_jabatan
                 master_jabatan.GridControl1.DataSource = data
                 master_jabatan.edit.Down = False
                 master_jabatan.deldata.Down = False
+                master_jabatan.editing.Visible = False
+                master_jabatan.hapus.Visible = False
+                master_jabatan.GroupControl2.Enabled = True
                 Reset()
             End If
         Catch ex As Exception
@@ -46,6 +56,15 @@ Public Class add_jabatan
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click
         Try
+            Dim tanggal As New DataTable
+            Dim tgl As String = "MJ"
+            tanggal = DtTable("select * from mjabatan where substring(ID_jabatan,1,2) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            id.Text = tgl + hitung
+
             'insert ke dalam database
             InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "','1')")
             'konfirmasi melakukan booking ulang
@@ -61,6 +80,9 @@ Public Class add_jabatan
                 master_jabatan.GridControl1.DataSource = data
                 master_jabatan.edit.Down = False
                 master_jabatan.deldata.Down = False
+                master_jabatan.editing.Visible = False
+                master_jabatan.hapus.Visible = False
+                master_jabatan.GroupControl2.Enabled = True
                 cek = False
                 Me.Close()
             End If

@@ -9,6 +9,9 @@ Public Class add_kota
         master_kota.GridControl1.DataSource = data
         master_kota.edit.Down = False
         master_kota.deldata.Down = False
+        master_kota.editing.Visible = False
+        master_kota.hapus.Visible = False
+        master_kota.GroupControl2.Enabled = True
         Me.Close()
     End Sub
 
@@ -24,9 +27,10 @@ Public Class add_kota
                     data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
                     master_kota.GridControl1.DataSource = data
                     master_kota.edit.Down = False
-                    master_kota.hapus.Visible = False
-                    master_kota.editing.Visible = False
                     master_kota.deldata.Down = False
+                    master_kota.editing.Visible = False
+                    master_kota.hapus.Visible = False
+                    master_kota.GroupControl2.Enabled = True
                     Me.Close()
                 Else
                     e.Cancel = True
@@ -38,9 +42,10 @@ Public Class add_kota
                 data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
                 master_kota.GridControl1.DataSource = data
                 master_kota.edit.Down = False
-                master_kota.hapus.Visible = False
-                master_kota.editing.Visible = False
                 master_kota.deldata.Down = False
+                master_kota.editing.Visible = False
+                master_kota.hapus.Visible = False
+                master_kota.GroupControl2.Enabled = True
                 Reset()
                 Me.Close()
             End If
@@ -66,9 +71,10 @@ Public Class add_kota
                 data = DtTable("SELECT b.kota `Nama Kota`, b.provinsi `Nama Provinsi` from mkota b where b.`s`='1'")
                 master_kota.GridControl1.DataSource = data
                 master_kota.edit.Down = False
-                master_kota.hapus.Visible = False
-                master_kota.editing.Visible = False
                 master_kota.deldata.Down = False
+                master_kota.editing.Visible = False
+                master_kota.hapus.Visible = False
+                master_kota.GroupControl2.Enabled = True
                 Me.Close()
             End If
         Catch ex As Exception

@@ -125,6 +125,8 @@ Public Class master_kategori_supplier
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mkategori_supplier set `s`=0 where id_kategori='" & GridView2.GetRowCellValue(i, "Kode Kategori Supplier").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Kode Kategori Supplier").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -139,6 +141,16 @@ Public Class master_kategori_supplier
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Kategori Supplier"
+        Dim aktivitas As String = "Delete Kategori Supplier: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
     End Sub
 
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
@@ -250,4 +262,10 @@ Public Class master_kategori_supplier
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
         showgridpreview(GridControl1)
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        showgridpreview(GridControl1)
+    End Sub
+
+  
 End Class

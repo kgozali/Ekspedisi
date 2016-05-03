@@ -181,6 +181,8 @@ Public Class master_jabatan
                         For i = 0 To GridView2.RowCount - 1
                             If GridView2.IsRowSelected(i) = True Then
                                 InsertInto("update mjabatan set `s`=0 where id_jabatan='" & GridView2.GetRowCellValue(i, "Kode Jabatan").ToString & "'")
+                                dataygdidelete = GridView2.GetRowCellValue(i, "Kode Jabatan").ToString
+                                audit()
                             End If
                         Next i
                         MessageBox.Show("File Deleted")
@@ -197,6 +199,15 @@ Public Class master_jabatan
         End Try
     End Sub
 
+    Dim dataygdidelete As String = ""
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Master Jabatan"
+        Dim aktivitas As String = "Delete Jabatan: " & dataygdidelete.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
    
 
     Private Sub GridView2_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView2.SelectionChanged
@@ -249,9 +260,13 @@ Public Class master_jabatan
         grid.ShowPrintPreview()
     End Sub
 
-
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles Print.Click
         showgridpreview(GridControl1)
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        showgridpreview(GridControl1)
+    End Sub
+
 
 End Class
