@@ -268,7 +268,7 @@ Public Class KIR_Truk
         Command.ExecuteNonQuery()
         connect.Close()
         If inserts = True Then
-            MessageBox.Show("KIR dengan No." & kode.ToString & " berhasil dilakukan, silahkan membuka Form KIR untuk melakukan KIR kembali", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("KIR dengan No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             insertakun()
             audit()
         Else
