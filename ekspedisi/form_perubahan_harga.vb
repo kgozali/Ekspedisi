@@ -19,7 +19,7 @@
             principle.DisplayMember = "nama_principle"
             principle.ValueMember = "id_principle"
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
     End Sub
@@ -48,7 +48,7 @@
             Next i
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -62,7 +62,7 @@
                 principle.Visible = False
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
        
     End Sub
@@ -107,7 +107,7 @@
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -125,19 +125,19 @@
             isi = New DataTable
             form_perubahan_harga_Load(sender, e)
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub history_Click(sender As Object, e As EventArgs) Handles history.Click
-        'Try
-        '    Dim data As New DataTable
-        '    data = DtTable("SELECT tgl_perubahan `Tanggal Perubahan`, price_awal `Harga Awal`, price_akhir `Harga Akhir` FROM `mperubahan_harga` WHERE id_rute='" & datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") & "'")
-        '    history_perubahan_harga.history.DataSource = data
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message)
-        'End Try
-        'history_perubahan_harga.ShowDialog()
+        Try
+            Dim data As New DataTable
+            data = DtTable("SELECT tgl_perubahan `Tanggal Perubahan`, price_awal `Harga Awal`, price_akhir `Harga Akhir` FROM `mperubahan_harga` WHERE id_rute='" & datarute.GetRowCellValue(datarute.FocusedRowHandle, "Kode Rute") & "'")
+            historyperubahan.perubahan.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        historyperubahan.ShowDialog()
     End Sub
     Dim keamanan As String
     Private Sub datarute_ShownEditor(sender As Object, e As EventArgs) Handles datarute.ShownEditor
@@ -147,7 +147,7 @@
                 keamanan = datarute.GetRowCellValue(datarute.FocusedRowHandle, datarute.FocusedColumn)
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -160,7 +160,7 @@
                 End With
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

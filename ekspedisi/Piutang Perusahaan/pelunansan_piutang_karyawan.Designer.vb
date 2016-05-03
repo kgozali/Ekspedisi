@@ -229,6 +229,7 @@ Partial Class pelunansan_piutang_karyawan
         Me.totalbayar.Name = "totalbayar"
         Me.totalbayar.Size = New System.Drawing.Size(191, 21)
         Me.totalbayar.TabIndex = 65
+        Me.totalbayar.Text = "0"
         '
         'LabelControl6
         '
@@ -246,6 +247,8 @@ Partial Class pelunansan_piutang_karyawan
         Me.totalhutang.Name = "totalhutang"
         Me.totalhutang.Size = New System.Drawing.Size(191, 21)
         Me.totalhutang.TabIndex = 155
+        Me.totalhutang.Text = "0"
+        Me.totalhutang.UseWaitCursor = True
         '
         'LabelControl7
         '

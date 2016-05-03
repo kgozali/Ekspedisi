@@ -3,7 +3,7 @@
     Private Sub viewkwitansi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim rpt As New kwitansi
-            rpt.Parameters("username").Value = main_menu.username
+            rpt.Parameters("username").Value = ""
             rpt.Parameters(0).Value = tangkap
             DocumentViewer1.DocumentSource = rpt
 
