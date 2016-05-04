@@ -20,14 +20,14 @@
             Dim simpan As New DataTable
             simpan = DtTable(check)
             If simpan.Rows.Count = 0 Then
-                MessageBox.Show("Username Salah", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Username Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 username.Text = ""
             Else
                 Dim check2 As String = "select username, password from muser where username = '" & username.Text & "' and password = md5('" & password.Text & "') "
                 Dim simpan2 As New DataTable
                 simpan2 = DtTable(check2)
                 If simpan2.Rows.Count = 0 Then
-                    MessageBox.Show("Password Salah", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Password Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     cek = True
                     Me.Close()
@@ -45,4 +45,20 @@
 
     End Sub
 
+    Private Sub username_KeyPress(sender As Object, e As KeyPressEventArgs) Handles username.KeyPress, password.KeyPress
+        Try
+            If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+
+                If username.Text = "" Or password.Text = "" Then
+                    MessageBox.Show("Harap melengkapi Username dan Password", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    login_Click(sender, e)
+                End If
+            Else
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
