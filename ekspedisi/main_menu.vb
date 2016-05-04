@@ -68,7 +68,7 @@ Public Class main_menu
     End Sub
 
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'login2.ShowDialog()
+        login2.ShowDialog()
 
         Try
             If checkconnection() = True Then

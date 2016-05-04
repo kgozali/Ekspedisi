@@ -290,7 +290,7 @@ Public Class KIR_Truk
         trukbook = ""
         DateTimePicker1.ResetText()
         DateTimePicker2.ResetText()
-
+        PictureEdit1.Text = ""
         ButtonEdit1.Text = ""
     End Sub
 
