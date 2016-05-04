@@ -36,6 +36,10 @@ Partial Class main_menu
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.XtraTabPage7 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl5 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.XtraTabPage4 = New DevExpress.XtraTab.XtraTabPage()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl4 = New DevExpress.XtraGrid.GridControl()
@@ -133,10 +137,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.XtraTabPage7 = New DevExpress.XtraTab.XtraTabPage()
-        Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
-        Me.GridControl5 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -157,6 +157,11 @@ Partial Class main_menu
         Me.GroupControl4.SuspendLayout()
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage7.SuspendLayout()
+        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl5.SuspendLayout()
+        CType(Me.GridControl5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage4.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -174,11 +179,6 @@ Partial Class main_menu
         Me.XtraTabControl2.SuspendLayout()
         Me.XtraTabPage5.SuspendLayout()
         Me.XtraTabPage6.SuspendLayout()
-        Me.XtraTabPage7.SuspendLayout()
-        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl5.SuspendLayout()
-        CType(Me.GridControl5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
@@ -341,6 +341,40 @@ Partial Class main_menu
         '
         Me.GridView3.GridControl = Me.GridControl3
         Me.GridView3.Name = "GridView3"
+        '
+        'XtraTabPage7
+        '
+        Me.XtraTabPage7.Controls.Add(Me.GroupControl5)
+        Me.XtraTabPage7.Name = "XtraTabPage7"
+        Me.XtraTabPage7.Size = New System.Drawing.Size(749, 564)
+        Me.XtraTabPage7.Text = "Piutang Supir"
+        '
+        'GroupControl5
+        '
+        Me.GroupControl5.Controls.Add(Me.GridControl5)
+        Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl5.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl5.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GroupControl5.Name = "GroupControl5"
+        Me.GroupControl5.Size = New System.Drawing.Size(749, 564)
+        Me.GroupControl5.TabIndex = 0
+        Me.GroupControl5.Text = "Notifikasi Piutang Supir"
+        '
+        'GridControl5
+        '
+        Me.GridControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl5.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl5.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GridControl5.MainView = Me.GridView5
+        Me.GridControl5.Name = "GridControl5"
+        Me.GridControl5.Size = New System.Drawing.Size(745, 541)
+        Me.GridControl5.TabIndex = 0
+        Me.GridControl5.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
+        '
+        'GridView5
+        '
+        Me.GridView5.GridControl = Me.GridControl5
+        Me.GridView5.Name = "GridView5"
         '
         'XtraTabPage4
         '
@@ -1242,40 +1276,6 @@ Partial Class main_menu
         'sfd
         '
         '
-        'XtraTabPage7
-        '
-        Me.XtraTabPage7.Controls.Add(Me.GroupControl5)
-        Me.XtraTabPage7.Name = "XtraTabPage7"
-        Me.XtraTabPage7.Size = New System.Drawing.Size(749, 564)
-        Me.XtraTabPage7.Text = "Piutang Supir"
-        '
-        'GroupControl5
-        '
-        Me.GroupControl5.Controls.Add(Me.GridControl5)
-        Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl5.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl5.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(749, 564)
-        Me.GroupControl5.TabIndex = 0
-        Me.GroupControl5.Text = "Notifikasi Piutang Supir"
-        '
-        'GridControl5
-        '
-        Me.GridControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl5.Location = New System.Drawing.Point(2, 21)
-        Me.GridControl5.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GridControl5.MainView = Me.GridView5
-        Me.GridControl5.Name = "GridControl5"
-        Me.GridControl5.Size = New System.Drawing.Size(745, 541)
-        Me.GridControl5.TabIndex = 0
-        Me.GridControl5.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
-        '
-        'GridView5
-        '
-        Me.GridView5.GridControl = Me.GridControl5
-        Me.GridView5.Name = "GridView5"
-        '
         'main_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1309,6 +1309,11 @@ Partial Class main_menu
         Me.GroupControl4.ResumeLayout(False)
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage7.ResumeLayout(False)
+        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl5.ResumeLayout(False)
+        CType(Me.GridControl5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage4.ResumeLayout(False)
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -1335,11 +1340,6 @@ Partial Class main_menu
         Me.XtraTabPage5.PerformLayout()
         Me.XtraTabPage6.ResumeLayout(False)
         Me.XtraTabPage6.PerformLayout()
-        Me.XtraTabPage7.ResumeLayout(False)
-        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl5.ResumeLayout(False)
-        CType(Me.GridControl5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

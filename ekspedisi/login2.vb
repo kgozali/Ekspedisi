@@ -31,6 +31,7 @@
                 Else
                     cek = True
                     audit()
+                    main_menu.username = username.Text.ToString
                     Me.Close()
                 End If
             End If

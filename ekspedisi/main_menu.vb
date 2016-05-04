@@ -355,4 +355,15 @@ Public Class main_menu
     Private Sub SimpleButton8_Click_2(sender As Object, e As EventArgs) Handles SimpleButton8.Click
         buka_piutang_karyawan.ShowDialog()
     End Sub
+
+    Private Sub main_menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        audit()
+    End Sub
+    Sub audit()
+        Dim user As String = username.ToString
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "System Logout"
+        Dim aktivitas As String = "User Logout: " & username.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 End Class
