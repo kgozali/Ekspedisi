@@ -98,9 +98,14 @@ Public Class master_booking
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         Try
-            edit_booking.id.Text = ""
-            edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
-            edit_booking.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_booking.id.Text = ""
+                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+                edit_booking.ShowDialog()
+            End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -110,21 +115,35 @@ Public Class master_booking
  
     Private Sub EditBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditBookingToolStripMenuItem.Click
         Try
-            edit_booking.id.Text = ""
-            edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
-            edit_booking.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_booking.id.Text = ""
+                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+                edit_booking.ShowDialog()
+            End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub PreviewAndPrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreviewAndPrintToolStripMenuItem.Click
-        frm_bookingtruk.bookcode = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
-        frm_bookingtruk.ShowDialog()
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            frm_bookingtruk.bookcode = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+            frm_bookingtruk.ShowDialog()
+        End If
     End Sub
 
     Private Sub DeleteBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteBookingToolStripMenuItem.Click
-        del(sender, e)
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            del(sender, e)
+        End If
+
     End Sub
     Sub del(sender As Object, e As EventArgs)
         Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
@@ -149,7 +168,12 @@ Public Class master_booking
     End Sub
 
     Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        del(sender, e)
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            del(sender, e)
+        End If
+
     End Sub
 
    

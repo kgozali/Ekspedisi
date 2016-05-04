@@ -90,7 +90,7 @@ Partial Class booking_truk
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(691, 11)
+        Me.Label4.Location = New System.Drawing.Point(686, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 18)
         Me.Label4.TabIndex = 3
@@ -100,7 +100,7 @@ Partial Class booking_truk
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(707, 60)
+        Me.Label6.Location = New System.Drawing.Point(702, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 18)
         Me.Label6.TabIndex = 5
@@ -110,7 +110,7 @@ Partial Class booking_truk
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(707, 34)
+        Me.Label7.Location = New System.Drawing.Point(702, 34)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 18)
         Me.Label7.TabIndex = 6
@@ -154,7 +154,7 @@ Partial Class booking_truk
         Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Location = New System.Drawing.Point(10, 112)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(907, 63)
+        Me.GroupControl1.Size = New System.Drawing.Size(900, 69)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data Booking"
         '
@@ -164,7 +164,7 @@ Partial Class booking_truk
         Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.gridkontak
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(903, 40)
+        Me.GridControl1.Size = New System.Drawing.Size(896, 46)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridkontak})
         '
@@ -176,7 +176,7 @@ Partial Class booking_truk
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(755, 60)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(750, 60)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
@@ -184,7 +184,7 @@ Partial Class booking_truk
         '
         'ButtonEdit2
         '
-        Me.ButtonEdit2.Location = New System.Drawing.Point(755, 9)
+        Me.ButtonEdit2.Location = New System.Drawing.Point(750, 9)
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit2.Size = New System.Drawing.Size(160, 20)
@@ -192,7 +192,7 @@ Partial Class booking_truk
         '
         'ButtonEdit4
         '
-        Me.ButtonEdit4.Location = New System.Drawing.Point(755, 34)
+        Me.ButtonEdit4.Location = New System.Drawing.Point(750, 34)
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit4.Size = New System.Drawing.Size(160, 20)
@@ -220,9 +220,9 @@ Partial Class booking_truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl2)
-        Me.GroupControl2.Location = New System.Drawing.Point(10, 190)
+        Me.GroupControl2.Location = New System.Drawing.Point(10, 187)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(905, 69)
+        Me.GroupControl2.Size = New System.Drawing.Size(900, 69)
         Me.GroupControl2.TabIndex = 147
         Me.GroupControl2.Text = "Pembayaran DP"
         '
@@ -232,7 +232,7 @@ Partial Class booking_truk
         Me.GridControl2.Location = New System.Drawing.Point(2, 21)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(901, 46)
+        Me.GridControl2.Size = New System.Drawing.Size(896, 46)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '

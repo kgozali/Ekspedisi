@@ -146,11 +146,16 @@ Public Class master_DO
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         Try
-            edit_DO.id.Text = ""
-            edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
-            edit_DO.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_DO.id.Text = ""
+                edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+                edit_DO.ShowDialog()
+            End If
+            
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
 
@@ -177,22 +182,37 @@ Public Class master_DO
 
 
     Private Sub PrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem.Click
-        frm_notado.transid = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
-        frm_notado.ShowDialog()
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            frm_notado.transid = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
+            frm_notado.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
         Try
-            edit_DO.id.Text = ""
-            edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
-            edit_DO.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_DO.id.Text = ""
+                edit_DO.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+                edit_DO.ShowDialog()
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
     Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
-        del(sender, e)
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            del(sender, e)
+        End If
+
     End Sub
     Sub del(sender As Object, e As EventArgs)
         Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
@@ -220,6 +240,11 @@ Public Class master_DO
     End Sub
 
     Private Sub DeleteDeliveryOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteDeliveryOrderToolStripMenuItem.Click
-        del(sender, e)
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            del(sender, e)
+        End If
+
     End Sub
 End Class

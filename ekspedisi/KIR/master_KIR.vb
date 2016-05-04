@@ -98,8 +98,12 @@ Public Class master_KIR
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
         Try
-            edit_kir_truk.TextEdit1.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR").ToString
-            edit_kir_truk.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_kir_truk.TextEdit1.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR").ToString
+                edit_kir_truk.ShowDialog()
+            End If
         Catch ex As Exception
 
         End Try
@@ -107,8 +111,12 @@ Public Class master_KIR
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Try
-            edit_kir_truk.TextEdit1.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR").ToString
-            edit_kir_truk.ShowDialog()
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                edit_kir_truk.TextEdit1.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR").ToString
+                edit_kir_truk.ShowDialog()
+            End If
         Catch ex As Exception
 
         End Try
@@ -116,19 +124,23 @@ Public Class master_KIR
 
     Private Sub DeleteKIRToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteKIRToolStripMenuItem.Click
         Try
-            Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus data KIR yang terpilih? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If msg = DialogResult.OK Then
-                Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
-                If test = True Then
-                    MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    deljurnal()
-                    auditdel()
-                    master_KIR_Load(sender, e)
-                Else
-                    MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus data KIR yang terpilih? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
+                    If test = True Then
+                        MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        deljurnal()
+                        auditdel()
+                        master_KIR_Load(sender, e)
+                    Else
+                        MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Else
 
+                End If
             End If
         Catch ex As Exception
 
@@ -152,20 +164,25 @@ Public Class master_KIR
 
     Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
         Try
-            Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus data KIR yang terpilih? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If msg = DialogResult.OK Then
-                Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
-                If test = True Then
-                    MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    deljurnal()
-                    auditdel()
-                    master_KIR_Load(sender, e)
-                Else
-                    MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
+            If GridView1.RowCount = 0 Then
+                MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+                Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus data KIR yang terpilih? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If msg = DialogResult.OK Then
+                    Dim test As Boolean = InsertInto("update kir set del=1 where id_kir='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") + "'")
+                    If test = True Then
+                        MessageBox.Show("Data KIR" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode KIR") & "berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        deljurnal()
+                        auditdel()
+                        master_KIR_Load(sender, e)
+                    Else
+                        MessageBox.Show("Gangguan jaringan, Silahkan coba kembali dalam beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Else
 
+                End If
             End If
+
         Catch ex As Exception
 
         End Try
