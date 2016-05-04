@@ -19,15 +19,15 @@ Partial Class frm_laporankir
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_laporankir))
         Me.DocumentViewer1 = New DevExpress.XtraPrinting.Preview.DocumentViewer()
-        Me.DocumentViewerBarManager1 = New DevExpress.XtraPrinting.Preview.DocumentViewerBarManager()
+        Me.DocumentViewerBarManager1 = New DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(Me.components)
         Me.PreviewBar1 = New DevExpress.XtraPrinting.Preview.PreviewBar()
         Me.PrintPreviewBarItem2 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem3 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem4 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem5 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
-        Me.PrintPreviewBarItem6 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem7 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem8 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem9 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
@@ -72,6 +72,7 @@ Partial Class frm_laporankir
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        Me.PrintPreviewBarItem6 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarCheckItem1 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem()
         Me.PrintPreviewBarCheckItem2 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem()
         Me.PrintPreviewBarCheckItem3 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem()
@@ -172,16 +173,6 @@ Partial Class frm_laporankir
         Me.PrintPreviewBarItem5.Id = 10
         Me.PrintPreviewBarItem5.ImageIndex = 14
         Me.PrintPreviewBarItem5.Name = "PrintPreviewBarItem5"
-        '
-        'PrintPreviewBarItem6
-        '
-        Me.PrintPreviewBarItem6.Caption = "Open"
-        Me.PrintPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Open
-        Me.PrintPreviewBarItem6.Enabled = False
-        Me.PrintPreviewBarItem6.Hint = "Open a document"
-        Me.PrintPreviewBarItem6.Id = 11
-        Me.PrintPreviewBarItem6.ImageIndex = 23
-        Me.PrintPreviewBarItem6.Name = "PrintPreviewBarItem6"
         '
         'PrintPreviewBarItem7
         '
@@ -601,6 +592,16 @@ Partial Class frm_laporankir
         Me.barDockControlRight.Location = New System.Drawing.Point(1008, 53)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 618)
         '
+        'PrintPreviewBarItem6
+        '
+        Me.PrintPreviewBarItem6.Caption = "Open"
+        Me.PrintPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Open
+        Me.PrintPreviewBarItem6.Enabled = False
+        Me.PrintPreviewBarItem6.Hint = "Open a document"
+        Me.PrintPreviewBarItem6.Id = 11
+        Me.PrintPreviewBarItem6.ImageIndex = 23
+        Me.PrintPreviewBarItem6.Name = "PrintPreviewBarItem6"
+        '
         'PrintPreviewBarCheckItem1
         '
         Me.PrintPreviewBarCheckItem1.Caption = "PDF File"
@@ -783,6 +784,7 @@ Partial Class frm_laporankir
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_laporankir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Laporan Riwayat KIR"
