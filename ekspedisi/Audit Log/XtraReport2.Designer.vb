@@ -68,13 +68,14 @@ Partial Public Class XtraReport2
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "audit_log"
         RelationColumnInfo1.NestedKeyColumn = "username"
@@ -100,16 +101,15 @@ Partial Public Class XtraReport2
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
-        Me.Detail.HeightF = 100.0!
+        Me.Detail.HeightF = 35.00001!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.Detail.SortFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("tgl", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'XrTable2
         '
         Me.XrTable2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 0.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 10.00001!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(703.5284!, 25.0!)
@@ -127,7 +127,7 @@ Partial Public Class XtraReport2
         '
         Me.XrTableCell6.Name = "XrTableCell6"
         XrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber
-        XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
         Me.XrTableCell6.Summary = XrSummary1
         Me.XrTableCell6.Weight = 0.2536446879984372R
         '
@@ -157,7 +157,7 @@ Partial Public Class XtraReport2
         '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 70.83334!
+        Me.TopMargin.HeightF = 71.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -171,15 +171,15 @@ Partial Public Class XtraReport2
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrLabel9, Me.XrLabel7, Me.XrLabel6, Me.XrPictureBox1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLine2, Me.XrTable1})
-        Me.ReportHeader.HeightF = 277.0833!
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1, Me.XrLabel9, Me.XrLabel7, Me.XrLabel6, Me.XrPictureBox1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLine2, Me.XrLabel3, Me.XrTable1, Me.XrLabel2})
+        Me.ReportHeader.HeightF = 263.125!
         Me.ReportHeader.Name = "ReportHeader"
         '
         'XrLabel3
         '
         Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.username, "Text", "")})
         Me.XrLabel3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(128.5417!, 220.8333!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(128.5417!, 206.875!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(167.7083!, 16.74998!)
@@ -193,16 +193,16 @@ Partial Public Class XtraReport2
         DynamicListLookUpSettings1.DataAdapter = Nothing
         DynamicListLookUpSettings1.DataMember = Nothing
         DynamicListLookUpSettings1.DataSource = Me.SqlDataSource1
-        DynamicListLookUpSettings1.DisplayMember = "audit_log.username"
+        DynamicListLookUpSettings1.DisplayMember = "audit_log.id_user"
         DynamicListLookUpSettings1.FilterString = Nothing
-        DynamicListLookUpSettings1.ValueMember = "audit_log.username"
+        DynamicListLookUpSettings1.ValueMember = "audit_log.id_user"
         Me.username.LookUpSettings = DynamicListLookUpSettings1
         Me.username.Name = "username"
         '
         'XrLabel2
         '
         Me.XrLabel2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 220.8333!)
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 206.875!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 16.74998!)
@@ -324,7 +324,7 @@ Partial Public Class XtraReport2
         Me.XrTable1.BackColor = System.Drawing.Color.Black
         Me.XrTable1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTable1.ForeColor = System.Drawing.Color.White
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 252.0833!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 238.125!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(703.5284!, 25.0!)
@@ -385,14 +385,20 @@ Partial Public Class XtraReport2
         Me.PageFooter.HeightF = 100.0!
         Me.PageFooter.Name = "PageFooter"
         '
+        'GroupHeader1
+        '
+        Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("tgl", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending), New DevExpress.XtraReports.UI.GroupField("username", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.GroupHeader1.HeightF = 0.0!
+        Me.GroupHeader1.Name = "GroupHeader1"
+        '
         'XtraReport2
         '
-        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.PageFooter})
+        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.PageFooter, Me.GroupHeader1})
         Me.ComponentStorage.Add(Me.SqlDataSource1)
         Me.DataMember = "audit_log"
         Me.DataSource = Me.SqlDataSource1
         Me.FilterString = "[tgl] Between(?tglawal, ?tglakhir) And [id_user] = ?username"
-        Me.Margins = New System.Drawing.Printing.Margins(100, 11, 71, 100)
+        Me.Margins = New System.Drawing.Printing.Margins(99, 11, 71, 100)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.tglawal, Me.tglakhir, Me.username})
         Me.Version = "14.2"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -435,4 +441,5 @@ Partial Public Class XtraReport2
     Friend WithEvents XrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
     Friend WithEvents PageFooter As DevExpress.XtraReports.UI.PageFooterBand
+    Friend WithEvents GroupHeader1 As DevExpress.XtraReports.UI.GroupHeaderBand
 End Class

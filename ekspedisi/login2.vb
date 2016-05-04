@@ -30,6 +30,7 @@
                     MessageBox.Show("Password Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     cek = True
+                    audit()
                     Me.Close()
                 End If
             End If
@@ -38,6 +39,15 @@
         End Try
 
     End Sub
+
+    Sub audit()
+        Dim user As String = username.Text.ToString
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Login"
+        Dim aktivitas As String = "User Login: " & username.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
     Sub checkakses()
         Dim selectall As String = "select * from hak_akses"
         Dim tableselect As New DataTable
