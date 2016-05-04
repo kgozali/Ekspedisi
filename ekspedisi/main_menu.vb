@@ -120,12 +120,25 @@ Public Class main_menu
                 dtprinciple = DtTable("SELECT id_transaksi `Kode Transaksi`,nama_principle `Nama Principle`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `trans_do` td,booking_truk bk,mprinciple mp WHERE td.id_booking=bk.id_booking and mp.id_principle=bk.id_principle and td.s='1' and jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and jatuh_tempo >= now() order by jatuh_tempo")
                 GridControl2.DataSource = dtprinciple
                 GridView2.OptionsView.ShowFooter = True
-                For i = 0 To GridView3.Columns.Count - 1
+                For i = 0 To GridView2.Columns.Count - 1
                     GridView2.Columns(i).OptionsColumn.AllowEdit = False
                     If GridView2.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
                         GridView2.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
                         GridView2.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
                         GridView2.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                    End If
+                Next
+
+                Dim dtsupir As New DataTable
+                dtsupir = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_supir `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,msupir mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_supir=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
+                GridControl5.DataSource = dtsupir
+                GridView5.OptionsView.ShowFooter = True
+                For i = 0 To GridView5.Columns.Count - 1
+                    GridView5.Columns(i).OptionsColumn.AllowEdit = False
+                    If GridView5.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                        GridView5.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                        GridView5.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                        GridView5.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
                     End If
                 Next
 
