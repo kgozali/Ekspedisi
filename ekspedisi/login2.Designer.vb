@@ -97,6 +97,7 @@ Partial Class login2
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.login)
         Me.Controls.Add(Me.cancel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
