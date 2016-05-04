@@ -443,6 +443,7 @@ Partial Class master_peluanasan_karyawan
         Me.Controls.Add(Me.printing)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "master_peluanasan_karyawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Piutang Karyawan"

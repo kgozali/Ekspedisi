@@ -128,6 +128,7 @@ Partial Class daftar_piutang_karyawan
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_piutang_karyawan"
         Me.Text = "Daftar Piutang Karyawan"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()

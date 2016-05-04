@@ -248,6 +248,7 @@ Partial Class edit_pelunasan_karyawan
         Me.Controls.Add(Me.LabelControl6)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_pelunasan_karyawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Pelunasan Karyawan"

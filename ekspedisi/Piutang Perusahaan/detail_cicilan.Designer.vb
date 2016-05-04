@@ -19,6 +19,7 @@ Partial Class detail_cicilan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(detail_cicilan))
         Me.DocumentViewer1 = New DevExpress.XtraPrinting.Preview.DocumentViewer()
         Me.SuspendLayout()
         '
@@ -37,6 +38,7 @@ Partial Class detail_cicilan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(852, 502)
         Me.Controls.Add(Me.DocumentViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "detail_cicilan"
         Me.Text = "Detil Cicilan"
         Me.ResumeLayout(False)

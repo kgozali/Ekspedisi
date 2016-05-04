@@ -19,6 +19,7 @@ Partial Class laporan_piutang_karyawansupir
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(laporan_piutang_karyawansupir))
         Me.DocumentViewer1 = New DevExpress.XtraPrinting.Preview.DocumentViewer()
         Me.SuspendLayout()
         '
@@ -37,6 +38,7 @@ Partial Class laporan_piutang_karyawansupir
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1013, 606)
         Me.Controls.Add(Me.DocumentViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "laporan_piutang_karyawansupir"
         Me.Text = "Laporan Pinjaman Supir & Karyawan"
         Me.ResumeLayout(False)

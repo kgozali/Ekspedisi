@@ -61,6 +61,7 @@ Partial Class bukti_piutang
         Me.ClientSize = New System.Drawing.Size(570, 548)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "bukti_piutang"
         Me.Text = "Scan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

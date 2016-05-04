@@ -490,6 +490,7 @@ Partial Class pelunasan_piutang
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.principle)
         Me.Controls.Add(Me.LabelControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "pelunasan_piutang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Piutang"

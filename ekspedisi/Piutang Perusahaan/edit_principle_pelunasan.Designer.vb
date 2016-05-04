@@ -532,6 +532,7 @@ Partial Class edit_principle_pelunasan
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl13)
         Me.Controls.Add(Me.LabelControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_principle_pelunasan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Pelunasan Principle"
