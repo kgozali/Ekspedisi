@@ -365,7 +365,7 @@ Partial Public Class ReportMasterPrinciple
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         CustomSqlQuery1.Name = "CustomSqlQuery"
         CustomSqlQuery1.Sql = "SELECT id_principle `Kode Principle`, nama_principle `Nama Principle`, Alamat, Em" & _

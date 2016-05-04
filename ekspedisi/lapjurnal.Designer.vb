@@ -36,6 +36,7 @@ Partial Public Class lapjurnal
         Me.GroupHeaderBand1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageFooterBand1 = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.ReportHeaderBand1 = New DevExpress.XtraReports.UI.ReportHeaderBand()
@@ -58,8 +59,6 @@ Partial Public Class lapjurnal
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
-        Me.tglawal = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.tglakhir = New DevExpress.XtraReports.Parameters.Parameter()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -68,7 +67,8 @@ Partial Public Class lapjurnal
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
+        Me.tglawal = New DevExpress.XtraReports.Parameters.Parameter()
+        Me.tglakhir = New DevExpress.XtraReports.Parameters.Parameter()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -155,7 +155,7 @@ Partial Public Class lapjurnal
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         CustomSqlQuery1.Name = "CustomSqlQuery"
         CustomSqlQuery1.Sql = resources.GetString("CustomSqlQuery1.Sql")
@@ -188,6 +188,12 @@ Partial Public Class lapjurnal
         Me.PageFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine1, Me.XrPageInfo1, Me.XrPageInfo2})
         Me.PageFooterBand1.HeightF = 33.16668!
         Me.PageFooterBand1.Name = "PageFooterBand1"
+        '
+        'XrLine1
+        '
+        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(5.999994!, 0.0!)
+        Me.XrLine1.Name = "XrLine1"
+        Me.XrLine1.SizeF = New System.Drawing.SizeF(956.5!, 10.16668!)
         '
         'XrPageInfo1
         '
@@ -406,21 +412,6 @@ Partial Public Class lapjurnal
         Me.PageHeader.HeightF = 26.04167!
         Me.PageHeader.Name = "PageHeader"
         '
-        'tglawal
-        '
-        Me.tglawal.Description = "Parameter1"
-        Me.tglawal.Name = "tglawal"
-        Me.tglawal.Type = GetType(Date)
-        Me.tglawal.ValueInfo = "2016-04-25"
-        Me.tglawal.Visible = False
-        '
-        'tglakhir
-        '
-        Me.tglakhir.Description = "Parameter1"
-        Me.tglakhir.Name = "tglakhir"
-        Me.tglakhir.Type = GetType(Date)
-        Me.tglakhir.Visible = False
-        '
         'XrTable1
         '
         Me.XrTable1.BackColor = System.Drawing.Color.Black
@@ -483,11 +474,20 @@ Partial Public Class lapjurnal
         Me.XrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell6.Weight = 1.3232678766840653R
         '
-        'XrLine1
+        'tglawal
         '
-        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(5.999994!, 0.0!)
-        Me.XrLine1.Name = "XrLine1"
-        Me.XrLine1.SizeF = New System.Drawing.SizeF(956.5!, 10.16668!)
+        Me.tglawal.Description = "Parameter1"
+        Me.tglawal.Name = "tglawal"
+        Me.tglawal.Type = GetType(Date)
+        Me.tglawal.ValueInfo = "2016-04-25"
+        Me.tglawal.Visible = False
+        '
+        'tglakhir
+        '
+        Me.tglakhir.Description = "Parameter1"
+        Me.tglakhir.Name = "tglakhir"
+        Me.tglakhir.Type = GetType(Date)
+        Me.tglakhir.Visible = False
         '
         'lapjurnal
         '

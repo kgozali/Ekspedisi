@@ -56,6 +56,9 @@ Partial Public Class Nota_bookingtruk
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
+        Me.XrLabel31 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel30 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel29 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
@@ -98,9 +101,6 @@ Partial Public Class Nota_bookingtruk
         Me.XrCrossBandBox4 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrCrossBandBox5 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrCrossBandBox6 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrLabel30 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel31 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -129,6 +129,37 @@ Partial Public Class Nota_bookingtruk
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo1, Me.XrLabel31, Me.XrLabel30, Me.XrLabel29, Me.XrLabel28, Me.XrLabel27, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel23, Me.XrLabel22, Me.XrLabel21, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrPictureBox1, Me.XrLine1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLabel19, Me.XrLabel18, Me.XrLabel20, Me.XrLabel17})
         Me.ReportHeader.HeightF = 607.3334!
         Me.ReportHeader.Name = "ReportHeader"
+        '
+        'XrPageInfo1
+        '
+        Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrPageInfo1.Format = "{0:dd-MMMM-yyyy,}"
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(404.8015!, 396.5439!)
+        Me.XrPageInfo1.Name = "XrPageInfo1"
+        Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
+        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrPageInfo1.StylePriority.UseFont = False
+        '
+        'XrLabel31
+        '
+        Me.XrLabel31.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(541.2767!, 425.1591!)
+        Me.XrLabel31.Name = "XrLabel31"
+        Me.XrLabel31.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel31.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
+        Me.XrLabel31.StylePriority.UseFont = False
+        Me.XrLabel31.Text = "Penerima"
+        '
+        'XrLabel30
+        '
+        Me.XrLabel30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4275!, 425.1591!)
+        Me.XrLabel30.Name = "XrLabel30"
+        Me.XrLabel30.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel30.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
+        Me.XrLabel30.StylePriority.UseFont = False
+        Me.XrLabel30.Text = "Mengetahui,"
         '
         'XrLabel29
         '
@@ -501,7 +532,7 @@ Partial Public Class Nota_bookingtruk
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "booking_truk"
         RelationColumnInfo1.NestedKeyColumn = "id_principle"
@@ -641,37 +672,6 @@ Partial Public Class Nota_bookingtruk
         Me.XrCrossBandBox6.StartBand = Me.ReportHeader
         Me.XrCrossBandBox6.StartPointFloat = New DevExpress.Utils.PointFloat(529.8016!, 419.5712!)
         Me.XrCrossBandBox6.WidthF = 125.0!
-        '
-        'XrLabel30
-        '
-        Me.XrLabel30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4275!, 425.1591!)
-        Me.XrLabel30.Name = "XrLabel30"
-        Me.XrLabel30.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel30.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
-        Me.XrLabel30.StylePriority.UseFont = False
-        Me.XrLabel30.Text = "Mengetahui,"
-        '
-        'XrLabel31
-        '
-        Me.XrLabel31.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(541.2767!, 425.1591!)
-        Me.XrLabel31.Name = "XrLabel31"
-        Me.XrLabel31.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel31.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
-        Me.XrLabel31.StylePriority.UseFont = False
-        Me.XrLabel31.Text = "Penerima"
-        '
-        'XrPageInfo1
-        '
-        Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrPageInfo1.Format = "{0:dd-MMMM-yyyy,}"
-        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(404.8015!, 396.5439!)
-        Me.XrPageInfo1.Name = "XrPageInfo1"
-        Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
-        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
-        Me.XrPageInfo1.StylePriority.UseFont = False
         '
         'Nota_bookingtruk
         '

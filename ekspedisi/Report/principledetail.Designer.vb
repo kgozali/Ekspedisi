@@ -79,6 +79,7 @@ Partial Public Class principledetail
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.stat = New DevExpress.XtraReports.Parameters.Parameter()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
@@ -116,7 +117,6 @@ Partial Public Class principledetail
         Me.XrCrossBandBox2 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,7 +124,7 @@ Partial Public Class principledetail
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "trans_do"
         RelationColumnInfo1.NestedKeyColumn = "id_transaksi"
@@ -292,6 +292,16 @@ Partial Public Class principledetail
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel12, Me.XrPageInfo1, Me.XrLabel22, Me.XrLabel11, Me.XrLabel10, Me.XrLabel7, Me.XrLabel24, Me.XrPictureBox1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLine2})
         Me.ReportHeader.HeightF = 356.25!
         Me.ReportHeader.Name = "ReportHeader"
+        '
+        'XrLabel12
+        '
+        Me.XrLabel12.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(232.8372!, 146.875!)
+        Me.XrLabel12.Name = "XrLabel12"
+        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel12.SizeF = New System.Drawing.SizeF(312.5656!, 23.0!)
+        Me.XrLabel12.StylePriority.UseFont = False
+        Me.XrLabel12.Text = "LAPORAN REKAP TRANSAKSI"
         '
         'XrPageInfo1
         '
@@ -679,16 +689,6 @@ Partial Public Class principledetail
         Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo2})
         Me.PageFooter.HeightF = 45.20836!
         Me.PageFooter.Name = "PageFooter"
-        '
-        'XrLabel12
-        '
-        Me.XrLabel12.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(232.8372!, 146.875!)
-        Me.XrLabel12.Name = "XrLabel12"
-        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel12.SizeF = New System.Drawing.SizeF(312.5656!, 23.0!)
-        Me.XrLabel12.StylePriority.UseFont = False
-        Me.XrLabel12.Text = "LAPORAN REKAP TRANSAKSI"
         '
         'principledetail
         '

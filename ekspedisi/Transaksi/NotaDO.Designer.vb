@@ -469,7 +469,7 @@ Partial Public Class NotaDO
         '
         'SqlDataSource2
         '
-        Me.SqlDataSource2.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource2.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource2.Name = "SqlDataSource2"
         TableQuery1.Name = "trans_do"
         RelationColumnInfo1.NestedKeyColumn = "id_transaksi"

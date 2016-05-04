@@ -78,7 +78,7 @@ Partial Public Class laporanKIR
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
+        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "kir"
         RelationColumnInfo1.NestedKeyColumn = "id_truk"
