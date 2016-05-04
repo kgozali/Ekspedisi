@@ -45,6 +45,9 @@ Partial Class booking_truk
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,13 +60,17 @@ Partial Class booking_truk
         Me.GroupControl2.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(32, 8)
+        Me.Label1.Location = New System.Drawing.Point(27, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 18)
         Me.Label1.TabIndex = 0
@@ -73,7 +80,7 @@ Partial Class booking_truk
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(31, 57)
+        Me.Label2.Location = New System.Drawing.Point(26, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 18)
         Me.Label2.TabIndex = 1
@@ -83,7 +90,7 @@ Partial Class booking_truk
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(576, 9)
+        Me.Label4.Location = New System.Drawing.Point(691, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 18)
         Me.Label4.TabIndex = 3
@@ -93,7 +100,7 @@ Partial Class booking_truk
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(592, 58)
+        Me.Label6.Location = New System.Drawing.Point(707, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 18)
         Me.Label6.TabIndex = 5
@@ -103,7 +110,7 @@ Partial Class booking_truk
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(592, 32)
+        Me.Label7.Location = New System.Drawing.Point(707, 34)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 18)
         Me.Label7.TabIndex = 6
@@ -112,14 +119,14 @@ Partial Class booking_truk
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(136, 6)
+        Me.id.Location = New System.Drawing.Point(131, 6)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(138, 21)
         Me.id.TabIndex = 1
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(136, 55)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(131, 55)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 3
@@ -127,7 +134,7 @@ Partial Class booking_truk
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(691, 415)
+        Me.SimpleButton1.Location = New System.Drawing.Point(793, 658)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(118, 27)
         Me.SimpleButton1.TabIndex = 11
@@ -136,7 +143,7 @@ Partial Class booking_truk
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(567, 415)
+        Me.Submit.Location = New System.Drawing.Point(669, 658)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(118, 27)
         Me.Submit.TabIndex = 10
@@ -145,18 +152,19 @@ Partial Class booking_truk
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.GridControl1)
-        Me.GroupControl1.Location = New System.Drawing.Point(15, 112)
+        Me.GroupControl1.Location = New System.Drawing.Point(10, 112)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(785, 63)
+        Me.GroupControl1.Size = New System.Drawing.Size(907, 63)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data Booking"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.gridkontak
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(775, 46)
+        Me.GridControl1.Size = New System.Drawing.Size(903, 40)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridkontak})
         '
@@ -168,7 +176,7 @@ Partial Class booking_truk
         '
         'ButtonEdit1
         '
-        Me.ButtonEdit1.Location = New System.Drawing.Point(640, 58)
+        Me.ButtonEdit1.Location = New System.Drawing.Point(755, 60)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit1.Size = New System.Drawing.Size(160, 20)
@@ -176,7 +184,7 @@ Partial Class booking_truk
         '
         'ButtonEdit2
         '
-        Me.ButtonEdit2.Location = New System.Drawing.Point(640, 7)
+        Me.ButtonEdit2.Location = New System.Drawing.Point(755, 9)
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit2.Size = New System.Drawing.Size(160, 20)
@@ -184,7 +192,7 @@ Partial Class booking_truk
         '
         'ButtonEdit4
         '
-        Me.ButtonEdit4.Location = New System.Drawing.Point(640, 32)
+        Me.ButtonEdit4.Location = New System.Drawing.Point(755, 34)
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.ButtonEdit4.Size = New System.Drawing.Size(160, 20)
@@ -193,7 +201,7 @@ Partial Class booking_truk
         'TimeEdit1
         '
         Me.TimeEdit1.EditValue = New Date(2016, 4, 8, 0, 0, 0, 0)
-        Me.TimeEdit1.Location = New System.Drawing.Point(136, 78)
+        Me.TimeEdit1.Location = New System.Drawing.Point(131, 78)
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
@@ -203,7 +211,7 @@ Partial Class booking_truk
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(56, 80)
+        Me.Label3.Location = New System.Drawing.Point(51, 80)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 18)
         Me.Label3.TabIndex = 153
@@ -212,18 +220,19 @@ Partial Class booking_truk
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl2)
-        Me.GroupControl2.Location = New System.Drawing.Point(15, 200)
+        Me.GroupControl2.Location = New System.Drawing.Point(10, 190)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(700, 69)
+        Me.GroupControl2.Size = New System.Drawing.Size(905, 69)
         Me.GroupControl2.TabIndex = 147
         Me.GroupControl2.Text = "Pembayaran DP"
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl2.Location = New System.Drawing.Point(2, 21)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(690, 47)
+        Me.GridControl2.Size = New System.Drawing.Size(901, 46)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -235,16 +244,16 @@ Partial Class booking_truk
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(75, 288)
+        Me.RichTextBox2.Location = New System.Drawing.Point(72, 581)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(375, 94)
+        Me.RichTextBox2.Size = New System.Drawing.Size(375, 50)
         Me.RichTextBox2.TabIndex = 8
         Me.RichTextBox2.Text = ""
         '
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(15, 287)
+        Me.LabelControl10.Location = New System.Drawing.Point(12, 580)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(51, 18)
         Me.LabelControl10.TabIndex = 55
@@ -252,7 +261,7 @@ Partial Class booking_truk
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(136, 31)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(131, 31)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker2.TabIndex = 2
@@ -261,7 +270,7 @@ Partial Class booking_truk
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.Label5.Location = New System.Drawing.Point(12, 34)
+        Me.Label5.Location = New System.Drawing.Point(7, 34)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 18)
         Me.Label5.TabIndex = 154
@@ -270,17 +279,43 @@ Partial Class booking_truk
         'SimpleButton3
         '
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(443, 415)
+        Me.SimpleButton3.Location = New System.Drawing.Point(545, 658)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(118, 27)
         Me.SimpleButton3.TabIndex = 9
         Me.SimpleButton3.Text = "Submit and Print"
         '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl3)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 277)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(901, 287)
+        Me.GroupControl3.TabIndex = 155
+        Me.GroupControl3.Text = "Daftar Barang"
+        '
+        'GridControl3
+        '
+        Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl3.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl3.MainView = Me.GridView1
+        Me.GridControl3.Name = "GridControl3"
+        Me.GridControl3.Size = New System.Drawing.Size(897, 264)
+        Me.GridControl3.TabIndex = 0
+        Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl3
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
         'booking_truk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(815, 454)
+        Me.ClientSize = New System.Drawing.Size(924, 697)
+        Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.Label5)
@@ -318,6 +353,10 @@ Partial Class booking_truk
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -347,4 +386,7 @@ Partial Class booking_truk
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl3 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
