@@ -102,6 +102,33 @@ Public Class main_menu
                         GridView4.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
                     End If
                 Next
+
+                Dim dtpiutang As New DataTable
+                dtpiutang = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_karyawan `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,mkaryawan mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_karyawan=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
+                GridControl3.DataSource = dtpiutang
+                GridView3.OptionsView.ShowFooter = True
+                For i = 0 To GridView3.Columns.Count - 1
+                    GridView3.Columns(i).OptionsColumn.AllowEdit = False
+                    If GridView3.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                        GridView3.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                        GridView3.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                        GridView3.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                    End If
+                Next
+
+                Dim dtprinciple As New DataTable
+                dtprinciple = DtTable("SELECT id_transaksi `Kode Transaksi`,nama_principle `Nama Principle`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `trans_do` td,booking_truk bk,mprinciple mp WHERE td.id_booking=bk.id_booking and mp.id_principle=bk.id_principle and td.s='1' and jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and jatuh_tempo >= now() order by jatuh_tempo")
+                GridControl2.DataSource = dtprinciple
+                GridView2.OptionsView.ShowFooter = True
+                For i = 0 To GridView3.Columns.Count - 1
+                    GridView2.Columns(i).OptionsColumn.AllowEdit = False
+                    If GridView2.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                        GridView2.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                        GridView2.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                        GridView2.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                    End If
+                Next
+
             Else
                 MessageBox.Show("Tidak ada koneksi internet, periksa kembali koneksi Internet", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -291,8 +318,8 @@ Public Class main_menu
         frntutupperiode.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton14_Click(sender As Object, e As EventArgs) Handles SimpleButton14.Click
-        main_menu_Load(sender, e)
+    Private Sub SimpleButton14_Click(sender As Object, e As EventArgs)
+
     End Sub
 
 

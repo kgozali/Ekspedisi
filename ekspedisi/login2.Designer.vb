@@ -37,7 +37,7 @@ Partial Class login2
         Me.login.Location = New System.Drawing.Point(105, 98)
         Me.login.Name = "login"
         Me.login.Size = New System.Drawing.Size(100, 27)
-        Me.login.TabIndex = 170
+        Me.login.TabIndex = 3
         Me.login.Text = "Login"
         '
         'Label1
@@ -56,7 +56,7 @@ Partial Class login2
         Me.username.Location = New System.Drawing.Point(105, 24)
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(206, 22)
-        Me.username.TabIndex = 172
+        Me.username.TabIndex = 1
         '
         'password
         '
@@ -65,7 +65,7 @@ Partial Class login2
         Me.password.Name = "password"
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.password.Size = New System.Drawing.Size(206, 22)
-        Me.password.TabIndex = 173
+        Me.password.TabIndex = 2
         '
         'Label2
         '
@@ -83,7 +83,7 @@ Partial Class login2
         Me.cancel.Location = New System.Drawing.Point(211, 98)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 169
+        Me.cancel.TabIndex = 4
         Me.cancel.Text = "Cancel"
         '
         'login2

@@ -22,7 +22,6 @@ Partial Class main_menu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main_menu))
         Me.BackstageViewControl1 = New DevExpress.XtraBars.Ribbon.BackstageViewControl()
         Me.BackstageViewClientControl12 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
-        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
@@ -195,30 +194,20 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
-        Me.BackstageViewControl1.SelectedTabIndex = 1
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem2
+        Me.BackstageViewControl1.SelectedTabIndex = 0
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
         '
         'BackstageViewClientControl12
         '
-        Me.BackstageViewClientControl12.Controls.Add(Me.SimpleButton14)
         Me.BackstageViewClientControl12.Controls.Add(Me.Label21)
         Me.BackstageViewClientControl12.Controls.Add(Me.XtraTabControl1)
         Me.BackstageViewClientControl12.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
         Me.BackstageViewClientControl12.Size = New System.Drawing.Size(813, 697)
         Me.BackstageViewClientControl12.TabIndex = 10
-        '
-        'SimpleButton14
-        '
-        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(689, 75)
-        Me.SimpleButton14.Name = "SimpleButton14"
-        Me.SimpleButton14.Size = New System.Drawing.Size(89, 23)
-        Me.SimpleButton14.TabIndex = 4
-        Me.SimpleButton14.Text = "Refresh"
         '
         'Label21
         '
@@ -288,6 +277,7 @@ Partial Class main_menu
         Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl3.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl3.TabIndex = 0
@@ -297,6 +287,7 @@ Partial Class main_menu
         '
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl2.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl2.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.Size = New System.Drawing.Size(745, 541)
@@ -320,6 +311,7 @@ Partial Class main_menu
         Me.GroupControl4.Controls.Add(Me.GridControl3)
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl4.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GroupControl4.Name = "GroupControl4"
         Me.GroupControl4.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl4.TabIndex = 0
@@ -329,6 +321,7 @@ Partial Class main_menu
         '
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl3.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl3.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GridControl3.MainView = Me.GridView3
         Me.GridControl3.Name = "GridControl3"
         Me.GridControl3.Size = New System.Drawing.Size(745, 541)
@@ -352,6 +345,7 @@ Partial Class main_menu
         Me.GroupControl1.Controls.Add(Me.GridControl4)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(749, 564)
         Me.GroupControl1.TabIndex = 0
@@ -361,6 +355,7 @@ Partial Class main_menu
         '
         Me.GridControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl4.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl4.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GridControl4.MainView = Me.GridView4
         Me.GridControl4.Name = "GridControl4"
         Me.GridControl4.Size = New System.Drawing.Size(745, 541)
@@ -1117,7 +1112,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl12
         Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
-        Me.BackstageViewTabItem2.Selected = False
+        Me.BackstageViewTabItem2.Selected = True
         '
         'BackstageViewTabItem1
         '
@@ -1125,7 +1120,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = True
+        Me.BackstageViewTabItem1.Selected = False
         '
         'BackstageViewTabItem8
         '
@@ -1411,7 +1406,6 @@ Partial Class main_menu
     Friend WithEvents pelunasanpiutangkaryawan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents peluanasapiutangprinciple As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents mastersupir As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
 End Class
