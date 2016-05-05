@@ -221,8 +221,9 @@ Public Class booking_truk
 
                 Dim dt2 As New DataTable
                 GridControl3.DataSource = dt2
-                dt2 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
-                RepositoryItemLookUpEdit1.DataSource = dt2
+                Dim dt3 As New DataTable
+                dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
+                RepositoryItemLookUpEdit1.DataSource = dt3
                 RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
                 RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
                 rutebook = ""

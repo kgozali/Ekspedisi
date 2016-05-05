@@ -306,6 +306,8 @@ Partial Class booking_truk
         '
         'GridControl3
         '
+        Me.GridControl3.DataMember = "databarang"
+        Me.GridControl3.DataSource = Me.DataSet1
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl3.Location = New System.Drawing.Point(2, 21)
         Me.GridControl3.MainView = Me.GridView1
