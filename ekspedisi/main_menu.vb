@@ -73,87 +73,89 @@ Public Class main_menu
         Try
 
             login2.ShowDialog()
-            If checkconnection() = True Then
-                GridView2.OptionsView.ShowFooter = True
-                GridView3.OptionsView.ShowFooter = True
-
-                'MENU DO APPLICATION MANAGER
-                Dim dtdo As New DataTable
-                dtdo = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo))` Tanggal Jatuh Tempo` from trans_do where jatuh_tempo <= date_add(now(),INTERVAL 31 DAY) and jatuh_tempo >= now() and s=1 and del=0 order by jatuh_tempo asc")
-                GridControl1.DataSource = dtdo
-                GridView1.OptionsView.ShowFooter = True
-                For i = 0 To GridView1.Columns.Count - 1
-                    GridView1.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView1.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
-                        GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-                        GridView1.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
-                        GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-                    End If
-                Next
-
-                'MENU KIR APPLICATION MANAGER
-                Dim dtkir As New DataTable
-                dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() and del=0 order by tgl_kir_berikutnya")
-                GridControl4.DataSource = dtkir
-                GridView4.OptionsView.ShowFooter = True
-                For i = 0 To GridView4.Columns.Count - 1
-                    GridView4.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView4.Columns(i).FieldName.ToString = "Tanggal KIR Berikutnya" Then
-                        GridView4.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-                        GridView4.Columns(i).SummaryItem.FieldName = "Tanggal KIR Berikutnya"
-                        GridView4.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-                    End If
-                Next
-
-                Dim dtpiutang As New DataTable
-                dtpiutang = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_karyawan `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,mkaryawan mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_karyawan=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
-                GridControl3.DataSource = dtpiutang
-                GridView3.OptionsView.ShowFooter = True
-                For i = 0 To GridView3.Columns.Count - 1
-                    GridView3.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView3.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
-                        GridView3.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-                        GridView3.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
-                        GridView3.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-                    End If
-                Next
-
-                Dim dtprinciple As New DataTable
-                dtprinciple = DtTable("SELECT id_transaksi `Kode Transaksi`,nama_principle `Nama Principle`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `trans_do` td,booking_truk bk,mprinciple mp WHERE td.id_booking=bk.id_booking and mp.id_principle=bk.id_principle and td.s='1' and jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and jatuh_tempo >= now() order by jatuh_tempo")
-                GridControl2.DataSource = dtprinciple
-                GridView2.OptionsView.ShowFooter = True
-                For i = 0 To GridView2.Columns.Count - 1
-                    GridView2.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView2.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
-                        GridView2.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-                        GridView2.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
-                        GridView2.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-                    End If
-                Next
-
-                Dim dtsupir As New DataTable
-                dtsupir = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_supir `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,msupir mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_supir=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
-                GridControl5.DataSource = dtsupir
-                GridView5.OptionsView.ShowFooter = True
-                For i = 0 To GridView5.Columns.Count - 1
-                    GridView5.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView5.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
-                        GridView5.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-                        GridView5.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
-                        GridView5.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
-                    End If
-                Next
-
-            Else
-                MessageBox.Show("Tidak ada koneksi internet, periksa kembali koneksi Internet", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
+            refreshorganizer()
         Catch ex As Exception
 
         End Try
 
 
     End Sub
+    Public Sub refreshorganizer()
+        If checkconnection() = True Then
+            GridView2.OptionsView.ShowFooter = True
+            GridView3.OptionsView.ShowFooter = True
 
+            'MENU DO APPLICATION MANAGER
+            Dim dtdo As New DataTable
+            dtdo = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo))` Tanggal Jatuh Tempo` from trans_do where jatuh_tempo <= date_add(now(),INTERVAL 31 DAY) and jatuh_tempo >= now() and s=1 and del=0 order by jatuh_tempo asc")
+            GridControl1.DataSource = dtdo
+            GridView1.OptionsView.ShowFooter = True
+            For i = 0 To GridView1.Columns.Count - 1
+                GridView1.Columns(i).OptionsColumn.AllowEdit = False
+                If GridView1.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                    GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                    GridView1.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                    GridView1.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                End If
+            Next
+
+            'MENU KIR APPLICATION MANAGER
+            Dim dtkir As New DataTable
+            dtkir = DtTable("select no_pol `No.Polisi`,concat(day(tgl_kir_berikutnya),'-',monthname(tgl_kir_berikutnya),'-',year(tgl_kir_berikutnya)) `Tanggal KIR Berikutnya` from mtruk,kir where mtruk.id_truk=kir.id_truk and tgl_kir_berikutnya <= date_add(now(),INTERVAL 31 DAY) and tgl_kir_berikutnya >= now() and del=0 order by tgl_kir_berikutnya")
+            GridControl4.DataSource = dtkir
+            GridView4.OptionsView.ShowFooter = True
+            For i = 0 To GridView4.Columns.Count - 1
+                GridView4.Columns(i).OptionsColumn.AllowEdit = False
+                If GridView4.Columns(i).FieldName.ToString = "Tanggal KIR Berikutnya" Then
+                    GridView4.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                    GridView4.Columns(i).SummaryItem.FieldName = "Tanggal KIR Berikutnya"
+                    GridView4.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                End If
+            Next
+
+            Dim dtpiutang As New DataTable
+            dtpiutang = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_karyawan `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,mkaryawan mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_karyawan=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
+            GridControl3.DataSource = dtpiutang
+            GridView3.OptionsView.ShowFooter = True
+            For i = 0 To GridView3.Columns.Count - 1
+                GridView3.Columns(i).OptionsColumn.AllowEdit = False
+                If GridView3.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                    GridView3.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                    GridView3.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                    GridView3.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                End If
+            Next
+
+            Dim dtprinciple As New DataTable
+            dtprinciple = DtTable("SELECT id_transaksi `Kode Transaksi`,nama_principle `Nama Principle`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `trans_do` td,booking_truk bk,mprinciple mp WHERE td.id_booking=bk.id_booking and mp.id_principle=bk.id_principle and td.s='1' and jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and jatuh_tempo >= now() order by jatuh_tempo")
+            GridControl2.DataSource = dtprinciple
+            GridView2.OptionsView.ShowFooter = True
+            For i = 0 To GridView2.Columns.Count - 1
+                GridView2.Columns(i).OptionsColumn.AllowEdit = False
+                If GridView2.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                    GridView2.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                    GridView2.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                    GridView2.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                End If
+            Next
+
+            Dim dtsupir As New DataTable
+            dtsupir = DtTable("SELECT id_piutangkaryawan `Kode Piutang`,nama_supir `Nama karyawan`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` FROM `piutang_karyawan`pk,msupir mk WHERE jatuh_tempo<=date_add(NOW(),INTERVAL 31 DAY) and status='1' and mk.id_supir=pk.id_karyawan and jatuh_tempo >= now() order by jatuh_tempo")
+            GridControl5.DataSource = dtsupir
+            GridView5.OptionsView.ShowFooter = True
+            For i = 0 To GridView5.Columns.Count - 1
+                GridView5.Columns(i).OptionsColumn.AllowEdit = False
+                If GridView5.Columns(i).FieldName.ToString = "Tanggal Jatuh Tempo" Then
+                    GridView5.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                    GridView5.Columns(i).SummaryItem.FieldName = "Tanggal Jatuh Tempo"
+                    GridView5.Columns(i).SummaryItem.DisplayFormat = "Total {0} records"
+                End If
+            Next
+
+        Else
+            MessageBox.Show("Tidak ada koneksi internet, periksa kembali koneksi Internet", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 
 
 

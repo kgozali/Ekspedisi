@@ -112,7 +112,7 @@ Public Class edit_kir_truk
                 MessageBox.Show("Data KIR dengan No." & kode.ToString & " berhasil diubah", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 insertakun()
                 audit()
-
+                main_menu.refreshorganizer()
             Else
                 MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
