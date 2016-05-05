@@ -200,7 +200,7 @@ Public Class booking_truk
             jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
             Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',0,1,1,0)")
             For i = 0 To GridView1.RowCount - 1
-                datarow = DataSet1.Tables.Item(1).Rows(i)
+                datarow = DataSet1.Tables.Item(0).Rows(i)
                 InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "')")
             Next
             insertakun()

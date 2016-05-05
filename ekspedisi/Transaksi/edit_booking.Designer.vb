@@ -47,6 +47,13 @@ Partial Class edit_booking
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.databarang = New System.Data.DataSet()
+        Me.DataTable1 = New System.Data.DataTable()
+        Me.DataColumn1 = New System.Data.DataColumn()
+        Me.DataColumn2 = New System.Data.DataColumn()
+        Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +70,9 @@ Partial Class edit_booking
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.databarang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridControl1
@@ -285,19 +295,65 @@ Partial Class edit_booking
         '
         'GridControl3
         '
+        Me.GridControl3.DataMember = "tabelbarang"
+        Me.GridControl3.DataSource = Me.databarang
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl3.Location = New System.Drawing.Point(2, 21)
         Me.GridControl3.MainView = Me.GridView1
         Me.GridControl3.Name = "GridControl3"
+        Me.GridControl3.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
         Me.GridControl3.Size = New System.Drawing.Size(897, 264)
         Me.GridControl3.TabIndex = 0
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl3
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'databarang
+        '
+        Me.databarang.DataSetName = "NewDataSet"
+        Me.databarang.Tables.AddRange(New System.Data.DataTable() {Me.DataTable1})
+        '
+        'DataTable1
+        '
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2})
+        Me.DataTable1.TableName = "tabelbarang"
+        '
+        'DataColumn1
+        '
+        Me.DataColumn1.ColumnName = "namabarang"
+        '
+        'DataColumn2
+        '
+        Me.DataColumn2.ColumnName = "berat"
+        '
+        'namabarang
+        '
+        Me.namabarang.Caption = "Nama Barang"
+        Me.namabarang.ColumnEdit = Me.RepositoryItemLookUpEdit1
+        Me.namabarang.FieldName = "namabarang"
+        Me.namabarang.Name = "namabarang"
+        Me.namabarang.Visible = True
+        Me.namabarang.VisibleIndex = 0
+        '
+        'berat
+        '
+        Me.berat.Caption = "Berat (KG)"
+        Me.berat.FieldName = "berat"
+        Me.berat.Name = "berat"
+        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:0.##} Kilogram")})
+        Me.berat.Visible = True
+        Me.berat.VisibleIndex = 1
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
         '
         'edit_booking
         '
@@ -345,6 +401,9 @@ Partial Class edit_booking
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.databarang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -376,4 +435,11 @@ Partial Class edit_booking
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl3 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents databarang As System.Data.DataSet
+    Friend WithEvents DataTable1 As System.Data.DataTable
+    Friend WithEvents DataColumn1 As System.Data.DataColumn
+    Friend WithEvents DataColumn2 As System.Data.DataColumn
+    Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
