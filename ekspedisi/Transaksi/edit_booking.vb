@@ -276,7 +276,17 @@ Public Class edit_booking
     End Sub
    
     
-    Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
-        
+    
+
+    Private Sub ButtonEdit4_Click(sender As Object, e As EventArgs) Handles ButtonEdit4.Click
+        If principlebook = "" Then
+            MessageBox.Show("Pilih principle terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            list_rute_edit.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
+        list_truk_edit.ShowDialog()
     End Sub
 End Class

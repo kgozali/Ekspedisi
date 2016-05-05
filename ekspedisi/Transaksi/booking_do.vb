@@ -101,7 +101,7 @@ Public Class booking_do
         booking_do_Load(sender, e)
     End Sub
 
-    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click, gridbooking.DoubleClick
         view()
         transaksi_DO.idbooking.Text = kodebooking
         Me.Visible = False
