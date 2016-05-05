@@ -372,4 +372,25 @@ Public Class main_menu
         Dim aktivitas As String = "User Logout: " & username.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
+
+    Private Sub SimpleButton14_Click_1(sender As Object, e As EventArgs) Handles SimpleButton14.Click
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Audit Log?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msg = DialogResult.Yes Then
+            Dim insert As Boolean = InsertInto("DELETE FROM audit_log")
+            If insert = True Then
+                MessageBox.Show("Audit Log berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                auditdel()
+            Else
+                MessageBox.Show("Audit Log gagal dihapus,Coba beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        End If
+    End Sub
+    Sub auditdel()
+        Dim user As String = username.ToString
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Audit Log"
+        Dim aktivitas As String = "Wipe Audit Log: " & username.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
 End Class

@@ -15,6 +15,7 @@ Public Class edit_booking
     Dim akundpsupir As String = ""
     Public Sub edit_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            GridControl3.UseEmbeddedNavigator = True
             'select akun default
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
             akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
@@ -123,6 +124,7 @@ Public Class edit_booking
         rutebook = ""
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
+        databarang.Tables("tabelbarang").Rows.Clear()
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click

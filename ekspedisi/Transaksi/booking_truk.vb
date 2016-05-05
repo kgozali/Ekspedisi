@@ -14,6 +14,7 @@ Public Class booking_truk
     Dim akundpsupir As String = ""
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            GridControl3.UseEmbeddedNavigator = True
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
             akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
             akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
@@ -93,6 +94,7 @@ Public Class booking_truk
         rutebook = ""
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
+        DataSet1.Tables("databarang").Rows.Clear()
         grid()
     End Sub
 
@@ -228,9 +230,7 @@ Public Class booking_truk
 
             Else
 
-                Dim dt2 As New DataTable
-
-                'GridControl3.DataSource = dt2
+                
                 Dim dt3 As New DataTable
                 dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
                 RepositoryItemLookUpEdit1.DataSource = dt3
@@ -384,6 +384,11 @@ Public Class booking_truk
     End Sub
 
     Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
+        Dim dt3 As New DataTable
+        dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
+        RepositoryItemLookUpEdit1.DataSource = dt3
+        RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
+        RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
         grid()
     End Sub
 
