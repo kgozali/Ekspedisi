@@ -1,5 +1,6 @@
 ﻿Public Class harga_supir
     Dim data As New DataTable
+    Dim cek As Boolean = False
     Private Sub harga_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             data = New DataTable
@@ -18,13 +19,28 @@
                 datapilih.Columns.Add("id", GetType(String))
                 datapilih.Columns.Add("harga", GetType(Double))
             End If
+            cek = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        Me.Close()
+        Try
+            If datapilih.Rows.Count > 0 Then
+                Dim a As Integer = MessageBox.Show("Data mengalami perubahan, apakah anda akan melakukan penyimpanan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If a = DialogResult.Yes Then
+                    Submit_Click(sender, e)
+                    Me.Close()
+                Else
+                    Me.Close()
+                End If
+            Else
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
@@ -45,6 +61,7 @@
 
     Private Sub supir_SelectedIndexChanged(sender As Object, e As EventArgs) Handles supir.SelectedIndexChanged
         Try
+            datapilih.Clear()
             data = New DataTable
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
             hargasupir.DataSource = data
@@ -78,7 +95,16 @@
                         End With
                     End If
                 Next k
-
+                For j = 0 To datapilih.Rows.Count - 1
+                    If dataharga.GetRowCellValue(i, "Kode Rute") = datapilih.Rows(j).Item("id") Then
+                        With dataharga
+                            .SetRowCellValue(i, "Check List Rute", True)
+                        End With
+                        With dataharga
+                            .SetRowCellValue(i, "Harga Maksimum", datapilih.Rows(j).Item("harga"))
+                        End With
+                    End If
+                Next j
             Next i
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -130,8 +156,20 @@
 
     Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanged
         Try
-            If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "check list rute") = True Or e.Column.FieldName = "Harga Maksimum" Then
-                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+            If cek = True Then
+                If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True And e.Column.FieldName = "Harga Maksimum" Then
+                    If e.Value > 0 Then
+                        datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+                    End If
+                End If
+                If e.Column.FieldName = "Check List Rute" Then
+                    For i = 0 To datapilih.Rows.Count - 1
+                        If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") = datapilih.Rows(i).Item(0) Then
+                            datapilih.Rows.RemoveAt(i)
+                        End If
+                    Next i
+
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
