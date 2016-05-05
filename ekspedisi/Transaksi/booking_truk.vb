@@ -158,22 +158,28 @@ Public Class booking_truk
                                 If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
                                     MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                 Else
-                                    If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
-                                        Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                        If msg = DialogResult.OK Then
-                                            autogen()
+                                    If GridView1.RowCount < 1 Then
+                                        MessageBox.Show("Harap menambahkan barang terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                                    Else
+
+                                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                            Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                            If msg = DialogResult.OK Then
+                                                autogen()
+                                                insert()
+                                                audit()
+                                            Else
+
+                                            End If
+                                        Else
                                             insert()
                                             audit()
-                                        Else
-
                                         End If
-                                    Else
-                                        insert()
-                                        audit()
-                                    End If
 
                                 End If
 
+                                End If
                             End If
                         End If
                     End If
@@ -339,28 +345,33 @@ Public Class booking_truk
                                 If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
                                     MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                 Else
-                                    If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
-                                        Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                        If msg = DialogResult.OK Then
-                                            autogen()
+                                    If GridView1.RowCount < 1 Then
+                                        MessageBox.Show("Harap menambahkan barang terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                                    Else
+                                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                            Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                            If msg = DialogResult.OK Then
+                                                autogen()
+                                                insert()
+
+                                                audit()
+                                                frm_bookingtruk.bookcode = kode.ToString
+                                                frm_bookingtruk.ShowDialog()
+                                            Else
+
+                                            End If
+                                        Else
                                             insert()
-                                           
+
                                             audit()
                                             frm_bookingtruk.bookcode = kode.ToString
                                             frm_bookingtruk.ShowDialog()
-                                        Else
-
                                         End If
-                                    Else
-                                        insert()
-                                        
-                                        audit()
-                                        frm_bookingtruk.bookcode = kode.ToString
-                                        frm_bookingtruk.ShowDialog()
+
                                     End If
 
                                 End If
-
                             End If
                         End If
                     End If
