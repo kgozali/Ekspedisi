@@ -100,7 +100,7 @@ Partial Class login2
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Login - Ekspedisi PT SSKM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
