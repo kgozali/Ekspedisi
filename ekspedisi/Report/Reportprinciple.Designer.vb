@@ -83,7 +83,7 @@ Partial Public Class Reportprinciple
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         CustomSqlQuery1.Name = "vw_principlerpt"
         CustomSqlQuery1.Sql = resources.GetString("CustomSqlQuery1.Sql")
@@ -318,7 +318,7 @@ Partial Public Class Reportprinciple
         '
         Me.XrLabel18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.kota")})
         Me.XrLabel18.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(34.92637!, 296.2108!)
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(34.9263!, 296.2106!)
         Me.XrLabel18.Name = "XrLabel18"
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel18.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -331,7 +331,7 @@ Partial Public Class Reportprinciple
         '
         Me.XrLabel17.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vw_principlerpt.alamat", "{0},")})
         Me.XrLabel17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(34.92637!, 267.7523!)
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(34.9263!, 267.7525!)
         Me.XrLabel17.Name = "XrLabel17"
         Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel17.SizeF = New System.Drawing.SizeF(330.2083!, 28.45834!)
@@ -651,7 +651,7 @@ Partial Public Class Reportprinciple
         '
         Me.XrCrossBandBox1.BorderWidth = 2.0!
         Me.XrCrossBandBox1.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(23.57456!, 333.3882!)
+        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(23.57456!, 330.2632!)
         Me.XrCrossBandBox1.LocationFloat = New DevExpress.Utils.PointFloat(23.57456!, 210.0329!)
         Me.XrCrossBandBox1.Name = "XrCrossBandBox1"
         Me.XrCrossBandBox1.StartBand = Me.ReportHeader
