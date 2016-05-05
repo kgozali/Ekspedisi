@@ -220,7 +220,7 @@ Public Class booking_truk
             Else
 
                 Dim dt2 As New DataTable
-                GridControl3.DataSource = dt2
+                'GridControl3.DataSource = dt2
                 Dim dt3 As New DataTable
                 dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
                 RepositoryItemLookUpEdit1.DataSource = dt3
