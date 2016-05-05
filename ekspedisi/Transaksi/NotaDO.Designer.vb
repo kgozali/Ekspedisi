@@ -262,7 +262,7 @@ Partial Public Class NotaDO
         Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(29.16667!, 349.2869!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(223.8426!, 23.0!)
         Me.XrLabel2.StylePriority.UseFont = False
         Me.XrLabel2.Text = "XrLabel2"
         '

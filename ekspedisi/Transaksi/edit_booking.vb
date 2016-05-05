@@ -207,7 +207,7 @@ Public Class edit_booking
             Next
             If insert = True Then
                 insertakun()
-                MessageBox.Show("Perubahan terhadap booking" & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Perubahan terhadap booking " & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
                 Me.Close()
             End If
