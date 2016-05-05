@@ -129,7 +129,6 @@ Partial Class daftar_principle_pelunasan
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.submit)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_principle_pelunasan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Principle"
