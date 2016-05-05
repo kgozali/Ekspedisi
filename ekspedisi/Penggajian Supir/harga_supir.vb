@@ -1,4 +1,4 @@
-﻿Public Class harga_supir 
+﻿Public Class harga_supir
     Dim data As New DataTable
     Private Sub harga_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -10,9 +10,12 @@
             data = New DataTable
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
             hargasupir.DataSource = data
-            
+            If datapilih.Columns.Count = 0 Then
+                datapilih.Columns.Add("id", GetType(String))
+                datapilih.Columns.Add("harga", GetType(Double))
+            End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -30,9 +33,9 @@
                 data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle and id_rute like '%" & cari.Text & "%'")
                 hargasupir.DataSource = data
             End If
-            
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -41,9 +44,9 @@
             data = New DataTable
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
             hargasupir.DataSource = data
-            
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Dim sudah As New DataTable
@@ -74,17 +77,10 @@
 
             Next i
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Sub audit()
-        Dim user As String = main_menu.username
-        Dim kompname As String = System.Net.Dns.GetHostName
-        Dim form As String = "Harga Supir"
-        Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir" & supir.SelectedValue.ToString
-        auditlog(user, kompname, form, aktivitas)
-    End Sub
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             InsertInto("delete from dsupir where id_supir='" & supir.SelectedValue.ToString & "'")
@@ -96,7 +92,7 @@
             supir_SelectedIndexChanged(sender, e)
             MessageBox.Show("Data berhasil diinput", "Konfirmasi Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Dim keamanan As String
@@ -105,12 +101,12 @@
             If dataharga.FocusedColumn.AbsoluteIndex <> 4 Then
                 keamanan = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, dataharga.FocusedColumn)
             End If
-            
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
+    Dim datapilih As New DataTable
     Private Sub dataharga_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanging
         Try
             If e.Column.FieldName <> "Harga Maksimum" Then
@@ -118,8 +114,24 @@
                     .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
                 End With
             End If
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub harga_supir_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        datapilih.Clear()
+    End Sub
+
+    Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanged
+        Try
+            If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "check list rute") = True Or e.Column.FieldName = "Harga Maksimum" Then
+                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 End Class
