@@ -331,6 +331,8 @@ Partial Class edit_booking
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.berat})
         Me.GridView1.GridControl = Me.GridControl3
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        Me.GridView1.OptionsView.ShowFooter = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'namabarang
