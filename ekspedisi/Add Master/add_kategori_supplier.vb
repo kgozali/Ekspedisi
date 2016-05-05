@@ -75,8 +75,8 @@ Public Class add_kategori_supplier
 
                 'insert ke dalam database
                 InsertInto("insert into mkategori_supplier values ('" & id.Text & "','" & nama.Text & "','1') ")
-                'konfirmasi melakukan booking ulang
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                'konfirmasi melakukan Input ulang
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_kategori_supplier_Load(sender, e)
                     Reset()

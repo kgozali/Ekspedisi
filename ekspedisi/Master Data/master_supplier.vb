@@ -21,13 +21,14 @@ Public Class master_supplier
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            deldata.Down = False
-            edit.Down = False
-            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
-            editing.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
             GridControl1.DataSource = data
@@ -161,7 +162,7 @@ Public Class master_supplier
             If GridView2.IsRowSelected(GridView2.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
                     If unchecks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supplier").ToString Then
-                        MsgBox(unchecks.Rows(i).Item(0).ToString)
+                        'MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
                         checks.Rows.Add(cc)
@@ -170,7 +171,7 @@ Public Class master_supplier
             Else
                 For i = 0 To checks.Rows.Count() - 1
                     If checks.Rows(i).Item(0).ToString = GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supplier").ToString Then
-                        MsgBox(checks.Rows(i).Item(0).ToString)
+                        'MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
                         unchecks.Rows.Add(cc)
@@ -189,11 +190,15 @@ Public Class master_supplier
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
         deldata.Enabled = True
         edit.Enabled = True
+        data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='1'")
+        GridControl1.DataSource = data
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
         deldata.Enabled = False
         edit.Enabled = False
+        data = DtTable("SELECT s.id_supplier `Kode Supplier`, s.nama_supplier `Nama Supplier`, s.Alamat `Alamat`, s.Email, s.tel1`Telepon 1`, s.tel2 `Telepon 2`, s.Kota, s.Provinsi, m.kategori_supplier `Nama Kategori` from msupplier s, mkategori_supplier m where m.id_kategori = s.id_kategori and s.`s`='0'")
+        GridControl1.DataSource = data
     End Sub
 
     Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick

@@ -271,6 +271,7 @@ Public Class KIR_Truk
             MessageBox.Show("KIR dengan No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             insertakun()
             audit()
+            main_menu.refreshorganizer()
         Else
             MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If

@@ -20,18 +20,19 @@ Public Class master_principle
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            deldata.Down = False
-            edit.Down = False
-            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
-            editing.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT id_principle `Kode Principle`, nama_principle `Nama Principle`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mprinciple b where b.`s`='1'")
             GridControl1.DataSource = data
             For i = 0 To data.Columns.Count - 1
-                gridprinciple.Columns(i).OptionsColumn.AllowEdit = False
+                Gridprinciple.Columns(i).OptionsColumn.AllowEdit = False
             Next
 
             If checks.Columns.Count = 0 Then
@@ -39,8 +40,8 @@ Public Class master_principle
                 unchecks.Columns.Add("Kode Principle")
 
             End If
-            For i = 0 To gridprinciple.DataRowCount - 1
-                Dim temp As String = gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
+            For i = 0 To Gridprinciple.DataRowCount - 1
+                Dim temp As String = Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
                 unchecks.Rows.Add(temp)
             Next
         Catch ex As Exception
@@ -67,10 +68,10 @@ Public Class master_principle
             GridControl2.DataSource = data
             'memberi cek ke Kode yg udah didalam dttable checks
             If checks.Rows.Count > 0 Then
-                For i = 0 To Gridprinciple.DataRowCount - 1
+                For i = 0 To GridView1.DataRowCount - 1
                     For j = 0 To checks.Rows.Count() - 1
-                        If Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString = checks.Rows(j).Item(0).ToString Then
-                            Gridprinciple.SelectRow(i)
+                        If GridView1.GetRowCellValue(i, "Kode Principle").ToString = checks.Rows(j).Item(0).ToString Then
+                            GridView1.SelectRow(i)
                         End If
                     Next
                 Next
@@ -100,8 +101,8 @@ Public Class master_principle
 
     Private Sub editing_Click(sender As Object, e As EventArgs) Handles editing.Click
         Dim cek As Boolean = False
-        For i = 0 To Gridprinciple.RowCount - 1
-            If Gridprinciple.IsRowSelected(i) Then
+        For i = 0 To GridView1.RowCount - 1
+            If GridView1.IsRowSelected(i) Then
                 cek = True
             End If
         Next i
@@ -115,18 +116,18 @@ Public Class master_principle
     Private Sub hapus_Click(sender As Object, e As EventArgs) Handles hapus.Click
         Try
             Dim cek As Boolean = False
-            For i = 0 To Gridprinciple.RowCount - 1
-                If Gridprinciple.IsRowSelected(i) = True Then
+            For i = 0 To GridView1.RowCount - 1
+                If GridView1.IsRowSelected(i) = True Then
                     cek = True
                 End If
             Next i
             If cek = True Then
                 Select Case MsgBox("Apakah anda yakin menghapus data ini?", MsgBoxStyle.YesNo, "System Error")
                     Case MsgBoxResult.Yes
-                        For i = 0 To Gridprinciple.RowCount - 1
-                            If Gridprinciple.IsRowSelected(i) = True Then
-                                InsertInto("update mprinciple set `s`=0 where id_principle='" & Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString & "'")
-                                dataygdidelete = Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
+                        For i = 0 To GridView1.RowCount - 1
+                            If GridView1.IsRowSelected(i) = True Then
+                                InsertInto("update mprinciple set `s`=0 where id_principle='" & GridView1.GetRowCellValue(i, "Kode Principle").ToString & "'")
+                                dataygdidelete = GridView1.GetRowCellValue(i, "Kode Principle").ToString
                                 audit()
                             End If
                         Next i
@@ -156,9 +157,9 @@ Public Class master_principle
 
     Private Sub gridview1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
         Try
-            If GridView1.IsRowSelected(Gridprinciple.FocusedRowHandle) Then
+            If GridView1.IsRowSelected(GridView1.FocusedRowHandle) Then
                 For i = 0 To unchecks.Rows.Count() - 1
-                    If unchecks.Rows(i).Item(0).ToString = Gridprinciple.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle").ToString Then
+                    If unchecks.Rows(i).Item(0).ToString = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle").ToString Then
                         'MsgBox(unchecks.Rows(i).Item(0).ToString)
                         Dim cc As String = unchecks.Rows(i).Item(0).ToString
                         unchecks.Rows.RemoveAt(i)
@@ -167,7 +168,7 @@ Public Class master_principle
                 Next
             Else
                 For i = 0 To checks.Rows.Count() - 1
-                    If checks.Rows(i).Item(0).ToString = Gridprinciple.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle").ToString Then
+                    If checks.Rows(i).Item(0).ToString = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Principle").ToString Then
                         'MsgBox(checks.Rows(i).Item(0).ToString)
                         Dim cc As String = checks.Rows(i).Item(0).ToString
                         checks.Rows.RemoveAt(i)
@@ -208,8 +209,8 @@ Public Class master_principle
             GridControl2.Visible = True
             data = DtTable("SELECT id_principle `Kode Principle`, nama_principle `Nama Principle`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mprinciple b where b.`s`='1'")
             GridControl2.DataSource = data
-            For i = 0 To Gridprinciple.DataRowCount - 1
-                Dim temp As String = Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Principle").ToString
                 unchecks.Rows.Add(temp)
             Next
         Else
@@ -236,8 +237,8 @@ Public Class master_principle
             GridControl2.Visible = True
             data = DtTable("SELECT id_principle `Kode Principle`, nama_principle `Nama Principle`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mprinciple b where b.`s`='1'")
             GridControl2.DataSource = data
-            For i = 0 To Gridprinciple.DataRowCount - 1
-                Dim temp As String = Gridprinciple.GetRowCellValue(i, "Kode Principle").ToString
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Principle").ToString
                 unchecks.Rows.Add(temp)
             Next
         Else

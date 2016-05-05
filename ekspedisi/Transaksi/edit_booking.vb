@@ -38,6 +38,21 @@ Public Class edit_booking
             DateTimePicker1.Value = tgljam.Rows(0).Item("tgl")
             DateTimePicker2.Value = tgljam.Rows(0).Item("jam_input")
             TimeEdit1.EditValue = tgljam.Rows(0).Item("jam")
+
+            'select gridview barang
+            Dim dtbarang As New DataTable
+            databarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + principlebook.ToString + "'")
+            RepositoryItemLookUpEdit1.DataSource = dtbarang
+            RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
+            RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
+
+            Dim tabelbarang As New DataTable
+            tabelbarang = DtTable("select id_barang `namabarang`,qty `berat` from dbooking_truk where id_booking='" + kode + "'")
+            Dim mreader As DataTableReader
+
+            mreader = tabelbarang.CreateDataReader
+            databarang.Tables(0).Load(mreader)
+
             grid()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)

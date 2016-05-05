@@ -21,9 +21,9 @@ Public Class list_edit_barang
                 data.Columns.Add("Keterangan")
             End If
 
-            For i = 0 To master_barang.GridView2.RowCount - 1
+            For i = 0 To master_barang.checks.Rows.Count - 1
                 Dim datatemp As New DataTable
-                datatemp = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang = '" & master_barang.checks.Rows(i).Item(0).ToString & "'")
+                datatemp = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and id_barang = '" & master_barang.checks.Rows(i).Item(0).ToString & "'")
                 Dim a As String = datatemp.Rows(0).Item("Kode Barang").ToString()
                 Dim b As String = datatemp.Rows(0).Item("Nama Barang").ToString()
                 Dim c As String = datatemp.Rows(0).Item("Nama Principle").ToString()

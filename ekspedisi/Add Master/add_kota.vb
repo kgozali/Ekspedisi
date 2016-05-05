@@ -58,9 +58,9 @@ Public Class add_kota
         Try
             'insert ke dalam database
             InsertInto("insert into mkota values ('','" & provinsi.Text & "','" & kota.Text & "','1') ")
-            'konfirmasi melakukan booking ulang
+            'konfirmasi melakukan Input ulang
             audit()
-            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
                 add_kota_Load(sender, e)
                 Reset()

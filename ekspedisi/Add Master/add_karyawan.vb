@@ -34,6 +34,15 @@ Public Class add_karyawan
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        master_karyawan.deldata.Down = False
+        master_karyawan.edit.Down = False
+        master_karyawan.GroupControl2.Enabled = True
+        master_karyawan.GridControl1.Visible = True
+        master_karyawan.GridControl2.Visible = False
+        master_karyawan.editing.Visible = False
+        master_karyawan.hapus.Visible = False
+        data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
+        master_karyawan.GridControl1.DataSource = data
         Me.Close()
     End Sub
 
@@ -54,9 +63,9 @@ Public Class add_karyawan
 
                 'insert ke dalam database
                 InsertInto("insert into mkaryawan values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','" & jabatan.SelectedValue.ToString & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "',null,'" & RichTextBox1.Text & "','" & ktp.Text & "','1') ")
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_karyawan_Load(sender, e)
                     Reset()
@@ -112,7 +121,7 @@ Public Class add_karyawan
         DateTimePicker1.ResetText()
         ktp.Text = ""
 
-        cbjabatan = DtTable("select id_jabatan `Kode Jabatan`,nama_jabatan `Nama Jabatan` from mjabatan")
+        cbjabatan = DtTable("select id_jabatan `Kode Jabatan`,nama_jabatan `Nama Jabatan` from mjabatan where s = '1'")
         jabatan.DataSource = cbjabatan
         jabatan.DisplayMember = "Nama Jabatan"
         jabatan.ValueMember = "Kode Jabatan"

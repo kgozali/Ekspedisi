@@ -17,16 +17,17 @@ Public Class master_rute
 
     Private Sub master_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Clear()
-            unchecks.Clear()
             checks.Clear()
-            GroupControl2.Enabled = True
+            unchecks.Clear()
+            data.Clear()
             GridControl1.Visible = True
             GridControl2.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
             editing.Visible = False
-            edit.Down = False
             deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT s.id_rute `Kode Rute`, s.kota_asal `Kota Asal`, s.kota_tujuan `Kota Tujuan`,p.nama_principle `Nama Principle`, s.price_per_unit `Price Per Unit`, s.unit `Unit` from mrute s, mprinciple p where s.id_principle = p.id_principle and s.`s`='1'")
             GridControl1.DataSource = data
@@ -264,4 +265,7 @@ Public Class master_rute
         showgridpreview(GridControl1)
     End Sub
     
+    Private Sub ubahharga_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles ubahharga.ItemClick
+        form_perubahan_harga.ShowDialog()
+    End Sub
 End Class

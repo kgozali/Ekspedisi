@@ -110,6 +110,13 @@ Public Class edit_truck
         Dim aktivitas As String = "Edit Truk: " & id.Text.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
-
- 
+    Private Sub umur_KeyPress(sender As Object, e As KeyPressEventArgs) Handles umur.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+    End Sub
+    Private Sub nilairesidu_KeyPress(sender As Object, e As KeyPressEventArgs) Handles nilairesidu.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+    End Sub
+    Private Sub hargabeli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargabeli.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+    End Sub
 End Class

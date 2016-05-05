@@ -12,6 +12,7 @@ Public Class edit_kontak_principle
         master_kontak_principle.hapus.Visible = False
         master_kontak_principle.editing.Visible = False
         master_kontak_principle.edit.Down = False
+        master_kontak_principle.GroupControl2.Enabled = True
     End Sub
     Private Sub edit_kontak_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -27,7 +28,7 @@ Public Class edit_kontak_principle
 
             For i = 0 To master_kontak_principle.checks.Rows.Count - 1
                 Dim datatemp As New DataTable
-                datatemp = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and b.id_kontak'" & master_kontak_principle.checks.Rows(i).Item(0).ToString & "'")
+                datatemp = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1' and b.id_kontak = '" & master_kontak_principle.checks.Rows(i).Item(0).ToString & "'")
                 Dim a As String = datatemp.Rows(0).Item("Kode Kontak").ToString()
                 Dim b As String = datatemp.Rows(0).Item("Nama Principle").ToString()
                 Dim c As String = datatemp.Rows(0).Item("Nama Kontak").ToString()
@@ -58,6 +59,7 @@ Public Class edit_kontak_principle
         master_kontak_principle.hapus.Visible = False
         master_kontak_principle.editing.Visible = False
         master_kontak_principle.edit.Down = False
+        master_kontak_principle.GroupControl2.Enabled = True
         Me.Close()
     End Sub
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick

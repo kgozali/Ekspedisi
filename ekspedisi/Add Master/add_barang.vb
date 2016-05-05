@@ -127,7 +127,7 @@ Public Class add_barang
 
     Private Sub add_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataTable1.Rows.Clear()
-        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
+        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
         principle.DataSource = cbprinciple
         principle.DisplayMember = "Nama Principle"
         principle.ValueMember = "Kode Principle"
@@ -156,7 +156,7 @@ Public Class add_barang
                 MsgBox(ex.Message)
             End Try
             'konfirmasi melakukan booking ulang
-            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             If msg = DialogResult.Yes Then
                 add_barang_Load(sender, e)
                 master_barang.GridControl1.Visible = True

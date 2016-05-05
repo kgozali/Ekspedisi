@@ -76,12 +76,14 @@ Public Class master_jabatan
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            data.Clear()
             GridControl1.Visible = True
             GridControl2.Visible = False
             GroupControl2.Enabled = True
             hapus.Visible = False
             editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1'")
             GridControl1.DataSource = data
@@ -104,7 +106,7 @@ Public Class master_jabatan
 
     End Sub
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Then
+        If edit.Down = True Or deldata.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
                     data = DtTable("SELECT id_jabatan `Kode Jabatan`, b.nama_jabatan `Nama Jabatan` from mjabatan b where b.`s`='1' and id_jabatan like '%" & cari.Text & "%'")

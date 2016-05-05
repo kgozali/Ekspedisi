@@ -5,16 +5,16 @@ Public Class edit_rute
     Dim cbprinciple As New DataTable
     Private Sub edit_rute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
+            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
             principle.DataSource = cbprinciple
             principle.DisplayMember = "Nama Principle"
             principle.ValueMember = "Kode Principle"
 
-            cbasal = DtTable("select kota from mkota")
+            cbasal = DtTable("select kota from mkota where s = '1'")
             asal.DataSource = cbasal
             asal.DisplayMember = "Kota"
             asal.ValueMember = "Kota"
-            cbtujuan = DtTable("select kota from mkota")
+            cbtujuan = DtTable("select kota from mkota where s = '1'")
             tujuan.DataSource = cbtujuan
             tujuan.DisplayMember = "Kota"
             tujuan.ValueMember = "Kota"
@@ -58,4 +58,8 @@ Public Class edit_rute
         Dim aktivitas As String = "Edit Rute: " & id.Text.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
+    Private Sub hargaunit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles hargaunit.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
+    End Sub
+
 End Class

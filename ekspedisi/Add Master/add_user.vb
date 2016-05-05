@@ -3,6 +3,7 @@ Public Class add_user
     Dim inputuser As String = ""
     Dim data As New DataTable
     Dim cek As Boolean
+
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         add_user_Load(sender, e)
         master_user.deldata.Down = False
@@ -100,7 +101,7 @@ Public Class add_user
                         Next
                         audit()
 
-                        Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                        Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                         If msg = DialogResult.Yes Then
                             add_user_Load(sender, e)
                             Reset()

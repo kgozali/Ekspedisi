@@ -17,16 +17,18 @@ Public Class master_truck
    
 
     Private Sub master_truck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        data.Clear()
         checks.Clear()
         unchecks.Clear()
+        data.Clear()
+        GridControl1.Visible = True
+        GridControl2.Visible = False
+        GroupControl2.Enabled = True
+        hapus.Visible = False
+        editing.Visible = False
         deldata.Down = False
         edit.Down = False
-        GridControl2.Visible = False
-        GridControl1.Visible = True
-        GroupControl2.Enabled = True
-        editing.Visible = False
-        hapus.Visible = False
+        cari.Text = ""
+
         data = DtTable("SELECT t.id_truk `Kode Truk`, t.no_pol `No Polisi`, t.no_mesin `No Mesin`, t.no_rangka `No Rangka`, s.nama_supplier `Nama Supplier`, t.harga_beli `Harga Beli`, t.umur_default `Umur Default`, t.nilai_residu `Nilai Residu`, a.nama_akun `Akun Aktiva`, p.nama_akun `Akun Penyusutan`, d.nama_akun `Akun Depresiasi`, t.tgl_beli `Tanggal Beli` from mtruk t, makun a, makun d, makun p, msupplier s where t.id_supplier = s.id_supplier and t.id_akun_akt = a.kode_akun and t.id_akun_depresiasi = d.kode_akun and t.id_akun_penyusutan = p.kode_akun and t.`s`='1'")
         GridControl1.DataSource = data
 
