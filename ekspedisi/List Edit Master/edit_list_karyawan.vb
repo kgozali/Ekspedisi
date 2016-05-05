@@ -39,7 +39,7 @@ Public Class edit_list_karyawan
                 Dim d As String = datatemp.Rows(0).Item("Email").ToString
                 Dim e1 As String = datatemp.Rows(0).Item("Telepon 1").ToString
                 Dim f As String = datatemp.Rows(0).Item("Telepon 2").ToString
-                Dim g As String = datatemp.Rows(0).Item("Kota ").ToString
+                Dim g As String = datatemp.Rows(0).Item("Kota").ToString
                 Dim h As String = datatemp.Rows(0).Item("Jabatan").ToString
                 Dim j As String = datatemp.Rows(0).Item("Tanggal Masuk").ToString
                 Dim k As String = datatemp.Rows(0).Item("Keterangan").ToString
@@ -89,5 +89,9 @@ Public Class edit_list_karyawan
 
     Private Sub GridView1_RowCellClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs) Handles GridView1.RowCellClick
         edit_karyawan.ShowDialog()
+    End Sub
+
+    Private Sub GroupControl1_Paint(sender As Object, e As PaintEventArgs) Handles GroupControl1.Paint
+
     End Sub
 End Class

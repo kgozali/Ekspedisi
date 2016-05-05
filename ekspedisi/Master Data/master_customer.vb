@@ -20,28 +20,31 @@ Public Class master_customer
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            deldata.Down = False
-            edit.Down = False
-            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
-            editing.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT id_customer `Kode Customer`, nama_customer `Nama Customer`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mcustomer b where b.`s`='1'")
             GridControl1.DataSource = data
-            For i = 0 To data.Columns.Count - 1
-                gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
-            Next
+
 
             If checks.Columns.Count = 0 Then
                 checks.Columns.Add("Kode Customer")
                 unchecks.Columns.Add("Kode Customer")
                
             End If
-            For i = 0 To gridcustomer.DataRowCount - 1
-                Dim temp As String = gridcustomer.GetRowCellValue(i, "Kode Customer").ToString
+            For i = 0 To GridView1.DataRowCount - 1
+                Dim temp As String = GridView1.GetRowCellValue(i, "Kode Customer").ToString
                 unchecks.Rows.Add(temp)
+            Next
+
+            For i = 0 To data.Columns.Count - 1
+                gridcustomer.Columns(i).OptionsColumn.AllowEdit = False
             Next
         Catch ex As Exception
             MsgBox(ex.Message)

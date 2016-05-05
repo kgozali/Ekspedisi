@@ -2,7 +2,7 @@
 Public Class edit_barang
     Dim cbprinciple As New DataTable
     Private Sub edit_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
+        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
         principle.DataSource = cbprinciple
         principle.DisplayMember = "Nama Principle"
         principle.ValueMember = "Kode Principle"

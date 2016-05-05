@@ -114,9 +114,9 @@ Public Class add_truck
                     InsertInto(masukan2)
 
                 End If
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_truck_Load(sender, e)
                     Reset()

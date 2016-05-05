@@ -15,7 +15,7 @@ Public Class add_kontak_principle
                 hitung = "0" + hitung
             End While
 
-            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple")
+            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
             principle.DataSource = cbprinciple
             principle.DisplayMember = "Nama Principle"
             principle.ValueMember = "Kode Principle"
@@ -45,7 +45,7 @@ Public Class add_kontak_principle
                     add_kontak_principle_Load(sender, e)
                     master_kontak_principle.GridControl1.Visible = True
                     master_kontak_principle.GridControl2.Visible = False
-                    data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
+                    data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
                     master_kontak_principle.GridControl1.DataSource = data
                     master_kontak_principle.edit.Down = False
                     master_kontak_principle.deldata.Down = False
@@ -60,7 +60,7 @@ Public Class add_kontak_principle
                 add_kontak_principle_Load(sender, e)
                 master_kontak_principle.GridControl1.Visible = True
                 master_kontak_principle.GridControl2.Visible = False
-                data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
+                data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
                 master_kontak_principle.GridControl1.DataSource = data
                 master_kontak_principle.edit.Down = False
                 master_kontak_principle.deldata.Down = False
@@ -90,9 +90,9 @@ Public Class add_kontak_principle
 
                 'insert ke dalam database
                 InsertInto("insert into mkontakprinciple values ('" & id.Text & "','" & principle.SelectedValue.ToString & "','" & nama.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & email.Text & "','1') ")
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_kontak_principle_Load(sender, e)
                     Reset()
@@ -128,7 +128,7 @@ Public Class add_kontak_principle
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_kontak_principle.GridControl1.Visible = True
         master_kontak_principle.GridControl2.Visible = False
-        data = DtTable("SELECT id_Kontak `Kode Kontak Principle`, nama_kontak `Nama Kontak`, Alamat, Email,tel1 `Telepon 1`,tel2 `Telepon 2`,Kota, Provinsi from mkontakprinciple b where b.`s`='1'")
+        data = DtTable("SELECT b.id_kontak `Kode Kontak`,p.nama_principle `Nama Principle`, b.nama_kontak `Nama Kontak`, b.tel1 `Telepon 1`, b.tel2 `Telepon 2`, b.Email `Email` from mkontakprinciple b, mprinciple p  where p.id_principle = b.id_principle and b.`s`='1'")
         master_kontak_principle.GridControl1.DataSource = data
         master_kontak_principle.edit.Down = False
         master_kontak_principle.deldata.Down = False

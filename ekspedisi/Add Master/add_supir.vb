@@ -73,9 +73,9 @@ Public Class add_supir
 
                 'insert ke dalam database
                 InsertInto("insert into msupir values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & kota.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "',null,'" & RichTextBox1.Text & "','1') ")
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_supir_Load(sender, e)
                     Reset()

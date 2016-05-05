@@ -21,13 +21,14 @@ Public Class master_supir
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            deldata.Down = False
-            edit.Down = False
-            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
-            editing.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
 
             data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1'")
             GridControl1.DataSource = data
@@ -60,9 +61,9 @@ Public Class master_supir
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir  where j.`s` = '1' and b.`s`='1' and nama_supir like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='1' and nama_supir like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir where  j.`s` = '1' and b.`s`='0' and nama_supir like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_supir `Kode Supir`, b.nama_supir `Nama Supir`, b.alamat `Alamat`, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan` from msupir b where b.`s`='0' and nama_supir like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data

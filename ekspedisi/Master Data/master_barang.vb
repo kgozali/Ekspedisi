@@ -15,14 +15,18 @@ Public Class master_barang
     End Sub
 
     Private Sub master_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        data.Clear()
         checks.Clear()
         unchecks.Clear()
         data.Clear()
+        GridControl1.Visible = True
+        GridControl2.Visible = False
+        GroupControl2.Enabled = True
+        hapus.Visible = False
+        editing.Visible = False
         deldata.Down = False
         edit.Down = False
-        GridControl2.Visible = False
-        GridControl1.Visible = True
+        cari.Text = ""
+
 
         data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         GridControl1.DataSource = data
@@ -232,7 +236,7 @@ Public Class master_barang
 
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 

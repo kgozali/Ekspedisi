@@ -21,14 +21,16 @@ Public Class master_karyawan
             checks.Clear()
             unchecks.Clear()
             data.Clear()
-            deldata.Down = False
-            edit.Down = False
-            GroupControl2.Enabled = True
             GridControl1.Visible = True
             GridControl2.Visible = False
-            editing.Visible = False
+            GroupControl2.Enabled = True
             hapus.Visible = False
-
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            If cari.Text <> "" Then
+                cari.Text = ""
+            End If
             data = DtTable("SELECT id_karyawan `Kode Karyawan`, b.nama_karyawan `Nama Karyawan`, b.alamat `Alamat`,Email, Kota, tel1 `Telepon 1`, tel2 `Telepon 2`, j.nama_jabatan `Jabatan`, tgl_masuk `Tanggal Masuk`, keterangan `Keterangan`, no_ktp `No KTP` from mkaryawan b, mjabatan j where b.id_jabatan = j.id_jabatan and j.`s` = '1' and b.`s`='1'")
             GridControl1.DataSource = data
 

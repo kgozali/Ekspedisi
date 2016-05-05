@@ -15,13 +15,17 @@ Public Class master_user
     End Sub
 
     Private Sub master_user_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        data.Clear()
-        deldata.Down = False
-        edit.Down = False
-        GridControl2.Visible = False
-        GridControl1.Visible = True
         checks.Clear()
         unchecks.Clear()
+        data.Clear()
+        GridControl1.Visible = True
+        GridControl2.Visible = False
+        hapus.Visible = False
+        editing.Visible = False
+        deldata.Down = False
+        edit.Down = False
+        cari.Text = ""
+
 
         data = DtTable("SELECT Username from muser where`s`='1'")
         GridControl1.DataSource = data

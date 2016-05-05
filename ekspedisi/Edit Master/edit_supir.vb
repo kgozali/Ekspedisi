@@ -3,6 +3,12 @@ Public Class edit_Supir
     Dim cbkota As New DataTable
     Private Sub edit_Supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+
+            cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+            kota.DataSource = cbkota
+            kota.ValueMember = "kota"
+            kota.DisplayMember = "kota"
+
             id.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle, "Kode Supir").ToString()
             nama.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle, "Nama Supir").ToString()
             alamat.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle.ToString, "Alamat").ToString()
@@ -11,7 +17,6 @@ Public Class edit_Supir
             kota.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle.ToString, "Kota").ToString()
             DateTimePicker1.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle.ToString, "Tanggal Masuk").ToString()
             RichTextBox1.Text = edit_list_supir.GridView1.GetRowCellValue(edit_list_supir.GridView1.FocusedRowHandle.ToString, "Keterangan").ToString()
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

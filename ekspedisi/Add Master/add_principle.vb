@@ -72,9 +72,9 @@ Public Class add_principle
 
                 'insert ke dalam database
                 InsertInto("insert into mprinciple values ('" & id.Text & "','" & nama.Text & "','" & alamat.Text & "','" & email.Text & "','" & tel1.Text & "','" & tel2.Text & "','" & provinsi.Text & "','" & kota.Text.ToString & "','1') ")
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_principle_Load(sender, e)
                     Reset()
@@ -110,7 +110,7 @@ Public Class add_principle
 
     Private Sub add_principle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
+            cbkota = DtTable("select kota, provinsi from mkota where s = '1' ")
             kota.DataSource = cbkota
             kota.ValueMember = "kota"
             kota.DisplayMember = "kota"

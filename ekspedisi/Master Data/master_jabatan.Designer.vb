@@ -216,7 +216,7 @@ Partial Class master_jabatan
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(748, 315)
+        Me.GridControl2.Size = New System.Drawing.Size(751, 315)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -326,7 +326,7 @@ Partial Class master_jabatan
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(414, 315)
+        Me.GridControl1.Size = New System.Drawing.Size(751, 315)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '

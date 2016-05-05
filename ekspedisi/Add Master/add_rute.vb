@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class add_rute
-    Dim cek As Boolean
+    Dim cek As Boolean = False
     Dim cbasal As New DataTable
     Dim ctujuan As New DataTable
     Dim cbprinciple As New DataTable
@@ -77,9 +77,9 @@ Public Class add_rute
 
                 'insert ke dalam database
                 InsertInto("insert into mrute values ('" & id.Text & "','" & asal.SelectedValue.ToString & "','" & tujuan.SelectedValue.ToString & "','" & principle.SelectedValue.ToString & "','" & hargaunit.Text & "','" & unit.Text & "','1') ")
-                'konfirmasi melakukan booking ulang
+                'konfirmasi melakukan Input ulang
                 audit()
-                Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
                 If msg = DialogResult.Yes Then
                     add_rute_Load(sender, e)
                     Reset()
@@ -127,11 +127,11 @@ Public Class add_rute
         End While
         id.Text = tgl + hitung
 
-        cbasal = DtTable("select kota from mkota")
+        cbasal = DtTable("select kota from mkota where s = '1'")
         asal.DataSource = cbasal
         asal.DisplayMember = "Kota"
         asal.ValueMember = "Kota"
-        ctujuan = DtTable("select kota from mkota")
+        ctujuan = DtTable("select kota from mkota where s = '1'")
         tujuan.DataSource = ctujuan
         tujuan.DisplayMember = "Kota"
         tujuan.ValueMember = "Kota"

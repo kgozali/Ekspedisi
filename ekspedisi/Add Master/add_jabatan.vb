@@ -67,8 +67,8 @@ Public Class add_jabatan
 
             'insert ke dalam database
             InsertInto("insert into mjabatan values ('" & id.Text & "','" & nama.Text & "','1')")
-            'konfirmasi melakukan booking ulang
-            Dim msg As Integer = MsgBox("Booking berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+            'konfirmasi melakukan Input ulang
+            Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
             audit()
             If msg = DialogResult.Yes Then
                 add_jabatan_Load(sender, e)
