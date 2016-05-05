@@ -68,9 +68,11 @@ Public Class main_menu
     End Sub
 
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        login2.ShowDialog()
+
 
         Try
+
+            login2.ShowDialog()
             If checkconnection() = True Then
                 GridView2.OptionsView.ShowFooter = True
                 GridView3.OptionsView.ShowFooter = True
@@ -358,6 +360,8 @@ Public Class main_menu
 
     Private Sub main_menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         audit()
+        'main_menu_Load(sender, e)
+
     End Sub
     Sub audit()
         Dim user As String = username.ToString
