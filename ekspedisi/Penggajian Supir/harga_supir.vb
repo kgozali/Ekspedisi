@@ -4,12 +4,16 @@
         Try
             data = New DataTable
             data = DtTable("select nama_supir,id_supir from msupir where s='1'")
-            supir.DataSource = data
-            supir.DisplayMember = "nama_supir"
-            supir.ValueMember = "id_supir"
+            If data.Rows.Count > 0 Then
+                supir.DataSource = data
+                supir.DisplayMember = "nama_supir"
+                supir.ValueMember = "id_supir"
+            End If
             data = New DataTable
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
-            hargasupir.DataSource = data
+            If data.Rows.Count > 0 Then
+                hargasupir.DataSource = data
+            End If
             If datapilih.Columns.Count = 0 Then
                 datapilih.Columns.Add("id", GetType(String))
                 datapilih.Columns.Add("harga", GetType(Double))
