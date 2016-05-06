@@ -393,4 +393,8 @@ Public Class main_menu
         Dim aktivitas As String = "Wipe Audit Log: " & username.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
+
+    Private Sub SimpleButton21_Click(sender As Object, e As EventArgs) Handles SimpleButton21.Click
+        Me.Close()
+    End Sub
 End Class

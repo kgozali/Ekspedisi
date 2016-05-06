@@ -91,6 +91,7 @@ Partial Class main_menu
         Me.SimpleButton37 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton39 = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewClientControl10 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton()
@@ -137,7 +138,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -879,6 +879,15 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.Size = New System.Drawing.Size(813, 697)
         Me.BackstageViewClientControl10.TabIndex = 8
         '
+        'SimpleButton14
+        '
+        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
+        Me.SimpleButton14.Location = New System.Drawing.Point(49, 165)
+        Me.SimpleButton14.Name = "SimpleButton14"
+        Me.SimpleButton14.Size = New System.Drawing.Size(218, 54)
+        Me.SimpleButton14.TabIndex = 22
+        Me.SimpleButton14.Text = "Wipe Audit Log"
+        '
         'SimpleButton13
         '
         Me.SimpleButton13.Image = CType(resources.GetObject("SimpleButton13.Image"), System.Drawing.Image)
@@ -1277,15 +1286,6 @@ Partial Class main_menu
         '
         'sfd
         '
-        '
-        'SimpleButton14
-        '
-        Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
-        Me.SimpleButton14.Location = New System.Drawing.Point(49, 165)
-        Me.SimpleButton14.Name = "SimpleButton14"
-        Me.SimpleButton14.Size = New System.Drawing.Size(218, 54)
-        Me.SimpleButton14.TabIndex = 22
-        Me.SimpleButton14.Text = "Wipe Audit Log"
         '
         'main_menu
         '

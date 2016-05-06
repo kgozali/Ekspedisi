@@ -44,7 +44,7 @@ Public Class master_DO
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where no_DO LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,nama_principle `Nama Principle`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do,booking_truk,mprinciple where trans_do.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and no_DO LIKE '%" + cari.Text.ToString + "%' and trans_do.s='" + x + "' and trans_do.del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -56,7 +56,7 @@ Public Class master_DO
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where id_transaksi LIKE '%" + cari.Text.ToString + "%' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,nama_principle `Nama Principle`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do,booking_truk,mprinciple where trans_do.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and id_transaksi LIKE '%" + cari.Text.ToString + "%' and trans_do.s='" + x + "' and trans_do.del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -67,7 +67,7 @@ Public Class master_DO
                 cari.Visible = False
                 DateTimePicker1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do where tgl_terkirim ='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and s='" + x + "' and del=0 order by jatuh_tempo asc,id_transaksi asc")
+                datatable = DtTable("select id_transaksi `Kode Transaksi`,no_DO `No.DO`,nama_principle `Nama Principle`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Terkirim`,concat(day(jatuh_tempo),'-',monthname(jatuh_tempo),'-',year(jatuh_tempo)) `Tanggal Jatuh Tempo` from trans_do,booking_truk,mprinciple where trans_do.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and tgl_terkirim='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and trans_do.s='" + x + "' and trans_do.del=0 order by jatuh_tempo asc,id_transaksi asc")
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
