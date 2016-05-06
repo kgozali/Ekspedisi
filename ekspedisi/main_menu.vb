@@ -191,12 +191,11 @@ Public Class main_menu
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
-
                 Dim command As MySqlCommand = New MySqlCommand
                 command.Connection = connect
                 connect.Open()
-                'Dim mb As MySqlBackup = New MySqlBackup(command)
-                'mb.ImportFromFile(restorepath.Text.ToString())
+                Dim mb As MySqlBackup = New MySqlBackup(command)
+                mb.ImportFromFile(restorepath.Text.ToString())
                 connect.Close()
                 MessageBox.Show("Restore database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 restorepath.Text = ""
@@ -215,20 +214,21 @@ Public Class main_menu
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
-                Dim command As MySqlCommand = New MySqlCommand
-                command.Connection = connect
+                Dim com As MySqlCommand = New MySqlCommand
+                com.Connection = connect
+                Dim mb As MySqlBackup = New MySqlBackup(com)
                 connect.Open()
-                'Dim mb As MySqlBackup = New MySqlBackup(command)
-                'mb.ExportToFile(backuppath.Text.ToString())
+                mb.ExportToFile(backuppath.Text.ToString)
                 connect.Close()
                 MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                backuppath.Text=""
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             End Try
         End If
     End Sub
-
+  
     Private Sub SimpleButton40_Click(sender As Object, e As EventArgs) Handles SimpleButton40.Click
         Dim asd As String = System.DateTime.Now.ToString("dd-MM-yyyy HHmmss")
         sfd.InitialDirectory = "C:\users\public"
