@@ -152,10 +152,8 @@
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             InsertInto("delete from dsupir where id_supir='" & supir.SelectedValue.ToString & "'")
-            For i = 0 To dataharga.RowCount - 1
-                If dataharga.GetRowCellValue(i, "Check List Rute") = True And dataharga.GetRowCellValue(i, "Harga Maksimum") > 0 Then
-                    InsertInto("insert into dsupir values ('" & supir.SelectedValue.ToString & "','" & dataharga.GetRowCellValue(i, "Kode Rute").ToString & "','" & dataharga.GetRowCellValue(i, "Harga Maksimum") & "')")
-                End If
+            For i = 0 To datapilih.Rows.Count - 1
+                InsertInto("insert into dsupir values ('" & supir.SelectedValue.ToString & "','" & datapilih.Rows(i).Item("id").ToString & "','" & datapilih.Rows(i).Item("harga").ToString & "')")
             Next i
             supir_SelectedIndexChanged(sender, e)
             MessageBox.Show("Data berhasil diinput", "Konfirmasi Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -235,14 +233,21 @@
             If cek = True Then
                 If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True And e.Column.FieldName = "Harga Maksimum" Then
                     If e.Value > 0 Then
-                        For i = 0 To datapilih.Rows.Count - 1
-                            If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-                                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
-                                datapilih.Rows.RemoveAt(i)
-                            Else
-                                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
-                            End If
-                        Next i
+                        If datapilih.Rows.Count = 0 Then
+                            datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                        Else
+                            Dim kenyangklathak As Boolean = False
+                            For i = 0 To datapilih.Rows.Count - 1
+                                If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
+                                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                                    datapilih.Rows.RemoveAt(i)
+                                    'error di sini, kita mo makan pak pong duluuuuu ^^
+                                ElseIf kenyangklathak = False Then
+                                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                                    kenyangklathak = True
+                                End If
+                            Next i
+                        End If
                     End If
                 End If
                 If e.Column.FieldName = "Check List Rute" Then
