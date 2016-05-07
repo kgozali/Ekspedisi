@@ -45,9 +45,6 @@ Partial Public Class XtraReport2
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
-        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.username = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
@@ -59,6 +56,8 @@ Partial Public Class XtraReport2
         Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLine2 = New DevExpress.XtraReports.UI.XRLine()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.username = New DevExpress.XtraReports.Parameters.Parameter()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -66,6 +65,7 @@ Partial Public Class XtraReport2
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
@@ -175,42 +175,6 @@ Partial Public Class XtraReport2
         Me.ReportHeader.HeightF = 263.125!
         Me.ReportHeader.Name = "ReportHeader"
         '
-        'XrLabel3
-        '
-        Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.username, "Text", "")})
-        Me.XrLabel3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(128.5417!, 206.875!)
-        Me.XrLabel3.Name = "XrLabel3"
-        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(167.7083!, 16.74998!)
-        Me.XrLabel3.StylePriority.UseFont = False
-        Me.XrLabel3.StylePriority.UseTextAlignment = False
-        Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'username
-        '
-        Me.username.Description = "Username"
-        DynamicListLookUpSettings1.DataAdapter = Nothing
-        DynamicListLookUpSettings1.DataMember = Nothing
-        DynamicListLookUpSettings1.DataSource = Me.SqlDataSource1
-        DynamicListLookUpSettings1.DisplayMember = "audit_log.id_user"
-        DynamicListLookUpSettings1.FilterString = Nothing
-        DynamicListLookUpSettings1.ValueMember = "audit_log.id_user"
-        Me.username.LookUpSettings = DynamicListLookUpSettings1
-        Me.username.Name = "username"
-        '
-        'XrLabel2
-        '
-        Me.XrLabel2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 206.875!)
-        Me.XrLabel2.Name = "XrLabel2"
-        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 16.74998!)
-        Me.XrLabel2.StylePriority.UseFont = False
-        Me.XrLabel2.StylePriority.UseTextAlignment = False
-        Me.XrLabel2.Text = "Username:"
-        Me.XrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        '
         'XrLabel1
         '
         Me.XrLabel1.BorderColor = System.Drawing.Color.Black
@@ -319,6 +283,30 @@ Partial Public Class XtraReport2
         Me.XrLine2.Name = "XrLine2"
         Me.XrLine2.SizeF = New System.Drawing.SizeF(703.5284!, 8.745613!)
         '
+        'XrLabel3
+        '
+        Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.username, "Text", "")})
+        Me.XrLabel3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(128.5417!, 206.875!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(167.7083!, 16.74998!)
+        Me.XrLabel3.StylePriority.UseFont = False
+        Me.XrLabel3.StylePriority.UseTextAlignment = False
+        Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'username
+        '
+        Me.username.Description = "Username"
+        DynamicListLookUpSettings1.DataAdapter = Nothing
+        DynamicListLookUpSettings1.DataMember = Nothing
+        DynamicListLookUpSettings1.DataSource = Me.SqlDataSource1
+        DynamicListLookUpSettings1.DisplayMember = "audit_log.id_user"
+        DynamicListLookUpSettings1.FilterString = Nothing
+        DynamicListLookUpSettings1.ValueMember = "audit_log.id_user"
+        Me.username.LookUpSettings = DynamicListLookUpSettings1
+        Me.username.Name = "username"
+        '
         'XrTable1
         '
         Me.XrTable1.BackColor = System.Drawing.Color.Black
@@ -369,6 +357,18 @@ Partial Public Class XtraReport2
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.Text = "Aktivitas"
         Me.XrTableCell4.Weight = 1.6137853965733469R
+        '
+        'XrLabel2
+        '
+        Me.XrLabel2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(16.91659!, 206.875!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(100.0!, 16.74998!)
+        Me.XrLabel2.StylePriority.UseFont = False
+        Me.XrLabel2.StylePriority.UseTextAlignment = False
+        Me.XrLabel2.Text = "Username:"
+        Me.XrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'XrPageInfo1
         '

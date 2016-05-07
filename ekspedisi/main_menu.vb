@@ -68,8 +68,6 @@ Public Class main_menu
     End Sub
 
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         Try
 
             login2.ShowDialog()
@@ -191,12 +189,11 @@ Public Class main_menu
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
-
                 Dim command As MySqlCommand = New MySqlCommand
                 command.Connection = connect
                 connect.Open()
-                'Dim mb As MySqlBackup = New MySqlBackup(command)
-                'mb.ImportFromFile(restorepath.Text.ToString())
+                Dim mb As MySqlBackup = New MySqlBackup(command)
+                mb.ImportFromFile(restorepath.Text.ToString())
                 connect.Close()
                 MessageBox.Show("Restore database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 restorepath.Text = ""
@@ -215,13 +212,14 @@ Public Class main_menu
             MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
         Else
             Try
-                Dim command As MySqlCommand = New MySqlCommand
-                command.Connection = connect
+                Dim com As MySqlCommand = New MySqlCommand
+                com.Connection = connect
+                Dim mb As MySqlBackup = New MySqlBackup(com)
                 connect.Open()
-                'Dim mb As MySqlBackup = New MySqlBackup(command)
-                'mb.ExportToFile(backuppath.Text.ToString())
+                mb.ExportToFile(backuppath.Text.ToString)
                 connect.Close()
                 MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                backuppath.Text = ""
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -371,5 +369,34 @@ Public Class main_menu
         Dim form As String = "System Logout"
         Dim aktivitas As String = "User Logout: " & username.ToString
         auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub SimpleButton14_Click_1(sender As Object, e As EventArgs) Handles SimpleButton14.Click
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Audit Log?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msg = DialogResult.Yes Then
+            Dim insert As Boolean = InsertInto("DELETE FROM audit_log")
+            If insert = True Then
+                MessageBox.Show("Audit Log berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                auditdel()
+            Else
+                MessageBox.Show("Audit Log gagal dihapus,Coba beberapa saat lagi", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        End If
+    End Sub
+    Sub auditdel()
+        Dim user As String = username.ToString
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Audit Log"
+        Dim aktivitas As String = "Wipe Audit Log: " & username.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub SimpleButton21_Click(sender As Object, e As EventArgs) Handles SimpleButton21.Click
+        Me.Close()
+    End Sub
+
+    Private Sub SimpleButton22_Click(sender As Object, e As EventArgs) Handles SimpleButton22.Click
+        change_password.ShowDialog()
     End Sub
 End Class

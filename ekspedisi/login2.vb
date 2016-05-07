@@ -22,12 +22,14 @@
             If simpan.Rows.Count = 0 Then
                 MessageBox.Show("Username Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 username.Text = ""
+                password.Text = ""
             Else
                 Dim check2 As String = "select username, password from muser where username = '" & username.Text & "' and password = md5('" & password.Text & "') "
                 Dim simpan2 As New DataTable
                 simpan2 = DtTable(check2)
                 If simpan2.Rows.Count = 0 Then
                     MessageBox.Show("Password Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    password.Text = ""
                 Else
                     cek = True
                     audit()

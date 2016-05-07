@@ -14,6 +14,7 @@ Public Class booking_truk
     Dim akundpsupir As String = ""
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            GridControl3.UseEmbeddedNavigator = True
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
             akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
             akundpsupir = Scalar("select id_akun from control_account where keterangan='Def. Akun DP Supir'")
@@ -93,6 +94,7 @@ Public Class booking_truk
         rutebook = ""
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
+        DataSet1.Tables("databarang").Rows.Clear()
         grid()
     End Sub
 
@@ -158,22 +160,28 @@ Public Class booking_truk
                                 If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
                                     MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                 Else
-                                    If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
-                                        Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                        If msg = DialogResult.OK Then
-                                            autogen()
+                                    If GridView1.RowCount < 1 Then
+                                        MessageBox.Show("Harap menambahkan barang terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                                    Else
+
+                                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                            Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                            If msg = DialogResult.OK Then
+                                                autogen()
+                                                insert()
+                                                audit()
+                                            Else
+
+                                            End If
+                                        Else
                                             insert()
                                             audit()
-                                        Else
-
                                         End If
-                                    Else
-                                        insert()
-                                        audit()
-                                    End If
 
                                 End If
 
+                                End If
                             End If
                         End If
                     End If
@@ -222,9 +230,7 @@ Public Class booking_truk
 
             Else
 
-                Dim dt2 As New DataTable
-
-                'GridControl3.DataSource = dt2
+                
                 Dim dt3 As New DataTable
                 dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
                 RepositoryItemLookUpEdit1.DataSource = dt3
@@ -339,28 +345,33 @@ Public Class booking_truk
                                 If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) > CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)")) Then
                                     MessageBox.Show("Nominal DP tidak diperbolehkan melebihi Nominal Total Bayar", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                 Else
-                                    If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
-                                        Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-                                        If msg = DialogResult.OK Then
-                                            autogen()
+                                    If GridView1.RowCount < 1 Then
+                                        MessageBox.Show("Harap menambahkan barang terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                                    Else
+                                        If CInt(GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)")) = "0" Then
+                                            Dim msg As Integer = MessageBox.Show("Nominal DP Rp. 0 , apakah anda yakin ingin melanjutkan tanpa nominal DP?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                                            If msg = DialogResult.OK Then
+                                                autogen()
+                                                insert()
+
+                                                audit()
+                                                frm_bookingtruk.bookcode = kode.ToString
+                                                frm_bookingtruk.ShowDialog()
+                                            Else
+
+                                            End If
+                                        Else
                                             insert()
-                                           
+
                                             audit()
                                             frm_bookingtruk.bookcode = kode.ToString
                                             frm_bookingtruk.ShowDialog()
-                                        Else
-
                                         End If
-                                    Else
-                                        insert()
-                                        
-                                        audit()
-                                        frm_bookingtruk.bookcode = kode.ToString
-                                        frm_bookingtruk.ShowDialog()
+
                                     End If
 
                                 End If
-
                             End If
                         End If
                     End If
@@ -373,6 +384,27 @@ Public Class booking_truk
     End Sub
 
     Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
+        Dim dt3 As New DataTable
+        dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
+        RepositoryItemLookUpEdit1.DataSource = dt3
+        RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
+        RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
         grid()
+    End Sub
+
+    Private Sub ButtonEdit2_Click(sender As Object, e As EventArgs) Handles ButtonEdit2.Click
+        principle_booking.ShowDialog()
+    End Sub
+
+    Private Sub ButtonEdit4_Click(sender As Object, e As EventArgs) Handles ButtonEdit4.Click
+        If principlebook = "" Then
+            MessageBox.Show("Pilih principle terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            rute_booking.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
+        truk_booking.ShowDialog()
     End Sub
 End Class

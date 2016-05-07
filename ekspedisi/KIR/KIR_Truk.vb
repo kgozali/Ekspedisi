@@ -346,4 +346,8 @@ bm.Height), GraphicsUnit.Pixel)
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
+        kir_daftar_truk.ShowDialog()
+    End Sub
 End Class

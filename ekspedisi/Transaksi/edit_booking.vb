@@ -15,6 +15,7 @@ Public Class edit_booking
     Dim akundpsupir As String = ""
     Public Sub edit_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            GridControl3.UseEmbeddedNavigator = True
             'select akun default
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
             akunhutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Hutang Lain-Lain'")
@@ -41,7 +42,7 @@ Public Class edit_booking
 
             'select gridview barang
             Dim dtbarang As New DataTable
-            databarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + principlebook.ToString + "'")
+            dtbarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + principlebook.ToString + "'")
             RepositoryItemLookUpEdit1.DataSource = dtbarang
             RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
             RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
@@ -52,7 +53,8 @@ Public Class edit_booking
 
             mreader = tabelbarang.CreateDataReader
             databarang.Tables(0).Load(mreader)
-
+            GridControl3.DataSource = databarang
+            GridControl3.DataMember = "tabelbarang"
             grid()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -122,6 +124,7 @@ Public Class edit_booking
         rutebook = ""
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
+        databarang.Tables("tabelbarang").Rows.Clear()
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -193,13 +196,18 @@ Public Class edit_booking
     Sub insert()
         'insert ke database
         Try
-
+            Dim datarow As DataRow
             Dim jam As New DateTime
             jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
             Dim insert As Boolean = InsertInto("update booking_truk set jam_input='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)").ToString + "',id_principle='" + principlebook.ToString + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir").ToString + "',id_truk='" + trukbook + "',keterangan='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook.ToString + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat").ToString + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person").ToString + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon").ToString + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString + "' where id_booking='" + kode.ToString + "'")
+            InsertInto("DELETE FROM dbooking_truk where id_booking='" + kode.ToString + "'")
+            For i = 0 To GridView1.RowCount - 1
+                datarow = databarang.Tables.Item(0).Rows(i)
+                InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "')")
+            Next
             If insert = True Then
                 insertakun()
-                MessageBox.Show("Perubahan terhadap booking" & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Perubahan terhadap booking " & kode.ToString & "berhasil dilakukan", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ceking = True
                 Me.Close()
             End If
@@ -276,7 +284,17 @@ Public Class edit_booking
     End Sub
    
     
-    Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
-        
+    
+
+    Private Sub ButtonEdit4_Click(sender As Object, e As EventArgs) Handles ButtonEdit4.Click
+        If principlebook = "" Then
+            MessageBox.Show("Pilih principle terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            list_rute_edit.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
+        list_truk_edit.ShowDialog()
     End Sub
 End Class

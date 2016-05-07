@@ -17,6 +17,7 @@ Public Class transaksi_DO
             If idbooking.Text = "" Then
 
             Else
+                tgldo.Value = Convert.ToDateTime(tgldo.Value.Date.ToLongDateString & " " & "00:00:00")
                 'select nama principle
                 Dim data As String = ""
                 data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + idbooking.Text.ToString + "' and mprinciple.id_principle=booking_truk.id_principle")
@@ -35,6 +36,19 @@ Public Class transaksi_DO
 
                 'select price untuk rute
                 price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
+
+                Dim dtbarang As New DataTable
+                dtbarang = DtTable("select d.id_barang `Kode Barang`,m.nama_barang `Nama Barang`,d.qty `Berat (Kilogram)` from dbooking_truk d,mbarang m where d.id_barang=m.id_barang and id_booking='" + idbooking.Text.ToString + "'")
+                GridControl1.DataSource = dtbarang
+                For i = 0 To GridView1.Columns.Count - 1
+                    GridView1.Columns(i).OptionsColumn.AllowEdit = False
+                    If GridView1.Columns(i).FieldName.ToString = "Berat (Kilogram)" Then
+                        GridView1.Columns(i).OptionsColumn.AllowEdit = True
+                        GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+                        GridView1.Columns(i).SummaryItem.FieldName = "Berat (Kilogram)"
+                        GridView1.Columns(i).SummaryItem.DisplayFormat = "TOTAL {0} Kilogram"
+                    End If
+                Next
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -88,7 +102,7 @@ Public Class transaksi_DO
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
 
-            If tgldo.Value > tanggalterkirim.Value Then
+            If tanggalterkirim.Value < tgldo.Value Then
                 MessageBox.Show("Tanggal DO tidak diperbolehkan melebihi Tanggal Kirim", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If tanggalterkirim.Value > tanggaljatuhtempo.Value Then
@@ -213,7 +227,7 @@ Public Class transaksi_DO
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         Try
 
-            If tgldo.Value > tanggalterkirim.Value Then
+            If tanggalterkirim.Value < tgldo.Value Then
                 MessageBox.Show("Tanggal DO tidak diperbolehkan melebihi Tanggal Kirim", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If tanggalterkirim.Value > tanggaljatuhtempo.Value Then

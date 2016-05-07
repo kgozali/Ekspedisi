@@ -30,6 +30,7 @@ Public Class edit_DO
 
     Private Sub edit_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            tgldo.Value = Convert.ToDateTime(tgldo.Value.Date.ToLongDateString & " " & "00:00:00")
             'select akun
             defpiutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
             defpendapatan = Scalar("select id_akun from control_account where keterangan='Def. Akun Pendapatan'")
@@ -76,7 +77,7 @@ Public Class edit_DO
                     GridView1.Columns(i).SummaryItem.DisplayFormat = "TOTAL {0} Kilogram"
                 End If
             Next
-            
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
