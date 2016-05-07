@@ -293,6 +293,7 @@ Partial Class edit_Karyawan
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "edit_Karyawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Karyawan"
         CType(Me.ktp.Properties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.email.Properties,System.ComponentModel.ISupportInitialize).EndInit

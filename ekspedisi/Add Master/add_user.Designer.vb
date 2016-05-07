@@ -166,6 +166,7 @@ Partial Class add_user
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Name = "add_user"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah User"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

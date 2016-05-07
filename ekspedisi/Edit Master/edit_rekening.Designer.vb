@@ -105,6 +105,7 @@ Partial Class edit_rekening
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_rekening"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Rekening"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()

@@ -105,6 +105,7 @@ Partial Class add_kategori_supplier
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_kategori_supplier"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Kategori Supplier"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

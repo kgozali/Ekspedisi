@@ -189,6 +189,7 @@ Partial Class add_kontak_principle
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_kontak_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Kontak Principle"
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()

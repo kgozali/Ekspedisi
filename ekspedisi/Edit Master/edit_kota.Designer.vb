@@ -105,6 +105,7 @@ Partial Class edit_kota
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_kota"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Kota"
         CType(Me.kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

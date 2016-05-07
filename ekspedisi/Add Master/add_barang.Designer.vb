@@ -161,6 +161,7 @@ Partial Class add_barang
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Name = "add_barang"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Barang"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

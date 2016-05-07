@@ -293,6 +293,7 @@ Partial Class add_karyawan
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_karyawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Karyawan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

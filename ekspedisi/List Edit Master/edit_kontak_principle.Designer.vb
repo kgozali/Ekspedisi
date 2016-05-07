@@ -70,6 +70,7 @@ Partial Class edit_kontak_principle
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_kontak_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Kontak Principle"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

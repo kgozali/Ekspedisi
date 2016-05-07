@@ -230,6 +230,7 @@ Partial Class edit_Supir
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "edit_Supir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Supir"
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()

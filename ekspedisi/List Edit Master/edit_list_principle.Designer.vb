@@ -19,7 +19,7 @@ Partial Class edit_list_principle
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_list_Principle))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_list_principle))
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
@@ -70,6 +70,7 @@ Partial Class edit_list_principle
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "edit_list_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit List Principle"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

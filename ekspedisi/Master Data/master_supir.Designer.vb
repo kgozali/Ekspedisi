@@ -422,6 +422,7 @@ Partial Class master_supir
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "master_supir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Supir"
         CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GroupControl3,System.ComponentModel.ISupportInitialize).EndInit

@@ -21,9 +21,9 @@ Partial Class list_edit_barang
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(list_edit_barang))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,15 +39,6 @@ Partial Class list_edit_barang
         Me.GroupControl1.TabIndex = 116
         Me.GroupControl1.Text = "Daftar Edit Barang"
         '
-        'cancel
-        '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(541, 320)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
-        Me.cancel.TabIndex = 117
-        Me.cancel.Text = "Cancel"
-        '
         'GridControl1
         '
         Me.GridControl1.Location = New System.Drawing.Point(5, 24)
@@ -62,6 +53,15 @@ Partial Class list_edit_barang
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
+        'cancel
+        '
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(541, 320)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 117
+        Me.cancel.Text = "Cancel"
+        '
         'list_edit_barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -70,6 +70,7 @@ Partial Class list_edit_barang
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "list_edit_barang"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "List Edit Barang"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
