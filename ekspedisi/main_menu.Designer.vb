@@ -667,7 +667,7 @@ Partial Class main_menu
         Me.hutangdo.Name = "hutangdo"
         Me.hutangdo.Size = New System.Drawing.Size(196, 54)
         Me.hutangdo.TabIndex = 32
-        Me.hutangdo.Text = "Pelunasan Hutang DO"
+        Me.hutangdo.Text = "Pelunasan Hutang DO Supir"
         '
         'pelunasanpiutangkaryawan
         '
