@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class main_menu
-
+    Public logincek As Boolean = False
     Public username As String = ""
     Sub quit(sender As Object, e As EventArgs)
         Me.Close()
@@ -69,8 +69,12 @@ Public Class main_menu
 
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            If logincek = False Then
+                login2.ShowDialog()
+            Else
 
-            login2.ShowDialog()
+            End If
+
             refreshorganizer()
         Catch ex As Exception
 
@@ -360,6 +364,7 @@ Public Class main_menu
 
     Private Sub main_menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         audit()
+        ' logincek = False
         'main_menu_Load(sender, e)
 
     End Sub
@@ -399,4 +404,18 @@ Public Class main_menu
     Private Sub SimpleButton22_Click(sender As Object, e As EventArgs) Handles SimpleButton22.Click
         change_password.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton18_Click(sender As Object, e As EventArgs) Handles SimpleButton18.Click
+        backuppath.Text = ""
+    End Sub
+
+    Private Sub SimpleButton17_Click(sender As Object, e As EventArgs) Handles SimpleButton17.Click
+        restorepath.Text = ""
+        Label13.Text = "-"
+        Label14.Text = "-"
+        Label15.Text = "-"
+        Label20.Text = "-"
+    End Sub
+
+  
 End Class

@@ -93,27 +93,27 @@ Partial Class master_DO
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteDeliveryOrderToolStripMenuItem, Me.PrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(186, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(203, 70)
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Image = CType(resources.GetObject("EditToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.EditToolStripMenuItem.Text = "Edit Delivery Order"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.EditToolStripMenuItem.Text = "View/Edit Delivery Order"
         '
         'DeleteDeliveryOrderToolStripMenuItem
         '
         Me.DeleteDeliveryOrderToolStripMenuItem.Image = CType(resources.GetObject("DeleteDeliveryOrderToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeleteDeliveryOrderToolStripMenuItem.Name = "DeleteDeliveryOrderToolStripMenuItem"
-        Me.DeleteDeliveryOrderToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.DeleteDeliveryOrderToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.DeleteDeliveryOrderToolStripMenuItem.Text = "Delete Delivery Order"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Image = CType(resources.GetObject("PrintToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.PrintToolStripMenuItem.Text = "Preview and Print"
         '
         'GridView1

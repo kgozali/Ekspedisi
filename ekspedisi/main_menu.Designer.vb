@@ -99,6 +99,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl2 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
         Me.XtraTabControl2 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage5 = New DevExpress.XtraTab.XtraTabPage()
+        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -114,6 +115,7 @@ Partial Class main_menu
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.XtraTabPage6 = New DevExpress.XtraTab.XtraTabPage()
+        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton40 = New DevExpress.XtraEditors.SimpleButton()
         Me.backuppath = New System.Windows.Forms.TextBox()
         Me.backup = New DevExpress.XtraEditors.SimpleButton()
@@ -204,8 +206,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem10
-        Me.BackstageViewControl1.SelectedTabIndex = 6
+        Me.BackstageViewControl1.SelectedTab = Me.backuprestore
+        Me.BackstageViewControl1.SelectedTabIndex = 7
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -943,10 +945,11 @@ Partial Class main_menu
         Me.XtraTabControl2.SelectedTabPage = Me.XtraTabPage5
         Me.XtraTabControl2.Size = New System.Drawing.Size(451, 300)
         Me.XtraTabControl2.TabIndex = 37
-        Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage5, Me.XtraTabPage6})
+        Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage6, Me.XtraTabPage5})
         '
         'XtraTabPage5
         '
+        Me.XtraTabPage5.Controls.Add(Me.SimpleButton17)
         Me.XtraTabPage5.Controls.Add(Me.Label20)
         Me.XtraTabPage5.Controls.Add(Me.Label17)
         Me.XtraTabPage5.Controls.Add(Me.Label19)
@@ -964,6 +967,15 @@ Partial Class main_menu
         Me.XtraTabPage5.Name = "XtraTabPage5"
         Me.XtraTabPage5.Size = New System.Drawing.Size(445, 272)
         Me.XtraTabPage5.Text = "Restore"
+        '
+        'SimpleButton17
+        '
+        Me.SimpleButton17.Image = CType(resources.GetObject("SimpleButton17.Image"), System.Drawing.Image)
+        Me.SimpleButton17.Location = New System.Drawing.Point(302, 102)
+        Me.SimpleButton17.Name = "SimpleButton17"
+        Me.SimpleButton17.Size = New System.Drawing.Size(78, 23)
+        Me.SimpleButton17.TabIndex = 45
+        Me.SimpleButton17.Text = "Reset"
         '
         'Label20
         '
@@ -1013,6 +1025,7 @@ Partial Class main_menu
         '
         'restorepath
         '
+        Me.restorepath.Enabled = False
         Me.restorepath.Location = New System.Drawing.Point(23, 75)
         Me.restorepath.Name = "restorepath"
         Me.restorepath.Size = New System.Drawing.Size(357, 21)
@@ -1038,7 +1051,7 @@ Partial Class main_menu
         'buttonrestore
         '
         Me.buttonrestore.Image = CType(resources.GetObject("buttonrestore.Image"), System.Drawing.Image)
-        Me.buttonrestore.Location = New System.Drawing.Point(302, 102)
+        Me.buttonrestore.Location = New System.Drawing.Point(218, 102)
         Me.buttonrestore.Name = "buttonrestore"
         Me.buttonrestore.Size = New System.Drawing.Size(78, 23)
         Me.buttonrestore.TabIndex = 34
@@ -1095,6 +1108,7 @@ Partial Class main_menu
         '
         'XtraTabPage6
         '
+        Me.XtraTabPage6.Controls.Add(Me.SimpleButton18)
         Me.XtraTabPage6.Controls.Add(Me.SimpleButton40)
         Me.XtraTabPage6.Controls.Add(Me.backuppath)
         Me.XtraTabPage6.Controls.Add(Me.backup)
@@ -1103,6 +1117,15 @@ Partial Class main_menu
         Me.XtraTabPage6.Name = "XtraTabPage6"
         Me.XtraTabPage6.Size = New System.Drawing.Size(445, 272)
         Me.XtraTabPage6.Text = "Backup"
+        '
+        'SimpleButton18
+        '
+        Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
+        Me.SimpleButton18.Location = New System.Drawing.Point(301, 103)
+        Me.SimpleButton18.Name = "SimpleButton18"
+        Me.SimpleButton18.Size = New System.Drawing.Size(78, 23)
+        Me.SimpleButton18.TabIndex = 46
+        Me.SimpleButton18.Text = "Reset"
         '
         'SimpleButton40
         '
@@ -1114,6 +1137,7 @@ Partial Class main_menu
         '
         'backuppath
         '
+        Me.backuppath.Enabled = False
         Me.backuppath.Location = New System.Drawing.Point(22, 76)
         Me.backuppath.Name = "backuppath"
         Me.backuppath.Size = New System.Drawing.Size(357, 21)
@@ -1122,7 +1146,7 @@ Partial Class main_menu
         'backup
         '
         Me.backup.Image = CType(resources.GetObject("backup.Image"), System.Drawing.Image)
-        Me.backup.Location = New System.Drawing.Point(301, 103)
+        Me.backup.Location = New System.Drawing.Point(217, 103)
         Me.backup.Name = "backup"
         Me.backup.Size = New System.Drawing.Size(78, 23)
         Me.backup.TabIndex = 27
@@ -1214,7 +1238,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
         Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
-        Me.BackstageViewTabItem10.Selected = True
+        Me.BackstageViewTabItem10.Selected = False
         '
         'backuprestore
         '
@@ -1222,7 +1246,7 @@ Partial Class main_menu
         Me.backuprestore.ContentControl = Me.BackstageViewClientControl2
         Me.backuprestore.Glyph = CType(resources.GetObject("backuprestore.Glyph"), System.Drawing.Image)
         Me.backuprestore.Name = "backuprestore"
-        Me.backuprestore.Selected = False
+        Me.backuprestore.Selected = True
         '
         'BackstageViewClientControl3
         '
@@ -1472,4 +1496,6 @@ Partial Class main_menu
     Friend WithEvents GridControl5 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -34,6 +34,7 @@
                     cek = True
                     audit()
                     main_menu.username = username.Text.ToString
+                    main_menu.logincek = True
                     Me.Close()
                 End If
             End If

@@ -48,7 +48,7 @@ Public Class master_DO
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
-                path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
+
 
 
             ElseIf kodebooking.Checked = True Then
@@ -60,7 +60,7 @@ Public Class master_DO
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
-                path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
+
 
 
             ElseIf tgl.Checked = True Then
@@ -71,7 +71,7 @@ Public Class master_DO
                 GridControl1.DataSource = datatable
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
-                path = Scalar("select path_upload from trans_do where id_transaksi='" + cellvalue + "'")
+
 
             End If
             unallowedit()

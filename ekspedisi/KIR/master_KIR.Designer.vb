@@ -226,20 +226,20 @@ Partial Class master_KIR
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.DeleteKIRToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(128, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(145, 48)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(127, 22)
-        Me.ToolStripMenuItem1.Text = "Edit KIR"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
+        Me.ToolStripMenuItem1.Text = "View/Edit KIR"
         '
         'DeleteKIRToolStripMenuItem
         '
         Me.DeleteKIRToolStripMenuItem.Image = CType(resources.GetObject("DeleteKIRToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeleteKIRToolStripMenuItem.Name = "DeleteKIRToolStripMenuItem"
-        Me.DeleteKIRToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.DeleteKIRToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.DeleteKIRToolStripMenuItem.Text = "Delete KIR"
         '
         'GridView1
