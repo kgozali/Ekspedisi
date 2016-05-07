@@ -124,6 +124,7 @@ Partial Class change_password
         Me.Controls.Add(Me.nama)
         Me.Controls.Add(Me.Label1)
         Me.Name = "change_password"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Change Password"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -395,4 +395,8 @@ Public Class main_menu
     Private Sub SimpleButton21_Click(sender As Object, e As EventArgs) Handles SimpleButton21.Click
         Me.Close()
     End Sub
+
+    Private Sub SimpleButton22_Click(sender As Object, e As EventArgs) Handles SimpleButton22.Click
+        change_password.ShowDialog()
+    End Sub
 End Class
