@@ -43,6 +43,8 @@ Partial Class transaksi_DO
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.tgldo = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -50,6 +52,9 @@ Partial Class transaksi_DO
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -157,19 +162,20 @@ Partial Class transaksi_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 154)
+        Me.GroupControl3.Location = New System.Drawing.Point(383, 154)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(989, 475)
+        Me.GroupControl3.Size = New System.Drawing.Size(618, 475)
         Me.GroupControl3.TabIndex = 148
         Me.GroupControl3.Text = "Data Transaksi"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(979, 446)
+        Me.GridControl1.Size = New System.Drawing.Size(614, 452)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -178,6 +184,7 @@ Partial Class transaksi_DO
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'RepositoryItemButtonEdit1
         '
@@ -211,7 +218,7 @@ Partial Class transaksi_DO
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(896, 121)
+        Me.SimpleButton2.Location = New System.Drawing.Point(899, 121)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
         Me.SimpleButton2.TabIndex = 8
@@ -243,11 +250,30 @@ Partial Class transaksi_DO
         Me.LabelControl5.TabIndex = 155
         Me.LabelControl5.Text = "Tanggal DO"
         '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.PictureEdit1)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 154)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(367, 475)
+        Me.GroupControl1.TabIndex = 156
+        Me.GroupControl1.Text = "Scan DO"
+        '
+        'PictureEdit1
+        '
+        Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureEdit1.Location = New System.Drawing.Point(2, 21)
+        Me.PictureEdit1.Name = "PictureEdit1"
+        Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
+        Me.PictureEdit1.Size = New System.Drawing.Size(363, 452)
+        Me.PictureEdit1.TabIndex = 0
+        '
         'transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 677)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.tgldo)
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.SimpleButton3)
@@ -278,6 +304,9 @@ Partial Class transaksi_DO
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -305,4 +334,6 @@ Partial Class transaksi_DO
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents tgldo As System.Windows.Forms.DateTimePicker
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
 End Class
