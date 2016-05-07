@@ -69,6 +69,7 @@ Partial Class edit_kontak_principle
         Me.ClientSize = New System.Drawing.Size(584, 341)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_kontak_principle"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Kontak Principle"

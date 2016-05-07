@@ -104,6 +104,7 @@ Partial Class Edit_bank
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Edit_bank"
         Me.Text = "Edit Barang"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()

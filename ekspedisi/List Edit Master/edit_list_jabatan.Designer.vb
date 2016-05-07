@@ -69,6 +69,7 @@ Partial Class edit_list_jabatan
         Me.ClientSize = New System.Drawing.Size(282, 345)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_list_jabatan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit List Jabatan"

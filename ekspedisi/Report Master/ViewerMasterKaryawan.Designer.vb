@@ -787,6 +787,7 @@ Partial Class ViewerMasterKaryawan
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewerMasterKaryawan"
         Me.Text = "Viewer Master Karyawan"
         CType(Me.DocumentViewerBarManager1, System.ComponentModel.ISupportInitialize).EndInit()

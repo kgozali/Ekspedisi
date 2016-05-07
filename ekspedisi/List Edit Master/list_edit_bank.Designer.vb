@@ -78,6 +78,7 @@ Partial Class list_edit_bank
         Me.ClientSize = New System.Drawing.Size(281, 340)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "list_edit_bank"
         Me.Text = "List Edit Bank"
         CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).EndInit()

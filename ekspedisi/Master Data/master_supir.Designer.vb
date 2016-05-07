@@ -421,6 +421,7 @@ Partial Class master_supir
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "master_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Supir"

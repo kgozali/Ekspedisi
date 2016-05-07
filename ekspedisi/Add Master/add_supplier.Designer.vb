@@ -252,6 +252,7 @@ Partial Class add_supplier
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_supplier"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Supplier"

@@ -163,6 +163,7 @@ Partial Class form_perubahan_harga
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "form_perubahan_harga"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Perubahan Harga Supir"

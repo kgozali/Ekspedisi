@@ -420,6 +420,7 @@ Partial Class master_truck
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "master_truck"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Truck"

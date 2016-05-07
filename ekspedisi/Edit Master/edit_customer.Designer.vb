@@ -231,6 +231,7 @@ Partial Class edit_Customer
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_Customer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Master Customer"

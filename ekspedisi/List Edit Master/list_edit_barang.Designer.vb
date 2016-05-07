@@ -69,6 +69,7 @@ Partial Class list_edit_barang
         Me.ClientSize = New System.Drawing.Size(653, 351)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "list_edit_barang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "List Edit Barang"

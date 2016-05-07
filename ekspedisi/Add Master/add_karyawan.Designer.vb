@@ -292,6 +292,7 @@ Partial Class add_karyawan
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_karyawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Karyawan"

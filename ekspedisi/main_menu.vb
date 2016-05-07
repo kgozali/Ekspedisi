@@ -187,22 +187,22 @@ Public Class main_menu
 
     End Sub
 
-    Private Sub buttonrestore_Click(sender As Object, e As EventArgs) Handles buttonrestore.Click
+    Private Sub buttonrestore_click(sender As Object, e As EventArgs) Handles buttonrestore.Click
 
-        If restorepath.Text = "" Then
-            MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
+        If restorepath.text = "" Then
+            messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
         Else
             Try
-                Dim command As MySqlCommand = New MySqlCommand
-                command.Connection = connect
-                connect.Open()
-                Dim mb As MySqlBackup = New MySqlBackup(command)
-                mb.ImportFromFile(restorepath.Text.ToString())
-                connect.Close()
-                MessageBox.Show("Restore database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                restorepath.Text = ""
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim command As mysqlcommand = New mysqlcommand
+                command.connection = connect
+                connect.open()
+                Dim mb As mysqlbackup = New mysqlbackup(command)
+                mb.importfromfile(restorepath.text.tostring())
+                connect.close()
+                messagebox.show("restore database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
+                restorepath.text = ""
+            Catch ex As exception
+                messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
 
             End Try
         End If
@@ -210,22 +210,22 @@ Public Class main_menu
 
     End Sub
 
-    Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
+    Private Sub backup_click(sender As Object, e As EventArgs) Handles backup.Click
 
-        If backuppath.Text = "" Then
-            MessageBox.Show("File Location tidak Ditemukan", "System Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error)
+        If backuppath.text = "" Then
+            messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
         Else
             Try
-                Dim com As MySqlCommand = New MySqlCommand
-                com.Connection = connect
-                Dim mb As MySqlBackup = New MySqlBackup(com)
-                connect.Open()
-                mb.ExportToFile(backuppath.Text.ToString)
-                connect.Close()
-                MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                backuppath.Text = ""
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim com As mysqlcommand = New mysqlcommand
+                com.connection = connect
+                Dim mb As mysqlbackup = New mysqlbackup(com)
+                connect.open()
+                mb.exporttofile(backuppath.text.tostring)
+                connect.close()
+                messagebox.show("backup database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
+                backuppath.text = ""
+            Catch ex As exception
+                messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
 
             End Try
         End If
@@ -417,5 +417,8 @@ Public Class main_menu
         Label20.Text = "-"
     End Sub
 
-  
+
+    Private Sub main_menu_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        main_menu_Load(sender, e)
+    End Sub
 End Class

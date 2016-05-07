@@ -787,6 +787,7 @@ Partial Class ViewerAtiva
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewerAtiva"
         Me.Text = "Viewer Aktiva Truk"
         CType(Me.DocumentViewerBarManager1, System.ComponentModel.ISupportInitialize).EndInit()

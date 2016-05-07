@@ -188,6 +188,7 @@ Partial Class edit_kontak
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.SimpleButton1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_kontak"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Kontak Principle"

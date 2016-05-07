@@ -73,7 +73,7 @@ Partial Class pelunasan_hutang_supir
         Me.daftarpiutang.MainView = Me.datapiutang
         Me.daftarpiutang.Name = "daftarpiutang"
         Me.daftarpiutang.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.daftarpiutang.Size = New System.Drawing.Size(787, 128)
+        Me.daftarpiutang.Size = New System.Drawing.Size(787, 448)
         Me.daftarpiutang.TabIndex = 0
         Me.daftarpiutang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.datapiutang})
         '
@@ -82,14 +82,14 @@ Partial Class pelunasan_hutang_supir
         Me.GroupControl3.Controls.Add(Me.daftarpiutang)
         Me.GroupControl3.Location = New System.Drawing.Point(8, 88)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(800, 160)
+        Me.GroupControl3.Size = New System.Drawing.Size(800, 480)
         Me.GroupControl3.TabIndex = 153
         Me.GroupControl3.Text = "Daftar Hutang"
         '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(700, 342)
+        Me.cancel.Location = New System.Drawing.Point(708, 662)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 152
@@ -98,7 +98,7 @@ Partial Class pelunasan_hutang_supir
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(592, 342)
+        Me.Submit.Location = New System.Drawing.Point(600, 662)
         Me.Submit.Name = "Submit"
         Me.Submit.Size = New System.Drawing.Size(100, 27)
         Me.Submit.TabIndex = 151
@@ -198,7 +198,7 @@ Partial Class pelunasan_hutang_supir
         Me.GroupControl4.Controls.Add(Me.LabelControl12)
         Me.GroupControl4.Controls.Add(Me.LabelControl9)
         Me.GroupControl4.Controls.Add(Me.LabelControl7)
-        Me.GroupControl4.Location = New System.Drawing.Point(8, 254)
+        Me.GroupControl4.Location = New System.Drawing.Point(16, 574)
         Me.GroupControl4.Name = "GroupControl4"
         Me.GroupControl4.Size = New System.Drawing.Size(792, 82)
         Me.GroupControl4.TabIndex = 150
@@ -277,12 +277,13 @@ Partial Class pelunasan_hutang_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(814, 375)
+        Me.ClientSize = New System.Drawing.Size(814, 697)
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "pelunasan_hutang_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Hutang Supir"

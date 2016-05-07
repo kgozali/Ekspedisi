@@ -93,6 +93,7 @@ Partial Class tutup_principle
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.ButtonEdit1)
         Me.Controls.Add(Me.LabelControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "tutup_principle"
         Me.Text = "Tutup Principle"
         CType(Me.ButtonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()

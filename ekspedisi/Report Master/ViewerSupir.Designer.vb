@@ -777,7 +777,7 @@ Partial Class ViewerSupir
         Me.PrintPreviewBarCheckItem17.Id = 56
         Me.PrintPreviewBarCheckItem17.Name = "PrintPreviewBarCheckItem17"
         '
-        'ViewerHargaSupir
+        'ViewerSupir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -787,7 +787,8 @@ Partial Class ViewerSupir
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.Name = "ViewerHargaSupir"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "ViewerSupir"
         Me.Text = "Viewer Harga Supir"
         CType(Me.DocumentViewerBarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintPreviewRepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
