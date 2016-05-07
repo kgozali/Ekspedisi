@@ -187,49 +187,49 @@ Public Class main_menu
 
     End Sub
 
-    'private sub buttonrestore_click(sender as object, e as eventargs) handles buttonrestore.click
+    Private Sub buttonrestore_click(sender As Object, e As EventArgs) Handles buttonrestore.Click
 
-    '    if restorepath.text = "" then
-    '        messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
-    '    else
-    '        try
-    '            dim command as mysqlcommand = new mysqlcommand
-    '            command.connection = connect
-    '            connect.open()
-    '            dim mb as mysqlbackup = new mysqlbackup(command)
-    '            mb.importfromfile(restorepath.text.tostring())
-    '            connect.close()
-    '            messagebox.show("restore database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
-    '            restorepath.text = ""
-    '        catch ex as exception
-    '            messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
+        If restorepath.text = "" Then
+            messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
+        Else
+            Try
+                Dim command As mysqlcommand = New mysqlcommand
+                command.connection = connect
+                connect.open()
+                Dim mb As mysqlbackup = New mysqlbackup(command)
+                mb.importfromfile(restorepath.text.tostring())
+                connect.close()
+                messagebox.show("restore database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
+                restorepath.text = ""
+            Catch ex As exception
+                messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
 
-    '        end try
-    '    end if
+            End Try
+        End If
 
 
-    'end sub
+    End Sub
 
-    'private sub backup_click(sender as object, e as eventargs) handles backup.click
+    Private Sub backup_click(sender As Object, e As EventArgs) Handles backup.Click
 
-    '    if backuppath.text = "" then
-    '        messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
-    '    else
-    '        try
-    '            dim com as mysqlcommand = new mysqlcommand
-    '            com.connection = connect
-    '            dim mb as mysqlbackup = new mysqlbackup(com)
-    '            connect.open()
-    '            mb.exporttofile(backuppath.text.tostring)
-    '            connect.close()
-    '            messagebox.show("backup database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
-    '            backuppath.text = ""
-    '        catch ex as exception
-    '            messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
+        If backuppath.text = "" Then
+            messagebox.show("file location tidak ditemukan", "system warning", messageboxbuttons.retrycancel, messageboxicon.error)
+        Else
+            Try
+                Dim com As mysqlcommand = New mysqlcommand
+                com.connection = connect
+                Dim mb As mysqlbackup = New mysqlbackup(com)
+                connect.open()
+                mb.exporttofile(backuppath.text.tostring)
+                connect.close()
+                messagebox.show("backup database berhasil dilakukan", "system success", messageboxbuttons.ok, messageboxicon.information)
+                backuppath.text = ""
+            Catch ex As exception
+                messagebox.show(ex.message, "system warning", messageboxbuttons.ok, messageboxicon.error)
 
-    '        end try
-    '    end if
-    'end sub
+            End Try
+        End If
+    End Sub
 
     Private Sub SimpleButton40_Click(sender As Object, e As EventArgs) Handles SimpleButton40.Click
         Dim asd As String = System.DateTime.Now.ToString("dd-MM-yyyy HHmmss")
