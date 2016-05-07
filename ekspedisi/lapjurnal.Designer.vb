@@ -155,7 +155,7 @@ Partial Public Class lapjurnal
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         CustomSqlQuery1.Name = "CustomSqlQuery"
         CustomSqlQuery1.Sql = resources.GetString("CustomSqlQuery1.Sql")
