@@ -173,6 +173,7 @@ Public Class transaksi_DO
         If ins = True Then
             MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             audit()
+            cek = False
         End If
         res()
         Me.Close()
@@ -328,6 +329,7 @@ Public Class transaksi_DO
         If ins = True Then
             MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             audit()
+            cek = False
             frm_notado.transid = kode
             frm_notado.ShowDialog()
         End If
