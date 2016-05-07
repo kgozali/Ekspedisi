@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 Public Class edit_DO
     Public kodeprinciple As String = ""
     Public namaprinciple As String = ""
@@ -36,7 +37,7 @@ Public Class edit_DO
             defpendapatan = Scalar("select id_akun from control_account where keterangan='Def. Akun Pendapatan'")
 
             'select awal ambil data semua
-            datatable = DtTable("select id_booking,tgl_jam,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
+            datatable = DtTable("select id_booking,path_upload,tgl_jam,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" + id.Text.ToString + "'")
             idbooking.Text = datatable.Rows(0).Item("id_booking").ToString
             tanggalterkirim.Value = datatable.Rows(0).Item("tgl_terkirim").ToString
             tanggaljatuhtempo.Value = datatable.Rows(0).Item("jatuh_tempo").ToString
@@ -44,6 +45,14 @@ Public Class edit_DO
             tgldo.Value = datatable.Rows(0).Item("tgl_jam").ToString
 
             kodetrans = id.Text.ToString
+            Dim arrpic() As Byte = CType(datatable.Rows(0).Item("path_upload"), Byte())
+            If arrpic.Length > 0 Then
+                Dim ms As New MemoryStream(arrpic)
+                PictureEdit1.Image = Image.FromStream(ms)
+                ms.Close()
+            Else
+
+            End If
 
 
             res = Scalar("select id_principle from booking_truk,trans_do where trans_do.id_booking=booking_truk.id_booking and id_transaksi='" + id.Text.ToString + "'")
@@ -121,11 +130,25 @@ Public Class edit_DO
     End Sub
 
     Sub update()
+        Dim arrpic() As Byte
+        If PictureEdit1.Text <> "" Then
+            Dim ms As New MemoryStream
+            PictureEdit1.Image.Save(ms, PictureEdit1.Image.RawFormat)
+            arrpic = ms.GetBuffer()
+            ms.Close()
+            'Exit Sub
+        End If
         'lihat apakah berat dari total barang adalah 0
         sum = CInt(GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString)
         total = price * sum
         If sum <> 0 Then
             Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_jam='" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "' where id_transaksi='" + kodetrans.ToString + "'")
+            'masukkan Gambar
+            Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" + kodetrans.ToString + "'", connect)
+            connect.Open()
+            Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+            Command.ExecuteNonQuery()
+            connect.Close()
             'delete
             InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
             'insert baru
@@ -147,6 +170,12 @@ Public Class edit_DO
             Dim msg As Integer = MessageBox.Show("Total berat dari barang adalah 0 Kilogram, apakah anda ingin tetap melakukan perubahan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
             If msg = DialogResult.Yes Then
                 Dim update As Boolean = InsertInto("update trans_do set no_do='" + nomerdo.Text + "',tgl_jam='" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "',tgl_terkirim='" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "',jatuh_tempo='" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',total_bayar='" + total.ToString + "' where id_transaksi='" + kodetrans.ToString + "'")
+                'masukkan Gambar
+                Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" + kodetrans.ToString + "'", connect)
+                connect.Open()
+                Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+                Command.ExecuteNonQuery()
+                connect.Close()
                 'delete
                 InsertInto("delete from dtrans_do where id_transaksi='" + kodetrans.ToString + "'")
                 'insert baru

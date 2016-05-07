@@ -238,7 +238,7 @@ Public Class transaksi_DO
         idbooking.Text = ""
         nomerdo.Text = ""
         add_item.barangset.Rows.Clear()
-
+        PictureEdit1.Text = ""
     End Sub
 
     Sub generate()
@@ -333,5 +333,14 @@ Public Class transaksi_DO
         End If
         res()
         Me.Close()
+    End Sub
+
+    Private Sub idbooking_Click(sender As Object, e As EventArgs) Handles idbooking.Click
+        Try
+            Me.Visible = False
+            booking_do.Show()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
