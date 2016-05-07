@@ -26,10 +26,10 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
+    Dim cekubah As Boolean = False
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Try
-            If datapilih.Rows.Count > 0 Then
+            If cekubah = True Then
                 Dim a As Integer = MessageBox.Show("Data mengalami perubahan, apakah anda akan melakukan penyimpanan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If a = DialogResult.Yes Then
                     Submit_Click(sender, e)
@@ -156,6 +156,7 @@
                 InsertInto("insert into dsupir values ('" & supir.SelectedValue.ToString & "','" & datapilih.Rows(i).Item("id").ToString & "','" & datapilih.Rows(i).Item("harga").ToString & "')")
             Next i
             supir_SelectedIndexChanged(sender, e)
+            datapilih.Clear()
             MessageBox.Show("Data berhasil diinput", "Konfirmasi Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -279,6 +280,7 @@
                     End If
                 End If
             End If
+            cekubah = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
