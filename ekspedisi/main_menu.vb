@@ -404,4 +404,18 @@ Public Class main_menu
     Private Sub SimpleButton22_Click(sender As Object, e As EventArgs) Handles SimpleButton22.Click
         change_password.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton18_Click(sender As Object, e As EventArgs) Handles SimpleButton18.Click
+        backuppath.Text = ""
+    End Sub
+
+    Private Sub SimpleButton17_Click(sender As Object, e As EventArgs) Handles SimpleButton17.Click
+        restorepath.Text = ""
+        Label13.Text = "-"
+        Label14.Text = "-"
+        Label15.Text = "-"
+        Label20.Text = "-"
+    End Sub
+
+  
 End Class
