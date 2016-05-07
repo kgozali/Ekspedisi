@@ -68,8 +68,6 @@ Public Class main_menu
     End Sub
 
     Public Sub main_menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         Try
 
             login2.ShowDialog()
@@ -221,14 +219,14 @@ Public Class main_menu
                 mb.ExportToFile(backuppath.Text.ToString)
                 connect.Close()
                 MessageBox.Show("Backup database berhasil dilakukan", "System Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                backuppath.Text=""
+                backuppath.Text = ""
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             End Try
         End If
     End Sub
-  
+
     Private Sub SimpleButton40_Click(sender As Object, e As EventArgs) Handles SimpleButton40.Click
         Dim asd As String = System.DateTime.Now.ToString("dd-MM-yyyy HHmmss")
         sfd.InitialDirectory = "C:\users\public"
