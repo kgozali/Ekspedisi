@@ -188,6 +188,7 @@ Partial Class add_kontak_principle
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_kontak_principle"
         Me.Text = "Tambah Kontak Principle"
         CType(Me.email.Properties, System.ComponentModel.ISupportInitialize).EndInit()

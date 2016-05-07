@@ -144,6 +144,7 @@ Partial Class daftar_hutang_karyawan
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "daftar_hutang_karyawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Hutang Karyawan"

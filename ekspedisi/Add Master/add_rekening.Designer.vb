@@ -103,6 +103,7 @@ Partial Class add_rekening
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_rekening"
         Me.Text = "Tambah Rekening"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()

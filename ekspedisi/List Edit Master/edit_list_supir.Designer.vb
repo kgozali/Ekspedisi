@@ -62,14 +62,15 @@ Partial Class edit_list_supir
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'edit_list_karyawan
+        'edit_list_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(786, 345)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Name = "edit_list_karyawan"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "edit_list_supir"
         Me.Text = "Edit List Supir"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

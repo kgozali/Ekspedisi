@@ -21,10 +21,10 @@ Partial Class edit_list_rekening
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_list_rekening))
         Me.hasiledit = New System.Windows.Forms.DataGridView()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -40,6 +40,18 @@ Partial Class edit_list_rekening
         Me.hasiledit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.hasiledit.Size = New System.Drawing.Size(245, 257)
         Me.hasiledit.TabIndex = 48
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID Rekening"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Nama Bank"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
         'cancel
         '
@@ -59,18 +71,6 @@ Partial Class edit_list_rekening
         Me.GroupControl1.TabIndex = 116
         Me.GroupControl1.Text = "Daftar Edit Rekening"
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID Rekening"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nama Bank"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
         'edit_list_rekening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -78,6 +78,7 @@ Partial Class edit_list_rekening
         Me.ClientSize = New System.Drawing.Size(280, 341)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_list_rekening"
         Me.Text = "Edit List Rekening"
         CType(Me.hasiledit, System.ComponentModel.ISupportInitialize).EndInit()

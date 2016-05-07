@@ -231,6 +231,7 @@ Partial Class add_customer
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_customer"
         Me.Text = "Tambah Customer"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

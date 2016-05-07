@@ -31,10 +31,10 @@ Partial Class edit_user
         Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -145,21 +145,12 @@ Partial Class edit_user
         Me.GroupControl3.TabIndex = 148
         Me.GroupControl3.Text = "Ubah Passoword"
         '
-        'LabelControl2
+        'MaskedTextBox2
         '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(67, 22)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(104, 18)
-        Me.LabelControl2.TabIndex = 32
-        Me.LabelControl2.Text = "New Password :"
-        '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(177, 23)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(138, 21)
-        Me.MaskedTextBox1.TabIndex = 171
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(177, 47)
+        Me.MaskedTextBox2.Name = "MaskedTextBox2"
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(138, 21)
+        Me.MaskedTextBox2.TabIndex = 173
         '
         'LabelControl3
         '
@@ -170,12 +161,21 @@ Partial Class edit_user
         Me.LabelControl3.TabIndex = 172
         Me.LabelControl3.Text = "Reenter New Password :"
         '
-        'MaskedTextBox2
+        'MaskedTextBox1
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(177, 47)
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(138, 21)
-        Me.MaskedTextBox2.TabIndex = 173
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(177, 23)
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(138, 21)
+        Me.MaskedTextBox1.TabIndex = 171
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(67, 22)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(104, 18)
+        Me.LabelControl2.TabIndex = 32
+        Me.LabelControl2.Text = "New Password :"
         '
         'edit_user
         '
@@ -188,6 +188,7 @@ Partial Class edit_user
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_user"
         Me.Text = "Edit User"
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()

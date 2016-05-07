@@ -69,6 +69,7 @@ Partial Class edit_list_user
         Me.ClientSize = New System.Drawing.Size(276, 337)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_list_user"
         Me.Text = "Edit List User"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

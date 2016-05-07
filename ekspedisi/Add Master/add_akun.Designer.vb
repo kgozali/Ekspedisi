@@ -104,6 +104,7 @@ Partial Class add_akun
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_akun"
         Me.Text = "Tambah Akun"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

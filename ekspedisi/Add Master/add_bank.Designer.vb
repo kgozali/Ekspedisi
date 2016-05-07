@@ -104,6 +104,7 @@ Partial Class add_bank
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_bank"
         Me.Text = "Tambah Bank"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()

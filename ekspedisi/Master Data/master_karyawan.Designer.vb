@@ -421,6 +421,7 @@ Partial Class master_karyawan
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.hapus)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "master_karyawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Karyawan"

@@ -19,6 +19,7 @@ Partial Class perubahan_harga
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(perubahan_harga))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -76,6 +77,7 @@ Partial Class perubahan_harga
         Me.ClientSize = New System.Drawing.Size(719, 611)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "perubahan_harga"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Perubahan Harga"

@@ -231,6 +231,7 @@ Partial Class edit_Principle
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.SimpleButton1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_Principle"
         Me.Text = "Edit Principle"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -147,7 +147,7 @@ Partial Class daftar_tutup_karyawan
         '
         'daftar_tutup_karyawan
         '
-        Me.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font

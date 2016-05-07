@@ -69,6 +69,7 @@ Partial Class edit_list_kota
         Me.ClientSize = New System.Drawing.Size(291, 339)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_list_kota"
         Me.Text = "Edit List Kota"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

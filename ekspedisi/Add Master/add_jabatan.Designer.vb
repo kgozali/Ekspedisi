@@ -104,6 +104,7 @@ Partial Class add_jabatan
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_jabatan"
         Me.Text = "Tambah Jabatan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

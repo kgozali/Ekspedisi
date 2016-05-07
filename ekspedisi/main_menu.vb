@@ -417,5 +417,8 @@ Public Class main_menu
         Label20.Text = "-"
     End Sub
 
-  
+
+    Private Sub main_menu_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        main_menu_Load(sender, e)
+    End Sub
 End Class

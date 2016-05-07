@@ -19,6 +19,7 @@ Partial Class add_barang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(add_barang))
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.principle = New System.Windows.Forms.ComboBox()
@@ -160,6 +161,7 @@ Partial Class add_barang
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_barang"
         Me.Text = "Tambah Barang"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

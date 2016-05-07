@@ -188,6 +188,7 @@ Partial Class add_rute
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_rute"
         Me.Text = "Tambah Rute"
         CType(Me.unit.Properties, System.ComponentModel.ISupportInitialize).EndInit()

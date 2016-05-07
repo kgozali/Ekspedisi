@@ -123,6 +123,7 @@ Partial Class change_password
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.nama)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "change_password"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Change Password"

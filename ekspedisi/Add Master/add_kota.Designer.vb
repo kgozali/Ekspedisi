@@ -103,6 +103,7 @@ Partial Class add_kota
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_kota"
         Me.Text = "Tambah Kota"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
