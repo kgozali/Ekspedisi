@@ -106,6 +106,7 @@ Partial Class edit_rekening
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_rekening"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Rekening"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()

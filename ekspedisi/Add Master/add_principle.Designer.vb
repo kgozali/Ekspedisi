@@ -233,6 +233,7 @@ Partial Class add_principle
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_principle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Principle"
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).EndInit()

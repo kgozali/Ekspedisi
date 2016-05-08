@@ -106,6 +106,7 @@ Partial Class edit_jabatan
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_jabatan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Jabatan"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()

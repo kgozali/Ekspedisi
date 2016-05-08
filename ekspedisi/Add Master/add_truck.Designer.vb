@@ -332,6 +332,7 @@ Partial Class add_truck
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_truck"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Truck"
         CType(Me.umur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hargabeli.Properties, System.ComponentModel.ISupportInitialize).EndInit()

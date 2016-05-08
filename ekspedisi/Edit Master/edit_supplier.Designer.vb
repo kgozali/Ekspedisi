@@ -253,6 +253,7 @@ Partial Class edit_supplier
         Me.Controls.Add(Me.SimpleButton1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "edit_supplier"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Supplier"
         CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()

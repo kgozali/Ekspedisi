@@ -105,6 +105,7 @@ Partial Class add_rekening
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "add_rekening"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Rekening"
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
