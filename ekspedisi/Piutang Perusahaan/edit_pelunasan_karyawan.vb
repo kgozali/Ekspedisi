@@ -61,7 +61,7 @@
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Edit Buka Piutang Karyawan"
-        Dim aktivitas As String = "Edit Buka Piutang: " & id.Text
+        Dim aktivitas As String = "Edit Buka Piutang: " & idkaryawan.Text
         auditlog(user, kompname, form, aktivitas)
     End Sub
 
