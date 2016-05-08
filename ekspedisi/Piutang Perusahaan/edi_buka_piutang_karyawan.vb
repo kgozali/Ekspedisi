@@ -38,10 +38,6 @@
             akunkas.ValueMember = "kode_akun"
             data = New DataTable
             data = DtTable("select * from mhari_pelunasan where s='1'")
-            harilunas.DataSource = data
-            harilunas.DisplayMember = "jumlah_hari"
-            harilunas.ValueMember = "jumlah_hari"
-            tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
             If master_peluanasan_karyawan.supir.Checked = True Then
                 data = DtTable("select id_supir,nama_supir from msupir where s='1'")
                 pilihkaryawan.DataSource = data
@@ -55,7 +51,6 @@
             End If
             cekform = True
             pilihkaryawan.Text = master_peluanasan_karyawan.namakaryawan
-            harilunas.Text = master_peluanasan_karyawan.haripilih
             akunkas.Text = master_peluanasan_karyawan.akunpilih
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -65,16 +60,6 @@
     Private Sub pilihkaryawan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pilihkaryawan.SelectedIndexChanged
         Try
             idkaryawan.Text = pilihkaryawan.SelectedValue.ToString
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Private Sub harilunas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles harilunas.SelectedIndexChanged
-        Try
-            If cekform = True Then
-                tanggalpelunasan.Value = tanggalpiutang.Value.AddDays(CInt(harilunas.SelectedValue.ToString))
-            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

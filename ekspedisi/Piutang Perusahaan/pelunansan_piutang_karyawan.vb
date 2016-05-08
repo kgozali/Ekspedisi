@@ -123,7 +123,7 @@
                             hitung = hitung + tabel.Rows(i).Item("Sisa")
                         Next i
                         MessageBox.Show("Transaksi pelunasan telah berhasil", "Informasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                        audit()
                         totalbayar.Text = "0"
                         totalhutang.Text = hitung
                         If supirataukarywan = "karyawan" Then

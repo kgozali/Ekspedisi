@@ -56,6 +56,15 @@
         End Try
     End Sub
     Dim datakeamanan As New DataTable
+
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Edit Buka Piutang Karyawan"
+        Dim aktivitas As String = "Edit Buka Piutang: " & id.Text
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
+
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
             Dim centang As Boolean = False
@@ -98,6 +107,7 @@
                     End If
                 Next i
                 MessageBox.Show("Pelunasan berhasil diedit", "Konfirmasi Edit Pelunasan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                audit()
             End If
             If master_peluanasan_karyawan.karyawan.Checked = True Then
                 data = New DataTable

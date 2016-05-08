@@ -32,15 +32,15 @@
         pilihkaryawan.MaskBox.AutoCompleteCustomSource = collection
     End Sub
 
-    Private Sub pilihkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles pilihkaryawan.ButtonClick
+    Private Sub pilihkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)
         karyawan_piutang.ShowDialog()
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
     Public idbukapiutang As String
-    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
+    Private Sub Submit_Click(sender As Object, e As EventArgs)
         If nominal.Text <> "" Then
             If tanggalpelunasan.Value > tanggalpiutang.Value Then
                 If idkaryawan.Text <> "" Then
@@ -77,7 +77,7 @@
         End If
     End Sub
 
-    Private Sub pilihkaryawan_Click(sender As Object, e As EventArgs) Handles pilihkaryawan.Click
+    Private Sub pilihkaryawan_Click(sender As Object, e As EventArgs)
         karyawan_piutang.ShowDialog()
     End Sub
 

@@ -111,43 +111,6 @@
     End Sub
     Dim sudah As New DataTable
     Dim datatolak As New DataTable
-    'Private Sub hargasupir_DataSourceChanged(sender As Object, e As EventArgs) Handles hargasupir.DataSourceChanged
-    '    data = New DataTable
-    '    Try
-    '        If datapilih.Columns.Count = 0 Then
-    '            datapilih.Columns.Add("id", GetType(String))
-    '            datapilih.Columns.Add("harga", GetType(Double))
-    '        End If
-    '        If datatolak.Columns.Count = 0 Then
-    '            datatolak.Columns.Add("id", GetType(String))
-    '            datatolak.Columns.Add("harga", GetType(Double))
-    '        End If
-    '        For i = 0 To dataharga.RowCount - 1
-    '            With dataharga
-    '                .SetRowCellValue(i, "Check List Rute", False)
-    '                .SetRowCellValue(i, "Harga Maksimum", 0)
-    '            End With
-    '            For k = 0 To sudah.Rows.Count - 1
-    '                If dataharga.GetRowCellValue(i, "Kode Rute") = sudah.Rows(k).Item("id_rute") Then
-    '                    With dataharga
-    '                        .SetRowCellValue(i, "Check List Rute", True)
-    '                        .SetRowCellValue(i, "Harga Maksimum", sudah.Rows(k).Item("tarif"))
-    '                    End With
-    '                End If
-    '            Next k
-    '            For j = 0 To datapilih.Rows.Count - 1
-    '                If dataharga.GetRowCellValue(i, "Kode Rute") = datapilih.Rows(j).Item("id") Then
-    '                    With dataharga
-    '                        .SetRowCellValue(i, "Check List Rute", True)
-    '                        .SetRowCellValue(i, "Harga Maksimum", datapilih.Rows(j).Item("harga"))
-    '                    End With
-    '                End If
-    '            Next j
-    '        Next i
-    '    Catch ex As Exception
-    '        MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
-    'End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Try
@@ -157,7 +120,8 @@
             Next i
             supir_SelectedIndexChanged(sender, e)
             datapilih.Clear()
-            MessageBox.Show("Data berhasil diinput", "Konfirmasi Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data berhasil diupdate", "Konfirmasi Update Data", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            audit()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -180,46 +144,6 @@
                     .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
                 End With
             End If
-            'If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True And e.Column.FieldName = "Harga Maksimum" Then
-            '    If e.Value > 0 Then
-            '        For i = 0 To datapilih.Rows.Count - 1
-            '            If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-            '                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
-            '                datapilih.Rows.RemoveAt(i)
-            '            Else
-            '                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
-            '            End If
-            '        Next i
-            '    End If
-            'End If
-            'If e.Column.FieldName = "Check List Rute" Then
-            '    If e.Value = False Then
-            '        For i = 0 To datapilih.Rows.Count - 1
-            '            If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-            '                datapilih.Rows.RemoveAt(i)
-            '            End If
-            '        Next i
-            '    End If
-            'End If
-            'If e.Column.FieldName = "Check List Rute" Then
-            '    If e.Value = True And dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum") > 0 Then
-            '        Dim ada As Boolean = False
-            '        If datapilih.Rows.Count > 0 Then
-            '            For i = 0 To datapilih.Rows.Count - 1
-            '                If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-            '                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
-            '                    datapilih.Rows.RemoveAt(i)
-            '                    ada = True
-            '                End If
-            '            Next i
-            '            If ada = False Then
-            '                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
-            '            End If
-            '        Else
-            '            datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
-            '        End If
-            '    End If
-            'End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -228,7 +152,13 @@
     Private Sub harga_supir_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         datapilih.Clear()
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Harga Supir"
+        Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir" & supir.SelectedValue.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanged
         Try
             If cek = True Then
