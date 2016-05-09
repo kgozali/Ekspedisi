@@ -206,8 +206,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.backuprestore
-        Me.BackstageViewControl1.SelectedTabIndex = 7
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem7
+        Me.BackstageViewControl1.SelectedTabIndex = 3
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 697)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -226,11 +226,11 @@ Partial Class main_menu
         Me.Label21.AutoSize = True
         Me.Label21.BackColor = System.Drawing.Color.White
         Me.Label21.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(321, 9)
+        Me.Label21.Location = New System.Drawing.Point(331, 9)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(255, 33)
+        Me.Label21.Size = New System.Drawing.Size(130, 33)
         Me.Label21.TabIndex = 15
-        Me.Label21.Text = "Application Manager"
+        Me.Label21.Text = "Organizer"
         '
         'XtraTabControl1
         '
@@ -639,7 +639,7 @@ Partial Class main_menu
         'masterpiutangprinciple
         '
         Me.masterpiutangprinciple.Image = CType(resources.GetObject("masterpiutangprinciple.Image"), System.Drawing.Image)
-        Me.masterpiutangprinciple.Location = New System.Drawing.Point(564, 161)
+        Me.masterpiutangprinciple.Location = New System.Drawing.Point(310, 82)
         Me.masterpiutangprinciple.Name = "masterpiutangprinciple"
         Me.masterpiutangprinciple.Size = New System.Drawing.Size(196, 54)
         Me.masterpiutangprinciple.TabIndex = 35
@@ -648,11 +648,11 @@ Partial Class main_menu
         'master_pelunasan
         '
         Me.master_pelunasan.Image = CType(resources.GetObject("master_pelunasan.Image"), System.Drawing.Image)
-        Me.master_pelunasan.Location = New System.Drawing.Point(310, 161)
+        Me.master_pelunasan.Location = New System.Drawing.Point(53, 82)
         Me.master_pelunasan.Name = "master_pelunasan"
         Me.master_pelunasan.Size = New System.Drawing.Size(196, 54)
         Me.master_pelunasan.TabIndex = 34
-        Me.master_pelunasan.Text = "Master Pelunasan karyawan"
+        Me.master_pelunasan.Text = "Master Pelunasan Karyawan"
         '
         'SimpleButton8
         '
@@ -675,7 +675,7 @@ Partial Class main_menu
         'pelunasanpiutangkaryawan
         '
         Me.pelunasanpiutangkaryawan.Image = CType(resources.GetObject("pelunasanpiutangkaryawan.Image"), System.Drawing.Image)
-        Me.pelunasanpiutangkaryawan.Location = New System.Drawing.Point(310, 82)
+        Me.pelunasanpiutangkaryawan.Location = New System.Drawing.Point(564, 161)
         Me.pelunasanpiutangkaryawan.Name = "pelunasanpiutangkaryawan"
         Me.pelunasanpiutangkaryawan.Size = New System.Drawing.Size(196, 54)
         Me.pelunasanpiutangkaryawan.TabIndex = 31
@@ -684,7 +684,7 @@ Partial Class main_menu
         'peluanasapiutangprinciple
         '
         Me.peluanasapiutangprinciple.Image = CType(resources.GetObject("peluanasapiutangprinciple.Image"), System.Drawing.Image)
-        Me.peluanasapiutangprinciple.Location = New System.Drawing.Point(53, 82)
+        Me.peluanasapiutangprinciple.Location = New System.Drawing.Point(310, 161)
         Me.peluanasapiutangprinciple.Name = "peluanasapiutangprinciple"
         Me.peluanasapiutangprinciple.Size = New System.Drawing.Size(196, 54)
         Me.peluanasapiutangprinciple.TabIndex = 30
@@ -1214,7 +1214,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem7.ContentControl = Me.BackstageViewClientControl7
         Me.BackstageViewTabItem7.Glyph = CType(resources.GetObject("BackstageViewTabItem7.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem7.Name = "BackstageViewTabItem7"
-        Me.BackstageViewTabItem7.Selected = False
+        Me.BackstageViewTabItem7.Selected = True
         '
         'BackstageViewTabItem6
         '
@@ -1246,7 +1246,7 @@ Partial Class main_menu
         Me.backuprestore.ContentControl = Me.BackstageViewClientControl2
         Me.backuprestore.Glyph = CType(resources.GetObject("backuprestore.Glyph"), System.Drawing.Image)
         Me.backuprestore.Name = "backuprestore"
-        Me.backuprestore.Selected = True
+        Me.backuprestore.Selected = False
         '
         'BackstageViewClientControl3
         '
