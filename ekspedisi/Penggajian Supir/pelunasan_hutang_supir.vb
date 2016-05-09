@@ -38,7 +38,6 @@
                         InsertInto("INSERT INTO `dpelunasan_hutang_supir`(`id_phutangkaryawan`, `id_booking`, `nominal_bayar`) VALUES ('" & tampung & "','" & datapiutang.GetRowCellValue(i, "Kode Booking") & "'," & datapiutang.GetRowCellValue(i, "Sisa Hutang") & ")")
                         InsertInto("UPDATE `booking_truk` SET `status_bayar_supir`='0' WHERE id_booking='" & datapiutang.GetRowCellValue(i, "Kode Booking") & "'")
                     End If
-
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 audit()
