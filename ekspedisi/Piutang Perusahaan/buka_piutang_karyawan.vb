@@ -108,4 +108,12 @@
 
         End Try
     End Sub
+
+    Private Sub pilihkaryawan_ButtonPressed(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles pilihkaryawan.ButtonPressed
+        karyawan_piutang.ShowDialog()
+    End Sub
+
+    Private Sub pilihkaryawan_Click_1(sender As Object, e As EventArgs) Handles pilihkaryawan.Click
+        karyawan_piutang.ShowDialog()
+    End Sub
 End Class

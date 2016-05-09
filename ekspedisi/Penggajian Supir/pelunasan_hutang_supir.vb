@@ -2,6 +2,7 @@
     Dim akunhutang As String = ""
     Dim idakun As String = ""
     Dim tampung As String = ""
+    Dim data As New DataTable
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
@@ -41,7 +42,19 @@
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 audit()
-                pelunasan_hutang_supir_Load(sender, e)
+                'refresh
+                Dim angka As Double = 0
+                data = New DataTable
+                data = DtTablebayarcek("SELECT b.id_booking `Kode Booking`,harga_supir_total `Total Nominal`, dp_awal_supir `DP Awal`,harga_supir_total-dp_awal_supir `Sisa Hutang` FROM  `msupir` ms, booking_truk b WHERE b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1'  and ms.id_supir='" & idkaryawan.Text & "'")
+                daftarpiutang.DataSource = data
+                For i = 0 To datapiutang.RowCount - 1
+                    angka = angka + datapiutang.GetRowCellValue(i, "Sisa Hutang")
+                    With datapiutang
+                        .SetRowCellValue(i, "Bayar", False)
+                    End With
+                Next i
+                totalhutang.Text = angka.ToString
+
                 lihat_slip_gaji.nomergaji = tampung
                 lihat_slip_gaji.ShowDialog()
             End If
@@ -108,5 +121,18 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         
+    End Sub
+
+    Private Sub pelunasan_hutang_supir_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Try
+            idkaryawan.Text = ""
+            namakaryawan.Text = ""
+            nomertelepon.Text = ""
+            kotaasal.Text = ""
+            data = New DataTable
+            daftarpiutang.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
