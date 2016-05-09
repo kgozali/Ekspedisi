@@ -42,6 +42,12 @@
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 jurnal()
+                Dim total As Double = CDbl(totaldibayar.Text)
+                Dim mintotal As Double = total * -1
+                For i = 0 To datapiutang.RowCount - 1
+                    InsertInto("insert into djurnal values('" + tampung + "','" + akunhutang.ToString + "','Pelunasan Hutang Supir'," & datapiutang.GetRowCellValue(i, "Sisa Hutang") & ")")
+                Next i
+                InsertInto("insert into djurnal values('" + tampung + "','" + idakun.ToString + "','Pelunasan Hutang Supir'," + mintotal.ToString + ")")
                 audit()
                 'refresh
                 Dim angka As Double = 0
@@ -112,12 +118,10 @@
 
     Sub jurnal()
         Try
-            Dim total As Integer = totaldibayar.Text
-            Dim mintotal As Integer = total * -1
+            
             idakun = namaakun.SelectedValue.ToString
-            InsertInto("insert into jurnal values('" + tampung.ToString + "'," & tanggalpembayaran.Value.ToString("yyyyMMdd") & ")")
-            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + akunhutang.ToString + "','','" + total.ToString + "')")
-            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + idakun.ToString + "','','" + mintotal.ToString + "')")
+            InsertInto("insert into jurnal values('" + tampung + "'," & tanggalpembayaran.Value.ToString("yyyyMMdd") & ")")
+            
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
