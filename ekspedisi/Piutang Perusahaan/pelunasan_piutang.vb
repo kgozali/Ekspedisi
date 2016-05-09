@@ -180,4 +180,11 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub pembayaran_KeyDown(sender As Object, e As KeyEventArgs) Handles pembayaran.KeyDown
+        If e.KeyData = Keys.Delete Then
+            pembayaran.DeleteRow(pembayaran.FocusedRowHandle)
+            pembayaran.RefreshData()
+        End If
+    End Sub
 End Class
