@@ -129,6 +129,8 @@
             namakaryawan.Text = ""
             nomertelepon.Text = ""
             kotaasal.Text = ""
+            totaldibayar.Text = "0"
+            totalhutang.Text = "0"
             data = New DataTable
             daftarpiutang.DataSource = data
         Catch ex As Exception
