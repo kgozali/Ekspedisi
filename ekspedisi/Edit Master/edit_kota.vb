@@ -1,7 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class edit_kota
+    Dim kotaa As String = ""
     Private Sub edit_kota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         kota.Text = edit_list_kota.GridView1.GetRowCellValue(edit_list_kota.GridView1.FocusedRowHandle, "Nama Kota").ToString()
+        kotaa = edit_list_kota.GridView1.GetRowCellValue(edit_list_kota.GridView1.FocusedRowHandle, "Nama Kota").ToString()
         provinsi.Text = edit_list_kota.GridView1.GetRowCellValue(edit_list_kota.GridView1.FocusedRowHandle, "Nama Provinsi").ToString()
     End Sub
 
@@ -12,7 +14,7 @@ Public Class edit_kota
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Select Case MsgBox("Apakah anda yakin mengedit data ini?", MsgBoxStyle.YesNo, "System Error")
             Case MsgBoxResult.Yes
-                Dim ccccc As String = "update mkota set provinsi='" & provinsi.Text & "' where kota='" & kota.Text & "'"
+                Dim ccccc As String = "update mkota set kota = '" & kota.Text & "', provinsi='" & provinsi.Text & "' where kota='" & kotaa.ToString & "'"
                 InsertInto(ccccc)
                 audit()
                 MessageBox.Show("File Updated")
@@ -26,7 +28,7 @@ Public Class edit_kota
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Master Kota"
-        Dim aktivitas As String = "Edit Kota: " & kota.Text.ToString
+        Dim aktivitas As String = "Edit Kota: " & kotaa
         auditlog(user, kompname, form, aktivitas)
     End Sub
 End Class
