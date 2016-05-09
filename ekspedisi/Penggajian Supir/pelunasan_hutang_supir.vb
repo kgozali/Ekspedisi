@@ -45,7 +45,7 @@
                 'refresh
                 Dim angka As Double = 0
                 data = New DataTable
-                data = DtTablebayarcek("SELECT b.id_booking `Kode Booking`,harga_supir_total `Total Nominal`, dp_awal_supir `DP Awal`,harga_supir_total-dp_awal_supir `Sisa Hutang` FROM  `msupir` ms, booking_truk b WHERE b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1'  and ms.id_supir='" & idkaryawan.Text & "'")
+                data = DtTablebayarcek("SELECT b.id_booking `Kode Booking`,harga_supir_total `Total Nominal`, dp_awal_supir `DP Awal`,harga_supir_total-dp_awal_supir `Sisa Hutang` FROM  `msupir` ms, booking_truk b WHERE b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1' and ms.id_supir='" & idkaryawan.Text & "' and b.del='0'")
                 daftarpiutang.DataSource = data
                 For i = 0 To datapiutang.RowCount - 1
                     angka = angka + datapiutang.GetRowCellValue(i, "Sisa Hutang")
@@ -78,7 +78,7 @@
     Dim keamanan As String
     Private Sub datapiutang_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles datapiutang.CellValueChanging
         Try
-            If datapiutang.FocusedColumn.AbsoluteIndex = 6 Then
+            If e.Column.FieldName = "Bayar" Then
                 Dim angka As Double = 0
                 If datapiutang.GetRowCellValue(datapiutang.FocusedRowHandle, "Bayar") = False Then
                     With datapiutang
