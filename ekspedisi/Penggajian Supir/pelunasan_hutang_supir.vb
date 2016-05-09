@@ -41,6 +41,7 @@
                     End If
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                jurnal()
                 audit()
                 'refresh
                 Dim angka As Double = 0
@@ -114,9 +115,9 @@
             Dim total As Integer = totaldibayar.Text
             Dim mintotal As Integer = total * -1
             idakun = namaakun.SelectedValue.ToString
-            InsertInto("insert into jurnal values('" + tampung.ToString + "'," & tanggalpembayaran.Value.ToString("yyyyMMdd"))
-            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + akunhutang.ToString + "','','" + total.ToString + "'")
-            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + idakun.ToString + "','','" + mintotal.ToString + "'")
+            InsertInto("insert into jurnal values('" + tampung.ToString + "'," & tanggalpembayaran.Value.ToString("yyyyMMdd") & ")")
+            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + akunhutang.ToString + "','','" + total.ToString + "')")
+            InsertInto("insert into djurnal values('" + tampung.ToString + "','" + idakun.ToString + "','','" + mintotal.ToString + "')")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
