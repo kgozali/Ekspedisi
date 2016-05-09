@@ -156,7 +156,7 @@
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Harga Supir"
-        Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir: " & supir.SelectedValue.ToString
+        Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir:v6 " & supir.SelectedValue.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
     Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanged

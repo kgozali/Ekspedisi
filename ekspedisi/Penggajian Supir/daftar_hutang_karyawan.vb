@@ -22,7 +22,7 @@
             pelunasan_hutang_supir.nomertelepon.Text = hutang.GetRowCellValue(hutang.FocusedRowHandle, "Nomor Telepon")
             Dim data As New DataTable
             Dim angka As Double = 0
-            data = DtTablebayarcek("SELECT b.id_booking `Kode Booking`,t.no_do `Nomor DO`, tgl_terkirim `Tanggal Terkirim`,harga_supir_total `Total Nominal`, dp_awal_supir `DP Awal`,harga_supir_total-dp_awal_supir `Sisa Hutang` FROM  `msupir` ms, booking_truk b,trans_do t WHERE t.id_booking=b.id_booking and b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1'  and ms.id_supir='" & hutang.GetRowCellValue(hutang.FocusedRowHandle, "Kode Supir") & "'")
+            data = DtTablebayarcek("SELECT b.id_booking `Kode Booking`,harga_supir_total `Total Nominal`, dp_awal_supir `DP Awal`,harga_supir_total-dp_awal_supir `Sisa Hutang` FROM  `msupir` ms, booking_truk b WHERE b.id_supir=ms.id_supir and ms.s='1' and status_bayar_supir='1'  and ms.id_supir='" & hutang.GetRowCellValue(hutang.FocusedRowHandle, "Kode Supir") & "'")
             pelunasan_hutang_supir.daftarpiutang.DataSource = data
             For i = 0 To pelunasan_hutang_supir.datapiutang.RowCount - 1
                 angka = angka + pelunasan_hutang_supir.datapiutang.GetRowCellValue(i, "Sisa Hutang")

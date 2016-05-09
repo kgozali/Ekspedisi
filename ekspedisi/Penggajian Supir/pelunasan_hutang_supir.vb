@@ -42,9 +42,9 @@
                 Next i
                 MessageBox.Show("Pelunasan berhasil dilakukan", "Konfirmasi pembayaran hutang", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 audit()
+                pelunasan_hutang_supir_Load(sender, e)
                 lihat_slip_gaji.nomergaji = tampung
                 lihat_slip_gaji.ShowDialog()
-
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
