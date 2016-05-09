@@ -73,4 +73,8 @@
         End Try
         edit_principle_pelunasan.ShowDialog()
     End Sub
+
+    Private Sub master_pelunasan_principle_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        master_pelunasan_principle_Load(sender, e)
+    End Sub
 End Class

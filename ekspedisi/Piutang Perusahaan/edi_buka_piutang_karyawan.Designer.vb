@@ -21,8 +21,6 @@ Partial Class edi_buka_piutang_karyawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edi_buka_piutang_karyawan))
         Me.tanggalpelunasan = New System.Windows.Forms.DateTimePicker()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.harilunas = New System.Windows.Forms.ComboBox()
         Me.keterangan = New System.Windows.Forms.RichTextBox()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.idkaryawan = New System.Windows.Forms.TextBox()
@@ -46,28 +44,11 @@ Partial Class edi_buka_piutang_karyawan
         '
         'tanggalpelunasan
         '
-        Me.tanggalpelunasan.Location = New System.Drawing.Point(197, 293)
+        Me.tanggalpelunasan.Location = New System.Drawing.Point(175, 98)
         Me.tanggalpelunasan.Name = "tanggalpelunasan"
         Me.tanggalpelunasan.Size = New System.Drawing.Size(200, 21)
         Me.tanggalpelunasan.TabIndex = 174
         Me.tanggalpelunasan.Visible = False
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(256, 99)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(25, 18)
-        Me.LabelControl8.TabIndex = 163
-        Me.LabelControl8.Text = "Hari"
-        '
-        'harilunas
-        '
-        Me.harilunas.FormattingEnabled = True
-        Me.harilunas.Location = New System.Drawing.Point(176, 96)
-        Me.harilunas.Name = "harilunas"
-        Me.harilunas.Size = New System.Drawing.Size(72, 21)
-        Me.harilunas.TabIndex = 162
         '
         'keterangan
         '
@@ -96,9 +77,8 @@ Partial Class edi_buka_piutang_karyawan
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.tanggalpelunasan)
         Me.GroupControl1.Controls.Add(Me.pilihkaryawan)
-        Me.GroupControl1.Controls.Add(Me.LabelControl8)
-        Me.GroupControl1.Controls.Add(Me.harilunas)
         Me.GroupControl1.Controls.Add(Me.keterangan)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.akunkas)
@@ -233,7 +213,6 @@ Partial Class edi_buka_piutang_karyawan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(474, 331)
-        Me.Controls.Add(Me.tanggalpelunasan)
         Me.Controls.Add(Me.idkaryawan)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
@@ -250,8 +229,6 @@ Partial Class edi_buka_piutang_karyawan
 
     End Sub
     Friend WithEvents tanggalpelunasan As System.Windows.Forms.DateTimePicker
-    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents harilunas As System.Windows.Forms.ComboBox
     Friend WithEvents keterangan As System.Windows.Forms.RichTextBox
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents idkaryawan As System.Windows.Forms.TextBox

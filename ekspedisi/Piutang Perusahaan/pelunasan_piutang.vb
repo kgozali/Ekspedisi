@@ -95,7 +95,7 @@
                     Next i
                     'refresh page
                     Dim tabel As New DataTable
-                    tabel = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and t.s=1 and mprinciple.id_principle='" & idprinciple & "' group by t.id_transaksi")
+                    tabel = DtTablebayarcek("Select t.id_transaksi `Kode Transaksi`,no_do as `Nomer DO`,concat(day(tgl_terkirim),'-',monthname(tgl_terkirim),'-',year(tgl_terkirim)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(kota_asal,' - ',kota_tujuan) `Rute`, sum(berat_per_kg)*price_per_unit `Nominal` from booking_truk,mprinciple,mrute,trans_do t,dtrans_do dt where dt.id_transaksi=t.id_transaksi and t.id_booking=booking_truk.id_booking and booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and t.s=1 and mprinciple.id_principle='" & idprinciple & "' and t.del='0' group by t.id_transaksi")
                     bayarpiutang.DataSource = tabel
                     Dim angka As Double = 0
                     For i = 0 To datapiutang.RowCount - 1
@@ -179,5 +179,12 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub pembayaran_KeyDown(sender As Object, e As KeyEventArgs) Handles pembayaran.KeyDown
+        If e.KeyData = Keys.Delete Then
+            pembayaran.DeleteRow(pembayaran.FocusedRowHandle)
+            pembayaran.RefreshData()
+        End If
     End Sub
 End Class

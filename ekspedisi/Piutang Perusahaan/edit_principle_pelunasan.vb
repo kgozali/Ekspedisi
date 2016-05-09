@@ -94,7 +94,13 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Edit Pelunasan Priciple"
+        Dim aktivitas As String = "Edit Pelunasan Principle: " & nomerpelunasan.Text
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Try
             Dim nominalbayar As Double
@@ -194,4 +200,11 @@
     End Sub
     Dim debet As String
     Dim kredit As String
+
+    Private Sub pembayaran_KeyDown(sender As Object, e As KeyEventArgs) Handles pembayaran.KeyDown
+        If e.KeyData = Keys.Delete Then
+            pembayaran.DeleteRow(pembayaran.FocusedRowHandle)
+            pembayaran.RefreshData()
+        End If
+    End Sub
 End Class

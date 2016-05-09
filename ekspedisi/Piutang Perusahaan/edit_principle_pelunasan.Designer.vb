@@ -515,7 +515,7 @@ Partial Class edit_principle_pelunasan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(828, 575)
+        Me.ClientSize = New System.Drawing.Size(820, 579)
         Me.Controls.Add(Me.principle)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)

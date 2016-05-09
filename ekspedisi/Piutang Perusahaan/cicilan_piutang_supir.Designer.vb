@@ -224,7 +224,7 @@ Partial Public Class cicilan_piutang_supir
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "localhost_ekspedisiConnection 1"
+        Me.SqlDataSource1.ConnectionName = "Bitvise Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         TableQuery1.Name = "piutang_karyawan"
         RelationInfo1.JoinType = DevExpress.Xpo.DB.JoinType.LeftOuter

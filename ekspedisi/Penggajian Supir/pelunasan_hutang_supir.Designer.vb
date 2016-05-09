@@ -133,20 +133,20 @@ Partial Class pelunasan_hutang_supir
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(41, 24)
+        Me.LabelControl1.Location = New System.Drawing.Point(57, 24)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(85, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(69, 18)
         Me.LabelControl1.TabIndex = 36
-        Me.LabelControl1.Text = "ID Karyawan"
+        Me.LabelControl1.Text = "Kode Supir"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(18, 48)
+        Me.LabelControl2.Location = New System.Drawing.Point(51, 48)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(108, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(75, 18)
         Me.LabelControl2.TabIndex = 37
-        Me.LabelControl2.Text = "Nama Karyawan"
+        Me.LabelControl2.Text = "Nama Supir"
         '
         'GroupControl1
         '
