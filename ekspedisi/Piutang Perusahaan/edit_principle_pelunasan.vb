@@ -175,7 +175,7 @@
                         datarow = pelunasan.Tables.Item(1).Rows(i)
                         debet = datarow(4)
                         InsertInto("INSERT INTO `djurnal`(`no_jurnal`, `id_akun`, `keterangan`, `nominal`) VALUES ('" & tampung & "','" & debet & "','Pelunasan Piutang Principle'," & datarow("nominal") & ")")
-                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & datarow(4) & "'," & datarow("nominal") & ",'" & datarow("nomerbg") & "',STR_TO_DATE('" & datarow("tanggalcair") & "','%d/%m/%Y'),'" & catatan.Text & "'," & i + 1 & ",'0','" & datarow(0) & "')")
+                        InsertInto("INSERT INTO `dmetode_pelunasan`(`id_pelunasan`, `id_akun`, `nominal`, `no_BG`, `tgl_cair`, `keterangan`, `urutan`, `status_BG`, `id_rekening`) VALUES ('" & tampung & "','" & datarow(4) & "'," & datarow("nominal") & ",'" & datarow("nomerbg") & "',STR_TO_DATE('" & datarow("tanggalcair") & "','%m/%d/%Y'),'" & catatan.Text & "'," & i + 1 & ",'0','" & datarow(0) & "')")
                     Next i
                     'refresh page
                     Dim tabel As New DataTable
