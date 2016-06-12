@@ -210,10 +210,11 @@ Partial Class booking_truk
         '
         'TimeEdit1
         '
-        Me.TimeEdit1.EditValue = New Date(2016, 4, 8, 0, 0, 0, 0)
+        Me.TimeEdit1.EditValue = "12:00:00 "
         Me.TimeEdit1.Location = New System.Drawing.Point(131, 78)
         Me.TimeEdit1.Name = "TimeEdit1"
         Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.TimeEdit1.Properties.Mask.EditMask = "HH:mm:ss"
         Me.TimeEdit1.Size = New System.Drawing.Size(100, 20)
         Me.TimeEdit1.TabIndex = 4
         '
