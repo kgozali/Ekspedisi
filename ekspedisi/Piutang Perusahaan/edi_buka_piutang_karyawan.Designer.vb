@@ -48,7 +48,6 @@ Partial Class edi_buka_piutang_karyawan
         Me.tanggalpelunasan.Name = "tanggalpelunasan"
         Me.tanggalpelunasan.Size = New System.Drawing.Size(200, 21)
         Me.tanggalpelunasan.TabIndex = 174
-        Me.tanggalpelunasan.Visible = False
         '
         'keterangan
         '

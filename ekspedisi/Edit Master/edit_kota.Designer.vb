@@ -44,7 +44,6 @@ Partial Class edit_kota
         '
         'kota
         '
-        Me.kota.Enabled = False
         Me.kota.Location = New System.Drawing.Point(131, 26)
         Me.kota.Name = "kota"
         Me.kota.Size = New System.Drawing.Size(147, 20)
