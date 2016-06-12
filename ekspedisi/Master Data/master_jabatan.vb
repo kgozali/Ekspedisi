@@ -271,4 +271,7 @@ Public Class master_jabatan
     End Sub
 
 
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
 End Class

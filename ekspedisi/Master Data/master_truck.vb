@@ -274,4 +274,8 @@ Public Class master_truck
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         ViewerTruk.ShowDialog()
     End Sub
+
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
 End Class

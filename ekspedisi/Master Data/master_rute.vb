@@ -268,4 +268,8 @@ Public Class master_rute
     Private Sub ubahharga_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles ubahharga.ItemClick
         form_perubahan_harga.ShowDialog()
     End Sub
+
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
 End Class

@@ -270,4 +270,7 @@ Public Class master_kontak_principle
         ViewerkontakP.ShowDialog()
     End Sub
 
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
+    End Sub
 End Class
