@@ -204,8 +204,8 @@ Public Class booking_truk
         Try
             Dim datarow As DataRow
             autogen()
-            Dim jam As New DateTime
-            jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
+            Dim jam As String = ""
+            jam = TimeEdit1.Text
             Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',0,1,1,0)")
             For i = 0 To GridView1.RowCount - 1
                 datarow = DataSet1.Tables.Item(0).Rows(i)
