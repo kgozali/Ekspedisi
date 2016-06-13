@@ -12,6 +12,7 @@ Public Module Module1
             Return True
         Catch ex As Exception
             Return False
+
         End Try
     End Function
     Function Scalar(ByVal x As String)
@@ -30,6 +31,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
     End Function
 
@@ -54,6 +56,7 @@ Public Module Module1
         Catch expr_BB As MySqlException
             MessageBox.Show(expr_BB.Message.ToString)
             Return Nothing
+            connect.Close()
         End Try
     End Function
 
@@ -69,6 +72,7 @@ Public Module Module1
             data.Clear()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
@@ -91,7 +95,7 @@ Public Module Module1
                 vartr.Rollback()
             Catch ex1 As MySqlException
                 MessageBox.Show(ex1.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+                connect.Close()
             Finally
                 MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -121,6 +125,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
@@ -137,6 +142,7 @@ Public Module Module1
             Return True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
     End Function
 
@@ -181,6 +187,7 @@ Public Module Module1
             Return kode
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+            connect.Close()
         End Try
 
     End Function
@@ -199,6 +206,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
     End Function
     Function DtTablebayar(ByVal x As String)
@@ -221,6 +229,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
@@ -243,6 +252,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
@@ -267,6 +277,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
     End Function
 
@@ -289,6 +300,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
@@ -312,6 +324,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            connect.Close()
         End Try
 
     End Function
