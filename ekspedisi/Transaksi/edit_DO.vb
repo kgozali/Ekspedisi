@@ -45,14 +45,19 @@ Public Class edit_DO
             tgldo.Value = datatable.Rows(0).Item("tgl_jam").ToString
 
             kodetrans = id.Text.ToString
-            Dim arrpic() As Byte = CType(datatable.Rows(0).Item("path_upload"), Byte())
-            If arrpic.Length > 0 Then
-                Dim ms As New MemoryStream(arrpic)
-                PictureEdit1.Image = Image.FromStream(ms)
-                ms.Close()
-            Else
+            If datatable.Rows(0).Item("path_upload").ToString = "" Then
 
+            Else
+                Dim arrpic() As Byte = CType(datatable.Rows(0).Item("path_upload"), Byte())
+                If arrpic.Length > 0 Then
+                    Dim ms As New MemoryStream(arrpic)
+                    PictureEdit1.Image = Image.FromStream(ms)
+                    ms.Close()
+                Else
+
+                End If
             End If
+           
 
 
             res = Scalar("select id_principle from booking_truk,trans_do where trans_do.id_booking=booking_truk.id_booking and id_transaksi='" + id.Text.ToString + "'")
@@ -247,5 +252,9 @@ Public Class edit_DO
         InsertInto("delete from djurnal where no_jurnal='" + kodetrans.ToString + "'")
         InsertInto("insert into djurnal values('" + kodetrans.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
         InsertInto("insert into djurnal values('" + kodetrans.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
     End Sub
 End Class

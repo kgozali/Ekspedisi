@@ -103,4 +103,8 @@ Public Class add_item
     Private Sub addbarang_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addbarang.ItemClick
         add_barang.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
 End Class

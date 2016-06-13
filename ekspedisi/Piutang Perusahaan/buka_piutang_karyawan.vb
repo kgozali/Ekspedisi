@@ -40,7 +40,7 @@
         Me.Close()
     End Sub
     Public idbukapiutang As String
-    Private Sub Submit_Click(sender As Object, e As EventArgs)
+    Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         If nominal.Text <> "" Then
             If tanggalpelunasan.Value > tanggalpiutang.Value Then
                 If idkaryawan.Text <> "" Then

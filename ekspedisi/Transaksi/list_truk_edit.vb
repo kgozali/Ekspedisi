@@ -71,4 +71,8 @@ Public Class list_truk_edit
     Private Sub list_truk_edit_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Me.Close()
+    End Sub
 End Class

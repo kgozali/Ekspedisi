@@ -20,16 +20,18 @@ Public Class edit_kir_truk
             DateTimePicker1.Value = query.Rows(0).Item("tgl_kir_berikutnya")
             DateTimePicker3.Value = query.Rows(0).Item("tgl")
 
+            If query.Rows(0).Item("imgfile").ToString = "" Then
 
-            Dim arrpic() As Byte = CType(query.Rows(0).Item("imgfile"), Byte())
-            If arrpic.Length > 0 Then
-                Dim ms As New MemoryStream(arrpic)
-                PictureEdit1.Image = Image.FromStream(ms)
-                ms.Close()
             Else
+                Dim arrpic() As Byte = CType(query.Rows(0).Item("imgfile"), Byte())
+                If arrpic.Length > 0 Then
+                    Dim ms As New MemoryStream(arrpic)
+                    PictureEdit1.Image = Image.FromStream(ms)
+                    ms.Close()
+                Else
 
+                End If
             End If
-            
 
             Dim nopol As String = Scalar("select no_pol from mtruk where id_truk='" + trukbook + "'")
             ButtonEdit1.Text = nopol
