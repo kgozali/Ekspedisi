@@ -181,6 +181,12 @@
     <Compile Include="Add Master\add_kota.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Add Master\add_mobil.Designer.vb">
+      <DependentUpon>add_mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Add Master\add_principle.Designer.vb">
       <DependentUpon>add_principle.vb</DependentUpon>
     </Compile>
@@ -286,9 +292,7 @@
     <Compile Include="Akuntansi\frmcetaknota.Designer.vb">
       <DependentUpon>frmcetaknota.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\frmcetaknota.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Akuntansi\frmcetaknota.vb" />
     <Compile Include="Akuntansi\frmprevlapkeu.Designer.vb">
       <DependentUpon>frmprevlapkeu.vb</DependentUpon>
     </Compile>
@@ -403,6 +407,12 @@
     <Compile Include="lapjurnal.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="List Edit Master\edit_list_mobil.Designer.vb">
+      <DependentUpon>edit_list_mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\edit_list_mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="List Edit Master\edit_list_supir.Designer.vb">
       <DependentUpon>edit_list_supir.vb</DependentUpon>
     </Compile>
@@ -413,6 +423,12 @@
       <DependentUpon>login2.vb</DependentUpon>
     </Compile>
     <Compile Include="login2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\Master_mobil.Designer.vb">
+      <DependentUpon>Master_mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\Master_mobil.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master Data\master_supir.Designer.vb">
@@ -765,12 +781,6 @@
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
     </Compile>
     <Compile Include="Piutang Perusahaan\pelunasan_piutang.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master Data\perubahan_harga.Designer.vb">
-      <DependentUpon>perubahan_harga.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Master Data\perubahan_harga.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Penggajian Supir\daftar_hutang_karyawan.Designer.vb">
@@ -1372,11 +1382,17 @@
     <EmbeddedResource Include="lapjurnal.resx">
       <DependentUpon>lapjurnal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\edit_list_mobil.resx">
+      <DependentUpon>edit_list_mobil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="List Edit Master\edit_list_supir.resx">
       <DependentUpon>edit_list_supir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login2.resx">
       <DependentUpon>login2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\Master_mobil.resx">
+      <DependentUpon>Master_mobil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data\master_supir.resx">
       <DependentUpon>master_supir.vb</DependentUpon>
@@ -1452,9 +1468,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Piutang Perusahaan\pelunasan_piutang.resx">
       <DependentUpon>pelunasan_piutang.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master Data\perubahan_harga.resx">
-      <DependentUpon>perubahan_harga.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Penggajian Supir\daftar_hutang_karyawan.resx">
       <DependentUpon>daftar_hutang_karyawan.vb</DependentUpon>

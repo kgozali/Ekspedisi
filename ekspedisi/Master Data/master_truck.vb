@@ -14,7 +14,6 @@ Public Class master_truck
         Me.Close()
     End Sub
 
-   
 
     Private Sub master_truck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checks.Clear()

@@ -32,7 +32,7 @@ Public Class main_menu
     End Sub
 
     Private Sub SimpleButton8_Click(sender As Object, e As EventArgs)
-        perubahan_harga.ShowDialog()
+
     End Sub
 
     Private Sub SimpleButton9_Click(sender As Object, e As EventArgs) Handles SimpleButton9.Click
@@ -420,5 +420,9 @@ Public Class main_menu
 
     Private Sub main_menu_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         main_menu_Load(sender, e)
+    End Sub
+
+    Private Sub SimpleButton23_Click(sender As Object, e As EventArgs) Handles SimpleButton23.Click
+        Master_mobil.ShowDialog()
     End Sub
 End Class

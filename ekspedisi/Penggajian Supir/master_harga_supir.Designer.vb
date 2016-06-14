@@ -75,6 +75,7 @@ Partial Class master_harga_supir
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.settings, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(1, 0)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -84,7 +85,7 @@ Partial Class master_harga_supir
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(787, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(918, 104)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -212,15 +213,16 @@ Partial Class master_harga_supir
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(113, 30)
         '
         'Print
         '
         Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Size = New System.Drawing.Size(112, 26)
         Me.Print.Text = "Print"
         '
         'viewdataharga
@@ -231,11 +233,13 @@ Partial Class master_harga_supir
         'dataharga
         '
         Me.dataharga.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.dataharga.Location = New System.Drawing.Point(5, 24)
+        Me.dataharga.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.dataharga.Location = New System.Drawing.Point(6, 30)
         Me.dataharga.MainView = Me.viewdataharga
+        Me.dataharga.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dataharga.MenuManager = Me.RibbonControl1
         Me.dataharga.Name = "dataharga"
-        Me.dataharga.Size = New System.Drawing.Size(751, 315)
+        Me.dataharga.Size = New System.Drawing.Size(876, 388)
         Me.dataharga.TabIndex = 7
         Me.dataharga.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewdataharga})
         '
@@ -252,18 +256,20 @@ Partial Class master_harga_supir
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(705, 171)
+        Me.SimpleButton1.Location = New System.Drawing.Point(822, 210)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
+        Me.SimpleButton1.Size = New System.Drawing.Size(80, 36)
         Me.SimpleButton1.TabIndex = 53
         Me.SimpleButton1.Text = "Print"
         '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(674, 556)
+        Me.cancel.Location = New System.Drawing.Point(786, 684)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 52
         Me.cancel.Text = "Cancel"
         '
@@ -280,26 +286,29 @@ Partial Class master_harga_supir
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.dataharga)
-        Me.GroupControl3.Location = New System.Drawing.Point(13, 206)
+        Me.GroupControl3.Location = New System.Drawing.Point(15, 254)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(761, 344)
+        Me.GroupControl3.Size = New System.Drawing.Size(888, 423)
         Me.GroupControl3.TabIndex = 51
         Me.GroupControl3.Text = "Data Harga"
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 73)
+        Me.cari.Location = New System.Drawing.Point(6, 90)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.MenuManager = Me.RibbonControl1
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'id
         '
         Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Location = New System.Drawing.Point(6, 30)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(75, 17)
+        Me.id.Size = New System.Drawing.Size(93, 21)
         Me.id.TabIndex = 1
         Me.id.Text = "Kode Rute"
         Me.id.UseVisualStyleBackColor = True
@@ -308,9 +317,10 @@ Partial Class master_harga_supir
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Location = New System.Drawing.Point(101, 30)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(79, 17)
+        Me.nama.Size = New System.Drawing.Size(99, 21)
         Me.nama.TabIndex = 2
         Me.nama.TabStop = True
         Me.nama.Text = "Nama Supir"
@@ -319,9 +329,10 @@ Partial Class master_harga_supir
         'kota
         '
         Me.kota.AutoSize = True
-        Me.kota.Location = New System.Drawing.Point(5, 47)
+        Me.kota.Location = New System.Drawing.Point(6, 58)
+        Me.kota.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kota.Name = "kota"
-        Me.kota.Size = New System.Drawing.Size(47, 17)
+        Me.kota.Size = New System.Drawing.Size(57, 21)
         Me.kota.TabIndex = 3
         Me.kota.Text = "Kota"
         Me.kota.UseVisualStyleBackColor = True
@@ -332,23 +343,25 @@ Partial Class master_harga_supir
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(13, 102)
+        Me.GroupControl1.Location = New System.Drawing.Point(15, 126)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 98)
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 121)
         Me.GroupControl1.TabIndex = 47
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'master_harga_supir
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(785, 588)
+        Me.ClientSize = New System.Drawing.Size(916, 724)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_harga_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Harga Supir"

@@ -1,14 +1,17 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class master_truck
-    Inherits DevExpress.XtraEditors.XtraForm
+Partial Class Master_mobil
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        If disposing AndAlso components IsNot Nothing Then
-            components.Dispose()
-        End If
-        MyBase.Dispose(disposing)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
     End Sub
 
     'Required by the Windows Form Designer
@@ -20,11 +23,21 @@ Partial Class master_truck
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_truck))
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.nama = New System.Windows.Forms.RadioButton()
-        Me.id = New System.Windows.Forms.RadioButton()
-        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Master_mobil))
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
+        Me.addtruckbaru = New DevExpress.XtraBars.BarButtonItem()
+        Me.edit = New DevExpress.XtraBars.BarButtonItem()
+        Me.deldata = New DevExpress.XtraBars.BarButtonItem()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.nonaktif = New System.Windows.Forms.RadioButton()
+        Me.aktif = New System.Windows.Forms.RadioButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
         Me.datasiswa = New DevExpress.XtraBars.BarButtonItem()
@@ -37,20 +50,7 @@ Partial Class master_truck
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.addtruckbaru = New DevExpress.XtraBars.BarButtonItem()
-        Me.edit = New DevExpress.XtraBars.BarButtonItem()
-        Me.deldata = New DevExpress.XtraBars.BarButtonItem()
-        Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.nonaktif = New System.Windows.Forms.RadioButton()
-        Me.aktif = New System.Windows.Forms.RadioButton()
-        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Print = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,12 +58,11 @@ Partial Class master_truck
         Me.editing = New DevExpress.XtraEditors.SimpleButton()
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
@@ -71,55 +70,148 @@ Partial Class master_truck
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'GroupControl1
+        'BarButtonItem2
         '
-        Me.GroupControl1.Controls.Add(Me.nama)
-        Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(15, 126)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
-        Me.GroupControl1.TabIndex = 51
-        Me.GroupControl1.Text = "Cari Berdasarkan"
+        Me.BarButtonItem2.ActAsDropDown = True
+        Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
+        Me.BarButtonItem2.Caption = "Master Data"
+        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem2.Id = 1
+        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem2.Name = "BarButtonItem2"
         '
-        'nama
+        'RibbonPageGroup1
         '
-        Me.nama.AutoSize = True
-        Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(90, 28)
-        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(103, 21)
-        Me.nama.TabIndex = 2
-        Me.nama.TabStop = True
-        Me.nama.Text = "Nomor Polisi"
-        Me.nama.UseVisualStyleBackColor = True
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.addtruckbaru)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         '
-        'id
+        'jumpmenu
         '
-        Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(7, 28)
-        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(82, 21)
-        Me.id.TabIndex = 1
-        Me.id.Text = "ID Truck"
-        Me.id.UseVisualStyleBackColor = True
+        Me.jumpmenu.Caption = "Main Menu"
+        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
+        Me.jumpmenu.Id = 31
+        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
+        Me.jumpmenu.Name = "jumpmenu"
         '
-        'cari
+        'addtruckbaru
         '
-        Me.cari.Location = New System.Drawing.Point(7, 62)
-        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.cari.MenuManager = Me.RibbonControl1
-        Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(295, 22)
-        Me.cari.TabIndex = 0
+        Me.addtruckbaru.Caption = "Tambah Data"
+        Me.addtruckbaru.Glyph = CType(resources.GetObject("addtruckbaru.Glyph"), System.Drawing.Image)
+        Me.addtruckbaru.Id = 23
+        Me.addtruckbaru.LargeGlyph = CType(resources.GetObject("addtruckbaru.LargeGlyph"), System.Drawing.Image)
+        Me.addtruckbaru.Name = "addtruckbaru"
+        '
+        'edit
+        '
+        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
+        Me.edit.Caption = "Edit Data"
+        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
+        Me.edit.Id = 27
+        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
+        Me.edit.Name = "edit"
+        '
+        'deldata
+        '
+        Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
+        Me.deldata.Caption = "Delete Data"
+        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
+        Me.deldata.Id = 30
+        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
+        Me.deldata.Name = "deldata"
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Caption = "Check"
+        Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.nonaktif)
+        Me.GroupControl2.Controls.Add(Me.aktif)
+        Me.GroupControl2.Location = New System.Drawing.Point(329, 125)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(175, 94)
+        Me.GroupControl2.TabIndex = 62
+        Me.GroupControl2.Text = "Sortir"
+        '
+        'nonaktif
+        '
+        Me.nonaktif.AutoSize = True
+        Me.nonaktif.Location = New System.Drawing.Point(7, 57)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.nonaktif.Name = "nonaktif"
+        Me.nonaktif.Size = New System.Drawing.Size(119, 21)
+        Me.nonaktif.TabIndex = 9
+        Me.nonaktif.Text = "Mobil Non-Aktif"
+        Me.nonaktif.UseVisualStyleBackColor = True
+        '
+        'aktif
+        '
+        Me.aktif.AutoSize = True
+        Me.aktif.Checked = True
+        Me.aktif.Location = New System.Drawing.Point(7, 28)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.aktif.Name = "aktif"
+        Me.aktif.Size = New System.Drawing.Size(89, 21)
+        Me.aktif.TabIndex = 8
+        Me.aktif.TabStop = True
+        Me.aktif.Text = "Mobil Aktif"
+        Me.aktif.UseVisualStyleBackColor = True
+        '
+        'cancel
+        '
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(1045, 809)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
+        Me.cancel.TabIndex = 65
+        Me.cancel.Text = "Cancel"
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl2)
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Location = New System.Drawing.Point(15, 225)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(1147, 577)
+        Me.GroupControl3.TabIndex = 64
+        Me.GroupControl3.Text = "Data Mobil"
+        '
+        'GridControl2
+        '
+        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl2.Location = New System.Drawing.Point(7, 30)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(1135, 542)
+        Me.GridControl2.TabIndex = 8
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsSelection.MultiSelect = True
+        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'RibbonControl1
         '
@@ -129,7 +221,7 @@ Partial Class master_truck
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addtruckbaru, Me.edit, Me.deldata, Me.jumpmenu})
-        Me.RibbonControl1.Location = New System.Drawing.Point(1, 0)
+        Me.RibbonControl1.Location = New System.Drawing.Point(1, -1)
         Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -214,135 +306,11 @@ Partial Class master_truck
         Me.BarButtonItem9.Id = 22
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'addtruckbaru
-        '
-        Me.addtruckbaru.Caption = "Tambah Data"
-        Me.addtruckbaru.Glyph = CType(resources.GetObject("addtruckbaru.Glyph"), System.Drawing.Image)
-        Me.addtruckbaru.Id = 23
-        Me.addtruckbaru.LargeGlyph = CType(resources.GetObject("addtruckbaru.LargeGlyph"), System.Drawing.Image)
-        Me.addtruckbaru.Name = "addtruckbaru"
-        '
-        'edit
-        '
-        Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
-        Me.edit.Caption = "Edit Data"
-        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
-        Me.edit.Id = 27
-        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
-        Me.edit.Name = "edit"
-        '
-        'deldata
-        '
-        Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
-        Me.deldata.Caption = "Delete Data"
-        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
-        Me.deldata.Id = 30
-        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
-        Me.deldata.Name = "deldata"
-        '
-        'jumpmenu
-        '
-        Me.jumpmenu.Caption = "Main Menu"
-        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
-        Me.jumpmenu.Id = 31
-        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
-        Me.jumpmenu.Name = "jumpmenu"
-        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.addtruckbaru)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        '
-        'RepositoryItemCheckEdit1
-        '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Caption = "Check"
-        Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.nonaktif)
-        Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(329, 126)
-        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(175, 94)
-        Me.GroupControl2.TabIndex = 53
-        Me.GroupControl2.Text = "Sortir"
-        '
-        'nonaktif
-        '
-        Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(7, 57)
-        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(124, 21)
-        Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Truck Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = True
-        '
-        'aktif
-        '
-        Me.aktif.AutoSize = True
-        Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(7, 28)
-        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(94, 21)
-        Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = True
-        Me.aktif.Text = "Truck Aktif"
-        Me.aktif.UseVisualStyleBackColor = True
-        '
-        'cancel
-        '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(1045, 810)
-        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(117, 33)
-        Me.cancel.TabIndex = 56
-        Me.cancel.Text = "Cancel"
-        '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.GridControl2)
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(15, 226)
-        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1147, 577)
-        Me.GroupControl3.TabIndex = 55
-        Me.GroupControl3.Text = "Data Truck"
-        '
-        'GridControl2
-        '
-        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl2.Location = New System.Drawing.Point(7, 30)
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl2.MenuManager = Me.RibbonControl1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1135, 542)
-        Me.GridControl2.TabIndex = 8
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = True
-        Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'GridControl1
         '
@@ -377,21 +345,21 @@ Partial Class master_truck
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(14, 811)
+        Me.editing.Location = New System.Drawing.Point(14, 810)
         Me.editing.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.editing.Name = "editing"
         Me.editing.Size = New System.Drawing.Size(231, 32)
-        Me.editing.TabIndex = 52
+        Me.editing.TabIndex = 61
         Me.editing.Text = "Edit"
         Me.editing.Visible = False
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(14, 811)
+        Me.hapus.Location = New System.Drawing.Point(14, 810)
         Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.hapus.Name = "hapus"
         Me.hapus.Size = New System.Drawing.Size(231, 32)
-        Me.hapus.TabIndex = 54
+        Me.hapus.TabIndex = 63
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
         '
@@ -405,49 +373,77 @@ Partial Class master_truck
         Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
         '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.ActAsDropDown = True
-        Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
-        Me.BarButtonItem2.Caption = "Master Data"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem2.Id = 1
-        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(1081, 183)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1081, 182)
         Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(80, 36)
-        Me.SimpleButton1.TabIndex = 58
+        Me.SimpleButton1.TabIndex = 66
         Me.SimpleButton1.Text = "Print"
         '
-        'master_truck
+        'GroupControl1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.cari)
+        Me.GroupControl1.Location = New System.Drawing.Point(15, 125)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
+        Me.GroupControl1.TabIndex = 60
+        Me.GroupControl1.Text = "Cari Berdasarkan"
+        '
+        'nama
+        '
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(90, 28)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(103, 21)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = True
+        Me.nama.Text = "Nomor Polisi"
+        Me.nama.UseVisualStyleBackColor = True
+        '
+        'id
+        '
+        Me.id.AutoSize = True
+        Me.id.Location = New System.Drawing.Point(7, 28)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(94, 21)
+        Me.id.TabIndex = 1
+        Me.id.Text = "Kode Mobil"
+        Me.id.UseVisualStyleBackColor = True
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(7, 62)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cari.MenuManager = Me.RibbonControl1
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(295, 22)
+        Me.cari.TabIndex = 0
+        '
+        'Master_mobil
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1176, 858)
-        Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.editing)
         Me.Controls.Add(Me.hapus)
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "master_truck"
+        Me.Name = "Master_mobil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Master Truck"
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Master Mobil"
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
@@ -456,17 +452,33 @@ Partial Class master_truck
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nama As System.Windows.Forms.RadioButton
-    Friend WithEvents id As System.Windows.Forms.RadioButton
-    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
+
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents addtruckbaru As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents nonaktif As RadioButton
+    Friend WithEvents aktif As RadioButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonGalleryBarItem1 As DevExpress.XtraBars.RibbonGalleryBarItem
     Friend WithEvents datasiswa As DevExpress.XtraBars.BarButtonItem
@@ -479,27 +491,17 @@ Partial Class master_truck
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents addtruckbaru As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents edit As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents deldata As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
-    Friend WithEvents aktif As System.Windows.Forms.RadioButton
-    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents Print As ToolStripMenuItem
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents editing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents Print As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents nama As RadioButton
+    Friend WithEvents id As RadioButton
+    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
 End Class

@@ -1,6 +1,12 @@
 ﻿Public Class harga_supir
     Dim data As New DataTable
     Dim cek As Boolean = False
+
+    Sub unallowedit()
+        For i = 0 To dataharga.Columns.Count - 1
+            dataharga.Columns(i).OptionsColumn.AllowEdit = False
+        Next
+    End Sub
     Private Sub harga_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If datapilih.Columns.Count = 0 Then
@@ -21,6 +27,7 @@
                 hargasupir.DataSource = data
             End If
             eksekusi()
+            unallowedit()
             cek = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)

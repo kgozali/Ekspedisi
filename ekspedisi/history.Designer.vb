@@ -31,18 +31,21 @@ Partial Class historyperubahan
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.perubahan)
-        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl1.Location = New System.Drawing.Point(9, 10)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(848, 488)
+        Me.GroupControl1.Size = New System.Drawing.Size(989, 601)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Daftar Perubahan Harga"
         '
         'perubahan
         '
-        Me.perubahan.Location = New System.Drawing.Point(8, 24)
+        Me.perubahan.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.perubahan.Location = New System.Drawing.Point(9, 30)
         Me.perubahan.MainView = Me.daftarperubahan
+        Me.perubahan.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.perubahan.Name = "perubahan"
-        Me.perubahan.Size = New System.Drawing.Size(832, 456)
+        Me.perubahan.Size = New System.Drawing.Size(971, 561)
         Me.perubahan.TabIndex = 0
         Me.perubahan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.daftarperubahan})
         '
@@ -54,11 +57,13 @@ Partial Class historyperubahan
         '
         'historyperubahan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(863, 504)
+        Me.ClientSize = New System.Drawing.Size(1007, 620)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "historyperubahan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Perubahan Harga"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)

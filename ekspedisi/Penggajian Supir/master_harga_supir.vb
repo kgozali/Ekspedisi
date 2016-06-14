@@ -7,11 +7,16 @@
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
-
+    Sub unallowedit()
+        For i = 0 To viewdataharga.Columns.Count - 1
+            viewdataharga.Columns(i).OptionsColumn.AllowEdit = False
+        Next
+    End Sub
     Private Sub master_harga_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             data = DtTable("SELECT nama_supir `Nama Supir`,mr.id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle`,tarif `Tarif`  FROM `mrute` mr,mprinciple mp,dsupir ds,msupir ms WHERE mp.id_principle=mr.id_principle and ds.id_rute=mr.id_rute and ms.id_supir=ds.id_supir")
             dataharga.DataSource = data
+            unallowedit()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
