@@ -163,4 +163,14 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub principle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles principle.SelectedIndexChanged
+        Try
+            Dim data As New DataTable
+            data = DtTableupdateharga("SELECT id_rute `Kode Rute` , kota_asal `Kota Asal` , kota_tujuan `Kota Tujuan` , nama_principle `Nama Principle` , price_per_unit `Harga Awal` FROM  `mrute` mr,  `mprinciple` mp WHERE mr.s =  '1' AND mr.id_principle = mp.id_principle and mr.id_principle ='" & principle.SelectedValue.ToString & "'")
+            rute.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
