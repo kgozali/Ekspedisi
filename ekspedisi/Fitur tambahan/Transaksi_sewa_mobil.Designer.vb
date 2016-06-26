@@ -186,6 +186,7 @@ Partial Class Transaksi_sewa_mobil
         Me.ClientSize = New System.Drawing.Size(1008, 691)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "Transaksi_sewa_mobil"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Transaksi Sewa Mobil"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

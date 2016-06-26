@@ -371,6 +371,18 @@
     <Compile Include="Edit Master\edit_supir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fitur tambahan\pembayaran_sewa.Designer.vb">
+      <DependentUpon>pembayaran_sewa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fitur tambahan\pembayaran_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fitur tambahan\Transaksi_sewa_mobil.Designer.vb">
+      <DependentUpon>Transaksi_sewa_mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fitur tambahan\Transaksi_sewa_mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="history.Designer.vb">
       <DependentUpon>history.vb</DependentUpon>
     </Compile>
@@ -1351,6 +1363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit Master\edit_supir.resx">
       <DependentUpon>edit_supir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fitur tambahan\pembayaran_sewa.resx">
+      <DependentUpon>pembayaran_sewa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fitur tambahan\Transaksi_sewa_mobil.resx">
+      <DependentUpon>Transaksi_sewa_mobil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_perubahan_harga.resx">
       <DependentUpon>form_perubahan_harga.vb</DependentUpon>

@@ -27,6 +27,7 @@ Partial Class pembayaran_sewa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1000, 525)
         Me.Name = "pembayaran_sewa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pelunasan Sewa Mobil"
         Me.ResumeLayout(False)
 
