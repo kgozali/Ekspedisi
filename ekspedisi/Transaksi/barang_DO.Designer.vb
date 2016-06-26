@@ -89,7 +89,7 @@ Partial Class barang_DO
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Location = New System.Drawing.Point(97, 24)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(89, 17)
         Me.nama.TabIndex = 2
@@ -102,9 +102,9 @@ Partial Class barang_DO
         Me.id.AutoSize = True
         Me.id.Location = New System.Drawing.Point(5, 24)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(73, 17)
+        Me.id.Size = New System.Drawing.Size(86, 17)
         Me.id.TabIndex = 1
-        Me.id.Text = "ID Barang"
+        Me.id.Text = "Kode Barang"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari

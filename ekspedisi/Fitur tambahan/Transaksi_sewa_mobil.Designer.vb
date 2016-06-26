@@ -19,6 +19,7 @@ Partial Class Transaksi_sewa_mobil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Transaksi_sewa_mobil))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.RibbonGalleryBarItem1 = New DevExpress.XtraBars.RibbonGalleryBarItem()
@@ -38,7 +39,36 @@ Partial Class Transaksi_sewa_mobil
         Me.jumpmenu = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.nonaktif = New System.Windows.Forms.RadioButton()
+        Me.aktif = New System.Windows.Forms.RadioButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -58,7 +88,7 @@ Partial Class Transaksi_sewa_mobil
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1010, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1052, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -179,16 +209,178 @@ Partial Class Transaksi_sewa_mobil
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         '
+        'GroupControl4
+        '
+        Me.GroupControl4.Controls.Add(Me.nonaktif)
+        Me.GroupControl4.Controls.Add(Me.aktif)
+        Me.GroupControl4.Location = New System.Drawing.Point(281, 101)
+        Me.GroupControl4.Name = "GroupControl4"
+        Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
+        Me.GroupControl4.TabIndex = 157
+        Me.GroupControl4.Text = "Sortir"
+        '
+        'nonaktif
+        '
+        Me.nonaktif.AutoSize = True
+        Me.nonaktif.Location = New System.Drawing.Point(5, 46)
+        Me.nonaktif.Name = "nonaktif"
+        Me.nonaktif.Size = New System.Drawing.Size(99, 17)
+        Me.nonaktif.TabIndex = 9
+        Me.nonaktif.Text = "Sewa Non-Aktif"
+        Me.nonaktif.UseVisualStyleBackColor = True
+        '
+        'aktif
+        '
+        Me.aktif.AutoSize = True
+        Me.aktif.Checked = True
+        Me.aktif.Location = New System.Drawing.Point(5, 23)
+        Me.aktif.Name = "aktif"
+        Me.aktif.Size = New System.Drawing.Size(76, 17)
+        Me.aktif.TabIndex = 8
+        Me.aktif.TabStop = True
+        Me.aktif.Text = "Sewa Aktif"
+        Me.aktif.UseVisualStyleBackColor = True
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.id)
+        Me.GroupControl1.Controls.Add(Me.nama)
+        Me.GroupControl1.Controls.Add(Me.cari)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 101)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(263, 74)
+        Me.GroupControl1.TabIndex = 156
+        Me.GroupControl1.Text = "Cari Berdasarkan"
+        '
+        'id
+        '
+        Me.id.AutoSize = True
+        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(98, 17)
+        Me.id.TabIndex = 3
+        Me.id.Text = "Kode Customer"
+        Me.id.UseVisualStyleBackColor = True
+        '
+        'nama
+        '
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(109, 24)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(101, 17)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = True
+        Me.nama.Text = "Nama Customer"
+        Me.nama.UseVisualStyleBackColor = True
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(5, 47)
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.TabIndex = 0
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 181)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(499, 444)
+        Me.GroupControl3.TabIndex = 158
+        Me.GroupControl3.Text = "Daftar Customer"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(489, 415)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.GridControl2)
+        Me.GroupControl2.Location = New System.Drawing.Point(517, 181)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(499, 444)
+        Me.GroupControl2.TabIndex = 159
+        Me.GroupControl2.Text = "Daftar Sewa"
+        '
+        'GridControl2
+        '
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(489, 415)
+        Me.GridControl2.TabIndex = 7
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        '
+        'cancel
+        '
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(916, 631)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 168
+        Me.cancel.Text = "Cancel"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'hapus
+        '
+        Me.hapus.Location = New System.Drawing.Point(12, 631)
+        Me.hapus.Name = "hapus"
+        Me.hapus.Size = New System.Drawing.Size(198, 26)
+        Me.hapus.TabIndex = 170
+        Me.hapus.Text = "Delete"
+        Me.hapus.Visible = False
+        '
         'Transaksi_sewa_mobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 691)
+        Me.ClientSize = New System.Drawing.Size(1021, 663)
+        Me.Controls.Add(Me.hapus)
+        Me.Controls.Add(Me.cancel)
+        Me.Controls.Add(Me.GroupControl2)
+        Me.Controls.Add(Me.GroupControl3)
+        Me.Controls.Add(Me.GroupControl4)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "Transaksi_sewa_mobil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Transaksi Sewa Mobil"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        Me.GroupControl4.PerformLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,4 +403,20 @@ Partial Class Transaksi_sewa_mobil
     Friend WithEvents jumpmenu As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
+    Friend WithEvents aktif As System.Windows.Forms.RadioButton
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents id As System.Windows.Forms.RadioButton
+    Friend WithEvents nama As System.Windows.Forms.RadioButton
+    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
 End Class
