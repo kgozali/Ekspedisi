@@ -13,7 +13,7 @@ Public Class edit_list_mobil
 
             For i = 0 To Master_mobil.checks.Rows.Count - 1
                 Dim datatemp As New DataTable
-                datatemp = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli` from mmobil where `s`='1' and id_mobil ='" & Master_mobil.checks.Rows(i).Item(0).ToString & "'")
+                datatemp = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1' and id_mobil ='" & Master_mobil.checks.Rows(i).Item(0).ToString & "'")
                 Dim a As String = datatemp.Rows(0).Item("Kode Mobil").ToString()
                 Dim b As String = datatemp.Rows(0).Item("No Polisi").ToString()
                 Dim l As String = datatemp.Rows(0).Item("Tanggal Beli").ToString()
@@ -48,9 +48,9 @@ Public Class edit_list_mobil
         Try
             Master_mobil.GridControl1.Visible = True
             Master_mobil.GridControl2.Visible = False
-            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli` from mmobil where `s`='1'")
+            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1'")
             Master_mobil.GridControl1.DataSource = data
-            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli` from mmobil where `s`='1'")
+            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1'")
             Master_mobil.GridControl2.DataSource = data
             Master_mobil.deldata.Down = False
             Master_mobil.edit.Down = False
