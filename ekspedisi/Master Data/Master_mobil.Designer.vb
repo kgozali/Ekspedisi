@@ -432,7 +432,7 @@ Partial Class Master_mobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 602)
+        Me.ClientSize = New System.Drawing.Size(882, 689)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
@@ -441,7 +441,7 @@ Partial Class Master_mobil
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Master_mobil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Mobil"

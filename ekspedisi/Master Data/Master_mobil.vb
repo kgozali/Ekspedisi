@@ -229,21 +229,39 @@ Public Class Master_mobil
     End Sub
 
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
-        deldata.Enabled = True
-        edit.Enabled = True
-        data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1'")
-        GridControl1.DataSource = data
+        Try
+            deldata.Enabled = True
+            edit.Enabled = True
+            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1'")
+            GridControl1.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
-        deldata.Enabled = False
-        edit.Enabled = False
-        data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='0'")
-        GridControl1.DataSource = data
+        Try
+            deldata.Enabled = False
+            edit.Enabled = False
+            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='0'")
+            GridControl1.DataSource = data
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        
     End Sub
 
     Private Sub addtruckbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addtruckbaru.ItemClick
         add_mobil_sewa.id.Text = autogenerate("MM", "select max(id_mobil) from mmobil")
         add_mobil_sewa.ShowDialog()
+    End Sub
+
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
+        Me.Close()
     End Sub
 End Class
