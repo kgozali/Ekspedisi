@@ -142,20 +142,20 @@ Partial Class Master_mobil
         '
         Me.GroupControl2.Controls.Add(Me.nonaktif)
         Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(329, 125)
-        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl2.Location = New System.Drawing.Point(247, 102)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(175, 94)
+        Me.GroupControl2.Size = New System.Drawing.Size(131, 76)
         Me.GroupControl2.TabIndex = 62
         Me.GroupControl2.Text = "Sortir"
         '
         'nonaktif
         '
         Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(7, 57)
-        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.nonaktif.Location = New System.Drawing.Point(5, 46)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(119, 21)
+        Me.nonaktif.Size = New System.Drawing.Size(97, 17)
         Me.nonaktif.TabIndex = 9
         Me.nonaktif.Text = "Mobil Non-Aktif"
         Me.nonaktif.UseVisualStyleBackColor = True
@@ -164,10 +164,10 @@ Partial Class Master_mobil
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(7, 28)
-        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.aktif.Location = New System.Drawing.Point(5, 23)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(89, 21)
+        Me.aktif.Size = New System.Drawing.Size(74, 17)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
         Me.aktif.Text = "Mobil Aktif"
@@ -176,10 +176,10 @@ Partial Class Master_mobil
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(1045, 809)
-        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cancel.Location = New System.Drawing.Point(784, 657)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(117, 33)
+        Me.cancel.Size = New System.Drawing.Size(88, 27)
         Me.cancel.TabIndex = 65
         Me.cancel.Text = "Cancel"
         '
@@ -187,22 +187,22 @@ Partial Class Master_mobil
         '
         Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(15, 225)
-        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl3.Location = New System.Drawing.Point(11, 183)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1147, 577)
+        Me.GroupControl3.Size = New System.Drawing.Size(860, 469)
         Me.GroupControl3.TabIndex = 64
         Me.GroupControl3.Text = "Data Mobil"
         '
         'GridControl2
         '
-        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl2.Location = New System.Drawing.Point(7, 30)
+        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
         Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1135, 542)
+        Me.GridControl2.Size = New System.Drawing.Size(851, 440)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -222,7 +222,7 @@ Partial Class Master_mobil
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addtruckbaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(1, -1)
-        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -232,7 +232,7 @@ Partial Class Master_mobil
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1181, 104)
+        Me.RibbonControl1.Size = New System.Drawing.Size(886, 96)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -315,13 +315,13 @@ Partial Class Master_mobil
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl1.Location = New System.Drawing.Point(6, 28)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.GridControl1.Location = New System.Drawing.Point(4, 23)
         Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1135, 543)
+        Me.GridControl1.Size = New System.Drawing.Size(851, 441)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -330,12 +330,12 @@ Partial Class Master_mobil
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(115, 30)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
         '
         'Print
         '
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(114, 26)
+        Me.Print.Size = New System.Drawing.Size(99, 22)
         Me.Print.Text = "Print"
         '
         'GridView1
@@ -345,20 +345,20 @@ Partial Class Master_mobil
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(14, 810)
-        Me.editing.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.editing.Location = New System.Drawing.Point(10, 658)
+        Me.editing.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(231, 32)
+        Me.editing.Size = New System.Drawing.Size(173, 26)
         Me.editing.TabIndex = 61
         Me.editing.Text = "Edit"
         Me.editing.Visible = False
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(14, 810)
-        Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.hapus.Location = New System.Drawing.Point(10, 658)
+        Me.hapus.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(231, 32)
+        Me.hapus.Size = New System.Drawing.Size(173, 26)
         Me.hapus.TabIndex = 63
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
@@ -376,10 +376,10 @@ Partial Class Master_mobil
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(1081, 182)
-        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.SimpleButton1.Location = New System.Drawing.Point(811, 148)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(80, 36)
+        Me.SimpleButton1.Size = New System.Drawing.Size(60, 29)
         Me.SimpleButton1.TabIndex = 66
         Me.SimpleButton1.Text = "Print"
         '
@@ -388,10 +388,10 @@ Partial Class Master_mobil
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(15, 125)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl1.Location = New System.Drawing.Point(11, 102)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
+        Me.GroupControl1.Size = New System.Drawing.Size(230, 76)
         Me.GroupControl1.TabIndex = 60
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
@@ -399,10 +399,10 @@ Partial Class Master_mobil
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(90, 28)
-        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.nama.Location = New System.Drawing.Point(85, 23)
+        Me.nama.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(103, 21)
+        Me.nama.Size = New System.Drawing.Size(82, 17)
         Me.nama.TabIndex = 2
         Me.nama.TabStop = True
         Me.nama.Text = "Nomor Polisi"
@@ -411,28 +411,28 @@ Partial Class Master_mobil
         'id
         '
         Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(7, 28)
-        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.id.Location = New System.Drawing.Point(5, 23)
+        Me.id.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(94, 21)
+        Me.id.Size = New System.Drawing.Size(76, 17)
         Me.id.TabIndex = 1
         Me.id.Text = "Kode Mobil"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(7, 62)
-        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cari.Location = New System.Drawing.Point(5, 50)
+        Me.cari.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.cari.MenuManager = Me.RibbonControl1
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(295, 22)
+        Me.cari.Size = New System.Drawing.Size(221, 20)
         Me.cari.TabIndex = 0
         '
         'Master_mobil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1176, 858)
+        Me.ClientSize = New System.Drawing.Size(882, 602)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
@@ -441,6 +441,7 @@ Partial Class Master_mobil
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Master_mobil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Mobil"

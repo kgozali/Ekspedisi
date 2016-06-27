@@ -187,12 +187,6 @@
     <Compile Include="Add Master\add_kota.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add Master\add_mobil.Designer.vb">
-      <DependentUpon>add_mobil.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Add Master\add_mobil.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Add Master\add_mobil_sewa.Designer.vb">
       <DependentUpon>add_mobil_sewa.vb</DependentUpon>
     </Compile>
@@ -1880,7 +1874,9 @@
     <EmbeddedResource Include="XtraReport1.resx">
       <DependentUpon>XtraReport1.vb</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
