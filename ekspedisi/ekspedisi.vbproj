@@ -151,6 +151,12 @@
     <Compile Include="Add Master\add_customer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Add Master\add_customer_sewa.Designer.vb">
+      <DependentUpon>add_customer_sewa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_customer_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Add Master\add_jabatan.Designer.vb">
       <DependentUpon>add_jabatan.vb</DependentUpon>
     </Compile>
@@ -185,6 +191,12 @@
       <DependentUpon>add_mobil.vb</DependentUpon>
     </Compile>
     <Compile Include="Add Master\add_mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Master\add_mobil_sewa.Designer.vb">
+      <DependentUpon>add_mobil_sewa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Master\add_mobil_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add Master\add_principle.Designer.vb">
@@ -449,10 +461,22 @@
     <Compile Include="List Edit Master\edit_list_supir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="List Edit Master\list_edit_customer_sewa.Designer.vb">
+      <DependentUpon>list_edit_customer_sewa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List Edit Master\list_edit_customer_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login2.Designer.vb">
       <DependentUpon>login2.vb</DependentUpon>
     </Compile>
     <Compile Include="login2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Data\master_customer_sewa.Designer.vb">
+      <DependentUpon>master_customer_sewa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master Data\master_customer_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master Data\Master_mobil.Designer.vb">
@@ -1274,6 +1298,9 @@
     <EmbeddedResource Include="Add Master\add_customer.resx">
       <DependentUpon>add_customer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add Master\add_customer_sewa.resx">
+      <DependentUpon>add_customer_sewa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add Master\add_jabatan.resx">
       <DependentUpon>add_jabatan.vb</DependentUpon>
     </EmbeddedResource>
@@ -1433,8 +1460,14 @@
     <EmbeddedResource Include="List Edit Master\edit_list_supir.resx">
       <DependentUpon>edit_list_supir.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="List Edit Master\list_edit_customer_sewa.resx">
+      <DependentUpon>list_edit_customer_sewa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login2.resx">
       <DependentUpon>login2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Data\master_customer_sewa.resx">
+      <DependentUpon>master_customer_sewa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Data\Master_mobil.resx">
       <DependentUpon>Master_mobil.vb</DependentUpon>

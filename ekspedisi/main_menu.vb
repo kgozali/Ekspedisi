@@ -425,4 +425,8 @@ Public Class main_menu
     Private Sub SimpleButton23_Click(sender As Object, e As EventArgs) Handles SimpleButton23.Click
         Master_mobil.ShowDialog()
     End Sub
+
+    Private Sub transaksisewa_Click(sender As Object, e As EventArgs) Handles transaksisewa.Click
+        Transaksi_sewa_mobil.ShowDialog()
+    End Sub
 End Class

@@ -62,6 +62,7 @@ Partial Class main_menu
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.masterakun = New DevExpress.XtraEditors.SimpleButton()
         Me.BackstageViewClientControl8 = New DevExpress.XtraBars.Ribbon.BackstageViewClientControl()
+        Me.transaksisewa = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton42 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton()
@@ -141,7 +142,6 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.transaksisewa = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -220,7 +220,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl12.Controls.Add(Me.XtraTabControl1)
         Me.BackstageViewClientControl12.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl12.Name = "BackstageViewClientControl12"
-        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(813, 697)
+        Me.BackstageViewClientControl12.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl12.TabIndex = 10
         '
         'Label21
@@ -597,6 +597,15 @@ Partial Class main_menu
         Me.BackstageViewClientControl8.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl8.TabIndex = 7
         '
+        'transaksisewa
+        '
+        Me.transaksisewa.Image = CType(resources.GetObject("transaksisewa.Image"), System.Drawing.Image)
+        Me.transaksisewa.Location = New System.Drawing.Point(49, 154)
+        Me.transaksisewa.Name = "transaksisewa"
+        Me.transaksisewa.Size = New System.Drawing.Size(218, 54)
+        Me.transaksisewa.TabIndex = 23
+        Me.transaksisewa.Text = "Sewa Mobil"
+        '
         'SimpleButton42
         '
         Me.SimpleButton42.Image = CType(resources.GetObject("SimpleButton42.Image"), System.Drawing.Image)
@@ -726,7 +735,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl6.Controls.Add(Me.Label5)
         Me.BackstageViewClientControl6.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl6.Name = "BackstageViewClientControl6"
-        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(813, 697)
+        Me.BackstageViewClientControl6.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl6.TabIndex = 5
         '
         'SimpleButton24
@@ -808,7 +817,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl5.Controls.Add(Me.XtraScrollableControl1)
         Me.BackstageViewClientControl5.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl5.Name = "BackstageViewClientControl5"
-        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(813, 697)
+        Me.BackstageViewClientControl5.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl5.TabIndex = 4
         '
         'XtraScrollableControl1
@@ -891,7 +900,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl10.Controls.Add(Me.SimpleButton22)
         Me.BackstageViewClientControl10.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl10.Name = "BackstageViewClientControl10"
-        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(813, 697)
+        Me.BackstageViewClientControl10.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl10.TabIndex = 8
         '
         'SimpleButton14
@@ -947,7 +956,7 @@ Partial Class main_menu
         Me.BackstageViewClientControl2.Controls.Add(Me.Label11)
         Me.BackstageViewClientControl2.Location = New System.Drawing.Point(195, 0)
         Me.BackstageViewClientControl2.Name = "BackstageViewClientControl2"
-        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(813, 697)
+        Me.BackstageViewClientControl2.Size = New System.Drawing.Size(813, 602)
         Me.BackstageViewClientControl2.TabIndex = 9
         '
         'XtraTabControl2
@@ -1323,15 +1332,6 @@ Partial Class main_menu
         '
         'sfd
         '
-        '
-        'transaksisewa
-        '
-        Me.transaksisewa.Image = CType(resources.GetObject("transaksisewa.Image"), System.Drawing.Image)
-        Me.transaksisewa.Location = New System.Drawing.Point(49, 154)
-        Me.transaksisewa.Name = "transaksisewa"
-        Me.transaksisewa.Size = New System.Drawing.Size(218, 54)
-        Me.transaksisewa.TabIndex = 23
-        Me.transaksisewa.Text = "Sewa Mobil"
         '
         'main_menu
         '

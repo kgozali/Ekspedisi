@@ -6,22 +6,23 @@ Public Class Master_mobil
     Public checks As New DataTable
     Dim unchecks As New DataTable
     Private Sub Master_mobil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        checks.Clear()
-        unchecks.Clear()
-        data.Clear()
-        GridControl1.Visible = True
-        GridControl2.Visible = False
-        GroupControl2.Enabled = True
-        hapus.Visible = False
-        editing.Visible = False
-        deldata.Down = False
-        edit.Down = False
-        cari.Text = ""
-
-        data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli` from mmobil where `s`='1'")
-        GridControl1.DataSource = data
-
         Try
+            checks.Clear()
+            unchecks.Clear()
+            data.Clear()
+            GridControl1.Visible = True
+            GridControl2.Visible = False
+            GroupControl2.Enabled = True
+            hapus.Visible = False
+            editing.Visible = False
+            deldata.Down = False
+            edit.Down = False
+            cari.Text = ""
+
+            data = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli` from mmobil where `s`='1'")
+            GridControl1.DataSource = data
+
+
             If data.Rows.Count > 0 Then
                 For i = 0 To data.Columns.Count - 1
                     GridView1.Columns(i).OptionsColumn.AllowEdit = False
