@@ -142,6 +142,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem11 = New DevExpress.XtraBars.Ribbon.BackstageViewTabItem()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.customersewa = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.BackstageViewControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl12.SuspendLayout()
@@ -208,8 +209,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Items.Add(Me.backuprestore)
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem8
-        Me.BackstageViewControl1.SelectedTabIndex = 2
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem1
+        Me.BackstageViewControl1.SelectedTabIndex = 1
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1008, 602)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -419,6 +420,7 @@ Partial Class main_menu
         '
         Me.BackstageViewClientControl1.Appearance.BackColor = System.Drawing.Color.White
         Me.BackstageViewClientControl1.Appearance.Options.UseBackColor = True
+        Me.BackstageViewClientControl1.Controls.Add(Me.customersewa)
         Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton23)
         Me.BackstageViewClientControl1.Controls.Add(Me.SimpleButton15)
         Me.BackstageViewClientControl1.Controls.Add(Me.mastersupir)
@@ -1220,7 +1222,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem1.ContentControl = Me.BackstageViewClientControl1
         Me.BackstageViewTabItem1.Glyph = CType(resources.GetObject("BackstageViewTabItem1.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem1.Name = "BackstageViewTabItem1"
-        Me.BackstageViewTabItem1.Selected = False
+        Me.BackstageViewTabItem1.Selected = True
         '
         'BackstageViewTabItem8
         '
@@ -1228,7 +1230,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem8.ContentControl = Me.BackstageViewClientControl8
         Me.BackstageViewTabItem8.Glyph = CType(resources.GetObject("BackstageViewTabItem8.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem8.Name = "BackstageViewTabItem8"
-        Me.BackstageViewTabItem8.Selected = True
+        Me.BackstageViewTabItem8.Selected = False
         '
         'BackstageViewTabItem7
         '
@@ -1332,6 +1334,15 @@ Partial Class main_menu
         '
         'sfd
         '
+        '
+        'customersewa
+        '
+        Me.customersewa.Image = CType(resources.GetObject("customersewa.Image"), System.Drawing.Image)
+        Me.customersewa.Location = New System.Drawing.Point(609, 294)
+        Me.customersewa.Name = "customersewa"
+        Me.customersewa.Size = New System.Drawing.Size(136, 54)
+        Me.customersewa.TabIndex = 19
+        Me.customersewa.Text = "Customer Sewa"
         '
         'main_menu
         '
@@ -1522,4 +1533,5 @@ Partial Class main_menu
     Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton23 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents transaksisewa As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents customersewa As DevExpress.XtraEditors.SimpleButton
 End Class

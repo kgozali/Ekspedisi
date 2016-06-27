@@ -243,7 +243,7 @@ Public Class Master_mobil
     End Sub
 
     Private Sub addtruckbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addtruckbaru.ItemClick
-        add_mobil_sewa.ShowDialog()
         add_mobil_sewa.id.Text = autogenerate("MM", "select max(id_mobil) from mmobil")
+        add_mobil_sewa.ShowDialog()
     End Sub
 End Class
