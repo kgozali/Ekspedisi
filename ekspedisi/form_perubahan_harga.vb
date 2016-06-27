@@ -1,5 +1,6 @@
 ﻿Public Class form_perubahan_harga 
     Dim isi As New DataTable
+    Dim masuk As Boolean = False
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
     End Sub
@@ -18,6 +19,7 @@
             principle.DataSource = data
             principle.DisplayMember = "nama_principle"
             principle.ValueMember = "id_principle"
+            masuk = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -158,6 +160,18 @@
                 With datarute
                     .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
                 End With
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub principle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles principle.SelectedIndexChanged
+        Try
+            If masuk = True Then
+                Dim data As New DataTable
+                data = DtTableupdateharga("SELECT id_rute `Kode Rute` , kota_asal `Kota Asal` , kota_tujuan `Kota Tujuan` , nama_principle `Nama Principle` , price_per_unit `Harga Awal` FROM  `mrute` mr,  `mprinciple` mp WHERE mr.s =  '1' AND mr.id_principle = mp.id_principle and mr.id_principle ='" & principle.SelectedValue.ToString & "'")
+                rute.DataSource = data
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
