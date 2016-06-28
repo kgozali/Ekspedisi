@@ -2,6 +2,7 @@
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         Me.Close()
+        simpanedit.Visible = False
     End Sub
 
     Private Sub simpan_Click(sender As Object, e As EventArgs) Handles simpan.Click

@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Globalization
 Public Class edit_list_mobil
     Dim data As New DataTable
     Private Sub edit_list_mobil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            data.Clear()
+            data = New DataTable
             If data.Columns.Count = 0 Then
-                data.Columns.Add("Kode Truk")
+                data.Columns.Add("Kode Mobil")
                 data.Columns.Add("No Polisi")
                 data.Columns.Add("Tanggal Beli")
 
@@ -15,7 +16,7 @@ Public Class edit_list_mobil
                 Dim datatemp As New DataTable
                 datatemp = DtTable("SELECT id_mobil `Kode Mobil`,no_pol `No.Polisi`,concat(day(tgl_beli),'-',monthname(tgl_beli),'-',year(tgl_beli)) `Tanggal Beli`,tipe_mobil `Tipe`,warna `Warna`,tahun `Tahun` from mmobil where `s`='1' and id_mobil ='" & Master_mobil.checks.Rows(i).Item(0).ToString & "'")
                 Dim a As String = datatemp.Rows(0).Item("Kode Mobil").ToString()
-                Dim b As String = datatemp.Rows(0).Item("No Polisi").ToString()
+                Dim b As String = datatemp.Rows(0).Item("No.Polisi").ToString()
                 Dim l As String = datatemp.Rows(0).Item("Tanggal Beli").ToString()
                 data.Rows.Add(a, b, l)
 
@@ -40,7 +41,7 @@ Public Class edit_list_mobil
             Next
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -58,7 +59,28 @@ Public Class edit_list_mobil
             Master_mobil.editing.Visible = False
             Master_mobil.GroupControl2.Enabled = True
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub GridView1_DoubleClick(sender As Object, e As EventArgs) Handles GridView1.DoubleClick
+        Try
+            add_mobil_sewa.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Mobil")
+            add_mobil_sewa.nomorpolisi.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "No Polisi")
+            'import globalization
+            Dim tanggalan As DateTime = DateTime.ParseExact(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Tanggal Beli"), "d-MMMM-yyyy", CultureInfo.InvariantCulture)
+            add_mobil_sewa.tanggal.Value = New Date(tanggalan.Year, tanggalan.Month, tanggalan.Day)
+            add_mobil_sewa.tipemobil.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Tipe")
+            add_mobil_sewa.tahun.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Tahun")
+            add_mobil_sewa.warna.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Warna")
+            add_mobil_sewa.simpanedit.Visible = True
+            add_mobil_sewa.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class
