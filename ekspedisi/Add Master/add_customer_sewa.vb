@@ -8,14 +8,6 @@
             kota.DataSource = cbkota
             kota.ValueMember = "kota"
             kota.DisplayMember = "kota"
-
-            nama.Text = ""
-            alamat.Text = ""
-            email.Text = ""
-            tel1.Text = ""
-            tel2.Text = ""
-            provinsi.Text = ""
-            kota.Text = ""
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -99,36 +91,6 @@
         auditlog(user, kompname, form, aktivitas)
     End Sub
 
-    Private Sub add_customer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            cbkota = DtTable("select kota, provinsi from mkota where s = '1'")
-            kota.DataSource = cbkota
-            kota.ValueMember = "kota"
-            kota.DisplayMember = "kota"
-
-
-            Dim tanggal As New DataTable
-            Dim tgl As String = "CS"
-            tanggal = DtTable("select * from mcustomer_sewa where substring(id_customer_sewa,1,2) = '" & tgl & "'")
-            Dim hitung As String = tanggal.Rows.Count() + 1
-            While hitung.LongCount < 5
-                hitung = "0" + hitung
-            End While
-            id.Text = tgl + hitung
-
-            nama.Text = ""
-            alamat.Text = ""
-            email.Text = ""
-            tel1.Text = ""
-            tel2.Text = ""
-            provinsi.Text = ""
-            kota.Text = ""
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-    End Sub
-
     Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
@@ -204,5 +166,9 @@
         Else
 
         End If
+    End Sub
+
+    Private Sub add_customer_sewa_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        saveedit.Visible = False
     End Sub
 End Class

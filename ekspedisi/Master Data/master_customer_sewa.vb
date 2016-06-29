@@ -126,7 +126,7 @@
                 End If
             Next i
             If cek = True Then
-                list_edit_customer.ShowDialog()
+                list_edit_customer_sewa.ShowDialog()
             Else
                 MessageBox.Show("Tidak ada data terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
