@@ -39,6 +39,7 @@ Partial Class add_customer_sewa
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.saveedit = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tel1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +69,6 @@ Partial Class add_customer_sewa
         '
         'provinsi
         '
-        Me.provinsi.Enabled = False
         Me.provinsi.Location = New System.Drawing.Point(128, 170)
         Me.provinsi.Name = "provinsi"
         Me.provinsi.Size = New System.Drawing.Size(336, 20)
@@ -223,11 +223,22 @@ Partial Class add_customer_sewa
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
         '
+        'saveedit
+        '
+        Me.saveedit.Image = CType(resources.GetObject("saveedit.Image"), System.Drawing.Image)
+        Me.saveedit.Location = New System.Drawing.Point(366, 322)
+        Me.saveedit.Name = "saveedit"
+        Me.saveedit.Size = New System.Drawing.Size(100, 27)
+        Me.saveedit.TabIndex = 149
+        Me.saveedit.Text = "Save"
+        Me.saveedit.Visible = False
+        '
         'add_customer_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(579, 357)
+        Me.Controls.Add(Me.saveedit)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.GroupControl1)
@@ -265,4 +276,5 @@ Partial Class add_customer_sewa
     Friend WithEvents id As DevExpress.XtraEditors.TextEdit
     Friend WithEvents simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents saveedit As DevExpress.XtraEditors.SimpleButton
 End Class

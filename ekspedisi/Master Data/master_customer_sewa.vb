@@ -6,7 +6,19 @@
     Dim unchecks As New DataTable
     Dim dataygdidelete As String = ""
     Private Sub addcustomerbaru_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles addcustomerbaru.ItemClick
-        add_customer.ShowDialog()
+        Try
+            Dim tanggal As New DataTable
+            Dim tgl As String = "CS"
+            tanggal = DtTable("select * from mcustomer_sewa where substring(id_customer_sewa,1,2) = '" & tgl & "'")
+            Dim hitung As String = tanggal.Rows.Count() + 1
+            While hitung.LongCount < 5
+                hitung = "0" + hitung
+            End While
+            add_customer_master_sewa.id.Text = tgl + hitung
+            add_customer_sewa.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
