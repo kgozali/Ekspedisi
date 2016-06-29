@@ -86,11 +86,17 @@
     Sub audit()
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
-        Dim form As String = "Master Customer Sewa"
+        Dim form As String = "Tambah Customer Sewa"
         Dim aktivitas As String = "Add Customer Sewa: " & id.Text.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
-
+    Sub auditedit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim form As String = "Edit Customer Sewa"
+        Dim aktivitas As String = "Edit Customer Sewa: " & id.Text.ToString
+        auditlog(user, kompname, form, aktivitas)
+    End Sub
     Private Sub tel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tel1.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
@@ -164,7 +170,26 @@
         If nama.Text = "" Or alamat.Text = "" Or email.Text = "" Or tel1.Text = "" Or provinsi.Text = "" Or kota.Text = "" Then
             MessageBox.Show("Mohon lengkapi data terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
+            Select Case MsgBox("Apakah anda yakin mengedit data ini?", MsgBoxStyle.YesNo, "System Error")
+                Case MsgBoxResult.Yes
+                    Dim ccccc As String = "update mcustomer_sewa set nama_customer='" & nama.Text & "', email ='" & email.Text & "', alamat = '" & alamat.Text & "', tel1 ='" & tel1.Text & "', tel2 = '" & tel2.Text & "',kota ='" & kota.Text & "', provinsi ='" & provinsi.Text & "' where id_customer_sewa='" & id.Text.ToString & "'"
+                    InsertInto(ccccc)
+                    auditedit()
+                    MessageBox.Show("File Updated")
+                    connect.Close()
+                    list_edit_customer.GridView1.DeleteSelectedRows()
+                    With list_edit_customer_sewa.GridView1
 
+                        .SetRowCellValue(.FocusedRowHandle, "Nama Customer", nama.Text)
+                        .SetRowCellValue(.FocusedRowHandle, "Alamat", alamat.Text)
+                        .SetRowCellValue(.FocusedRowHandle, "Email", email.Text)
+                        .SetRowCellValue(.FocusedRowHandle, "Provinsi", provinsi.Text)
+                        .SetRowCellValue(.FocusedRowHandle, "Kota", kota.SelectedValue.ToString)
+                        .SetRowCellValue(.FocusedRowHandle, "Telepon 1", tel1.Text)
+                        .SetRowCellValue(.FocusedRowHandle, "Telepon 2", tel2.Text)
+                    End With
+                    Me.Close()
+            End Select
         End If
     End Sub
 

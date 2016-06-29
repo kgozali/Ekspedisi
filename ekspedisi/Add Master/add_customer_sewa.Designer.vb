@@ -230,7 +230,7 @@ Partial Class add_customer_sewa
         Me.saveedit.Name = "saveedit"
         Me.saveedit.Size = New System.Drawing.Size(100, 27)
         Me.saveedit.TabIndex = 149
-        Me.saveedit.Text = "Save"
+        Me.saveedit.Text = "Submit"
         Me.saveedit.Visible = False
         '
         'add_customer_sewa
