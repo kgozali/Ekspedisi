@@ -232,6 +232,7 @@ Partial Class add_customer_sewa
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "add_customer_sewa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Customer Sewa"
         CType(Me.provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tel2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
