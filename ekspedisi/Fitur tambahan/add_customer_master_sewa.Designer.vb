@@ -28,8 +28,8 @@ Partial Class add_customer_master_sewa
         Me.nama = New System.Windows.Forms.RadioButton()
         Me.id = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.cancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.submit = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,23 +114,23 @@ Partial Class add_customer_master_sewa
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
-        'SimpleButton1
+        'cancel
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(672, 522)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton1.TabIndex = 46
-        Me.SimpleButton1.Text = "Cancel"
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(672, 522)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.TabIndex = 46
+        Me.cancel.Text = "Cancel"
         '
-        'Submit
+        'submit
         '
-        Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(566, 522)
-        Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
-        Me.Submit.TabIndex = 45
-        Me.Submit.Text = "Submit"
+        Me.submit.Image = CType(resources.GetObject("submit.Image"), System.Drawing.Image)
+        Me.submit.Location = New System.Drawing.Point(566, 522)
+        Me.submit.Name = "submit"
+        Me.submit.Size = New System.Drawing.Size(100, 27)
+        Me.submit.TabIndex = 45
+        Me.submit.Text = "Submit"
         '
         'add_customer_master_sewa
         '
@@ -139,8 +139,8 @@ Partial Class add_customer_master_sewa
         Me.ClientSize = New System.Drawing.Size(780, 556)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.Submit)
+        Me.Controls.Add(Me.cancel)
+        Me.Controls.Add(Me.submit)
         Me.Name = "add_customer_master_sewa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Customer"
@@ -164,6 +164,6 @@ Partial Class add_customer_master_sewa
     Friend WithEvents nama As System.Windows.Forms.RadioButton
     Friend WithEvents id As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents submit As DevExpress.XtraEditors.SimpleButton
 End Class
