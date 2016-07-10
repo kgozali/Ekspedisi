@@ -38,8 +38,15 @@
         tambah_transaksi_sewa.kotaasal.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kota").ToString
         data = DtTable("SELECT dmaster_customer_sewa.id_mobil `Kode Mobil`,no_pol `No.Polisi`,tipe_mobil `Tipe Mobil`,warna `Warna`,tahun `Tahun`,harga_sewa `Harga Sewa` from mmobil,dmaster_customer_sewa where mmobil.id_mobil=dmaster_customer_sewa.id_mobil and id_customer='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Customer").ToString + "'")
         tambah_transaksi_sewa.GridControl1.DataSource = data
+
+        tambah_transaksi_sewa.GridView1.OptionsView.ShowFooter = True
         For i = 0 To tambah_transaksi_sewa.GridView1.Columns.Count - 1
             tambah_transaksi_sewa.GridView1.Columns(i).OptionsColumn.AllowEdit = False
+            If tambah_transaksi_sewa.GridView1.Columns(i).FieldName.ToString = "Harga Sewa" Then
+                tambah_transaksi_sewa.GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+                tambah_transaksi_sewa.GridView1.Columns(i).SummaryItem.FieldName = "Harga Sewa"
+                tambah_transaksi_sewa.GridView1.Columns(i).SummaryItem.DisplayFormat = "Total =    Rp. {0:N2} "
+            End If
         Next
         Me.Close()
     End Sub
