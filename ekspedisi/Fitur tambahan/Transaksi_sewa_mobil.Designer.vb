@@ -364,7 +364,7 @@ Partial Class Transaksi_sewa_mobil
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "Transaksi_sewa_mobil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Transaksi Sewa Mobil"
+        Me.Text = "Master Mobil Sewa"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)

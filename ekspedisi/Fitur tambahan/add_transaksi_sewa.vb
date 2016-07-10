@@ -1,11 +1,11 @@
 ﻿Public Class add_transaksi_sewa 
 
-    Private Sub add_mobil_Click(sender As Object, e As EventArgs) Handles add_mobil.Click
+    Private Sub add_mobil_Click(sender As Object, e As EventArgs)
         add_mobil_transaksi.ShowDialog()
     End Sub
 
    
-    Private Sub customer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles customer.ButtonClick
+    Private Sub customer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)
         add_customer_master_sewa.ShowDialog()
     End Sub
 

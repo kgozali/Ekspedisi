@@ -36,6 +36,8 @@ Partial Class add_mobil_sewa
         Me.tahun = New DevExpress.XtraEditors.TextEdit()
         Me.tanggal = New System.Windows.Forms.DateTimePicker()
         Me.simpanedit = New DevExpress.XtraEditors.SimpleButton()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.warna.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tipemobil.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nomorpolisi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,12 +45,13 @@ Partial Class add_mobil_sewa
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.tahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(466, 207)
+        Me.cancel.Location = New System.Drawing.Point(472, 223)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 8
@@ -140,7 +143,7 @@ Partial Class add_mobil_sewa
         'simpan
         '
         Me.simpan.Image = CType(resources.GetObject("simpan.Image"), System.Drawing.Image)
-        Me.simpan.Location = New System.Drawing.Point(360, 207)
+        Me.simpan.Location = New System.Drawing.Point(366, 223)
         Me.simpan.Name = "simpan"
         Me.simpan.Size = New System.Drawing.Size(100, 27)
         Me.simpan.TabIndex = 7
@@ -148,6 +151,8 @@ Partial Class add_mobil_sewa
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.TextEdit1)
+        Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.tahun)
         Me.GroupControl1.Controls.Add(Me.tanggal)
         Me.GroupControl1.Controls.Add(Me.warna)
@@ -162,7 +167,7 @@ Partial Class add_mobil_sewa
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(560, 189)
+        Me.GroupControl1.Size = New System.Drawing.Size(560, 205)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
         '
@@ -183,18 +188,34 @@ Partial Class add_mobil_sewa
         'simpanedit
         '
         Me.simpanedit.Image = CType(resources.GetObject("simpanedit.Image"), System.Drawing.Image)
-        Me.simpanedit.Location = New System.Drawing.Point(360, 207)
+        Me.simpanedit.Location = New System.Drawing.Point(366, 223)
         Me.simpanedit.Name = "simpanedit"
         Me.simpanedit.Size = New System.Drawing.Size(100, 27)
         Me.simpanedit.TabIndex = 6
         Me.simpanedit.Text = "Save"
         Me.simpanedit.Visible = False
         '
+        'TextEdit1
+        '
+        Me.TextEdit1.Location = New System.Drawing.Point(89, 178)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(170, 20)
+        Me.TextEdit1.TabIndex = 56
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 180)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl3.TabIndex = 57
+        Me.LabelControl3.Text = "Harga Sewa"
+        '
         'add_mobil_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(578, 246)
+        Me.ClientSize = New System.Drawing.Size(578, 258)
         Me.Controls.Add(Me.simpanedit)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.simpan)
@@ -210,6 +231,7 @@ Partial Class add_mobil_sewa
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.tahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -229,4 +251,6 @@ Partial Class add_mobil_sewa
     Friend WithEvents tahun As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tanggal As System.Windows.Forms.DateTimePicker
     Friend WithEvents simpanedit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
 End Class

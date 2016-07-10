@@ -401,6 +401,12 @@
     <Compile Include="Fitur tambahan\pembayaran_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fitur tambahan\pengembalian_mobil.Designer.vb">
+      <DependentUpon>pengembalian_mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fitur tambahan\pengembalian_mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fitur tambahan\Transaksi_sewa_mobil.Designer.vb">
       <DependentUpon>Transaksi_sewa_mobil.vb</DependentUpon>
     </Compile>
@@ -1417,6 +1423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fitur tambahan\pembayaran_sewa.resx">
       <DependentUpon>pembayaran_sewa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fitur tambahan\pengembalian_mobil.resx">
+      <DependentUpon>pengembalian_mobil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fitur tambahan\Transaksi_sewa_mobil.resx">
       <DependentUpon>Transaksi_sewa_mobil.vb</DependentUpon>
