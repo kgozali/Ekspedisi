@@ -433,4 +433,8 @@ Public Class main_menu
     Private Sub customersewa_Click(sender As Object, e As EventArgs) Handles customersewa.Click
         master_customer_sewa.ShowDialog()
     End Sub
+
+    Private Sub SimpleButton25_Click(sender As Object, e As EventArgs) Handles SimpleButton25.Click
+        Transaksi_sewa_mobil.ShowDialog()
+    End Sub
 End Class

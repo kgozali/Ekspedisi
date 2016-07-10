@@ -55,8 +55,8 @@ Partial Class master_transaksi
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.tanggal = New System.Windows.Forms.RadioButton()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -351,15 +351,6 @@ Partial Class master_transaksi
         Me.GroupControl1.TabIndex = 170
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(11, 199)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(963, 448)
-        Me.GroupControl3.TabIndex = 171
-        Me.GroupControl3.Text = "Daftar Booking"
-        '
         'tanggal
         '
         Me.tanggal.AutoSize = True
@@ -369,6 +360,15 @@ Partial Class master_transaksi
         Me.tanggal.TabIndex = 5
         Me.tanggal.Text = "Tanggal Transaksi"
         Me.tanggal.UseVisualStyleBackColor = True
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Location = New System.Drawing.Point(11, 199)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(963, 448)
+        Me.GroupControl3.TabIndex = 171
+        Me.GroupControl3.Text = "Daftar Booking"
         '
         'master_transaksi
         '

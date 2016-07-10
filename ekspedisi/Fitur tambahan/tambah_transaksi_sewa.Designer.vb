@@ -21,6 +21,8 @@ Partial Class tambah_transaksi_sewa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(tambah_transaksi_sewa))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.id = New System.Windows.Forms.TextBox()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.nomortelepon = New System.Windows.Forms.TextBox()
         Me.kotaasal = New System.Windows.Forms.TextBox()
         Me.jabatan = New System.Windows.Forms.TextBox()
@@ -31,12 +33,10 @@ Partial Class tambah_transaksi_sewa
         Me.idkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.id = New System.Windows.Forms.TextBox()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.tambahmobil = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.save = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +67,23 @@ Partial Class tambah_transaksi_sewa
         Me.GroupControl1.Size = New System.Drawing.Size(1004, 112)
         Me.GroupControl1.TabIndex = 177
         Me.GroupControl1.Text = "Data Sewa"
+        '
+        'id
+        '
+        Me.id.Enabled = False
+        Me.id.Location = New System.Drawing.Point(125, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(191, 21)
+        Me.id.TabIndex = 75
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(47, 27)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(72, 18)
+        Me.LabelControl6.TabIndex = 74
+        Me.LabelControl6.Text = "Kode Sewa"
         '
         'nomortelepon
         '
@@ -153,23 +170,6 @@ Partial Class tambah_transaksi_sewa
         Me.LabelControl2.TabIndex = 66
         Me.LabelControl2.Text = "Nama Customer"
         '
-        'id
-        '
-        Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(125, 24)
-        Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(191, 21)
-        Me.id.TabIndex = 75
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(47, 27)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(72, 18)
-        Me.LabelControl6.TabIndex = 74
-        Me.LabelControl6.Text = "Kode Sewa"
-        '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
@@ -194,14 +194,14 @@ Partial Class tambah_transaksi_sewa
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'SimpleButton2
+        'tambahmobil
         '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(916, 130)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton2.TabIndex = 182
-        Me.SimpleButton2.Text = "Add Item"
+        Me.tambahmobil.Image = CType(resources.GetObject("tambahmobil.Image"), System.Drawing.Image)
+        Me.tambahmobil.Location = New System.Drawing.Point(916, 130)
+        Me.tambahmobil.Name = "tambahmobil"
+        Me.tambahmobil.Size = New System.Drawing.Size(100, 27)
+        Me.tambahmobil.TabIndex = 182
+        Me.tambahmobil.Text = "Add Item"
         '
         'cancel
         '
@@ -228,7 +228,7 @@ Partial Class tambah_transaksi_sewa
         Me.ClientSize = New System.Drawing.Size(1025, 563)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.SimpleButton2)
+        Me.Controls.Add(Me.tambahmobil)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "tambah_transaksi_sewa"
@@ -257,7 +257,7 @@ Partial Class tambah_transaksi_sewa
     Friend WithEvents idkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents tambahmobil As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView

@@ -205,7 +205,6 @@ Partial Class Transaksi_sewa_mobil
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.jumpmenu)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.addsiswabaru)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.edit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.deldata)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         '
@@ -292,10 +291,11 @@ Partial Class Transaksi_sewa_mobil
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(489, 415)
+        Me.GridControl1.Size = New System.Drawing.Size(495, 421)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -303,6 +303,7 @@ Partial Class Transaksi_sewa_mobil
         '
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
         '
         'GroupControl2
         '
@@ -315,10 +316,11 @@ Partial Class Transaksi_sewa_mobil
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl2.Location = New System.Drawing.Point(2, 21)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(489, 415)
+        Me.GridControl2.Size = New System.Drawing.Size(495, 421)
         Me.GridControl2.TabIndex = 7
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -326,6 +328,7 @@ Partial Class Transaksi_sewa_mobil
         '
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsBehavior.Editable = False
         '
         'cancel
         '

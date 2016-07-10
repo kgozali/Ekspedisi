@@ -33,19 +33,19 @@ Partial Class add_mobil_sewa
         Me.id = New DevExpress.XtraEditors.TextEdit()
         Me.simpan = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.harga = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.tahun = New DevExpress.XtraEditors.TextEdit()
         Me.tanggal = New System.Windows.Forms.DateTimePicker()
         Me.simpanedit = New DevExpress.XtraEditors.SimpleButton()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.warna.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tipemobil.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nomorpolisi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.harga.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cancel
@@ -151,7 +151,7 @@ Partial Class add_mobil_sewa
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.TextEdit1)
+        Me.GroupControl1.Controls.Add(Me.harga)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.tahun)
         Me.GroupControl1.Controls.Add(Me.tanggal)
@@ -170,6 +170,22 @@ Partial Class add_mobil_sewa
         Me.GroupControl1.Size = New System.Drawing.Size(560, 205)
         Me.GroupControl1.TabIndex = 146
         Me.GroupControl1.Text = "Data"
+        '
+        'harga
+        '
+        Me.harga.Location = New System.Drawing.Point(89, 178)
+        Me.harga.Name = "harga"
+        Me.harga.Size = New System.Drawing.Size(170, 20)
+        Me.harga.TabIndex = 56
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 180)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl3.TabIndex = 57
+        Me.LabelControl3.Text = "Harga Sewa"
         '
         'tahun
         '
@@ -195,22 +211,6 @@ Partial Class add_mobil_sewa
         Me.simpanedit.Text = "Save"
         Me.simpanedit.Visible = False
         '
-        'TextEdit1
-        '
-        Me.TextEdit1.Location = New System.Drawing.Point(89, 178)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(170, 20)
-        Me.TextEdit1.TabIndex = 56
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 180)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(78, 18)
-        Me.LabelControl3.TabIndex = 57
-        Me.LabelControl3.Text = "Harga Sewa"
-        '
         'add_mobil_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -230,8 +230,8 @@ Partial Class add_mobil_sewa
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.harga.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -251,6 +251,6 @@ Partial Class add_mobil_sewa
     Friend WithEvents tahun As DevExpress.XtraEditors.TextEdit
     Friend WithEvents tanggal As System.Windows.Forms.DateTimePicker
     Friend WithEvents simpanedit As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents harga As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
 End Class

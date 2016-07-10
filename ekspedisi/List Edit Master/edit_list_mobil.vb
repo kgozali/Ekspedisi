@@ -77,6 +77,7 @@ Public Class edit_list_mobil
             add_mobil_sewa.tipemobil.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Tipe")
             add_mobil_sewa.tahun.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Tahun")
             add_mobil_sewa.warna.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Warna")
+            add_mobil_sewa.harga.Text = Master_mobil.GridView2.GetRowCellValue(Master_mobil.GridView2.FocusedRowHandle, "Harga Sewa")
             add_mobil_sewa.simpanedit.Visible = True
             add_mobil_sewa.ShowDialog()
         Catch ex As Exception
