@@ -25,8 +25,8 @@ Partial Class tambah_transaksi_sewa
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.nomortelepon = New System.Windows.Forms.TextBox()
         Me.kotaasal = New System.Windows.Forms.TextBox()
-        Me.jabatan = New System.Windows.Forms.TextBox()
-        Me.namakaryawan = New System.Windows.Forms.TextBox()
+        Me.email = New System.Windows.Forms.TextBox()
+        Me.kodesewa = New System.Windows.Forms.TextBox()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -39,6 +39,8 @@ Partial Class tambah_transaksi_sewa
         Me.tambahmobil = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.save = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,142 +52,159 @@ Partial Class tambah_transaksi_sewa
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.LabelControl6)
         Me.GroupControl1.Controls.Add(Me.nomortelepon)
         Me.GroupControl1.Controls.Add(Me.kotaasal)
-        Me.GroupControl1.Controls.Add(Me.jabatan)
-        Me.GroupControl1.Controls.Add(Me.namakaryawan)
+        Me.GroupControl1.Controls.Add(Me.email)
+        Me.GroupControl1.Controls.Add(Me.kodesewa)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.idkaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Location = New System.Drawing.Point(14, 15)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1004, 112)
+        Me.GroupControl1.Size = New System.Drawing.Size(1171, 164)
         Me.GroupControl1.TabIndex = 177
         Me.GroupControl1.Text = "Data Sewa"
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(125, 24)
+        Me.id.Location = New System.Drawing.Point(146, 30)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(191, 21)
+        Me.id.Size = New System.Drawing.Size(222, 23)
         Me.id.TabIndex = 75
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(47, 27)
+        Me.LabelControl6.Location = New System.Drawing.Point(22, 34)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(72, 18)
+        Me.LabelControl6.Size = New System.Drawing.Size(126, 23)
         Me.LabelControl6.TabIndex = 74
-        Me.LabelControl6.Text = "Kode Sewa"
+        Me.LabelControl6.Text = "Kode Transaksi"
         '
         'nomortelepon
         '
         Me.nomortelepon.Enabled = False
-        Me.nomortelepon.Location = New System.Drawing.Point(808, 54)
+        Me.nomortelepon.Location = New System.Drawing.Point(943, 66)
+        Me.nomortelepon.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nomortelepon.Name = "nomortelepon"
-        Me.nomortelepon.Size = New System.Drawing.Size(191, 21)
+        Me.nomortelepon.Size = New System.Drawing.Size(222, 23)
         Me.nomortelepon.TabIndex = 73
         '
         'kotaasal
         '
         Me.kotaasal.Enabled = False
-        Me.kotaasal.Location = New System.Drawing.Point(808, 81)
+        Me.kotaasal.Location = New System.Drawing.Point(943, 100)
+        Me.kotaasal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(191, 21)
+        Me.kotaasal.Size = New System.Drawing.Size(222, 23)
         Me.kotaasal.TabIndex = 72
         '
-        'jabatan
+        'email
         '
-        Me.jabatan.Enabled = False
-        Me.jabatan.Location = New System.Drawing.Point(808, 24)
-        Me.jabatan.Name = "jabatan"
-        Me.jabatan.Size = New System.Drawing.Size(191, 21)
-        Me.jabatan.TabIndex = 71
+        Me.email.Enabled = False
+        Me.email.Location = New System.Drawing.Point(943, 30)
+        Me.email.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.email.Name = "email"
+        Me.email.Size = New System.Drawing.Size(222, 23)
+        Me.email.TabIndex = 71
         '
-        'namakaryawan
+        'kodesewa
         '
-        Me.namakaryawan.Enabled = False
-        Me.namakaryawan.Location = New System.Drawing.Point(125, 77)
-        Me.namakaryawan.Name = "namakaryawan"
-        Me.namakaryawan.Size = New System.Drawing.Size(191, 21)
-        Me.namakaryawan.TabIndex = 70
+        Me.kodesewa.Location = New System.Drawing.Point(146, 95)
+        Me.kodesewa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.kodesewa.Name = "kodesewa"
+        Me.kodesewa.Size = New System.Drawing.Size(222, 23)
+        Me.kodesewa.TabIndex = 70
         '
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(701, 57)
+        Me.LabelControl5.Location = New System.Drawing.Point(818, 70)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(101, 18)
+        Me.LabelControl5.Size = New System.Drawing.Size(129, 23)
         Me.LabelControl5.TabIndex = 69
         Me.LabelControl5.Text = "Nomor Telepon"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(772, 84)
+        Me.LabelControl4.Location = New System.Drawing.Point(901, 103)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(30, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(37, 23)
         Me.LabelControl4.TabIndex = 68
         Me.LabelControl4.Text = "Kota"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(769, 27)
+        Me.LabelControl3.Location = New System.Drawing.Point(897, 33)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(33, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(45, 23)
         Me.LabelControl3.TabIndex = 67
         Me.LabelControl3.Text = "Email"
         '
         'idkaryawan
         '
-        Me.idkaryawan.Location = New System.Drawing.Point(125, 51)
+        Me.idkaryawan.Location = New System.Drawing.Point(146, 63)
+        Me.idkaryawan.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.idkaryawan.Name = "idkaryawan"
         Me.idkaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.idkaryawan.Size = New System.Drawing.Size(191, 20)
+        Me.idkaryawan.Size = New System.Drawing.Size(223, 22)
         Me.idkaryawan.TabIndex = 64
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(18, 80)
+        Me.LabelControl1.Location = New System.Drawing.Point(55, 97)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(101, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(93, 23)
         Me.LabelControl1.TabIndex = 65
-        Me.LabelControl1.Text = "Kode Customer"
+        Me.LabelControl1.Text = "Kode Sewa"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 53)
+        Me.LabelControl2.Location = New System.Drawing.Point(14, 65)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(107, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(134, 23)
         Me.LabelControl2.TabIndex = 66
         Me.LabelControl2.Text = "Nama Customer"
         '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 163)
+        Me.GroupControl2.Location = New System.Drawing.Point(14, 237)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1004, 358)
+        Me.GroupControl2.Size = New System.Drawing.Size(1171, 405)
         Me.GroupControl2.TabIndex = 181
         Me.GroupControl2.Text = "Data Sewa Mobil"
         '
         'GridControl1
         '
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 24)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1000, 335)
+        Me.GridControl1.Size = New System.Drawing.Size(1167, 379)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -193,45 +212,68 @@ Partial Class tambah_transaksi_sewa
         '
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'tambahmobil
         '
         Me.tambahmobil.Image = CType(resources.GetObject("tambahmobil.Image"), System.Drawing.Image)
-        Me.tambahmobil.Location = New System.Drawing.Point(916, 130)
+        Me.tambahmobil.Location = New System.Drawing.Point(1069, 196)
+        Me.tambahmobil.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tambahmobil.Name = "tambahmobil"
-        Me.tambahmobil.Size = New System.Drawing.Size(100, 27)
+        Me.tambahmobil.Size = New System.Drawing.Size(117, 33)
         Me.tambahmobil.TabIndex = 182
         Me.tambahmobil.Text = "Add Item"
         '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(916, 527)
+        Me.cancel.Location = New System.Drawing.Point(1069, 649)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 184
         Me.cancel.Text = "Cancel"
         '
         'save
         '
         Me.save.Image = CType(resources.GetObject("save.Image"), System.Drawing.Image)
-        Me.save.Location = New System.Drawing.Point(810, 527)
+        Me.save.Location = New System.Drawing.Point(945, 649)
+        Me.save.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.save.Name = "save"
-        Me.save.Size = New System.Drawing.Size(100, 27)
+        Me.save.Size = New System.Drawing.Size(117, 33)
         Me.save.TabIndex = 183
         Me.save.Text = "Save"
         '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(29, 128)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(119, 23)
+        Me.LabelControl7.TabIndex = 76
+        Me.LabelControl7.Text = "Tanggal Sewa"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(146, 127)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(222, 23)
+        Me.DateTimePicker1.TabIndex = 77
+        '
         'tambah_transaksi_sewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1025, 563)
+        Me.ClientSize = New System.Drawing.Size(1196, 693)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.tambahmobil)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "tambah_transaksi_sewa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Transaksi Sewa Mobil"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -249,8 +291,8 @@ Partial Class tambah_transaksi_sewa
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents nomortelepon As System.Windows.Forms.TextBox
     Friend WithEvents kotaasal As System.Windows.Forms.TextBox
-    Friend WithEvents jabatan As System.Windows.Forms.TextBox
-    Friend WithEvents namakaryawan As System.Windows.Forms.TextBox
+    Friend WithEvents email As System.Windows.Forms.TextBox
+    Friend WithEvents kodesewa As System.Windows.Forms.TextBox
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
@@ -263,4 +305,6 @@ Partial Class tambah_transaksi_sewa
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents save As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
 End Class
