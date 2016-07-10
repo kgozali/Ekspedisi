@@ -12,15 +12,19 @@
         End Try
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        Me.Close()
-    End Sub
-
     Private Sub add_mobil_transaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cari_EditValueChanged(sender, e)
     End Sub
 
     Private Sub nama_CheckedChanged(sender As Object, e As EventArgs) Handles nama.CheckedChanged
         cari_EditValueChanged(sender, e)
+    End Sub
+
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+
+    End Sub
+
+    Private Sub kirim_Click(sender As Object, e As EventArgs) Handles kirim.Click
+
     End Sub
 End Class

@@ -23,9 +23,8 @@ Partial Class master_transaksi
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_transaksi))
         Me.hapus = New DevExpress.XtraEditors.SimpleButton()
         Me.nonaktif = New System.Windows.Forms.RadioButton()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.kodetransaksi = New System.Windows.Forms.RadioButton()
-        Me.tgl = New System.Windows.Forms.RadioButton()
+        Me.cust = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
@@ -55,7 +54,7 @@ Partial Class master_transaksi
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.tanggal = New System.Windows.Forms.RadioButton()
+        Me.ksewa = New System.Windows.Forms.RadioButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,9 +71,10 @@ Partial Class master_transaksi
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(11, 652)
+        Me.hapus.Location = New System.Drawing.Point(13, 802)
+        Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
+        Me.hapus.Size = New System.Drawing.Size(231, 32)
         Me.hapus.TabIndex = 174
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
@@ -82,48 +82,44 @@ Partial Class master_transaksi
         'nonaktif
         '
         Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 46)
+        Me.nonaktif.Location = New System.Drawing.Point(6, 57)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(118, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(125, 21)
         Me.nonaktif.TabIndex = 9
-        Me.nonaktif.Text = "Transaksi Non-Aktif"
+        Me.nonaktif.Text = "Transaksi Lunas"
         Me.nonaktif.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(8, 70)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
-        Me.DateTimePicker1.TabIndex = 4
-        Me.DateTimePicker1.Visible = False
         '
         'kodetransaksi
         '
         Me.kodetransaksi.AutoSize = True
         Me.kodetransaksi.Checked = True
-        Me.kodetransaksi.Location = New System.Drawing.Point(8, 24)
+        Me.kodetransaksi.Location = New System.Drawing.Point(9, 30)
+        Me.kodetransaksi.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kodetransaksi.Name = "kodetransaksi"
-        Me.kodetransaksi.Size = New System.Drawing.Size(100, 17)
+        Me.kodetransaksi.Size = New System.Drawing.Size(124, 21)
         Me.kodetransaksi.TabIndex = 3
         Me.kodetransaksi.TabStop = True
         Me.kodetransaksi.Text = "Kode Transaksi "
         Me.kodetransaksi.UseVisualStyleBackColor = True
         '
-        'tgl
+        'cust
         '
-        Me.tgl.AutoSize = True
-        Me.tgl.Location = New System.Drawing.Point(114, 24)
-        Me.tgl.Name = "tgl"
-        Me.tgl.Size = New System.Drawing.Size(101, 17)
-        Me.tgl.TabIndex = 1
-        Me.tgl.Text = "Nama Customer"
-        Me.tgl.UseVisualStyleBackColor = True
+        Me.cust.AutoSize = True
+        Me.cust.Location = New System.Drawing.Point(133, 30)
+        Me.cust.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cust.Name = "cust"
+        Me.cust.Size = New System.Drawing.Size(128, 21)
+        Me.cust.TabIndex = 1
+        Me.cust.Text = "Nama Customer"
+        Me.cust.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(8, 69)
+        Me.cari.Location = New System.Drawing.Point(9, 85)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'GridView1
@@ -135,38 +131,41 @@ Partial Class master_transaksi
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 24)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(959, 425)
+        Me.GridControl1.Size = New System.Drawing.Size(1119, 525)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditBookingToolStripMenuItem, Me.DeleteBookingToolStripMenuItem, Me.PreviewAndPrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(167, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(197, 82)
         '
         'EditBookingToolStripMenuItem
         '
         Me.EditBookingToolStripMenuItem.Image = CType(resources.GetObject("EditBookingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EditBookingToolStripMenuItem.Name = "EditBookingToolStripMenuItem"
-        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.EditBookingToolStripMenuItem.Text = "Edit Booking"
         '
         'DeleteBookingToolStripMenuItem
         '
         Me.DeleteBookingToolStripMenuItem.Image = CType(resources.GetObject("DeleteBookingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeleteBookingToolStripMenuItem.Name = "DeleteBookingToolStripMenuItem"
-        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.DeleteBookingToolStripMenuItem.Text = "Delete Booking"
         '
         'PreviewAndPrintToolStripMenuItem
         '
         Me.PreviewAndPrintToolStripMenuItem.Image = CType(resources.GetObject("PreviewAndPrintToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PreviewAndPrintToolStripMenuItem.Name = "PreviewAndPrintToolStripMenuItem"
-        Me.PreviewAndPrintToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.PreviewAndPrintToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.PreviewAndPrintToolStripMenuItem.Text = "Preview and Print"
         '
         'RibbonGalleryBarItem1
@@ -179,12 +178,13 @@ Partial Class master_transaksi
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 23)
+        Me.aktif.Location = New System.Drawing.Point(6, 28)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(95, 17)
+        Me.aktif.Size = New System.Drawing.Size(166, 21)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
-        Me.aktif.Text = "Transaksi Aktif"
+        Me.aktif.Text = "Transaksi Belum Lunas"
         Me.aktif.UseVisualStyleBackColor = True
         '
         'datasiswa
@@ -202,7 +202,8 @@ Partial Class master_transaksi
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
-        Me.RibbonControl1.Location = New System.Drawing.Point(-1, -3)
+        Me.RibbonControl1.Location = New System.Drawing.Point(-1, -4)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -211,7 +212,7 @@ Partial Class master_transaksi
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(991, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1156, 104)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -322,9 +323,10 @@ Partial Class master_transaksi
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(874, 651)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1020, 801)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.Size = New System.Drawing.Size(117, 33)
         Me.SimpleButton1.TabIndex = 172
         Me.SimpleButton1.Text = "Cancel"
         '
@@ -332,56 +334,61 @@ Partial Class master_transaksi
         '
         Me.GroupControl4.Controls.Add(Me.nonaktif)
         Me.GroupControl4.Controls.Add(Me.aktif)
-        Me.GroupControl4.Location = New System.Drawing.Point(293, 99)
+        Me.GroupControl4.Location = New System.Drawing.Point(342, 122)
+        Me.GroupControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
+        Me.GroupControl4.Size = New System.Drawing.Size(175, 91)
         Me.GroupControl4.TabIndex = 173
         Me.GroupControl4.Text = "Sortir"
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.tanggal)
-        Me.GroupControl1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupControl1.Controls.Add(Me.ksewa)
         Me.GroupControl1.Controls.Add(Me.kodetransaksi)
-        Me.GroupControl1.Controls.Add(Me.tgl)
+        Me.GroupControl1.Controls.Add(Me.cust)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 99)
+        Me.GroupControl1.Location = New System.Drawing.Point(14, 122)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(275, 94)
+        Me.GroupControl1.Size = New System.Drawing.Size(321, 116)
         Me.GroupControl1.TabIndex = 170
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
-        'tanggal
+        'ksewa
         '
-        Me.tanggal.AutoSize = True
-        Me.tanggal.Location = New System.Drawing.Point(8, 46)
-        Me.tanggal.Name = "tanggal"
-        Me.tanggal.Size = New System.Drawing.Size(111, 17)
-        Me.tanggal.TabIndex = 5
-        Me.tanggal.Text = "Tanggal Transaksi"
-        Me.tanggal.UseVisualStyleBackColor = True
+        Me.ksewa.AutoSize = True
+        Me.ksewa.Location = New System.Drawing.Point(9, 57)
+        Me.ksewa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ksewa.Name = "ksewa"
+        Me.ksewa.Size = New System.Drawing.Size(96, 21)
+        Me.ksewa.TabIndex = 5
+        Me.ksewa.Text = "Kode Sewa"
+        Me.ksewa.UseVisualStyleBackColor = True
         '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(11, 199)
+        Me.GroupControl3.Location = New System.Drawing.Point(13, 245)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(963, 448)
+        Me.GroupControl3.Size = New System.Drawing.Size(1123, 551)
         Me.GroupControl3.TabIndex = 171
-        Me.GroupControl3.Text = "Daftar Booking"
+        Me.GroupControl3.Text = "Daftar Transaksi"
         '
         'master_transaksi
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(986, 683)
+        Me.ClientSize = New System.Drawing.Size(1150, 841)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl3)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_transaksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Transaksi Sewa"
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -402,9 +409,8 @@ Partial Class master_transaksi
     End Sub
     Friend WithEvents hapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents nonaktif As System.Windows.Forms.RadioButton
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents kodetransaksi As System.Windows.Forms.RadioButton
-    Friend WithEvents tgl As System.Windows.Forms.RadioButton
+    Friend WithEvents cust As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
@@ -435,5 +441,5 @@ Partial Class master_transaksi
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents tanggal As System.Windows.Forms.RadioButton
+    Friend WithEvents ksewa As System.Windows.Forms.RadioButton
 End Class

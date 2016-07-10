@@ -45,18 +45,21 @@ Partial Class add_mobil_transaksi
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Controls.Add(Me.dataview)
-        Me.GroupControl3.Location = New System.Drawing.Point(12, 94)
+        Me.GroupControl3.Location = New System.Drawing.Point(14, 116)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(760, 422)
+        Me.GroupControl3.Size = New System.Drawing.Size(887, 519)
         Me.GroupControl3.TabIndex = 48
         Me.GroupControl3.Text = "Data Mobil"
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(6, 30)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(750, 389)
+        Me.GridControl1.Size = New System.Drawing.Size(875, 479)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -73,10 +76,11 @@ Partial Class add_mobil_transaksi
         '
         Me.dataview.AllowUserToAddRows = False
         Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(5, 24)
+        Me.dataview.Location = New System.Drawing.Point(6, 30)
+        Me.dataview.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dataview.Name = "dataview"
         Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(672, 311)
+        Me.dataview.Size = New System.Drawing.Size(784, 383)
         Me.dataview.TabIndex = 6
         '
         'GroupControl1
@@ -84,9 +88,10 @@ Partial Class add_mobil_transaksi
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Location = New System.Drawing.Point(14, 15)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
         Me.GroupControl1.TabIndex = 47
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
@@ -94,9 +99,10 @@ Partial Class add_mobil_transaksi
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Location = New System.Drawing.Point(101, 30)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(77, 17)
+        Me.nama.Size = New System.Drawing.Size(97, 21)
         Me.nama.TabIndex = 2
         Me.nama.TabStop = True
         Me.nama.Text = "Nomor Plat"
@@ -105,57 +111,63 @@ Partial Class add_mobil_transaksi
         'id
         '
         Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Location = New System.Drawing.Point(6, 30)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(76, 17)
+        Me.id.Size = New System.Drawing.Size(94, 21)
         Me.id.TabIndex = 1
         Me.id.Text = "Kode Mobil"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.Location = New System.Drawing.Point(6, 63)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(672, 522)
+        Me.cancel.Location = New System.Drawing.Point(784, 642)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 50
         Me.cancel.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(566, 522)
+        Me.Submit.Location = New System.Drawing.Point(660, 642)
+        Me.Submit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.Size = New System.Drawing.Size(117, 33)
         Me.Submit.TabIndex = 49
         Me.Submit.Text = "Submit"
         '
         'kirim
         '
         Me.kirim.Image = CType(resources.GetObject("kirim.Image"), System.Drawing.Image)
-        Me.kirim.Location = New System.Drawing.Point(566, 522)
+        Me.kirim.Location = New System.Drawing.Point(660, 642)
+        Me.kirim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kirim.Name = "kirim"
-        Me.kirim.Size = New System.Drawing.Size(100, 27)
+        Me.kirim.Size = New System.Drawing.Size(117, 33)
         Me.kirim.TabIndex = 51
         Me.kirim.Text = "Submit"
         '
         'add_mobil_transaksi
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(782, 554)
+        Me.ClientSize = New System.Drawing.Size(912, 682)
         Me.Controls.Add(Me.kirim)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.Submit)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "add_mobil_transaksi"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Mobil"
