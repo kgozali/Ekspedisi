@@ -39,10 +39,24 @@ Public Class master_transaksi
     End Sub
 
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
+        If nonaktif.Checked = True Then
+            deldata.Enabled = False
+            edit.Enabled = False
+        Else
+            deldata.Enabled = True
+            edit.Enabled = True
+        End If
         search()
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
+        If nonaktif.Checked = True Then
+            deldata.Enabled = False
+            edit.Enabled = False
+        Else
+            deldata.Enabled = True
+            edit.Enabled = True
+        End If
         search()
     End Sub
 
