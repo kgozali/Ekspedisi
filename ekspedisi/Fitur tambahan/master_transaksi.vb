@@ -6,7 +6,7 @@ Public Class master_transaksi
         tambah_transaksi_sewa.ShowDialog()
     End Sub
 
-    Private Sub master_transaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub master_transaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         search()
     End Sub
     Private Sub search()

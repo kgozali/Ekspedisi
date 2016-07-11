@@ -21,6 +21,8 @@ Partial Class tambah_transaksi_sewa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(tambah_transaksi_sewa))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.id = New System.Windows.Forms.TextBox()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.nomortelepon = New System.Windows.Forms.TextBox()
@@ -39,8 +41,6 @@ Partial Class tambah_transaksi_sewa
         Me.tambahmobil = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.save = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +72,23 @@ Partial Class tambah_transaksi_sewa
         Me.GroupControl1.Size = New System.Drawing.Size(1171, 164)
         Me.GroupControl1.TabIndex = 177
         Me.GroupControl1.Text = "Data Sewa"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(146, 127)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(222, 23)
+        Me.DateTimePicker1.TabIndex = 77
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(35, 127)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(113, 23)
+        Me.LabelControl7.TabIndex = 76
+        Me.LabelControl7.Text = "Tanggal Nota"
         '
         'id
         '
@@ -243,23 +260,6 @@ Partial Class tambah_transaksi_sewa
         Me.save.Size = New System.Drawing.Size(117, 33)
         Me.save.TabIndex = 183
         Me.save.Text = "Save"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(29, 128)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(119, 23)
-        Me.LabelControl7.TabIndex = 76
-        Me.LabelControl7.Text = "Tanggal Sewa"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(146, 127)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(222, 23)
-        Me.DateTimePicker1.TabIndex = 77
         '
         'tambah_transaksi_sewa
         '
