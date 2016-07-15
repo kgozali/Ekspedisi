@@ -142,6 +142,7 @@ Partial Class add_customer_transaksi
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cancel)
         Me.Name = "add_customer_transaksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Customer"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)

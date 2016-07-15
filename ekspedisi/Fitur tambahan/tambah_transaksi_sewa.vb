@@ -79,7 +79,7 @@
             If GridView1.DataRowCount < 1 Then
                 MessageBox.Show("Customer yang terpilih belum memiliki daftar mobil", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If kodesewa.Text = "" Then
+                If id.Text = "" Then
                     Dim msg As Integer = MessageBox.Show("Apakah anda ingin melanjutkan tanpa mencantumkan kode sewa?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                     If msg = DialogResult.Yes Then
                         savetrans()
@@ -93,7 +93,7 @@
 
     Private Sub savetrans()
         Try
-            kodesewavar = kodesewa.Text
+            kodesewavar = id.Text
             autogen()
             Dim tot As Integer = GridView1.Columns("Harga Sewa").SummaryItem.SummaryValue.ToString
             total = tot

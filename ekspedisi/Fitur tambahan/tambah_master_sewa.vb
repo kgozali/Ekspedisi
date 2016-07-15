@@ -80,51 +80,56 @@
     Dim uncheck As New DataTable
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Try
-            'InsertInto("delete from dmaster_customer_sewa where id_customer='" & namakaryawan.Text & "'")
-            Dim sudahsewa As New DataTable
-            Dim sewaaktif As New DataTable
-            sudahsewa = DtTable("SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi`,d.s `status` FROM mmobil m,dmaster_customer_sewa d where m.id_mobil=d.id_mobil and id_customer='" & namakaryawan.Text & "'")
-            'sewaaktif = DtTable("SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi` FROM mmobil m,dmaster_customer_sewa d where m.id_mobil=d.id_mobil and id_customer='" & namakaryawan.Text & "' and d.s='1'")
-            For i = 0 To pilihan.Rows.Count - 1
-                Dim cek As Boolean = False
-                Dim aktif As Boolean = False
-                For k = 0 To sudahsewa.Rows.Count - 1
-                    'If pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) And sudahsewa.Rows(k).Item(3) = "0" Then
-                    '    cek = True
-                    'ElseIf pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) And sudahsewa.Rows(k).Item(3) = "1" Then
-                    '    cek = True
-                    '    aktif = True
-                    'End If
-                    If pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) Then
-                        cek = True
-                        If sudahsewa.Rows(k).Item(3) = "1" Then
-                            aktif = True
+            If namakaryawan.Text = "" Then
+                MessageBox.Show("Pilih customer terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                'InsertInto("delete from dmaster_customer_sewa where id_customer='" & namakaryawan.Text & "'")
+                Dim sudahsewa As New DataTable
+                Dim sewaaktif As New DataTable
+                sudahsewa = DtTable("SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi`,d.s `status` FROM mmobil m,dmaster_customer_sewa d where m.id_mobil=d.id_mobil and id_customer='" & namakaryawan.Text & "'")
+                'sewaaktif = DtTable("SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi` FROM mmobil m,dmaster_customer_sewa d where m.id_mobil=d.id_mobil and id_customer='" & namakaryawan.Text & "' and d.s='1'")
+                For i = 0 To pilihan.Rows.Count - 1
+                    Dim cek As Boolean = False
+                    Dim aktif As Boolean = False
+                    For k = 0 To sudahsewa.Rows.Count - 1
+                        'If pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) And sudahsewa.Rows(k).Item(3) = "0" Then
+                        '    cek = True
+                        'ElseIf pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) And sudahsewa.Rows(k).Item(3) = "1" Then
+                        '    cek = True
+                        '    aktif = True
+                        'End If
+                        If pilihan.Rows(i).Item(0) = sudahsewa.Rows(k).Item(0) Then
+                            cek = True
+                            If sudahsewa.Rows(k).Item(3) = "1" Then
+                                aktif = True
+                            End If
                         End If
+                        'If cek = False And sudahsewa.Rows(k).Item(3) = "1" Then
+                        '    InsertInto("update dmaster_customer_sewa set s='0' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & sudahsewa.Rows(k).Item(0) & "'")
+                        '    InsertInto("update mmobil set s='1' where id_mobil='" & sudahsewa.Rows(k).Item(0) & "'")
+                        'End If
+                    Next k
+
+                    If cek = False Then
+                        InsertInto("insert into dmaster_customer_sewa values ('" & namakaryawan.Text & "','" & pilihan.Rows(i).Item(0) & "','1')")
+                        InsertInto("update mmobil set s='0' where id_mobil='" & GridView1.GetRowCellValue(i, "Kode Mobil") & "'")
+                    ElseIf cek = True And aktif = False Then
+                        InsertInto("update dmaster_customer_sewa set s='1' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & pilihan.Rows(i).Item(0) & "'")
+                        InsertInto("update mmobil set s='0' where id_mobil='" & pilihan.Rows(i).Item(0) & "'")
                     End If
-                    'If cek = False And sudahsewa.Rows(k).Item(3) = "1" Then
-                    '    InsertInto("update dmaster_customer_sewa set s='0' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & sudahsewa.Rows(k).Item(0) & "'")
-                    '    InsertInto("update mmobil set s='1' where id_mobil='" & sudahsewa.Rows(k).Item(0) & "'")
-                    'End If
-                Next k
-
-                If cek = False Then
-                    InsertInto("insert into dmaster_customer_sewa values ('" & namakaryawan.Text & "','" & pilihan.Rows(i).Item(0) & "','1')")
-                    InsertInto("update mmobil set s='0' where id_mobil='" & GridView1.GetRowCellValue(i, "Kode Mobil") & "'")
-                ElseIf cek = True And aktif = False Then
-                    InsertInto("update dmaster_customer_sewa set s='1' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & pilihan.Rows(i).Item(0) & "'")
-                    InsertInto("update mmobil set s='0' where id_mobil='" & pilihan.Rows(i).Item(0) & "'")
-                End If
-                'InsertInto("update mmobil set s='1' where id_mobil='" & GridView1.GetRowCellValue(i, "Kode Mobil") & "'")
+                    'InsertInto("update mmobil set s='1' where id_mobil='" & GridView1.GetRowCellValue(i, "Kode Mobil") & "'")
 
 
-            Next i
+                Next i
 
-            For j = 0 To uncheck.Rows.Count - 1
-                InsertInto("update dmaster_customer_sewa set s='0' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & uncheck.Rows(j).Item(0) & "'")
-                InsertInto("update mmobil set s='1' where id_mobil='" & uncheck.Rows(j).Item(0) & "'")
-            Next j
+                For j = 0 To uncheck.Rows.Count - 1
+                    InsertInto("update dmaster_customer_sewa set s='0' where id_customer='" & namakaryawan.Text & "' and id_mobil='" & uncheck.Rows(j).Item(0) & "'")
+                    InsertInto("update mmobil set s='1' where id_mobil='" & uncheck.Rows(j).Item(0) & "'")
+                Next j
 
-            MessageBox.Show("Data berhasil disimpan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Data berhasil disimpan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
