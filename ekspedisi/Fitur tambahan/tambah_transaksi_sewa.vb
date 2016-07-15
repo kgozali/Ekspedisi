@@ -60,7 +60,7 @@
 
     End Sub
     Sub reset()
-        kodesewa.Text = ""
+
         idkaryawan.Text = ""
         email.Text = ""
         nomortelepon.Text = ""
