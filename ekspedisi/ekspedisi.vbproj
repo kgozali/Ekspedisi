@@ -383,6 +383,12 @@
     <Compile Include="Fitur tambahan\add_customer_master_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fitur tambahan\add_customer_transaksi.Designer.vb">
+      <DependentUpon>add_customer_transaksi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fitur tambahan\add_customer_transaksi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fitur tambahan\add_mobil_master.Designer.vb">
       <DependentUpon>add_mobil_master.vb</DependentUpon>
     </Compile>
@@ -1432,6 +1438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fitur tambahan\add_customer_master_sewa.resx">
       <DependentUpon>add_customer_master_sewa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fitur tambahan\add_customer_transaksi.resx">
+      <DependentUpon>add_customer_transaksi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fitur tambahan\add_mobil_master.resx">
       <DependentUpon>add_mobil_master.vb</DependentUpon>

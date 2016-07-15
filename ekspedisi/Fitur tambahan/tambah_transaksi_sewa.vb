@@ -11,7 +11,7 @@
     End Sub
 
     
-    Private Sub tambahmobil_Click(sender As Object, e As EventArgs) Handles tambahmobil.Click
+    Private Sub tambahmobil_Click(sender As Object, e As EventArgs)
         add_mobil_transaksi.ShowDialog()
     End Sub
 
@@ -40,7 +40,7 @@
     End Sub
 
     Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
-        add_customer_master_sewa.ShowDialog()
+        add_customer_transaksi.ShowDialog()
     End Sub
 
     Private Sub tambah_transaksi_sewa_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
