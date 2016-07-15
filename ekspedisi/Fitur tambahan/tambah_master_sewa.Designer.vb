@@ -36,7 +36,6 @@ Partial Class tambah_master_sewa
         Me.idkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +48,7 @@ Partial Class tambah_master_sewa
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(916, 510)
+        Me.cancel.Location = New System.Drawing.Point(916, 477)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 179
@@ -58,7 +57,7 @@ Partial Class tambah_master_sewa
         'save
         '
         Me.save.Image = CType(resources.GetObject("save.Image"), System.Drawing.Image)
-        Me.save.Location = New System.Drawing.Point(810, 510)
+        Me.save.Location = New System.Drawing.Point(810, 477)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(100, 27)
         Me.save.TabIndex = 178
@@ -67,7 +66,7 @@ Partial Class tambah_master_sewa
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 146)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 113)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(1004, 358)
         Me.GroupControl2.TabIndex = 177
@@ -191,21 +190,11 @@ Partial Class tambah_master_sewa
         Me.LabelControl2.TabIndex = 66
         Me.LabelControl2.Text = "Nama Customer"
         '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(916, 113)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton2.TabIndex = 180
-        Me.SimpleButton2.Text = "Add Item"
-        '
         'tambah_master_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1023, 543)
-        Me.Controls.Add(Me.SimpleButton2)
+        Me.ClientSize = New System.Drawing.Size(1023, 510)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.GroupControl2)
@@ -240,5 +229,4 @@ Partial Class tambah_master_sewa
     Friend WithEvents idkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class
