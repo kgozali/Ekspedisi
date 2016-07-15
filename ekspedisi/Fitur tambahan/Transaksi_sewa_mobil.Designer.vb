@@ -164,7 +164,7 @@ Partial Class Transaksi_sewa_mobil
         '
         'addsiswabaru
         '
-        Me.addsiswabaru.Caption = "Tambah Data"
+        Me.addsiswabaru.Caption = "Sewa Mobil"
         Me.addsiswabaru.Glyph = CType(resources.GetObject("addsiswabaru.Glyph"), System.Drawing.Image)
         Me.addsiswabaru.Id = 23
         Me.addsiswabaru.LargeGlyph = CType(resources.GetObject("addsiswabaru.LargeGlyph"), System.Drawing.Image)
