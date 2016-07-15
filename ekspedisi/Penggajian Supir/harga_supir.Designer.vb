@@ -23,23 +23,23 @@ Partial Class harga_supir
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.supir = New System.Windows.Forms.ComboBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.hargasupir = New DevExpress.XtraGrid.GridControl()
-        Me.dataharga = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.kota = New System.Windows.Forms.RadioButton()
         Me.rute = New System.Windows.Forms.RadioButton()
         Me.cari = New DevExpress.XtraEditors.TextEdit()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.hargasupir, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dataharga, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -61,26 +61,12 @@ Partial Class harga_supir
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.hargasupir)
+        Me.GroupControl2.Controls.Add(Me.GridControl1)
         Me.GroupControl2.Location = New System.Drawing.Point(12, 86)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(725, 414)
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "Input Harga"
-        '
-        'hargasupir
-        '
-        Me.hargasupir.Location = New System.Drawing.Point(5, 24)
-        Me.hargasupir.MainView = Me.dataharga
-        Me.hargasupir.Name = "hargasupir"
-        Me.hargasupir.Size = New System.Drawing.Size(715, 385)
-        Me.hargasupir.TabIndex = 0
-        Me.hargasupir.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.dataharga})
-        '
-        'dataharga
-        '
-        Me.dataharga.GridControl = Me.hargasupir
-        Me.dataharga.Name = "dataharga"
         '
         'cancel
         '
@@ -140,6 +126,21 @@ Partial Class harga_supir
         Me.cari.Size = New System.Drawing.Size(253, 20)
         Me.cari.TabIndex = 0
         '
+        'GridControl1
+        '
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(721, 391)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
         'harga_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,24 +159,24 @@ Partial Class harga_supir
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
-        CType(Me.hargasupir, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dataharga, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents supir As System.Windows.Forms.ComboBox
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents hargasupir As DevExpress.XtraGrid.GridControl
-    Friend WithEvents dataharga As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Submit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents kota As System.Windows.Forms.RadioButton
     Friend WithEvents rute As System.Windows.Forms.RadioButton
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

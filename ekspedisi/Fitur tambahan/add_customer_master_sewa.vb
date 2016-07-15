@@ -58,7 +58,7 @@
             Next i
             tambah_master_sewa.GridControl1.DataSource = tabel
             tambah_master_sewa.pilihan = mobilsewaaktif
-
+            tambah_master_sewa.GroupControl3.Enabled = True
             Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)

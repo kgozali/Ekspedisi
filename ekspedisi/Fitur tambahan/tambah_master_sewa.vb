@@ -19,7 +19,61 @@
     Dim data As New DataTable
     'Dim sewaan As New DataTable
     Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
+        Try
+            Dim tampung As String
+            If add_customer_master_sewa.mobilsewa.Rows.Count > 0 Or uncheck.Rows.Count > 0 Then
+                tampung = "SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi` FROM mmobil m where (s='1'"
+                For i = 0 To add_customer_master_sewa.mobilsewa.Rows.Count - 1
+                    'If i = 0 Then
+                    '    tampung = tampung & " or id_mobil='" & add_customer_master_sewa.mobilsewa.Rows(i).Item(0) & "'"
+                    'Else
+                    tampung = tampung & " or id_mobil='" & add_customer_master_sewa.mobilsewa.Rows(i).Item(0) & "'"
+                    'End If
 
+                Next i
+                For i = 0 To uncheck.Rows.Count - 1
+                    'If i = 0 Then
+                    '    tampung = tampung & " or id_mobil='" & uncheck.Rows(i).Item(0) & "'"
+                    'Else
+                    tampung = tampung & " or id_mobil='" & uncheck.Rows(i).Item(0) & "'"
+                    'End If
+
+                Next i
+                tampung = tampung & ")"
+            Else
+                tampung = "SELECT m.id_mobil `Kode Mobil`, tipe_mobil `Tipe Mobil`,no_pol `Nomor Polisi` FROM mmobil m where s='1'"
+            End If
+            If nama.Checked = True Then
+                tampung = tampung & " and no_pol like '%" & cari.Text & "%'"
+            Else
+                tampung = tampung & " and id_mobil like '%" & cari.Text & "%'"
+            End If
+            Dim tabel As New DataTable
+            data = New DataTable
+            data = DtTable(tampung)
+            tabel.Columns.Add("Kode Mobil")
+            'sewaan.Columns.Add("Kode Mobil")
+            tabel.Columns.Add("Tipe Mobil")
+            tabel.Columns.Add("Nomor Polisi")
+            tabel.Columns.Add("Check List", GetType(Boolean))
+            For i = 0 To data.Rows.Count - 1
+                tabel.Rows.Add(data.Rows(i).Item(0), data.Rows(i).Item(1), data.Rows(i).Item(2), False)
+            Next i
+            GridControl1.DataSource = tabel
+            For i = 0 To GridView1.RowCount - 1
+                For k = 0 To pilihan.Rows.Count - 1
+                    If GridView1.GetRowCellValue(i, "Kode Mobil") = pilihan.Rows(k).Item(0) Then
+                        With GridView1
+                            .SetRowCellValue(i, "Check List", True)
+                        End With
+                    End If
+                Next k
+            Next i
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Public pilihan As New DataTable

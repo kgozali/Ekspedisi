@@ -202,6 +202,7 @@ Partial Class tambah_master_sewa
         Me.GroupControl3.Controls.Add(Me.id)
         Me.GroupControl3.Controls.Add(Me.nama)
         Me.GroupControl3.Controls.Add(Me.cari)
+        Me.GroupControl3.Enabled = False
         Me.GroupControl3.Location = New System.Drawing.Point(12, 113)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(263, 74)

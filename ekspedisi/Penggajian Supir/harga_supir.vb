@@ -3,8 +3,8 @@
     Dim cek As Boolean = False
 
     Sub unallowedit()
-        For i = 0 To dataharga.Columns.Count - 1
-            dataharga.Columns(i).OptionsColumn.AllowEdit = False
+        For i = 0 To GridView1.Columns.Count - 1
+            GridView1.Columns(i).OptionsColumn.AllowEdit = False
         Next
     End Sub
     Private Sub harga_supir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,7 +24,7 @@
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
             ambilcek()
             If data.Rows.Count > 0 Then
-                hargasupir.DataSource = data
+                GridControl1.DataSource = data
             End If
             eksekusi()
             unallowedit()
@@ -52,8 +52,8 @@
         End Try
     End Sub
     Sub isidata()
-        For i = 0 To dataharga.RowCount - 1
-            With dataharga
+        For i = 0 To GridView1.RowCount - 1
+            With GridView1
                 .SetRowCellValue(i, "Check List Rute", False)
                 .SetRowCellValue(i, "Harga Maksimum", 0)
             End With
@@ -64,10 +64,10 @@
             data = New DataTable
             If kota.Checked = True Then
                 data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle and (kota_asal like '%" & cari.Text & "%' or kota_tujuan like '%" & cari.Text & "%')")
-                hargasupir.DataSource = data
+                GridControl1.DataSource = data
             Else
                 data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle and id_rute like '%" & cari.Text & "%'")
-                hargasupir.DataSource = data
+                GridControl1.DataSource = data
             End If
             eksekusi()
         Catch ex As Exception
@@ -86,14 +86,14 @@
 
     Sub eksekusi()
         cek = False
-        For i = 0 To dataharga.RowCount - 1
-            With dataharga
+        For i = 0 To GridView1.RowCount - 1
+            With GridView1
                 .SetRowCellValue(i, "Check List Rute", False)
                 .SetRowCellValue(i, "Harga Maksimum", 0)
             End With
             For j = 0 To datapilih.Rows.Count - 1
-                If dataharga.GetRowCellValue(i, "Kode Rute") = datapilih.Rows(j).Item("id") Then
-                    With dataharga
+                If GridView1.GetRowCellValue(i, "Kode Rute") = datapilih.Rows(j).Item("id") Then
+                    With GridView1
                         .SetRowCellValue(i, "Check List Rute", True)
                         .SetRowCellValue(i, "Harga Maksimum", datapilih.Rows(j).Item("harga"))
                     End With
@@ -110,7 +110,7 @@
             ambilcek()
             data = New DataTable
             data = DtTableharga("SELECT id_rute `Kode Rute`,concat(kota_asal,' - ',kota_tujuan) `Rute`,nama_principle `Nama Principle` FROM `mrute` mr,mprinciple mp WHERE mp.id_principle=mr.id_principle")
-            hargasupir.DataSource = data
+            GridControl1.DataSource = data
             eksekusi()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -134,20 +134,20 @@
         End Try
     End Sub
     Dim keamanan As String
-    Private Sub dataharga_ShownEditor(sender As Object, e As EventArgs) Handles dataharga.ShownEditor
+    Private Sub dataharga_ShownEditor(sender As Object, e As EventArgs)
         Try
-            If dataharga.FocusedColumn.AbsoluteIndex <> 4 Then
-                keamanan = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, dataharga.FocusedColumn)
+            If GridView1.FocusedColumn.AbsoluteIndex <> 4 Then
+                keamanan = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, GridView1.FocusedColumn)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Dim datapilih As New DataTable
-    Private Sub dataharga_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanging
+    Private Sub dataharga_CellValueChanging(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs)
         Try
             If e.Column.FieldName <> "Harga Maksimum" Then
-                With dataharga
+                With GridView1
                     .SetRowCellValue(.FocusedRowHandle, .FocusedColumn, keamanan)
                 End With
             End If
@@ -166,22 +166,22 @@
         Dim aktivitas As String = "Edit harga maksimal supir dengan kode supir:v6 " & supir.SelectedValue.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
-    Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles dataharga.CellValueChanged
+    Private Sub dataharga_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs)
         Try
             If cek = True Then
-                If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True And e.Column.FieldName = "Harga Maksimum" Then
+                If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Check List Rute") = True And e.Column.FieldName = "Harga Maksimum" Then
                     If e.Value > 0 Then
                         If datapilih.Rows.Count = 0 Then
-                            datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                            datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), e.Value)
                         Else
                             Dim kenyangklathak As Boolean = False
                             For i = 0 To datapilih.Rows.Count - 1
-                                If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-                                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                                If datapilih.Rows(i).Item("id") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute") Then
+                                    datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), e.Value)
                                     datapilih.Rows.RemoveAt(i)
                                     'error di sini, kita mo makan pak pong duluuuuu ^^
                                 ElseIf kenyangklathak = False Then
-                                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), e.Value)
+                                    datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), e.Value)
                                     kenyangklathak = True
                                 End If
                             Next i
@@ -189,30 +189,30 @@
                     End If
                 End If
                 If e.Column.FieldName = "Check List Rute" Then
-                    If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = False Then
+                    If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Check List Rute") = False Then
                         For i = 0 To datapilih.Rows.Count - 1
-                            If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
+                            If datapilih.Rows(i).Item("id") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute") Then
                                 datapilih.Rows.RemoveAt(i)
                             End If
                         Next i
                     End If
                 End If
                 If e.Column.FieldName = "Check List Rute" Then
-                    If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True And dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum") > 0 Then
+                    If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Check List Rute") = True And GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Harga Maksimum") > 0 Then
                         Dim ada As Boolean = False
                         If datapilih.Rows.Count > 0 Then
                             For i = 0 To datapilih.Rows.Count - 1
-                                If datapilih.Rows(i).Item("id") = dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute") Then
-                                    datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+                                If datapilih.Rows(i).Item("id") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute") Then
+                                    datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Harga Maksimum"))
                                     datapilih.Rows.RemoveAt(i)
                                     ada = True
                                 End If
                             Next i
                             If ada = False Then
-                                datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+                                datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Harga Maksimum"))
                             End If
                         Else
-                            datapilih.Rows.Add(dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Kode Rute"), dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Harga Maksimum"))
+                            datapilih.Rows.Add(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Rute"), GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Harga Maksimum"))
                         End If
                     End If
                 End If
@@ -224,7 +224,7 @@
 
     End Sub
 
-    Private Sub dataharga_Click(sender As Object, e As EventArgs) Handles dataharga.Click
+    Private Sub dataharga_Click(sender As Object, e As EventArgs)
         'Try
         '    If cek = True Then
         '        If dataharga.GetRowCellValue(dataharga.FocusedRowHandle, "Check List Rute") = True Then
