@@ -27,8 +27,8 @@ Partial Class tambah_master_sewa
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nomortelepon = New System.Windows.Forms.TextBox()
-        Me.kotaasal = New System.Windows.Forms.TextBox()
-        Me.jabatan = New System.Windows.Forms.TextBox()
+        Me.kota = New System.Windows.Forms.TextBox()
+        Me.email = New System.Windows.Forms.TextBox()
         Me.namakaryawan = New System.Windows.Forms.TextBox()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
@@ -36,19 +36,26 @@ Partial Class tambah_master_sewa
         Me.idkaryawan = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.id = New System.Windows.Forms.RadioButton()
+        Me.nama = New System.Windows.Forms.RadioButton()
+        Me.cari = New DevExpress.XtraEditors.TextEdit()
+        CType(Me.GroupControl2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl2.SuspendLayout
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GroupControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl1.SuspendLayout
+        CType(Me.idkaryawan.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GroupControl3,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupControl3.SuspendLayout
+        CType(Me.cari.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'cancel
         '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(916, 477)
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"),System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(916, 562)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 179
@@ -56,8 +63,8 @@ Partial Class tambah_master_sewa
         '
         'save
         '
-        Me.save.Image = CType(resources.GetObject("save.Image"), System.Drawing.Image)
-        Me.save.Location = New System.Drawing.Point(810, 477)
+        Me.save.Image = CType(resources.GetObject("save.Image"),System.Drawing.Image)
+        Me.save.Location = New System.Drawing.Point(810, 562)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(100, 27)
         Me.save.TabIndex = 178
@@ -66,7 +73,7 @@ Partial Class tambah_master_sewa
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 113)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 193)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(1004, 358)
         Me.GroupControl2.TabIndex = 177
@@ -90,8 +97,8 @@ Partial Class tambah_master_sewa
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.nomortelepon)
-        Me.GroupControl1.Controls.Add(Me.kotaasal)
-        Me.GroupControl1.Controls.Add(Me.jabatan)
+        Me.GroupControl1.Controls.Add(Me.kota)
+        Me.GroupControl1.Controls.Add(Me.email)
         Me.GroupControl1.Controls.Add(Me.namakaryawan)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
@@ -107,31 +114,31 @@ Partial Class tambah_master_sewa
         '
         'nomortelepon
         '
-        Me.nomortelepon.Enabled = False
+        Me.nomortelepon.Enabled = false
         Me.nomortelepon.Location = New System.Drawing.Point(807, 46)
         Me.nomortelepon.Name = "nomortelepon"
         Me.nomortelepon.Size = New System.Drawing.Size(191, 21)
         Me.nomortelepon.TabIndex = 73
         '
-        'kotaasal
+        'kota
         '
-        Me.kotaasal.Enabled = False
-        Me.kotaasal.Location = New System.Drawing.Point(807, 22)
-        Me.kotaasal.Name = "kotaasal"
-        Me.kotaasal.Size = New System.Drawing.Size(191, 21)
-        Me.kotaasal.TabIndex = 72
+        Me.kota.Enabled = false
+        Me.kota.Location = New System.Drawing.Point(807, 22)
+        Me.kota.Name = "kota"
+        Me.kota.Size = New System.Drawing.Size(191, 21)
+        Me.kota.TabIndex = 72
         '
-        'jabatan
+        'email
         '
-        Me.jabatan.Enabled = False
-        Me.jabatan.Location = New System.Drawing.Point(125, 69)
-        Me.jabatan.Name = "jabatan"
-        Me.jabatan.Size = New System.Drawing.Size(191, 21)
-        Me.jabatan.TabIndex = 71
+        Me.email.Enabled = false
+        Me.email.Location = New System.Drawing.Point(125, 69)
+        Me.email.Name = "email"
+        Me.email.Size = New System.Drawing.Size(191, 21)
+        Me.email.TabIndex = 71
         '
         'namakaryawan
         '
-        Me.namakaryawan.Enabled = False
+        Me.namakaryawan.Enabled = false
         Me.namakaryawan.Location = New System.Drawing.Point(125, 45)
         Me.namakaryawan.Name = "namakaryawan"
         Me.namakaryawan.Size = New System.Drawing.Size(191, 21)
@@ -139,7 +146,7 @@ Partial Class tambah_master_sewa
         '
         'LabelControl5
         '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelControl5.Location = New System.Drawing.Point(692, 47)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(101, 18)
@@ -148,7 +155,7 @@ Partial Class tambah_master_sewa
         '
         'LabelControl4
         '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelControl4.Location = New System.Drawing.Point(763, 23)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(30, 18)
@@ -157,7 +164,7 @@ Partial Class tambah_master_sewa
         '
         'LabelControl3
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelControl3.Location = New System.Drawing.Point(79, 72)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(33, 18)
@@ -174,7 +181,7 @@ Partial Class tambah_master_sewa
         '
         'LabelControl1
         '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(11, 48)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(101, 18)
@@ -183,18 +190,59 @@ Partial Class tambah_master_sewa
         '
         'LabelControl2
         '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelControl2.Location = New System.Drawing.Point(5, 24)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(107, 18)
         Me.LabelControl2.TabIndex = 66
         Me.LabelControl2.Text = "Nama Customer"
         '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.id)
+        Me.GroupControl3.Controls.Add(Me.nama)
+        Me.GroupControl3.Controls.Add(Me.cari)
+        Me.GroupControl3.Location = New System.Drawing.Point(12, 113)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(263, 74)
+        Me.GroupControl3.TabIndex = 181
+        Me.GroupControl3.Text = "Cari Berdasarkan"
+        '
+        'id
+        '
+        Me.id.AutoSize = true
+        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Name = "id"
+        Me.id.Size = New System.Drawing.Size(76, 17)
+        Me.id.TabIndex = 3
+        Me.id.Text = "Kode Mobil"
+        Me.id.UseVisualStyleBackColor = true
+        '
+        'nama
+        '
+        Me.nama.AutoSize = true
+        Me.nama.Checked = true
+        Me.nama.Location = New System.Drawing.Point(87, 24)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(82, 17)
+        Me.nama.TabIndex = 2
+        Me.nama.TabStop = true
+        Me.nama.Text = "Nomor Polisi"
+        Me.nama.UseVisualStyleBackColor = true
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(5, 47)
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.TabIndex = 0
+        '
         'tambah_master_sewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1023, 510)
+        Me.ClientSize = New System.Drawing.Size(1023, 596)
+        Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.GroupControl2)
@@ -202,17 +250,21 @@ Partial Class tambah_master_sewa
         Me.Name = "tambah_master_sewa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Data Sewa"
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.idkaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+        CType(Me.GroupControl2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl2.ResumeLayout(false)
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GroupControl1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl1.ResumeLayout(false)
+        Me.GroupControl1.PerformLayout
+        CType(Me.idkaryawan.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GroupControl3,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupControl3.ResumeLayout(false)
+        Me.GroupControl3.PerformLayout
+        CType(Me.cari.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents save As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
@@ -220,8 +272,8 @@ Partial Class tambah_master_sewa
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents nomortelepon As System.Windows.Forms.TextBox
-    Friend WithEvents kotaasal As System.Windows.Forms.TextBox
-    Friend WithEvents jabatan As System.Windows.Forms.TextBox
+    Friend WithEvents kota As System.Windows.Forms.TextBox
+    Friend WithEvents email As System.Windows.Forms.TextBox
     Friend WithEvents namakaryawan As System.Windows.Forms.TextBox
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
@@ -229,4 +281,8 @@ Partial Class tambah_master_sewa
     Friend WithEvents idkaryawan As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents id As System.Windows.Forms.RadioButton
+    Friend WithEvents nama As System.Windows.Forms.RadioButton
+    Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
 End Class
