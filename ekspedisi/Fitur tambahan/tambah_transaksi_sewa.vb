@@ -7,11 +7,10 @@
     Dim total As Integer = 0
     Dim mintot As Integer = 0
     Private Sub idkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles idkaryawan.ButtonClick
-        add_customer_master_sewa.ShowDialog()
+        add_customer_transaksi.ShowDialog()
     End Sub
 
-    
-    Private Sub tambahmobil_Click(sender As Object, e As EventArgs)
+    Private Sub tambahmobil_Click(sender As Object, e As EventArgs) Handles tambahmobil.Click
         add_mobil_transaksi.ShowDialog()
     End Sub
 
@@ -40,7 +39,7 @@
     End Sub
 
     Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
-        add_customer_transaksi.ShowDialog()
+        add_customer_master_sewa.ShowDialog()
     End Sub
 
     Private Sub tambah_transaksi_sewa_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -60,7 +59,7 @@
 
     End Sub
     Sub reset()
-
+        kodesewa.Text = ""
         idkaryawan.Text = ""
         email.Text = ""
         nomortelepon.Text = ""
@@ -79,7 +78,7 @@
             If GridView1.DataRowCount < 1 Then
                 MessageBox.Show("Customer yang terpilih belum memiliki daftar mobil", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If id.Text = "" Then
+                If kodesewa.Text = "" Then
                     Dim msg As Integer = MessageBox.Show("Apakah anda ingin melanjutkan tanpa mencantumkan kode sewa?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                     If msg = DialogResult.Yes Then
                         savetrans()
@@ -93,7 +92,7 @@
 
     Private Sub savetrans()
         Try
-            kodesewavar = id.Text
+            kodesewavar = kodesewa.Text
             autogen()
             Dim tot As Integer = GridView1.Columns("Harga Sewa").SummaryItem.SummaryValue.ToString
             total = tot
@@ -111,7 +110,7 @@
                 Me.Close()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
