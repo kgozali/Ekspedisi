@@ -72,6 +72,7 @@
     End Sub
 
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+        syaratcetak = False
         If customersewa = "" Then
             MessageBox.Show("Pilih customer terlebih dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
@@ -107,6 +108,7 @@
             If hasil = True Then
                 MessageBox.Show("Transaksi " & kode & " berhasil disimpan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 customersewa = ""
+                syaratcetak = True
                 Me.Close()
             End If
         Catch ex As Exception
@@ -114,10 +116,14 @@
         End Try
 
     End Sub
-
+    Dim syaratcetak As Boolean = False
     Private Sub simpanprint_Click(sender As Object, e As EventArgs) Handles simpanprint.Click
         save_Click(sender, e)
-        preview_invoice_sewa.idtransaksi = kode
-        preview_invoice_sewa.ShowDialog()
+        If syaratcetak = True Then
+            preview_invoice_sewa.idtransaksi = kode
+            preview_invoice_sewa.ShowDialog()
+            syaratcetak = False
+        End If
+        
     End Sub
 End Class

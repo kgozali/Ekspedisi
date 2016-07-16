@@ -54,7 +54,7 @@ Partial Class tambah_transaksi_sewa
         'simpanprint
         '
         Me.simpanprint.Image = CType(resources.GetObject("simpanprint.Image"), System.Drawing.Image)
-        Me.simpanprint.Location = New System.Drawing.Point(636, 527)
+        Me.simpanprint.Location = New System.Drawing.Point(636, 519)
         Me.simpanprint.Name = "simpanprint"
         Me.simpanprint.Size = New System.Drawing.Size(168, 27)
         Me.simpanprint.TabIndex = 185
@@ -63,7 +63,7 @@ Partial Class tambah_transaksi_sewa
         'save
         '
         Me.save.Image = CType(resources.GetObject("save.Image"), System.Drawing.Image)
-        Me.save.Location = New System.Drawing.Point(810, 527)
+        Me.save.Location = New System.Drawing.Point(810, 519)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(100, 27)
         Me.save.TabIndex = 189
@@ -146,7 +146,7 @@ Partial Class tambah_transaksi_sewa
         'tambahmobil
         '
         Me.tambahmobil.Image = CType(resources.GetObject("tambahmobil.Image"), System.Drawing.Image)
-        Me.tambahmobil.Location = New System.Drawing.Point(916, 159)
+        Me.tambahmobil.Location = New System.Drawing.Point(916, 151)
         Me.tambahmobil.Name = "tambahmobil"
         Me.tambahmobil.Size = New System.Drawing.Size(100, 27)
         Me.tambahmobil.TabIndex = 188
@@ -171,7 +171,7 @@ Partial Class tambah_transaksi_sewa
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 192)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 184)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(1004, 329)
         Me.GroupControl2.TabIndex = 187
@@ -215,7 +215,7 @@ Partial Class tambah_transaksi_sewa
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(916, 527)
+        Me.cancel.Location = New System.Drawing.Point(916, 519)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(100, 27)
         Me.cancel.TabIndex = 190
@@ -256,7 +256,7 @@ Partial Class tambah_transaksi_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1025, 562)
+        Me.ClientSize = New System.Drawing.Size(1025, 550)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.tambahmobil)
         Me.Controls.Add(Me.GroupControl2)
