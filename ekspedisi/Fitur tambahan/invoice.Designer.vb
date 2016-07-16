@@ -47,7 +47,6 @@ Partial Public Class invoice
         Dim ColumnInfo15 As DevExpress.DataAccess.Sql.ColumnInfo = New DevExpress.DataAccess.Sql.ColumnInfo()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(invoice))
         Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
-        Dim XrSummary2 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
@@ -89,9 +88,9 @@ Partial Public Class invoice
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
-        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
         Me.kodetrans = New DevExpress.XtraReports.Parameters.Parameter()
+        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,7 +120,7 @@ Partial Public Class invoice
         'ReportHeader
         '
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel3, Me.XrLabel14, Me.XrLabel15, Me.XrLabel16, Me.XrLabel12, Me.XrLabel13, Me.XrLabel2, Me.XrLabel25, Me.XrLabel24, Me.XrLabel11, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel4, Me.XrLabel5, Me.XrLine1, Me.XrPictureBox1, Me.XrLabel10, Me.XrTable1})
-        Me.ReportHeader.HeightF = 413.5418!
+        Me.ReportHeader.HeightF = 423.9585!
         Me.ReportHeader.Name = "ReportHeader"
         '
         'XrTable1
@@ -131,7 +130,7 @@ Partial Public Class invoice
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable1.ForeColor = System.Drawing.Color.White
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(21.45834!, 388.5418!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(21.45834!, 398.9585!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(692.0886!, 25.0!)
@@ -250,13 +249,13 @@ Partial Public Class invoice
         'XrLabel3
         '
         Me.XrLabel3.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(285.1853!, 134.0417!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(248.3006!, 133.6898!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(186.1574!, 23.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(261.1625!, 23.0!)
         Me.XrLabel3.StylePriority.UseFont = False
         Me.XrLabel3.StylePriority.UseTextAlignment = False
-        Me.XrLabel3.Text = "DELIVERY ORDER"
+        Me.XrLabel3.Text = "INVOICE SEWA MOBIL"
         Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrPictureBox1
@@ -461,7 +460,7 @@ Partial Public Class invoice
         '
         Me.XrCrossBandBox2.BorderWidth = 2.0!
         Me.XrCrossBandBox2.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(396.875!, 374.0!)
+        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(396.875!, 372.9584!)
         Me.XrCrossBandBox2.LocationFloat = New DevExpress.Utils.PointFloat(396.875!, 263.5417!)
         Me.XrCrossBandBox2.Name = "XrCrossBandBox2"
         Me.XrCrossBandBox2.StartBand = Me.ReportHeader
@@ -535,24 +534,9 @@ Partial Public Class invoice
         '
         'GroupFooter1
         '
-        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel22, Me.XrLabel23})
+        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1, Me.XrLabel23})
         Me.GroupFooter1.HeightF = 44.79167!
         Me.GroupFooter1.Name = "GroupFooter1"
-        '
-        'XrLabel22
-        '
-        Me.XrLabel22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "dtrans_mobil.total")})
-        Me.XrLabel22.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(616.2889!, 10.00001!)
-        Me.XrLabel22.Name = "XrLabel22"
-        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel22.SizeF = New System.Drawing.SizeF(100.7998!, 23.0!)
-        Me.XrLabel22.StylePriority.UseFont = False
-        Me.XrLabel22.StylePriority.UseTextAlignment = False
-        XrSummary2.FormatString = "{0:#,#.00 Kg}"
-        XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel22.Summary = XrSummary2
-        Me.XrLabel22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrLabel23
         '
@@ -572,6 +556,19 @@ Partial Public Class invoice
         Me.kodetrans.Name = "kodetrans"
         Me.kodetrans.Visible = False
         '
+        'XrLabel1
+        '
+        Me.XrLabel1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "dtrans_mobil.total")})
+        Me.XrLabel1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(605.6306!, 10.00001!)
+        Me.XrLabel1.Name = "XrLabel1"
+        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrLabel1.StylePriority.UseFont = False
+        Me.XrLabel1.StylePriority.UseTextAlignment = False
+        Me.XrLabel1.Text = "XrLabel1"
+        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
         'invoice
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.PageFooter, Me.GroupFooter1})
@@ -579,6 +576,7 @@ Partial Public Class invoice
         Me.CrossBandControls.AddRange(New DevExpress.XtraReports.UI.XRCrossBandControl() {Me.XrCrossBandBox1, Me.XrCrossBandBox2})
         Me.DataMember = "dtrans_mobil"
         Me.DataSource = Me.SqlDataSource1
+        Me.FilterString = "[id_tmobil] = ?kodetrans"
         Me.Margins = New System.Drawing.Printing.Margins(53, 63, 0, 0)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.kodetrans})
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
@@ -629,7 +627,7 @@ Partial Public Class invoice
     Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents GroupFooter1 As DevExpress.XtraReports.UI.GroupFooterBand
-    Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents kodetrans As DevExpress.XtraReports.Parameters.Parameter
+    Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
 End Class
