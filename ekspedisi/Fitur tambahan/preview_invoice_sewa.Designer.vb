@@ -28,16 +28,17 @@ Partial Class preview_invoice_sewa
         Me.DocumentViewer1.IsMetric = False
         Me.DocumentViewer1.Location = New System.Drawing.Point(0, 0)
         Me.DocumentViewer1.Name = "DocumentViewer1"
-        Me.DocumentViewer1.Size = New System.Drawing.Size(993, 554)
+        Me.DocumentViewer1.Size = New System.Drawing.Size(993, 661)
         Me.DocumentViewer1.TabIndex = 0
         '
         'preview_invoice_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(993, 554)
+        Me.ClientSize = New System.Drawing.Size(993, 661)
         Me.Controls.Add(Me.DocumentViewer1)
         Me.Name = "preview_invoice_sewa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Invoice Sewa"
         Me.ResumeLayout(False)
 
