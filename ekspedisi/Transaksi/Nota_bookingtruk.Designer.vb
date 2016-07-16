@@ -71,6 +71,11 @@ Partial Public Class Nota_bookingtruk
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLabel36 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel35 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel34 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel33 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel32 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
@@ -86,7 +91,6 @@ Partial Public Class Nota_bookingtruk
         Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel21 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel()
@@ -120,8 +124,6 @@ Partial Public Class Nota_bookingtruk
         Me.CalculatedField4 = New DevExpress.XtraReports.UI.CalculatedField()
         Me.XrCrossBandBox3 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrCrossBandBox4 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrCrossBandBox5 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrCrossBandBox6 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,14 +193,79 @@ Partial Public Class Nota_bookingtruk
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel32, Me.XrTable1, Me.XrPageInfo1, Me.XrLabel31, Me.XrLabel30, Me.XrLabel29, Me.XrLabel28, Me.XrLabel27, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel23, Me.XrLabel22, Me.XrLabel21, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrPictureBox1, Me.XrLine1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLabel19, Me.XrLabel18, Me.XrLabel20, Me.XrLabel17})
-        Me.ReportHeader.HeightF = 617.3213!
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel36, Me.XrLabel35, Me.XrLabel34, Me.XrLabel33, Me.XrLabel23, Me.XrLabel32, Me.XrTable1, Me.XrPageInfo1, Me.XrLabel31, Me.XrLabel30, Me.XrLabel29, Me.XrLabel28, Me.XrLabel27, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel22, Me.XrLabel21, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrPictureBox1, Me.XrLine1, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLabel19, Me.XrLabel18, Me.XrLabel20, Me.XrLabel17})
+        Me.ReportHeader.HeightF = 686.0713!
         Me.ReportHeader.Name = "ReportHeader"
+        '
+        'XrLabel36
+        '
+        Me.XrLabel36.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.kota_tujuan")})
+        Me.XrLabel36.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel36.LocationFloat = New DevExpress.Utils.PointFloat(522.9167!, 245.9584!)
+        Me.XrLabel36.Name = "XrLabel36"
+        Me.XrLabel36.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel36.SizeF = New System.Drawing.SizeF(181.5469!, 23.0!)
+        Me.XrLabel36.StylePriority.UseFont = False
+        Me.XrLabel36.StylePriority.UseTextAlignment = False
+        Me.XrLabel36.Text = "XrLabel13"
+        Me.XrLabel36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel35
+        '
+        Me.XrLabel35.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel35.LocationFloat = New DevExpress.Utils.PointFloat(410.8516!, 245.9584!)
+        Me.XrLabel35.Multiline = True
+        Me.XrLabel35.Name = "XrLabel35"
+        Me.XrLabel35.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel35.SizeF = New System.Drawing.SizeF(112.0651!, 23.0!)
+        Me.XrLabel35.StylePriority.UseFont = False
+        Me.XrLabel35.StylePriority.UseTextAlignment = False
+        Me.XrLabel35.Text = "Rute Tujuan:"
+        Me.XrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel34
+        '
+        Me.XrLabel34.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.no_telp")})
+        Me.XrLabel34.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.XrLabel34.LocationFloat = New DevExpress.Utils.PointFloat(526.2355!, 342.0833!)
+        Me.XrLabel34.Name = "XrLabel34"
+        Me.XrLabel34.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel34.SizeF = New System.Drawing.SizeF(147.9167!, 23.0!)
+        Me.XrLabel34.StylePriority.UseFont = False
+        Me.XrLabel34.StylePriority.UseTextAlignment = False
+        Me.XrLabel34.Text = "XrLabel23"
+        Me.XrLabel34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel33
+        '
+        Me.XrLabel33.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel33.LocationFloat = New DevExpress.Utils.PointFloat(413.1286!, 342.0833!)
+        Me.XrLabel33.Multiline = True
+        Me.XrLabel33.Name = "XrLabel33"
+        Me.XrLabel33.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel33.SizeF = New System.Drawing.SizeF(112.0651!, 23.0!)
+        Me.XrLabel33.StylePriority.UseFont = False
+        Me.XrLabel33.StylePriority.UseTextAlignment = False
+        Me.XrLabel33.Text = "Nomor Telepon:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.XrLabel33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel23
+        '
+        Me.XrLabel23.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.contact_person")})
+        Me.XrLabel23.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(526.2355!, 319.0833!)
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.SizeF = New System.Drawing.SizeF(147.9167!, 23.0!)
+        Me.XrLabel23.StylePriority.UseFont = False
+        Me.XrLabel23.StylePriority.UseTextAlignment = False
+        Me.XrLabel23.Text = "XrLabel23"
+        Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel32
         '
         Me.XrLabel32.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel32.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 569.3213!)
+        Me.XrLabel32.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 638.0713!)
         Me.XrLabel32.Name = "XrLabel32"
         Me.XrLabel32.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel32.SizeF = New System.Drawing.SizeF(143.7499!, 23.0!)
@@ -213,7 +280,7 @@ Partial Public Class Nota_bookingtruk
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTable1.ForeColor = System.Drawing.Color.White
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 592.3213!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 661.0713!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(609.7034!, 25.0!)
@@ -252,7 +319,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrPageInfo1.Format = "{0:dd-MMMM-yyyy,}"
-        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(405.8432!, 396.5439!)
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(408.7844!, 462.5!)
         Me.XrPageInfo1.Name = "XrPageInfo1"
         Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
@@ -262,17 +329,17 @@ Partial Public Class Nota_bookingtruk
         'XrLabel31
         '
         Me.XrLabel31.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(541.2767!, 425.1591!)
+        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(541.8113!, 501.5319!)
         Me.XrLabel31.Name = "XrLabel31"
         Me.XrLabel31.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel31.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
+        Me.XrLabel31.SizeF = New System.Drawing.SizeF(100.0!, 19.30145!)
         Me.XrLabel31.StylePriority.UseFont = False
         Me.XrLabel31.Text = "Penerima"
         '
         'XrLabel30
         '
         Me.XrLabel30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4275!, 425.1591!)
+        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4275!, 501.5319!)
         Me.XrLabel30.Name = "XrLabel30"
         Me.XrLabel30.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel30.SizeF = New System.Drawing.SizeF(100.0!, 12.58331!)
@@ -282,7 +349,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel29
         '
         Me.XrLabel29.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(26.98274!, 391.0319!)
+        Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 462.5!)
         Me.XrLabel29.Name = "XrLabel29"
         Me.XrLabel29.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel29.SizeF = New System.Drawing.SizeF(288.6903!, 23.0!)
@@ -303,7 +370,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel27
         '
         Me.XrLabel27.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(410.9765!, 344.1667!)
+        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(413.4276!, 390.125!)
         Me.XrLabel27.Name = "XrLabel27"
         Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel27.SizeF = New System.Drawing.SizeF(113.1068!, 23.0!)
@@ -316,7 +383,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel26.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.jam")})
         Me.XrLabel26.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(528.7598!, 344.1668!)
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(531.2108!, 390.125!)
         Me.XrLabel26.Name = "XrLabel26"
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel26.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -328,20 +395,20 @@ Partial Public Class Nota_bookingtruk
         'XrLabel25
         '
         Me.XrLabel25.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(412.0183!, 298.1668!)
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(414.1704!, 319.0834!)
         Me.XrLabel25.Name = "XrLabel25"
         Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel25.SizeF = New System.Drawing.SizeF(112.0651!, 23.0!)
         Me.XrLabel25.StylePriority.UseFont = False
         Me.XrLabel25.StylePriority.UseTextAlignment = False
-        Me.XrLabel25.Text = "Kontak:"
+        Me.XrLabel25.Text = "Nama Kontak:"
         Me.XrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel24
         '
         Me.XrLabel24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.alamat_tujuan")})
         Me.XrLabel24.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(524.0834!, 248.0418!)
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(523.7842!, 268.9584!)
         Me.XrLabel24.Name = "XrLabel24"
         Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel24.SizeF = New System.Drawing.SizeF(180.3804!, 50.12492!)
@@ -350,23 +417,10 @@ Partial Public Class Nota_bookingtruk
         Me.XrLabel24.Text = "XrLabel24"
         Me.XrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
-        'XrLabel23
-        '
-        Me.XrLabel23.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "CalculatedField4")})
-        Me.XrLabel23.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(524.0832!, 298.1668!)
-        Me.XrLabel23.Name = "XrLabel23"
-        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel23.SizeF = New System.Drawing.SizeF(181.5471!, 23.0!)
-        Me.XrLabel23.StylePriority.UseFont = False
-        Me.XrLabel23.StylePriority.UseTextAlignment = False
-        Me.XrLabel23.Text = "XrLabel23"
-        Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
         'XrLabel22
         '
         Me.XrLabel22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(410.9765!, 248.0418!)
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(410.6776!, 268.9584!)
         Me.XrLabel22.Name = "XrLabel22"
         Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel22.SizeF = New System.Drawing.SizeF(112.0651!, 23.0!)
@@ -384,12 +438,12 @@ Partial Public Class Nota_bookingtruk
         Me.XrLabel21.SizeF = New System.Drawing.SizeF(112.0651!, 23.0!)
         Me.XrLabel21.StylePriority.UseFont = False
         Me.XrLabel21.StylePriority.UseTextAlignment = False
-        Me.XrLabel21.Text = "Rute:"
+        Me.XrLabel21.Text = "Rute Asal:"
         Me.XrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel13
         '
-        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "CalculatedField2")})
+        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.kota_asal")})
         Me.XrLabel13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(524.0834!, 222.9584!)
         Me.XrLabel13.Name = "XrLabel13"
@@ -403,7 +457,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel12
         '
         Me.XrLabel12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(43.74994!, 494.159!)
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(40.54169!, 585.3467!)
         Me.XrLabel12.Name = "XrLabel12"
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel12.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -415,7 +469,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel11
         '
         Me.XrLabel11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(43.74994!, 448.1591!)
+        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(40.54169!, 539.3468!)
         Me.XrLabel11.Name = "XrLabel11"
         Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel11.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -427,7 +481,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel10
         '
         Me.XrLabel10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(43.75!, 471.1589!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(40.54176!, 562.3467!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -439,7 +493,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel9
         '
         Me.XrLabel9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(43.75!, 425.1591!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(40.54176!, 516.3469!)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel9.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -452,7 +506,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.CalculatedField1", "{0:Rp #,#.00}")})
         Me.XrLabel8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(143.7499!, 494.159!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(140.5416!, 585.3467!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel8.SizeF = New System.Drawing.SizeF(158.2183!, 23.0!)
@@ -464,7 +518,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.harga_supir_total", "{0:Rp #,#.00}")})
         Me.XrLabel7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(143.75!, 448.1591!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(140.5418!, 539.3468!)
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(158.2184!, 23.0!)
@@ -477,7 +531,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.dp_awal_supir", "{0:Rp #,#.00}")})
         Me.XrLabel6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(143.75!, 471.1589!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(140.5418!, 562.3467!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(158.2183!, 23.0!)
@@ -490,7 +544,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.nama_supir")})
         Me.XrLabel5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(143.7498!, 425.1591!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(140.5416!, 516.3469!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(158.2184!, 23.0!)
@@ -596,7 +650,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrLabel19.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.tgl", "{0:dd-MMMM-yyyy}")})
         Me.XrLabel19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(524.0834!, 321.1668!)
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(526.5343!, 367.125!)
         Me.XrLabel19.Name = "XrLabel19"
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel19.SizeF = New System.Drawing.SizeF(96.87506!, 23.0!)
@@ -619,7 +673,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel20
         '
         Me.XrLabel20.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(410.9765!, 321.1668!)
+        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(413.4276!, 367.125!)
         Me.XrLabel20.Name = "XrLabel20"
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel20.SizeF = New System.Drawing.SizeF(113.1068!, 23.0!)
@@ -726,7 +780,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrCrossBandBox1.BorderWidth = 2.0!
         Me.XrCrossBandBox1.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(22.99999!, 362.1128!)
+        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(22.99999!, 430.8628!)
         Me.XrCrossBandBox1.LocationFloat = New DevExpress.Utils.PointFloat(22.99999!, 208.2917!)
         Me.XrCrossBandBox1.Name = "XrCrossBandBox1"
         Me.XrCrossBandBox1.StartBand = Me.ReportHeader
@@ -737,11 +791,11 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrCrossBandBox2.BorderWidth = 2.0!
         Me.XrCrossBandBox2.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(30.02451!, 533.4977!)
-        Me.XrCrossBandBox2.LocationFloat = New DevExpress.Utils.PointFloat(30.02451!, 414.0319!)
+        Me.XrCrossBandBox2.EndPointFloat = New DevExpress.Utils.PointFloat(33.14951!, 624.1227!)
+        Me.XrCrossBandBox2.LocationFloat = New DevExpress.Utils.PointFloat(33.14951!, 501.5319!)
         Me.XrCrossBandBox2.Name = "XrCrossBandBox2"
         Me.XrCrossBandBox2.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox2.StartPointFloat = New DevExpress.Utils.PointFloat(30.02451!, 414.0319!)
+        Me.XrCrossBandBox2.StartPointFloat = New DevExpress.Utils.PointFloat(33.14951!, 501.5319!)
         Me.XrCrossBandBox2.WidthF = 287.7318!
         '
         'CalculatedField1
@@ -767,52 +821,30 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrCrossBandBox3.BorderWidth = 1.0!
         Me.XrCrossBandBox3.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox3.EndPointFloat = New DevExpress.Utils.PointFloat(404.6177!, 530.2113!)
-        Me.XrCrossBandBox3.LocationFloat = New DevExpress.Utils.PointFloat(404.6177!, 441.9926!)
+        Me.XrCrossBandBox3.EndPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 623.6353!)
+        Me.XrCrossBandBox3.LocationFloat = New DevExpress.Utils.PointFloat(408.7844!, 526.0417!)
         Me.XrCrossBandBox3.Name = "XrCrossBandBox3"
         Me.XrCrossBandBox3.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox3.StartPointFloat = New DevExpress.Utils.PointFloat(404.6177!, 441.9926!)
-        Me.XrCrossBandBox3.WidthF = 125.0!
+        Me.XrCrossBandBox3.StartPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 526.0417!)
+        Me.XrCrossBandBox3.WidthF = 115.0!
         '
         'XrCrossBandBox4
         '
         Me.XrCrossBandBox4.BorderWidth = 1.0!
         Me.XrCrossBandBox4.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox4.EndPointFloat = New DevExpress.Utils.PointFloat(404.8016!, 442.2966!)
-        Me.XrCrossBandBox4.LocationFloat = New DevExpress.Utils.PointFloat(404.8016!, 419.5439!)
+        Me.XrCrossBandBox4.EndPointFloat = New DevExpress.Utils.PointFloat(539.5833!, 622.9167!)
+        Me.XrCrossBandBox4.LocationFloat = New DevExpress.Utils.PointFloat(539.5833!, 525.0!)
         Me.XrCrossBandBox4.Name = "XrCrossBandBox4"
         Me.XrCrossBandBox4.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox4.StartPointFloat = New DevExpress.Utils.PointFloat(404.8016!, 419.5439!)
-        Me.XrCrossBandBox4.WidthF = 124.9998!
-        '
-        'XrCrossBandBox5
-        '
-        Me.XrCrossBandBox5.BorderWidth = 1.0!
-        Me.XrCrossBandBox5.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox5.EndPointFloat = New DevExpress.Utils.PointFloat(529.495!, 530.0765!)
-        Me.XrCrossBandBox5.LocationFloat = New DevExpress.Utils.PointFloat(529.495!, 441.87!)
-        Me.XrCrossBandBox5.Name = "XrCrossBandBox5"
-        Me.XrCrossBandBox5.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox5.StartPointFloat = New DevExpress.Utils.PointFloat(529.495!, 441.87!)
-        Me.XrCrossBandBox5.WidthF = 125.0001!
-        '
-        'XrCrossBandBox6
-        '
-        Me.XrCrossBandBox6.BorderWidth = 1.0!
-        Me.XrCrossBandBox6.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox6.EndPointFloat = New DevExpress.Utils.PointFloat(529.8016!, 443.2097!)
-        Me.XrCrossBandBox6.LocationFloat = New DevExpress.Utils.PointFloat(529.8016!, 419.5712!)
-        Me.XrCrossBandBox6.Name = "XrCrossBandBox6"
-        Me.XrCrossBandBox6.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox6.StartPointFloat = New DevExpress.Utils.PointFloat(529.8016!, 419.5712!)
-        Me.XrCrossBandBox6.WidthF = 125.0!
+        Me.XrCrossBandBox4.StartPointFloat = New DevExpress.Utils.PointFloat(539.5833!, 525.0!)
+        Me.XrCrossBandBox4.WidthF = 115.0!
         '
         'Nota_bookingtruk
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader})
         Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.CalculatedField1, Me.CalculatedField2, Me.CalculatedField4})
         Me.ComponentStorage.Add(Me.SqlDataSource1)
-        Me.CrossBandControls.AddRange(New DevExpress.XtraReports.UI.XRCrossBandControl() {Me.XrCrossBandBox6, Me.XrCrossBandBox5, Me.XrCrossBandBox4, Me.XrCrossBandBox3, Me.XrCrossBandBox2, Me.XrCrossBandBox1})
+        Me.CrossBandControls.AddRange(New DevExpress.XtraReports.UI.XRCrossBandControl() {Me.XrCrossBandBox4, Me.XrCrossBandBox3, Me.XrCrossBandBox2, Me.XrCrossBandBox1})
         Me.DataMember = "booking_truk"
         Me.DataSource = Me.SqlDataSource1
         Me.FilterString = "[id_booking] = ?kodebooking"
@@ -836,7 +868,6 @@ Partial Public Class Nota_bookingtruk
     Friend WithEvents XrLabel14 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel25 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel24 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel21 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel20 As DevExpress.XtraReports.UI.XRLabel
@@ -844,7 +875,6 @@ Partial Public Class Nota_bookingtruk
     Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel17 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents kodebooking As DevExpress.XtraReports.Parameters.Parameter
-    Friend WithEvents XrLabel13 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel12 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel11 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel10 As DevExpress.XtraReports.UI.XRLabel
@@ -870,9 +900,6 @@ Partial Public Class Nota_bookingtruk
     Friend WithEvents XrCrossBandBox3 As DevExpress.XtraReports.UI.XRCrossBandBox
     Friend WithEvents XrLabel31 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel30 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrCrossBandBox4 As DevExpress.XtraReports.UI.XRCrossBandBox
-    Friend WithEvents XrCrossBandBox5 As DevExpress.XtraReports.UI.XRCrossBandBox
-    Friend WithEvents XrCrossBandBox6 As DevExpress.XtraReports.UI.XRCrossBandBox
     Friend WithEvents XrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
     Friend WithEvents XrTable2 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow2 As DevExpress.XtraReports.UI.XRTableRow
@@ -885,4 +912,11 @@ Partial Public Class Nota_bookingtruk
     Friend WithEvents XrTableCell1 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel32 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel33 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrCrossBandBox4 As DevExpress.XtraReports.UI.XRCrossBandBox
+    Friend WithEvents XrLabel36 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel35 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel34 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel13 As DevExpress.XtraReports.UI.XRLabel
 End Class

@@ -437,4 +437,8 @@ Public Class main_menu
     Private Sub SimpleButton25_Click(sender As Object, e As EventArgs) Handles SimpleButton25.Click
         Transaksi_sewa_mobil.ShowDialog()
     End Sub
+
+    Private Sub pelunasansewa_Click(sender As Object, e As EventArgs) Handles pelunasansewa.Click
+        pembayaran_sewa.ShowDialog()
+    End Sub
 End Class
