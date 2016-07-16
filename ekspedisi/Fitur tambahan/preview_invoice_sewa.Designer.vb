@@ -19,16 +19,28 @@ Partial Class preview_invoice_sewa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.DocumentViewer1 = New DevExpress.XtraPrinting.Preview.DocumentViewer()
         Me.SuspendLayout()
+        '
+        'DocumentViewer1
+        '
+        Me.DocumentViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DocumentViewer1.IsMetric = False
+        Me.DocumentViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.DocumentViewer1.Name = "DocumentViewer1"
+        Me.DocumentViewer1.Size = New System.Drawing.Size(993, 554)
+        Me.DocumentViewer1.TabIndex = 0
         '
         'preview_invoice_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(993, 554)
+        Me.Controls.Add(Me.DocumentViewer1)
         Me.Name = "preview_invoice_sewa"
         Me.Text = "Invoice Sewa"
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents DocumentViewer1 As DevExpress.XtraPrinting.Preview.DocumentViewer
 End Class

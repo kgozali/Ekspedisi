@@ -39,7 +39,7 @@
     End Sub
 
     Private Sub idkaryawan_Click(sender As Object, e As EventArgs) Handles idkaryawan.Click
-        add_customer_master_sewa.ShowDialog()
+        add_customer_transaksi.ShowDialog()
     End Sub
 
     Private Sub tambah_transaksi_sewa_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -113,5 +113,11 @@
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+
+    Private Sub simpanprint_Click(sender As Object, e As EventArgs) Handles simpanprint.Click
+        save_Click(sender, e)
+        preview_invoice_sewa.idtransaksi = kode
+        preview_invoice_sewa.ShowDialog()
     End Sub
 End Class

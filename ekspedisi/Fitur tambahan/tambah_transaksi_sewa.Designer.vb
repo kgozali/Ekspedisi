@@ -299,20 +299,4 @@ Partial Class tambah_transaksi_sewa
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-
-    Private Sub idkaryawan_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub idkaryawan_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)
-
-    End Sub
-
-    Private Sub tambahmobil_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub save_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class
