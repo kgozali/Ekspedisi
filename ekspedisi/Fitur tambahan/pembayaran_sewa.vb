@@ -66,7 +66,7 @@
                     InsertInto("INSERT INTO `pelunasan_sewa`(`id_pelunasan`, `id_customer`, `tgl_pelunasan`, `keterangan`) VALUES ('" & tampung & "','" & idprinciple & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & catatan.Text & "')")
                     For i = 0 To datapiutang.RowCount - 1
                         If datapiutang.GetRowCellValue(i, "Bayar") = True Then
-                            InsertInto("INSERT INTO `dpelunasan_sewa`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Nomer DO") & "'," & datapiutang.GetRowCellValue(i, "Nominal") & "," & datapiutang.GetRowCellValue(i, "Nominal") & ",0)")
+                            InsertInto("INSERT INTO `dpelunasan_sewa`(`id_pelunasan`, `tgl_faktur`, `id_faktur`, `nominal_faktur`,`pembayaran`, `potongan`) VALUES ('" & tampung & "'," & tanggalpelunasan.Value.ToString("yyyyMMdd") & ",'" & datapiutang.GetRowCellValue(i, "Kode Sewa") & "'," & datapiutang.GetRowCellValue(i, "Total Transaksi") & "," & datapiutang.GetRowCellValue(i, "Total Transaksi") & ",0)")
                             InsertInto("update trans_mobil set s='0' where id_tmobil='" & datapiutang.GetRowCellValue(i, "Kode Transaksi") & "'")
 
                         End If
@@ -83,7 +83,7 @@
                     Next i
                     'refresh page
                     Dim tabel As New DataTable
-                    tabel = DtTablebayarcek("SELECT id_tmobil `Kode Transaksi`,kode_sewa `Kode Sewa`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal`,total `Total Transaksi` FROM trans_mobil t,mcustomer_sewa m where m.id_customer_sewa=t.id_customer_sewa and m.id_customer_sewa='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Customer") & "' and t.s='1'")
+                    tabel = DtTablebayarcek("SELECT id_tmobil `Kode Transaksi`,kode_sewa `Kode Sewa`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal`,total `Total Transaksi` FROM trans_mobil t,mcustomer_sewa m where m.id_customer_sewa=t.id_customer_sewa and m.id_customer_sewa='" & idprinciple & "' and t.s='1'")
                     bayarpiutang.DataSource = tabel
                     Dim angka As Double = 0
                     For i = 0 To datapiutang.RowCount - 1
@@ -95,6 +95,7 @@
                     Dim datakosong As New DataTable
                     daftarbayar.DataSource = datakosong
                     totaldibayar.Text = "0"
+                    totalpiutang.Text = angka.ToString
                     'Me.Close()
                     MessageBox.Show("Pelunasan sukses diinput", "Konfirmasi Pelunasan", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     audit()
