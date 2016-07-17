@@ -118,7 +118,7 @@ Partial Public Class NotaDO
         Me.XrTable2.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(13.54167!, 0.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(13.54167!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(692.0886!, 44.79167!)
@@ -142,13 +142,13 @@ Partial Public Class NotaDO
         XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrTableCell5.Summary = XrSummary1
         Me.XrTableCell5.Text = "XrTableCell5"
-        Me.XrTableCell5.Weight = 0.20417146123454435R
+        Me.XrTableCell5.Weight = 0.28851749443599928R
         '
         'XrTableCell6
         '
         Me.XrTableCell6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "trans_do.nama_barang")})
         Me.XrTableCell6.Name = "XrTableCell6"
-        Me.XrTableCell6.Weight = 1.5572247354482567R
+        Me.XrTableCell6.Weight = 1.4728787022468017R
         '
         'XrTableCell7
         '
@@ -289,27 +289,27 @@ Partial Public Class NotaDO
         '
         'XrTableCell1
         '
-        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell1.Name = "XrTableCell1"
         Me.XrTableCell1.StylePriority.UseFont = False
         Me.XrTableCell1.StylePriority.UseTextAlignment = False
         Me.XrTableCell1.Text = "No."
         Me.XrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell1.Weight = 0.282407455444336R
+        Me.XrTableCell1.Weight = 0.399074121532577R
         '
         'XrTableCell2
         '
-        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.StylePriority.UseFont = False
         Me.XrTableCell2.StylePriority.UseTextAlignment = False
         Me.XrTableCell2.Text = "Nama Barang"
         Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell2.Weight = 2.1539350137920672R
+        Me.XrTableCell2.Weight = 2.0372683477038263R
         '
         'XrTableCell3
         '
-        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell3.Name = "XrTableCell3"
         Me.XrTableCell3.StylePriority.UseFont = False
         Me.XrTableCell3.StylePriority.UseTextAlignment = False
@@ -319,7 +319,7 @@ Partial Public Class NotaDO
         '
         'XrTableCell4
         '
-        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.StylePriority.UseFont = False
         Me.XrTableCell4.StylePriority.UseTextAlignment = False
@@ -544,7 +544,7 @@ Partial Public Class NotaDO
         'GroupHeader1
         '
         Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("id_transaksi", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeader1.HeightF = 0.0!
+        Me.GroupHeader1.HeightF = 0!
         Me.GroupHeader1.Name = "GroupHeader1"
         '
         'GroupFooter1
