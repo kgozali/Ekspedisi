@@ -19,6 +19,7 @@ Partial Class master_peluanasan_karyawan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(master_peluanasan_karyawan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.nama = New System.Windows.Forms.RadioButton()
@@ -46,11 +47,13 @@ Partial Class master_peluanasan_karyawan
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.datapelunasan = New DevExpress.XtraGrid.GridControl()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.viewdatapelunasan = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.datapelunasansupir = New DevExpress.XtraGrid.GridControl()
         Me.viewdatapelunasansupir = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.printing = New DevExpress.XtraEditors.SimpleButton()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.msiswa = New DevExpress.XtraBars.BarButtonItem()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -68,6 +71,7 @@ Partial Class master_peluanasan_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.datapelunasan, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.viewdatapelunasan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datapelunasansupir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.viewdatapelunasansupir, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -283,6 +287,7 @@ Partial Class master_peluanasan_karyawan
         '
         'datapelunasan
         '
+        Me.datapelunasan.ContextMenuStrip = Me.ContextMenuStrip1
         Me.datapelunasan.Location = New System.Drawing.Point(5, 24)
         Me.datapelunasan.MainView = Me.viewdatapelunasan
         Me.datapelunasan.MenuManager = Me.RibbonControl1
@@ -290,6 +295,24 @@ Partial Class master_peluanasan_karyawan
         Me.datapelunasan.Size = New System.Drawing.Size(832, 315)
         Me.datapelunasan.TabIndex = 7
         Me.datapelunasan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewdatapelunasan})
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintToolStripMenuItem, Me.PrintToolStripMenuItem1})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(170, 70)
+        '
+        'PrintToolStripMenuItem
+        '
+        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.PrintToolStripMenuItem.Text = "Print Kwitansi"
+        '
+        'PrintToolStripMenuItem1
+        '
+        Me.PrintToolStripMenuItem1.Name = "PrintToolStripMenuItem1"
+        Me.PrintToolStripMenuItem1.Size = New System.Drawing.Size(169, 22)
+        Me.PrintToolStripMenuItem1.Text = "Print Bukti Pinjam"
         '
         'viewdatapelunasan
         '
@@ -328,15 +351,6 @@ Partial Class master_peluanasan_karyawan
         Me.BarButtonItem2.Id = 1
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'printing
-        '
-        Me.printing.Image = CType(resources.GetObject("printing.Image"), System.Drawing.Image)
-        Me.printing.Location = New System.Drawing.Point(780, 151)
-        Me.printing.Name = "printing"
-        Me.printing.Size = New System.Drawing.Size(69, 29)
-        Me.printing.TabIndex = 58
-        Me.printing.Text = "Print"
         '
         'cancel
         '
@@ -440,7 +454,6 @@ Partial Class master_peluanasan_karyawan
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.printing)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -456,6 +469,7 @@ Partial Class master_peluanasan_karyawan
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.datapelunasan, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.viewdatapelunasan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datapelunasansupir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.viewdatapelunasansupir, System.ComponentModel.ISupportInitialize).EndInit()
@@ -496,7 +510,6 @@ Partial Class master_peluanasan_karyawan
     Friend WithEvents datapelunasan As DevExpress.XtraGrid.GridControl
     Friend WithEvents viewdatapelunasan As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents printing As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents msiswa As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
@@ -509,4 +522,7 @@ Partial Class master_peluanasan_karyawan
     Friend WithEvents datapelunasansupir As DevExpress.XtraGrid.GridControl
     Friend WithEvents viewdatapelunasansupir As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents editpelunasan As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents PrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PrintToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 End Class

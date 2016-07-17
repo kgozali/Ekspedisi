@@ -12,7 +12,7 @@
         End Try
     End Sub
     Dim data As New DataTable
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles printing.Click
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
         Try
             If karyawan.Checked = True Then
                 view_lihat_cicilan.ShowDialog()
@@ -232,5 +232,19 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub PrintToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem1.Click
+        viewkwitansi.tangkap = viewdatapelunasan.GetRowCellValue(viewdatapelunasan.FocusedRowModified, "Kode Piutang")
+        viewkwitansi.ShowDialog()
+    End Sub
+
+    Private Sub PrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem.Click
+        If karyawan.Checked = True Then
+            viewkwitansi.tangkap = viewdatapelunasan.GetRowCellValue(viewdatapelunasan.FocusedRowModified, "Kode Piutang")
+            viewkwitansi.ShowDialog()
+        Else
+
+        End If
     End Sub
 End Class
