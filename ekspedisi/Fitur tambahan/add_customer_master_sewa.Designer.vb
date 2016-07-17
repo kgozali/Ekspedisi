@@ -30,6 +30,7 @@ Partial Class add_customer_master_sewa
         Me.cari = New DevExpress.XtraEditors.TextEdit()
         Me.cancel = New DevExpress.XtraEditors.SimpleButton()
         Me.submit = New DevExpress.XtraEditors.SimpleButton()
+        Me.submit_pelunasan = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,11 +134,22 @@ Partial Class add_customer_master_sewa
         Me.submit.TabIndex = 45
         Me.submit.Text = "Submit"
         '
+        'submit_pelunasan
+        '
+        Me.submit_pelunasan.Image = CType(resources.GetObject("submit_pelunasan.Image"), System.Drawing.Image)
+        Me.submit_pelunasan.Location = New System.Drawing.Point(566, 522)
+        Me.submit_pelunasan.Name = "submit_pelunasan"
+        Me.submit_pelunasan.Size = New System.Drawing.Size(100, 27)
+        Me.submit_pelunasan.TabIndex = 47
+        Me.submit_pelunasan.Text = "Submit"
+        Me.submit_pelunasan.Visible = False
+        '
         'add_customer_master_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(780, 556)
+        Me.Controls.Add(Me.submit_pelunasan)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cancel)
@@ -167,4 +179,5 @@ Partial Class add_customer_master_sewa
     Friend WithEvents cari As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents submit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents submit_pelunasan As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -118,6 +118,7 @@ Partial Class pembayaran_sewa
         Me.pembayaran.GridControl = Me.daftarbayar
         Me.pembayaran.Name = "pembayaran"
         Me.pembayaran.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.pembayaran.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.pembayaran.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
         Me.pembayaran.OptionsView.ShowFooter = True
         Me.pembayaran.OptionsView.ShowGroupPanel = False
@@ -200,6 +201,7 @@ Partial Class pembayaran_sewa
         Me.daftarbayar.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemComboBox1})
         Me.daftarbayar.Size = New System.Drawing.Size(688, 144)
         Me.daftarbayar.TabIndex = 151
+        Me.daftarbayar.UseEmbeddedNavigator = True
         Me.daftarbayar.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.pembayaran})
         '
         'pelunasan

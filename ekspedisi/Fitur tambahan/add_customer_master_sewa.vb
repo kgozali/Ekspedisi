@@ -66,6 +66,37 @@
     End Sub
 
     Private Sub GridView1_DoubleClick(sender As Object, e As EventArgs) Handles GridView1.DoubleClick
-        submit_Click(sender, e)
+        If submit_pelunasan.Visible = False Then
+            submit_Click(sender, e)
+        Else
+            submit_pelunasan_Click(sender, e)
+        End If
+    End Sub
+    Dim tabel As New DataTable
+    Private Sub submit_pelunasan_Click(sender As Object, e As EventArgs) Handles submit_pelunasan.Click
+        Try
+            tabel = New DataTable
+            tabel = DtTablebayarcek("SELECT id_tmobil `Kode Transaksi`,kode_sewa `Kode Sewa`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal`,total `Total Transaksi` FROM trans_mobil t,mcustomer_sewa m where m.id_customer_sewa=t.id_customer_sewa and m.id_customer_sewa='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Customer") & "' and t.s='1'")
+            pembayaran_sewa.bayarpiutang.DataSource = tabel
+            Dim angka As Double = 0
+            For i = 0 To pembayaran_sewa.datapiutang.RowCount - 1
+                angka = angka + pembayaran_sewa.datapiutang.GetRowCellValue(i, "Total Transaksi")
+                With pembayaran_sewa.datapiutang
+                    .SetRowCellValue(i, "Bayar", False)
+                End With
+            Next i
+            pembayaran_sewa.totalpiutang.Text = angka.ToString
+            pembayaran_sewa.namakeamanan = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Nama Customer")
+            pembayaran_sewa.principle.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Nama Customer")
+            pembayaran_sewa.idprinciple = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Customer")
+            pembayaran_sewa.alamat.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Alamat")
+            Me.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub add_customer_master_sewa_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        submit_pelunasan.Visible = False
     End Sub
 End Class
