@@ -71,4 +71,9 @@ Public Class master_transaksi
     Private Sub kodetransaksi_CheckedChanged(sender As Object, e As EventArgs) Handles kodetransaksi.CheckedChanged
         search()
     End Sub
+
+    Private Sub PreviewAndPrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreviewAndPrintToolStripMenuItem.Click
+        preview_invoice_sewa.idtransaksi = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
+        preview_invoice_sewa.ShowDialog()
+    End Sub
 End Class

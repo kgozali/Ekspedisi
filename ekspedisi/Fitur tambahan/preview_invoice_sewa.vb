@@ -6,4 +6,5 @@
         rpt.CreateDocument()
         DocumentViewer1.DocumentSource = rpt
     End Sub
+
 End Class

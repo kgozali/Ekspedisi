@@ -109,6 +109,7 @@
                 MessageBox.Show("Transaksi " & kode & " berhasil disimpan", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 customersewa = ""
                 syaratcetak = True
+                audit()
                 Me.Close()
             End If
         Catch ex As Exception
@@ -124,6 +125,13 @@
             preview_invoice_sewa.ShowDialog()
             syaratcetak = False
         End If
-        
+
+    End Sub
+    Sub audit()
+        Dim user As String = main_menu.username
+        Dim kompname As String = System.Net.Dns.GetHostName
+        Dim formvb As String = "Sewa Mobil"
+        Dim aktivitas As String = "Sewa Mobil: " & kode
+        auditlog(user, kompname, formvb, aktivitas)
     End Sub
 End Class
