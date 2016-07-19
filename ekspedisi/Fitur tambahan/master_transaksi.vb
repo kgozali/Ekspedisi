@@ -8,6 +8,7 @@ Public Class master_transaksi
 
     Public Sub master_transaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         search()
+
     End Sub
     Private Sub search()
         Try
@@ -75,5 +76,56 @@ Public Class master_transaksi
     Private Sub PreviewAndPrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreviewAndPrintToolStripMenuItem.Click
         preview_invoice_sewa.idtransaksi = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString
         preview_invoice_sewa.ShowDialog()
+    End Sub
+
+    Private Sub DeleteBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteBookingToolStripMenuItem.Click
+        If GridView1.DataRowCount < 1 Then
+            MessageBox.Show("Tidak ada data yang terpilih untuk dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            Dim int As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If int = DialogResult.Yes Then
+                Dim kembali As Boolean = InsertInto("update trans_mobil set del=1 where id_tmobil='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                If kembali = True Then
+                    MessageBox.Show("Data " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & " Berhasil di Hapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    master_transaksi_Load(sender, e)
+                End If
+            Else
+            End If
+        End If
+    End Sub
+
+    Private Sub deldata_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles deldata.ItemClick
+        If GridView1.DataRowCount < 1 Then
+            MessageBox.Show("Tidak ada data yang terpilih untuk dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            Dim int As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If int = DialogResult.Yes Then
+                Dim kembali As Boolean = InsertInto("update trans_mobil set del=1 where id_tmobil='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                If kembali = True Then
+                    MessageBox.Show("Data " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & " Berhasil di Hapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    master_transaksi_Load(sender, e)
+                End If
+            Else
+
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub edit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles edit.ItemClick
+        If GridView1.DataRowCount < 1 Then
+            MessageBox.Show("Tidak ada data yang terpilih untuk di-Edit", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+
+        End If
+    End Sub
+
+    Private Sub EditBookingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditBookingToolStripMenuItem.Click
+        If GridView1.DataRowCount < 1 Then
+            MessageBox.Show("Tidak ada data yang terpilih untuk di-Edit", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+
+        End If
     End Sub
 End Class
