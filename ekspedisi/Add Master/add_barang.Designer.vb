@@ -34,6 +34,8 @@ Partial Class add_barang
         Me.listbarang = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colnama_barang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.DataColumn3 = New System.Data.DataColumn()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,34 +48,38 @@ Partial Class add_barang
         '
         'simpan
         '
-        Me.simpan.Location = New System.Drawing.Point(486, 432)
+        Me.simpan.Location = New System.Drawing.Point(567, 532)
+        Me.simpan.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.simpan.Name = "simpan"
-        Me.simpan.Size = New System.Drawing.Size(100, 27)
+        Me.simpan.Size = New System.Drawing.Size(117, 33)
         Me.simpan.TabIndex = 120
         Me.simpan.Text = "Save"
         '
         'cancel
         '
-        Me.cancel.Location = New System.Drawing.Point(592, 432)
+        Me.cancel.Location = New System.Drawing.Point(691, 532)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 119
         Me.cancel.Text = "Cancel"
         '
         'principle
         '
         Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(72, 24)
+        Me.principle.Location = New System.Drawing.Point(84, 30)
+        Me.principle.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(229, 21)
+        Me.principle.Size = New System.Drawing.Size(266, 24)
         Me.principle.TabIndex = 49
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 25)
+        Me.LabelControl3.Location = New System.Drawing.Point(6, 31)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(83, 23)
         Me.LabelControl3.TabIndex = 47
         Me.LabelControl3.Text = "Principle :"
         '
@@ -81,18 +87,20 @@ Partial Class add_barang
         '
         Me.GroupControl1.Controls.Add(Me.principle)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl1.Location = New System.Drawing.Point(9, 10)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(312, 56)
+        Me.GroupControl1.Size = New System.Drawing.Size(364, 69)
         Me.GroupControl1.TabIndex = 121
         Me.GroupControl1.Text = "Pilih Principle"
         '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.databarang)
-        Me.GroupControl2.Location = New System.Drawing.Point(8, 72)
+        Me.GroupControl2.Location = New System.Drawing.Point(9, 89)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(680, 352)
+        Me.GroupControl2.Size = New System.Drawing.Size(793, 433)
         Me.GroupControl2.TabIndex = 122
         Me.GroupControl2.Text = "Data Barang"
         '
@@ -100,10 +108,12 @@ Partial Class add_barang
         '
         Me.databarang.DataMember = "Table1"
         Me.databarang.DataSource = Me.DataSet1
-        Me.databarang.Location = New System.Drawing.Point(8, 24)
+        Me.databarang.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.databarang.Location = New System.Drawing.Point(9, 30)
         Me.databarang.MainView = Me.listbarang
+        Me.databarang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.databarang.Name = "databarang"
-        Me.databarang.Size = New System.Drawing.Size(664, 320)
+        Me.databarang.Size = New System.Drawing.Size(775, 394)
         Me.databarang.TabIndex = 0
         Me.databarang.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.listbarang})
         '
@@ -114,7 +124,7 @@ Partial Class add_barang
         '
         'DataTable1
         '
-        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2})
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3})
         Me.DataTable1.TableName = "Table1"
         '
         'DataColumn1
@@ -129,7 +139,7 @@ Partial Class add_barang
         '
         'listbarang
         '
-        Me.listbarang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colnama_barang, Me.colketerangan})
+        Me.listbarang.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.colnama_barang, Me.colketerangan})
         Me.listbarang.GridControl = Me.databarang
         Me.listbarang.Name = "listbarang"
         Me.listbarang.OptionsCustomization.AllowGroup = False
@@ -150,18 +160,31 @@ Partial Class add_barang
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 1
+        Me.colketerangan.VisibleIndex = 2
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Kg/Satuan"
+        Me.GridColumn1.FieldName = "kg"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 1
+        '
+        'DataColumn3
+        '
+        Me.DataColumn3.ColumnName = "kg"
         '
         'add_barang
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(696, 468)
+        Me.ClientSize = New System.Drawing.Size(812, 576)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.simpan)
         Me.Controls.Add(Me.cancel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "add_barang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Barang"
@@ -191,4 +214,6 @@ Partial Class add_barang
     Friend WithEvents DataColumn2 As System.Data.DataColumn
     Friend WithEvents colnama_barang As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DataColumn3 As DataColumn
 End Class

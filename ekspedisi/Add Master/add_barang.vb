@@ -4,6 +4,7 @@ Public Class add_barang
     Dim cek As Boolean = False
     Dim data As DataTable
     Dim ccc As String
+    Dim stat As Boolean = False
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
         master_barang.GridControl1.Visible = True
         master_barang.GridControl2.Visible = False
@@ -140,40 +141,51 @@ Public Class add_barang
                 Dim dtbaris As DataRow
                 For i = 0 To DataSet1.Tables("Table1").Rows.Count - 1
                     dtbaris = DataSet1.Tables("Table1").Rows(i)
-                    Dim tanggal As New DataTable
-                    Dim tgl As String = "MB"
-                    tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,2) = '" & tgl & "'")
-                    Dim hitung As String = tanggal.Rows.Count() + 1
-                    While hitung.LongCount < 5
-                        hitung = "0" + hitung
-                    End While
-                    ccc = tgl + hitung
-                    InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','1')")
-                    'MsgBox(dtbaris("Nama_Barang") & "terinput")
-                    audit()
+                    If DataSet1.Tables("Table1").Rows(i)("kg").ToString = "0" Then
+                        MessageBox.Show("Lengkapi Data Terlebih Dahulu", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Exit For
+                    Else
+
+                        Dim tanggal As New DataTable
+                        Dim tgl As String = "MB"
+                        tanggal = DtTable("select * from mbarang where substring(ID_Barang,1,2) = '" & tgl & "'")
+                        Dim hitung As String = tanggal.Rows.Count() + 1
+                        While hitung.LongCount < 5
+                            hitung = "0" + hitung
+                        End While
+                        ccc = tgl + hitung
+                        InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','" & dtbaris("kg") & "','1')")
+                        'MsgBox(dtbaris("Nama_Barang") & "terinput")
+                        audit()
+                        stat = True
+                    End If
+
                 Next
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-            'konfirmasi melakukan booking ulang
-            Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
-            If msg = DialogResult.Yes Then
-                add_barang_Load(sender, e)
-                master_barang.GridControl1.Visible = True
-                master_barang.GridControl2.Visible = False
-                data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
-                master_barang.GridControl1.DataSource = data
-                master_barang.edit.Down = False
-                master_barang.deldata.Down = False
-                master_barang.hapus.Visible = False
-                master_barang.GroupControl2.Enabled = True
-                master_barang.editing.Visible = False
-                Reset()
-            Else
-                cek = False
-                DataTable1.Rows.Clear()
-                Me.Close()
+            If stat = True Then
+                'konfirmasi melakukan booking ulang
+                Dim msg As Integer = MsgBox("Input berhasil dilakukan, Apakah anda ingin melakukan input kembali?", MsgBoxStyle.YesNo, "System Message")
+                If msg = DialogResult.Yes Then
+                    add_barang_Load(sender, e)
+                    master_barang.GridControl1.Visible = True
+                    master_barang.GridControl2.Visible = False
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+                    master_barang.GridControl1.DataSource = data
+                    master_barang.edit.Down = False
+                    master_barang.deldata.Down = False
+                    master_barang.hapus.Visible = False
+                    master_barang.GroupControl2.Enabled = True
+                    master_barang.editing.Visible = False
+                    Reset()
+                Else
+                    cek = False
+                    DataTable1.Rows.Clear()
+                    Me.Close()
+                End If
             End If
+
 
         Catch ex As Exception
             MsgBox(ex.Message)

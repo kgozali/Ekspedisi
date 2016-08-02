@@ -31,65 +31,76 @@ Partial Class edit_barang
         Me.principle = New System.Windows.Forms.ComboBox()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(11, 25)
+        Me.LabelControl1.Location = New System.Drawing.Point(13, 31)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(94, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(114, 23)
         Me.LabelControl1.TabIndex = 32
-        Me.LabelControl1.Text = "Kode Barang :"
+        Me.LabelControl1.Text = "Kode Barang "
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(6, 60)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(100, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(121, 23)
         Me.LabelControl2.TabIndex = 33
-        Me.LabelControl2.Text = "Nama Barang :"
+        Me.LabelControl2.Text = "Nama Barang "
         '
         'nama
         '
-        Me.nama.Location = New System.Drawing.Point(111, 50)
+        Me.nama.Location = New System.Drawing.Point(129, 62)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(143, 20)
+        Me.nama.Size = New System.Drawing.Size(167, 22)
         Me.nama.TabIndex = 46
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(111, 26)
+        Me.id.Location = New System.Drawing.Point(129, 32)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(143, 20)
+        Me.id.Size = New System.Drawing.Size(167, 22)
         Me.id.TabIndex = 45
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(312, 232)
+        Me.SimpleButton1.Location = New System.Drawing.Point(364, 323)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.Size = New System.Drawing.Size(117, 33)
         Me.SimpleButton1.TabIndex = 143
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(206, 232)
+        Me.Submit.Location = New System.Drawing.Point(240, 323)
+        Me.Submit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.Size = New System.Drawing.Size(117, 33)
         Me.Submit.TabIndex = 142
         Me.Submit.Text = "Submit"
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.RichTextBox1)
         Me.GroupControl1.Controls.Add(Me.principle)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
@@ -98,55 +109,79 @@ Partial Class edit_barang
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Location = New System.Drawing.Point(14, 15)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(400, 214)
+        Me.GroupControl1.Size = New System.Drawing.Size(467, 300)
         Me.GroupControl1.TabIndex = 141
         Me.GroupControl1.Text = "Data"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(111, 101)
+        Me.RichTextBox1.Location = New System.Drawing.Point(129, 154)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(276, 96)
+        Me.RichTextBox1.Size = New System.Drawing.Size(321, 117)
         Me.RichTextBox1.TabIndex = 50
         Me.RichTextBox1.Text = ""
         '
         'principle
         '
         Me.principle.FormattingEnabled = True
-        Me.principle.Location = New System.Drawing.Point(111, 74)
+        Me.principle.Location = New System.Drawing.Point(129, 91)
+        Me.principle.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.principle.Name = "principle"
-        Me.principle.Size = New System.Drawing.Size(143, 21)
+        Me.principle.Size = New System.Drawing.Size(166, 24)
         Me.principle.TabIndex = 49
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(20, 97)
+        Me.LabelControl4.Location = New System.Drawing.Point(23, 149)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(85, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(110, 23)
         Me.LabelControl4.TabIndex = 48
         Me.LabelControl4.Text = "Keterangan :"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(45, 73)
+        Me.LabelControl3.Location = New System.Drawing.Point(52, 90)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(60, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(83, 23)
         Me.LabelControl3.TabIndex = 47
         Me.LabelControl3.Text = "Principle :"
         '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(34, 118)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(88, 23)
+        Me.LabelControl5.TabIndex = 51
+        Me.LabelControl5.Text = "Kg/Satuan"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(129, 122)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(167, 23)
+        Me.NumericUpDown1.TabIndex = 53
+        '
         'edit_barang
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(424, 272)
+        Me.ClientSize = New System.Drawing.Size(495, 369)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Submit)
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "edit_barang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Barang"
@@ -155,6 +190,7 @@ Partial Class edit_barang
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,4 +205,6 @@ Partial Class edit_barang
     Friend WithEvents principle As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
 End Class

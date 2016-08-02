@@ -239,7 +239,7 @@ Public Class master_truck
 
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
 
@@ -277,4 +277,6 @@ Public Class master_truck
     Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
         Me.Close()
     End Sub
+
+
 End Class

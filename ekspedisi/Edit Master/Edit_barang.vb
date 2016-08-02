@@ -2,15 +2,20 @@
 Public Class edit_barang
     Dim cbprinciple As New DataTable
     Private Sub edit_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
-        principle.DataSource = cbprinciple
-        principle.DisplayMember = "Nama Principle"
-        principle.ValueMember = "Kode Principle"
+        Try
+            cbprinciple = DtTable("select id_principle `Kode Principle`,nama_principle `Nama Principle` from mprinciple where s = '1'")
+            principle.DataSource = cbprinciple
+            principle.DisplayMember = "Nama Principle"
+            principle.ValueMember = "Kode Principle"
 
-        id.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle, "Kode Barang").ToString()
-        nama.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle, "Nama Barang").ToString()
-        principle.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle.ToString, "Nama Principle").ToString()
-        RichTextBox1.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle.ToString, "Keterangan").ToString()
+            id.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle, "Kode Barang").ToString()
+            nama.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle, "Nama Barang").ToString()
+            principle.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle.ToString, "Nama Principle").ToString()
+            RichTextBox1.Text = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle.ToString, "Keterangan").ToString()
+            NumericUpDown1.Value = list_edit_barang.GridView1.GetRowCellValue(list_edit_barang.GridView1.FocusedRowHandle.ToString, "Kg/Satuan")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
@@ -21,7 +26,7 @@ Public Class edit_barang
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
         Select Case MsgBox("Apakah anda yakin mengedit data ini?", MsgBoxStyle.YesNo, "System Error")
             Case MsgBoxResult.Yes
-                Dim ccccc As String = "update mbarang set nama_barang='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',keterangan='" & RichTextBox1.Text & "' where id_barang='" & id.Text.ToString & "'"
+                Dim ccccc As String = "update mbarang set nama_barang='" & nama.Text & "',id_principle='" & principle.SelectedValue.ToString & "',keterangan='" & RichTextBox1.Text & "',berat='" & NumericUpDown1.Value.ToString & "' where id_barang='" & id.Text.ToString & "'"
                 InsertInto(ccccc)
                 audit()
                 MessageBox.Show("File Updated")
@@ -37,5 +42,17 @@ Public Class edit_barang
         Dim form As String = "Master Barang"
         Dim aktivitas As String = "Edit Barang: " & id.Text.ToString
         auditlog(user, kompname, form, aktivitas)
+    End Sub
+
+    Private Sub LabelControl2_Click(sender As Object, e As EventArgs) Handles LabelControl2.Click
+
+    End Sub
+
+    Private Sub nama_EditValueChanged(sender As Object, e As EventArgs) Handles nama.EditValueChanged
+
+    End Sub
+
+    Private Sub principle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles principle.SelectedIndexChanged
+
     End Sub
 End Class

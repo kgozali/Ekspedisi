@@ -85,6 +85,8 @@ Public Class master_transaksi
             Dim int As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If int = DialogResult.Yes Then
                 Dim kembali As Boolean = InsertInto("update trans_mobil set del=1 where id_tmobil='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                InsertInto("DELETE FROM jurnal where no_jurnal='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                InsertInto("DELETE FROM djurnal where no_jurnal='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
                 If kembali = True Then
                     MessageBox.Show("Data " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & " Berhasil di Hapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     master_transaksi_Load(sender, e)
@@ -101,6 +103,8 @@ Public Class master_transaksi
             Dim int As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Transaksi " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If int = DialogResult.Yes Then
                 Dim kembali As Boolean = InsertInto("update trans_mobil set del=1 where id_tmobil='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                InsertInto("DELETE FROM jurnal where no_jurnal='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
+                InsertInto("DELETE FROM djurnal where no_jurnal='" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi").ToString & "'")
                 If kembali = True Then
                     MessageBox.Show("Data " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi") & " Berhasil di Hapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     master_transaksi_Load(sender, e)

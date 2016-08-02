@@ -28,7 +28,7 @@ Public Class master_barang
         cari.Text = ""
 
 
-        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         GridControl1.DataSource = data
         Try
             If data.Rows.Count > 0 Then
@@ -55,16 +55,16 @@ Public Class master_barang
         If edit.Down = True Or deldata.Down = True Then
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and id_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and id_barang like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and nama_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and nama_barang like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and nama_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and nama_barang like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl2.DataSource = data
@@ -82,16 +82,16 @@ Public Class master_barang
         Else
             If id.Checked = True Then
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and id_barang like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and id_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,,(berat,0) `Kg/Satuan` p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and id_barang like '%" & cari.Text & "%'")
                 End If
 
             Else
                 If aktif.Checked = True Then
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and nama_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1' and nama_barang like '%" & cari.Text & "%'")
                 Else
-                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and nama_barang like '%" & cari.Text & "%'")
+                    data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0' and nama_barang like '%" & cari.Text & "%'")
                 End If
             End If
             GridControl1.DataSource = data
@@ -165,7 +165,7 @@ Public Class master_barang
             hapus.Visible = False
             GridControl1.Visible = False
             GridControl2.Visible = True
-            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
             GridControl2.DataSource = data
             For i = 0 To GridView1.DataRowCount - 1
                 Dim temp As String = GridView1.GetRowCellValue(i, "Kode Barang").ToString
@@ -179,7 +179,7 @@ Public Class master_barang
             hapus.Visible = False
             GridControl1.Visible = True
             GridControl2.Visible = False
-            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
             GridControl1.DataSource = data
         End If
     End Sub
@@ -193,7 +193,7 @@ Public Class master_barang
             hapus.Visible = True
             GridControl1.Visible = False
             GridControl2.Visible = True
-            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`,p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
             GridControl2.DataSource = data
             For i = 0 To GridView1.DataRowCount - 1
                 Dim temp As String = GridView1.GetRowCellValue(i, "Kode Barang").ToString
@@ -207,7 +207,7 @@ Public Class master_barang
             hapus.Visible = False
             GridControl1.Visible = True
             GridControl2.Visible = False
-            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+            data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
             GridControl1.DataSource = data
         End If
     End Sub
@@ -236,21 +236,21 @@ Public Class master_barang
 
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
 
     Private Sub aktif_CheckedChanged(sender As Object, e As EventArgs) Handles aktif.CheckedChanged
         deldata.Enabled = True
         edit.Enabled = True
-        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
+        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='1'")
         GridControl1.DataSource = data
     End Sub
 
     Private Sub nonaktif_CheckedChanged(sender As Object, e As EventArgs) Handles nonaktif.CheckedChanged
         deldata.Enabled = False
         edit.Enabled = False
-        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0'")
+        data = DtTable("SELECT id_barang `Kode Barang`, b.nama_barang `Nama Barang`,ifnull(berat,0) `Kg/Satuan`, p.nama_principle `Nama Principle`, Keterangan from mbarang b, mprinciple p where b.id_principle = p.id_principle and b.`s`='0'")
         GridControl1.DataSource = data
     End Sub
 
