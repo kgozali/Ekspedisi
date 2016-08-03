@@ -154,7 +154,7 @@ Public Class add_barang
                             hitung = "0" + hitung
                         End While
                         ccc = tgl + hitung
-                        InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','" & dtbaris("kg") & "','1')")
+                        InsertInto("insert into mbarang values('" & ccc & "','" & dtbaris("Nama_Barang") & "','" & principle.SelectedValue.ToString & "','" & dtbaris("Keterangan") & "','" & CDbl(dtbaris("kg")) & "','1')")
                         'MsgBox(dtbaris("Nama_Barang") & "terinput")
                         audit()
                         stat = True

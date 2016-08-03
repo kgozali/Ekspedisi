@@ -78,9 +78,10 @@ Partial Class master_customer_sewa
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(13, 662)
+        Me.hapus.Location = New System.Drawing.Point(15, 815)
+        Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
+        Me.hapus.Size = New System.Drawing.Size(231, 32)
         Me.hapus.TabIndex = 49
         Me.hapus.Text = "Delete"
         '
@@ -104,9 +105,10 @@ Partial Class master_customer_sewa
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(897, 662)
+        Me.cancel.Location = New System.Drawing.Point(1046, 815)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 51
         Me.cancel.Text = "Cancel"
         '
@@ -114,19 +116,22 @@ Partial Class master_customer_sewa
         '
         Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(13, 180)
+        Me.GroupControl3.Location = New System.Drawing.Point(15, 222)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(984, 476)
+        Me.GroupControl3.Size = New System.Drawing.Size(1148, 586)
         Me.GroupControl3.TabIndex = 50
         Me.GroupControl3.Text = "Data Customer"
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl2.Location = New System.Drawing.Point(0, 23)
         Me.GridControl2.MainView = Me.GridView1
+        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(984, 457)
+        Me.GridControl2.Size = New System.Drawing.Size(1148, 562)
         Me.GridControl2.TabIndex = 1
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -146,6 +151,7 @@ Partial Class master_customer_sewa
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addcustomerbaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, -2)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -155,7 +161,7 @@ Partial Class master_customer_sewa
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1015, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1184, 104)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -280,25 +286,28 @@ Partial Class master_customer_sewa
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GridControl1.Location = New System.Drawing.Point(0, 19)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(0, 23)
         Me.GridControl1.MainView = Me.gridcustomer
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(984, 457)
+        Me.GridControl1.Size = New System.Drawing.Size(1148, 562)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridcustomer})
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(115, 30)
         '
         'Print
         '
         Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Size = New System.Drawing.Size(114, 26)
         Me.Print.Text = "Print"
         '
         'gridcustomer
@@ -310,18 +319,20 @@ Partial Class master_customer_sewa
         '
         Me.GroupControl2.Controls.Add(Me.nonaktif)
         Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(282, 98)
+        Me.GroupControl2.Location = New System.Drawing.Point(329, 121)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(150, 76)
+        Me.GroupControl2.Size = New System.Drawing.Size(175, 94)
         Me.GroupControl2.TabIndex = 48
         Me.GroupControl2.Text = "Sortir"
         '
         'nonaktif
         '
         Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 47)
+        Me.nonaktif.Location = New System.Drawing.Point(6, 58)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(119, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(149, 21)
         Me.nonaktif.TabIndex = 9
         Me.nonaktif.Text = "Customer Non-Aktif"
         Me.nonaktif.UseVisualStyleBackColor = True
@@ -330,9 +341,10 @@ Partial Class master_customer_sewa
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 24)
+        Me.aktif.Location = New System.Drawing.Point(6, 30)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(96, 17)
+        Me.aktif.Size = New System.Drawing.Size(119, 21)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
         Me.aktif.Text = "Customer Aktif"
@@ -340,9 +352,10 @@ Partial Class master_customer_sewa
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(13, 662)
+        Me.editing.Location = New System.Drawing.Point(15, 815)
+        Me.editing.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
+        Me.editing.Size = New System.Drawing.Size(231, 32)
         Me.editing.TabIndex = 47
         Me.editing.Text = "Edit"
         '
@@ -351,9 +364,10 @@ Partial Class master_customer_sewa
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(13, 98)
+        Me.GroupControl1.Location = New System.Drawing.Point(15, 121)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
         Me.GroupControl1.TabIndex = 46
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
@@ -361,9 +375,10 @@ Partial Class master_customer_sewa
         '
         Me.nama.AutoSize = True
         Me.nama.Checked = True
-        Me.nama.Location = New System.Drawing.Point(96, 24)
+        Me.nama.Location = New System.Drawing.Point(112, 30)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(101, 17)
+        Me.nama.Size = New System.Drawing.Size(128, 21)
         Me.nama.TabIndex = 2
         Me.nama.TabStop = True
         Me.nama.Text = "Nama Customer"
@@ -372,19 +387,21 @@ Partial Class master_customer_sewa
         'id
         '
         Me.id.AutoSize = True
-        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.Location = New System.Drawing.Point(6, 30)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(85, 17)
+        Me.id.Size = New System.Drawing.Size(107, 21)
         Me.id.TabIndex = 1
         Me.id.Text = "ID Customer"
         Me.id.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.Location = New System.Drawing.Point(6, 63)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.MenuManager = Me.RibbonControl1
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'BarButtonItem2
@@ -400,17 +417,18 @@ Partial Class master_customer_sewa
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(928, 144)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1083, 177)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
+        Me.SimpleButton1.Size = New System.Drawing.Size(80, 36)
         Me.SimpleButton1.TabIndex = 52
         Me.SimpleButton1.Text = "Print"
         '
         'master_customer_sewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1005, 696)
+        Me.ClientSize = New System.Drawing.Size(1172, 857)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
@@ -419,6 +437,7 @@ Partial Class master_customer_sewa
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_customer_sewa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Data Customer Sewa"

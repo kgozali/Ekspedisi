@@ -24,7 +24,7 @@ Public Class master_user
         editing.Visible = False
         deldata.Down = False
         edit.Down = False
-        cari.Text = ""
+
 
 
         data = DtTable("SELECT Username from muser where`s`='1'")
@@ -51,17 +51,7 @@ Public Class master_user
 
 
     End Sub
-    Private Sub cari_EditValueChanged(sender As Object, e As EventArgs) Handles cari.EditValueChanged
-        If edit.Down = True Or deldata.Down = True Then
-            data = DtTable("SELECT Username from muser where `s` = '1' and username like '%" & cari.Text & "%'")
-            GridControl2.DataSource = data
-        Else
-            data = DtTable("SELECT Username from muser where `s` = '1' and username like '%" & cari.Text & "%'")
-            GridControl1.DataSource = data
-        End If
 
-
-    End Sub
 
 
     Private Sub editing_Click(sender As Object, e As EventArgs) Handles editing.Click
@@ -223,4 +213,6 @@ Public Class master_user
     Private Sub jumpmenu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles jumpmenu.ItemClick
         Me.Close()
     End Sub
+
+
 End Class

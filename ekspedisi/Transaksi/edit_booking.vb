@@ -48,7 +48,8 @@ Public Class edit_booking
             RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
 
             Dim tabelbarang As New DataTable
-            tabelbarang = DtTable("select id_barang `namabarang`,qty `berat` from dbooking_truk where id_booking='" + kode + "'")
+            tabelbarang = DtTable("select id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan` from dbooking_truk where id_booking='" + kode + "'")
+
             Dim mreader As DataTableReader
 
             mreader = tabelbarang.CreateDataReader
@@ -203,7 +204,7 @@ Public Class edit_booking
             InsertInto("DELETE FROM dbooking_truk where id_booking='" + kode.ToString + "'")
             For i = 0 To GridView1.RowCount - 1
                 datarow = databarang.Tables.Item(0).Rows(i)
-                InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "')")
+                InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "','" & datarow("kgsatuan") & "')")
             Next
             If insert = True Then
                 insertakun()

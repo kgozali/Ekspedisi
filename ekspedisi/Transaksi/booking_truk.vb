@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports DevExpress.XtraGrid.Views.Base
+Imports MySql.Data.MySqlClient
 Public Class booking_truk
     Public trukbook As String = ""
     Public principlebook As String = ""
@@ -12,6 +13,8 @@ Public Class booking_truk
     Dim akunkas As String = ""
     Dim akunhutang As String = ""
     Dim akundpsupir As String = ""
+    Dim mulaisub As Boolean = False
+
     Private Sub booking_truk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             GridControl3.UseEmbeddedNavigator = True
@@ -85,6 +88,7 @@ Public Class booking_truk
     End Sub
 
     Sub reset()
+        mulaisub = False
         ButtonEdit1.Text = ""
         ButtonEdit2.Text = ""
         ButtonEdit4.Text = ""
@@ -95,7 +99,9 @@ Public Class booking_truk
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
         DataSet1.Tables("databarang").Rows.Clear()
+        GridControl3.Enabled = False
         grid()
+
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -179,7 +185,7 @@ Public Class booking_truk
                                             audit()
                                         End If
 
-                                End If
+                                    End If
 
                                 End If
                             End If
@@ -209,7 +215,7 @@ Public Class booking_truk
             Dim insert As Boolean = InsertInto("insert into booking_truk values('" + kode.ToString + "','" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "','" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "','" + jam + "','" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)") + "','" + principlebook + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir") + "','" + trukbook + "','" + RichTextBox2.Text.ToString + "','" + rutebook + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person") + "','" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)") + "','" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)") + "',0,1,1,0)")
             For i = 0 To GridView1.RowCount - 1
                 datarow = DataSet1.Tables.Item(0).Rows(i)
-                InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "')")
+                InsertInto("INSERT INTO dbooking_truk VALUES('" & kode.ToString & "','" & datarow("namabarang") & "','" & datarow("berat") & "','" & datarow("kgsatuan") & "')")
             Next
             insertakun()
             If insert = True Then
@@ -230,7 +236,7 @@ Public Class booking_truk
 
             Else
 
-                
+
                 Dim dt3 As New DataTable
                 dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
                 RepositoryItemLookUpEdit1.DataSource = dt3
@@ -314,17 +320,17 @@ Public Class booking_truk
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
             InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
 
-            
 
-           
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
 
     End Sub
 
-    
+
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         Try
             If DateTimePicker2.Value > DateTimePicker1.Value Then
@@ -384,12 +390,22 @@ Public Class booking_truk
     End Sub
 
     Private Sub ButtonEdit4_EditValueChanged(sender As Object, e As EventArgs) Handles ButtonEdit4.EditValueChanged
-        Dim dt3 As New DataTable
-        dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "'")
-        RepositoryItemLookUpEdit1.DataSource = dt3
-        RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
-        RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
-        grid()
+        If ButtonEdit4.Text = "" Then
+
+        Else
+
+            GridControl3.Enabled = True
+            Dim dt3 As New DataTable
+            dt3 = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where mbarang.id_principle='" + principlebook.ToString + "' AND berat > 0")
+            RepositoryItemLookUpEdit1.DataSource = dt3
+            RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
+            RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
+            mulaisub = True
+            grid()
+
+        End If
+
+
     End Sub
 
     Private Sub ButtonEdit2_Click(sender As Object, e As EventArgs) Handles ButtonEdit2.Click
@@ -406,5 +422,79 @@ Public Class booking_truk
 
     Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
         truk_booking.ShowDialog()
+    End Sub
+
+    Private Sub GridView1_RowCountChanged(sender As Object, e As EventArgs) Handles GridView1.RowCountChanged
+        Try
+
+
+            If mulaisub = False Then
+                    Exit Sub
+                Else
+                    Dim asd As DataRow
+                Dim berat As Double = 0
+
+                If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "kgsatuan").ToString = "" Then
+
+                    Else
+                        For i = 0 To DataSet1.Tables.Item(0).Rows.Count - 1
+                            asd = DataSet1.Tables.Item(0).Rows(i)
+                            berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                        If berat = 0 Then
+                            berat = 0
+                        End If
+                        asd("berat") = berat * CDbl(GridView1.GetRowCellValue(i, "kgsatuan"))
+
+                    Next
+                    End If
+
+                End If
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
+
+
+
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        Try
+            If DataSet1.Tables(0).Rows.Count > 0 Then
+                If e.RowHandle > -1 Then
+                    If (e.Column.Name = "kgsatuan" Or e.Column.Name = "namabarang") And GridView1.GetRowCellValue(e.RowHandle, "kgsatuan") <> "" Then
+                        If Not IsNumeric(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) Then
+                            MessageBox.Show("Kolom Satuan Hanya Boleh Diisi Dengan Angka", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            Dim asd As DataRow
+                            Dim berat As String = ""
+                            asd = DataSet1.Tables.Item(0).Rows(e.RowHandle)
+                            berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                            If berat = "" Then
+                                berat = "0"
+                            End If
+                            asd("berat") = CDbl(berat) * CDbl(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan"))
+                        End If
+
+                    End If
+                End If
+
+            Else
+                Exit Sub
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
+
     End Sub
 End Class

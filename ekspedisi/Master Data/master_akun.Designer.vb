@@ -116,6 +116,7 @@ Partial Class master_akun
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -125,7 +126,7 @@ Partial Class master_akun
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(784, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(915, 104)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -209,9 +210,10 @@ Partial Class master_akun
         'cancel
         '
         Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(672, 531)
+        Me.cancel.Location = New System.Drawing.Point(784, 654)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 49
         Me.cancel.Text = "Cancel"
         '
@@ -239,21 +241,24 @@ Partial Class master_akun
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Controls.Add(Me.dataview)
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 96)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 118)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(784, 431)
+        Me.GroupControl3.Size = New System.Drawing.Size(915, 530)
         Me.GroupControl3.TabIndex = 51
         Me.GroupControl3.Text = "Data Akun"
         '
         'GridControl1
         '
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 24)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(780, 408)
+        Me.GridControl1.Size = New System.Drawing.Size(911, 504)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -328,27 +333,29 @@ Partial Class master_akun
         Me.RepositoryItemCheckEdit2.AutoHeight = False
         Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
         Me.RepositoryItemCheckEdit2.ValueChecked = 1.0!
-        Me.RepositoryItemCheckEdit2.ValueUnchecked = 0.0!
+        Me.RepositoryItemCheckEdit2.ValueUnchecked = 0!
         '
         'dataview
         '
         Me.dataview.AllowUserToAddRows = False
         Me.dataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataview.Location = New System.Drawing.Point(3, 24)
+        Me.dataview.Location = New System.Drawing.Point(3, 30)
+        Me.dataview.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dataview.Name = "dataview"
         Me.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataview.Size = New System.Drawing.Size(414, 311)
+        Me.dataview.Size = New System.Drawing.Size(483, 383)
         Me.dataview.TabIndex = 6
         '
         'master_akun
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(915, 690)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_akun"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Data Akun"

@@ -78,36 +78,38 @@ Partial Class master_supir
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(13, 667)
+        Me.hapus.Location = New System.Drawing.Point(15, 821)
+        Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
+        Me.hapus.Size = New System.Drawing.Size(231, 32)
         Me.hapus.TabIndex = 50
         Me.hapus.Text = "Delete"
-        Me.hapus.Visible = false
+        Me.hapus.Visible = False
         '
         'RepositoryItemCheckEdit1
         '
-        Me.RepositoryItemCheckEdit1.AutoHeight = false
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
         Me.RepositoryItemCheckEdit1.Caption = "Check"
         Me.RepositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
         'msiswa
         '
-        Me.msiswa.ActAsDropDown = true
+        Me.msiswa.ActAsDropDown = True
         Me.msiswa.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.msiswa.Caption = "Master Data"
-        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"),System.Drawing.Image)
+        Me.msiswa.Glyph = CType(resources.GetObject("msiswa.Glyph"), System.Drawing.Image)
         Me.msiswa.Id = 1
-        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"),System.Drawing.Image)
+        Me.msiswa.LargeGlyph = CType(resources.GetObject("msiswa.LargeGlyph"), System.Drawing.Image)
         Me.msiswa.Name = "msiswa"
         '
         'cancel
         '
-        Me.cancel.Image = CType(resources.GetObject("cancel.Image"),System.Drawing.Image)
-        Me.cancel.Location = New System.Drawing.Point(892, 666)
+        Me.cancel.Image = CType(resources.GetObject("cancel.Image"), System.Drawing.Image)
+        Me.cancel.Location = New System.Drawing.Point(1041, 820)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cancel.Name = "cancel"
-        Me.cancel.Size = New System.Drawing.Size(100, 27)
+        Me.cancel.Size = New System.Drawing.Size(117, 33)
         Me.cancel.TabIndex = 52
         Me.cancel.Text = "Cancel"
         '
@@ -115,19 +117,22 @@ Partial Class master_supir
         '
         Me.GroupControl3.Controls.Add(Me.GridControl2)
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(13, 187)
+        Me.GroupControl3.Location = New System.Drawing.Point(15, 230)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(984, 473)
+        Me.GroupControl3.Size = New System.Drawing.Size(1148, 582)
         Me.GroupControl3.TabIndex = 51
         Me.GroupControl3.Text = "Data Karayawan"
         '
         'GridControl2
         '
-        Me.GridControl2.Location = New System.Drawing.Point(5, 28)
+        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl2.Location = New System.Drawing.Point(6, 34)
         Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(974, 440)
+        Me.GridControl2.Size = New System.Drawing.Size(1136, 542)
         Me.GridControl2.TabIndex = 8
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -135,18 +140,19 @@ Partial Class master_supir
         '
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.MultiSelect = true
+        Me.GridView2.OptionsSelection.MultiSelect = True
         Me.GridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'RibbonControl1
         '
-        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.RibbonControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.None
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsupirbaru, Me.edit, Me.deldata, Me.jumpmenu})
-        Me.RibbonControl1.Location = New System.Drawing.Point(1, 3)
+        Me.RibbonControl1.Location = New System.Drawing.Point(1, 4)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -155,9 +161,9 @@ Partial Class master_supir
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.ShowToolbarCustomizeItem = false
-        Me.RibbonControl1.Size = New System.Drawing.Size(1007, 96)
-        Me.RibbonControl1.Toolbar.ShowCustomizeItem = false
+        Me.RibbonControl1.ShowToolbarCustomizeItem = False
+        Me.RibbonControl1.Size = New System.Drawing.Size(1175, 104)
+        Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'RibbonGalleryBarItem1
@@ -169,7 +175,7 @@ Partial Class master_supir
         'datasiswa
         '
         Me.datasiswa.Caption = "Master Data Siswa"
-        Me.datasiswa.Glyph = CType(resources.GetObject("datasiswa.Glyph"),System.Drawing.Image)
+        Me.datasiswa.Glyph = CType(resources.GetObject("datasiswa.Glyph"), System.Drawing.Image)
         Me.datasiswa.Id = 10
         Me.datasiswa.Name = "datasiswa"
         '
@@ -196,8 +202,8 @@ Partial Class master_supir
         '
         Me.mastersiswa.Caption = "Master Data Siswa"
         Me.mastersiswa.Id = 13
-        Me.mastersiswa.LargeGlyph = CType(resources.GetObject("mastersiswa.LargeGlyph"),System.Drawing.Image)
-        Me.mastersiswa.LargeGlyphDisabled = CType(resources.GetObject("mastersiswa.LargeGlyphDisabled"),System.Drawing.Image)
+        Me.mastersiswa.LargeGlyph = CType(resources.GetObject("mastersiswa.LargeGlyph"), System.Drawing.Image)
+        Me.mastersiswa.LargeGlyphDisabled = CType(resources.GetObject("mastersiswa.LargeGlyphDisabled"), System.Drawing.Image)
         Me.mastersiswa.Name = "mastersiswa"
         '
         'BarButtonItem4
@@ -233,35 +239,35 @@ Partial Class master_supir
         'addsupirbaru
         '
         Me.addsupirbaru.Caption = "Tambah Data"
-        Me.addsupirbaru.Glyph = CType(resources.GetObject("addsupirbaru.Glyph"),System.Drawing.Image)
+        Me.addsupirbaru.Glyph = CType(resources.GetObject("addsupirbaru.Glyph"), System.Drawing.Image)
         Me.addsupirbaru.Id = 23
-        Me.addsupirbaru.LargeGlyph = CType(resources.GetObject("addsupirbaru.LargeGlyph"),System.Drawing.Image)
+        Me.addsupirbaru.LargeGlyph = CType(resources.GetObject("addsupirbaru.LargeGlyph"), System.Drawing.Image)
         Me.addsupirbaru.Name = "addsupirbaru"
         '
         'edit
         '
         Me.edit.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.edit.Caption = "Edit Data"
-        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"),System.Drawing.Image)
+        Me.edit.Glyph = CType(resources.GetObject("edit.Glyph"), System.Drawing.Image)
         Me.edit.Id = 27
-        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"),System.Drawing.Image)
+        Me.edit.LargeGlyph = CType(resources.GetObject("edit.LargeGlyph"), System.Drawing.Image)
         Me.edit.Name = "edit"
         '
         'deldata
         '
         Me.deldata.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
         Me.deldata.Caption = "Delete Data"
-        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"),System.Drawing.Image)
+        Me.deldata.Glyph = CType(resources.GetObject("deldata.Glyph"), System.Drawing.Image)
         Me.deldata.Id = 30
-        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"),System.Drawing.Image)
+        Me.deldata.LargeGlyph = CType(resources.GetObject("deldata.LargeGlyph"), System.Drawing.Image)
         Me.deldata.Name = "deldata"
         '
         'jumpmenu
         '
         Me.jumpmenu.Caption = "Main Menu"
-        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"),System.Drawing.Image)
+        Me.jumpmenu.Glyph = CType(resources.GetObject("jumpmenu.Glyph"), System.Drawing.Image)
         Me.jumpmenu.Id = 31
-        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"),System.Drawing.Image)
+        Me.jumpmenu.LargeGlyph = CType(resources.GetObject("jumpmenu.LargeGlyph"), System.Drawing.Image)
         Me.jumpmenu.Name = "jumpmenu"
         '
         'RibbonPage1
@@ -281,25 +287,28 @@ Partial Class master_supir
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GridControl1.Location = New System.Drawing.Point(5, 28)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(6, 34)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(974, 440)
+        Me.GridControl1.Size = New System.Drawing.Size(1136, 542)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Print})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(115, 30)
         '
         'Print
         '
-        Me.Print.Image = CType(resources.GetObject("Print.Image"),System.Drawing.Image)
+        Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
         Me.Print.Name = "Print"
-        Me.Print.Size = New System.Drawing.Size(99, 22)
+        Me.Print.Size = New System.Drawing.Size(114, 26)
         Me.Print.Text = "Print"
         '
         'GridView1
@@ -311,108 +320,117 @@ Partial Class master_supir
         '
         Me.GroupControl2.Controls.Add(Me.nonaktif)
         Me.GroupControl2.Controls.Add(Me.aktif)
-        Me.GroupControl2.Location = New System.Drawing.Point(282, 105)
+        Me.GroupControl2.Location = New System.Drawing.Point(329, 129)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(150, 76)
+        Me.GroupControl2.Size = New System.Drawing.Size(175, 94)
         Me.GroupControl2.TabIndex = 49
         Me.GroupControl2.Text = "Sortir"
         '
         'nonaktif
         '
-        Me.nonaktif.AutoSize = true
-        Me.nonaktif.Location = New System.Drawing.Point(5, 47)
+        Me.nonaktif.AutoSize = True
+        Me.nonaktif.Location = New System.Drawing.Point(6, 58)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(97, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(120, 21)
         Me.nonaktif.TabIndex = 9
         Me.nonaktif.Text = "Supir Non-Aktif"
-        Me.nonaktif.UseVisualStyleBackColor = true
+        Me.nonaktif.UseVisualStyleBackColor = True
         '
         'aktif
         '
-        Me.aktif.AutoSize = true
-        Me.aktif.Checked = true
-        Me.aktif.Location = New System.Drawing.Point(5, 24)
+        Me.aktif.AutoSize = True
+        Me.aktif.Checked = True
+        Me.aktif.Location = New System.Drawing.Point(6, 30)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(74, 17)
+        Me.aktif.Size = New System.Drawing.Size(90, 21)
         Me.aktif.TabIndex = 8
-        Me.aktif.TabStop = true
+        Me.aktif.TabStop = True
         Me.aktif.Text = "Supir Aktif"
-        Me.aktif.UseVisualStyleBackColor = true
+        Me.aktif.UseVisualStyleBackColor = True
         '
         'editing
         '
-        Me.editing.Location = New System.Drawing.Point(13, 666)
+        Me.editing.Location = New System.Drawing.Point(15, 820)
+        Me.editing.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.editing.Name = "editing"
-        Me.editing.Size = New System.Drawing.Size(198, 26)
+        Me.editing.Size = New System.Drawing.Size(231, 32)
         Me.editing.TabIndex = 48
         Me.editing.Text = "Edit"
-        Me.editing.Visible = false
+        Me.editing.Visible = False
         '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.nama)
         Me.GroupControl1.Controls.Add(Me.id)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(13, 105)
+        Me.GroupControl1.Location = New System.Drawing.Point(15, 129)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 76)
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 94)
         Me.GroupControl1.TabIndex = 47
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'nama
         '
-        Me.nama.AutoSize = true
-        Me.nama.Checked = true
-        Me.nama.Location = New System.Drawing.Point(98, 24)
+        Me.nama.AutoSize = True
+        Me.nama.Checked = True
+        Me.nama.Location = New System.Drawing.Point(114, 30)
+        Me.nama.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nama.Name = "nama"
-        Me.nama.Size = New System.Drawing.Size(79, 17)
+        Me.nama.Size = New System.Drawing.Size(99, 21)
         Me.nama.TabIndex = 2
-        Me.nama.TabStop = true
+        Me.nama.TabStop = True
         Me.nama.Text = "Nama Supir"
-        Me.nama.UseVisualStyleBackColor = true
+        Me.nama.UseVisualStyleBackColor = True
         '
         'id
         '
-        Me.id.AutoSize = true
-        Me.id.Location = New System.Drawing.Point(5, 24)
+        Me.id.AutoSize = True
+        Me.id.Location = New System.Drawing.Point(6, 30)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(63, 17)
+        Me.id.Size = New System.Drawing.Size(78, 21)
         Me.id.TabIndex = 1
         Me.id.Text = "ID Supir"
-        Me.id.UseVisualStyleBackColor = true
+        Me.id.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(5, 51)
+        Me.cari.Location = New System.Drawing.Point(6, 63)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.MenuManager = Me.RibbonControl1
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'BarButtonItem2
         '
-        Me.BarButtonItem2.ActAsDropDown = true
+        Me.BarButtonItem2.ActAsDropDown = True
         Me.BarButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.BarButtonItem2.Caption = "Master Data"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"),System.Drawing.Image)
+        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
         Me.BarButtonItem2.Id = 1
-        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"),System.Drawing.Image)
+        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"),System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(928, 152)
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1083, 187)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(69, 29)
+        Me.SimpleButton1.Size = New System.Drawing.Size(80, 36)
         Me.SimpleButton1.TabIndex = 53
         Me.SimpleButton1.Text = "Print"
         '
         'master_supir
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 697)
+        Me.ClientSize = New System.Drawing.Size(1176, 858)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.GroupControl3)
@@ -422,6 +440,7 @@ Partial Class master_supir
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_supir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Supir"

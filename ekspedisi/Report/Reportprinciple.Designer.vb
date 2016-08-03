@@ -53,9 +53,6 @@ Partial Public Class Reportprinciple
         Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
@@ -105,7 +102,7 @@ Partial Public Class Reportprinciple
         Me.XrTable2.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(9.999995!, 0.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(9.999995!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(795.9999!, 29.48249!)
@@ -227,7 +224,7 @@ Partial Public Class Reportprinciple
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel14, Me.XrLabel15, Me.XrLabel16, Me.XrLine2, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel18, Me.XrLabel17, Me.XrPictureBox1, Me.XrLabel1, Me.XrLabel6, Me.XrLabel7, Me.XrLabel9, Me.XrPageInfo2, Me.XrLabel22})
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel14, Me.XrLabel15, Me.XrLabel16, Me.XrLine2, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel18, Me.XrLabel17, Me.XrPictureBox1, Me.XrLabel1, Me.XrPageInfo2, Me.XrLabel22})
         Me.ReportHeader.HeightF = 406.5198!
         Me.ReportHeader.Name = "ReportHeader"
         '
@@ -291,7 +288,7 @@ Partial Public Class Reportprinciple
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel26.SizeF = New System.Drawing.SizeF(737.8281!, 23.0!)
         Me.XrLabel26.StylePriority.UseFont = False
-        Me.XrLabel26.Text = "Dengan ini kami lampirkan rekap klaim PT. SENTONG SULTAN KERATON MOJOPAHIT dengan" & _
+        Me.XrLabel26.Text = "Dengan ini kami lampirkan rekap klaim PT. SENTONG SULTAN KERATON MOJOPAHIT dengan" &
     " rincian sebagai berikut"
         '
         'XrLabel25
@@ -361,34 +358,6 @@ Partial Public Class Reportprinciple
         Me.XrLabel1.Text = "XrLabel1"
         Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
-        'XrLabel6
-        '
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(436.9865!, 99.06142!)
-        Me.XrLabel6.Name = "XrLabel6"
-        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(97.91669!, 23.0!)
-        Me.XrLabel6.StylePriority.UseTextAlignment = False
-        Me.XrLabel6.Text = "XrLabel6"
-        Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'XrLabel7
-        '
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(284.9033!, 99.06142!)
-        Me.XrLabel7.Name = "XrLabel7"
-        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(93.64038!, 23.0!)
-        Me.XrLabel7.StylePriority.UseTextAlignment = False
-        Me.XrLabel7.Text = "XrLabel7"
-        Me.XrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
-        '
-        'XrLabel9
-        '
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(397.9167!, 99.06142!)
-        Me.XrLabel9.Name = "XrLabel9"
-        Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel9.SizeF = New System.Drawing.SizeF(25.89917!, 22.99998!)
-        Me.XrLabel9.Text = "S/D"
-        '
         'XrPageInfo2
         '
         Me.XrPageInfo2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -423,7 +392,7 @@ Partial Public Class Reportprinciple
         'XrTable1
         '
         Me.XrTable1.BackColor = System.Drawing.Color.Black
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(9.999928!, 0.0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(9.999928!, 0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(796.0!, 25.0!)
@@ -450,7 +419,7 @@ Partial Public Class Reportprinciple
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
         Me.XrTableCell9.Text = "No"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell9.Weight = 0.18303961376669114R
+        Me.XrTableCell9.Weight = 0.18303961376669115R
         '
         'XrTableCell4
         '
@@ -685,9 +654,6 @@ Partial Public Class Reportprinciple
     Friend WithEvents SqlDataSource1 As DevExpress.DataAccess.Sql.SqlDataSource
     Friend WithEvents ReportHeader As DevExpress.XtraReports.UI.ReportHeaderBand
     Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel6 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel7 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel9 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
     Friend WithEvents XrTable1 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow1 As DevExpress.XtraReports.UI.XRTableRow

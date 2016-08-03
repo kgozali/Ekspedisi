@@ -27,12 +27,12 @@ Partial Class edit_barang
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Submit = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.principle = New System.Windows.Forms.ComboBox()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,6 +116,25 @@ Partial Class edit_barang
         Me.GroupControl1.TabIndex = 141
         Me.GroupControl1.Text = "Data"
         '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.DecimalPlaces = 2
+        Me.NumericUpDown1.Location = New System.Drawing.Point(129, 122)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(167, 23)
+        Me.NumericUpDown1.TabIndex = 53
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(34, 118)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(88, 23)
+        Me.LabelControl5.TabIndex = 51
+        Me.LabelControl5.Text = "Kg/Satuan"
+        '
         'RichTextBox1
         '
         Me.RichTextBox1.Location = New System.Drawing.Point(129, 154)
@@ -153,24 +172,6 @@ Partial Class edit_barang
         Me.LabelControl3.Size = New System.Drawing.Size(83, 23)
         Me.LabelControl3.TabIndex = 47
         Me.LabelControl3.Text = "Principle :"
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(34, 118)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(88, 23)
-        Me.LabelControl5.TabIndex = 51
-        Me.LabelControl5.Text = "Kg/Satuan"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(129, 122)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(167, 23)
-        Me.NumericUpDown1.TabIndex = 53
         '
         'edit_barang
         '
