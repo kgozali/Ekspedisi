@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports DevExpress.XtraGrid.Views.Base
+Imports MySql.Data.MySqlClient
 Public Class edit_booking
 
     Public trukbook As String = ""
@@ -13,8 +14,10 @@ Public Class edit_booking
     Dim akunkas As String = ""
     Dim akunhutang As String = ""
     Dim akundpsupir As String = ""
+    Dim switch As Boolean = False
     Public Sub edit_booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            switch = False
             GridControl3.UseEmbeddedNavigator = True
             'select akun default
             akunkas = Scalar("select id_akun from control_account where keterangan='Def. Akun Kas'")
@@ -88,7 +91,9 @@ Public Class edit_booking
         Try
             If ceking = True Then
                 reset()
+
                 master_booking.master_booking_Load(sender, e)
+
             Else
                 If ButtonEdit1.Text <> "" Or ButtonEdit2.Text <> "" Or ButtonEdit4.Text <> "" Then
                     cek = True
@@ -100,7 +105,9 @@ Public Class edit_booking
                     Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menutup form ini? Semua data yang belum disimpan akan hilang", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
                     If msg = DialogResult.OK Then
                         reset()
+
                         master_booking.master_booking_Load(sender, e)
+
 
                     Else
                         e.Cancel = True
@@ -126,6 +133,7 @@ Public Class edit_booking
         tabelkontak.Rows.Clear()
         tabelsupir.Rows.Clear()
         databarang.Tables("tabelbarang").Rows.Clear()
+        switch = False
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -198,8 +206,8 @@ Public Class edit_booking
         'insert ke database
         Try
             Dim datarow As DataRow
-            Dim jam As New DateTime
-            jam = Convert.ToDateTime(TimeEdit1.Text).ToString("HH:mm:ss")
+            Dim jam As String = ""
+            jam = TimeEdit1.Text
             Dim insert As Boolean = InsertInto("update booking_truk set jam_input='" + DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "',tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "',jam='" + jam + "',ETA='" + gridkontak.GetRowCellValue(gridkontak.FocusedRowHandle, "ETA (Jam)").ToString + "',id_principle='" + principlebook.ToString + "',id_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Kode Supir").ToString + "',id_truk='" + trukbook + "',keterangan='" + RichTextBox2.Text.ToString + "',id_rute='" + rutebook.ToString + "',alamat_tujuan='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Alamat").ToString + "',contact_person='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Contact Person").ToString + "',no_telp='" + gridkontak.GetRowCellValue(GridView2.FocusedRowHandle, "Nomor Telepon").ToString + "',dp_awal_supir='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Jumlah DP (Rp)").ToString + "',harga_supir_total='" + GridView2.GetRowCellValue(GridView2.FocusedRowHandle, "Total Bayar (Rp)").ToString + "' where id_booking='" + kode.ToString + "'")
             InsertInto("DELETE FROM dbooking_truk where id_booking='" + kode.ToString + "'")
             For i = 0 To GridView1.RowCount - 1
@@ -283,9 +291,9 @@ Public Class edit_booking
         InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunhutang.ToString + "','','" + jumlahdp.ToString + "')")
         InsertInto("insert into djurnal values('" + kode.ToString + "','" + akunkas.ToString + "','','" + dpkredit.ToString + "')")
     End Sub
-   
-    
-    
+
+
+
 
     Private Sub ButtonEdit4_Click(sender As Object, e As EventArgs) Handles ButtonEdit4.Click
         If principlebook = "" Then
@@ -297,5 +305,63 @@ Public Class edit_booking
 
     Private Sub ButtonEdit1_Click(sender As Object, e As EventArgs) Handles ButtonEdit1.Click
         list_truk_edit.ShowDialog()
+    End Sub
+
+    Private Sub GridView1_RowCountChanged(sender As Object, e As EventArgs) Handles GridView1.RowCountChanged
+        If switch = True Then
+            Dim asd As DataRow
+            Dim berat As Double = 0
+
+            If CStr(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "kgsatuan")) = "" Then
+
+            Else
+                For i = 0 To databarang.Tables.Item(0).Rows.Count - 1
+                    asd = databarang.Tables.Item(0).Rows(i)
+                    berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                    If berat = 0 Then
+                        berat = 0
+                    End If
+                    asd("berat") = berat * CDbl(GridView1.GetRowCellValue(i, "kgsatuan"))
+
+                Next
+            End If
+        Else
+            switch = True
+            Exit Sub
+        End If
+
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        Try
+            If databarang.Tables(0).Rows.Count > 0 Then
+                If e.RowHandle > -1 Then
+                    If (e.Column.Name = "kgsatuan" Or e.Column.Name = "namabarang") And CStr(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) <> "" Then
+                        If Not IsNumeric(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) Then
+                            MessageBox.Show("Kolom Satuan Hanya Boleh Diisi Dengan Angka", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            Dim asd As DataRow
+                            Dim berat As String = ""
+                            asd = databarang.Tables.Item(0).Rows(e.RowHandle)
+                            berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                            If berat = "" Then
+                                berat = "0"
+                            End If
+                            asd("berat") = CDbl(berat) * CDbl(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan"))
+                        End If
+
+                    End If
+                End If
+
+            Else
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub GridControl3_Click(sender As Object, e As EventArgs) Handles GridControl3.Click
+        switch = True
     End Sub
 End Class

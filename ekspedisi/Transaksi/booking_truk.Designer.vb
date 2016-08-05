@@ -412,7 +412,7 @@ Partial Class booking_truk
         Me.berat.Name = "berat"
         Me.berat.OptionsColumn.AllowEdit = False
         Me.berat.OptionsColumn.ReadOnly = True
-        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:N0} Kilogram")})
+        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:N2} Kilogram")})
         Me.berat.Visible = True
         Me.berat.VisibleIndex = 2
         '
