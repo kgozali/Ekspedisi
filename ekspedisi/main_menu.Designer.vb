@@ -213,8 +213,8 @@ Partial Class main_menu
         Me.BackstageViewControl1.Location = New System.Drawing.Point(0, 0)
         Me.BackstageViewControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BackstageViewControl1.Name = "BackstageViewControl1"
-        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem2
-        Me.BackstageViewControl1.SelectedTabIndex = 0
+        Me.BackstageViewControl1.SelectedTab = Me.BackstageViewTabItem10
+        Me.BackstageViewControl1.SelectedTabIndex = 6
         Me.BackstageViewControl1.Size = New System.Drawing.Size(1176, 741)
         Me.BackstageViewControl1.TabIndex = 0
         Me.BackstageViewControl1.Text = "BackstageViewControl1"
@@ -1020,6 +1020,7 @@ Partial Class main_menu
         '
         'SimpleButton14
         '
+        Me.SimpleButton14.Enabled = False
         Me.SimpleButton14.Image = CType(resources.GetObject("SimpleButton14.Image"), System.Drawing.Image)
         Me.SimpleButton14.Location = New System.Drawing.Point(57, 203)
         Me.SimpleButton14.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -1343,7 +1344,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem2.ContentControl = Me.BackstageViewClientControl12
         Me.BackstageViewTabItem2.Glyph = CType(resources.GetObject("BackstageViewTabItem2.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem2.Name = "BackstageViewTabItem2"
-        Me.BackstageViewTabItem2.Selected = True
+        Me.BackstageViewTabItem2.Selected = False
         '
         'BackstageViewTabItem1
         '
@@ -1391,7 +1392,7 @@ Partial Class main_menu
         Me.BackstageViewTabItem10.ContentControl = Me.BackstageViewClientControl10
         Me.BackstageViewTabItem10.Glyph = CType(resources.GetObject("BackstageViewTabItem10.Glyph"), System.Drawing.Image)
         Me.BackstageViewTabItem10.Name = "BackstageViewTabItem10"
-        Me.BackstageViewTabItem10.Selected = False
+        Me.BackstageViewTabItem10.Selected = True
         '
         'backuprestore
         '

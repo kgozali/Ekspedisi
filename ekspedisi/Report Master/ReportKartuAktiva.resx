@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="CustomSqlQuery1.Sql" xml:space="preserve">
-    <value>SELECT m.id_truk `Kode Truck`, m.umur_default `Umur`, m.nilai_residu `Nilai Residu`, m.tgl_beli `Tanggal Beli`, m.harga_beli `Harga Beli`, k.keterangan `Keterangan`, k.nilai_penyusutan `Nilai Penyusutan`, k.nilai_buku `Nilai Buku` FROM mtruk m, `kartu_aktiva` k WHERE m.id_truk = k.id_truck and m.s = '1'</value>
+    <value>SELECT m.id_truk `Kode Truck`,m.no_pol `nopol`, m.umur_default `Umur`, m.nilai_residu `Nilai Residu`, m.tgl_beli `Tanggal Beli`, m.harga_beli `Harga Beli`, k.keterangan `Keterangan`, k.nilai_penyusutan `Nilai Penyusutan`, k.nilai_buku `Nilai Buku` FROM mtruk m, `kartu_aktiva` k WHERE m.id_truk = k.id_truck and m.s = '1'</value>
   </data>
   <data name="SqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0iU3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkN1c3RvbVNxbFF1ZXJ5Ij48RmllbGQgTmFtZT0iS29kZSBUcnVjayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVbXVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTmlsYWkgUmVzaWR1IiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFuZ2dhbCBCZWxpIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iSGFyZ2EgQmVsaSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IktldGVyYW5nYW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmlsYWkgUGVueXVzdXRhbiIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJOaWxhaSBCdWt1IiBUeXBlPSJEb3VibGUiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0iU3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkN1c3RvbVNxbFF1ZXJ5Ij48RmllbGQgTmFtZT0iS29kZSBUcnVjayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJub3BvbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVbXVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTmlsYWkgUmVzaWR1IiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFuZ2dhbCBCZWxpIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iSGFyZ2EgQmVsaSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IktldGVyYW5nYW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmlsYWkgUGVueXVzdXRhbiIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJOaWxhaSBCdWt1IiBUeXBlPSJEb3VibGUiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="XrPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
