@@ -135,6 +135,7 @@ Partial Class transaksi_DO
         Me.idbooking.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.idbooking.Properties.ReadOnly = True
         Me.idbooking.Size = New System.Drawing.Size(192, 22)
         Me.idbooking.TabIndex = 2
         '
@@ -258,11 +259,11 @@ Partial Class transaksi_DO
         Me.satuan.OptionsColumn.ReadOnly = True
         Me.satuan.Visible = True
         Me.satuan.VisibleIndex = 2
-        Me.satuan.Width = 126
+        Me.satuan.Width = 139
         '
         'namabarang
         '
-        Me.namabarang.Caption = "Barang"
+        Me.namabarang.Caption = "Nama Barang"
         Me.namabarang.ColumnEdit = Me.RepositoryItemLookUpEdit1
         Me.namabarang.FieldName = "namabarang"
         Me.namabarang.Name = "namabarang"
@@ -285,11 +286,11 @@ Partial Class transaksi_DO
         Me.kgsatuan.Name = "kgsatuan"
         Me.kgsatuan.Visible = True
         Me.kgsatuan.VisibleIndex = 1
-        Me.kgsatuan.Width = 119
+        Me.kgsatuan.Width = 126
         '
         'berat
         '
-        Me.berat.Caption = "Berat"
+        Me.berat.Caption = "Berat (Kg)"
         Me.berat.DisplayFormat.FormatString = "{0:n2}"
         Me.berat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.berat.FieldName = "berat"
@@ -297,7 +298,7 @@ Partial Class transaksi_DO
         Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:n2} Kg")})
         Me.berat.Visible = True
         Me.berat.VisibleIndex = 3
-        Me.berat.Width = 159
+        Me.berat.Width = 139
         '
         'RepositoryItemButtonEdit1
         '

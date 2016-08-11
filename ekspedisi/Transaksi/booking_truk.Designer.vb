@@ -414,7 +414,7 @@ Partial Class booking_truk
         '
         'berat
         '
-        Me.berat.Caption = "Berat (KG)"
+        Me.berat.Caption = "Berat (Kg)"
         Me.berat.DisplayFormat.FormatString = "{0:n2}"
         Me.berat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.berat.FieldName = "berat"

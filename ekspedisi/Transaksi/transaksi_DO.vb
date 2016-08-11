@@ -25,26 +25,26 @@ Public Class transaksi_DO
                 tgldo.Value = Convert.ToDateTime(tgldo.Value.Date.ToLongDateString & " " & "00:00:00")
                 'select nama principle
                 Dim data As String = ""
-                data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + kode + "' and mprinciple.id_principle=booking_truk.id_principle")
+                data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" & kode & "' and mprinciple.id_principle=booking_truk.id_principle")
                 TextBox2.Text = data
                 namaprinciple = data
                 'select tanggal kirim
-                tanggalterkirim.Value = Scalar("select tgl from booking_truk where id_booking='" + kode + "'")
+                tanggalterkirim.Value = Scalar("select tgl from booking_truk where id_booking='" & kode & "'")
                 'select id principle
                 Dim data2 As String = ""
-                data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + kode + "'")
+                data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" & kode & "'")
                 idprinciple = data2
 
                 'select rute
                 Dim rute As String = ""
-                rute = Scalar("select id_rute from booking_truk where id_booking='" + idbooking.Text.ToString + "' and id_principle='" + idprinciple + "'")
+                rute = Scalar("select id_rute from booking_truk where id_booking='" & idbooking.Text.ToString & "' and id_principle='" & idprinciple & "'")
 
                 'select price untuk rute
-                price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
+                price = Scalar("select price_per_unit from mrute where id_rute='" & rute & "'")
 
 
                 Dim dtbarang As New DataTable
-                dtbarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + idprinciple.ToString + "'")
+                dtbarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" & idprinciple.ToString & "'")
                 RepositoryItemLookUpEdit1.DataSource = dtbarang
                 RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
                 RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
@@ -52,7 +52,7 @@ Public Class transaksi_DO
                 Dim tabelbarang As New DataTable
                 tabelbarang = DtTable("SELECT dbooking_truk.id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan`,satuan
                                 FROM dbooking_truk LEFT JOIN mbarang ON dbooking_truk.id_barang=mbarang.id_barang
-                                LEFT JOIN msatuan ON mbarang.id_satuan=msatuan.id_satuan WHERE id_booking='" + kode + "'")
+                                LEFT JOIN msatuan ON mbarang.id_satuan=msatuan.id_satuan WHERE id_booking='" & kode & "'")
 
                 Dim mreader As DataTableReader
 
@@ -95,7 +95,7 @@ Public Class transaksi_DO
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
         Try
-            kodeprinciple = Scalar("select id_principle from booking_truk where id_booking='" + idbooking.Text + "'")
+            kodeprinciple = Scalar("select id_principle from booking_truk where id_booking='" & idbooking.Text & "'")
             add_item.ShowDialog()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -161,26 +161,28 @@ Public Class transaksi_DO
         End If
 
         Dim sum As Integer = 0
-        sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+        sum = GridView1.Columns("berat").SummaryItem.SummaryValue.ToString
         total = sum * price
         generate()
         Dim totalkredit As Integer = total * -1
-        InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "',0,0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1,0)")
+        InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',0,1,0)")
+        Dim rows As DataRow
         For i = 0 To GridView1.DataRowCount - 1
-            InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+            rows = datasetdo.Tables.Item(0).Rows(i)
+            InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
         Next
 
         'masukkan Gambar
-        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" + kode.ToString + "'", connect)
+        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
         connect.Open()
         Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
         Command.ExecuteNonQuery()
         connect.Close()
 
-        InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
-        Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+        InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
+        Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
+        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & total.ToString & "')")
+        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
         If ins = True Then
             MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             audit()
@@ -258,13 +260,13 @@ Public Class transaksi_DO
         Try
 
             Dim tanggal As New DataTable
-            Dim tgl As String = "TDO" + Today.Date.ToString("yyMMdd")
+            Dim tgl As String = "TDO" & Today.Date.ToString("yyMMdd")
             tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,9) = '" & tgl & "'")
-            Dim hitung As String = tanggal.Rows.Count() + 1
+            Dim hitung As String = tanggal.Rows.Count() & 1
             While hitung.LongCount < 5
-                hitung = "0" + hitung
+                hitung = "0" & hitung
             End While
-            kode = tgl + hitung
+            kode = tgl & hitung
             kodetrans.Text = kode
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -318,26 +320,28 @@ Public Class transaksi_DO
         End If
 
         Dim sum As Integer = 0
-        sum = GridView1.Columns("Berat (Kilogram)").SummaryItem.SummaryValue.ToString
+        sum = GridView1.Columns("berat").SummaryItem.SummaryValue.ToString
         total = sum * price
         generate()
         Dim totalkredit As Integer = total * -1
-        InsertInto("insert into trans_do values('" + kode.ToString + "','" + idbooking.Text.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "','" + tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") + "','" + nomerdo.Text.ToString + "',0,0,0,0,'" + tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") + "',0,1,0)")
+        InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',0,1,0)")
+        Dim rows As DataRow
         For i = 0 To GridView1.DataRowCount - 1
-            InsertInto("insert into dtrans_do values('" + kode.ToString + "','" + GridView1.GetRowCellValue(i, "Kode Barang").ToString + "','" + GridView1.GetRowCellValue(i, "Berat (Kilogram)").ToString + "','')")
+            rows = datasetdo.Tables.Item(0).Rows(i)
+            InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
         Next
 
         'masukkan Gambar
-        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" + kode.ToString + "'", connect)
+        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
         connect.Open()
         Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
         Command.ExecuteNonQuery()
         connect.Close()
 
-        InsertInto("update booking_truk set s=0 where id_booking='" + idbooking.Text.ToString + "'")
-        Dim ins As Boolean = InsertInto("insert into jurnal values('" + kode.ToString + "','" + tgldo.Value.Date.ToString("yyyy-MM-dd") + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpiutang + "','','" + total.ToString + "')")
-        InsertInto("insert into djurnal values('" + kode.ToString + "','" + defpendapatan + "','','" + totalkredit.ToString + "')")
+        InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
+        Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
+        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & total.ToString & "')")
+        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
         If ins = True Then
             MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             audit()

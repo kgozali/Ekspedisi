@@ -92,6 +92,9 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.jml = New DevExpress.XtraReports.UI.CalculatedField()
+        Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +116,7 @@ Partial Public Class Nota_bookingtruk
         Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(639.8922!, 25.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(659.9821!, 25.0!)
         Me.XrTable2.StylePriority.UseBorders = False
         Me.XrTable2.StylePriority.UseFont = False
         Me.XrTable2.StylePriority.UseTextAlignment = False
@@ -121,7 +124,7 @@ Partial Public Class Nota_bookingtruk
         '
         'XrTableRow2
         '
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell3, Me.XrTableCell5, Me.XrTableCell8, Me.XrTableCell6})
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell3, Me.XrTableCell5, Me.XrTableCell8, Me.XrTableCell9, Me.XrTableCell6})
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.Weight = 1.0R
         '
@@ -148,22 +151,22 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.jumlah satuan")})
         Me.XrTableCell8.Name = "XrTableCell8"
-        Me.XrTableCell8.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
+        Me.XrTableCell8.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 10, 0, 0, 100.0!)
         Me.XrTableCell8.StylePriority.UsePadding = False
         Me.XrTableCell8.StylePriority.UseTextAlignment = False
         Me.XrTableCell8.Text = "XrTableCell8"
-        Me.XrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell8.Weight = 0.63459372769283418R
+        Me.XrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrTableCell8.Weight = 0.51814116053920134R
         '
         'XrTableCell6
         '
         Me.XrTableCell6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.qty", "{0:#,#.00}")})
         Me.XrTableCell6.Name = "XrTableCell6"
-        Me.XrTableCell6.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
+        Me.XrTableCell6.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 10, 0, 0, 100.0!)
         Me.XrTableCell6.StylePriority.UsePadding = False
         Me.XrTableCell6.StylePriority.UseTextAlignment = False
-        Me.XrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell6.Weight = 0.80131836622927566R
+        Me.XrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrTableCell6.Weight = 0.6172093334963944R
         '
         'TopMargin
         '
@@ -271,7 +274,7 @@ Partial Public Class Nota_bookingtruk
         Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(32.10783!, 661.0713!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(640.262!, 25.0!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(659.9821!, 25.0!)
         Me.XrTable1.StylePriority.UseBackColor = False
         Me.XrTable1.StylePriority.UseBorders = False
         Me.XrTable1.StylePriority.UseFont = False
@@ -281,7 +284,7 @@ Partial Public Class Nota_bookingtruk
         '
         'XrTableRow1
         '
-        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell4, Me.XrTableCell1, Me.XrTableCell7, Me.XrTableCell2})
+        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell4, Me.XrTableCell1, Me.XrTableCell7, Me.XrTableCell12, Me.XrTableCell2})
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.Weight = 1.0R
         '
@@ -301,13 +304,13 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrTableCell7.Name = "XrTableCell7"
         Me.XrTableCell7.Text = "Jumlah"
-        Me.XrTableCell7.Weight = 0.5921234248418189R
+        Me.XrTableCell7.Weight = 0.4834646661674411R
         '
         'XrTableCell2
         '
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.Text = "Berat (Kg)"
-        Me.XrTableCell2.Weight = 0.74938365661029593R
+        Me.XrTableCell2.Weight = 0.57590179233689R
         '
         'XrPageInfo1
         '
@@ -693,6 +696,7 @@ Partial Public Class Nota_bookingtruk
         '
         Me.kodebooking.Description = "kodebooking"
         Me.kodebooking.Name = "kodebooking"
+        Me.kodebooking.ValueInfo = "BK16080400001"
         Me.kodebooking.Visible = False
         '
         'SqlDataSource1
@@ -775,10 +779,13 @@ Partial Public Class Nota_bookingtruk
         '
         'XrTable3
         '
+        Me.XrTable3.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(379.5278!, 0!)
         Me.XrTable3.Name = "XrTable3"
         Me.XrTable3.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
-        Me.XrTable3.SizeF = New System.Drawing.SizeF(292.4722!, 25.0!)
+        Me.XrTable3.SizeF = New System.Drawing.SizeF(312.5622!, 25.0!)
+        Me.XrTable3.StylePriority.UseBorders = False
         '
         'XrTableRow3
         '
@@ -796,27 +803,50 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableCell10.StylePriority.UseTextAlignment = False
         Me.XrTableCell10.Text = "TOTAL"
         Me.XrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell10.Weight = 1.2925653076171875R
+        Me.XrTableCell10.Weight = 1.8684664916992186R
         '
         'XrTableCell11
         '
         Me.XrTableCell11.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.qty")})
         Me.XrTableCell11.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell11.Name = "XrTableCell11"
-        Me.XrTableCell11.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
+        Me.XrTableCell11.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 10, 0, 0, 100.0!)
         Me.XrTableCell11.StylePriority.UseFont = False
         Me.XrTableCell11.StylePriority.UsePadding = False
         Me.XrTableCell11.StylePriority.UseTextAlignment = False
         XrSummary2.FormatString = "{0:#,#.00}"
         XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrTableCell11.Summary = XrSummary2
-        Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell11.Weight = 1.6321566772460936R
+        Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrTableCell11.Weight = 1.2571557617187499R
+        '
+        'jml
+        '
+        Me.jml.Expression = "concat([booking_truk.jumlah satuan],'-',[booking_truk.satuan])"
+        Me.jml.Name = "jml"
+        '
+        'XrTableCell9
+        '
+        Me.XrTableCell9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.satuan")})
+        Me.XrTableCell9.Name = "XrTableCell9"
+        Me.XrTableCell9.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
+        Me.XrTableCell9.StylePriority.UsePadding = False
+        Me.XrTableCell9.StylePriority.UseTextAlignment = False
+        Me.XrTableCell9.Text = "XrTableCell9"
+        Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell9.Weight = 0.39919414227272304R
+        '
+        'XrTableCell12
+        '
+        Me.XrTableCell12.Multiline = True
+        Me.XrTableCell12.Name = "XrTableCell12"
+        Me.XrTableCell12.Text = "Satuan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.XrTableCell12.Weight = 0.37247808469613175R
         '
         'Nota_bookingtruk
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.GroupFooter1})
-        Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.CalculatedField1, Me.CalculatedField2, Me.CalculatedField4})
+        Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.CalculatedField1, Me.CalculatedField2, Me.CalculatedField4, Me.jml})
         Me.ComponentStorage.Add(Me.SqlDataSource1)
         Me.CrossBandControls.AddRange(New DevExpress.XtraReports.UI.XRCrossBandControl() {Me.XrCrossBandBox4, Me.XrCrossBandBox3, Me.XrCrossBandBox2, Me.XrCrossBandBox1})
         Me.DataMember = "booking_truk"
@@ -901,4 +931,7 @@ Partial Public Class Nota_bookingtruk
     Friend WithEvents XrTableRow3 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell10 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents jml As DevExpress.XtraReports.UI.CalculatedField
+    Friend WithEvents XrTableCell9 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell12 As DevExpress.XtraReports.UI.XRTableCell
 End Class
