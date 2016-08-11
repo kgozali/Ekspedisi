@@ -255,7 +255,6 @@ Partial Class transaksi_DO
         Me.satuan.Caption = "Satuan"
         Me.satuan.FieldName = "satuan"
         Me.satuan.Name = "satuan"
-        Me.satuan.OptionsColumn.AllowEdit = False
         Me.satuan.OptionsColumn.ReadOnly = True
         Me.satuan.Visible = True
         Me.satuan.VisibleIndex = 2
@@ -295,7 +294,7 @@ Partial Class transaksi_DO
         Me.berat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.berat.FieldName = "berat"
         Me.berat.Name = "berat"
-        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:n2} Kg")})
+        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:n2} Kilogram")})
         Me.berat.Visible = True
         Me.berat.VisibleIndex = 3
         Me.berat.Width = 139

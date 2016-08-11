@@ -20,12 +20,22 @@ Partial Class edit_DO
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(edit_DO))
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.kgsatuan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.satuan = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.datasetdo = New System.Data.DataSet()
+        Me.DataTable1 = New System.Data.DataTable()
+        Me.DataColumn1 = New System.Data.DataColumn()
+        Me.DataColumn2 = New System.Data.DataColumn()
+        Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
@@ -47,7 +57,10 @@ Partial Class edit_DO
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datasetdo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,21 +69,13 @@ Partial Class edit_DO
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(899, 114)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(100, 27)
-        Me.SimpleButton2.TabIndex = 8
-        Me.SimpleButton2.Text = "Edit Item"
-        '
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(724, 12)
+        Me.LabelControl7.Location = New System.Drawing.Point(845, 15)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(94, 18)
+        Me.LabelControl7.Size = New System.Drawing.Size(125, 23)
         Me.LabelControl7.TabIndex = 167
         Me.LabelControl7.Text = "Nama Principle"
         '
@@ -88,185 +93,291 @@ Partial Class edit_DO
         '
         'GridView1
         '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.berat, Me.kgsatuan, Me.satuan})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
         Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'namabarang
+        '
+        Me.namabarang.Caption = "Nama Barang"
+        Me.namabarang.ColumnEdit = Me.RepositoryItemLookUpEdit1
+        Me.namabarang.FieldName = "namabarang"
+        Me.namabarang.Name = "namabarang"
+        Me.namabarang.Visible = True
+        Me.namabarang.VisibleIndex = 0
+        Me.namabarang.Width = 335
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        '
+        'berat
+        '
+        Me.berat.Caption = "Berat (Kg)"
+        Me.berat.DisplayFormat.FormatString = "{0:n2}"
+        Me.berat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.berat.FieldName = "berat"
+        Me.berat.Name = "berat"
+        Me.berat.OptionsColumn.AllowEdit = False
+        Me.berat.OptionsColumn.ReadOnly = True
+        Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:n2} Kilogram")})
+        Me.berat.Visible = True
+        Me.berat.VisibleIndex = 3
+        Me.berat.Width = 123
+        '
+        'kgsatuan
+        '
+        Me.kgsatuan.Caption = "Jumlah Satuan"
+        Me.kgsatuan.DisplayFormat.FormatString = "{0:n0}"
+        Me.kgsatuan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.kgsatuan.FieldName = "kgsatuan"
+        Me.kgsatuan.Name = "kgsatuan"
+        Me.kgsatuan.Visible = True
+        Me.kgsatuan.VisibleIndex = 1
+        Me.kgsatuan.Width = 119
+        '
+        'satuan
+        '
+        Me.satuan.Caption = "Satuan"
+        Me.satuan.FieldName = "satuan"
+        Me.satuan.Name = "satuan"
+        Me.satuan.OptionsColumn.AllowEdit = False
+        Me.satuan.OptionsColumn.ReadOnly = True
+        Me.satuan.Visible = True
+        Me.satuan.VisibleIndex = 2
+        Me.satuan.Width = 119
         '
         'GridControl1
         '
+        Me.GridControl1.DataMember = "Table1"
+        Me.GridControl1.DataSource = Me.datasetdo
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 21)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 24)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(607, 450)
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2, Me.RepositoryItemLookUpEdit1})
+        Me.GridControl1.Size = New System.Drawing.Size(709, 556)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'datasetdo
+        '
+        Me.datasetdo.DataSetName = "NewDataSet"
+        Me.datasetdo.Tables.AddRange(New System.Data.DataTable() {Me.DataTable1})
+        '
+        'DataTable1
+        '
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
+        Me.DataTable1.TableName = "Table1"
+        '
+        'DataColumn1
+        '
+        Me.DataColumn1.ColumnName = "namabarang"
+        '
+        'DataColumn2
+        '
+        Me.DataColumn2.ColumnName = "berat"
+        Me.DataColumn2.DataType = GetType(Double)
+        '
+        'DataColumn3
+        '
+        Me.DataColumn3.ColumnName = "kgsatuan"
+        Me.DataColumn3.DataType = GetType(Double)
+        '
+        'DataColumn4
+        '
+        Me.DataColumn4.ColumnName = "satuan"
         '
         'TextBox2
         '
         Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(834, 9)
+        Me.TextBox2.Location = New System.Drawing.Point(973, 11)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(165, 21)
+        Me.TextBox2.Size = New System.Drawing.Size(192, 23)
         Me.TextBox2.TabIndex = 6
         '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(388, 147)
+        Me.GroupControl3.Location = New System.Drawing.Point(453, 181)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(611, 473)
+        Me.GroupControl3.Size = New System.Drawing.Size(713, 582)
         Me.GroupControl3.TabIndex = 166
         Me.GroupControl3.Text = "Data Transaksi"
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(899, 626)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1049, 770)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.Size = New System.Drawing.Size(117, 33)
         Me.SimpleButton1.TabIndex = 10
         Me.SimpleButton1.Text = "Cancel"
         '
         'Submit
         '
         Me.Submit.Image = CType(resources.GetObject("Submit.Image"), System.Drawing.Image)
-        Me.Submit.Location = New System.Drawing.Point(793, 626)
+        Me.Submit.Location = New System.Drawing.Point(925, 770)
+        Me.Submit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Submit.Name = "Submit"
-        Me.Submit.Size = New System.Drawing.Size(100, 27)
+        Me.Submit.Size = New System.Drawing.Size(117, 33)
         Me.Submit.TabIndex = 9
         Me.Submit.Text = "Submit"
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(175, 106)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(204, 130)
+        Me.tanggaljatuhtempo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
-        Me.tanggaljatuhtempo.Size = New System.Drawing.Size(200, 21)
+        Me.tanggaljatuhtempo.Size = New System.Drawing.Size(233, 23)
         Me.tanggaljatuhtempo.TabIndex = 5
         '
         'tanggalterkirim
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
         Me.tanggalterkirim.Enabled = False
-        Me.tanggalterkirim.Location = New System.Drawing.Point(175, 82)
+        Me.tanggalterkirim.Location = New System.Drawing.Point(204, 101)
+        Me.tanggalterkirim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tanggalterkirim.Name = "tanggalterkirim"
-        Me.tanggalterkirim.Size = New System.Drawing.Size(200, 21)
+        Me.tanggalterkirim.Size = New System.Drawing.Size(233, 23)
         Me.tanggalterkirim.TabIndex = 4
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(834, 33)
+        Me.nomerdo.Location = New System.Drawing.Point(973, 41)
+        Me.nomerdo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nomerdo.Name = "nomerdo"
-        Me.nomerdo.Size = New System.Drawing.Size(165, 21)
+        Me.nomerdo.Size = New System.Drawing.Size(192, 23)
         Me.nomerdo.TabIndex = 7
         '
         'idbooking
         '
         Me.idbooking.Enabled = False
-        Me.idbooking.Location = New System.Drawing.Point(175, 30)
+        Me.idbooking.Location = New System.Drawing.Point(204, 37)
+        Me.idbooking.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.idbooking.Size = New System.Drawing.Size(165, 20)
+        Me.idbooking.Size = New System.Drawing.Size(192, 22)
         Me.idbooking.TabIndex = 2
         '
         'id
         '
         Me.id.Enabled = False
-        Me.id.Location = New System.Drawing.Point(175, 5)
+        Me.id.Location = New System.Drawing.Point(204, 6)
+        Me.id.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(117, 21)
+        Me.id.Size = New System.Drawing.Size(136, 23)
         Me.id.TabIndex = 1
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(15, 108)
+        Me.LabelControl6.Location = New System.Drawing.Point(17, 133)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(144, 18)
+        Me.LabelControl6.Size = New System.Drawing.Size(184, 23)
         Me.LabelControl6.TabIndex = 165
         Me.LabelControl6.Text = "Tanggal Jatuh Tempo"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(71, 82)
+        Me.LabelControl4.Location = New System.Drawing.Point(83, 101)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(88, 18)
+        Me.LabelControl4.Size = New System.Drawing.Size(116, 23)
         Me.LabelControl4.TabIndex = 164
         Me.LabelControl4.Text = "Tanggal Kirim"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(748, 36)
+        Me.LabelControl3.Location = New System.Drawing.Point(873, 44)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(70, 18)
+        Me.LabelControl3.Size = New System.Drawing.Size(88, 23)
         Me.LabelControl3.TabIndex = 163
         Me.LabelControl3.Text = "Nomer DO"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(71, 32)
+        Me.LabelControl2.Location = New System.Drawing.Point(83, 39)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(88, 18)
+        Me.LabelControl2.Size = New System.Drawing.Size(114, 23)
         Me.LabelControl2.TabIndex = 162
         Me.LabelControl2.Text = "Kode Booking"
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(59, 9)
+        Me.LabelControl1.Location = New System.Drawing.Point(69, 11)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(100, 18)
+        Me.LabelControl1.Size = New System.Drawing.Size(126, 23)
         Me.LabelControl1.TabIndex = 161
         Me.LabelControl1.Text = "Kode Transaksi"
         '
         'tgldo
         '
         Me.tgldo.CustomFormat = "ddMMyyyy"
-        Me.tgldo.Location = New System.Drawing.Point(175, 56)
+        Me.tgldo.Location = New System.Drawing.Point(204, 69)
+        Me.tgldo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tgldo.Name = "tgldo"
-        Me.tgldo.Size = New System.Drawing.Size(200, 21)
+        Me.tgldo.Size = New System.Drawing.Size(233, 23)
         Me.tgldo.TabIndex = 3
         '
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(81, 58)
+        Me.LabelControl5.Location = New System.Drawing.Point(94, 71)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(78, 18)
+        Me.LabelControl5.Size = New System.Drawing.Size(100, 23)
         Me.LabelControl5.TabIndex = 172
         Me.LabelControl5.Text = "Tanggal DO"
         '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.PictureEdit1)
-        Me.GroupControl1.Location = New System.Drawing.Point(15, 147)
+        Me.GroupControl1.Location = New System.Drawing.Point(17, 181)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(367, 475)
+        Me.GroupControl1.Size = New System.Drawing.Size(428, 585)
         Me.GroupControl1.TabIndex = 173
         Me.GroupControl1.Text = "Scan DO"
         '
         'PictureEdit1
         '
         Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureEdit1.Location = New System.Drawing.Point(2, 21)
+        Me.PictureEdit1.Location = New System.Drawing.Point(2, 24)
+        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
-        Me.PictureEdit1.Size = New System.Drawing.Size(363, 452)
+        Me.PictureEdit1.Size = New System.Drawing.Size(424, 559)
         Me.PictureEdit1.TabIndex = 0
         '
         'edit_DO
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 664)
+        Me.ClientSize = New System.Drawing.Size(1176, 817)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.tgldo)
         Me.Controls.Add(Me.LabelControl5)
-        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.GroupControl3)
@@ -283,13 +394,17 @@ Partial Class edit_DO
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "edit_DO"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Delivery Order"
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datasetdo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -300,7 +415,6 @@ Partial Class edit_DO
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
@@ -324,4 +438,15 @@ Partial Class edit_DO
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents datasetdo As DataSet
+    Friend WithEvents DataTable1 As DataTable
+    Friend WithEvents DataColumn1 As DataColumn
+    Friend WithEvents DataColumn2 As DataColumn
+    Friend WithEvents DataColumn3 As DataColumn
+    Friend WithEvents DataColumn4 As DataColumn
+    Friend WithEvents namabarang As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents kgsatuan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents satuan As DevExpress.XtraGrid.Columns.GridColumn
 End Class

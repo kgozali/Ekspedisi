@@ -15,8 +15,10 @@ Public Class transaksi_DO
     Dim defpiutang As String = ""
     Dim defpendapatan As String = ""
     Dim switch As Boolean = False
+    Dim tabelbarang As New DataTable
     Private Sub idbooking_EditValueChanged(sender As Object, e As EventArgs) Handles idbooking.EditValueChanged
         Try
+
             switch = False
             If idbooking.Text = "" Then
 
@@ -49,7 +51,7 @@ Public Class transaksi_DO
                 RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
                 RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
 
-                Dim tabelbarang As New DataTable
+
                 tabelbarang = DtTable("SELECT dbooking_truk.id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan`,satuan
                                 FROM dbooking_truk LEFT JOIN mbarang ON dbooking_truk.id_barang=mbarang.id_barang
                                 LEFT JOIN msatuan ON mbarang.id_satuan=msatuan.id_satuan WHERE id_booking='" & kode & "'")
@@ -71,6 +73,7 @@ Public Class transaksi_DO
 
     Private Sub transaksi_DO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+
             generate()
             tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
             defpiutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
@@ -254,6 +257,11 @@ Public Class transaksi_DO
         add_item.barangset.Rows.Clear()
         PictureEdit1.Text = ""
         switch = False
+        tabelbarang.Clear()
+        tabelbarang.Dispose()
+        datasetdo.Tables(0).Rows.Clear()
+        datasetdo.Dispose()
+
     End Sub
 
     Sub generate()
