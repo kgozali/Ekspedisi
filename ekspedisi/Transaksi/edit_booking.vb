@@ -51,7 +51,9 @@ Public Class edit_booking
             RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
 
             Dim tabelbarang As New DataTable
-            tabelbarang = DtTable("select id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan` from dbooking_truk where id_booking='" + kode + "'")
+            tabelbarang = DtTable("SELECT dbooking_truk.id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan`,satuan
+                                FROM dbooking_truk LEFT JOIN mbarang ON dbooking_truk.id_barang=mbarang.id_barang
+                                LEFT JOIN msatuan ON mbarang.id_satuan=msatuan.id_satuan WHERE id_booking='" + kode + "'")
 
             Dim mreader As DataTableReader
 
@@ -311,18 +313,20 @@ Public Class edit_booking
         If switch = True Then
             Dim asd As DataRow
             Dim berat As Double = 0
-
+            Dim satuan As String = ""
             If CStr(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "kgsatuan")) = "" Then
 
             Else
                 For i = 0 To databarang.Tables.Item(0).Rows.Count - 1
                     asd = databarang.Tables.Item(0).Rows(i)
                     berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                    satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
+
                     If berat = 0 Then
                         berat = 0
                     End If
                     asd("berat") = berat * CDbl(GridView1.GetRowCellValue(i, "kgsatuan"))
-
+                    asd("satuan") = satuan
                 Next
             End If
         Else
@@ -342,12 +346,16 @@ Public Class edit_booking
                         Else
                             Dim asd As DataRow
                             Dim berat As String = ""
+                            Dim satuan As String = ""
                             asd = databarang.Tables.Item(0).Rows(e.RowHandle)
                             berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                            satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
+
                             If berat = "" Then
                                 berat = "0"
                             End If
                             asd("berat") = CDbl(berat) * CDbl(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan"))
+                            asd("satuan") = satuan
                         End If
 
                     End If

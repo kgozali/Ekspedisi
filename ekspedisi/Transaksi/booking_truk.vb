@@ -433,18 +433,20 @@ Public Class booking_truk
                 Else
                     Dim asd As DataRow
                 Dim berat As Double = 0
+                Dim satuan As String = ""
 
                 If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "kgsatuan").ToString = "" Then
 
                     Else
                         For i = 0 To DataSet1.Tables.Item(0).Rows.Count - 1
                             asd = DataSet1.Tables.Item(0).Rows(i)
-                            berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                        berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                        satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
                         If berat = 0 Then
                             berat = 0
                         End If
                         asd("berat") = berat * CDbl(GridView1.GetRowCellValue(i, "kgsatuan"))
-
+                        asd("satuan") = satuan
                     Next
                     End If
 
@@ -472,16 +474,20 @@ Public Class booking_truk
                 If e.RowHandle > -1 Then
                     If (e.Column.Name = "kgsatuan" Or e.Column.Name = "namabarang") And GridView1.GetRowCellValue(e.RowHandle, "kgsatuan") <> "" Then
                         If Not IsNumeric(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) Then
-                            MessageBox.Show("Kolom Satuan Hanya Boleh Diisi Dengan Angka", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Kolom Jumlah Hanya Boleh Diisi Dengan Angka", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
                             Dim asd As DataRow
                             Dim berat As String = ""
+                            Dim satuan As String = ""
                             asd = DataSet1.Tables.Item(0).Rows(e.RowHandle)
                             berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                            satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
+
                             If berat = "" Then
                                 berat = "0"
                             End If
                             asd("berat") = CDbl(berat) * CDbl(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan"))
+                            asd("satuan") = satuan
                         End If
 
                     End If

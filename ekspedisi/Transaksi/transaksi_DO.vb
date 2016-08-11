@@ -2,7 +2,7 @@
 Imports DevExpress.XtraGrid
 Imports DevExpress.XtraGrid.Views
 Imports System.IO
-
+Imports DevExpress.XtraGrid.Views.Base
 
 Public Class transaksi_DO
     Public kodeprinciple As String = ""
@@ -14,22 +14,25 @@ Public Class transaksi_DO
     Dim kode As String = ""
     Dim defpiutang As String = ""
     Dim defpendapatan As String = ""
+    Dim switch As Boolean = False
     Private Sub idbooking_EditValueChanged(sender As Object, e As EventArgs) Handles idbooking.EditValueChanged
         Try
+            switch = False
             If idbooking.Text = "" Then
 
             Else
+                kode = idbooking.Text.ToString
                 tgldo.Value = Convert.ToDateTime(tgldo.Value.Date.ToLongDateString & " " & "00:00:00")
                 'select nama principle
                 Dim data As String = ""
-                data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + idbooking.Text.ToString + "' and mprinciple.id_principle=booking_truk.id_principle")
+                data = Scalar("select nama_principle from mprinciple,booking_truk where id_booking='" + kode + "' and mprinciple.id_principle=booking_truk.id_principle")
                 TextBox2.Text = data
                 namaprinciple = data
                 'select tanggal kirim
-                tanggalterkirim.Value = Scalar("select tgl from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+                tanggalterkirim.Value = Scalar("select tgl from booking_truk where id_booking='" + kode + "'")
                 'select id principle
                 Dim data2 As String = ""
-                data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + idbooking.Text.ToString + "'")
+                data2 = Scalar("select booking_truk.id_principle from booking_truk where id_booking='" + kode + "'")
                 idprinciple = data2
 
                 'select rute
@@ -39,18 +42,26 @@ Public Class transaksi_DO
                 'select price untuk rute
                 price = Scalar("select price_per_unit from mrute where id_rute='" + rute + "'")
 
+
                 Dim dtbarang As New DataTable
-                dtbarang = DtTable("select d.id_barang `Kode Barang`,m.nama_barang `Nama Barang`,d.qty `Berat (Kilogram)` from dbooking_truk d,mbarang m where d.id_barang=m.id_barang and id_booking='" + idbooking.Text.ToString + "'")
-                GridControl1.DataSource = dtbarang
-                For i = 0 To GridView1.Columns.Count - 1
-                    GridView1.Columns(i).OptionsColumn.AllowEdit = False
-                    If GridView1.Columns(i).FieldName.ToString = "Berat (Kilogram)" Then
-                        GridView1.Columns(i).OptionsColumn.AllowEdit = True
-                        GridView1.Columns(i).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-                        GridView1.Columns(i).SummaryItem.FieldName = "Berat (Kilogram)"
-                        GridView1.Columns(i).SummaryItem.DisplayFormat = "TOTAL {0} Kilogram"
-                    End If
-                Next
+                dtbarang = DtTable("select id_barang `Kode Barang`,nama_barang `Nama Barang` from mbarang where id_principle='" + idprinciple.ToString + "'")
+                RepositoryItemLookUpEdit1.DataSource = dtbarang
+                RepositoryItemLookUpEdit1.ValueMember = "Kode Barang"
+                RepositoryItemLookUpEdit1.DisplayMember = "Nama Barang"
+
+                Dim tabelbarang As New DataTable
+                tabelbarang = DtTable("SELECT dbooking_truk.id_barang `namabarang`,qty `berat`,jumlah_satuan `kgsatuan`,satuan
+                                FROM dbooking_truk LEFT JOIN mbarang ON dbooking_truk.id_barang=mbarang.id_barang
+                                LEFT JOIN msatuan ON mbarang.id_satuan=msatuan.id_satuan WHERE id_booking='" + kode + "'")
+
+                Dim mreader As DataTableReader
+
+                mreader = tabelbarang.CreateDataReader
+                datasetdo.Tables(0).Load(mreader)
+                GridControl1.DataSource = datasetdo
+                GridControl1.DataMember = "Table1"
+
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -64,7 +75,7 @@ Public Class transaksi_DO
             tanggaljatuhtempo.Value = tanggalterkirim.Value.Date.AddDays(30)
             defpiutang = Scalar("select id_akun from control_account where keterangan='Def. Akun Piutang'")
             defpendapatan = Scalar("select id_akun from control_account where keterangan='Def. Akun Pendapatan'")
-           
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -82,7 +93,7 @@ Public Class transaksi_DO
 
     End Sub
 
-    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
         Try
             kodeprinciple = Scalar("select id_principle from booking_truk where id_booking='" + idbooking.Text + "'")
             add_item.ShowDialog()
@@ -98,7 +109,7 @@ Public Class transaksi_DO
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
-
+        switch = True
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles Submit.Click
@@ -126,7 +137,7 @@ Public Class transaksi_DO
                             Else
                                 insertnoprint()
                             End If
-                            
+
 
                         End If
                     End If
@@ -207,7 +218,7 @@ Public Class transaksi_DO
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        
+
     End Sub
 
     Private Sub transaksi_DO_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -233,13 +244,14 @@ Public Class transaksi_DO
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
     End Sub
     Sub res()
         idbooking.Text = ""
         nomerdo.Text = ""
         add_item.barangset.Rows.Clear()
         PictureEdit1.Text = ""
+        switch = False
     End Sub
 
     Sub generate()
@@ -257,7 +269,7 @@ Public Class transaksi_DO
         Catch ex As Exception
             MessageBox.Show(ex.Message, "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-       
+
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
@@ -285,7 +297,7 @@ Public Class transaksi_DO
                             Else
                                 insertprint()
                             End If
-                            
+
 
                         End If
                     End If
@@ -348,5 +360,64 @@ Public Class transaksi_DO
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.Close()
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        Try
+            If datasetdo.Tables(0).Rows.Count > 0 Then
+                If e.RowHandle > -1 Then
+                    If (e.Column.Name = "kgsatuan" Or e.Column.Name = "namabarang") And CStr(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) <> "" Then
+                        If Not IsNumeric(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan")) Then
+                            MessageBox.Show("Kolom Satuan Hanya Boleh Diisi Dengan Angka", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Else
+                            Dim asd As DataRow
+                            Dim berat As String = ""
+                            Dim satuan As String = ""
+                            asd = datasetdo.Tables.Item(0).Rows(e.RowHandle)
+                            berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                            satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
+
+                            If berat = "" Then
+                                berat = "0"
+                            End If
+                            asd("berat") = CDbl(berat) * CDbl(GridView1.GetRowCellValue(e.RowHandle, "kgsatuan"))
+                            asd("satuan") = satuan
+                        End If
+
+                    End If
+                End If
+
+            Else
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub GridView1_RowCountChanged(sender As Object, e As EventArgs) Handles GridView1.RowCountChanged
+        If Switch = True Then
+            Dim asd As DataRow
+            Dim berat As Double = 0
+            Dim satuan As String = ""
+            If CStr(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "kgsatuan")) = "" Then
+
+            Else
+                For i = 0 To datasetdo.Tables.Item(0).Rows.Count - 1
+                    asd = datasetdo.Tables.Item(0).Rows(i)
+                    berat = Scalar("SELECT berat FROM mbarang WHERE id_barang='" & asd("namabarang") & "'")
+                    satuan = Scalar("SELECT satuan FROM msatuan LEFT JOIN mbarang ON msatuan.id_satuan=mbarang.id_satuan WHERE id_barang='" & asd("namabarang") & "'")
+
+                    If berat = 0 Then
+                        berat = 0
+                    End If
+                    asd("berat") = berat * CDbl(GridView1.GetRowCellValue(i, "kgsatuan"))
+                    asd("satuan") = satuan
+                Next
+            End If
+        Else
+            Switch = True
+            Exit Sub
+        End If
     End Sub
 End Class

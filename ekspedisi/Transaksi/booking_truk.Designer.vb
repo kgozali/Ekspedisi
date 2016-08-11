@@ -52,11 +52,13 @@ Partial Class booking_truk
         Me.DataColumn1 = New System.Data.DataColumn()
         Me.DataColumn2 = New System.Data.DataColumn()
         Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.kgsatuan = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.satuan = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -199,6 +201,7 @@ Partial Class booking_truk
         Me.ButtonEdit1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ButtonEdit1.Name = "ButtonEdit1"
         Me.ButtonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.ButtonEdit1.Properties.ReadOnly = True
         Me.ButtonEdit1.Size = New System.Drawing.Size(187, 22)
         Me.ButtonEdit1.TabIndex = 7
         '
@@ -208,6 +211,7 @@ Partial Class booking_truk
         Me.ButtonEdit2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ButtonEdit2.Name = "ButtonEdit2"
         Me.ButtonEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.ButtonEdit2.Properties.ReadOnly = True
         Me.ButtonEdit2.Size = New System.Drawing.Size(187, 22)
         Me.ButtonEdit2.TabIndex = 5
         '
@@ -217,6 +221,7 @@ Partial Class booking_truk
         Me.ButtonEdit4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ButtonEdit4.Name = "ButtonEdit4"
         Me.ButtonEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.ButtonEdit4.Properties.ReadOnly = True
         Me.ButtonEdit4.Size = New System.Drawing.Size(187, 22)
         Me.ButtonEdit4.TabIndex = 6
         '
@@ -349,7 +354,7 @@ Partial Class booking_truk
         '
         'DataTable1
         '
-        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3})
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
         Me.DataTable1.TableName = "databarang"
         '
         'DataColumn1
@@ -367,9 +372,13 @@ Partial Class booking_truk
         '
         Me.DataColumn3.ColumnName = "kgsatuan"
         '
+        'DataColumn4
+        '
+        Me.DataColumn4.ColumnName = "satuan"
+        '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.kgsatuan, Me.berat})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.kgsatuan, Me.berat, Me.satuan})
         Me.GridView1.GridControl = Me.GridControl3
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
@@ -414,7 +423,17 @@ Partial Class booking_truk
         Me.berat.OptionsColumn.ReadOnly = True
         Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:N2} Kilogram")})
         Me.berat.Visible = True
-        Me.berat.VisibleIndex = 2
+        Me.berat.VisibleIndex = 3
+        '
+        'satuan
+        '
+        Me.satuan.Caption = "Satuan"
+        Me.satuan.FieldName = "satuan"
+        Me.satuan.Name = "satuan"
+        Me.satuan.OptionsColumn.AllowEdit = False
+        Me.satuan.OptionsColumn.ReadOnly = True
+        Me.satuan.Visible = True
+        Me.satuan.VisibleIndex = 2
         '
         'booking_truk
         '
@@ -508,4 +527,6 @@ Partial Class booking_truk
     Friend WithEvents DataColumn2 As System.Data.DataColumn
     Friend WithEvents kgsatuan As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents DataColumn3 As DataColumn
+    Friend WithEvents DataColumn4 As DataColumn
+    Friend WithEvents satuan As DevExpress.XtraGrid.Columns.GridColumn
 End Class

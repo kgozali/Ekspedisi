@@ -379,6 +379,24 @@ Public Class main_menu
     Private Sub SimpleButton14_Click_1(sender As Object, e As EventArgs) Handles SimpleButton14.Click
         Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Audit Log?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If msg = DialogResult.Yes Then
+            Dim dtlog As New DataTable
+            dtlog = DtTable("select * from audit_log")
+
+            connect.Open()
+            For i = 0 To dtlog.Rows.Count - 1
+                Dim cmd As MySqlCommand = New MySqlCommand("moveaudit", connect)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@tgl", dtlog.Rows(i).Item(0))
+                cmd.Parameters.AddWithValue("@iduser", dtlog.Rows(i).Item(1).ToString)
+                cmd.Parameters.AddWithValue("@kompname", dtlog.Rows(i).Item(2).ToString)
+                cmd.Parameters.AddWithValue("@form", dtlog.Rows(i).Item(3).ToString)
+                cmd.Parameters.AddWithValue("@aktivitas", dtlog.Rows(i).Item(4).ToString)
+                cmd.ExecuteNonQuery()
+            Next
+
+
+            connect.Close()
+
             Dim insert As Boolean = InsertInto("DELETE FROM audit_log")
             If insert = True Then
                 MessageBox.Show("Audit Log berhasil dihapus", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)

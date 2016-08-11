@@ -51,11 +51,13 @@ Partial Class edit_booking
         Me.DataColumn1 = New System.Data.DataColumn()
         Me.DataColumn2 = New System.Data.DataColumn()
         Me.DataColumn3 = New System.Data.DataColumn()
+        Me.DataColumn4 = New System.Data.DataColumn()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.namabarang = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.berat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.kgsatuan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.satuan = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridkontak, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -337,7 +339,7 @@ Partial Class edit_booking
         '
         'DataTable1
         '
-        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3})
+        Me.DataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.DataColumn1, Me.DataColumn2, Me.DataColumn3, Me.DataColumn4})
         Me.DataTable1.TableName = "tabelbarang"
         '
         'DataColumn1
@@ -354,9 +356,13 @@ Partial Class edit_booking
         Me.DataColumn3.ColumnName = "kgsatuan"
         Me.DataColumn3.DataType = GetType(Double)
         '
+        'DataColumn4
+        '
+        Me.DataColumn4.ColumnName = "satuan"
+        '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.berat, Me.kgsatuan})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.namabarang, Me.berat, Me.kgsatuan, Me.satuan})
         Me.GridView1.GridControl = Me.GridControl3
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
@@ -371,6 +377,7 @@ Partial Class edit_booking
         Me.namabarang.Name = "namabarang"
         Me.namabarang.Visible = True
         Me.namabarang.VisibleIndex = 0
+        Me.namabarang.Width = 352
         '
         'RepositoryItemLookUpEdit1
         '
@@ -389,17 +396,28 @@ Partial Class edit_booking
         Me.berat.OptionsColumn.ReadOnly = True
         Me.berat.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "berat", "TOTAL {0:n2} Kilogram")})
         Me.berat.Visible = True
-        Me.berat.VisibleIndex = 2
+        Me.berat.VisibleIndex = 3
+        Me.berat.Width = 116
         '
         'kgsatuan
         '
-        Me.kgsatuan.Caption = "Kg/Satuan"
+        Me.kgsatuan.Caption = "Jumlah Satuan"
         Me.kgsatuan.DisplayFormat.FormatString = "{0:n0}"
         Me.kgsatuan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.kgsatuan.FieldName = "kgsatuan"
         Me.kgsatuan.Name = "kgsatuan"
         Me.kgsatuan.Visible = True
         Me.kgsatuan.VisibleIndex = 1
+        Me.kgsatuan.Width = 114
+        '
+        'satuan
+        '
+        Me.satuan.Caption = "Satuan"
+        Me.satuan.FieldName = "satuan"
+        Me.satuan.Name = "satuan"
+        Me.satuan.Visible = True
+        Me.satuan.VisibleIndex = 2
+        Me.satuan.Width = 114
         '
         'edit_booking
         '
@@ -491,4 +509,6 @@ Partial Class edit_booking
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents DataColumn3 As DataColumn
     Friend WithEvents kgsatuan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DataColumn4 As DataColumn
+    Friend WithEvents satuan As DevExpress.XtraGrid.Columns.GridColumn
 End Class

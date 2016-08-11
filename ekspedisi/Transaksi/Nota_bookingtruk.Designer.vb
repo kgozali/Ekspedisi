@@ -28,6 +28,7 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
@@ -42,6 +43,7 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrLabel31 = New DevExpress.XtraReports.UI.XRLabel()
@@ -85,8 +87,6 @@ Partial Public Class Nota_bookingtruk
         Me.CalculatedField4 = New DevExpress.XtraReports.UI.CalculatedField()
         Me.XrCrossBandBox3 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrCrossBandBox4 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.XrTable3 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
@@ -143,6 +143,17 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableCell5.StylePriority.UseTextAlignment = False
         Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrTableCell5.Weight = 1.4684636177394403R
+        '
+        'XrTableCell8
+        '
+        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.jumlah satuan")})
+        Me.XrTableCell8.Name = "XrTableCell8"
+        Me.XrTableCell8.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
+        Me.XrTableCell8.StylePriority.UsePadding = False
+        Me.XrTableCell8.StylePriority.UseTextAlignment = False
+        Me.XrTableCell8.Text = "XrTableCell8"
+        Me.XrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell8.Weight = 0.63459372769283418R
         '
         'XrTableCell6
         '
@@ -286,6 +297,12 @@ Partial Public Class Nota_bookingtruk
         Me.XrTableCell1.Text = "Nama Barang"
         Me.XrTableCell1.Weight = 1.3802765109307131R
         '
+        'XrTableCell7
+        '
+        Me.XrTableCell7.Name = "XrTableCell7"
+        Me.XrTableCell7.Text = "Jumlah"
+        Me.XrTableCell7.Weight = 0.5921234248418189R
+        '
         'XrTableCell2
         '
         Me.XrTableCell2.Name = "XrTableCell2"
@@ -296,17 +313,17 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrPageInfo1.Format = "{0:dd-MMMM-yyyy,}"
-        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(408.7844!, 462.5!)
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(409.6178!, 462.5!)
         Me.XrPageInfo1.Name = "XrPageInfo1"
         Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
-        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
+        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(175.0!, 22.99997!)
         Me.XrPageInfo1.StylePriority.UseFont = False
         '
         'XrLabel31
         '
         Me.XrLabel31.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(531.2108!, 501.5319!)
+        Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(537.0833!, 581.9485!)
         Me.XrLabel31.Name = "XrLabel31"
         Me.XrLabel31.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel31.SizeF = New System.Drawing.SizeF(100.0!, 19.30145!)
@@ -316,7 +333,7 @@ Partial Public Class Nota_bookingtruk
         'XrLabel30
         '
         Me.XrLabel30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4275!, 501.5319!)
+        Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(413.4276!, 581.8339!)
         Me.XrLabel30.Name = "XrLabel30"
         Me.XrLabel30.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel30.SizeF = New System.Drawing.SizeF(100.0!, 19.30142!)
@@ -732,46 +749,28 @@ Partial Public Class Nota_bookingtruk
         '
         Me.XrCrossBandBox3.BorderWidth = 1.0!
         Me.XrCrossBandBox3.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox3.EndPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 623.6353!)
-        Me.XrCrossBandBox3.LocationFloat = New DevExpress.Utils.PointFloat(408.7844!, 526.0417!)
+        Me.XrCrossBandBox3.EndPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 601.9686!)
+        Me.XrCrossBandBox3.LocationFloat = New DevExpress.Utils.PointFloat(408.7844!, 504.375!)
         Me.XrCrossBandBox3.Name = "XrCrossBandBox3"
         Me.XrCrossBandBox3.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox3.StartPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 526.0417!)
+        Me.XrCrossBandBox3.StartPointFloat = New DevExpress.Utils.PointFloat(408.7844!, 504.375!)
         Me.XrCrossBandBox3.WidthF = 115.0!
         '
         'XrCrossBandBox4
         '
         Me.XrCrossBandBox4.BorderWidth = 1.0!
         Me.XrCrossBandBox4.EndBand = Me.ReportHeader
-        Me.XrCrossBandBox4.EndPointFloat = New DevExpress.Utils.PointFloat(522.9167!, 623.75!)
-        Me.XrCrossBandBox4.LocationFloat = New DevExpress.Utils.PointFloat(522.9167!, 526.6667!)
+        Me.XrCrossBandBox4.EndPointFloat = New DevExpress.Utils.PointFloat(522.9167!, 602.0833!)
+        Me.XrCrossBandBox4.LocationFloat = New DevExpress.Utils.PointFloat(522.9167!, 505.0!)
         Me.XrCrossBandBox4.Name = "XrCrossBandBox4"
         Me.XrCrossBandBox4.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox4.StartPointFloat = New DevExpress.Utils.PointFloat(522.9167!, 526.6667!)
+        Me.XrCrossBandBox4.StartPointFloat = New DevExpress.Utils.PointFloat(522.9167!, 505.0!)
         Me.XrCrossBandBox4.WidthF = 115.0!
-        '
-        'XrTableCell7
-        '
-        Me.XrTableCell7.Name = "XrTableCell7"
-        Me.XrTableCell7.Text = "Jumlah"
-        Me.XrTableCell7.Weight = 0.5921234248418189R
-        '
-        'XrTableCell8
-        '
-        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "booking_truk.jumlah satuan")})
-        Me.XrTableCell8.Name = "XrTableCell8"
-        Me.XrTableCell8.Padding = New DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 100.0!)
-        Me.XrTableCell8.StylePriority.UsePadding = False
-        Me.XrTableCell8.StylePriority.UseTextAlignment = False
-        Me.XrTableCell8.Text = "XrTableCell8"
-        Me.XrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell8.Weight = 0.63459372769283418R
         '
         'GroupFooter1
         '
         Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable3})
         Me.GroupFooter1.HeightF = 100.0!
-        Me.GroupFooter1.Level = 1
         Me.GroupFooter1.Name = "GroupFooter1"
         '
         'XrTable3
