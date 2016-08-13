@@ -2,7 +2,7 @@
     Dim cek As Boolean = False
     Private Sub login2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         password.Text = ""
-        username.Text = ""
+        user.Text = ""
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
@@ -16,15 +16,15 @@
     End Sub
     Private Sub login_Click(sender As Object, e As EventArgs) Handles login.Click
         Try
-            Dim check As String = "select username from muser where username = '" & username.Text & "' "
+            Dim check As String = "select username from muser where username = '" & user.Text & "' "
             Dim simpan As New DataTable
             simpan = DtTable(check)
             If simpan.Rows.Count = 0 Then
                 MessageBox.Show("Username Salah", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                username.Text = ""
+                user.Text = ""
                 password.Text = ""
             Else
-                Dim check2 As String = "select username, password from muser where username = '" & username.Text & "' and password = md5('" & password.Text & "') "
+                Dim check2 As String = "select username, password from muser where username = '" & user.Text & "' and password = md5('" & password.Text & "') "
                 Dim simpan2 As New DataTable
                 simpan2 = DtTable(check2)
                 If simpan2.Rows.Count = 0 Then
@@ -33,7 +33,7 @@
                 Else
                     cek = True
                     audit()
-                    main_menu.username = username.Text.ToString
+                    username = user.Text.ToString
                     main_menu.logincek = True
                     Me.Close()
                 End If
@@ -45,10 +45,10 @@
     End Sub
 
     Sub audit()
-        Dim user As String = username.Text.ToString
+        Dim user As String = Me.user.Text.ToString
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Login"
-        Dim aktivitas As String = "User Login: " & username.Text.ToString
+        Dim aktivitas As String = "User Login: " & Me.user.Text.ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
 
@@ -59,11 +59,11 @@
 
     End Sub
 
-    Private Sub username_KeyPress(sender As Object, e As KeyPressEventArgs) Handles username.KeyPress, password.KeyPress
+    Private Sub username_KeyPress(sender As Object, e As KeyPressEventArgs) Handles user.KeyPress, password.KeyPress
         Try
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
 
-                If username.Text = "" Or password.Text = "" Then
+                If user.Text = "" Or password.Text = "" Then
                     MessageBox.Show("Harap melengkapi Username dan Password", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     login_Click(sender, e)

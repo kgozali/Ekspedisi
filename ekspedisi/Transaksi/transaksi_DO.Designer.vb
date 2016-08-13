@@ -55,6 +55,10 @@ Partial Class transaksi_DO
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -93,7 +97,7 @@ Partial Class transaksi_DO
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(869, 47)
+        Me.LabelControl3.Location = New System.Drawing.Point(778, 44)
         Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(88, 23)
@@ -103,7 +107,7 @@ Partial Class transaksi_DO
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(84, 106)
+        Me.LabelControl4.Location = New System.Drawing.Point(81, 106)
         Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(116, 23)
@@ -123,15 +127,15 @@ Partial Class transaksi_DO
         'kodetrans
         '
         Me.kodetrans.Enabled = False
-        Me.kodetrans.Location = New System.Drawing.Point(204, 14)
+        Me.kodetrans.Location = New System.Drawing.Point(217, 17)
         Me.kodetrans.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kodetrans.Name = "kodetrans"
-        Me.kodetrans.Size = New System.Drawing.Size(136, 23)
+        Me.kodetrans.Size = New System.Drawing.Size(156, 23)
         Me.kodetrans.TabIndex = 1
         '
         'idbooking
         '
-        Me.idbooking.Location = New System.Drawing.Point(204, 44)
+        Me.idbooking.Location = New System.Drawing.Point(217, 47)
         Me.idbooking.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.idbooking.Name = "idbooking"
         Me.idbooking.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -141,7 +145,7 @@ Partial Class transaksi_DO
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(969, 43)
+        Me.nomerdo.Location = New System.Drawing.Point(885, 44)
         Me.nomerdo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(192, 23)
@@ -151,7 +155,7 @@ Partial Class transaksi_DO
         '
         Me.tanggalterkirim.CustomFormat = "ddMMyyyy"
         Me.tanggalterkirim.Enabled = False
-        Me.tanggalterkirim.Location = New System.Drawing.Point(204, 106)
+        Me.tanggalterkirim.Location = New System.Drawing.Point(217, 109)
         Me.tanggalterkirim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tanggalterkirim.Name = "tanggalterkirim"
         Me.tanggalterkirim.Size = New System.Drawing.Size(233, 23)
@@ -159,7 +163,7 @@ Partial Class transaksi_DO
         '
         'tanggaljatuhtempo
         '
-        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(204, 138)
+        Me.tanggaljatuhtempo.Location = New System.Drawing.Point(217, 141)
         Me.tanggaljatuhtempo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tanggaljatuhtempo.Name = "tanggaljatuhtempo"
         Me.tanggaljatuhtempo.Size = New System.Drawing.Size(233, 23)
@@ -191,8 +195,8 @@ Partial Class transaksi_DO
         Me.GroupControl3.Location = New System.Drawing.Point(447, 190)
         Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(721, 585)
-        Me.GroupControl3.TabIndex = 148
+        Me.GroupControl3.Size = New System.Drawing.Size(721, 581)
+        Me.GroupControl3.TabIndex = 9
         Me.GroupControl3.Text = "Data Transaksi"
         '
         'GridControl1
@@ -206,7 +210,7 @@ Partial Class transaksi_DO
         Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2, Me.RepositoryItemLookUpEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(717, 559)
+        Me.GridControl1.Size = New System.Drawing.Size(717, 555)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -248,7 +252,6 @@ Partial Class transaksi_DO
         Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
         Me.GridView1.OptionsView.ShowFooter = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
-        Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.berat, DevExpress.Data.ColumnSortOrder.Descending)})
         '
         'satuan
         '
@@ -314,7 +317,7 @@ Partial Class transaksi_DO
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(841, 17)
+        Me.LabelControl7.Location = New System.Drawing.Point(741, 13)
         Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(125, 23)
@@ -324,7 +327,7 @@ Partial Class transaksi_DO
         'TextBox2
         '
         Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(969, 14)
+        Me.TextBox2.Location = New System.Drawing.Point(885, 13)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(192, 23)
@@ -343,7 +346,7 @@ Partial Class transaksi_DO
         'tgldo
         '
         Me.tgldo.CustomFormat = "ddMMyyyy"
-        Me.tgldo.Location = New System.Drawing.Point(204, 76)
+        Me.tgldo.Location = New System.Drawing.Point(217, 79)
         Me.tgldo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tgldo.Name = "tgldo"
         Me.tgldo.Size = New System.Drawing.Size(233, 23)
@@ -352,7 +355,7 @@ Partial Class transaksi_DO
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(94, 79)
+        Me.LabelControl5.Location = New System.Drawing.Point(97, 79)
         Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(100, 23)
@@ -365,7 +368,7 @@ Partial Class transaksi_DO
         Me.GroupControl1.Location = New System.Drawing.Point(14, 190)
         Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(428, 585)
+        Me.GroupControl1.Size = New System.Drawing.Size(428, 581)
         Me.GroupControl1.TabIndex = 156
         Me.GroupControl1.Text = "Scan DO"
         '
@@ -376,14 +379,53 @@ Partial Class transaksi_DO
         Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
-        Me.PictureEdit1.Size = New System.Drawing.Size(424, 559)
+        Me.PictureEdit1.Size = New System.Drawing.Size(424, 555)
         Me.PictureEdit1.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(885, 75)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(192, 23)
+        Me.TextBox1.TabIndex = 8
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(775, 75)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(91, 23)
+        Me.LabelControl8.TabIndex = 158
+        Me.LabelControl8.Text = "Total Berat"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(885, 106)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(281, 62)
+        Me.RichTextBox1.TabIndex = 160
+        Me.RichTextBox1.Text = ""
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(769, 103)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(97, 23)
+        Me.LabelControl9.TabIndex = 161
+        Me.LabelControl9.Text = "Keterangan"
         '
         'transaksi_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1176, 833)
+        Me.Controls.Add(Me.LabelControl9)
+        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.LabelControl8)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.tgldo)
         Me.Controls.Add(Me.LabelControl5)
@@ -407,7 +449,7 @@ Partial Class transaksi_DO
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "transaksi_DO"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Delivery Order"
+        Me.Text = "Nominal"
         CType(Me.idbooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
@@ -460,4 +502,8 @@ Partial Class transaksi_DO
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents DataColumn4 As DataColumn
     Friend WithEvents satuan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
 End Class

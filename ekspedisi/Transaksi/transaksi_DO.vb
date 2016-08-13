@@ -16,6 +16,10 @@ Public Class transaksi_DO
     Dim defpendapatan As String = ""
     Dim switch As Boolean = False
     Dim tabelbarang As New DataTable
+    Dim nominal As Integer = 0
+    Dim nominalparse As String = ""
+    Dim koma As Boolean = False
+    Dim totaldo As Integer = 0
     Private Sub idbooking_EditValueChanged(sender As Object, e As EventArgs) Handles idbooking.EditValueChanged
         Try
 
@@ -130,18 +134,24 @@ Public Class transaksi_DO
                         If GridView1.DataRowCount < 1 Then
                             MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
-                            If PictureEdit1.Text = "" Then
-                                Dim msg As Integer = MessageBox.Show("Bukti DO tidak ditemukan, apakah anda ingin melanjutkan tanpa mencatumkan bukti DO?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-                                If msg = DialogResult.OK Then
-                                    insertnoprint()
-                                Else
+                            If TextBox1.Text = "" Then
+                                MessageBox.Show("Harap Isi Nominal DO Terlebih Dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                                End If
                             Else
-                                insertnoprint()
+
+                                If PictureEdit1.Text = "" Then
+                                    Dim msg As Integer = MessageBox.Show("Bukti DO tidak ditemukan, apakah anda ingin melanjutkan tanpa mencatumkan bukti DO?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                                    If msg = DialogResult.OK Then
+                                        insertnoprint()
+                                    Else
+
+                                    End If
+                                Else
+                                    insertnoprint()
+                                End If
+
+
                             End If
-
-
                         End If
                     End If
                 End If
@@ -165,34 +175,42 @@ Public Class transaksi_DO
 
         Dim sum As Integer = 0
         sum = GridView1.Columns("berat").SummaryItem.SummaryValue.ToString
-        total = sum * price
-        generate()
-        Dim totalkredit As Integer = total * -1
-        InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',0,1,0)")
-        Dim rows As DataRow
-        For i = 0 To GridView1.DataRowCount - 1
-            rows = datasetdo.Tables.Item(0).Rows(i)
-            InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
-        Next
 
-        'masukkan Gambar
-        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
-        connect.Open()
-        Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
-        Command.ExecuteNonQuery()
-        connect.Close()
+        If sum - nominal > 100 And RichTextBox1.Text = "" Then
+            MessageBox.Show("Total Berat DO Dibawah Total Berat Yang Seharusnya, Harap Isi Keterangan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
-        Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
-        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & total.ToString & "')")
-        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
-        If ins = True Then
-            MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            audit()
-            cek = False
+        Else
+            total = sum * price
+            totaldo = nominal * price
+            generate()
+            Dim totalkredit As Integer = totaldo * -1
+            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & username.ToString & "','" & totaldo & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
+            Dim rows As DataRow
+            For i = 0 To GridView1.DataRowCount - 1
+                rows = datasetdo.Tables.Item(0).Rows(i)
+                InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
+            Next
+
+            'masukkan Gambar
+            Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
+            connect.Open()
+            Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+            Command.ExecuteNonQuery()
+            connect.Close()
+
+            InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
+            Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
+            InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & totaldo.ToString & "')")
+            InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
+            If ins = True Then
+                MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                audit()
+                cek = False
+            End If
+            res()
+            Me.Close()
         End If
-        res()
-        Me.Close()
+
     End Sub
     Sub scando()
 
@@ -270,7 +288,7 @@ Public Class transaksi_DO
             Dim tanggal As New DataTable
             Dim tgl As String = "TDO" & Today.Date.ToString("yyMMdd")
             tanggal = DtTable("select * from trans_do where substring(id_transaksi,1,9) = '" & tgl & "'")
-            Dim hitung As String = tanggal.Rows.Count() & 1
+            Dim hitung As String = tanggal.Rows.Count() + 1
             While hitung.LongCount < 5
                 hitung = "0" & hitung
             End While
@@ -297,18 +315,22 @@ Public Class transaksi_DO
                         If GridView1.DataRowCount < 1 Then
                             MessageBox.Show("Tidak ada barang yang terpilih", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
-                            If PictureEdit1.Text = "" Then
-                                Dim msg As Integer = MessageBox.Show("Bukti DO tidak ditemukan, apakah anda ingin melanjutkan tanpa mencatumkan bukti DO?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-                                If msg = DialogResult.OK Then
-                                    insertprint()
-                                Else
+                            If TextBox1.Text = "" Then
+                                MessageBox.Show("Harap Isi Nominal DO Terlebih Dahulu", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                                End If
                             Else
-                                insertprint()
+                                If PictureEdit1.Text = "" Then
+                                    Dim msg As Integer = MessageBox.Show("Bukti DO tidak ditemukan, apakah anda ingin melanjutkan tanpa mencatumkan bukti DO?", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                                    If msg = DialogResult.OK Then
+                                        insertprint()
+                                    Else
+
+                                    End If
+                                Else
+                                    insertprint()
+                                End If
+
                             End If
-
-
                         End If
                     End If
                 End If
@@ -329,36 +351,43 @@ Public Class transaksi_DO
 
         Dim sum As Integer = 0
         sum = GridView1.Columns("berat").SummaryItem.SummaryValue.ToString
-        total = sum * price
-        generate()
-        Dim totalkredit As Integer = total * -1
-        InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',0,1,0)")
-        Dim rows As DataRow
-        For i = 0 To GridView1.DataRowCount - 1
-            rows = datasetdo.Tables.Item(0).Rows(i)
-            InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
-        Next
+        If sum - nominal > 100 And RichTextBox1.Text = "" Then
+            MessageBox.Show("Total Berat DO Dibawah Total Berat Yang Seharusnya, Harap Isi Keterangan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        'masukkan Gambar
-        Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
-        connect.Open()
-        Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
-        Command.ExecuteNonQuery()
-        connect.Close()
+        Else
+            total = sum * price
+            totaldo = nominal * price
+            generate()
+            Dim totalkredit As Integer = totaldo * -1
+            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & totaldo & "','" & username.ToString & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
+            Dim rows As DataRow
+            For i = 0 To GridView1.DataRowCount - 1
+                rows = datasetdo.Tables.Item(0).Rows(i)
+                InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kode.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
+            Next
 
-        InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
-        Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
-        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & total.ToString & "')")
-        InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
-        If ins = True Then
-            MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            audit()
-            cek = False
-            frm_notado.transid = kode
-            frm_notado.ShowDialog()
+            'masukkan Gambar
+            Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kode.ToString & "'", connect)
+            connect.Open()
+            Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+            Command.ExecuteNonQuery()
+            connect.Close()
+
+            InsertInto("update booking_truk set s=0 where id_booking='" & idbooking.Text.ToString & "'")
+            Dim ins As Boolean = InsertInto("insert into jurnal values('" & kode.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "')")
+            InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpiutang & "','','" & totaldo.ToString & "')")
+            InsertInto("insert into djurnal values('" & kode.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
+            If ins = True Then
+                MessageBox.Show("Delivery Order No." & kode.ToString & " berhasil dilakukan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                audit()
+                cek = False
+                frm_notado.transid = kode
+                frm_notado.ShowDialog()
+            End If
+            res()
+            Me.Close()
         End If
-        res()
-        Me.Close()
+
     End Sub
 
     Private Sub idbooking_Click(sender As Object, e As EventArgs) Handles idbooking.Click
@@ -431,5 +460,36 @@ Public Class transaksi_DO
             Switch = True
             Exit Sub
         End If
+    End Sub
+
+    Private Sub LabelControl8_Click(sender As Object, e As EventArgs) Handles LabelControl8.Click
+
+    End Sub
+
+    Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
+        Try
+            If koma = False Then
+                nominal = CInt(TextBox1.Text)
+                nominalparse = nominal.ToString("N0")
+                TextBox1.Text = nominalparse
+            End If
+            koma = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        Try
+            If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+                nominal = CInt(TextBox1.Text)
+                nominalparse = nominal.ToString("N0")
+                TextBox1.Text = nominalparse
+                koma = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
