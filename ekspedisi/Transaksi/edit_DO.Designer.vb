@@ -54,6 +54,10 @@ Partial Class edit_DO
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +76,7 @@ Partial Class edit_DO
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(845, 15)
+        Me.LabelControl7.Location = New System.Drawing.Point(741, 16)
         Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(125, 23)
@@ -165,7 +169,7 @@ Partial Class edit_DO
         Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2, Me.RepositoryItemLookUpEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(709, 556)
+        Me.GridControl1.Size = New System.Drawing.Size(709, 548)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -200,7 +204,7 @@ Partial Class edit_DO
         'TextBox2
         '
         Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(973, 11)
+        Me.TextBox2.Location = New System.Drawing.Point(885, 14)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(192, 23)
@@ -209,10 +213,10 @@ Partial Class edit_DO
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(453, 181)
+        Me.GroupControl3.Location = New System.Drawing.Point(453, 189)
         Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(713, 582)
+        Me.GroupControl3.Size = New System.Drawing.Size(713, 574)
         Me.GroupControl3.TabIndex = 166
         Me.GroupControl3.Text = "Data Transaksi"
         '
@@ -256,7 +260,7 @@ Partial Class edit_DO
         '
         'nomerdo
         '
-        Me.nomerdo.Location = New System.Drawing.Point(973, 41)
+        Me.nomerdo.Location = New System.Drawing.Point(885, 44)
         Me.nomerdo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nomerdo.Name = "nomerdo"
         Me.nomerdo.Size = New System.Drawing.Size(192, 23)
@@ -304,7 +308,7 @@ Partial Class edit_DO
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(873, 44)
+        Me.LabelControl3.Location = New System.Drawing.Point(778, 44)
         Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(88, 23)
@@ -353,10 +357,10 @@ Partial Class edit_DO
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.PictureEdit1)
-        Me.GroupControl1.Location = New System.Drawing.Point(17, 181)
+        Me.GroupControl1.Location = New System.Drawing.Point(17, 189)
         Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(428, 585)
+        Me.GroupControl1.Size = New System.Drawing.Size(428, 577)
         Me.GroupControl1.TabIndex = 173
         Me.GroupControl1.Text = "Scan DO"
         '
@@ -367,14 +371,53 @@ Partial Class edit_DO
         Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
-        Me.PictureEdit1.Size = New System.Drawing.Size(424, 559)
+        Me.PictureEdit1.Size = New System.Drawing.Size(424, 551)
         Me.PictureEdit1.TabIndex = 0
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(769, 102)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(97, 23)
+        Me.LabelControl9.TabIndex = 177
+        Me.LabelControl9.Text = "Keterangan"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(885, 105)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(281, 62)
+        Me.RichTextBox1.TabIndex = 9
+        Me.RichTextBox1.Text = ""
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(775, 71)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(91, 23)
+        Me.LabelControl8.TabIndex = 175
+        Me.LabelControl8.Text = "Total Berat"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(885, 74)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(192, 23)
+        Me.TextBox1.TabIndex = 8
         '
         'edit_DO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1176, 817)
+        Me.Controls.Add(Me.LabelControl9)
+        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.LabelControl8)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.tgldo)
         Me.Controls.Add(Me.LabelControl5)
@@ -449,4 +492,8 @@ Partial Class edit_DO
     Friend WithEvents berat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents kgsatuan As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents satuan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TextBox1 As TextBox
 End Class

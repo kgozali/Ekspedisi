@@ -184,7 +184,7 @@ Public Class transaksi_DO
             totaldo = nominal * price
             generate()
             Dim totalkredit As Integer = totaldo * -1
-            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & username.ToString & "','" & totaldo & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
+            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & username.ToString & "','" & nominal & "','" & totaldo & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
             Dim rows As DataRow
             For i = 0 To GridView1.DataRowCount - 1
                 rows = datasetdo.Tables.Item(0).Rows(i)
@@ -359,7 +359,7 @@ Public Class transaksi_DO
             totaldo = nominal * price
             generate()
             Dim totalkredit As Integer = totaldo * -1
-            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & totaldo & "','" & username.ToString & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
+            InsertInto("insert into trans_do values('" & kode.ToString & "','" & idbooking.Text.ToString & "','" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "','" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "','" & nomerdo.Text.ToString & "','" & username.ToString & "','" & nominal & "','" & totaldo & "','" & total & "',0,0,0,0,'" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "','" & RichTextBox1.Text.ToString & "',0,1,0)")
             Dim rows As DataRow
             For i = 0 To GridView1.DataRowCount - 1
                 rows = datasetdo.Tables.Item(0).Rows(i)

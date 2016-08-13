@@ -19,6 +19,10 @@ Public Class edit_DO
     Dim defpiutang As String = ""
     Dim defpendapatan As String = ""
     Dim switch As Boolean = False
+    Dim totaldo As Integer = 0
+    Dim nominal As Integer = 0
+    Dim nominalparse As String = ""
+    Dim koma As Boolean = False
     Private Sub id_TextChanged(sender As Object, e As EventArgs) Handles id.TextChanged
 
 
@@ -42,12 +46,14 @@ Public Class edit_DO
             defpendapatan = Scalar("select id_akun from control_account where keterangan='Def. Akun Pendapatan'")
 
             'select awal ambil data semua
-            datatable = DtTable("select id_booking,path_upload,tgl_jam,tgl_terkirim,jatuh_tempo,no_do from trans_do where id_transaksi='" & id.Text.ToString & "'")
+            datatable = DtTable("select id_booking,path_upload,tgl_jam,tgl_terkirim,jatuh_tempo,no_do,berat_do,keterangan from trans_do where id_transaksi='" & id.Text.ToString & "'")
             idbooking.Text = datatable.Rows(0).Item("id_booking").ToString
             tanggalterkirim.Value = datatable.Rows(0).Item("tgl_terkirim").ToString
             tanggaljatuhtempo.Value = datatable.Rows(0).Item("jatuh_tempo").ToString
             nomerdo.Text = datatable.Rows(0).Item("no_do").ToString
             tgldo.Value = datatable.Rows(0).Item("tgl_jam").ToString
+            RichTextBox1.Text = datatable.Rows(0).Item("keterangan").ToString
+            TextBox1.Text = datatable.Rows(0).Item("berat_do").ToString()
 
             kodetrans = id.Text.ToString
 
@@ -131,37 +137,13 @@ Public Class edit_DO
         'lihat apakah berat dari total barang adalah 0
         sum = CInt(GridView1.Columns("berat").SummaryItem.SummaryValue.ToString)
         total = price * sum
-        If sum <> 0 Then
-            Dim update As Boolean = InsertInto("update trans_do set no_do='" & nomerdo.Text & "',tgl_jam='" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "',tgl_terkirim='" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "',jatuh_tempo='" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "' where id_transaksi='" & kodetrans.ToString & "'")
-            'masukkan Gambar
-            Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kodetrans.ToString & "'", connect)
-            connect.Open()
-            Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
-            Command.ExecuteNonQuery()
-            connect.Close()
-            'delete
-            InsertInto("delete from dtrans_do where id_transaksi='" & kodetrans.ToString & "'")
-            'insert baru
-            Dim rows As DataRow
-            For i = 0 To GridView1.DataRowCount - 1
-                rows = datasetdo.Tables.Item(0).Rows(i)
-                boolcek = InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kodetrans.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
-            Next
+        totaldo = nominal * price
+        If sum - nominal > 100 And RichTextBox1.Text = "" Then
+            MessageBox.Show("Total Berat DO Dibawah Total Berat Yang Seharusnya, Harap Isi Keterangan", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-
-            If update = True And boolcek = True Then
-                MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                'insert jurnal
-                jurnal()
-                reset()
-                Me.Close()
-            Else
-                MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
         Else
-            Dim msg As Integer = MessageBox.Show("Total berat dari barang adalah 0 Kilogram, apakah anda ingin tetap melakukan perubahan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-            If msg = DialogResult.Yes Then
-                Dim update As Boolean = InsertInto("update trans_do set no_do='" & nomerdo.Text & "',tgl_jam='" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "',tgl_terkirim='" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "',jatuh_tempo='" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',total_bayar='" & total.ToString & "' where id_transaksi='" & kodetrans.ToString & "'")
+            If sum <> 0 Then
+                Dim update As Boolean = InsertInto("update trans_do set keterangan='" & RichTextBox1.Text.ToString & "',berat_do='" & nominal & "',nominal_do='" & totaldo & "',nominal_komp='" & total & "',no_do='" & nomerdo.Text & "',tgl_jam='" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "',tgl_terkirim='" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "',jatuh_tempo='" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "' where id_transaksi='" & kodetrans.ToString & "'")
                 'masukkan Gambar
                 Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kodetrans.ToString & "'", connect)
                 connect.Open()
@@ -177,18 +159,49 @@ Public Class edit_DO
                     boolcek = InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kodetrans.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
                 Next
 
+
                 If update = True And boolcek = True Then
                     MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     'insert jurnal
-                    auditloger()
                     jurnal()
                     reset()
                     Me.Close()
                 Else
                     MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+            Else
+                Dim msg As Integer = MessageBox.Show("Total berat dari barang adalah 0 Kilogram, apakah anda ingin tetap melakukan perubahan?", "System Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+                If msg = DialogResult.Yes Then
+                    Dim update As Boolean = InsertInto("update trans_do set keterangan='" & RichTextBox1.Text.ToString & "',berat_do='" & nominal & "',nominal_do='" & totaldo & "',nominal_komp='" & total & "',no_do='" & nomerdo.Text & "',tgl_jam='" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "',tgl_terkirim='" & tanggalterkirim.Value.Date.ToString("yyyy-MM-dd") & "',jatuh_tempo='" & tanggaljatuhtempo.Value.Date.ToString("yyyy-MM-dd") & "',total_bayar='" & total.ToString & "' where id_transaksi='" & kodetrans.ToString & "'")
+                    'masukkan Gambar
+                    Dim Command = New MySqlCommand("Update trans_do set path_upload=@imgfile where id_transaksi='" & kodetrans.ToString & "'", connect)
+                    connect.Open()
+                    Command.Parameters.Add(New MySqlParameter("@imgfile", MySqlDbType.LongBlob)).Value = arrpic
+                    Command.ExecuteNonQuery()
+                    connect.Close()
+                    'delete
+                    InsertInto("delete from dtrans_do where id_transaksi='" & kodetrans.ToString & "'")
+                    'insert baru
+                    Dim rows As DataRow
+                    For i = 0 To GridView1.DataRowCount - 1
+                        rows = datasetdo.Tables.Item(0).Rows(i)
+                        boolcek = InsertInto("insert into dtrans_do (id_transaksi,id_barang,berat_per_kg,jumlah_satuan) values('" & kodetrans.ToString & "','" & rows("namabarang") & "','" & rows("berat") & "','" & rows("kgsatuan") & "')")
+                    Next
+
+                    If update = True And boolcek = True Then
+                        MessageBox.Show("Update Delivery Order " & kodetrans.ToString & " Berhasil", "System Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'insert jurnal
+                        auditloger()
+                        jurnal()
+                        reset()
+                        Me.Close()
+                    Else
+                        MessageBox.Show("Jaringan sedang sibuk, silahkan coba beberapa saat lagi", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End If
             End If
         End If
+
 
 
     End Sub
@@ -239,10 +252,10 @@ Public Class edit_DO
     End Sub
 
     Sub jurnal()
-        Dim totalkredit As Integer = total * -1
+        Dim totalkredit As Integer = totaldo * -1
         InsertInto("update jurnal set tgl='" & tgldo.Value.Date.ToString("yyyy-MM-dd") & "' where no_jurnal='" & kodetrans.ToString & "'")
         InsertInto("delete from djurnal where no_jurnal='" & kodetrans.ToString & "'")
-        InsertInto("insert into djurnal values('" & kodetrans.ToString & "','" & defpiutang & "','','" & total.ToString & "')")
+        InsertInto("insert into djurnal values('" & kodetrans.ToString & "','" & defpiutang & "','','" & totaldo.ToString & "')")
         InsertInto("insert into djurnal values('" & kodetrans.ToString & "','" & defpendapatan & "','','" & totalkredit.ToString & "')")
     End Sub
 
@@ -313,5 +326,32 @@ Public Class edit_DO
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
         switch = True
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        Try
+            If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+                nominal = CInt(TextBox1.Text)
+                nominalparse = nominal.ToString("N0")
+                TextBox1.Text = nominalparse
+                koma = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
+        Try
+            If koma = False Then
+                nominal = CInt(TextBox1.Text)
+                nominalparse = nominal.ToString("N0")
+                TextBox1.Text = nominalparse
+            End If
+            koma = False
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
