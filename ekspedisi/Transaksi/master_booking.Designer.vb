@@ -56,6 +56,14 @@ Partial Class master_booking
         Me.nonaktif = New System.Windows.Forms.RadioButton()
         Me.aktif = New System.Windows.Forms.RadioButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemMemoEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
@@ -67,13 +75,15 @@ Partial Class master_booking
         CType(Me.cari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
+        CType(Me.RepositoryItemMemoEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'hapus
         '
-        Me.hapus.Location = New System.Drawing.Point(20, 652)
+        Me.hapus.Location = New System.Drawing.Point(23, 802)
+        Me.hapus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.hapus.Name = "hapus"
-        Me.hapus.Size = New System.Drawing.Size(198, 26)
+        Me.hapus.Size = New System.Drawing.Size(231, 32)
         Me.hapus.TabIndex = 168
         Me.hapus.Text = "Delete"
         Me.hapus.Visible = False
@@ -198,6 +208,7 @@ Partial Class master_booking
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonGalleryBarItem1, Me.datasiswa, Me.BarSubItem1, Me.mastersiswa, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.addsiswabaru, Me.edit, Me.deldata, Me.jumpmenu})
         Me.RibbonControl1.Location = New System.Drawing.Point(-1, -1)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 32
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -206,7 +217,7 @@ Partial Class master_booking
         Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[True]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1267, 96)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1478, 104)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -219,53 +230,60 @@ Partial Class master_booking
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Location = New System.Drawing.Point(20, 181)
+        Me.GroupControl3.Location = New System.Drawing.Point(23, 223)
+        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(963, 448)
+        Me.GroupControl3.Size = New System.Drawing.Size(1123, 551)
         Me.GroupControl3.TabIndex = 164
         Me.GroupControl3.Text = "Daftar Booking"
         '
         'GridControl1
         '
         Me.GridControl1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GridControl1.Location = New System.Drawing.Point(5, 24)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(6, 30)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(953, 423)
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1})
+        Me.GridControl1.Size = New System.Drawing.Size(1112, 521)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditBookingToolStripMenuItem, Me.DeleteBookingToolStripMenuItem, Me.PreviewAndPrintToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(167, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(197, 82)
         '
         'EditBookingToolStripMenuItem
         '
         Me.EditBookingToolStripMenuItem.Image = CType(resources.GetObject("EditBookingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EditBookingToolStripMenuItem.Name = "EditBookingToolStripMenuItem"
-        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.EditBookingToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.EditBookingToolStripMenuItem.Text = "Edit Booking"
         '
         'DeleteBookingToolStripMenuItem
         '
         Me.DeleteBookingToolStripMenuItem.Image = CType(resources.GetObject("DeleteBookingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeleteBookingToolStripMenuItem.Name = "DeleteBookingToolStripMenuItem"
-        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.DeleteBookingToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.DeleteBookingToolStripMenuItem.Text = "Delete Booking"
         '
         'PreviewAndPrintToolStripMenuItem
         '
         Me.PreviewAndPrintToolStripMenuItem.Image = CType(resources.GetObject("PreviewAndPrintToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PreviewAndPrintToolStripMenuItem.Name = "PreviewAndPrintToolStripMenuItem"
-        Me.PreviewAndPrintToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.PreviewAndPrintToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.PreviewAndPrintToolStripMenuItem.Text = "Preview and Print"
         '
         'GridView1
         '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.RowAutoHeight = True
         '
         'GroupControl1
         '
@@ -273,17 +291,19 @@ Partial Class master_booking
         Me.GroupControl1.Controls.Add(Me.kodebooking)
         Me.GroupControl1.Controls.Add(Me.tgl)
         Me.GroupControl1.Controls.Add(Me.cari)
-        Me.GroupControl1.Location = New System.Drawing.Point(20, 101)
+        Me.GroupControl1.Location = New System.Drawing.Point(23, 124)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(263, 74)
+        Me.GroupControl1.Size = New System.Drawing.Size(307, 91)
         Me.GroupControl1.TabIndex = 163
         Me.GroupControl1.Text = "Cari Berdasarkan"
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(8, 46)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 57)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(233, 23)
         Me.DateTimePicker1.TabIndex = 4
         Me.DateTimePicker1.Visible = False
         '
@@ -291,9 +311,10 @@ Partial Class master_booking
         '
         Me.kodebooking.AutoSize = True
         Me.kodebooking.Checked = True
-        Me.kodebooking.Location = New System.Drawing.Point(8, 24)
+        Me.kodebooking.Location = New System.Drawing.Point(9, 30)
+        Me.kodebooking.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.kodebooking.Name = "kodebooking"
-        Me.kodebooking.Size = New System.Drawing.Size(89, 17)
+        Me.kodebooking.Size = New System.Drawing.Size(113, 21)
         Me.kodebooking.TabIndex = 3
         Me.kodebooking.TabStop = True
         Me.kodebooking.Text = "Kode Booking"
@@ -302,36 +323,40 @@ Partial Class master_booking
         'tgl
         '
         Me.tgl.AutoSize = True
-        Me.tgl.Location = New System.Drawing.Point(104, 24)
+        Me.tgl.Location = New System.Drawing.Point(121, 30)
+        Me.tgl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tgl.Name = "tgl"
-        Me.tgl.Size = New System.Drawing.Size(88, 17)
+        Me.tgl.Size = New System.Drawing.Size(110, 21)
         Me.tgl.TabIndex = 1
         Me.tgl.Text = "Tanggal Kirim"
         Me.tgl.UseVisualStyleBackColor = True
         '
         'cari
         '
-        Me.cari.Location = New System.Drawing.Point(8, 45)
+        Me.cari.Location = New System.Drawing.Point(9, 55)
+        Me.cari.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cari.Name = "cari"
-        Me.cari.Size = New System.Drawing.Size(253, 20)
+        Me.cari.Size = New System.Drawing.Size(295, 22)
         Me.cari.TabIndex = 0
         '
         'GroupControl4
         '
         Me.GroupControl4.Controls.Add(Me.nonaktif)
         Me.GroupControl4.Controls.Add(Me.aktif)
-        Me.GroupControl4.Location = New System.Drawing.Point(289, 101)
+        Me.GroupControl4.Location = New System.Drawing.Point(337, 124)
+        Me.GroupControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(150, 74)
+        Me.GroupControl4.Size = New System.Drawing.Size(175, 91)
         Me.GroupControl4.TabIndex = 167
         Me.GroupControl4.Text = "Sortir"
         '
         'nonaktif
         '
         Me.nonaktif.AutoSize = True
-        Me.nonaktif.Location = New System.Drawing.Point(5, 46)
+        Me.nonaktif.Location = New System.Drawing.Point(6, 57)
+        Me.nonaktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nonaktif.Name = "nonaktif"
-        Me.nonaktif.Size = New System.Drawing.Size(97, 17)
+        Me.nonaktif.Size = New System.Drawing.Size(122, 21)
         Me.nonaktif.TabIndex = 9
         Me.nonaktif.Text = "Closed Booking"
         Me.nonaktif.UseVisualStyleBackColor = True
@@ -340,9 +365,10 @@ Partial Class master_booking
         '
         Me.aktif.AutoSize = True
         Me.aktif.Checked = True
-        Me.aktif.Location = New System.Drawing.Point(5, 23)
+        Me.aktif.Location = New System.Drawing.Point(6, 28)
+        Me.aktif.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.aktif.Name = "aktif"
-        Me.aktif.Size = New System.Drawing.Size(91, 17)
+        Me.aktif.Size = New System.Drawing.Size(115, 21)
         Me.aktif.TabIndex = 8
         Me.aktif.TabStop = True
         Me.aktif.Text = "Open Booking"
@@ -351,17 +377,86 @@ Partial Class master_booking
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(883, 652)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1030, 802)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 27)
+        Me.SimpleButton1.Size = New System.Drawing.Size(117, 33)
         Me.SimpleButton1.TabIndex = 166
         Me.SimpleButton1.Text = "Cancel"
         '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Kode Booking"
+        Me.GridColumn1.FieldName = "idbooking"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.Width = 90
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "Tgl Pengiriman"
+        Me.GridColumn2.FieldName = "tgl"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.Width = 85
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Jam Kirim"
+        Me.GridColumn3.FieldName = "jam"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 42
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Principle"
+        Me.GridColumn5.FieldName = "principle"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 3
+        Me.GridColumn5.Width = 85
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.Caption = "Rute"
+        Me.GridColumn6.FieldName = "rute"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 4
+        Me.GridColumn6.Width = 102
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Barang"
+        Me.GridColumn7.ColumnEdit = Me.RepositoryItemMemoEdit1
+        Me.GridColumn7.FieldName = "barang"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 5
+        Me.GridColumn7.Width = 169
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Keterangan"
+        Me.GridColumn8.FieldName = "keterangan"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 6
+        Me.GridColumn8.Width = 123
+        '
+        'RepositoryItemMemoEdit1
+        '
+        Me.RepositoryItemMemoEdit1.Name = "RepositoryItemMemoEdit1"
+        '
         'master_booking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1000, 691)
+        Me.ClientSize = New System.Drawing.Size(1167, 850)
         Me.Controls.Add(Me.hapus)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl3)
@@ -369,6 +464,7 @@ Partial Class master_booking
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "master_booking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Booking"
@@ -385,6 +481,7 @@ Partial Class master_booking
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
+        CType(Me.RepositoryItemMemoEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -424,4 +521,12 @@ Partial Class master_booking
     Friend WithEvents EditBookingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PreviewAndPrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteBookingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemMemoEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit
+    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

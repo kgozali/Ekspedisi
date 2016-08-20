@@ -30,7 +30,17 @@ Public Class master_booking
                 cari.Visible = True
                 DateTimePicker1.Visible = False
                 GridView1.OptionsView.ShowFooter = True
-                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and id_booking LIKE '%" + cari.Text.ToString + "%' and del=0 order by tgl asc, Jam asc, id_booking asc")
+                data = DtTable("Select b.id_booking `idbooking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `tgl`,jam `jam`,concat(ETA,' ','Jam') `eta`,nama_principle `principle`,concat(kota_asal,' - ',kota_tujuan) `rute`
+                            ,group_concat(concat(mb.nama_barang,'  @',jumlah_satuan,' ',ms.satuan) SEPARATOR '\n') `barang`
+                            ,b.keterangan `keterangan` 
+                            from booking_truk b LEFT JOIN mprinciple mp ON b.id_principle=mp.id_principle 
+                            LEFT JOIN mrute ON b.id_rute=mrute.id_rute
+                            LEFT JOIN dbooking_truk d ON b.id_booking=d.id_booking    
+                            LEFT JOIN mbarang mb ON d.id_barang=mb.id_barang 
+                            LEFT JOIN msatuan ms ON mb.id_satuan=ms.id_satuan 
+                            WHERE b.s='" & x & "' and b.id_booking LIKE '%" & cari.Text.ToString & "%' and del=0 
+                            GROUP BY b.id_booking
+                            order by b.tgl asc, b.Jam asc, b.id_booking asc")
                 GridControl1.DataSource = data
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -40,7 +50,17 @@ Public Class master_booking
                 cari.Visible = False
                 DateTimePicker1.Visible = True
                 GridView1.OptionsView.ShowFooter = True
-                data = DtTable("Select id_booking `Kode Booking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `Tanggal Pengiriman`,jam `Jam Pengiriman`,concat(ETA,' ','Jam') `ETA`,nama_principle `Principle`,concat(kota_asal,' - ',kota_tujuan) `Rute`,keterangan `Keterangan` from booking_truk,mprinciple,mrute where booking_truk.id_principle=mprinciple.id_principle and booking_truk.id_rute=mrute.id_rute and booking_truk.s='" + x + "' and booking_truk.tgl='" + DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' and del=0 order by Jam asc,id_booking asc")
+                data = DtTable("Select b.id_booking `idbooking`,concat(day(tgl),'-',monthname(tgl),'-',year(tgl)) `tgl`,jam `jam`,concat(ETA,' ','Jam') `eta`,nama_principle `principle`,concat(kota_asal,' - ',kota_tujuan) `rute`
+                            ,group_concat(concat(mb.nama_barang,'  @',jumlah_satuan,' ',ms.satuan) SEPARATOR '\n') `barang`
+                            ,b.keterangan `keterangan` 
+                            from booking_truk b LEFT JOIN mprinciple mp ON b.id_principle=mp.id_principle 
+                            LEFT JOIN mrute ON b.id_rute=mrute.id_rute
+                            LEFT JOIN dbooking_truk d ON b.id_booking=d.id_booking    
+                            LEFT JOIN mbarang mb ON d.id_barang=mb.id_barang 
+                            LEFT JOIN msatuan ms ON mb.id_satuan=ms.id_satuan 
+                            WHERE b.s='" & x & "' and b.tgl='" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") & "' and del=0 
+                            GROUP BY b.id_booking
+                            order by b.tgl asc, b.Jam asc, b.id_booking asc")
                 GridControl1.DataSource = data
                 summary()
                 cellvalue = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Transaksi")
@@ -102,7 +122,7 @@ Public Class master_booking
                 MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 edit_booking.id.Text = ""
-                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking").ToString
                 edit_booking.ShowDialog()
             End If
 
@@ -119,7 +139,7 @@ Public Class master_booking
                 MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 edit_booking.id.Text = ""
-                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+                edit_booking.id.Text = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking").ToString
                 edit_booking.ShowDialog()
             End If
 
@@ -132,7 +152,7 @@ Public Class master_booking
         If GridView1.RowCount = 0 Then
             MessageBox.Show("Tidak ada data yang terpilih", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            frm_bookingtruk.bookcode = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+            frm_bookingtruk.bookcode = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking").ToString
             frm_bookingtruk.ShowDialog()
         End If
     End Sub
@@ -146,14 +166,14 @@ Public Class master_booking
 
     End Sub
     Sub del(sender As Object, e As EventArgs)
-        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+        Dim msg As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking") & "? Data yang telah dihapus tidak dapat dikembalikan", "System Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
         If msg = DialogResult.OK Then
-            InsertInto("update booking_truk set del=1,s=0 where id_booking='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
-            InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
-            Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") + "'")
+            InsertInto("update booking_truk set del=1,s=0 where id_booking='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking") + "'")
+            InsertInto("delete from jurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking") + "'")
+            Dim ret As Boolean = InsertInto("delete from djurnal where no_jurnal='" + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking") + "'")
             If ret = True Then
                 audit()
-                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Booking " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking") & " Berhasil di Hapus", "System Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 master_booking_Load(sender, e)
             End If
 
@@ -163,7 +183,7 @@ Public Class master_booking
         Dim user As String = main_menu.username
         Dim kompname As String = System.Net.Dns.GetHostName
         Dim form As String = "Booking Truk"
-        Dim aktivitas As String = "Delete Booking: " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "Kode Booking").ToString
+        Dim aktivitas As String = "Delete Booking: " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "idbooking").ToString
         auditlog(user, kompname, form, aktivitas)
     End Sub
 
